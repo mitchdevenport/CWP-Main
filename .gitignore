@@ -1,7 +1,8 @@
 #temp folder for working files
 /temp
 /utils
-/tools
+/tools/*
+!/tools/scripted_tests/
 /reports
 
 #vscode
@@ -20,3 +21,6 @@ Cold-War-Project.code-workspace
 .vs
 .vs/slnx.sqlite
 *.sqlite
+
+# Python bytecode from maintenance tools
+__pycache__/
