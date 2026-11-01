@@ -97,7 +97,16 @@ on_monthly_pulse_country = {
 		unable_to_enact.1
 	}
 
-	effect = { }
+	effect = {
+		# 1.14 AI decree targeting maps (see common/scripted_effects/cwp_ai_decree_effects.txt)
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = { is_country_type = decentralized }
+			}
+			ai_assemble_decree_state_maps = yes
+		}
+	}
 
 	on_actions = {
 		cwp_coup_monthly_events	# Coup monthly events
@@ -529,7 +538,19 @@ on_spreading_technology = {
 # scope:initiator = Initiator of the play
 # scope:target = Target of the play
 on_diplomatic_play_started = {
-	effect = { }
+	effect = {
+		# A subject whose own overlord turns on it starts looking for the exit
+		if = {
+			limit = {
+				scope:target ?= {
+					is_direct_subject_of = scope:initiator
+				}
+			}
+			scope:target ?= {
+				add_liberty_desire = define:NDiplomacy|LIBERTY_DESIRE_FROM_OVERLORD_DIPLOMATIC_PLAY
+			}
+		}
+	}
 }
 
 # Root = Character
@@ -1959,6 +1980,7 @@ on_political_movement_supported_law_cancelled = {
 }
 
 # Root = Country
+# scope:actor = the country that enforced the wargoal
 # scope:target = the country the wargoal was enforced against
 # scope:diplomatic_play = the relevant diplomatic play
 # scope:wargoal_impact = the impact of the wargoal enforced
@@ -1997,6 +2019,21 @@ on_wargoal_enforced = {
 				var:wants_treaty_port_revenge_against ?= scope:target
 			}
 			remove_variable = wants_treaty_port_revenge_against
+		}
+
+		# Terms imposed by its own overlord push a subject towards independence, scaled by how harsh the war goal was
+		if = {
+			limit = {
+				scope:target ?= {
+					is_direct_subject_of = scope:actor
+				}
+			}
+			scope:target ?= {
+				add_liberty_desire = {
+					value = scope:wargoal_impact
+					max = define:NDiplomacy|LIBERTY_DESIRE_FROM_OVERLORD_WAR_GOAL_MAX
+				}
+			}
 		}
 	}
 }
@@ -2710,3 +2747,50 @@ on_ship_constructed = {
 on_commander_promoted = {
 	effect = { }
 }
+
+# ---- On actions introduced by the engine in 1.14 ----
+
+# Root = Diplomatic Play
+on_diplo_play_overlord_protects_subject = {
+	effect = {
+		post_notification = diplo_play_overlord_protects_subject_notification
+	}
+}
+
+# Root = Diplomatic Play
+# actor = Subject leaving the play/war
+# overlord = The overlord they are rebelling against
+on_diplo_play_subject_backstab_overlord = {
+	effect = {
+		post_notification = diplo_play_subject_backstab_overlord_notification
+	}
+}
+
+# Fires when a goal is taken via occupation timer during a war. Goals that are not reversed before the end of the war also fire on_wargoal_enforced at the conclusion of peace.
+# Root = Country
+# scope:actor = the country that enforced the wargoal
+# scope:target = the country the wargoal was enforced against
+# scope:diplomatic_play = the relevant diplomatic play
+# scope:wargoal_impact = the impact of the wargoal enforced
+# scope:war_goal_enforced = the wargoal that was enforced
+on_wargoal_enforced_by_timer = {
+	effect = {
+		scope:diplomatic_play ?= {
+			post_notification = wargoal_enforced
+		}
+	}
+}
+
+# Root = Country
+# scope:war = the war that just ended
+# scope:diplomatic_play = the play the war belonged to
+# scope:enemy_country = the leader of the other side
+# scope:benefitted_from_wargoal = set if this country held a war goal that was enforced at any point
+# scope:victim_of_wargoal = set if a war goal was enforced against this country at any point
+on_won_war = {}
+
+# Root = Country, scopes as on_won_war
+on_lost_war = {}
+
+# Root = Country, scopes as on_won_war
+on_inconclusive_war = {}

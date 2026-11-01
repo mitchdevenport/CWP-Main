@@ -7,6 +7,7 @@ subject_type_puppet = {
 	can_start_own_diplomatic_plays = no
 	breaks_if_subject_not_protected = yes
 	join_overlord_wars = yes
+	forced_into_overlord_revolution = yes
 	can_have_subjects = no
 	overlord_must_be_higher_rank = yes
 	overlord_must_be_same_country_type = no
@@ -14,6 +15,7 @@ subject_type_puppet = {
 	gives_prestige_to_overlord = yes
 
 	diplomatic_action = puppet
+	re_establish_war_goal = make_protectorate
 
 	autonomy_level = 1
 	category = same_as_puppet

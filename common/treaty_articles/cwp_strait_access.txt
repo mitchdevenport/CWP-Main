@@ -23,12 +23,12 @@
 	usage_limit = once_per_side
 
 	visible = {
-		has_any_strait_province = scope:source_country
+		has_any_strait_province = yes
 	}
 
 	possible = {
-		has_any_strait_province = scope:source_country
-		has_any_strait_control = scope:source_country
+		has_any_strait_province = yes
+		has_any_strait_control = yes
 	}
 
     can_ratify = {
@@ -94,11 +94,35 @@
 					multiply = 0.025
 				}
 			}
+
+			# Any country a strait controller is hurting looks for relief, whatever its rank
+			add = {
+				value = worst_strait_access_grievance
+				multiply = 0.005
+			}
 		}
 
 		article_ai_usage = {
 			request
 			offer
+		}
+
+		proposal_weight = {
+			value = 1
+
+			# Pursued harder the more the strait controller is hurting us
+			add = {
+				value = "strait_access_grievance_against(scope:source_country)"
+				multiply = 0.04
+			}
+
+			if = {
+				limit = {
+					root = scope:target_country
+					has_law_or_variant = law_type:law_free_trade # Free traders ask for no strait closure for anyone instead
+				}
+				value = 0
+			}
 		}
 
 		inherent_accept_score = {
@@ -124,18 +148,21 @@
 
 				add = {
 					desc = "concept_strait_controller"
-					value = {
-						scope:target_country = {
-							add = "strait_trade_importance_by(scope:source_country)"
+					value = { # A combination of both dependencies
+						add = {
+							value = {
+								scope:target_country = {
+									add = "strait_dependence_by(scope:source_country)"
+								}
+							}
+							multiply = 0.5
+						}
+						add = {
+							value = "strait_dependence_by(scope:target_country)"
+							multiply = 0.5
 						}
 					}
-					divide = gdp
-					multiply = {
-						scope:target_country = {
-							add = "strait_trade_importance_by(scope:source_country)"
-						}
-					}
-					multiply = -1
+					multiply = -0.15
 					min = -15
 				}
 
@@ -232,25 +259,44 @@
 					save_temporary_scope_as = target
 				}
 
-				add = {
-					desc = "DIPLOMATIC_ACCEPTANCE_BASE_ADDITIONAL"
-					value = -10
-				}
+				if = {
+					limit = {
+						scope:target_country = {
+							"strait_dependence_by(scope:source_country)" < define:NDiplomacy|STRAIT_GRIEVANCE_MIN_DEPENDENCE
+						}
+					}
 
+					add = {
+						desc = "DIPLOMATIC_ACCEPTANCE_NO_STRAIT_DEPENDENCE"
+						value = -10
+					}
+				}
+				else = {
+					add = {
+						desc = "DIPLOMATIC_ACCEPTANCE_STRAIT_DEPENDENCE"
+						value = {
+							scope:target_country = {
+								add = "strait_dependence_by(scope:source_country)"
+							}
+						}
+						multiply = 0.3
+						max = 25
+					}
+				}
+			}
+		}
+
+		wargoal_score_multiplier = {
+			value = 0
+			if = {
+				limit = {
+					NOT = { has_law_or_variant = law_type:law_free_trade } # Free traders demand no strait closure for anyone instead
+					"strait_access_grievance_against(scope:source_country)" > 0
+				}
+				value = 1
 				add = {
-					desc = "concept_strait_controller"
-					value = {
-						scope:target_country = {
-							add = "strait_trade_importance_by(scope:source_country)"
-						}
-					}
-					divide = gdp
-					multiply = {
-						scope:target_country = {
-							add = "strait_trade_importance_by(scope:source_country)"
-						}
-					}
-					max = 10
+					value = "strait_access_grievance_against(scope:source_country)"
+					multiply = 0.07
 				}
 			}
 		}
@@ -280,22 +326,15 @@
 			}
 		}
 
+		infamy_severity = 0.02
+		infamy_min = define:NDiplomacy|WAR_GOAL_INFAMY_MINOR_DEMAND_MIN
+		infamy_max = define:NDiplomacy|WAR_GOAL_INFAMY_MINOR_DEMAND_MAX
+
 		infamy = {
 			value = 0
 
-			add = {
-				desc = "INFAMY_BASE_VALUE"
-				value = 0.10
-			}
-
 			scope:target_country = {
-				multiply = {
-					desc = "INFAMY_TARGET_COUNTRY_POPULATION_FACTOR"
-					value = total_population
-					divide = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_FACTOR
-					multiply = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER
-                    max = define:NDiplomacy|WAR_GOAL_INFAMY_POPULATION_SCALING_MULTIPLIER_MAX_TOTAL
-				}
+				add = country_infamy_value
 			}
 		}
 	}

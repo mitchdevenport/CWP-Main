@@ -70,6 +70,24 @@ building_group_bg_agriculture_standard_of_living_add={
 	}
 }
 
+building_group_bg_agriculture_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_extraction_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 building_group_bg_agriculture_tax_mult={
 	decimals=1
 	color=neutral
@@ -727,6 +745,15 @@ building_group_bg_infrastructure_standard_of_living_add={
 	}
 }
 
+building_group_bg_infrastructure_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 building_group_bg_infrastructure_tax_mult={
 	decimals=1
 	color=neutral
@@ -1062,6 +1089,24 @@ building_group_bg_manufacturing_mortality_mult={
 building_group_bg_manufacturing_standard_of_living_add={
 	decimals=1
 	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_manufacturing_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_ranching_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
 	game_data={
 		ai_value=0
 	}
@@ -1413,6 +1458,24 @@ building_group_bg_plantations_slaves_mortality_mult={
 building_group_bg_plantations_standard_of_living_add={
 	decimals=1
 	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_plantations_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_power_self_investment_chance_add={
+	decimals=0
+	color=neutral
+	percent=yes
 	game_data={
 		ai_value=0
 	}

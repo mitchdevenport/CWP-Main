@@ -363,17 +363,17 @@ ship_hull_damage_mult = {
 }
 
 
-# Ship - Interest
-ship_interest_gain_add = {
-	decimals=1
+# Ship - Power Projection
+ship_power_projection_add = {
+	decimals=0
 	color=good
 	game_data={
 		ai_value=0
 	}
 }
 
-ship_interest_gain_mult = {
-	decimals=1
+ship_power_projection_mult = {
+	decimals=0
 	color=good
 	percent=yes
 	game_data={
@@ -546,6 +546,15 @@ ship_supply_capacity_add = {
 }
 
 ship_supply_capacity_mult = {
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+ship_ship_type_supply_ship_supply_capacity_mult = {
 	decimals=0
 	color=good
 	percent=yes

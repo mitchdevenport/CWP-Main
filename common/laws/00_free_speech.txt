@@ -23,6 +23,9 @@ law_outlawed_dissent = {
 		country_tech_spread_mult = -0.03
 		country_leverage_resistance_mult = 0.10
 		country_support_separatism_resistance_mult = 0.10
+		country_war_support_battles_increase_mult = -0.04
+		country_war_support_battles_decrease_mult = -0.08
+		country_war_support_casualties_mult = -0.05
 	}
 
 	ai_enact_weight_modifier = { #Petitions
@@ -56,6 +59,9 @@ law_censorship = {
 		country_tech_spread_mult = -0.02
 		country_leverage_resistance_mult = 0.05
 		country_support_separatism_resistance_mult = 0.05
+		country_war_support_battles_increase_mult = -0.03
+		country_war_support_battles_decrease_mult = -0.05
+		country_war_support_casualties_mult = -0.03
 	}
 
 	ai_enact_weight_modifier = { #Petitions
@@ -78,6 +84,9 @@ law_right_of_assembly = {
 		country_bolster_attraction_factor = 0.3
 		country_suppression_attraction_factor = -0.3
 		country_support_separatism_resistance_mult = -0.1
+		country_war_support_battles_increase_mult = 0.15
+		country_war_support_battles_decrease_mult = 0.15
+		country_war_support_casualties_mult = 0.1
 	}
 
 	ai_enact_weight_modifier = { #Petitions
@@ -123,6 +132,9 @@ law_protected_speech = {
 		country_tech_spread_mult = 0.05
 		country_leverage_resistance_mult = -0.05
 		country_support_separatism_resistance_mult = -0.05
+		country_war_support_battles_increase_mult = 0.06
+		country_war_support_battles_decrease_mult = 0.06
+		country_war_support_casualties_mult = 0.04
 	}
 
 	ai_enact_weight_modifier = { #Petitions

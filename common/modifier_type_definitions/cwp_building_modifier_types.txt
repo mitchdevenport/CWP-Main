@@ -53,6 +53,15 @@ building_aristocrats_job_attractiveness_mult={
 	}
 }
 
+building_bureaucrats_job_attractiveness_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 building_aristocrats_shares_add={
 	decimals=0
 	color=neutral
@@ -712,6 +721,14 @@ building_machinists_mortality_mult={
 building_machinists_standard_of_living_add={
 	decimals=1
 	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_machinists_shares_add={
+	decimals=0
+	color=neutral
 	game_data={
 		ai_value=0
 	}

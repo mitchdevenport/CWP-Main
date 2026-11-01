@@ -493,7 +493,7 @@ catalyst_diplomatic_incident = {
 			value = 0.0
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.01
 			}
 			else_if = {
@@ -501,16 +501,15 @@ catalyst_diplomatic_incident = {
 				add = 0.02
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
 				add = 0.05
 			}
 		}
-
 		lobby_anti_overlord = {
 			value = 0.0
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.10
 			}
 			else_if = {
@@ -518,7 +517,7 @@ catalyst_diplomatic_incident = {
 				add = 0.20
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
 				add = 0.30
 			}
 		}
@@ -558,22 +557,30 @@ catalyst_pact_formed = {
 			value = 0.05
 
 			if = {
-				limit = { scope:target_country.country_rank > root.country_rank }
+				limit = {
+					scope:target_country.country_rank > root.country_rank
+				}
 				multiply = 2
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" < relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" < relations_threshold:cordial
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 1.5
 			}
 		}
@@ -585,15 +592,21 @@ catalyst_pact_formed = {
 			value = 0.1
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -979,21 +992,29 @@ catalyst_rival_of_rival = {
 			value = 0.05
 
 			if = {
-				limit = { scope:target_country.country_rank > root.country_rank }
+				limit = {
+					scope:target_country.country_rank > root.country_rank
+				}
 				multiply = 2
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" > relations_threshold:poor }
+				limit = {
+					"relations(scope:target_country)" > relations_threshold:poor
+				}
 				multiply = 0.5
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" <= relations_threshold:hostile }
+				limit = {
+					"relations(scope:target_country)" <= relations_threshold:hostile
+				}
 				multiply = 1.5
 			}
 		}
@@ -1005,18 +1026,23 @@ catalyst_rival_of_rival = {
 				limit = { liberty_desire < define:NDiplomacy|WAR_GOAL_INFAMY_LOW_LIBERTY_DESIRE_THRESHOLD }
 				multiply = 3
 			}
+
 			else_if = {
 				limit = { liberty_desire <= 50 }
 				multiply = 2
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" < relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" < relations_threshold:cordial
+				}
 				multiply = 0.5
 			}
 		}
@@ -1028,15 +1054,21 @@ catalyst_rival_of_rival = {
 			value = 0.1
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -1121,21 +1153,29 @@ catalyst_decreased_relations_with_rival = {
 			value = 0.01
 
 			if = {
-				limit = { scope:target_country.country_rank > root.country_rank }
+				limit = {
+					scope:target_country.country_rank > root.country_rank
+				}
 				multiply = 2
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" > relations_threshold:poor }
+				limit = {
+					"relations(scope:target_country)" > relations_threshold:poor
+				}
 				multiply = 0.5
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" <= relations_threshold:hostile }
+				limit = {
+					"relations(scope:target_country)" <= relations_threshold:hostile
+				}
 				multiply = 1.5
 			}
 		}
@@ -1153,12 +1193,16 @@ catalyst_decreased_relations_with_rival = {
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" < relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" < relations_threshold:cordial
+				}
 				multiply = 0.5
 			}
 		}
@@ -1170,15 +1214,21 @@ catalyst_decreased_relations_with_rival = {
 			value = 0.05
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -1228,15 +1278,21 @@ catalyst_allies_in_play = {
 			value = 0.1
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -1553,21 +1609,29 @@ catalyst_ideological_alignment = {
 			value = 0.01
 
 			if = {
-				limit = { scope:target_country.country_rank > root.country_rank }
+				limit = {
+					scope:target_country.country_rank > root.country_rank
+				}
 				multiply = 2
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" < relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" < relations_threshold:cordial
+				}
 				multiply = 0.5
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 1.5
 			}
 		}
@@ -1585,12 +1649,16 @@ catalyst_ideological_alignment = {
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" < relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" < relations_threshold:cordial
+				}
 				multiply = 0.5
 			}
 		}
@@ -1602,7 +1670,9 @@ catalyst_ideological_alignment = {
 				"relations(scope:target_country)" > relations_threshold:poor
 				AND = {
 					has_radical_leftist_government = yes
-					scope:target_country = { has_radical_leftist_government = yes }
+					scope:target_country = {
+						has_radical_leftist_government = yes
+					}
 				}
 			}
 		}
@@ -1614,26 +1684,36 @@ catalyst_ideological_alignment = {
 			if = {
 				limit = {
 					has_radical_leftist_government = yes
-					scope:target_country = { has_radical_leftist_government = yes }
+					scope:target_country = {
+						has_radical_leftist_government = yes
+					}
 				}
 				multiply = 10.0
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -1644,27 +1724,36 @@ catalyst_joined_same_bloc = {
 	category = cc_power_bloc_membership
 
 	ai_country_goal_recalculation = {
-		trigger = { "relations(scope:target_country)" > relations_threshold:poor }
+		trigger = {
+			"relations(scope:target_country)" > relations_threshold:poor
+		}
 
 		type = more_friendly
 		chance = {
 			value = 0.1
-
 			if = {
-				limit = { is_power_bloc_leader = yes }
+				limit = {
+					is_power_bloc_leader = yes
+				}
 				add = 0.1
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -2064,61 +2153,78 @@ catalyst_overtaken_in_prestige_rank = {
 			value = 0.1
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 0.25
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 0.5
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 0.75
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" <= relations_threshold:cold }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cold
+				}
 				multiply = 1.5
 			}
-			else_if = {
-				limit = { "relations(scope:target_country)" <= relations_threshold:hostile }
+			else = {
 				multiply = 2.0
 			}
 		}
 	}
 
 	ai_country_goal_recalculation = {
-		type = more_hostile
 
+		type = more_hostile
 		chance = {
 			value = 0.1
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 0.25
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 0.5
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 0.75
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" <= relations_threshold:cold }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cold
+				}
 				multiply = 1.5
 			}
-			else_if = {
-				limit = { "relations(scope:target_country)" <= relations_threshold:hostile }
+			else = {
 				multiply = 2.0
 			}
 		}
 	}
+
 
 	effect = {
 		scope:target_country = {
@@ -2174,7 +2280,9 @@ catalyst_became_recognized = {
 	category = cc_rank_change
 
 	ai_country_goal_recalculation = {
-		trigger = { NOT = { is_country_type = unrecognized } }
+		trigger = {
+			NOT = { is_country_type = unrecognized }
+		}
 
 		type = more_friendly
 
@@ -2182,15 +2290,21 @@ catalyst_became_recognized = {
 			value = 0.1
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -2273,11 +2387,11 @@ catalyst_declined_military_assistance = {
 }
 
 catalyst_strait_toll_high = {
-	category = cc_relations_change
+	category = cc_strait_tolls
 }
 
 catalyst_strait_toll_reduced = {
-	category = cc_relations_change
+	category = cc_strait_tolls
 }
 
 catalyst_strait_no_military = {
@@ -2285,11 +2399,11 @@ catalyst_strait_no_military = {
 }
 
 catalyst_strait_opened = {
-	category = cc_relations_change
+	category = cc_strait_access
 }
 
 catalyst_strait_partially_opened = {
-	category = cc_relations_change
+	category = cc_strait_access
 }
 
 catalyst_strait_closed = {

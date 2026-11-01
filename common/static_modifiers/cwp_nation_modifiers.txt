@@ -33,7 +33,7 @@ legacy_of_kemalism = {
 
 last_stand = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	country_war_exhaustion_casualties_mult = -1
+	country_war_support_casualties_mult = -1
 }
 
 racial_tension = {

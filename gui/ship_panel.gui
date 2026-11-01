@@ -582,7 +582,7 @@ types ship_panel_types
 							}
 
 							blockoverride "second_bar_text" {
-								raw_text = "@crew! #b [Ship.GetTotalCrew|D]#! / [Ship.GetCrewMax|D]"
+								text = "SHIP_CREW_BAR_VALUE"
 							}
 
 							blockoverride "entire_icon" {}
@@ -742,6 +742,9 @@ types ship_panel_types
 
 						### Blockade Strength
 						ship_stat_blockade_strength = {}
+
+						### Power Projection
+						ship_stat_power_projection = {}
 
 						ship_modifier_battle_against_ship_type_arsenal_ship_accuracy_add = {
 							visible = "[NotZero_CFixedPoint(Modifier.GetValueFor('ship_battle_against_ship_type_arsenal_ship_accuracy_add'))]"
@@ -1645,6 +1648,16 @@ types ship_types
 		}
 	}
 
+	type ship_stat_base_power_projection = ship_stat {
+		blockoverride "stat_icon" {
+			texture = "gfx/interface/icons/commander_order_icons/project_power.dds"
+		}
+
+		blockoverride "stat_label" {
+			text = "[concept_power_projection]"
+		}
+	}
+
 	type ship_stat_base_critical_hit_multiplier = ship_stat {
 		blockoverride "stat_icon" {
 			texture = "gfx/interface/icons/military_icons/navy_icons/critical_damage_navy.dds"
@@ -1673,6 +1686,16 @@ types ship_types
 
 		blockoverride "stat_value" {
 			text = "[Modifier.GetShipArmor|v0]"
+		}
+	}
+
+	type ship_modifier_stat_power_projection = ship_stat_base_power_projection {
+		blockoverride "stat_tooltip" {
+			tooltip = "[Modifier.GetShipPowerProjectionTooltip]"
+		}
+
+		blockoverride "stat_value" {
+			text = "[Modifier.GetShipPowerProjection|v0]"
 		}
 	}
 
@@ -1887,6 +1910,16 @@ types ship_types
 		}
 	}
 
+	type ship_template_stat_power_projection = ship_stat_base_power_projection {
+		blockoverride "stat_tooltip" {
+			tooltip = "[ShipTemplate.GetPowerProjectionBreakdown]"
+		}
+
+		blockoverride "stat_value" {
+			text = "[ShipTemplate.GetPowerProjection|v0]"
+		}
+	}
+
 	type ship_template_stat_critical_hit_damage = ship_stat_base_critical_hit_multiplier {
 		blockoverride "stat_tooltip" {
 			tooltip = "[ShipTemplate.GetCriticalHitMultiplierBreakdown]"
@@ -2090,6 +2123,16 @@ types ship_types
 
 		blockoverride "stat_value" {
 			text = "[Ship.GetBlockadeStrength|v0]"
+		}
+	}
+
+	type ship_stat_power_projection = ship_stat_base_power_projection {
+		blockoverride "stat_tooltip" {
+			tooltip = "[Ship.GetPowerProjectionBreakdown]"
+		}
+
+		blockoverride "stat_value" {
+			text = "[Ship.GetPowerProjection|v0]"
 		}
 	}
 

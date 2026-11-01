@@ -14,6 +14,7 @@ subject_type_chartered_company = {
 	gives_prestige_to_overlord = yes
 	
 	diplomatic_action = chartered_company
+	re_establish_war_goal = make_chartered_company
 	
 	autonomy_level = 2
 	category = same_as_personal_union

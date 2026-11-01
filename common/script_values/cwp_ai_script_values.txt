@@ -840,3 +840,27 @@ ship_mod_merchant_navy_doctrine = {
 	#	multiply = ship_mod_doctrine_boost
 	#}
 }
+
+# 1.14: the engine expects this named value (extra AI acceptance for diplomatic play demands)
+#root = country deciding whether to accept the demand
+#scope:initiator = country making the demand
+#scope:target_country = country deciding whether to accept the demand
+#scope:diplomatic_play_type = type of diplomatic play the demand is for
+diplomatic_play_acceptance = {
+	value = 0
+}
+
+#root = state; agricultural building levels for AI decree targeting, with subsistence counted at half weight
+ai_decree_agricultural_levels_script_value = {
+	value = "state_has_building_group_levels(bg_agriculture)"
+	add = "state_has_building_group_levels(bg_ranching)"
+	add = "state_has_building_group_levels(bg_plantations)"
+	subtract = {
+		value = "state_has_building_group_levels(bg_subsistence_agriculture)"
+		multiply = 0.5
+	}
+	subtract = {
+		value = "state_has_building_group_levels(bg_subsistence_ranching)"
+		multiply = 0.5
+	}
+}

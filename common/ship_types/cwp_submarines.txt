@@ -2,6 +2,7 @@
 
 ship_type_attack_submarine = {
 	ship_group = ship_group_submarines
+	ai_ship_category = ai_ship_category_torpedo_craft
 
 	modification_construction_cost = 180
 
@@ -10,6 +11,9 @@ ship_type_attack_submarine = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 65
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 24
 		ship_crew_max_add = 850
@@ -141,6 +145,7 @@ ship_type_attack_submarine = {
 
 ship_type_cruise_missile_submarine = {
 	ship_group = ship_group_submarines
+	ai_ship_category = ai_ship_category_torpedo_craft
 
 	modification_construction_cost = 340
 
@@ -149,6 +154,9 @@ ship_type_cruise_missile_submarine = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 90
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 30
 		ship_crew_max_add = 1100
@@ -280,6 +288,7 @@ ship_type_cruise_missile_submarine = {
 
 ship_type_diesel_electric_submarine = {
 	ship_group = ship_group_submarines
+	ai_ship_category = ai_ship_category_torpedo_craft
 
 	modification_construction_cost = 120
 
@@ -288,6 +297,9 @@ ship_type_diesel_electric_submarine = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 45
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 20
 		ship_crew_max_add = 600
@@ -411,6 +423,7 @@ ship_type_diesel_electric_submarine = {
 
 ship_type_nuclear_attack_submarine = {
 	ship_group = ship_group_submarines
+	ai_ship_category = ai_ship_category_torpedo_craft
 
 	modification_construction_cost = 300
 
@@ -419,6 +432,9 @@ ship_type_nuclear_attack_submarine = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 85
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 28
 		ship_crew_max_add = 1000

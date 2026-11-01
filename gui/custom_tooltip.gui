@@ -1899,6 +1899,11 @@ types TooltipTypes
 				}
 
 				custom_tooltip_textbox_with_empty_line = {
+					visible = "[WarGoal.IsAtRiskOfBeingDroppedForBeingUncontested]"
+					text = "WAR_GOAL_AT_RISK_OF_BEING_DROPPED_DESC"
+				}
+
+				custom_tooltip_textbox_with_empty_line = {
 					visible = "[And(Not(WarGoal.IsPartOfWar), WarGoal.IsPartOfPlay)]"
 					raw_text = "[WarGoal.GetIsContestedDesc]"
 				}
@@ -7716,7 +7721,7 @@ types TooltipTypes
 					}
 
 					blockoverride "second_bar_text" {
-						raw_text = "@crew! #b [Ship.GetTotalCrew|D]#! / [Ship.GetCrewMax|D]"
+						text = "SHIP_CREW_BAR_VALUE"
 					}
 
 					blockoverride "entire_icon" {}
@@ -9305,6 +9310,10 @@ types TooltipTypes
 			size = { 245 36 }
 		}
 
+		ship_template_stat_power_projection = {
+			size = { 245 36 }
+		}
+
 		ship_template_stat_armor = {
 			size = { 245 36 }
 		}
@@ -9427,6 +9436,10 @@ types TooltipTypes
 			}
 		}
 
+		ship_modifier_stat_power_projection = {
+			size = { 245 36 }
+		}
+
 		ship_modifier_stat_armor = {
 			size = { 245 36 }
 		}
@@ -9535,6 +9548,10 @@ types TooltipTypes
 				custom_tooltip_textbox_with_empty_line = {
 					visible = "[Not(IsDataModelEmpty(ShipModificationType.GetApplicableShipTypes))]"
 					text = "SHIP_MODIFICATION_APPLICABLE_SHIP_TYPES_DESC"
+				}
+
+				ship_modifier_stat_power_projection = {
+					visible = "[NotZero_CFixedPoint(Modifier.GetShipPowerProjection)]"
 				}
 
 				ship_modifier_stat_hit_points = {
@@ -10343,6 +10360,7 @@ types TooltipTypes
 	type coastal_building_marker_tooltip_row = flowcontainer {
 		spacing = 10
 		margin = { 8 4 }
+		ignoreinvisible = yes
 
 		background = {
 			using = entry_bg_simple
@@ -10379,26 +10397,29 @@ types TooltipTypes
 		}
 
 		custom_tooltip_textbox = {
+			visible = "[State.IsBeingBombarded]"
 			parentanchor = vcenter
 			minimumsize = { 110 28 }
 			max_width = 110
 			using = elide_fontsize_min
 			text = "COASTAL_BUILDING_MARKER_CHANCE"
 		}
+
+		custom_tooltip_textbox = {
+			visible = "[State.IsBlockaded]"
+			parentanchor = vcenter
+			minimumsize = { 110 28 }
+			max_width = 110
+			using = elide_fontsize_min
+			text = "COASTAL_BUILDING_MARKER_THROUGHPUT"
+		}
 	}
 
 	type RegularTooltip_CoastalBuildingMarker = RegularTooltip {
 		blockoverride "tooltip_content_after" {
 			custom_tooltip_textbox = {
-				visible = "[State.IsBeingBombarded]"
 				default_format = "#header"
-				text = "COASTAL_BUILDING_MARKER_HEADER"
-			}
-
-			custom_tooltip_textbox = {
-				visible = "[Not(State.IsBeingBombarded)]"
-				default_format = "#header"
-				raw_text = "#v [State.GetName]#!"
+				text = "COASTAL_BUILDING_MARKER_HEADER_STATUS"
 			}
 
 			custom_tooltip_textbox = {
@@ -10406,11 +10427,17 @@ types TooltipTypes
 				text = "COASTAL_BUILDING_MARKER_SUBHEADER"
 			}
 
+			custom_tooltip_textbox = {
+				visible = "[State.IsBlockaded]"
+				text = "COASTAL_BUILDING_MARKER_SUBHEADER_BLOCKADE"
+			}
+
 			tooltip_divider = {}
 
 			flowcontainer = {
 				spacing = 10
 				margin = { 8 2 }
+				ignoreinvisible = yes
 
 				custom_tooltip_textbox = {
 					minimumsize = { 188 20 }
@@ -10429,12 +10456,23 @@ types TooltipTypes
 				}
 
 				custom_tooltip_textbox = {
+					visible = "[State.IsBeingBombarded]"
 					minimumsize = { 110 20 }
 					max_width = 110
 					multiline = no
 					using = elide_fontsize_min
 					default_format = "#title"
 					text = "COASTAL_BUILDING_MARKER_COL_RISK"
+				}
+
+				custom_tooltip_textbox = {
+					visible = "[State.IsBlockaded]"
+					minimumsize = { 110 20 }
+					max_width = 110
+					multiline = no
+					using = elide_fontsize_min
+					default_format = "#title"
+					text = "COASTAL_BUILDING_MARKER_COL_THROUGHPUT"
 				}
 			}
 
@@ -12023,15 +12061,102 @@ types TooltipTypes
 		}
 	}
 
-	type FancyTooltip_AIStrategicRegionStanceType = FancyTooltipWidgetType {
+	type FancyTooltip_AIRegionalObjectiveType = FancyTooltipWidgetType {
 		blockoverride "text" {} # Fully replaced by everything in tooltip_content_after
 
 		blockoverride "name" {
-			raw_text = "[Country.GetAIStrategicRegionStanceTypeIn(StrategicRegion.Self).GetNameNoFormatting]"
+			raw_text = "[AIRegionalObjectiveType.GetNameNoFormatting]"
+		}
+
+		blockoverride "type" {
+			text = "REGIONAL_OBJECTIVE_TYPE"
+		}
+
+		blockoverride "tooltip_content_after" {
+			custom_tooltip_textbox = {
+				default_format = "#lore"
+				text = "[AIRegionalObjectiveType.GetDescription]"
+			}
+		}
+	}
+
+	type FancyTooltip_AIRegionalObjective = FancyTooltipWidgetType {
+		blockoverride "text" {} # Fully replaced by everything in tooltip_content_after
+
+		blockoverride "name" {
+			raw_text = "[AIRegionalObjective.GetNameNoFormatting]"
+		}
+
+		blockoverride "type" {
+			text = "REGIONAL_OBJECTIVE_TYPE"
+		}
+
+		blockoverride "tooltip_content_after" {
+			custom_tooltip_textbox = {
+				default_format = "#lore"
+				text = "[AIRegionalObjective.GetDescription]"
+			}
+
+			### WHICH STANCE IT WAS TAKEN UNDER
+			flowcontainer = {
+				visible = "[AIRegionalObjective.IsValid]"
+				direction = vertical
+				spacing = 2
+
+				custom_tooltip_newline = {}
+
+				custom_tooltip_textbox = {
+					text = "REGIONAL_OBJECTIVE_STANCE_TITLE"
+				}
+
+				flowcontainer = {
+					spacing = 5
+					margin_left = 10
+
+					custom_tooltip_textbox = {
+						parentanchor = vcenter
+						max_width = 510
+						text = "REGIONAL_OBJECTIVE_STANCE_ENTRY"
+					}
+				}
+			}
+
+			### WHEN IT WAS TAKEN UP AND WHETHER IT IS DONE
+			flowcontainer = {
+				visible = "[AIRegionalObjective.IsValid]"
+				direction = vertical
+				spacing = 2
+
+				custom_tooltip_newline = {}
+
+				custom_tooltip_textbox = {
+					text = "REGIONAL_OBJECTIVE_STARTED"
+				}
+
+				custom_tooltip_textbox = {
+					visible = "[AIRegionalObjective.IsCompleted]"
+					text = "REGIONAL_OBJECTIVE_COMPLETED"
+				}
+
+				custom_tooltip_textbox = {
+					visible = "[AIRegionalObjective.IsFailed]"
+					text = "REGIONAL_OBJECTIVE_FAILED"
+				}
+			}
+		}
+	}
+
+	type FancyTooltip_AIStrategicRegionStanceType = FancyTooltipWidgetType {
+		datacontext = "[Country.GetAIStrategicRegionStanceTypeIn(StrategicRegion.Self)]"
+
+		blockoverride "text" {} # Fully replaced by everything in tooltip_content_after
+
+		blockoverride "name" {
+			raw_text = "[AIStrategicRegionStanceType.GetNameNoFormatting]"
 		}
 
 		blockoverride "icon_texture" {
-			texture = "[Country.GetAIStrategicRegionStanceTypeIn(StrategicRegion.Self).GetIcon]"
+			texture = "[AIStrategicRegionStanceType.GetIcon]"
 		}
 
 		blockoverride "type" {
@@ -12039,11 +12164,100 @@ types TooltipTypes
 		}
 
 		blockoverride "tooltip_content_after" {
-			custom_tooltip_textbox = {
-				text = "STRATEGIC_REGION_AI_STANCE_TT_HEADER"
+			### BEHAVIOR
+			flowcontainer = {
+				direction = vertical
+				spacing = 2
+
+				custom_tooltip_textbox = {
+					text = "STRATEGIC_REGION_AI_STANCE_BEHAVIOR_TITLE"
+				}
+
+				custom_tooltip_textbox = {
+					margin_left = 10
+					text = "[AIStrategicRegionStanceType.GetBehaviorDescIn(StrategicRegion.Self)]"
+				}
 			}
+
+			### WHY THIS STANCE WAS TAKEN
+			flowcontainer = {
+				visible = "[And(AIStrategicRegionStanceType.IsValid, Not(AIStrategicRegionStanceType.HasType('stance_none')))]"
+				direction = vertical
+				spacing = 2
+
+				custom_tooltip_newline = {}
+
+				custom_tooltip_textbox = {
+					text = "STRATEGIC_REGION_AI_STANCE_TT_HEADER"
+				}
+
+				custom_tooltip_textbox = {
+					margin_left = 10
+					text = "STRATEGIC_REGION_AI_STANCE_BREAKDOWN"
+				}
+			}
+
+			### WHERE ITS ATTENTION IS INSTEAD
+			flowcontainer = {
+				visible = "[And(AIStrategicRegionStanceType.HasType('stance_none'), Not(IsDataModelEmpty(Country.GetStrategicRegionsWithActiveStance)))]"
+				direction = vertical
+				spacing = 2
+
+				custom_tooltip_newline = {}
+
+				custom_tooltip_textbox = {
+					text = "STRATEGIC_REGION_AI_STANCE_ATTENTION_ELSEWHERE_TITLE"
+				}
+
+				flowcontainer = {
+					direction = vertical
+					spacing = 2
+					margin_left = 10
+					datamodel = "[Country.GetStrategicRegionsWithActiveStance]"
+
+					item = {
+						flowcontainer = {
+							spacing = 5
+
+							icon = {
+								size = { 25 25 }
+								parentanchor = vcenter
+								texture = "[Country.GetAIStrategicRegionStanceTypeIn(StrategicRegion.Self).GetIcon]"
+							}
+
+							custom_tooltip_textbox = {
+								parentanchor = vcenter
+								max_width = 510
+								text = "STRATEGIC_REGION_AI_STANCE_ATTENTION_ELSEWHERE_ENTRY"
+							}
+						}
+					}
+				}
+			}
+
+			### WHAT IT IS PURSUING HERE
+			flowcontainer = {
+				visible = "[Country.GetRegionalObjectiveIn(StrategicRegion.Self).IsValid]"
+				direction = vertical
+				spacing = 2
+
+				custom_tooltip_newline = {}
+
+				custom_tooltip_textbox = {
+					text = "STRATEGIC_REGION_AI_STANCE_OBJECTIVE_TITLE"
+				}
+
+				custom_tooltip_textbox = {
+					margin_left = 10
+					text = "STRATEGIC_REGION_AI_STANCE_OBJECTIVE_ENTRY"
+				}
+			}
+
+			tooltip_divider = {}
+
 			custom_tooltip_textbox = {
-				text = "[Country.GetAIStrategicRegionStanceDescIn(StrategicRegion.Self)]"
+				default_format = "#lore"
+				text = "[AIStrategicRegionStanceType.GetDescription]"
 			}
 		}
 	}
@@ -14757,19 +14971,7 @@ types TooltipTypes
 										size = { 24 24 }
 
 										miniature_flag_no_interact = {
-											visible = "[State.GetController.IsSubject]"
 											parentanchor = vcenter
-											datacontext = "[State.GetController.GetTopOverlord]"
-
-											blockoverride "is_player_glow" {
-												visible = no
-											}
-										}
-
-										miniature_flag_no_interact = {
-											visible = "[Not(State.GetController.IsSubject)]"
-											parentanchor = vcenter
-											datacontext = "[State.GetController]"
 
 											blockoverride "is_player_glow" {
 												visible = no

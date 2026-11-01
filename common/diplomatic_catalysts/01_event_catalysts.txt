@@ -68,22 +68,29 @@ catalyst_invited_exile_positive = {
 			value = 0.05
 
 			if = {
-				limit = { scope:target_country.country_rank > root.country_rank }
+				limit = {
+					scope:target_country.country_rank > root.country_rank
+				}
 				multiply = 2
 			}
 
 			if = {
-				limit = { NOT = { has_strategic_adjacency = scope:target_country } }
+				limit = {
+					NOT = { has_strategic_adjacency = scope:target_country }
+				}
 				multiply = 0.5
 			}
 
 			if = {
-				limit = { "relations(scope:target_country)" < relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" < relations_threshold:cordial
+				}
 				multiply = 0.5
 			}
-
-			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+			else_if = {
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 1.5
 			}
 		}
@@ -95,15 +102,21 @@ catalyst_invited_exile_positive = {
 			value = 0.1
 
 			if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:amicable }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:friendly
+				}
 				multiply = 4.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:friendly }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:amicable
+				}
 				multiply = 3.0
 			}
 			else_if = {
-				limit = { "relations(scope:target_country)" >= relations_threshold:cordial }
+				limit = {
+					"relations(scope:target_country)" >= relations_threshold:cordial
+				}
 				multiply = 2.0
 			}
 		}
@@ -118,7 +131,7 @@ catalyst_invited_exile_negative = {
 			value = 0.05
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.01
 			}
 			else_if = {
@@ -126,16 +139,15 @@ catalyst_invited_exile_negative = {
 				add = 0.02
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
 				add = 0.05
 			}
 		}
-
 		lobby_anti_overlord = {
 			value = 0.05
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.10
 			}
 			else_if = {
@@ -143,7 +155,7 @@ catalyst_invited_exile_negative = {
 				add = 0.20
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
 				add = 0.30
 			}
 		}
@@ -156,16 +168,15 @@ catalyst_invited_exile_negative = {
 		}
 
 		type = more_hostile
-		
 		chance = {
 			value = 0.05
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:notorious }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.1
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:notorious }
 				add = 0.5
 			}
 		}
@@ -180,7 +191,7 @@ catalyst_exiled_culture_member = {
 			value = 0.02
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.01
 			}
 			else_if = {
@@ -188,16 +199,15 @@ catalyst_exiled_culture_member = {
 				add = 0.02
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
 				add = 0.05
 			}
 		}
-		
 		lobby_anti_overlord = {
 			value = 0.02
 
 			if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
+				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
 				add = 0.10
 			}
 			else_if = {
@@ -205,7 +215,7 @@ catalyst_exiled_culture_member = {
 				add = 0.20
 			}
 			else_if = {
-				limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+				limit = { scope:target_country.infamy >= infamy_threshold:infamous }
 				add = 0.30
 			}
 		}

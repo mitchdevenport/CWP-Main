@@ -223,36 +223,38 @@ is_in_civil_war = {
 	}
 }
 
+# 1.14 signature: can_reach_target_country = { TARGET_COUNTRY = <country> }
 can_reach_target_country = {
-	has_diplomatic_relevance = scope:target_country
+	has_diplomatic_relevance = $TARGET_COUNTRY$
 	OR = {
-		has_strategic_adjacency = scope:target_country
+		has_strategic_adjacency = $TARGET_COUNTRY$
 		AND = {
 			has_port_country = yes
-			scope:target_country = { has_port_country = yes }
+			$TARGET_COUNTRY$ = { has_port_country = yes }
 		}
 	}
 }
 
 can_be_reached_by_target_country = {
-	has_diplomatic_relevance = scope:target_country
+	has_diplomatic_relevance = $TARGET_COUNTRY$
 	OR = {
-		has_strategic_adjacency = scope:target_country
+		has_strategic_land_adjacency = $TARGET_COUNTRY$
 		AND = {
-			has_port_country = yes
-			scope:target_country = { has_port_country = yes }
-			scope:target_country = { navy_size >= 10 }
+			capital = { has_coastal_access = yes }
+			$TARGET_COUNTRY$ = { has_port_country = yes }
+			$TARGET_COUNTRY$ = { carrying_capacity >= 25 }
 		}
 	}
 }
 
+# 1.14 signature: can_reach_target_state = { TARGET_STATE = <state> }
 can_reach_target_state = {
-	has_diplomatic_relevance = scope:target_state.owner
+	has_diplomatic_relevance = $TARGET_STATE$.owner
 	OR = {
-		has_strategic_adjacency = scope:target_state
+		has_strategic_adjacency = $TARGET_STATE$
 		AND = {
 			has_port_country = yes
-			scope:target_state = { is_coastal = yes }
+			$TARGET_STATE$ = { is_coastal = yes }
 		}
 	}
 }
@@ -295,6 +297,48 @@ diplomatic_play_has_no_relations_blocker_with_overlord = {
 		custom_tooltip = {
 			text = DIPLO_ACTION_TOP_OVERLORD_RELATIONS_CORDIAL_OR_GREATER_NOT
 			scope:target_country.overlord.relations:root < relations_threshold:cordial
+		}
+	}
+}
+
+# Used by the infamy model (state_infamy_value): conquests that pursue one of CWP's unification plays
+# (see dp_unify_* in common/diplomatic_plays) are discounted. root = aggressor, $TARGET$ = target country
+is_scripted_unification_conquest = {
+	OR = {
+		AND = {
+			can_form_nation = CHI
+			$TARGET$ = { can_form_nation = CHI }
+		}
+		AND = {
+			can_form_nation = HND
+			$TARGET$ = { can_form_nation = HND }
+		}
+		AND = {
+			can_form_nation = IDS
+			$TARGET$ = { can_form_nation = IDS }
+		}
+		AND = {
+			can_form_nation = ARA
+			$TARGET$ = { can_form_nation = ARA }
+		}
+	}
+}
+
+# Used by common/ai_regional_objectives (1.14)
+has_treaty_guarantee_independence_with = {
+	custom_description = {
+		text = has_treaty_guarantee_independence_with_trigger
+		subject = this # Country
+		object = $TARGET$ # Country
+
+		hidden_trigger = {
+			any_scope_treaty = {
+				binds = $TARGET$
+				any_scope_article = {
+					has_type = guarantee_independence
+					source_country = $TARGET$
+				}
+			}
 		}
 	}
 }

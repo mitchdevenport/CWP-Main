@@ -561,6 +561,24 @@ state_harvest_condition_extreme_winds_duration_mult={
 	}
 }
 
+state_harvest_condition_earthquake_duration_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_harvest_condition_earthquake_impact_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 state_harvest_condition_flood_impact_mult={
 	decimals=0
 	color=bad
@@ -1253,6 +1271,42 @@ state_sell_orders_small_arms_add={
 
 # State - Shopkeepers
 state_shopkeepers_investment_pool_contribution_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_soldiers_investment_pool_contribution_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_soldiers_investment_pool_efficiency_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_officers_investment_pool_contribution_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_officers_investment_pool_efficiency_mult={
 	decimals=0
 	color=good
 	percent=yes

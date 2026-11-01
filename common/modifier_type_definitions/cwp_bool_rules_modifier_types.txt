@@ -303,12 +303,26 @@ country_disallow_agitator_invites_bool={
 	}
 }
 
+country_bg_manufacturing_require_subsidies_bool={
+	decimals=1
+	color = bad
+	boolean=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 country_disallow_law_no_police_bool = {
 	color = bad
 	boolean=yes
 }
 
 country_disallow_law_no_schools_bool = {
+	color = bad
+	boolean=yes
+}
+
+country_disallow_law_no_colonial_affairs_bool = {
 	color = bad
 	boolean=yes
 }
@@ -679,5 +693,37 @@ state_peasants_mass_migration_disallowed_bool = {
 	boolean=yes
 	game_data={
 		ai_value=0
+	}
+}
+
+# Infamy reductions read by common/script_values/cwp_infamy_values.txt
+country_homeland_infamy_reduction_bool = {
+	script_only = yes
+	decimals = 1
+	color = good
+	boolean = yes
+	game_data = {
+		ai_value = 0
+	}
+}
+
+country_shared_language_infamy_reduction_bool = {
+	script_only = yes
+	decimals = 1
+	color = good
+	boolean = yes
+	game_data = {
+		ai_value = 0
+	}
+}
+
+# Read by the ban_slavery war goal (1.14)
+country_ban_slavery_no_infamy_bool = {
+	script_only = yes
+	decimals = 1
+	color = good
+	boolean = yes
+	game_data = {
+		ai_value = 0
 	}
 }

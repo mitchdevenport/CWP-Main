@@ -517,9 +517,9 @@ agitators_election_events_conservative.3 = {
 				has_law_or_variant = law_type:law_universal_suffrage
 				has_law_or_variant = law_type:law_wage_subsidies
 				has_law_or_variant = law_type:law_old_age_pension
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_commercialized_agriculture
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_mass_conscription
 			}
 		}
@@ -537,9 +537,9 @@ agitators_election_events_conservative.3 = {
 				has_law_or_variant = law_type:law_universal_suffrage
 				has_law_or_variant = law_type:law_wage_subsidies
 				has_law_or_variant = law_type:law_old_age_pension
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_commercialized_agriculture
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_mass_conscription
 			}
 		}
@@ -557,9 +557,9 @@ agitators_election_events_conservative.3 = {
 				has_law_or_variant = law_type:law_universal_suffrage
 				has_law_or_variant = law_type:law_wage_subsidies
 				has_law_or_variant = law_type:law_old_age_pension
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_commercialized_agriculture
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_mass_conscription
 			}
 		}
@@ -582,9 +582,9 @@ agitators_election_events_conservative.3 = {
 				has_law_or_variant = law_type:law_universal_suffrage
 				has_law_or_variant = law_type:law_wage_subsidies
 				has_law_or_variant = law_type:law_old_age_pension
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_commercialized_agriculture
-				has_law_or_variant = law_type:law_homesteading
+				has_law = law_type:law_homesteading
 				has_law_or_variant = law_type:law_mass_conscription
 			}
 		}

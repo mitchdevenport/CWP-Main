@@ -246,6 +246,18 @@ decree_promote_social_mobility = {
 			}
 			multiply = 1.5
 		}
+		if = {
+			limit = {
+				is_incorporated = no
+			}
+			multiply = 0.25
+		}
+		if = {
+			limit = {
+				is_capital = yes
+			}
+			multiply = 2
+		}
 	}
 }
 
@@ -322,7 +334,7 @@ decree_promote_national_values = {
 
 		if = {
 			limit = {
-				primary_cultures_percent_state > 0.9
+				primary_cultures_percent_state = { target_country = owner value > 0.9 }
 				religion_percent_state = {
 					target = scope:country.religion
 					value > 0.9
@@ -332,7 +344,7 @@ decree_promote_national_values = {
 		}
 		else_if = {
 			limit = {
-				primary_cultures_percent_state > 0.5
+				primary_cultures_percent_state = { target_country = owner value > 0.5 }
 				religion_percent_state = {
 					target = scope:country.religion
 					value > 0.5
@@ -366,7 +378,7 @@ decree_encourage_manufacturing_industry = {
 					is_building_group = bg_manufacturing
 				}
 			}
-			add = 50
+			add = 5
 		}
 		if = {
 			limit = {
@@ -375,7 +387,7 @@ decree_encourage_manufacturing_industry = {
 					count >= 3
 				}
 			}
-			add = 50
+			add = 10
 		}
 		if = {
 			limit = {
@@ -384,7 +396,23 @@ decree_encourage_manufacturing_industry = {
 					count >= 5
 				}
 			}
-			add = 50
+			add = 15
+		}
+		if = {
+			limit = {
+				scope:country ?= {
+					has_variable_map = industrial_states_map
+					is_key_in_variable_map = {
+						name = industrial_states_map
+						target = root
+					}
+				}
+			}
+			add = {
+				value = 5
+				subtract = "scope:country.variable_map(industrial_states_map|root)"
+				multiply = 20
+			}
 		}
 		if = {
 			limit = {
@@ -430,7 +458,7 @@ decree_encourage_agricultural_industry = {
 					}
 				}
 			}
-			add = 50
+			add = 5
 		}
 		if = {
 			limit = {
@@ -443,7 +471,7 @@ decree_encourage_agricultural_industry = {
 					count >= 3
 				}
 			}
-			add = 50
+			add = 10
 		}
 		if = {
 			limit = {
@@ -456,7 +484,23 @@ decree_encourage_agricultural_industry = {
 					count >= 5
 				}
 			}
-			add = 50
+			add = 15
+		}
+		if = {
+			limit = {
+				scope:country ?= {
+					has_variable_map = agricultural_states_map
+					is_key_in_variable_map = {
+						name = agricultural_states_map
+						target = root
+					}
+				}
+			}
+			add = {
+				value = 5
+				subtract = "scope:country.variable_map(agricultural_states_map|root)"
+				multiply = 20
+			}
 		}
 		if = {
 			limit = {
@@ -503,7 +547,7 @@ decree_encourage_resource_industry = {
 					}
 				}
 			}
-			add = 50
+			add = 5
 		}
 		if = {
 			limit = {
@@ -517,7 +561,7 @@ decree_encourage_resource_industry = {
 					count >= 3
 				}
 			}
-			add = 50
+			add = 10
 		}
 		if = {
 			limit = {
@@ -531,7 +575,23 @@ decree_encourage_resource_industry = {
 					count >= 5
 				}
 			}
-			add = 50
+			add = 15
+		}
+		if = {
+			limit = {
+				scope:country ?= {
+					has_variable_map = resource_states_map
+					is_key_in_variable_map = {
+						name = resource_states_map
+						target = root
+					}
+				}
+			}
+			add = {
+				value = 5
+				subtract = "scope:country.variable_map(resource_states_map|root)"
+				multiply = 20
+			}
 		}
 		if = {
 			limit = {
@@ -569,7 +629,7 @@ decree_greener_grass_campaign = {
 					occupancy < 0.75
 				}
 			}
-			add = 50
+			add = 10
 		}
 		if = {
 			limit = {
@@ -578,7 +638,7 @@ decree_greener_grass_campaign = {
 					occupancy < 0.5
 				}
 			}
-			add = 50
+			add = 15
 		}
 		if = {
 			limit = {
@@ -587,13 +647,13 @@ decree_greener_grass_campaign = {
 					occupancy < 0.25
 				}
 			}
-			add = 50
+			add = 25
 		}
 		if = {
 			limit = {
 				is_incorporated = no
 			}
-			multiply = 2.0
+			multiply = 3.0
 		}
 		if = {
 			limit = {

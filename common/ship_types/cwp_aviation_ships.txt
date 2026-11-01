@@ -1,6 +1,7 @@
 ﻿# All carrier based ships
 ship_type_aviation_cruiser = {
 	ship_group = ship_group_aviation_ships
+	ai_ship_category = ai_ship_category_carriers
 
 	can_be_flagship = yes
 
@@ -9,6 +10,9 @@ ship_type_aviation_cruiser = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 260
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 25
 		ship_crew_max_add = 1800
@@ -131,6 +135,7 @@ ship_type_aviation_cruiser = {
 
 ship_type_escort_carrier = {
 	ship_group = ship_group_aviation_ships
+	ai_ship_category = ai_ship_category_carriers
 
 	can_be_flagship = yes
 
@@ -139,6 +144,9 @@ ship_type_escort_carrier = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 130
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 25
 		ship_crew_max_add = 800
@@ -259,6 +267,7 @@ ship_type_escort_carrier = {
 
 ship_type_fleet_carrier = {
 	ship_group = ship_group_aviation_ships
+	ai_ship_category = ai_ship_category_carriers
 
 	can_be_flagship = yes
 
@@ -267,6 +276,9 @@ ship_type_fleet_carrier = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 220
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 25
 		ship_crew_max_add = 1200
@@ -399,6 +411,7 @@ ship_type_fleet_carrier = {
 
 ship_type_supercarrier = {
 	ship_group = ship_group_aviation_ships
+	ai_ship_category = ai_ship_category_carriers
 
 	can_be_flagship = yes
 
@@ -407,6 +420,9 @@ ship_type_supercarrier = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 430
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 35
 		ship_crew_max_add = 2500
@@ -539,6 +555,7 @@ ship_type_supercarrier = {
 
 ship_type_ultracarrier = {
 	ship_group = ship_group_aviation_ships
+	ai_ship_category = ai_ship_category_carriers
 
 	can_be_flagship = yes
 
@@ -547,6 +564,9 @@ ship_type_ultracarrier = {
 	unlocking_technologies = { naval_warfare }
 
 	modifier = {
+		# Power Projection
+		ship_power_projection_add = 730
+
 		# Hull & Construction
 		ship_construction_progress_max_add = 45
 		ship_crew_max_add = 3500

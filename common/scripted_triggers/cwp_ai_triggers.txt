@@ -19,7 +19,7 @@ ai_strongly_desires_target_state = {
 				has_strategic_land_adjacency = scope:target_state # Will limit its ambitions to land borders		
 				AND = {
 					scope:target_state.region ?= capital.region # Will try to annex states in its capital region regardless of whether they border it or not
-					can_reach_target_state = yes
+					can_reach_target_state = { TARGET_STATE = scope:target_state }
 				}
 			}
 		}
@@ -51,7 +51,7 @@ ai_desires_target_state = {
 				has_strategic_land_adjacency = scope:target_state # Will limit its ambitions to land borders
 				AND = {
 					scope:target_state.region ?= capital.region # Will try to annex states in its capital region regardless of whether they border it or not
-					can_reach_target_state = yes
+					can_reach_target_state = { TARGET_STATE = scope:target_state }
 				}
 			}
 		}
@@ -61,7 +61,7 @@ ai_desires_target_state = {
 				has_strategy = ai_strategy_colonial_expansion
 			}
 			scope:target_state.owner = { is_country_type = unrecognized }
-			can_reach_target_state = yes  # Willing to go overseas to acquire territories
+			can_reach_target_state = { TARGET_STATE = scope:target_state }  # Willing to go overseas to acquire territories
 		}
 		AND = { # AI wants nearby states if gifted them by overlord
 			has_strategic_adjacency = scope:target_state
@@ -134,20 +134,20 @@ ai_has_enact_weight_modifier_journal_entries = {
 }
 
 has_je_conquest_reason = {
-	can_reach_target_country = yes
+	can_reach_target_country = { TARGET_COUNTRY = $TARGET$ }
 }
 
 has_je_subjugation_reason = {
-	can_reach_target_country = yes
+	can_reach_target_country = { TARGET_COUNTRY = $TARGET$ }
 }
 
 has_je_befriend_reason = {
-	can_reach_target_country = yes
+	can_reach_target_country = { TARGET_COUNTRY = $TARGET$ }
 	country_rank <= $TARGET$.country_rank
 }
 
 has_je_protect_reason = {
-	can_reach_target_country = yes
+	can_reach_target_country = { TARGET_COUNTRY = $TARGET$ }
 	country_rank > $TARGET$.country_rank
 }
 
@@ -188,13 +188,91 @@ ai_can_incorporate_state = {
 	OR = {
 		is_homeland_of_country_cultures = root
 		"years_to_incorporate(root)" <= define:NAI|INCORPORATE_STATE_MAX_YEARS
+		primary_cultures_percent_state = {
+			target_country = root
+			value >= 0.5
+		}
+		AND = {
+			primary_cultures_percent_state = {
+				target_country = root
+				value >= 0.25
+			}
+			any_neighbouring_state = {
+				owner = root
+				is_incorporated = yes
+			}
+		}
 	}
 }
 
 ai_will_incorporate_state = {
+	ai_can_incorporate_state = yes
+	state_population >= define:NAI|INCORPORATE_STATE_MIN_POPULATION
+}
+
+# 1.14: used by will_incorporate_state in ai_strategy_default for colonial and company countries
+ai_colony_will_incorporate_state = {
 	OR = {
-		is_homeland_of_country_cultures = root
-		"years_to_incorporate(root)" <= define:NAI|INCORPORATE_STATE_MAX_YEARS
+		region = root.capital.region
+		any_neighbouring_state = {
+			owner = root
+			is_incorporated = yes
+		}
+		ai_can_incorporate_state = yes
 	}
 	state_population >= define:NAI|INCORPORATE_STATE_MIN_POPULATION
+}
+
+# 1.14 AI regional objectives (common/ai_regional_objectives) - generic helpers
+ai_is_regional_objective_local_country = {
+	any_scope_regional_objective = {
+		type = $TYPE$
+		is_active = yes
+		region = {
+			$TARGET$ = { is_local_country = prev }
+		}
+	}
+}
+
+ai_is_regional_objective_state = {
+	any_scope_regional_objective = {
+		type = $TYPE$
+		is_active = yes
+		region = { $STATE$.region = this }
+	}
+}
+
+ai_is_regional_objective_subjugate_target = {
+	any_scope_regional_objective = {
+		type = aro:ai_regional_objective_subjugate_country
+		is_active = yes
+		region = {
+			root = {
+				"root.variable_map(aro_subjugate_country_map|prev)" ?= { this = $TARGET$ }
+			}
+		}
+	}
+}
+
+ai_is_regional_objective_protect_target = {
+	any_scope_regional_objective = {
+		type = aro:ai_regional_objective_protect_country
+		is_active = yes
+		region = {
+			root = {
+				"root.variable_map(aro_protect_country_map|prev)" ?= { this = $TARGET$ }
+			}
+		}
+	}
+}
+
+ai_has_regional_objective_befriend_reason = {
+	can_reach_target_country = { TARGET_COUNTRY = $TARGET$ }
+	country_rank > $TARGET$.country_rank
+	$TARGET$ = { relations:root <= relations_threshold:cordial }
+
+	ai_is_regional_objective_local_country = {
+		TYPE = aro:ai_regional_objective_befriend_countries
+		TARGET = $TARGET$
+	}
 }

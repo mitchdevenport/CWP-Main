@@ -1,0 +1,18 @@
+﻿# Prestige from power projection (1.14 moved these from defines to script values; the engine expects all four).
+# Values match vanilla.
+
+# Prestige per point of army power projection
+# root = country
+prestige_from_army_power_projection = 0.03
+
+# Prestige per point of navy power projection, after scaling by PRESTIGE_FROM_NAVY_POWER_PROJECTION_HIT_POINTS_REFERENCE
+# root = country
+prestige_from_navy_power_projection = 0.0077
+
+# Prestige per point of army power projection in subjects
+# root = overlord country
+prestige_from_subject_army_power_projection = 0.0005
+
+# Prestige per point of navy power projection in subjects
+# root = overlord country
+prestige_from_subject_navy_power_projection = 0.01

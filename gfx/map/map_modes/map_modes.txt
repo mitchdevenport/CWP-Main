@@ -94,7 +94,7 @@ mm_ongoing_diplo_play = {
 	map_painting_mode = countries
 	map_painting_mode_alternate = colonizable_provinces
 	map_names = countries
-	map_markers = { naval_battle_marker strait_marker colony_marker strategic_objective_marker battle_marker hq_marker diplomatic_play_marker construction_marker construction_summary_marker event_marker front_marker input_shortage_marker input_goods_shortage_summary_marker land_formation_marker fleet_formation_marker state_effect_marker sea_node_marker revolutionary_movement_marker invasion_marker harvest_condition_region_marker naval_mission_marker }
+	map_markers = { naval_battle_marker strait_marker colony_marker strategic_objective_marker battle_marker hq_marker diplomatic_play_marker construction_marker construction_summary_marker event_marker front_marker input_shortage_marker input_goods_shortage_summary_marker land_formation_marker fleet_formation_marker state_effect_marker sea_node_marker revolutionary_movement_marker invasion_marker harvest_condition_region_marker naval_mission_marker coastal_building_marker military_world_market_hub_marker }
 	map_tooltip_offset = state
 
 	is_visible = no 					# special behaviour, overriden in code
@@ -150,7 +150,7 @@ mm_interest = {
 	map_painting_mode_secondary = interests
 	map_painting_mode_alternate = interests
 
-	map_markers = { land_formation_marker fleet_formation_marker sea_node_marker interest_marker }
+	map_markers = { land_formation_marker fleet_formation_marker sea_node_marker interest_marker coastal_building_marker }
 	map_names = strategic_regions
 	map_mode_lists = { diplomacy country strategic_region military }
 	map_tooltip_offset = strategic_region
@@ -195,7 +195,7 @@ mm_military = {
 	map_painting_mode = player_alliances
 	map_painting_mode_secondary = player_alliances
 	map_painting_mode_alternate = player_alliances
-	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker past_naval_battle_marker front_marker land_formation_marker fleet_formation_marker hq_marker sea_node_marker invasion_marker interest_marker naval_mission_marker }
+	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker past_naval_battle_marker front_marker land_formation_marker fleet_formation_marker hq_marker sea_node_marker invasion_marker interest_marker naval_mission_marker coastal_building_marker military_world_market_hub_marker }
 	map_mode_lists = { military }
 
 	gradient_border_settings = mapmode_extra
@@ -226,7 +226,7 @@ mm_military_formation = {
 	map_painting_mode = player_alliances
 	map_painting_mode_secondary = player_alliances
 	map_painting_mode_alternate = player_alliances
-	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker land_formation_marker fleet_formation_marker sea_node_movement_marker front_movement_marker hq_movement_marker invasion_marker interest_marker naval_mission_marker }
+	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker land_formation_marker fleet_formation_marker sea_node_movement_marker front_movement_marker hq_movement_marker invasion_marker interest_marker naval_mission_marker coastal_building_marker military_world_market_hub_marker }
 	map_mode_lists = { military }
 
 	gradient_border_settings = mapmode_extra
@@ -258,7 +258,7 @@ mm_player_military_access = {
 	map_painting_mode = player_military_access
 	map_painting_mode_secondary = player_military_access
 	map_painting_mode_alternate = player_military_access
-	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker front_marker land_formation_marker fleet_formation_marker hq_marker sea_node_marker invasion_marker naval_mission_marker }
+	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker front_marker land_formation_marker fleet_formation_marker hq_marker sea_node_marker invasion_marker naval_mission_marker coastal_building_marker military_world_market_hub_marker }
 	map_mode_lists = { military }
 
 	gradient_border_settings = mapmode_extra
@@ -285,7 +285,7 @@ mm_military_with_past_battles = {
 	map_painting_mode = player_alliances
 	map_painting_mode_secondary = player_alliances
 	map_painting_mode_alternate = player_alliances
-	map_markers = { strait_marker naval_battle_marker event_marker battle_marker past_battle_marker past_naval_battle_marker hq_marker sea_node_marker invasion_marker land_formation_marker fleet_formation_marker naval_mission_marker }
+	map_markers = { strait_marker naval_battle_marker event_marker battle_marker past_battle_marker past_naval_battle_marker hq_marker sea_node_marker invasion_marker land_formation_marker fleet_formation_marker naval_mission_marker coastal_building_marker military_world_market_hub_marker }
 
 	gradient_border_settings = mapmode_extra
 	is_visible = no
@@ -605,6 +605,36 @@ mm_country_relations = {
 	soundeffect = "snapshot:/Dynamic/low_pass_world"
 }
 
+mm_state_value = {
+	map_painting_mode = state_value
+	map_markers = { }
+	map_mode_lists = { country diplomacy }
+	map_names = states
+
+	gradient_border_settings = heatmap
+	is_visible = yes
+	is_visible_to_countryless_observer = no
+	has_fog_of_war = no
+
+	icon = "gfx/interface/icons/map_mode_icons/state_value.dds"
+	soundeffect = "snapshot:/Dynamic/low_pass_world"
+}
+
+mm_state_infamy = {
+	map_painting_mode = state_infamy
+	map_markers = { }
+	map_mode_lists = { country diplomacy }
+	map_names = states
+
+	gradient_border_settings = heatmap
+	is_visible = yes
+	is_visible_to_countryless_observer = no
+	has_fog_of_war = no
+
+	icon = "gfx/interface/icons/map_mode_icons/state_infamy.dds"
+	soundeffect = "snapshot:/Dynamic/low_pass_world"
+}
+
 mm_technology = {
 	map_painting_mode = technology_progress
 	map_markers = { }
@@ -777,7 +807,7 @@ mm_strategic_region_interaction = {
 
 mm_naval_mission_sea_regions_interaction = {
 	map_painting_mode = none
-	map_markers = { sea_node_marker fleet_formation_marker interest_marker }
+	map_markers = { sea_node_marker fleet_formation_marker interest_marker military_world_market_hub_marker }
 
 	gradient_border_settings = interactive
 	has_fog_of_war = no

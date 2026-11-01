@@ -448,20 +448,6 @@
 				}
 			}
 
-			if = {
-				limit = {
-					NOT = { exists = scope:is_treaty_active }
-					exists = scope:treaty
-					scope:treaty.binding_period >= 1825
-				}
-				subtract = {
-					desc = "DIPLOMATIC_ACCEPTANCE_BINDING_PERIOD"
-					value = scope:treaty.binding_period
-					divide = 3650
-					subtract = 25
-					max = 50
-				}
-			}
 		}
 
 		contextual_accept_score = {
