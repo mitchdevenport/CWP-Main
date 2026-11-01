@@ -96,7 +96,7 @@ passenger_train = {
 			
 			count = {
 				scope:state = {
-					market = {
+					market ?= {
 						mg:transportation = {
 							add = market_goods_sell_orders
 						}
@@ -115,7 +115,7 @@ passenger_train = {
 			
 			count = {
 				scope:state = {
-					market = {
+					market ?= {
 						mg:transportation = {
 							add = market_goods_sell_orders
 						}
@@ -134,7 +134,7 @@ passenger_train = {
 			
 			count = {
 				scope:state = {
-					market = {
+					market ?= {
 						mg:transportation = {
 							add = market_goods_sell_orders
 						}
@@ -283,7 +283,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:coal = {
 							add = market_goods_sell_orders
 						}
@@ -303,7 +303,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:coal = {
 							add = market_goods_sell_orders
 						}
@@ -323,7 +323,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:coal = {
 							add = market_goods_sell_orders
 						}
@@ -346,7 +346,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:iron = {
 							add = market_goods_sell_orders
 						}
@@ -375,7 +375,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:iron = {
 							add = market_goods_sell_orders
 						}
@@ -404,7 +404,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:iron = {
 							add = market_goods_sell_orders
 						}
@@ -436,7 +436,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:steel = {
 							add = market_goods_sell_orders
 						}
@@ -456,7 +456,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:steel = {
 							add = market_goods_sell_orders
 						}
@@ -476,7 +476,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:steel = {
 							add = market_goods_sell_orders
 						}
@@ -496,7 +496,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:steel = {
 							add = market_goods_sell_orders
 						}
@@ -519,7 +519,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:sulfur = {
 							add = market_goods_sell_orders
 						}
@@ -545,7 +545,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:sulfur = {
 							add = market_goods_sell_orders
 						}
@@ -571,7 +571,7 @@ mining_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:sulfur = {
 							add = market_goods_sell_orders
 						}
@@ -703,7 +703,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -723,7 +723,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -743,7 +743,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -763,7 +763,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -786,7 +786,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -806,7 +806,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -826,7 +826,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -846,7 +846,7 @@ forestry_train = {
 			count = {
 				value = 0
 				scope:state = {
-					market = {
+					market ?= {
 						mg:wood = {
 							add = market_goods_sell_orders
 						}
@@ -890,7 +890,7 @@ military_mobilization_railroad = {
 	tags = {
 		artillery = {
 			trigger = {
-				market = {
+				market ?= {
 					mg:artillery = {
 						market_goods_sell_orders > 5
 					}
@@ -899,7 +899,7 @@ military_mobilization_railroad = {
 		}
 		more_artillery = {
 			trigger = {
-				market = {
+				market ?= {
 					mg:artillery = {
 						market_goods_sell_orders > 20
 					}
@@ -935,7 +935,7 @@ military_mobilization_railroad = {
 			entity_length = 1.4
 			
 			count = {
-				market = {
+				market ?= {
 					mg:small_arms = {
 						add = market_goods_sell_orders
 					}
@@ -953,7 +953,7 @@ military_mobilization_railroad = {
 			entity_length = 1.4
 			
 			count = {
-				market = {
+				market ?= {
 					mg:artillery = {
 						add = market_goods_sell_orders
 					}

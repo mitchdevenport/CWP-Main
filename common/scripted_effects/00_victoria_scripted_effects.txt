@@ -1765,6 +1765,7 @@ capitulate_to_revolution = {
 	every_interest_group ?= {
 		limit = {
 			is_in_government = yes
+			is_insurrectionary = no
 		}
 		remove_ruling_interest_group = yes
 		add_modifier = {
@@ -1796,13 +1797,20 @@ capitulate_to_revolution = {
 }
 
 handle_revolutionary_sps = {
-	set_only_legal_party_from_ig = ruler.interest_group
+	if = {
+		limit = {
+			exists = ruler.interest_group
+			any_active_party = {}
+		}
+		set_only_legal_party_from_ig = ruler.interest_group
+	}
 
 	custom_tooltip = {
 		text = sps_government_reshuffle_tt
 		every_interest_group ?= {
 			limit = {
 				is_in_government = yes
+				is_insurrectionary = no
 				NOT = { #Removes all IGs from government that aren't in your party
 					has_party = yes
 				}

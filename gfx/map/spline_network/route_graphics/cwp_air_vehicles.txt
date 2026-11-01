@@ -19,7 +19,7 @@
 # 				# 	has_technology_researched = pre_war_naval_tech
 # 				# }
 # 				scope:state = {
-# 					market = {
+# 					market ?= {
 # 						mg:cargo_ships = {
 # 							market_goods_sell_orders > 10							# Let's have a 'significant' amount of sales
 # 						}
@@ -29,7 +29,7 @@
 # 			count = {
 # 				value = 0
 # 				scope:state = {
-# 					market = {
+# 					market ?= {
 # 						mg:cargo_ships = {
 # 							add = market_goods_sell_orders							# Let's have a 'significant' amount of sales
 # 						}
