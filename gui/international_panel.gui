@@ -216,6 +216,10 @@ types international
 								onclick = "[GetScriptedGui('build_UN_nonmember_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 								onclick = "[GetScriptedGui('build_un_headquarters_holder_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 								onclick = "[GetVariableSystem.Toggle('un_panel')]"
+								onclick = "[GetVariableSystem.Set('international_community', 'yes')]" # open on the first tab
+								onclick = "[GetVariableSystem.Clear('un_floor')]"
+								onclick = "[GetVariableSystem.Clear('un_applications')]"
+								onclick = "[GetVariableSystem.Clear('un_resolutions')]"
 								onclick = "[GetVariableSystem.Clear('nato_panel')]"
 								onclick = "[GetVariableSystem.Clear('warsaw_pact_panel')]"
 								onclick = "[GetVariableSystem.Clear('imf_panel')]"
@@ -371,6 +375,9 @@ types international
 							}
 							blockoverride "onclick" {
 								onclick = "[GetVariableSystem.Toggle('nato_panel')]"
+								onclick = "[GetVariableSystem.Set('nato_members', 'yes')]" # open on the first tab
+								onclick = "[GetVariableSystem.Clear('nato_status')]"
+								onclick = "[GetVariableSystem.Clear('nato_applications')]"
 								onclick = "[GetVariableSystem.Clear('warsaw_pact_panel')]"
 								onclick = "[GetVariableSystem.Clear('un_panel')]"
 								onclick = "[GetVariableSystem.Clear('imf_panel')]"
@@ -486,6 +493,9 @@ types international
 							}
 							blockoverride "onclick" {
 								onclick = "[GetVariableSystem.Toggle('warsaw_pact_panel')]"
+								onclick = "[GetVariableSystem.Set('warsaw_pact_members', 'yes')]" # open on the first tab
+								onclick = "[GetVariableSystem.Clear('warsaw_pact_status')]"
+								onclick = "[GetVariableSystem.Clear('warsaw_pact_applications')]"
 								onclick = "[GetVariableSystem.Clear('nato_panel')]"
 								onclick = "[GetVariableSystem.Clear('un_panel')]"
 								onclick = "[GetVariableSystem.Clear('imf_panel')]"
@@ -611,6 +621,9 @@ types international
 							}
 							blockoverride "onclick" {
 								onclick = "[GetVariableSystem.Toggle('imf_panel')]"
+								onclick = "[GetVariableSystem.Set('overview_tab', 'yes')]" # open on the first tab
+								onclick = "[GetVariableSystem.Clear('status_tab')]"
+								onclick = "[GetVariableSystem.Clear('applications_tab')]"
 								onclick = "[GetVariableSystem.Clear('banks_panel')]"
 								onclick = "[GetVariableSystem.Clear('un_panel')]"
 								onclick = "[GetVariableSystem.Clear('nato_panel')]"
