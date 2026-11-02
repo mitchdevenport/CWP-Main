@@ -6,6 +6,7 @@
 					has_variable = unsc_member
 					has_variable = un_member
 				}
+				NOT = { has_journal_entry = je_decolonization_resolution }
 			}
 			add_journal_entry = {
 				type = je_decolonization_resolution
@@ -27,6 +28,7 @@ activate_declaration_of_human_rights_je = {
 					has_variable = unsc_member
 					has_variable = un_member
 				}
+				NOT = { has_journal_entry = je_declaration_of_human_rights }
 			}
 			add_journal_entry = {
 				type = je_declaration_of_human_rights
@@ -48,6 +50,7 @@ activate_unclos1_je = {
 					has_variable = unsc_member
 					has_variable = un_member
 				}
+				NOT = { has_journal_entry = je_unclos1 }
 			}
 			add_journal_entry = {
 				type = je_unclos1
@@ -69,6 +72,7 @@ activate_korean_resolution_je = {
 					has_variable = unsc_member
 					has_variable = un_member
 				}
+				NOT = { has_journal_entry = je_korean_resolution }
 			}
 			add_journal_entry = {
 				type = je_korean_resolution
