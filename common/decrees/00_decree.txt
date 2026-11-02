@@ -76,12 +76,12 @@ decree_road_maintenance = {
 decree_violent_suppression = {
 	texture = "gfx/interface/icons/decree/decree_violent_suppression.dds"
 
-	state_trigger = {
-		owner = {
-			NOT = {
-				has_law_or_variant = law_type:law_protected_speech
-			}
+	country_trigger = {
+		NOT = {
+			has_law_or_variant = law_type:law_protected_speech
 		}
+	}
+	state_trigger = {
 		turmoil >= 0.25
 	}
 	modifier = {
