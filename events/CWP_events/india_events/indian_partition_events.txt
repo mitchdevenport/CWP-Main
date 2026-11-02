@@ -1144,6 +1144,7 @@ indian_partition.50 = {
 			make_independent = yes
 		}
 		set_variable = indian_partition_50
+		set_variable = cwp_parliamentary_monarchy # Dominion of India: a prime minister governs (gov_parliamentary_monarchy)
 		# India no longer Protestantism
 		set_state_religion = rel:hindu
 		# Accepting the Cultures of India
@@ -1229,6 +1230,7 @@ indian_partition.80 = {
 	}
 	immediate = {
 		set_variable = indian_partition_80
+		set_variable = cwp_parliamentary_monarchy # Dominion of Pakistan: a prime minister governs (gov_parliamentary_monarchy)
 		if = {
 			limit = {
 				exists = c:HND
