@@ -287,9 +287,18 @@ initialize_electoral_confidence = {
 	}
 	if = {
 		limit = {
-			game_date > 1946.1.1
 			country_has_voting_franchise = yes
 			eagle_burger_freedom_index < 0.8
+			OR = {
+				game_date > 1946.1.1
+				# Most electorates of 1946 were newly founded or restored after the war, so the countries that
+				# start with elections get the same grace as elections introduced during the game
+				has_law = law_type:law_landed_voting
+				has_law = law_type:law_wealth_voting
+				has_law = law_type:law_census_voting
+				has_law = law_type:law_universal_suffrage
+				has_law = law_type:law_single_party_state
+			}
 		}
 		if = {
 			limit = { has_modifier = modifier_recent_election_initialisation }
