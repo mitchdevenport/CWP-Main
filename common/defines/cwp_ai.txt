@@ -18,3 +18,54 @@
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_BASE = 0 # Base max number of goods AI wants to tax
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_PER_MISSING_TAX_TYPE = 2 # Added to max number of goods AI wants to tax for each other type of tax it does not collect
 }
+
+# Restored from the CWP 1.5 release (defines that still exist in 1.14 and are not set above)
+NAI = {
+	DIPLO_PROPOSAL_BREAK_THRESHOLD = -100				# At this or less acceptance, AI breaks off an existing pact
+	MONEY_SPENDING_INNOVATION_DESIRED_THRESHOLD = 1.00 # If innovation production compared to cap is worse than this, AI considers it important to improve
+	MONEY_SPENDING_BUREAUCRACY_CRITICAL_THRESHOLD = 0.75 # If bureaucracy income to expenses is worse than this, AI considers it critical to improve it
+	MONEY_SPENDING_BUREAUCRACY_DESIRED_THRESHOLD = 1.00 # If bureaucracy income to expenses is worse than this, AI wants to improve it
+	MONEY_SPENDING_BUREAUCRACY_EXCESSIVE_THRESHOLD = 1.25 # If bureaucracy income to expenses is better than this, AI will not improve it
+	MONEY_SPENDING_INFRASTRUCTURE_CRITICAL_THRESHOLD = 0.90 # If infra production to usage is worse than this, AI considers it critical to improve it
+	MONEY_SPENDING_INFRASTRUCTURE_DESIRED_THRESHOLD = 1.00 # If infra production to usage is worse than this, AI wants to improve it
+	PROMOTION_BASE_VALUE = 0
+	SUPPRESSION_BASE_VALUE = 0
+	PRODUCTION_BUILDING_OUTPUT_WANTED_INDUSTRIAL_GOODS_FACTOR = 0.5 # Add this value to a building for each unit of money worth of industrial goods that aren't overproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_OUTPUT_WANTED_MILITARY_GOODS_FACTOR = 0.5 # Add this value to a building for each unit of money worth of military goods that aren't overproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_OUTPUT_NEEDED_INDUSTRIAL_GOODS_FACTOR = 0.75 # Add this value to a building for each unit of money worth of industrial goods that are underproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_OUTPUT_NEEDED_MILITARY_GOODS_FACTOR = 0.75 # Add this value to a building for each unit of money worth of military goods that are underproduced in the country and are used by buildings
+	PRODUCTION_BUILDING_MISSING_QUALIFICATIONS_MULT = 0.05 # Multiply score by this if there's not enough qualifications to staff the building (disabled for now)
+	PRODUCTION_BUILDING_DESIRED_INFRASTRUCTURE_SURPLUS = 10 # If infrastructure 'surplus' in state is less than this, AI wants to improve it
+	PRODUCTION_BUILDING_EXCESSIVE_INFRASTRUCTURE_SURPLUS = 10.01
+	PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD = 80
+	PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 120
+	CHANGE_LAW_POTENTIAL_CIVIL_WAR_ENACT_CHANCE = 1 # Chance that the AI will proceed with a law change that could cause a civil war (1 = 1%)
+	PRODUCTION_METHOD_EMPLOYMENT_CHANGE_FACTOR = 0 # Per extra employee the employment method would require (reduced employment = higher score)
+	PRODUCTION_METHOD_FAVORED_MILITARY_GOODS_FACTOR = 1.0 # Per base cost * units of goods produced that the AI favors (for military goods). CWP: twice vanilla, as in the 1.5 release
+	PRODUCTION_METHOD_CHANCE_TO_CHANGE = 0.5 # Chance that the AI will consider changing a production method when evaluating methods
+	AI_CAPITULATE_BASE_VALUE = -25
+	AI_CAPITULATE_WAR_LEADER_FACTOR = -50 # If warleader
+	AI_CAPITULATE_SELF_WARGOAL_FACTOR = -10 # For each wargoal we hold in the war
+	AI_CAPITULATE_PEACE_DESIRE_FACTOR = 0.5 # Peace desire is multiplied by this when added to capitulation score
+	AI_PEACE_DESIRE_FROM_FORCE_BALANCE = 50 # Up to this amount is added or subtracted from war support based on DIPLO_PLAY_FORCE_BALANCE_SCALE of the two sides
+	DEFEND_STATE_BARRACKS_WEIGHT = 10 # Per level of barracks
+	DEFEND_STATE_BARRACKS_MAX_WEIGHT = 250 # Per state
+	DEFEND_STATE_CAPITAL_WEIGHT = 250
+	DEFEND_STATE_CAPITAL_WAR_NEGOTIATOR_WEIGHT = 2500
+	DEFEND_STATE_WARGOAL_WEIGHT = 1000
+	DEFEND_STATE_INCORPORATED_WEIGHT_MULT = 2.5
+	INVADE_STATE_BARRACKS_WEIGHT = 10 # Per level of barracks
+	INVADE_STATE_BARRACKS_MAX_WEIGHT = 250 # Per state
+	INVADE_STATE_CAPITAL_WEIGHT = 250
+	INVADE_STATE_CAPITAL_WAR_NEGOTIATOR_WEIGHT = 2500
+	INVADE_STATE_WARGOAL_WEIGHT = 1000
+	NAVAL_INVASION_MIN_RELATIVE_LOCAL_ARMY_STRENGTH = 0.2 			# AI wants at least this fraction of defending army strength to risk a naval invasion
+	NAVAL_INVASION_MIN_RELATIVE_LOCAL_NAVY_STRENGTH = 0.4 			# AI wants at least this fraction of defending naval strength to risk a naval invasion
+	NAVAL_INVASION_MIN_RELATIVE_GLOBAL_NAVY_STRENGTH_ATTACKER = 0.05 # AI wants at least this fraction of naval strength in the overall war to risk a naval invasion as the attacking war side
+	NAVAL_INVASION_MIN_RELATIVE_GLOBAL_NAVY_STRENGTH_DEFENDER = 0.1 # AI wants at least this fraction of naval strength in the overall war to risk a naval invasion as the defending war side
+	NAVAL_INVASION_COOLDOWN_DAYS = 30 								# After launching a naval invasion, the AI will wait at least this long before launching another
+	NAVAL_INVASION_MIN_SCORE = 10									# AI won't bother launching naval invasions against theaters with a lower total state score than this
+	NAVAL_INVASION_CANCEL_SCORE_THRESHOLD = 5							# Cancel invasion if its score is less than this (must be below NAVAL_INVASION_MIN_SCORE; vanilla ratio 50/100)
+	UNITS_PERCENTAGE_TO_BE_CONSIDERED_IN_DISADVANTAGE = 0.9
+	DIPLO_PLAY_SWAY_UNWANTED_OFFER = -1000 # For being offered unwanted wargoal or obligation
+}

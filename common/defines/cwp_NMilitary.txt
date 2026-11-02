@@ -1,3 +1,9 @@
 ﻿NMilitary = {
 	SHIP_CONSTRUCTION_COST_MODIFICATION_LEVEL_FACTOR = 1		# The construction cost of a ship is multiplied by this^(total modification levels)
 }
+
+# Restored from the CWP 1.5 release (defines that still exist in 1.14 and are not set above)
+NMilitary = {
+	MANPOWER_LOST_DUE_TO_ATTRITION_PER_WEEK_MIN = 0.01 	# The minimum percentage of manpower a unit can lose each week due to attrition
+	MANPOWER_LOST_DUE_TO_ATTRITION_PER_WEEK_MAX = 0.05 	# The maximum percentage of manpower a unit can lose each week due to attrition
+}
