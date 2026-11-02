@@ -67,7 +67,6 @@ ig_is_liberal = {
 ig_is_reactionary = {
 	OR = {
 		has_ideology = ideology:ideology_reactionary
-		has_ideology = ideology:ideology_pro_slavery
 		leader = {
 			OR = {
 				has_ideology = ideology:ideology_fascist

@@ -261,7 +261,7 @@ has_monarchist_ideology = {
 }
 
 can_have_radical_leader = { # interest_group scope
-	leader = { NOT = { as_ideology = ideology:ideology_radical } }
+	leader = { NOT = { has_ideology = ideology:ideology_radical } }
 	OR = {
 		is_interest_group_type = ig_rural_folk
 		is_interest_group_type = ig_intelligentsia

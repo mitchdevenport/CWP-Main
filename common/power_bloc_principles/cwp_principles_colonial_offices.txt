@@ -48,11 +48,12 @@ principle_colonial_offices_2 = {
 		# country_can_impose_same_lawgroup_colonization_in_power_bloc_bool = yes
 	}
 
-	institution = institution_colonial_affairs
-	institution_modifier = {
-		# Members get higher colony growth for each level of institution
-		state_colony_growth_creation_factor = 0.05
-	}
+	# CWP has no colonial affairs institution, so the per-institution-level bonus cannot apply:
+	# institution = institution_colonial_affairs
+	# institution_modifier = {
+	# Members get higher colony growth for each level of institution
+	# state_colony_growth_creation_factor = 0.05
+	# }
 
 	ai_weight = {
 		value = 1000 # AI prefers upgrading groups it has already picked to unlocking new ones
@@ -73,12 +74,13 @@ principle_colonial_offices_3 = {
 		# country_can_impose_same_lawgroup_colonization_in_power_bloc_bool = yes
 	}
 
-	institution = institution_colonial_affairs
-	institution_modifier = {
-		# Modifiers from previous level(s)
-		state_colony_growth_creation_factor = 0.05
-		country_infamy_generation_against_unrecognized_mult = -0.05
-	}
+	# CWP has no colonial affairs institution, so the per-institution-level bonus cannot apply:
+	# institution = institution_colonial_affairs
+	# institution_modifier = {
+	# Modifiers from previous level(s)
+	# state_colony_growth_creation_factor = 0.05
+	# country_infamy_generation_against_unrecognized_mult = -0.05
+	# }
 
 	ai_weight = {
 		value = 1000 # AI prefers upgrading groups it has already picked to unlocking new ones

@@ -397,6 +397,15 @@ building_group_bg_fossil_fuels_laborers_mortality_mult={
 	}
 }
 
+building_group_bg_fossil_fuels_machinists_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 building_group_bg_fossil_fuels_mortality_mult={
 	decimals=0
 	color=bad

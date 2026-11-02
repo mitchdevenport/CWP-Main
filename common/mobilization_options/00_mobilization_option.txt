@@ -244,7 +244,7 @@ mobilization_option_manpad_deployment = {
 	}
 
 	upkeep_modifier = {
-		goods_input_liquor_add = 0.5
+		goods_input_missiles_add = 0.5
 	}
 	unit_modifier = {
 		unit_offense_add = 5

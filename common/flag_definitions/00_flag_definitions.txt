@@ -954,7 +954,7 @@ BUN = { # Bundelkhand
 		priority = 1
 	}
 	flag_definition = {
-		coa = BUN_subject
+		coa = BUN
 		subject_canton = BUN
 		allow_overlord_canton = yes
 		priority = 25
@@ -3002,7 +3002,6 @@ LOU = { # Louisiana
 		coa = LOU
 		subject_canton = LOU
 		allow_overlord_canton = yes
-		coa_with_overlord_canton = LOU_subject
 		priority = 1
 	}
 	flag_definition = {

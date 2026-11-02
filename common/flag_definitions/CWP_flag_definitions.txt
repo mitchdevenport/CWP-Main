@@ -944,7 +944,7 @@ AST = { # Australia
 				limit = {
 					exists = c:GBR
 				}
-				scope:actor ?= { c:GBR ?= { relations:root >= 30 } } # you can also use top_overlord.relations:root
+				scope:actor ?= { c:GBR ?= { relations:prev >= 30 } } # prev is the flag's country; root is only its country definition here
 			}
 			NOT = { cwp_coat_of_arms_independent_trigger = yes }
 		}
@@ -1022,7 +1022,7 @@ NZL = { # New Zealand
 		}
 	}
 	flag_definition = {
-		coa = NZL_subject
+		coa = NZL_subject_gbr
 		allow_overlord_canton = yes
 		priority = 60
 		trigger = { 
@@ -1030,7 +1030,7 @@ NZL = { # New Zealand
 				limit = {
 					exists = c:GBR
 				}
-				scope:actor ?= { c:GBR ?= { relations:root >= 30 } } # you can also use top_overlord.relations:root
+				scope:actor ?= { c:GBR ?= { relations:prev >= 30 } } # prev is the flag's country; root is only its country definition here
 			}
 			NOT = { cwp_coat_of_arms_independent_trigger = yes }
 		}
@@ -1116,7 +1116,7 @@ CAN = { # Canada
 				limit = {
 					exists = c:GBR
 				}
-				scope:actor ?= { c:GBR ?= { relations:root >= 30 } } # you can also use top_overlord.relations:root
+				scope:actor ?= { c:GBR ?= { relations:prev >= 30 } } # prev is the flag's country; root is only its country definition here
 			}
 			NOT = { cwp_coat_of_arms_independent_trigger = yes }
 		}
@@ -1716,8 +1716,8 @@ CYP = { # Cyprus
 		}
 	}
 	flag_definition = {
-		coa = CYP_k
-		subject_canton = CYP_k
+		coa = CYP
+		subject_canton = CYP
 		priority = 15
 		trigger = {
 			cwp_coat_of_arms_dictatorship_government_trigger = yes
@@ -1991,8 +1991,8 @@ HAI = { # Haiti
 		}
 	}
 	flag_definition = {
-		coa = HAI_absolute_monarchy
-		subject_canton = HAI_absolute_monarchy
+		coa = HAI_empire
+		subject_canton = HAI_empire
 		allow_overlord_canton = yes
 		coa_with_overlord_canton = HAI_subject
 		priority = 20

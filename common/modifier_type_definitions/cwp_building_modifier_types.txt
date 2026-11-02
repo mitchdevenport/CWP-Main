@@ -91,7 +91,7 @@ building_automobile_manufactories_throughput_add={
 # Building - Banana Plantation
 building_banana_plantation_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -141,7 +141,7 @@ building_barrack_throughput_add={
 # Building - Bauxite Mine
 building_bauxite_mine_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -276,7 +276,7 @@ building_coal_mine_throughput_add={
 # Building - Coffee Plantation
 building_coffee_plantation_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -692,7 +692,7 @@ building_livestock_ranch_throughput_add={
 # Building - Logging Camp
 building_logging_camp_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -848,7 +848,7 @@ building_naval_administration_throughput_add={
 # Building - Nuclear Power Plant
 building_nuclear_power_plant_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -884,7 +884,7 @@ building_officers_standard_of_living_add={
 # Building - Oil Rig
 building_oil_rig_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -1128,7 +1128,7 @@ building_subsistence_farm_throughput_add={
 # Building - Sugar Plantation
 building_sugar_plantation_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -1188,7 +1188,7 @@ building_throughput_add={
 # Building - Tobacco Plantation
 building_tobacco_plantation_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -1198,7 +1198,7 @@ building_tobacco_plantation_throughput_add={
 # Building - Vineyard
 building_vineyard_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0
@@ -1275,7 +1275,7 @@ building_university_throughput_add={
 # Building - Uranium Mine
 building_uranium_mine_throughput_add={
     decimals=0
-    color=good1
+    color=good
     percent=yes
     game_data={
         ai_value=0

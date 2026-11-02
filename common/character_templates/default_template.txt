@@ -5,6 +5,7 @@ default = {
 	first_name = culture 		# Picks a random first and last name from the culture, combines those together to make one name
 	last_name = culture
 	historical = no
+	religion = random_accepted # Valid inputs: random_accepted/random/specific key (required by the 1.14 default template)
 	culture = primary_culture
 	female = no
 	home_region = random		# valid inputs: state region key, state scope, random

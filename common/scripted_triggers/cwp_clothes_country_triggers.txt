@@ -1959,128 +1959,128 @@ cwp_europe_country_clothes_character_trigger ={ # European Countries - Character
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_europe = yes } }
+		home_country = { country_is_in_europe = yes }
 	}
 }
 
 cwp_europe_country_clothes_pop_trigger ={ # European Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_europe = yes } } }
+	scope:pop = { home_country = { country_is_in_europe = yes } }
 }
 
 cwp_north_america_country_clothes_character_trigger ={ # North American Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_north_america = yes } }
+		home_country = { country_is_in_north_america = yes }
 	}
 }
 
 cwp_north_america_country_clothes_pop_trigger ={ # North American Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_north_america = yes } } }
+	scope:pop = { home_country = { country_is_in_north_america = yes } }
 }
 
 cwp_central_america_country_clothes_character_trigger ={ # Central American Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_central_america = yes } }
+		home_country = { country_is_in_central_america = yes }
 	}
 }
 
 cwp_central_america_country_clothes_pop_trigger ={ # Central American Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_central_america = yes } } }
+	scope:pop = { home_country = { country_is_in_central_america = yes } }
 }
 
 cwp_south_america_country_clothes_character_trigger ={ # South American Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_south_america = yes } }
+		home_country = { country_is_in_south_america = yes }
 	}
 }
 
 cwp_south_america_country_clothes_pop_trigger ={ # South American Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_south_america = yes } } }
+	scope:pop = { home_country = { country_is_in_south_america = yes } }
 }
 
 cwp_africa_country_clothes_character_trigger ={ # African Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_africa = yes } }
+		home_country = { country_is_in_africa = yes }
 	}
 }
 
 cwp_africa_country_clothes_pop_trigger ={ # African Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_africa = yes } } }
+	scope:pop = { home_country = { country_is_in_africa = yes } }
 }
 
 cwp_middle_east_country_clothes_character_trigger ={ # Middle Eastern Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_middle_east = yes } }
+		home_country = { country_is_in_middle_east = yes }
 	}
 }
 
 cwp_middle_east_country_clothes_pop_trigger ={ # Middle Eastern Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_middle_east = yes } } }
+	scope:pop = { home_country = { country_is_in_middle_east = yes } }
 }
 
 cwp_central_asia_country_clothes_character_trigger ={ # Central Asian Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_central_asia = yes } }
+		home_country = { country_is_in_central_asia = yes }
 	}
 }
 
 cwp_central_asia_country_clothes_pop_trigger ={ # Central Asian Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_central_asia = yes } } }
+	scope:pop = { home_country = { country_is_in_central_asia = yes } }
 }
 
 cwp_india_country_clothes_character_trigger ={ # India - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_india = yes } }
+		home_country = { country_is_in_india = yes }
 	}
 }
 
 cwp_india_country_clothes_pop_trigger ={ # India - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_india = yes } } }
+	scope:pop = { home_country = { country_is_in_india = yes } }
 }
 
 cwp_east_asia_country_clothes_character_trigger ={ # East Asian Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_east_asia = yes } }
+		home_country = { country_is_in_east_asia = yes }
 	}
 }
 
 cwp_east_asia_country_clothes_pop_trigger ={ # East Asian Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_east_asia = yes } } }
+	scope:pop = { home_country = { country_is_in_east_asia = yes } }
 }
 
 cwp_southeast_asia_country_clothes_character_trigger ={ # Southeast Asian Countries - Characters
 	exists = scope:character
 	scope:character = {
 		exists = home_country
-		home_country = { capital = { country_is_in_southeast_asia = yes } }
+		home_country = { country_is_in_southeast_asia = yes }
 	}
 }
 
 cwp_southeast_asia_country_clothes_pop_trigger ={ # Southeast Asian Countries - Pops
 	exists = scope:pop
-	scope:pop = { home_country = { capital = { country_is_in_southeast_asia = yes } } }
+	scope:pop = { home_country = { country_is_in_southeast_asia = yes } }
 }

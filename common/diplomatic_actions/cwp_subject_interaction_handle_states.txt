@@ -161,7 +161,7 @@
 					}
 				}
 				scope:first_state = {
-					has_port_country = no
+					has_port_state = no
 					NOT = { any_neighbouring_state = { owner = root } }
 					any_neighbouring_state = { owner = scope:target_country }
 				}

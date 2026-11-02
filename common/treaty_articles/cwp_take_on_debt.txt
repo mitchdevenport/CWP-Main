@@ -28,7 +28,7 @@
 		NOT = {
 			scope:treaty ?= {
 				any_scope_article_option = {
-					has_type = transfer_money
+					has_type = money_transfer
 					hidden_trigger = { source_country = scope:target_country }
 				}
 			}

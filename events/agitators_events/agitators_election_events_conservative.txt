@@ -770,7 +770,7 @@ agitators_election_events_conservative.5 = {
 		}
 		any_scope_culture = {
 			ROOT = {
-				cultural_acceptance_base = { target = prev.culture value < acceptance_status_5 }
+				cultural_acceptance_base = { target = prev value < acceptance_status_5 }
 			}
 			root = {
 				culture_percent_country = {
@@ -808,7 +808,7 @@ agitators_election_events_conservative.5 = {
 		random_scope_culture = {
 			limit = {
 				ROOT = {
-					cultural_acceptance_base = { target = prev.culture value < acceptance_status_5 }
+					cultural_acceptance_base = { target = prev value < acceptance_status_5 }
 					culture_percent_country = {
 					    target = prev
 					    value >= 0.05

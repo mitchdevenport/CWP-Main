@@ -179,7 +179,7 @@
 	}
 
 	on_withdrawal = {
-		scope:article_options.input_state = { state_region = { add_claim = scope:article_options.source_country } }
+		scope:article.input_state = { state_region = { add_claim = scope:article.source_country } }
 	}
 
 	on_break = {

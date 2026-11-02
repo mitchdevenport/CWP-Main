@@ -52,6 +52,11 @@ cwp_interstate_highway_events.1 = {
 	option = {
 		name = cwp_interstate_highway_events.1.c
 
+		add_modifier = {
+			name = cwp_interstate_highway_suburban_program
+			months = 120
+		}
+
 		ordered_primary_culture = {
 			order_by = "root.culture_percent_country(this)"
 			save_scope_as = cwp_highway_primary_culture

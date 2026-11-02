@@ -132,17 +132,17 @@ working_conditions = {
 	##Plantations and rubber
 	building_group_bg_plantations_laborers_mortality_mult = 0.05
 	building_group_bg_plantations_slaves_mortality_mult = 0.1
-	building_group_bg_rubber_laborers_mortality_mult = 0.05
-	building_group_bg_rubber_slaves_mortality_mult = 0.1
+	#building_group_bg_rubber_laborers_mortality_mult = 0.05 # no such building group in CWP
+	#building_group_bg_rubber_slaves_mortality_mult = 0.1
 
 	building_group_bg_logging_laborers_mortality_mult = 0.1
 	building_group_bg_logging_machinists_mortality_mult = 0.05
 	building_group_bg_logging_engineers_mortality_mult = 0.02
 	building_group_bg_logging_slaves_mortality_mult = 0.2
 
-	building_group_bg_oil_extraction_laborers_mortality_mult = 0.1
-	building_group_bg_oil_extraction_machinists_mortality_mult = 0.05
-	building_group_bg_oil_extraction_engineers_mortality_mult = 0.02
+	building_group_bg_fossil_fuels_laborers_mortality_mult = 0.1
+	building_group_bg_fossil_fuels_machinists_mortality_mult = 0.05
+	building_group_bg_fossil_fuels_engineers_mortality_mult = 0.02
 
 	building_group_bg_light_industry_laborers_mortality_mult = 0.05
 	building_group_bg_light_industry_machinists_mortality_mult = 0.02
@@ -151,16 +151,16 @@ working_conditions = {
 	building_group_bg_heavy_industry_machinists_mortality_mult = 0.05
 	building_group_bg_heavy_industry_engineers_mortality_mult = 0.02
 
-	building_group_bg_military_industry_laborers_mortality_mult = 0.1
-	building_group_bg_military_industry_machinists_mortality_mult = 0.05
-	building_group_bg_military_industry_engineers_mortality_mult = 0.02
+	#building_group_bg_military_industry_laborers_mortality_mult = 0.1 # no such building group in CWP; arms factories are covered by light/heavy industry
+	#building_group_bg_military_industry_machinists_mortality_mult = 0.05
+	#building_group_bg_military_industry_engineers_mortality_mult = 0.02
 
 	building_group_bg_infrastructure_laborers_mortality_mult = 0.1
 	building_group_bg_infrastructure_machinists_mortality_mult = 0.05
 	building_group_bg_infrastructure_engineers_mortality_mult = 0.02
 
-	building_group_bg_whaling_laborers_mortality_mult = 0.1
-	building_group_bg_whaling_machinists_mortality_mult = 0.05
+	#building_group_bg_whaling_laborers_mortality_mult = 0.1 # no such building group in CWP
+	#building_group_bg_whaling_machinists_mortality_mult = 0.05
 
 	building_group_bg_fishing_laborers_mortality_mult = 0.05
 	building_group_bg_fishing_machinists_mortality_mult = 0.02
@@ -260,7 +260,7 @@ unincorporated_state = {
 	building_group_bg_infrastructure_construction_efficiency_add = -0.2
 	building_group_bg_extraction_construction_efficiency_add = -0.2
 	building_group_bg_heavy_industry_construction_efficiency_add = -0.5
-	building_group_bg_military_industry_construction_efficiency_add = -0.5
+	#building_group_bg_military_industry_construction_efficiency_add = -0.5 # no such building group in CWP; arms factories are covered by light/heavy industry
 	building_group_bg_light_industry_construction_efficiency_add = -0.3
 	building_group_bg_government_construction_efficiency_add = -0.3
 }

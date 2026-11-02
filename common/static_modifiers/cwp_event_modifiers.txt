@@ -219,6 +219,11 @@ cwp_interstate_highway_suburban_corridors = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	state_infrastructure_from_automobiles_consumption_add = 0.25
 	state_migration_pull_mult = 0.05
+}
+
+# Country side of the suburban option (prestige does not flow up from state modifiers)
+cwp_interstate_highway_suburban_program = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	country_prestige_add = 15
 }
 

@@ -62,16 +62,9 @@
 
 		trigger_if = {
 			limit = { has_variable = anti_lobby_proposal_investment_agreement }
-			OR = {
-				any_scope_treaty = {
-					binds = scope:third_party_country
-					any_scope_article = { has_type = foreign_investment_agreement }
-				}
-
-				any_scope_treaty = {
-					binds = scope:third_party_country
-					any_scope_article = { has_type = foreign_investment_rights }
-				}
+			any_scope_treaty = {
+				binds = scope:third_party_country
+				any_scope_article = { has_type = foreign_investment_rights }
 			}
 		}
 

@@ -521,15 +521,15 @@ movement_religious_minority = {
 				}
 			}
 			if = {
-				limit = { owner = { cultural_acceptance_base = { target = culture value <= acceptance_status_1 } } }
+				limit = { owner = { cultural_acceptance_base = { target = root.culture value <= acceptance_status_1 } } }
 				multiply = 0.1
 			}
 			else_if = {
-				limit = { owner = { cultural_acceptance_base = { target = culture value <= acceptance_status_2 } } }
+				limit = { owner = { cultural_acceptance_base = { target = root.culture value <= acceptance_status_2 } } }
 				multiply = 0.25
 			}
 			else_if = {
-				limit = { owner = { cultural_acceptance_base = { target = culture value <= acceptance_status_3 } } }
+				limit = { owner = { cultural_acceptance_base = { target = root.culture value <= acceptance_status_3 } } }
 				multiply = 0.5
 			}
 		}

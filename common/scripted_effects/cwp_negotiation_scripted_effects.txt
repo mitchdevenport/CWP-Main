@@ -367,11 +367,17 @@ set_promised_building_type = { #uses ig scope. Runs in immediate of event to pow
 						bt:building_nuclear_power_plant = { building_can_be_promised = yes }
 					}
 				}
-				set_variable = {
-					name = promised_building_type
-					value = {
+				if = {
+					limit = { bt:building_combustion_plant = { building_can_be_promised = yes } }
+					set_variable = {
+						name = promised_building_type
 						value = bt:building_combustion_plant
-						add =bt:building_nuclear_power_plant
+					}
+				}
+				else = {
+					set_variable = {
+						name = promised_building_type
+						value = bt:building_nuclear_power_plant
 					}
 				}
 			}
