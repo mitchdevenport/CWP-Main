@@ -226,30 +226,14 @@ exile_character_with_role_cleanup = { # scope:character - should be used instead
 }
 
 clean_up_exile_character_roles = { # scope: character
+	# As vanilla 1.14: removing the roles one by one can retire the character, who then cannot be exiled
 	if = {
 		limit = {
-			NOT = { has_role_of_type = agitator }
+			exists = this.commander_military_formation
 		}
-		add_character_role = agitator
+		unassign_from_formation = yes
 	}
-	if = {
-		limit = {
-			has_role_of_type = politician
-		}
-		remove_character_role = politician
-	}
-	if = {
-		limit = {
-			has_role_of_type = general
-		}
-		remove_character_role = general
-	}
-	if = {
-		limit = {
-			has_role_of_type = admiral
-		}
-		remove_character_role = admiral
-	}
+	replace_character_roles = { add = { agitator } remove_all = yes }
 }
 
 run_colonial_governor_cycle = { # Run in character scope
