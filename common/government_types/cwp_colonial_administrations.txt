@@ -1,0 +1,94 @@
+﻿# Colonial administrations and military governments, restored from the original mod (CWP 1.5
+# common/government_types/02_presidential_republics.txt), where they keyed on 1.5's administrative head of government law.
+# Its current equivalent is law_colonial_administration, a variant of law_monarchy: these types must load before the
+# monarchies in cwp_monarchy.txt, because a country takes the first government type whose possible trigger passes.
+# Governors are appointed, so transfer of power is dictatorial as in the base game's colonial administrations
+# (the colonial governor cycle in common/on_actions/00_code_on_actions.txt replaces them).
+
+# Occupied territories and administrations in Europe
+gov_military_governorate = {
+	transfer_of_power = dictatorial
+	new_leader_on_reform_government = no
+
+	male_ruler = "RULER_MILITARY_GOVERNOR"
+	female_ruler = "RULER_MILITARY_GOVERNOR"
+
+	possible = {
+		is_subject = yes
+		OR = {
+			AND = {
+				has_law = law_type:law_colonial_administration
+				OR = {
+					is_subject_type = subject_type_military_occupation
+					country_is_in_europe = yes
+				}
+			}
+			# The 1946 occupation zones are military autocracies (effect_starting_laws_1946_postwar_military_occupation)
+			AND = {
+				is_subject_type = subject_type_military_occupation
+				has_law_or_variant = law_type:law_presidential_republic
+				has_law_or_variant = law_type:law_autocracy
+			}
+		}
+	}
+
+	on_government_type_change = { change_to_dictatorial = yes }
+	on_post_government_type_change = { post_change_to_dictatorial = yes }
+}
+
+# Colonies of the British Crown
+gov_crown_colony = {
+	transfer_of_power = dictatorial
+	new_leader_on_reform_government = no
+
+	male_ruler = "RULER_TITLE_GOVERNOR"
+	female_ruler = "RULER_TITLE_GOVERNOR"
+
+	possible = {
+		has_law = law_type:law_colonial_administration
+		is_subject_type = subject_type_puppet
+		overlord ?= {
+			c:GBR ?= this
+			has_law_or_variant = law_type:law_monarchy
+		}
+		country_is_in_europe = no
+	}
+
+	on_government_type_change = { change_to_dictatorial = yes }
+	on_post_government_type_change = { post_change_to_dictatorial = yes }
+}
+
+gov_colonial_administration = {
+	transfer_of_power = dictatorial
+	new_leader_on_reform_government = no
+
+	male_ruler = "RULER_TITLE_GOVERNOR_GENERAL"
+	female_ruler = "RULER_TITLE_GOVERNOR_GENERAL"
+
+	possible = {
+		has_law = law_type:law_colonial_administration
+		# Original TODO: Morocco and Tunisia technically had a resident-general and not a governor-general, someone can change it if they want to
+		# Original TODO: French somaliland had a governor, not a governor-general
+		# Original TODO: Belgian Rwanda had a governor and not a governor-general
+		is_subject = yes
+		country_is_in_europe = no
+	}
+
+	on_government_type_change = { change_to_dictatorial = yes }
+	on_post_government_type_change = { post_change_to_dictatorial = yes }
+}
+
+# A colonial administration without an overlord, until it adopts a constitution (see events/independence.txt)
+gov_provisional_government = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
+
+	possible = {
+		has_law = law_type:law_colonial_administration
+	}
+
+	on_government_type_change = { change_to_dictatorial = yes }
+	on_post_government_type_change = { post_change_to_dictatorial = yes }
+}

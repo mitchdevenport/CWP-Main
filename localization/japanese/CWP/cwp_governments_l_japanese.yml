@@ -1,6 +1,9 @@
 ﻿l_japanese:
  gov_parliamentary_monarchy: "立憲君主制"
  gov_parliamentary_monarchy_desc: "女王または国王陛下が統治する、壮大かつ輝かしき[concept_government_type]。\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ gov_military_governorate: "軍政"
+ gov_military_governorate_desc: "軍部が[concept_country]を治める[concept_government_type]です。\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ RULER_MILITARY_GOVERNOR: "軍政長官"
  from_three_prior_members: "政党が利益集団3個で構成されることから"
  from_more_than_three_prior_members: "政党が利益集団4個以上で構成されることから"
 
@@ -39,6 +42,8 @@
  gov_party_led_monarchy_desc: "The monarch's power is limited by a constitution and an elected body, with significant influence from the ruling political party."
  gov_party_led_monarchy_provincial: "$gov_party_led_monarchy$"
  gov_party_led_monarchy_provincial_desc: "$gov_party_led_monarchy_desc$"
+ gov_provisional_government: "Provisional Government"
+ gov_provisional_government_desc: "This is a [concept_government_type] where a provisional administration governs the [concept_country] until it adopts a new constitution.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_presidential_autocracy: "Presidential Autocracy"
  gov_presidential_autocracy_desc: "The president holds absolute power over the government and its people, with no legal limitations on their authority."
  gov_presidential_autocracy_provincial: "$gov_presidential_autocracy$"

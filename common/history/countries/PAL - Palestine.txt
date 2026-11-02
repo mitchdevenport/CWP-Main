@@ -6,5 +6,7 @@
 		effect_starting_military_technologies_tier_4 = yes
 		# Laws
 		effect_starting_laws_1946_middle_eastern_constitutional_monarchy = yes
+		# Governed by the British High Commissioner: a colonial administration, as in CWP 1.5 (its administrative head of government)
+		activate_law = law_type:law_colonial_administration
 	}
 }

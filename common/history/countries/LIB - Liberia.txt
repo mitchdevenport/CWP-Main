@@ -6,6 +6,8 @@
 		effect_starting_military_technologies_tier_4 = yes
 		# Laws
 		effect_starting_laws_1946_colonial_administration = yes
+		# Liberia was independent: a presidential republic under William Tubman, as in CWP 1.5 (its executive head of government)
+		activate_law = law_type:law_presidential_republic
 		activate_law = law_type:law_traditionalism
 	}
 }

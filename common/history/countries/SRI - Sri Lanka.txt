@@ -6,5 +6,7 @@
 		effect_starting_military_technologies_tier_5 = yes
 		# Laws
 		effect_starting_laws_1946_south_asian_dominion = yes
+		# Governed by the Governor of Ceylon: a colonial administration, as in CWP 1.5 (its administrative head of government)
+		activate_law = law_type:law_colonial_administration
 	}
 }

@@ -6,5 +6,7 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_south_asian_dominion = yes
+		# The Republic of Indonesia: a parliamentary republic, as in CWP 1.5 (its parliamentary head of government)
+		activate_law = law_type:law_parliamentary_republic
 	}
 }
