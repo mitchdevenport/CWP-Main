@@ -651,3 +651,13 @@
  dyn_c_zambezi_free_state: "ザンベジ自由国"
  dyn_c_zambian_republic_adj: "ザンビア"
  dyn_c_zambian_republic: "ザンビア"
+ DOM: "サントドミンゴ"
+ DOM_ADJ: "サントドミンゴ"
+ PRA: "グラン・パラ"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ CMB: "Colombia"
+ CMB_ADJ: "Colombian"
+ PRA_ADJ: "Paraense"
+ ROK: "Korea"
+ ROK_ADJ: "Korean"

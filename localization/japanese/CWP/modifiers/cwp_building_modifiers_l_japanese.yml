@@ -37,3 +37,7 @@
  building_skyscraper_throughput_add_desc: "$building_skyscraper$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
  building_explosives_industry_throughput_add: "$building_explosives_industry$施設[concept_throughput]"
  building_explosives_industry_throughput_add_desc: "$building_explosives_industry$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_banks_throughput_add: "$building_banks$施設[concept_throughput]"
+ building_banks_throughput_add_desc: "$building_banks$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_bauxite_mine_throughput_add: "$building_bauxite_mine$施設[concept_throughput]"
+ building_bauxite_mine_throughput_add_desc: "$building_bauxite_mine$の施設需要と生産の両方に対するボーナスあるいはペナルティです"

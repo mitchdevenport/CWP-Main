@@ -1,0 +1,2 @@
+﻿l_japanese:
+ je_maintain_pegged_currency_goal: "[SCOPE.GetRootScope.GetCountry.GetNameNoFlag]は[concept_pegged_currency]を維持できません"

@@ -48,3 +48,6 @@
  movement_cwp_market_reform_short: "Market Reform"
  movement_cwp_market_reform_name: "Market Reform Movement"
  movement_cwp_market_reform_desc: "$ideology_cwp_market_reform_movement_desc$"
+ ideology_modernizer_movement: "$ideology_modernizer$"
+ ideology_modernizer_movement_desc: "This movement is strongly invested in modernizing and centralizing the nation along rational lines."
+ south_asian_heritage: "South Asian Heritage"

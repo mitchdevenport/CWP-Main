@@ -28,3 +28,15 @@
  region_english_channel: "イギリス海峡"
  region_southern_africa: "南アフリカ"
  region_great_lakes: "五大湖"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ geographic_region_asia_minor: "Asia Minor"
+ geographic_region_atlantic_seaboard: "Atlantic Seaboard"
+ geographic_region_central_africa: "Central Africa"
+ geographic_region_golden_circle: "Golden Circle"
+ geographic_region_horn_of_africa: "Horn of Africa"
+ geographic_region_pacific_seaboard: "Pacific Seaboard"
+ strait_english_channel: "Strait of Dover"
+ strait_san_bernardino: "San Bernardino Strait"
+ strait_sunda_1: "Sunda Strait"
+ strait_sunda_2: "Sunda Strait"

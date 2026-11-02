@@ -10,6 +10,8 @@
  pmg_base_building_vatican_city: "基礎"
  pmg_base_building_white_house: "基礎"
  pm_power_bloc_prestige_only: "国威のみ"
+ pmg_base_building_national_mall: "ナショナル・モール"
+ pmg_base_monte_carlo_casinos: "モンテカルロ・カジノ"
 
  # Untranslated: English text kept until a Japanese translation is available
  pmg_base_building_eiffel_tower: "Base"
@@ -37,3 +39,6 @@
  pm_power_bloc_statue_ideological_union: "Ideological Union"
  pm_power_bloc_statue_trade_league: "Trade League"
  pm_power_bloc_statue_religious: "Religious"
+ pm_clerical_building_saint_basils_cathedral: "Clerical"
+ pm_cultural_building_saint_basils_cathedral: "Cultural"
+ pmg_base_building_kremlin: "Kremlin"

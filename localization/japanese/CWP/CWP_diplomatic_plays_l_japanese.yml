@@ -71,3 +71,9 @@
  dp_leadership_eurasia: "ユーラシアの統一主導"
  dp_leadership_eurasia_desc: "$dp_leadership_eurasia$[concept_diplomatic_play]を開始\n$TOOLTIP_DELIMITER$\n$dp_leadership_eurasia_tooltip_desc$"
  dp_leadership_eurasia_tooltip_desc: "最初の[concept_war_goal]を、対象の[concept_country]をユーラシアの[Concept('concept_unification', '$concept_major_unification$')]の[concept_unification_candidate]から除外するように設定します。"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ dp_korean_unification_desc: "Sets the initiating [concept_war_goal] to reunite the Korean peninsula under a single government."
+ dp_korean_unification_tooltip: "#header Start a $dp_korean_unification$ [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$dp_korean_unification_desc$"
+ dp_reassert_dominion_desc: "Sets the initiating [concept_war_goal] to bring the targeted [concept_country] back under our rule as a [concept_dominion]."
+ dp_reassert_dominion_tooltip: "#header Start a $dp_reassert_dominion$ [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$dp_reassert_dominion_desc$"

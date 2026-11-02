@@ -2818,6 +2818,8 @@
  HUB_NAME_STATE_SAINT_HELENA_farm: "ヘレナ"
  HUB_NAME_STATE_SAINT_HELENA_mine: "ヘレナ"
  HUB_NAME_STATE_SAINT_HELENA_wood: "ヘレナ"
+ HUB_NAME_STATE_RYUKYU_ISLANDS_mine: "石垣"
+ HUB_NAME_STATE_RYUKYU_ISLANDS_wood: "亀津"
 
  # Untranslated: English text kept until a Japanese translation is available
  HUB_NAME_STATE_SAXONY_wood: "Chemnitz"

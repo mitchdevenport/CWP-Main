@@ -204,3 +204,11 @@
  region_pacific_seaboard_02: "太平洋沿岸"
  region_centroamerican_sea: "中央アメリカ海"
  region_baltic_sea: "バルト海"
+ region_lake_nicaragua: "ニカラグア湖"
+ region_north_philippines_sea: "北フィリピン海"
+ region_south_philippines_sea: "南フィリピン海"
+ region_patagonian_lakes: "パタゴニア湖"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ region_gulf_of_aden: "Gulf of Aden"
+ region_north_atlantic_06: "North Atlantic Ocean"
