@@ -1,0 +1,5 @@
+﻿l_japanese:
+ building_sulfur_mine_throughput_add: "$building_sulfur_mine$施設[concept_throughput]"
+ building_sulfur_mine_throughput_add_desc: "$building_sulfur_mine$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_vineyard_throughput_add: "$building_vineyard$施設[concept_throughput]"
+ building_vineyard_throughput_add_desc: "$building_vineyard$の施設需要と生産の両方に対するボーナスあるいはペナルティです"

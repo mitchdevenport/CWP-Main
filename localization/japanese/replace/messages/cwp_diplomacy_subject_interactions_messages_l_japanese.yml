@@ -1,0 +1,7 @@
+﻿l_japanese:
+ notification_appointed_new_governor_notification_name: "[SCOPE.sCountry('source_country').GetName]が新しい[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]を任命"
+ notification_appointed_new_governor_notification_desc: "行政上の懸念を理由として、[SCOPE.sCountry('source_country').GetCapital.GetCityHubName]は我々の[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]を新しい候補者と交代させました。"
+ notification_appointed_new_governor_notification_tooltip: "#header $notification_appointed_new_governor_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_appointed_new_governor_notification_desc$"
+ notification_requested_new_governor_notification_name: "[SCOPE.sCountry('source_country').GetName]が新しい[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]を要請"
+ notification_requested_new_governor_notification_desc: "[SCOPE.sCountry('source_country').GetCapital.GetCityHubName]の行政府が新たな[concept_ruler]の任命を要請し、彼らの[concept_liberty_desire]が減退しました。"
+ notification_requested_new_governor_notification_tooltip: "#header $notification_requested_new_governor_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_requested_new_governor_notification_desc$"

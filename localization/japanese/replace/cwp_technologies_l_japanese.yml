@@ -1,0 +1,23 @@
+﻿l_japanese:
+ combustion_engine: "内燃機関"
+ chemical_synthesis: "化学合成"
+ automobiles: "自動車"
+ gantry_cranes: "ガントリークレーン"
+ radio: "無線"
+ telephone: "電話"
+ academia: "学術機関"
+ macroeconomics: "マクロ経済学"
+ antibiotics: "抗生物質"
+ military_aviation: "軍用航空"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ combustion_engine_desc: "TBD"
+ chemical_synthesis_desc: "TBD"
+ automobiles_desc: "TBD"
+ gantry_cranes_desc: "TBD"
+ radio_desc: "TBD"
+ telephone_desc: "TBD"
+ academia_desc: "TBD"
+ macroeconomics_desc: "TBD"
+ antibiotics_desc: "TBD"
+ military_aviation_desc: "TBD"

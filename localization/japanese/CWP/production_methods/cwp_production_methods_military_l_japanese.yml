@@ -1,0 +1,17 @@
+﻿l_japanese:
+ # Untranslated: English text kept until a Japanese translation is available
+ pm_non_formal_training_barracks: "Non-Formal Training"
+ pm_codified_instruction_barracks: "Codified Instruction"
+ pm_basic_training_barracks: "Basic Training"
+ pm_nco_instruction_barracks: "NCO Instruction"
+ pm_combat_schooling_barracks: "Combat Schooling"
+ pm_non_formal_training_conscription: "Non-Formal Training"
+ pm_codified_instruction_conscription: "Codified Instruction"
+ pm_basic_training_conscription: "Basic Training"
+ pm_nco_instruction_conscription: "NCO Instruction"
+ pm_combat_schooling_conscription: "Combat Schooling"
+ pm_wartime_doctrines: "Wartime Doctrines"
+ pm_post_war_doctrines: "Post-War Doctrines"
+ pm_cold_war_doctrines: "Cold War Doctrines"
+ pm_modern_doctrines: "Modern Doctrines"
+ pm_hybrid_warfare_integration: "Hybrid Warfare Integration"

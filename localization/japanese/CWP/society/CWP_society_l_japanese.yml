@@ -1,0 +1,6 @@
+﻿l_japanese:
+ GLOBAL_POLLUTION: "#BOL 汚染/月:#! #N [GetPlayer.MakeScope.ScriptValue('global_pollution_generation')|Nk] #!\n#BOL 平均気温:#! #N [GetPlayer.MakeScope.ScriptValue('global_temp_target_celsius')|N]°C#!"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ POLLUTION_TOOLTIP_TITLE: "#T [concept_pollution]#!"
+ state_slum_modifier_desc: "Unemployed and destitute [Concept('concept_pop', '$concept_pops$')] crowd into informal settlements on the edges of this state's cities, worsening health and unrest."

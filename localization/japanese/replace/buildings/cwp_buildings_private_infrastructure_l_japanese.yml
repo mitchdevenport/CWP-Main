@@ -1,0 +1,13 @@
+﻿l_japanese:
+ building_port: "港"
+ building_railway: "鉄道"
+ building_trade_center: "取引所"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_company_headquarter: "Company Headquarters"
+ building_company_regional_headquarter: "Company Regional Headquarters"
+ building_financial_district: "Financial District"
+ building_manor_house: "Manor House"
+ building_port_lens_option: "Expand $building_port$"
+ building_railway_lens_option: "Expand $building_railway$"
+ building_trade_center_lens_option: "Expand $building_trade_center$"

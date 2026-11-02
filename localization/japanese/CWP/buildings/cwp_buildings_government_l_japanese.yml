@@ -1,0 +1,11 @@
+﻿l_japanese:
+ building_humanities_research_facility: "芸術と人文科学の中心地"
+ building_humanities_research_facility_lens_option: "$building_humanities_research_facility$を拡張"
+ building_military_research_facility: "軍事研究所"
+ building_military_research_facility_lens_option: "$building_military_research_facility$を拡張"
+ building_nuclear_research_facility: "原子力研究施設"
+ building_nuclear_research_facility_lens_option: "$building_nuclear_research_facility$を拡張"
+ building_science_research_facility: "科学アカデミー"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_science_research_facility_lens_option: "Expand $building_science_research_facility$"

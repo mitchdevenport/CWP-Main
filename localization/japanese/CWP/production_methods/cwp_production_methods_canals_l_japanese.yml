@@ -1,0 +1,9 @@
+﻿l_japanese:
+ # Untranslated: English text kept until a Japanese translation is available
+ pmg_canal_base: "Base"
+ pmg_canal_minor: "Base"
+ pm_canal_base: "Standard Canal Operations"
+ pm_canal_improved: "Improved Canal Operations"
+ pm_canal_advanced: "Advanced Canal Operations"
+ pm_canal_automated: "Automated Canal Operations"
+ pm_canal_minor: "Standard Canal Operations"

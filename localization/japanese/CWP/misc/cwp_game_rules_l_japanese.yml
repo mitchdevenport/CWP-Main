@@ -1,0 +1,17 @@
+﻿l_japanese:
+ rule_cwp_chaos_mode: "混沌モード"
+ setting_cwp_no_chaos_mode_desc: "通常のゲーム。"
+ setting_cwp_chaos_mode_on_desc: "ひねりの効いたゲーム。#warning このモードはサポート対象外でプレイに支障をきたすかもしれません。#bold ご利用は自己責任でお願いします！#!#!"
+ rule_cwp_central_bank_control: "中央銀行の管理"
+ setting_cwp_player_control_desc: "常にプレイヤーが中央銀行を管理します。"
+ setting_cwp_dynamic_control_desc: "中央銀行の管理は法律に基づきます。"
+ setting_cwp_ai_control_desc: "常にAIが中央銀行を管理します。"
+ setting_unrealistic_formable_nations_desc: "非現実的ですが不可能ではない国家の形成を可能にします（イベリア、マフィリンド等）"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ setting_cwp_no_chaos_mode: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_no_chaos_mode_desc No Chaos Mode#!#!"
+ setting_cwp_chaos_mode_on: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_chaos_mode_on_desc #high Chaos Mode!#!#!#!"
+ setting_cwp_player_control: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_player_control_desc #high Player Control#!#!#!"
+ setting_cwp_dynamic_control: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_dynamic_control_desc Dynamic Control#!#!"
+ setting_cwp_ai_control: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_ai_control_desc #high AI Control#!#!#!"
+ setting_unrealistic_formable_nations: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_unrealistic_formable_nations_desc Unrealistic Formable Nations#!#!"

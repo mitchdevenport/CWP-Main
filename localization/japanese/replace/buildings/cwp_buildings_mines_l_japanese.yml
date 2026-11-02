@@ -1,0 +1,13 @@
+﻿l_japanese:
+ building_coal_mine_lens_option: "$building_coal_mine$を拡張"
+ building_gold_mine_lens_option: "$building_gold_mine$を拡張"
+ building_iron_mine_lens_option: "$building_iron_mine$を拡張"
+ building_lead_mine_lens_option: "$building_lead_mine$を拡張"
+ building_sulfur_mine_lens_option: "$building_sulfur_mine$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_coal_mine: "Coal Mine"
+ building_gold_mine: "Gold Mine"
+ building_iron_mine: "Iron Mine"
+ building_lead_mine: "Lead Mine"
+ building_sulfur_mine: "Phosphorus Mine"

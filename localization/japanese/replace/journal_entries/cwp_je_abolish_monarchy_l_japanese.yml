@@ -1,0 +1,22 @@
+﻿l_japanese:
+ je_abolish_monarchy: "君主主義の廃絶"
+ je_abolish_monarchy_reason: "今こそ、時代遅れの世襲制を過去のものとする時です。君主制を廃止し、その支持者を大人しくさせ、記憶の彼方に消し去る時間とせねばなりません。"
+ je_abolish_monarchy_goal: "通算5年間、以下が成立していること："
+ monarchist_nostalgia_tt: "[GetStaticModifier('monarchist_nostalgia').GetName|v]\n[GetStaticModifier('monarchist_nostalgia').GetDesc]"
+ no_more_royalists: "[concept_interest_group]のリーダーたちが[GetIdeology('ideology_royalist').GetName]のイデオロギーを持たなくなります"
+ regicide: "王殺し"
+ regicide_averted: "王殺しの回避"
+ monarchist_nostalgia: "希望なき郷愁"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ je_abolish_monarchy_events.1.t: "The Trial of [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetFirstName]"
+ je_abolish_monarchy_events.1.d: "The radical government has imprisoned [ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle] [ROOT.GetCountry.GetRuler.GetFullName] and hastily organized a trial. The expected outcome is a guilty verdict followed by public execution."
+ je_abolish_monarchy_events.1.f: ""Citizen [ROOT.GetCountry.GetRuler.GetLastNameNoFormatting]. The [ROOT.GetCountry.GetAdjectiveNoFormatting] nation accuses you of having committed a multitude of crimes to establish your tyranny, to destroy her freedom. Most egregious among these charges include conspiring with foreign powers, aristocratic corruption, and causing the blood of the people to flow. How do you plead?""
+ je_abolish_monarchy_events.1.a: "Guilty! Long live the Republic! Long live [ROOT.GetCountry.GetName]!"
+ je_abolish_monarchy_events.1.b: "This is not justice!"
+ je_abolish_monarchy_events.2.t: "The Last Monarchists"
+ je_abolish_monarchy_events.2.d: "[ROOT.GetCountry.GetName] has successfully maintained a republican form of government for many years now. There are few who still remember the old monarchy with any fondness."
+ je_abolish_monarchy_events.2.f: ""The days of highborn kings ruling over the meek peasantry atop a gilded throne are over. Let them pass into the realm of story books and fairy tales where they belong, and let nostalgia for those days become an idle fancy, not the grim face of reaction.""
+ je_abolish_monarchy_events.2.a: "We must put the past behind us."
+ je_abolish_monarchy_events.2.b: "There is no harm in nostalgia."
+ event_effects_je_abolish_monarchy_events.2_tt: "$event_effect_choose_one$ #indent_newline:3 \n$event_effect_all_of_the_following$ #indent_newline:3 \n• The [SCOPE.gsInterestGroup('landowners_ig').GetName] will lose the [GetIdeology('ideology_paternalistic').GetName] [concept_ideology], and gain the [GetIdeology('ideology_republican_paternalistic').GetName] $concept_ideology$\n• $no_more_royalists$\n• All [concept_interest_group] leaders that support [GetLawType('law_monarchy').GetName] will change their ideology to [GetIdeology('ideology_moderate').GetName]#!\n• The [SCOPE.gsInterestGroup('landowners_ig').GetName] get #tooltippable;tooltip:[GetPlayer.GetTooltipTag],monarchist_nostalgia_tt $monarchist_nostalgia$#!#!"

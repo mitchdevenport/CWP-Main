@@ -1,0 +1,11 @@
+﻿l_japanese:
+ building_automobile_manufactories_throughput_add: "$building_automobile_manufactories$施設[concept_throughput]"
+ building_automobile_manufactories_throughput_add_desc: "$building_automobile_manufactories$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_chemical_plants_throughput_add: "$building_chemical_plants$施設[concept_throughput]"
+ building_chemical_plants_throughput_add_desc: "$building_chemical_plants$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_oil_refineries_throughput_add: "$building_oil_refineries$施設[concept_throughput]"
+ building_oil_refineries_throughput_add_desc: "$building_oil_refineries$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_semiconductor_fabs_throughput_add: "$building_semiconductor_fabs$施設[concept_throughput]"
+ building_semiconductor_fabs_throughput_add_desc: "$building_semiconductor_fabs$の施設需要と生産の両方に対するボーナスあるいはペナルティです"
+ building_tank_factory_throughput_add: "$building_tank_factory$施設[concept_throughput]"
+ building_tank_factory_throughput_add_desc: "$building_tank_factory$の施設需要と生産の両方に対するボーナスあるいはペナルティです"

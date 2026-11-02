@@ -1,0 +1,9 @@
+﻿l_japanese:
+ building_natural_gas_well: "天然ガス井"
+ building_natural_gas_well_lens_option: "$building_natural_gas_well$を拡張"
+ building_natural_gas_well_discovered_resource: "天然ガス"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_oil_platform: "Oil Platform"
+ building_oil_platform_lens_option: "Expand $building_oil_platform$"
+ building_oil_platform_discovered_resource: "Oil"

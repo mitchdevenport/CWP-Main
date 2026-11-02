@@ -1,0 +1,7 @@
+﻿l_japanese:
+ # Untranslated: English text kept until a Japanese translation is available
+ building_maize_farm_lens_option: "Expand $building_maize_farm$"
+ building_millet_farm_lens_option: "Expand $building_millet_farm$"
+ building_rice_farm_lens_option: "Expand $building_rice_farm$"
+ building_rye_farm_lens_option: "Expand $building_rye_farm$"
+ building_wheat_farm_lens_option: "Expand $building_wheat_farm$"

@@ -1,0 +1,9 @@
+﻿l_japanese:
+ # Untranslated: English text kept until a Japanese translation is available
+ pmg_base_building_kaaba: "Base"
+ pmg_base_building_interstate_highway_system: "Base"
+ pm_cultural_building_hagia_sophia: "Cultural"
+ pm_clerical_building_hagia_sophia: "Clerical"
+ pm_default_building_kaaba: "Default"
+ pm_monument_prestige_only_kaaba: "Prestige Only"
+ pm_default_building_interstate_highway_system: "National Highway System"

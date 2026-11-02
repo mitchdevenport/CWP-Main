@@ -1,0 +1,13 @@
+﻿l_japanese:
+ building_biological_weapons_facility: "生物兵器施設"
+ building_chemical_weapons_facility: "化学兵器施設"
+ building_nuclear_weapons_facility: "核兵器施設"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_biological_weapons_facility_lens_option: "Expand $building_biological_weapons_facility$"
+ building_chemical_weapons_facility_lens_option: "Expand $building_chemical_weapons_facility$"
+ building_nuclear_weapons_facility_lens_option: "Expand $building_nuclear_weapons_facility$"
+ building_nuclear_weapons_silo: "Missile Silo"
+ building_nuclear_weapons_silo_lens_option: "Expand $building_nuclear_weapons_silo$"
+ building_strategic_airbase: "Strategic Airbase"
+ building_strategic_airbase_lens_option: "Expand $building_strategic_airbase$"

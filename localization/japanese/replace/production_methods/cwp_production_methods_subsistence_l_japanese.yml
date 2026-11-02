@@ -1,0 +1,10 @@
+﻿l_japanese:
+ pm_homesteading_building_subsistence: "入植"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ pmg_base_building_subsistence_farm: "Subsistence Farms"
+ pmg_home_workshops_building_subsistence_farm: "Home Workshops"
+ pmg_serfdom_building_subsistence_farm: "Serfdom"
+ pm_home_workshops_no_building_subsistence_farm: "No Home Workshops"
+ pm_home_workshops_building_subsistence_farm: "Home Workshops"
+ pm_serfdom_no: "No Serfdom"

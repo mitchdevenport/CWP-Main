@@ -1,0 +1,23 @@
+﻿l_japanese:
+ building_combustion_plant: "火力発電所"
+ building_media_industry: "メディア産業"
+ building_media_industry_lens_option: "$building_media_industry$を拡張"
+ building_nuclear_power_plant_lens_option: "$building_nuclear_power_plant$を拡張"
+ building_telecommunications: "電気通信"
+ building_telecommunications_lens_option: "$building_telecommunications$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_combustion_plant_lens_option: "Expand $building_combustion_plant$"
+ building_banks: "Financial Services Industry"
+ building_banks_lens_option: "Expand $building_banks$"
+ building_service_sectors: "Service Sectors"
+ building_service_sectors_lens_option: "Expand $building_service_sectors$"
+ building_hotels: "Hotels"
+ building_hotels_lens_option: "Expand $building_hotels$"
+ building_nuclear_power_plant: "Nuclear Power Plant"
+ building_solar_farm: "Solar Farm"
+ building_solar_farm_lens_option: "Expand $building_solar_farm$"
+ building_wind_farm: "Wind Farm"
+ building_wind_farm_lens_option: "Expand $building_wind_farm$"
+ building_hydroelectric_power_plant: "Hydroelectric Power Plant"
+ building_hydroelectric_power_plant_lens_option: "Expand $building_hydroelectric_power_plant$"

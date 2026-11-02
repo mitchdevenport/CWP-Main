@@ -1,0 +1,11 @@
+﻿l_japanese:
+ building_glassworks: "ガラス工房"
+ building_glassworks_lens_option: "$building_glassworks$を拡張"
+ building_motor_industry_lens_option: "$building_motor_industry$を拡張"
+ building_shipyard: "造船所"
+ building_shipyard_lens_option: "$building_shipyard$を拡張"
+ building_synthetics_plant_lens_option: "$building_synthetics_plant$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_motor_industry: "Motor Industry"
+ building_synthetics_plant: "Synthetics Plant"

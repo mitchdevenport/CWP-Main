@@ -1,0 +1,7 @@
+﻿l_japanese:
+ country_institution_corporate_affairs_max_investment_add: "最大 $institution_corporate_affairs$ [concept_institution] 投資"
+ country_institution_corporate_affairs_max_investment_add_desc: "$institution_corporate_affairs$ [concept_institution] の最大投資レベルに対するボーナスあるいはペナルティです"
+ goods_input_bauxite_add: "施設需要/レベル：@bauxite! ボーキサイト"
+ goods_input_bauxite_add_desc: "施設によって消費された @bauxite! ボーキサイトの量です"
+ goods_output_bauxite_add: "施設生産高/レベル : @bauxite! ボーキサイト"
+ goods_output_bauxite_add_desc: "施設によって生産される @bauxite! ボーキサイトの量です"

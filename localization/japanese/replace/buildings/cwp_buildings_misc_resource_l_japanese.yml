@@ -1,0 +1,9 @@
+﻿l_japanese:
+ building_fishing_wharf_lens_option: "$building_fishing_wharf$を拡張"
+ building_logging_camp_lens_option: "$building_logging_camp$を拡張"
+ building_oil_rig: "石油リグ"
+ building_oil_rig_lens_option: "$building_oil_rig$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_fishing_wharf: "Fishing Wharf"
+ building_logging_camp: "Logging Farms"

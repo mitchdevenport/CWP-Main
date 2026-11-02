@@ -1,0 +1,10 @@
+﻿l_japanese:
+ building_livestock_ranch_lens_option: "$building_livestock_ranch$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_livestock_ranch: "Livestock Ranch"
+ building_maize_farm: "Maize Farm"
+ building_millet_farm: "Millet Farm"
+ building_rice_farm: "Rice Farm"
+ building_rye_farm: "Rye Farm"
+ building_wheat_farm: "Wheat Farm"

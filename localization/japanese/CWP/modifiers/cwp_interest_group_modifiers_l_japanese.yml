@@ -1,0 +1,16 @@
+﻿l_japanese:
+ ig_bureaucrats: "官僚"
+ ig_bureaucrats_desc: "官僚は、政府に美しい旋律を奏でさせる統治機構の歯車です。政策や規制によって黙々と国家の進路を形作ります。"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ ig_bureaucrats_only_icon: "@petty_bourgeoisie!"
+ ig_variant_patriots: "[GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_securocrats: "[GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_moralists: "[GetInterestGroupVariant('ig_devout',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_capitalists: "[GetInterestGroupVariant('ig_industrialists',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_bureaucrats: "[GetInterestGroupVariant('ig_intelligentsia',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_urbanists: "[GetInterestGroupVariant('ig_intelligentsia',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_elites: "[GetInterestGroupVariant('ig_landowners',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_entrepreneurs: "[GetInterestGroupVariant('ig_petty_bourgeoisie',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_ruralists: "[GetInterestGroupVariant('ig_rural_folk',GetPlayer).GetNameWithCountryVariant]"
+ ig_variant_laborists: "[GetInterestGroupVariant('ig_trade_unions',GetPlayer).GetNameWithCountryVariant]"

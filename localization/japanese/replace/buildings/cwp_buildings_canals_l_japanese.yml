@@ -1,0 +1,7 @@
+﻿l_japanese:
+ building_panama_canal: "パナマ運河"
+ building_suez_canal: "スエズ運河"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_panama_canal_lens_option: "Expand $building_panama_canal$"
+ building_suez_canal_lens_option: "Expand $building_suez_canal$"

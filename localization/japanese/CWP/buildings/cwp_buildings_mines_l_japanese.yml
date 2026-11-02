@@ -1,0 +1,15 @@
+﻿l_japanese:
+ building_bauxite_mine: "ボーキサイト鉱山"
+ building_bauxite_mine_lens_option: "$building_bauxite_mine$を拡張"
+ building_copper_mine: "銅鉱山"
+ building_copper_mine_lens_option: "$building_copper_mine$を拡張"
+ building_rare_earth_elements_mine: "レアアース鉱山"
+ building_rare_earth_elements_mine_lens_option: "$building_rare_earth_elements_mine$を拡張"
+ building_rare_earth_elements_mine_discovered_resource: "レアアース"
+ building_uranium_mine: "ウラン鉱山"
+ building_uranium_mine_lens_option: "$building_uranium_mine$を拡張"
+ building_uranium_mine_discovered_resource: "ウラン"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_bauxite_mine_discovered_resource: "Bauxite"
+ building_copper_mine_discovered_resource: "Copper"

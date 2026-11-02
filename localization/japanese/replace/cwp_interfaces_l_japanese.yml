@@ -1,0 +1,8 @@
+﻿l_japanese:
+ IMPOSE_LAW_NOT_OVERLORD: "@red_cross! [concept_law]を課すためには、[GetPlayer.GetName]は[Country.GetName]の[concept_overlord]になる必要があります"
+ IMPOSE_LAW_NO_OPTIONS: "[SelectLocalization(StringIsEmpty(Law.GetCountry.GetCustom('impose_law_error')),'IMPOSE_LAW_NO_OPTIONS_NO_COOLDOWN',Law.GetCountry.GetCustom('impose_law_error'))]"
+ IMPOSE_LAW_NO_OPTIONS_JOURNAL_ENTRY: "@red_cross!以前に課された[concept_law]に対応中です"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ IMPOSE_LAW_NO_OPTIONS_COOLDOWN: "@red_cross! You cannot impose a [concept_law] on this Country for another [Country.GetTimedModifierDurationRemaining('impose_law_cooldown')]"
+ IMPOSE_LAW_NO_OPTIONS_NO_COOLDOWN: "@red_cross! No [Law.GetGroup.GetName] [Concept('concept_law','$concept_laws$')] available to impose on this Country"

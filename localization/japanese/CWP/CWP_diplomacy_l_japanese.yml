@@ -1,0 +1,23 @@
+﻿l_japanese:
+ military_occupation: "軍事占領"
+ military_occupation_action_ask_to_break_name: "占領終了の要請"
+ military_occupation_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]は[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]の[concept_military_occupation]下にあります。"
+ military_occupation_proposal_notification_break_name: "[INITIATOR_COUNTRY.GetName]が[concept_military_occupation]を終えることを要求しています。"
+ military_occupation_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName]が我が国の[concept_military_occupation]を終えることを要求しています。"
+ military_occupation_proposal_notification_break_effects_desc: "$TOOLTIP_DELIMITER$\n#s [INITIATOR_COUNTRY.GetName]の[concept_military_occupation]の破棄"
+ military_occupation_action_notification_name: "[concept_military_occupation]化の要求"
+ military_occupation_action_notification_desc: "[INITIATOR_COUNTRY.GetName]は我が国が服従し、[concept_military_occupation]下に入ることを要求しています。"
+ military_occupation_trigger_desc_first: "[TARGET_COUNTRY.GetName]が[COUNTRY.GetAdjectiveNoFlag]の[concept_military_occupation]下にある"
+ military_occupation_trigger_false_desc_first: "[TARGET_COUNTRY.GetName]が[COUNTRY.GetAdjectiveNoFlag]の[concept_military_occupation]下に#b ない#!"
+ military_occupation_trigger_desc_third: "[COUNTRY.GetName]が[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self,   TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)] [AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)]の[concept_military_occupation]下にある"
+ military_occupation_trigger_false_desc_third: "[COUNTRY.GetNameNoFlag]が[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetName)] [AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)]の[concept_military_occupation]下に#b ない#!"
+ military_occupation_action_propose_name: "[concept_military_occupation]する"
+ military_occupation_action_break_name: "独立の承認"
+ military_occupation_proposal_break_accepted_name: "独立の承認"
+ military_occupation_proposal_break_accepted_desc: "[TARGET_COUNTRY.GetName]は[concept_military_occupation]状態を終える要求を受諾し、我が国は再び独立国になりました。"
+ military_occupation_proposal_break_declined_name: "独立の拒否"
+ military_occupation_proposal_break_declined_desc: "[TARGET_COUNTRY.GetName]は我が国の[concept_military_occupation]状態を終える要求を拒否しました。"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ military_occupation_desc: "[concept_military_occupation]"
+ subject_type_military_occupation: "[concept_military_occupation]"

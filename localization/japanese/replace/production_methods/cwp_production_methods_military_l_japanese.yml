@@ -1,0 +1,8 @@
+﻿l_japanese:
+ pmg_training: "訓練"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ pmg_training_conscription: "Training"
+ pmg_land_logistics_center: "Logistics"
+ pmg_naval_theory: "Training"
+ pm_basic_land_logistics_center: "Basic Logistics"

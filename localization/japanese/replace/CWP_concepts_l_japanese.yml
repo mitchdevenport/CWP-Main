@@ -1,0 +1,22 @@
+﻿l_japanese:
+ concept_readiness: "即応性"
+ concept_readiness_desc: "国家の即応性とは、様々な危機や課題に効果的に対応する準備と能力を表します。危機や課題には、公衆衛生上の緊急事態や自然災害から、経済不況や国家安全保障への脅威までが広く含まれます。即応性には、インフラの回復力、公共サービスの堅牢性、政府機関の効率性、経済の強さなど、様々な側面があります。さらに、変化する状況に適応し、社会的結束を維持し、困難を克服するための集団的努力を支える国民の能力も含んでいます。高水準の即応性を達成することは、国の安定・繁栄・幸福を確保し、ますます複雑化し相互接続が進む世界を乗り切るための弾力的で適応力のある社会を育むために不可欠です。"
+ concept_military_occupation: "軍事占領"
+ concept_military_occupation_desc: "軍事占領とは、大国の軍隊が支配権を握る地域です。通常、武力と条約に基づく合意により権威と主権を主張します。"
+ concept_superpower: "超大国"
+ concept_superpowers: "超大国"
+ concept_superpower_desc: "強大な力を誇示する広範な能力と、大国の意思さえも屈服させるまぎれもない能力を持つ、世界情勢において主要な指導的立場にある[concept_country]。\n\nこのような国は$concept_superpowers$とみなされます。$concept_superpowers$は他の$concept_superpowers$と頻繁に殴り合いをし、$concept_great_powers$のような小さい国の問題に干渉します。[AddLocalizationIf(GetPlayer.IsValid,'concept_superpower_desc_added')]"
+ concept_superpower_desc_added: "\n\n$concept_superpowers$には以下の利益があります:\n[GetRankModifier('superpower').GetDesc]"
+ concept_global_pollution: "地球汚染"
+ concept_global_pollution_desc: "地球汚染は、世界のすべての[Concept('concept_state_region', '$concept_state_regions$')]が排出する汚染の総量です。放っておくと地球温暖化と気候変動を引き起こします。"
+ concept_administer: "統治支援"
+ concept_administer_desc: "宗主国から従属国への行政力の移転です。"
+ concept_develop: "開発支援"
+ concept_develop_desc: "宗主国から従属国への建設ポイントと収入の移転です。"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ CWP_NORMAL: "[Country.MakeScope.ScriptValue('cwp_gdp_with_inflation')|vd]"
+ CWP_TRILLION: "#v [Country.MakeScope.ScriptValue('cwp_gdp_div')|v]T#!"
+ CWP_GDP_PLAYERSCOPE: "[SelectLocalization(LessThan_CFixedPoint(GetPlayer.MakeScope.ScriptValue('cwp_gdp_with_inflation'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL_PLAYERSCOPE', 'CWP_TRILLION_PLAYERSCOPE')|Dv]"
+ CWP_NORMAL_PLAYERSCOPE: "[GetPlayer.MakeScope.ScriptValue('cwp_gdp_with_inflation')|vd]"
+ CWP_TRILLION_PLAYERSCOPE: "#v [GetPlayer.MakeScope.ScriptValue('cwp_gdp_div')|v]T#!"

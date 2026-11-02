@@ -1,0 +1,10 @@
+﻿l_japanese:
+ building_barrack: "兵舎"
+ building_barrack_lens_option: "$building_barrack$を拡張"
+ building_conscription_center: "徴兵事務所"
+ building_naval_administration: "海軍司令部"
+ building_naval_administration_lens_option: "$building_naval_administration$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_army_logistics_center: "Land Logistics Center"
+ building_army_logistics_center_lens_option: "Expand $building_army_logistics_center$"

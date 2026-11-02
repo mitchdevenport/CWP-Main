@@ -1,0 +1,7 @@
+﻿l_japanese:
+ CWP_GDP_TOOLTIP: "#header [concept_gdp]#!\n[Country.GetAdjective]の$GDP_SHORT$: #N $GLOBAL_CURRENCY_ICON$[SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp_with_inflation'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]#! [Country.GetGDPRanking]\n$TOOLTIP_DELIMITER$\nGDP/一人当たり: #variable $GLOBAL_CURRENCY_ICON$[Country.MakeScope.ScriptValue('cwp_gdp_per_capita')|D]#! [Country.GetGDPPerCapitaRanking]\n\n"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ LOBBY_COUNTRY_GDP: "#title $GDP_SHORT$#!:\n#variable @usd! [SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp_with_inflation'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]"
+ TAB_6: "#header TAB 6#!"
+ DETAILED_CLOUT: "[concept_clout]: [InterestGroup.GetClout|%1]"

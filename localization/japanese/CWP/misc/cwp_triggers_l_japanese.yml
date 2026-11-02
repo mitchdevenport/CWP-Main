@@ -1,0 +1,8 @@
+﻿l_japanese:
+ # Untranslated: English text kept until a Japanese translation is available
+ TRIGGER_STATE_CONTROLLER_EQUAL: "[concept_state] is controlled by [TARGET_COUNTRY.GetName]"
+ TRIGGER_STATE_CONTROLLER_EQUAL_NOT: "[concept_state] is #bold not#! controlled by [TARGET_COUNTRY.GetName]"
+ TRIGGER_STATE_CONTROLLER_EQUAL_THIRD: "[concept_state] is controlled by [TARGET_COUNTRY.GetName]"
+ TRIGGER_STATE_CONTROLLER_EQUAL_THIRD_NOT: "[concept_state] is not controlled by [TARGET_COUNTRY.GetName]"
+ TRIGGER_STATE_CONTROLLER_EQUAL_FIRST: "[TARGET_COUNTRY.GetNameNoFlag] controls the [concept_state]"
+ TRIGGER_STATE_CONTROLLER_EQUAL_FIRST_NOT: "[TARGET_COUNTRY.GetNameNoFlag] does not control the [concept_state]"

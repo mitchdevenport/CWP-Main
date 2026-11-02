@@ -1,0 +1,15 @@
+﻿l_japanese:
+ building_banana_plantation_lens_option: "$building_banana_plantation$を拡張"
+ building_coffee_plantation_lens_option: "$building_coffee_plantation$を拡張"
+ building_cotton_plantation_lens_option: "$building_cotton_plantation$を拡張"
+ building_sugar_plantation_lens_option: "$building_sugar_plantation$を拡張"
+ building_tea_plantation_lens_option: "$building_tea_plantation$を拡張"
+ building_tobacco_plantation_lens_option: "$building_tobacco_plantation$を拡張"
+
+ # Untranslated: English text kept until a Japanese translation is available
+ building_banana_plantation: "Banana Plantation"
+ building_coffee_plantation: "Coffee Plantation"
+ building_cotton_plantation: "Cotton Plantation"
+ building_sugar_plantation: "Sugar Plantation"
+ building_tea_plantation: "Tea Plantation"
+ building_tobacco_plantation: "Tobacco Plantation"
