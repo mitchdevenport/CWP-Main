@@ -520,3 +520,44 @@ cwp_coat_of_arms_partially_controls_ireland_trigger = {
 		}
 	 }
 }
+
+#################################################
+### Dynamic Country Name Triggers             ###
+#################################################
+# Dynamic country names only have scope:actor (the country itself), not the scope:target that the flag
+# triggers above use, so these are the actor-scoped equivalents for 00_dynamic_country_names.txt.
+
+cwp_name_anarchy_government_trigger = {
+	scope:actor ?= { has_law_or_variant = law_type:law_anarchy }
+}
+
+cwp_name_revolutionary_government_trigger = {
+	scope:actor ?= { is_revolutionary = yes }
+}
+
+cwp_name_secessionist_government_trigger = {
+	scope:actor ?= { is_secessionist = yes }
+}
+
+cwp_name_parties_banned_trigger = {
+	scope:actor ?= {
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_oligarchy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+	}
+}
+
+cwp_name_fascist_government_trigger = {
+	scope:actor ?= {
+		any_interest_group = {
+			is_in_government = yes
+			OR = {
+				has_ideology = ideology:ideology_fascist
+				has_ideology = ideology:ideology_integralist
+			}
+		}
+	}
+	cwp_coat_of_arms_law_autocratic_trigger = yes
+}

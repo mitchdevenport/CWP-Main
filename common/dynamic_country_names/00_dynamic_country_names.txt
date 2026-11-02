@@ -285,7 +285,7 @@ GBR = {
 		priority = 4
 		trigger = {
 			exists = scope:actor
-			cwp_coat_of_arms_fascist_government_trigger = yes
+			cwp_name_fascist_government_trigger = yes
 		}
 	}
 	dynamic_country_name = {
@@ -358,7 +358,7 @@ IRE = {
 		priority = 3
 		trigger = {
 			exists = scope:actor
-			cwp_coat_of_arms_fascist_government_trigger = yes
+			cwp_name_fascist_government_trigger = yes
 		}
 	}
 	dynamic_country_name = {
@@ -593,7 +593,7 @@ GER = {
 		is_main_tag_only = no
 		priority = 10
 		trigger = {
-			cwp_coat_of_arms_fascist_government_trigger = yes
+			cwp_name_fascist_government_trigger = yes
 		}
 	}
 	dynamic_country_name = {
@@ -602,7 +602,7 @@ GER = {
 		is_main_tag_only = no
 		priority = 20
 		trigger = {
-			cwp_coat_of_arms_anarchy_government_trigger = yes
+			cwp_name_anarchy_government_trigger = yes
 		}
 	}
 }
@@ -1145,7 +1145,7 @@ RUS = { #Union of Sovereign States
 		priority = 1700
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
-			cwp_coat_of_arms_parties_banned_trigger = no
+			cwp_name_parties_banned_trigger = no
 		}
 	}
 	dynamic_country_name = {
@@ -1154,7 +1154,7 @@ RUS = { #Union of Sovereign States
 		is_main_tag_only = yes
 		priority = 1000
 		trigger = {
-			cwp_coat_of_arms_fascist_government_trigger = yes
+			cwp_name_fascist_government_trigger = yes
 		}
 	}
 	dynamic_country_name = {
@@ -1428,10 +1428,10 @@ ISR = {
 		priority = 20
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
-			cwp_coat_of_arms_parties_banned_trigger = no
+			cwp_name_parties_banned_trigger = no
 			OR = {
-				cwp_coat_of_arms_revolutionary_government_trigger = yes
-				cwp_coat_of_arms_secessionist_government_trigger = yes
+				cwp_name_revolutionary_government_trigger = yes
+				cwp_name_secessionist_government_trigger = yes
 			}
 		}
 	}
@@ -1442,10 +1442,10 @@ ISR = {
 		priority = 20
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
-			cwp_coat_of_arms_parties_banned_trigger = yes
+			cwp_name_parties_banned_trigger = yes
 			OR = {
-				cwp_coat_of_arms_revolutionary_government_trigger = yes
-				cwp_coat_of_arms_secessionist_government_trigger = yes
+				cwp_name_revolutionary_government_trigger = yes
+				cwp_name_secessionist_government_trigger = yes
 			}
 		}
 	}
@@ -1459,7 +1459,7 @@ ARA = {
 		priority = 10
 		trigger = {
 			OR = {
-				cwp_coat_of_arms_fascist_government_trigger = yes
+				cwp_name_fascist_government_trigger = yes
 				cwp_coat_of_arms_theocracy_trigger = yes
 			}
 		}
@@ -1503,7 +1503,7 @@ LEV = {
 		priority = 10
 		trigger = {
 			OR = {
-				cwp_coat_of_arms_fascist_government_trigger = yes
+				cwp_name_fascist_government_trigger = yes
 				cwp_coat_of_arms_theocracy_trigger = yes
 			}
 		}
@@ -1518,7 +1518,7 @@ IRQ = {
 		priority = 10
 		trigger = {
 			OR = {
-				cwp_coat_of_arms_fascist_government_trigger = yes
+				cwp_name_fascist_government_trigger = yes
 				cwp_coat_of_arms_theocracy_trigger = yes
 			}
 		}
@@ -1610,8 +1610,8 @@ AFH = {
 		trigger = {
 			cwp_coat_of_arms_theocracy_trigger = yes
 			OR = {
-				cwp_coat_of_arms_revolutionary_government_trigger = yes
-				cwp_coat_of_arms_secessionist_government_trigger = yes
+				cwp_name_revolutionary_government_trigger = yes
+				cwp_name_secessionist_government_trigger = yes
 			}
 		}
 	}
@@ -2341,7 +2341,7 @@ CAL = {
 		is_main_tag_only = yes
 		priority = 1500
 		trigger = {
-			cwp_coat_of_arms_fascist_government_trigger = yes
+			cwp_name_fascist_government_trigger = yes
 		}
 	}
 }
@@ -2374,8 +2374,8 @@ MEX = {
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
 			OR = {
-				cwp_coat_of_arms_revolutionary_government_trigger = yes
-				cwp_coat_of_arms_secessionist_government_trigger = yes
+				cwp_name_revolutionary_government_trigger = yes
+				cwp_name_secessionist_government_trigger = yes
 			}
 		}
 	}
@@ -3195,7 +3195,7 @@ CNG = {
 		is_main_tag_only = yes
 		priority = 5
 		trigger = {
-			cwp_coat_of_arms_parties_banned_trigger = yes
+			cwp_name_parties_banned_trigger = yes
 		}
 	}
 }
