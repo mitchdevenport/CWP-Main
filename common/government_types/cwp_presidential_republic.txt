@@ -4,8 +4,8 @@
 gov_presidential_autocracy = {
 	transfer_of_power = dictatorial
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -22,8 +22,8 @@ gov_technocratic_republic = {
 	transfer_of_power = presidential_elective
     new_leader_on_reform_government = yes
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -40,8 +40,8 @@ gov_oligarchic_republic = {
 	transfer_of_power = presidential_elective
     new_leader_on_reform_government = yes
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -58,8 +58,8 @@ gov_landed_presidential_republic = {
 	transfer_of_power = presidential_elective
     new_leader_on_reform_government = yes
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -76,8 +76,8 @@ gov_plutocratic_presidential_republic = {
 	transfer_of_power = presidential_elective
     new_leader_on_reform_government = yes
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -94,8 +94,8 @@ gov_limited_presidential_republic = {
 	transfer_of_power = presidential_elective
     new_leader_on_reform_government = yes
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -112,8 +112,8 @@ gov_democratic_presidential_republic = {
 	transfer_of_power = presidential_elective
     new_leader_on_reform_government = yes
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
@@ -129,8 +129,8 @@ gov_democratic_presidential_republic = {
 gov_one_party_presidential_republic = {
 	transfer_of_power = dictatorial
 
-	male_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
-	female_ruler = "RULER_TITLE_MINISTER_PRESIDENT"
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
 
 	possible = {
 		has_law_or_variant = law_type:law_presidential_republic
