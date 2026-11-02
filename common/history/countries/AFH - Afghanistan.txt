@@ -1,0 +1,13 @@
+﻿COUNTRIES = {
+	c:AFH ?= {
+		# Starting effects for Afghanistan
+		# CWP 1.5 history for this country was lost in the 1.13 rewrite; restored with its laws mapped onto the current packages
+		effect_starting_production_technologies_tier_5 = yes
+		effect_starting_society_technologies_tier_5 = yes
+		effect_starting_military_technologies_tier_4 = yes
+		# Laws
+		effect_starting_laws_1946_islamic_absolute_monarchy = yes
+		# Slavery was abolished in 1923
+		activate_law = law_type:law_slavery_banned
+	}
+}

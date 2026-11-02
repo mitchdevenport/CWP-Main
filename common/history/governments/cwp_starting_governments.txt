@@ -1,6 +1,7 @@
 ﻿# Governments of countries with elections at the 1946 start (CWP 1.5 history; see cwp_starting_government_effects.txt)
 GOVERNMENT = {
 	c:ARG ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:AUS ?= { cwp_set_starting_government = { IG = ig_landowners } }
 	c:AST ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
 	c:BEL ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
 	c:BRZ ?= { set_next_election_date = 1950.10.3 cwp_set_starting_government = { IG = ig_armed_forces } }
