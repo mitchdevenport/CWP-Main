@@ -7,5 +7,7 @@
 		
 		# Laws
 		effect_starting_laws_1946_islamic_absolute_monarchy = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_landowners = { add_ruling_interest_group = yes }
 	}
 }

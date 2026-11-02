@@ -6,5 +6,8 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_kemalist_republic = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_intelligentsia = { add_ruling_interest_group = yes }
+		# CWP 1.5 also seated the Armed Forces; under parliamentary rule the stronger Armed Forces would displace Inonu as Prime Minister
 	}
 }

@@ -6,5 +6,7 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_soviet_socialist_republic = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_trade_unions = { add_ruling_interest_group = yes }
 	}
 }

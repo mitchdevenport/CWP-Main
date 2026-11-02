@@ -6,5 +6,9 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_chinese_communist_base_area = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_trade_unions = { add_ruling_interest_group = yes }
+		ig:ig_armed_forces = { add_ruling_interest_group = yes }
+		ig:ig_rural_folk = { add_ruling_interest_group = yes }
 	}
 }

@@ -7,5 +7,8 @@
 		
 		# Laws
 		effect_starting_laws_1946_soviet_socialist_republic = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_trade_unions = { add_ruling_interest_group = yes }
+		ig:ig_bureaucrats = { add_ruling_interest_group = yes }
 	}
 }

@@ -6,5 +6,7 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_fascist_corporatist_state = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_armed_forces = { add_ruling_interest_group = yes }
 	}
 }

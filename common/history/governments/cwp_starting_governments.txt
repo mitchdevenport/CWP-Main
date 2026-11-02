@@ -1,0 +1,39 @@
+﻿# Governments of countries with elections at the 1946 start (CWP 1.5 history; see cwp_starting_government_effects.txt)
+GOVERNMENT = {
+	c:ARG ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:AST ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:BEL ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:BRZ ?= { set_next_election_date = 1950.10.3 cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:CAN ?= { cwp_set_starting_government = { IG = ig_intelligentsia } }
+	c:CHL ?= { cwp_set_starting_government = { IG = ig_intelligentsia } }
+	c:CUB ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:DEN ?= { cwp_set_starting_government = { IG = ig_industrialists } }
+	c:EGY ?= { cwp_set_starting_government = { IG = ig_armed_forces } cwp_add_starting_government = { IG = ig_landowners } }
+	c:FIN ?= { set_next_election_date = 1946.3.9 cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:FRA ?= { set_next_election_date = 1947.11.4 cwp_set_starting_government = { IG = ig_petty_bourgeoisie } }
+	c:GBR ?= { set_ruling_interest_groups = { ig_intelligentsia } } # without its party, so the Prime Minister's interest group leads the government
+	c:GRE ?= { cwp_set_starting_government = { IG = ig_petty_bourgeoisie } }
+	c:HND ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:ICL ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:IDS ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:IRE ?= { cwp_set_starting_government = { IG = ig_industrialists } }
+	c:IRQ ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:ITA ?= { cwp_set_starting_government = { IG = ig_industrialists } }
+	c:JAP ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:LUX ?= { set_next_election_date = 1948.6.6 cwp_set_starting_government = { IG = ig_landowners } }
+	c:NET ?= { set_next_election_date = 1946.5.17 cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:NOR ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:NZL ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:PAL ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:PER ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:PHI ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:PNM ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:PRG ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:SAF ?= { set_ruling_interest_groups = { ig_armed_forces } } # without its party, so the Prime Minister's interest group leads the government
+	c:STK ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:SWE ?= { cwp_set_starting_government = { IG = ig_trade_unions } }
+	c:SWI ?= { set_ruling_interest_groups = { ig_industrialists } } # without its party, so the Prime Minister's interest group leads the government
+	c:THA ?= { cwp_set_starting_government = { IG = ig_landowners } }
+	c:TUN ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
+	c:USA ?= { set_next_election_date = 1948.11.2 } # government: usa - usa.txt
+}

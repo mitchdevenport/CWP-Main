@@ -1,0 +1,23 @@
+﻿# Starting governments of countries that hold elections in 1946 (history/governments/cwp_starting_governments.txt).
+# The engine forms its own government for these countries once their parties exist, so the governing interest groups
+# from the CWP 1.5 history are applied afterwards, together with the rest of their party: a party governs as one bloc.
+
+# Replaces the government with interest group $IG$ and its party
+cwp_set_starting_government = {
+	set_ruling_interest_groups = { $IG$ }
+	ig:$IG$ ?= {
+		party ?= {
+			every_member = { add_ruling_interest_group = yes }
+		}
+	}
+}
+
+# Adds interest group $IG$ and its party to the government
+cwp_add_starting_government = {
+	ig:$IG$ ?= {
+		add_ruling_interest_group = yes
+		party ?= {
+			every_member = { add_ruling_interest_group = yes }
+		}
+	}
+}

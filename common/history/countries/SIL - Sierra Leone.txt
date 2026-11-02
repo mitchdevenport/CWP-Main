@@ -6,5 +6,7 @@
 		effect_starting_military_technologies_tier_5 = yes
 		# Laws
 		effect_starting_laws_1946_colonial_administration = yes
+		# Government at game start (CWP 1.5 release)
+		ig:ig_landowners = { add_ruling_interest_group = yes }
 	}
 }
