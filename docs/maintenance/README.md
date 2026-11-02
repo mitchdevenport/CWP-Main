@@ -22,6 +22,18 @@ messages (anchors in CWP's spline network that only the map editor can fix), the
 checksum warning (fixed by saving in the map editor), and the `CInterestGroupTypeDatabase::ExpectedNumItems`
 assertion (CWP has more interest groups than vanilla).
 
+An `Assertion failed: NGameState::GameStateAccess ...` line after unpausing means gamestate script (events,
+on_actions, effects) read hidden AI or interface-only state, which desyncs multiplayer games. Find the
+cause by disabling on_action hooks until it disappears. `has_healthy_economy` is such a trigger: use
+`cwp_has_healthy_economy` (common/scripted_triggers/cwp_fiscal_triggers.txt) instead.
+
+Journal entries added with `add_journal_entry` must not use `can_deactivate = yes` unless they also have
+`is_shown_when_inactive`: once deactivated they never reactivate, and the leftover inactive entry makes later
+`add_journal_entry` calls fail ("... already has a journal entry of type ..."). End them with `invalid` instead.
+
+Company types need no extra buildings, but `common/scripted_effects/cwp_company_effects.txt` lists every company
+type to clean up the company buildings left behind when a civil war or secession ends; add new company types there.
+
 ## End-to-end tests
 
 `tools/scripted_tests/cwp_systems.txt` checks that the mod's systems work in a real campaign: the Cold

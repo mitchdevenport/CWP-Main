@@ -163,6 +163,24 @@ tests = {
 			game_date > "1958.1.1"
 		}
 	}
+	# UN vote journal entries must end with their vote: an inactive leftover blocks every later vote
+	cwp_un_votes_not_stuck = {
+		acceptable_fail_rate = 0.0
+		success = {
+			game_date > "1960.6.1"
+		}
+		fail = {
+			any_country = {
+				OR = {
+					has_inactive_journal_entry = je_un_intervention
+					has_inactive_journal_entry = je_unclos1
+					has_inactive_journal_entry = je_korean_resolution
+					has_inactive_journal_entry = je_decolonization_resolution
+					has_inactive_journal_entry = je_declaration_of_human_rights
+				}
+			}
+		}
+	}
 	cwp_indian_partition = {
 		acceptable_fail_rate = 0.0
 		success = {
@@ -193,7 +211,10 @@ tests = {
 	cwp_newfoundland_question_settled = {
 		acceptable_fail_rate = 0.0
 		success = {
-			NOT = { any_country = { has_journal_entry = newfoundland_referendum } }
+			OR = {
+				has_global_variable = newfoundland_referendum_done
+				NOT = { exists = c:NEW }
+			}
 		}
 		fail = {
 			game_date > "1955.1.1"
