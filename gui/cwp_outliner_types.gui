@@ -1,0 +1,117 @@
+﻿# CWP outliner entries: global pollution counter and the current UN resolution vote
+# (restored from Cold War Project master gui/outliner_ongoing_types.gui)
+types cwp_outliner_items {
+	### Pollution Counter
+	type outliner_pollution = button {
+		visible = "[Or(GetPlayer.MakeScope.GetVariable('has_climate_research').IsSet, InDebugMode)]"
+
+		using = expand_button_bg_no_fade
+		size = { 350 100 }
+
+		tooltipwidget = {
+			pollution_tooltip = {}
+		}
+
+		bad_progressbar_horizontal = {
+			name = "pollutioncounter_progressbar"
+			size = { 330 20 }
+			position = { -10 10 }
+			parentanchor = right
+
+			blockoverride "values" {
+				value = "[FixedPointToFloat(GetPlayer.MakeScope.ScriptValue('global_pollution_generation'))]"
+				min = 0
+				max = "[FixedPointToFloat(GetPlayer.MakeScope.ScriptValue('global_pollution_max'))]"
+			}
+		}
+
+		textbox = {
+			name = text
+			text = "GLOBAL_POLLUTION"
+			parentanchor = left
+			using = fontsize_large
+			position = { 10 65 }
+		}
+	}
+
+	### UN Vote
+	type outliner_un_vote = button {
+		visible = "[GetScriptedGui('un_resolution_visible_sidepanel').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+		onclick = "[InformationPanelBar.ClosePanel]"
+		onclick = "[GetVariableSystem.Set('international_open', 'yes')]"
+		onclick = "[GetVariableSystem.Toggle('un_panel')]"
+		onclick = "[GetVariableSystem.Set('un_floor', 'yes')]"
+		onclick = "[GetVariableSystem.Clear('international_community')]"
+		onclick = "[GetVariableSystem.Clear('un_resolutions')]"
+		onclick = "[GetVariableSystem.Clear('un_applications')]"
+		onclick = "[GetVariableSystem.Clear('banks_panel')]"
+		onclick = "[GetVariableSystem.Clear('nato_panel')]"
+		onclick = "[GetVariableSystem.Clear('warsaw_pact_panel')]"
+		onclick = "[GetVariableSystem.Clear('imf_panel')]"
+
+		using = expand_button_bg_no_fade
+		size = { 350 65 }
+
+		hbox = {
+			margin_left = 7
+			margin_right = 5
+
+			icon = {
+				size = { 60 60 }
+				texture = "gfx/interface/backgrounds/round_button_bg.dds"
+
+				round_progress_default = {
+					size = { 54 54 }
+					value = "[FixedPointToFloat(GetPlayer.MakeScope.ScriptValue('pending_resolution_progress_value_round'))]"
+					tooltip = "UNVOTINGBREAKDOWN"
+					parentanchor = center
+				}
+
+				icon = {
+					parentanchor = center
+					texture = "gfx/interface/icons/cwp_icons/united_nations.dds"
+					tooltip = "[concept_united_nations_desc]"
+					size = { 40 40 }
+				}
+			}
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				spacing = 5
+
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 20 }
+					align = center|nobaseline
+					elide = right
+					fontsize_min = 10
+
+					raw_text = "[GetPlayer.GetCustom('current_resolution')]"
+
+					background = {
+						using = default_header_bg
+						alpha = 1
+						margin_bottom = 5
+						margin_top = 5
+
+						modify_texture = {
+							texture = "gfx/interface/masks/fade_horizontal_center.dds"
+							blend_mode = alphamultiply
+						}
+					}
+				}
+
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 20 }
+					align = center|nobaseline
+					elide = right
+					fontsize_min = 12
+
+					tooltip = "UNVOTINGBREAKDOWN"
+					text = "[GetPlayer.GetCustom('un_voting_balance')]"
+				}
+			}
+		}
+	}
+}

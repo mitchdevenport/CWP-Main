@@ -1,0 +1,66 @@
+﻿# CWP button templates (restored from Cold War Project master gui/shared/buttons.gui)
+
+template colored_button_bg
+{
+	texture = "gfx/interface/buttons/default_button_bg.dds"
+	spriteType = Corneredtiled
+	texture_density = 2
+	gfxtype = buttongfx
+	
+	spriteborder = { 7 7 }
+	framesize = { 19 19 }
+
+	effectname = "NoHighlight"
+	
+	modify_texture = {
+		block "basecolorvisible" {
+			visible = yes
+		}
+		name = "texture"
+		block "selectedcolor" {
+			color = { 0.25 0.25 0.25 1 }
+		}
+		spriteType = Corneredtiled
+		spriteborder = { 0 0 }
+		blend_mode = colordodge
+	}
+	modify_texture = {
+		block "selectedcolorvisible" {
+			visible = yes
+		}
+		name = "bg_gradient"
+		block "selectedcolor" {
+			color = { 0.25 0.25 0.25 1 }
+		}
+		spriteType = Corneredstretched
+		spriteborder = { 0 0 }
+		blend_mode = colordodge
+		alpha = 2.5
+	}
+	### mouse states
+	modify_texture = {
+		block "hovercolorvisible" {
+			visible = yes
+		}
+		name = "mouse_enter"
+		block "selectedcolor" {
+			color = { 0 0 0 1 }
+		}
+		spriteType = Corneredstretched
+		spriteborder = { 0 0 }
+		blend_mode = colordodge
+		alpha = 0
+	}
+	modify_texture = {
+		name = "mouse_press"
+		texture = "gfx/interface/buttons/default_button_mousepress.dds"
+		spriteType = Corneredstretched
+		spriteborder = { 0 0 }
+		blend_mode = overlay
+		alpha = 0
+	}
+	block "animation" {
+		using = default_mouse_states_animation
+	}
+	
+}

@@ -1,0 +1,13 @@
+﻿l_english:
+ # Keys used by the restored CWP gui overrides that no system localisation file provides
+ # (values from Cold War Project master)
+
+ # gui/multiplayer_lobby_types.gui + gui/country_panel.gui (country selection GDP)
+ CWP_GDP_TOOLTIP: "#header [concept_gdp]#!\n[Country.GetAdjective] $GDP_SHORT$: #N $GLOBAL_CURRENCY_ICON$[SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp_with_inflation'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]#! [Country.GetGDPRanking]\n$TOOLTIP_DELIMITER$\nGDP per Capita: #variable $GLOBAL_CURRENCY_ICON$[Country.MakeScope.ScriptValue('cwp_gdp_per_capita')|D]#! [Country.GetGDPPerCapitaRanking]\n\n"
+ LOBBY_COUNTRY_GDP: "#title $GDP_SHORT$#!:\n#variable @usd! [SelectLocalization(LessThan_CFixedPoint(Country.MakeScope.ScriptValue('cwp_gdp_with_inflation'), '(CFixedPoint)1000000000000'), 'CWP_NORMAL', 'CWP_TRILLION')|Dv]"
+
+ # gui/shared/tab_bars.gui (6th tab of tab_buttons)
+ TAB_6: "#header TAB 6#!"
+
+ # gui/politics_panel_types.gui (interest group clout next to its corruption)
+ DETAILED_CLOUT: "[concept_clout]: [InterestGroup.GetClout|%1]"

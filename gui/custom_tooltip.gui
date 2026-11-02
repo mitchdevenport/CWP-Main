@@ -1,4 +1,4 @@
-@tooltip_max_width = 550 #copied from tooltip.gui
+﻿@tooltip_max_width = 550 #copied from tooltip.gui
 
 @tooltip_fixed_width = 500 #for 2 column layouts etc, since max_width is quite wide
 @tooltip_fixed_column_width = 245 #tooltip_fixed_width/2 - 10/2
@@ -4869,10 +4869,10 @@ types TooltipTypes
 						plotpoints = "[GetTrendPlotPointsNormalized( Goods.GetPriceTrend, Goods.GetMinPrice, Goods.GetMaxPrice )]"
 					}
 					blockoverride "maxvalue" {
-						raw_text = "@money![Goods.GetMaxPrice]"
+						raw_text = "[GetPlayer.MakeScope.Var('cwp_currency').GetFlagName] [Goods.GetMaxPrice]"
 					}
 					blockoverride "minvalue" {
-						raw_text = "@money![Goods.GetMinPrice]"
+						raw_text = "[GetPlayer.MakeScope.Var('cwp_currency').GetFlagName] [Goods.GetMinPrice]"
 					}
 					blockoverride "startdate" {
 						text = "[GetOldestDate(Goods.GetPriceTrend)]"
@@ -15179,6 +15179,190 @@ types TooltipTypes
 			custom_tooltip_textbox = {
 				visible = "[Not(StringIsEmpty(ModifierBreakdown.GetTypeDescription))]"
 				text = "[ModifierBreakdown.GetTypeDescription]"
+			}
+		}
+	}
+
+
+	### CWP tooltips (corruption, pollution, fiscal / central bank / currency)
+	type corruption_tooltip = TooltipWidgetType {
+		dynamicgridbox = {
+			minimumsize = { 450 450 }
+			flowcontainer = {
+				direction = vertical
+				spacing = 20
+				margin = { 20 20 }
+				parentanchor = top|left
+				flowcontainer = {
+					direction = vertical
+					parentanchor = top
+					spacing = 30
+					textbox = {
+						text = "CORRUPTION_TOOLTIP_TITLE"
+						fontsize = 15
+					}
+					textbox = {
+						text = "CORRUPTION_BALANCE"
+						using = fontsize_medium
+					}
+				}
+				flowcontainer = {
+					margin_top = 80
+					direction = vertical
+					spacing = 0
+					flowcontainer = {
+						margin_bottom = 100
+						parentanchor = top
+						direction = vertical
+						textbox = {
+							text = "CORRUPTION_EFFECTS_TOOL"
+							using = fontsize_medium
+						}
+					}
+					flowcontainer = {
+						parentanchor = top
+						direction = vertical
+						spacing = 80
+						flowcontainer = {
+							textbox = {
+								text = "CORRUPTION_TOOLTIP_SUM2"
+								using = fontsize_medium
+							}
+						}
+						flowcontainer = {
+							textbox = {
+								text = "[GetPlayer.MakeScope.GetScriptValueDesc('corruption_baseline')]"
+								#multiline = yes
+								using = fontsize_medium
+							}
+						}
+					}
+				}
+			}
+	  	}
+	}
+	type pollution_tooltip = TooltipWidgetType {
+		dynamicgridbox = {
+			minimumsize = { 450 450}
+			flowcontainer = {
+				direction = vertical
+				spacing = 20
+				margin = { 20 20 }
+				parentanchor = top|left
+				flowcontainer = {
+					direction = vertical
+					parentanchor = top
+					spacing = 40
+					textbox = {
+						text = "POLLUTION_TOOLTIP_TITLE"
+						fontsize = 15
+					}
+					textbox = {
+						text = "GLOBAL_POLLUTION"
+					}
+					textbox = {
+						raw_text = "#D #l DEBUG #!#!"
+					}
+					textbox = {
+						raw_text = "#D Raw Pollution Value: #! [GetPlayer.MakeScope.ScriptValue('global_pollution_generation')]"
+					}
+					textbox = {
+						raw_text = "#D Pollution Max: #! [FixedPointToFloat(GetPlayer.MakeScope.ScriptValue('global_pollution_max'))]"
+					}
+					textbox = {
+						raw_text = "#D Global Temp. Target: #! [GetPlayer.MakeScope.ScriptValue('global_temp_target_celsius')]"
+					}
+				}
+			}
+		}
+	}
+	type inflation_tooltip = FancyTooltipWidgetType {
+		blockoverride "name" {
+			raw_text = "#b [concept_inflation_rate]#!"
+		}
+		blockoverride "text" {
+			text = "INFLATION_RATE_TOOLTIP"
+		}
+		blockoverride "type" {
+			raw_text = ""
+		}
+		blockoverride "replace_icon" {
+			icon = {
+				texture = "gfx/interface/icons/cwp_icons/central_bank.dds"
+				size = { 45 45 }
+				parentanchor = center
+			}
+		}
+	}
+	type money_supply_tooltip = FancyTooltipWidgetType {
+		blockoverride "name" {
+			raw_text = "#b [concept_money_supply]#!"
+		}
+		blockoverride "text" {
+			text = "MONEY_SUPPLY_TOOLTIP_BALANCE"
+		}
+		blockoverride "type" {
+			raw_text = ""
+		}
+		blockoverride "replace_icon" {
+			icon = {
+				texture = "gfx/interface/icons/cwp_icons/central_bank.dds"
+				size = { 45 45 }
+				parentanchor = center
+			}
+		}
+	}
+	type bank_credibility_tooltip = FancyTooltipWidgetType {
+		blockoverride "name" {
+			raw_text = "#b [GetPlayer.GetAdjective] [concept_central_bank]#!"
+		}
+		blockoverride "text" {
+			text = "BANK_CREDIBILITY_TOOLTIP_BUDGET"
+		}
+		blockoverride "type" {
+			raw_text = ""
+		}
+		blockoverride "replace_icon" {
+			icon = {
+				texture = "gfx/interface/icons/cwp_icons/central_bank.dds"
+				size = { 45 45 }
+				parentanchor = center
+			}
+		}
+	}
+	type foreign_reserves_tooltip = FancyTooltipWidgetType {
+		blockoverride "name" {
+			raw_text = "#b [GetPlayer.GetAdjective] [concept_foreign_reserves]#!"
+		}
+		blockoverride "text" {
+			text = "FOREIGN_RESERVES_TOOLTIP"
+		}
+		blockoverride "type" {
+			raw_text = ""
+		}
+		blockoverride "replace_icon" {
+			icon = {
+				texture = "gfx/interface/icons/cwp_icons/central_bank.dds"
+				size = { 45 45 }
+				parentanchor = center
+			}
+		}
+	}
+	type currency_tooltip = FancyTooltipWidgetType {
+		blockoverride "name" {
+			raw_text = "#b [concept_currency]#!"
+		}
+		blockoverride "text" {
+			text = "CURRENCY_TOOLTIP"
+		}
+		blockoverride "type" {
+			raw_text = ""
+		}
+		blockoverride "replace_icon" {
+			icon = {
+				texture = "gfx/interface/icons/cwp_icons/central_bank.dds"
+				size = { 45 45 }
+				parentanchor = center
 			}
 		}
 	}

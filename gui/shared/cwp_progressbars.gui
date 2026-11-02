@@ -1,0 +1,285 @@
+﻿# CWP progressbar types (restored from Cold War Project master gui/shared/progressbars.gui)
+
+types cwp_progressbars {
+	### DOUBLE DIRECTION PROGRESSBAR INFLATION
+	type double_direction_progressbar_inflation = widget {
+		size = { 300 40 }
+		
+		background = {
+			texture = "gfx/interface/progressbar/progressbar_empty.dds"
+			spriteType = Corneredtiled
+			spriteborder = { 4 4 }
+			texture_density = 2
+			
+			using = progressbar_texture_properties
+		}
+		
+		### progressbar left
+		widget = {
+			size = { 50% 100% }
+			scissor = yes
+			
+			progressbar = {
+				### REVERSE HACK
+
+				block "negative_textures" {
+					progresstexture = "gfx/interface/progressbar/progressbar_empty.dds"
+					noprogresstexture = "gfx/interface/progressbar/progressbar_bad.dds"
+				}
+				
+				size = { 100% 100% }
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+				texture_density = 2
+				skip_initial_animation = yes
+				
+				block "negative_min_max_values" {
+					min = -1
+					max = 0
+				}
+
+				block "value_left" {}
+				
+				direction = horizontal
+				using = progressbar_texture_properties
+			}
+		}
+		
+		### progressbar right
+		widget = {
+			size = { 50% 100% }
+			parentanchor = right
+			scissor = yes
+			
+			progressbar = {
+
+				block "positive_textures" {
+					noprogresstexture = "gfx/interface/progressbar/progressbar_empty.dds"
+					progresstexture = "gfx/interface/progressbar/progressbar_bad.dds"
+				}
+				
+				size = { 100% 100% }
+				spriteType = Corneredtiled
+				spriteborder = { 4 4 }
+				texture_density = 2
+				skip_initial_animation = yes
+				
+				block "positive_min_max_values" {
+					min = 0
+					max = 1
+				}
+
+				block "value_right" {}
+				
+				direction = horizontal
+				
+				using = progressbar_marker_indicator
+
+				blockoverride "glow" {
+					texture = "gfx/interface/progressbar/progressbar_bad_glow.dds"
+				}
+				blockoverride "glow_line" {
+					texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
+				}
+				
+				using = progressbar_texture_properties
+			}
+		}	
+		
+		### frame
+		widget = {
+			size = { 100% 100% }
+			
+			background = {
+				name = "frame"
+				texture = "gfx/interface/progressbar/progressbar_frame.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 6 6 }
+				texture_density = 2
+				margin = { 3 3 }
+			}
+		}
+		### center divider
+		widget = {
+			size = { 3 100% }
+			parentanchor = center
+			
+			background = {
+				texture = "gfx/interface/progressbar/progressbar_center_divider.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 0 0 }
+				texture_density = 2
+				margin = { 0 1 }
+			}
+		}
+	}
+
+	type readiness_bar = flowcontainer {
+		flowcontainer = {
+			spacing = 0
+			bar_horizontal = {
+				size = { 40 20 }
+				tooltipwidget = {
+					readiness_tooltip_1 = {}
+				}
+				blockoverride "values" {
+					value = "[Country.MakeScope.ScriptValue('readiness')]"
+					min = 0
+					max = 20
+				}
+				blockoverride "color" {
+					color = { 0.29 0.561 0.094 1 }
+				}
+			}
+			widget = {
+				size = { 3 100% }
+				position = { 3 0 }
+				
+				background = {
+					margin = { 0 1 }
+					texture = "gfx/interface/progressbar/progressbar_center_divider.dds"
+					spriteType = Corneredstretched
+					spriteborder = { 0 0 }
+					texture_density = 2
+				}
+			}
+			bar_horizontal = {
+				size = { 40 20 }
+				tooltipwidget = {
+					readiness_tooltip_2 = {}
+				}
+				blockoverride "values" {
+					value = "[Country.MakeScope.ScriptValue('readiness')]"
+					min = 20
+					max = 40
+				}
+				blockoverride "color" {
+					color = { 0.435 0.561 0.094 1 }
+				}
+			}
+			widget = {
+				size = { 3 100% }
+				position = { 3 0 }
+				
+				background = {
+					margin = { 0 1 }
+					texture = "gfx/interface/progressbar/progressbar_center_divider.dds"
+					spriteType = Corneredstretched
+					spriteborder = { 0 0 }
+					texture_density = 2
+				}
+			}
+			bar_horizontal = {
+				size = { 40 20 }
+				tooltipwidget = {
+					readiness_tooltip_3 = {}
+				}
+				blockoverride "values" {
+					value = "[Country.MakeScope.ScriptValue('readiness')]"
+					min = 40
+					max = 60
+				}
+				blockoverride "color" {
+					color = { 0.62 0.596 0.094 1 }
+				}
+			}
+			widget = {
+				size = { 3 100% }
+				position = { 3 0 }
+				
+				background = {
+					margin = { 0 1 }
+					texture = "gfx/interface/progressbar/progressbar_center_divider.dds"
+					spriteType = Corneredstretched
+					spriteborder = { 0 0 }
+					texture_density = 2
+				}
+			}
+			bar_horizontal = {
+				size = { 40 20 }
+				tooltipwidget = {
+					readiness_tooltip_4 = {}
+				}
+				blockoverride "values" {
+					value = "[Country.MakeScope.ScriptValue('readiness')]"
+					min = 60
+					max = 80
+				}
+				blockoverride "color" {
+					color = { 0.62 0.357 0.094 1 }
+				}
+			}
+			widget = {
+				size = { 3 100% }
+				position = { 3 0 }
+				
+				background = {
+					margin = { 0 1 }
+					texture = "gfx/interface/progressbar/progressbar_center_divider.dds"
+					spriteType = Corneredstretched
+					spriteborder = { 0 0 }
+					texture_density = 2
+				}
+			}
+			bar_horizontal = {
+				size = { 40 20 }
+				tooltipwidget = {
+					readiness_tooltip_5 = {}
+				}
+				blockoverride "values" {
+					value = "[Country.MakeScope.ScriptValue('readiness')]"
+					min = 80
+					max = 100
+				}
+				blockoverride "color" {
+					using = Color_Red
+					color = { 0.62 0.094 0.094 1 }
+				}
+			}
+			background = {
+				texture = "gfx/interface/progressbar/progressbar_empty.dds"
+				spriteType = Corneredtiled
+				spriteborder = { 1 1 }
+				texture_density = 2
+				
+				using = progressbar_texture_properties
+			}
+			background = {
+				name = "frame"
+				texture = "gfx/interface/progressbar/progressbar_frame.dds"
+				spriteType = Corneredstretched
+				spriteborder = { 6 6 }
+				texture_density = 2
+				margin = { 3 3 }
+			}
+
+		}
+	}
+
+	# readiness_bar segment tooltips (referenced by master's readiness_bar but never defined there)
+	type readiness_tooltip_1 = TooltipWidgetType {
+		blockoverride "text" {
+			text = "READINESS_TOOLTIP_LEVEL_1_d"
+		}
+	}
+	type readiness_tooltip_2 = TooltipWidgetType {
+		blockoverride "text" {
+			text = "READINESS_TOOLTIP_LEVEL_2_d"
+		}
+	}
+	type readiness_tooltip_3 = TooltipWidgetType {
+		blockoverride "text" {
+			text = "READINESS_TOOLTIP_LEVEL_3_d"
+		}
+	}
+	type readiness_tooltip_4 = TooltipWidgetType {
+		blockoverride "text" {
+			text = "READINESS_TOOLTIP_LEVEL_4_d"
+		}
+	}
+	type readiness_tooltip_5 = TooltipWidgetType {
+		blockoverride "text" {
+			text = "READINESS_TOOLTIP_LEVEL_5_d"
+		}
+	}
+}
