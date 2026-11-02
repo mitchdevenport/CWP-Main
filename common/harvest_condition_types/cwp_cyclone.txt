@@ -41,18 +41,20 @@
 		if = {
 			limit = {
 				OR = {
-					this = s:STATE_MALACCA_STRAIT
-					this = s:STATE_SOUTH_INDIAN_OCEAN
+					this = s:STATE_ANDAMAN_SEA
+					this = s:STATE_INDIAN_OCEAN_02
 					this = s:STATE_JAVA_SEA
 					this = s:STATE_MOLUCCA_SEA
-					this = s:STATE_MALAY_SEA
+					this = s:STATE_SULU_SEA
+					this = s:STATE_GULF_OF_SIAM
+					this = s:STATE_GULF_OF_TONKIN
 					this = s:STATE_SOUTH_CHINA_SEA
 					this = s:STATE_EAST_CHINA_SEA
 					this = s:STATE_YELLOW_SEA
 					this = s:STATE_PHILIPPINES_SEA
 					this = s:STATE_MICRONESIAN_SEA
 					this = s:STATE_CORAL_SEA
-					this = s:STATE_WESTERN_POLYNESIAN_SEA
+					this = s:STATE_SOUTH_PACIFIC_OCEAN_09
 				}
 			}
 			add = 0.2
@@ -61,8 +63,8 @@
 			limit = {
 				OR = {
 					this = s:STATE_ARABIAN_SEA
-					this = s:STATE_WESTERN_INDIAN_OCEAN
-					this = s:STATE_EASTERN_INDIAN_OCEAN
+					this = s:STATE_INDIAN_OCEAN_01
+					this = s:STATE_MASCARENES
 					this = s:STATE_LACCADIVE_SEA
 					this = s:STATE_BAY_OF_BENGAL
 				}
@@ -73,7 +75,6 @@
 			limit = {
 				OR = {
 					this = s:STATE_HORN_OF_AFRICA
-					this = s:STATE_ZANZIBAR_COAST
 					this = s:STATE_MOZAMBIQUE_CHANNEL
 				}
 			}
@@ -86,10 +87,14 @@
 			}
 			if = {
 				limit = {
-					this = s:STATE_NORTHERN_POLYNESIAN_SEA
-					this = s:STATE_NORTH_PACIFIC_OCEAN
-					this = s:STATE_CENTROAMERICAN_SEA
-					this = s:STATE_PACIFIC_SEABOARD
+					OR = {
+						this = s:STATE_HAWAIIAN_SEAMOUNT_CHAIN
+						this = s:STATE_SOUTH_PACIFIC_OCEAN_07
+						this = s:STATE_SOUTH_PACIFIC_OCEAN_08
+						this = s:STATE_SOUTH_PACIFIC_OCEAN_05
+						this = s:STATE_CENTROAMERICAN_SEA
+						this = s:STATE_PACIFIC_SEABOARD_01
+					}
 				}
 				add = 0.1
 			}
@@ -102,16 +107,14 @@
 			if = {
 				limit = {
 					OR = {
-						this = s:STATE_CAPE_VERDE_SEA
-						this = s:STATE_EQUATORIAL_ATLANTIC_OCEAN
-						this = s:STATE_MAIN_EQUATORIAL_CRURRENT
-						this = s:STATE_AMAZON_DELTA
-						this = s:STATE_COAST_OF_GUYANA
+						this = s:STATE_WEST_AFRICAN_COAST
+						this = s:STATE_CENTRAL_ATLANTIC_OCEAN
+						this = s:STATE_GUIANA_SEA
 						this = s:STATE_EASTERN_CARIBBEAN_SEA
 						this = s:STATE_WESTERN_CARIBBEAN_SEA
 						this = s:STATE_GULF_OF_MEXICO
-						this = s:STATE_BAHAMA_BANKS
-						this = s:STATE_SOUTH_ATLANTIC_COAST
+						this = s:STATE_CARIBBEAN_SEA
+						this = s:STATE_ATLANTIC_SEABOARD
 						this = s:STATE_SARGASSO_SEA
 					}
 				}
@@ -126,8 +129,8 @@
 			if = {
 				limit = {
 					OR = {
-						this = s:STATE_SOUTH_BRAZIL_BIGHT
-						this = s:STATE_CAPE_ST_ROQUE
+						this = s:STATE_BRAZILIAN_SEA_SOUTH
+						this = s:STATE_BRAZILIAN_SEA_NORTH
 					}
 				}
 				add = 0.05

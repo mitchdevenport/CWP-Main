@@ -48,8 +48,8 @@
 			if = {
 				limit = {
 					OR = {
-						this = s:STATE_PATAGONIAN_CHANNELS
-						this = s:STATE_PATAGONIAN_SEA
+						this = s:STATE_CHILEAN_SEA
+						this = s:STATE_SCOTIA_SEA
 					}
 				}
 				add = 0.25
@@ -57,26 +57,30 @@
 		}
 		if = {
 			limit = {
-				month >= 11
-				month <= 2
+				OR = {
+					month >= 11
+					month <= 2
+				}
 			}
 			if = {
 				limit = {
-					this = s:STATE_BARENTS_SEA
-					this = s:STATE_NORWEGIAN_SEA
-					this = s:STATE_NORTH_SEA
-					this = s:STATE_NORTHERN_NORTH_ATLANTIC_OCEAN
-					this = s:STATE_LABRADOR_SEA
-					this = s:STATE_DAVIS_STRAIT
-					this = s:STATE_HUDSON_BAY
-					this = s:STATE_GULF_OF_FINLAND
-					this = s:STATE_NORTHERN_BALTIC_SEA
-					this = s:STATE_BERING_SEA
-					this = s:STATE_GULF_OF_ALASKA
-					this = s:STATE_GRAND_BANKS
+					OR = {
+						this = s:STATE_BARENTS_SEA
+						this = s:STATE_NORWEGIAN_SEA
+						this = s:STATE_NORTH_SEA
+						this = s:STATE_IRMINGER_SEA
+						this = s:STATE_NORTH_ATLANTIC_OCEAN_01
+						this = s:STATE_LABRADOR_SEA
+						this = s:STATE_DAVIS_STRAIT
+						this = s:STATE_HUDSON_BAY
+						this = s:STATE_BALTIC_SEA
+						this = s:STATE_BERING_SEA
+						this = s:STATE_GULF_OF_ALASKA
+						this = s:STATE_NORTH_ATLANTIC_OCEAN_02
+					}
 				}
+				add = 0.25
 			}
-			add = 0.25
 		}
 	}
 
