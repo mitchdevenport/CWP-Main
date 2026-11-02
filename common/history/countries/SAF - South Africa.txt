@@ -5,6 +5,7 @@
 		effect_starting_society_technologies_tier_1 = yes
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
+		set_variable = cwp_parliamentary_monarchy # Union of South Africa: dominion governed by its prime minister
 		effect_starting_laws_1946_apartheid_settler_state = yes
 	}
 }

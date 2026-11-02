@@ -41,7 +41,8 @@
 }
 
 effect_starting_laws_1946_parliamentary_monarchy = {
-	activate_law = law_type:law_parliamentary_republic
+	set_variable = cwp_parliamentary_monarchy # prime minister governs: gov_parliamentary_monarchy
+	activate_law = law_type:law_monarchy
 	activate_law = law_type:law_census_voting
 	activate_law = law_type:law_racial_segregation
 	activate_law = law_type:law_total_separation
@@ -354,6 +355,7 @@ effect_starting_laws_1946_colonial_administration = {
 }
 
 effect_starting_laws_1946_settler_dominion = {
+	set_variable = cwp_parliamentary_monarchy # prime minister governs: gov_parliamentary_monarchy
 	activate_law = law_type:law_monarchy
 	activate_law = law_type:law_census_voting
 	activate_law = law_type:law_racial_segregation

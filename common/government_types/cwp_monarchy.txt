@@ -1,5 +1,31 @@
 ﻿# Governance Principles: Monarchy
 
+# Parliamentary Monarchy (from the CWP 1.5 release): the monarch reigns as head of state while an elected
+# prime minister governs. Countries opt in through the cwp_parliamentary_monarchy variable, set by their
+# starting law package, so other constitutional monarchies keep a ruling monarch.
+gov_parliamentary_monarchy = {
+	transfer_of_power = parliamentary_elective
+	new_leader_on_reform_government = yes
+
+	male_ruler = "RULER_TITLE_PRIME_MINISTER"
+	female_ruler = "RULER_TITLE_PRIME_MINISTER"
+
+	possible = {
+		has_law_or_variant = law_type:law_monarchy
+		has_variable = cwp_parliamentary_monarchy
+		OR = {
+			has_law_or_variant = law_type:law_landed_voting
+			has_law_or_variant = law_type:law_wealth_voting
+			has_law_or_variant = law_type:law_census_voting
+			has_law_or_variant = law_type:law_universal_suffrage
+		}
+	}
+
+	on_government_type_change = { change_to_parliamentary_elective = yes }
+	on_post_government_type_change = { post_change_to_parliamentary_elective = yes }
+}
+
+
 # Distribution of Power: Autocracy
 gov_absolute_monarchy = {
 	transfer_of_power = hereditary
@@ -73,6 +99,7 @@ gov_landed_constitutional_monarchy = {
 	possible = {
 		has_law_or_variant = law_type:law_monarchy
 		has_law_or_variant = law_type:law_landed_voting
+		NOT = { has_variable = cwp_parliamentary_monarchy }
 	}
 
 	on_government_type_change = { change_to_hereditary = yes }
@@ -93,6 +120,7 @@ gov_plutocratic_constitutional_monarchy = {
 	possible = {
 		has_law_or_variant = law_type:law_monarchy
 		has_law_or_variant = law_type:law_wealth_voting
+		NOT = { has_variable = cwp_parliamentary_monarchy }
 	}
 
 	on_government_type_change = { change_to_hereditary = yes }
@@ -113,6 +141,7 @@ gov_limited_constitutional_monarchy = {
 	possible = {
 		has_law_or_variant = law_type:law_monarchy
 		has_law_or_variant = law_type:law_census_voting
+		NOT = { has_variable = cwp_parliamentary_monarchy }
 	}
 
 	on_government_type_change = { change_to_hereditary = yes }
@@ -133,6 +162,7 @@ gov_democratic_constitutional_monarchy = {
 	possible = {
 		has_law_or_variant = law_type:law_monarchy
 		has_law_or_variant = law_type:law_universal_suffrage
+		NOT = { has_variable = cwp_parliamentary_monarchy }
 	}
 
 	on_government_type_change = { change_to_hereditary = yes }
