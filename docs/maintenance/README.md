@@ -22,8 +22,9 @@ messages (anchors in CWP's spline network that only the map editor can fix), the
 checksum warning (fixed by saving in the map editor), and the `CInterestGroupTypeDatabase::ExpectedNumItems`
 assertion (CWP has more interest groups than vanilla). During a campaign the engine may also log single
 assertions about shipping lanes from a `NULL_OBJ` state (probably the ports behind those spline anchors), dead
-or invalid formations travelling, `War.GetWarParticipant` and interest group leaders that cannot be generated;
-none of them comes from CWP script (the war support values are vanilla's).
+or invalid formations travelling, `War.GetWarParticipant` and interest group leaders that cannot be generated.
+None of them names a CWP script location and the war support values involved are vanilla's, so they look
+engine-side, but that has not been proven.
 
 An `Assertion failed: NGameState::GameStateAccess ...` line after unpausing means gamestate script (events,
 on_actions, effects) read hidden AI or interface-only state, which desyncs multiplayer games. Find the
@@ -36,6 +37,20 @@ Journal entries added with `add_journal_entry` must not use `can_deactivate = ye
 
 Company types need no extra buildings, but `common/scripted_effects/cwp_company_effects.txt` lists every company
 type to clean up the company buildings left behind when a civil war or secession ends; add new company types there.
+
+Politics rules the 1.14 engine enforces:
+- A distribution-of-power law only holds elections (and gets parties) if the law's own `modifier` grants voting
+  power; voting power from the voting institution's `institution_modifier` does not count. The franchise laws
+  therefore carry a token 1 point of voting power and the institution supplies the rest.
+- Scripted rulers (`ruler = yes` in `common/history/characters`) must fit the transfer of power: under
+  dictatorial or hereditary rule they may not lead their interest group, under presidential rule they must,
+  and under parliamentary rule they must lead the strongest interest group in the government. Violations are
+  logged at startup as "The ruler of X is scripted to be ...".
+- Once parties exist the engine forms its own government, so governments of countries that hold elections at
+  the start are set in `common/history/governments/cwp_starting_governments.txt`, not with
+  `add_ruling_interest_group` in country history.
+- `gov_parliamentary_monarchy` (prime minister governs, monarchy names and flags) applies to monarchies with the
+  `cwp_parliamentary_monarchy` variable; set it before enacting the monarchy law.
 
 ## End-to-end tests
 
