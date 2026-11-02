@@ -122,7 +122,7 @@ end_bretton_woods_agreement = {
 		}
 		if = {
 			limit = {
-				has_healthy_economy = no
+				cwp_has_healthy_economy = no
 			}
 			add = 50
 		}

@@ -109,7 +109,7 @@ bank_credibility_val = {
 	# From Unhealthy Economy
 	if = {
 		limit = {
-			has_healthy_economy = no
+			cwp_has_healthy_economy = no
 		}
 		subtract = {
 			value = bank_credibility_10

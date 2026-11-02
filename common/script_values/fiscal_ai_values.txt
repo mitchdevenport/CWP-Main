@@ -174,7 +174,7 @@ ai_wants_contractionary = {
 	}
 	if = {
 		limit = {
-			has_healthy_economy = no
+			cwp_has_healthy_economy = no
 		}
 		multiply = 0
 	}
@@ -222,7 +222,7 @@ ai_wants_stable = {
 	}
 	if = {
 		limit = {
-			has_healthy_economy = no
+			cwp_has_healthy_economy = no
 		}
 		multiply = 0
 	}
@@ -247,7 +247,7 @@ ai_wants_expansionary = {
 	}
 	if = {
 		limit = {
-			has_healthy_economy = no
+			cwp_has_healthy_economy = no
 		}
 		add = 100
 	}

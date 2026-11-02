@@ -5,6 +5,15 @@
 	}
 }
 
+# Vanilla's concept_economy_health: healthy if fixed incomes exceed fixed expenses or the principal is under half the credit.
+# The built-in has_healthy_economy reads hidden AI/interface state in 1.14 (assertion, multiplayer desync), so gamestate uses this.
+cwp_has_healthy_economy = {
+	OR = {
+		net_fixed_income > 0
+		scaled_debt < 0.5
+	}
+}
+
 currency_leader_exists = {
 	any_country = {
 		is_leading_central_bank = yes
