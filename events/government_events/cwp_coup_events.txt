@@ -712,25 +712,25 @@ cwp_coup_events.4 = {
 				modifier = {
 					if = {
 						limit = {
-							owner.institution:institution_home_affairs.investment >= 2
+							owner.institution:institution_home_affairs ?= { investment >= 2 }
 						}
 						add = 25
 					}
 					if = {
 						limit = {
-							owner.institution:institution_home_affairs.investment >= 3
+							owner.institution:institution_home_affairs ?= { investment >= 3 }
 						}
 						add = 25
 					}
 					if = {
 						limit = {
-							owner.institution:institution_home_affairs.investment >= 4
+							owner.institution:institution_home_affairs ?= { investment >= 4 }
 						}
 						add = 25
 					}
 					if = {
 						limit = {
-							owner.institution:institution_home_affairs.investment >= 5
+							owner.institution:institution_home_affairs ?= { investment >= 5 }
 						}
 						add = 25
 					}

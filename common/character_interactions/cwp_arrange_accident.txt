@@ -38,19 +38,19 @@ arrange_accident = {
 				40 = {
 					modifier = {
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 2 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 2 } }
 							add = 25
 						}
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 3 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 3 } }
 							add = 25
 						}
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 4 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 4 } }
 							add = 25
 						}
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 5 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 5 } }
 							add = 25
 						}
 					}
@@ -63,19 +63,19 @@ arrange_accident = {
 				20 = {
 					modifier = {
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 2 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 2 } }
 							subtract = 5
 						}
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 3 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 3 } }
 							subtract = 5
 						}
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 4 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 4 } }
 							subtract = 5
 						}
 						if = {
-							limit = { owner.institution:institution_home_affairs.investment >= 5 }
+							limit = { owner.institution:institution_home_affairs ?= { investment >= 5 } }
 							subtract = 5
 						}
 					}
