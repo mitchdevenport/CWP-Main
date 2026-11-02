@@ -97,6 +97,7 @@ develop_civilian_nuclear_capability = {
 
 	possible = {
 		in_default = no
+		canceled_nuclear_program = no # the program's journal entry fails while this is set
 		OR = {
 			has_law = law_type:law_civilian_applications
 			has_law = law_type:law_deterrence
@@ -152,6 +153,7 @@ develop_atomic_bomb = {
 
 	possible = {
 		in_default = no
+		canceled_nuclear_program = no # the program's journal entry fails while this is set
 		OR = {
 			has_law = law_type:law_deterrence
 			has_law = law_type:law_first_strike
@@ -207,6 +209,7 @@ develop_thermonuclear_bomb = {
 
 	possible = {
 		in_default = no
+		canceled_nuclear_program = no # the program's journal entry fails while this is set
 		has_technology_researched = brinkmanship
 		OR = {
 			has_law = law_type:law_deterrence
@@ -264,6 +267,7 @@ develop_icbm = {
 
 	possible = {
 		in_default = no
+		canceled_nuclear_program = no # the program's journal entry fails while this is set
 		has_technology_researched = tactical_ballistic_weapons
 		OR = {
 			has_law = law_type:law_deterrence

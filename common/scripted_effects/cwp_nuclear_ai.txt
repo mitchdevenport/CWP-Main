@@ -116,9 +116,19 @@
 			save_temporary_scope_as = wmd_target_owner
 		}
 		ROOT = {
-			add_to_variable_list = {
-				name = wmd_target_list_c
-				target = scope:wmd_target_owner
+			if = { # once per country, as in add_state_to_target_list
+				limit = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = wmd_target_list_c
+							target = scope:wmd_target_owner
+						}
+					}
+				}
+				add_to_variable_list = {
+					name = wmd_target_list_c
+					target = scope:wmd_target_owner
+				}
 			}
 		}
 	}
