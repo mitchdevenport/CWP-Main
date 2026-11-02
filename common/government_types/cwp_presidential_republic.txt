@@ -20,7 +20,7 @@ gov_presidential_autocracy = {
 # Distribution of Power: Technocracy
 gov_technocratic_republic = {
 	transfer_of_power = presidential_elective
-    new_leader_on_reform_government = yes
+	new_leader_on_reform_government = no # a president stays in office through cabinet changes
 
 	male_ruler = "RULER_TITLE_PRESIDENT"
 	female_ruler = "RULER_TITLE_PRESIDENT"
@@ -38,7 +38,7 @@ gov_technocratic_republic = {
 # Distribution of Power: Oligarchy
 gov_oligarchic_republic = {
 	transfer_of_power = presidential_elective
-    new_leader_on_reform_government = yes
+	new_leader_on_reform_government = no # a president stays in office through cabinet changes
 
 	male_ruler = "RULER_TITLE_PRESIDENT"
 	female_ruler = "RULER_TITLE_PRESIDENT"
@@ -56,7 +56,7 @@ gov_oligarchic_republic = {
 # Distribution of Power: Landed Voting
 gov_landed_presidential_republic = {
 	transfer_of_power = presidential_elective
-    new_leader_on_reform_government = yes
+	new_leader_on_reform_government = no # a president stays in office through cabinet changes
 
 	male_ruler = "RULER_TITLE_PRESIDENT"
 	female_ruler = "RULER_TITLE_PRESIDENT"
@@ -74,7 +74,7 @@ gov_landed_presidential_republic = {
 # Distribution of Power: Wealth Voting
 gov_plutocratic_presidential_republic = {
 	transfer_of_power = presidential_elective
-    new_leader_on_reform_government = yes
+	new_leader_on_reform_government = no # a president stays in office through cabinet changes
 
 	male_ruler = "RULER_TITLE_PRESIDENT"
 	female_ruler = "RULER_TITLE_PRESIDENT"
@@ -92,7 +92,7 @@ gov_plutocratic_presidential_republic = {
 # Distribution of Power: Census Suffrage
 gov_limited_presidential_republic = {
 	transfer_of_power = presidential_elective
-    new_leader_on_reform_government = yes
+	new_leader_on_reform_government = no # a president stays in office through cabinet changes
 
 	male_ruler = "RULER_TITLE_PRESIDENT"
 	female_ruler = "RULER_TITLE_PRESIDENT"
@@ -110,7 +110,7 @@ gov_limited_presidential_republic = {
 # Distribution of Power: Universal Suffrage
 gov_democratic_presidential_republic = {
 	transfer_of_power = presidential_elective
-    new_leader_on_reform_government = yes
+	new_leader_on_reform_government = no # a president stays in office through cabinet changes
 
 	male_ruler = "RULER_TITLE_PRESIDENT"
 	female_ruler = "RULER_TITLE_PRESIDENT"
