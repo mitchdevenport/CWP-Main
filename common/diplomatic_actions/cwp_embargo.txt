@@ -87,7 +87,7 @@
 			trigger = {
 				custom_tooltip = {
 					text = "DIPLOMATIC_PACT_REQUIREMENT_NO_SUBJECT_RELATION"
-					NOT = {
+					NOR = {
 						is_subject_of = scope:target_country
 						scope:target_country = { is_subject_of = root }
 					}

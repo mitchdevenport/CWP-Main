@@ -185,7 +185,7 @@ is_vulnerable_to_droughts = {
 			}
 		}
 
-		NOT = {
+		NOR = {
 			region = sr:region_siberia
 			region = sr:region_central_asia
 			region = sr:region_atlantic_seaboard
@@ -197,7 +197,7 @@ is_vulnerable_to_droughts = {
 
 # Floods:
 is_vulnerable_to_floods = {
-	NOT = {
+	NOR = {
 		region = sr:region_north_africa
 		region = sr:region_horn_of_africa
 		region = sr:region_west_africa
@@ -213,7 +213,7 @@ is_vulnerable_to_floods = {
 
 # Frosts:
 is_vulnerable_to_frosts = {
-	NOT = {
+	NOR = {
 		region = sr:region_north_africa
 		region = sr:region_west_africa
 		region = sr:region_central_africa
@@ -276,7 +276,7 @@ is_vulnerable_to_locust_swarms = {
 
 # Heatwaves:
 is_vulnerable_to_heatwaves = {
-	NOT = {
+	NOR = {
 		region = sr:region_siberia
 		region = sr:region_central_asia
 	}

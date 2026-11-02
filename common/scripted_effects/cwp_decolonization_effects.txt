@@ -14702,7 +14702,7 @@ effect_free_all_subjects = {
 	every_subject_or_below = {
 		limit = {
 			is_direct_subject_of = ROOT
-			NOT = {
+			NOR = {
 				has_variable = special_decolonization_scenario
 				is_subject_type = subject_type_military_occupation
 			}
@@ -14847,7 +14847,7 @@ effect_decolonization_after_war = {
 				has_journal_entry = je_decolonization
 			}
 			any_subject_or_below = {
-				NOT = {
+				NOR = {
 					has_variable = special_decolonization_scenario
 					is_subject_type = subject_type_military_occupation
 				}

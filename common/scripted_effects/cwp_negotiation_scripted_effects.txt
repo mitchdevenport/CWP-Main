@@ -1036,7 +1036,7 @@ set_neg_options = { ## Sets three options out of a random list of possible negot
 		}
 		20 = {#option 4 law
 			trigger = {
-				NOT = {
+				NOR = {
 					var:negotiation_option_a = 4
 					var:negotiation_option_b = 4
 				}
@@ -1050,7 +1050,7 @@ set_neg_options = { ## Sets three options out of a random list of possible negot
 		}
 		10 = {#option 5 buildings
 			trigger = {
-				NOT = {
+				NOR = {
 					var:negotiation_option_a = 5
 					var:negotiation_option_b = 5
 				}
@@ -1064,7 +1064,7 @@ set_neg_options = { ## Sets three options out of a random list of possible negot
 		}
 		10 = {#option 6 building groups
 			trigger = {
-				NOT = {
+				NOR = {
 					var:negotiation_option_a = 6
 					var:negotiation_option_b = 6
 				}
@@ -1078,7 +1078,7 @@ set_neg_options = { ## Sets three options out of a random list of possible negot
 		}
 		5 = {#option 7 taxes
 			trigger = {
-				NOT = {
+				NOR = {
 					var:negotiation_option_a = 7
 					var:negotiation_option_b = 7
 				}
@@ -1095,7 +1095,7 @@ set_neg_options = { ## Sets three options out of a random list of possible negot
 		}
 		80 = {#option 8 option, law_amendment
 			trigger = {
-				NOT = {
+				NOR = {
 					var:negotiation_option_a = 8
 					var:negotiation_option_b = 8
 				}
@@ -1109,7 +1109,7 @@ set_neg_options = { ## Sets three options out of a random list of possible negot
 		}
 		5 = {#option 9
 			trigger = {
-				NOT = {
+				NOR = {
 					var:negotiation_option_a = 9
 					var:negotiation_option_b = 9
 				}

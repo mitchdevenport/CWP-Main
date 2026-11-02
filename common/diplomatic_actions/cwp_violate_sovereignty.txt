@@ -14,12 +14,12 @@
 		is_at_war = yes
 
 		scope:target_country = {
-			NOT = {
+			NOR = {
 				is_country_type = decentralized
 				is_subject_of = ROOT
 			}
 		}
-		NOT = {
+		NOR = {
 			has_war_with = scope:target_country
 			is_in_war_together = scope:target_country
 		}

@@ -11,7 +11,7 @@
 		}
 		any_country = {
 			is_subject_of = root
-			NOT = {
+			NOR = {
 				has_variable = special_decolonization_scenario
 				is_subject_type = subject_type_military_occupation
 			}
@@ -141,7 +141,7 @@
 		NOT = {
 			any_country = {
 				has_subject_relation_with = root
-				NOT = {
+				NOR = {
 					has_variable = special_decolonization_scenario
 					is_subject_type = subject_type_military_occupation
 				}
