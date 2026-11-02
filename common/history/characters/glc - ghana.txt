@@ -1,16 +1,2 @@
-﻿CHARACTERS = {
-	c:DJI ?= {
-		create_character = {
-			first_name = "Alan"
-			last_name = "Burns"
-			culture = cu:english
-			ruler = yes
-			# ig_leader = yes #Ruler can't be IG leader under dictatorship or monarchy.
-			birth_date = 1887.11.9
-			interest_group = ig_landowners
-			ideology = ideology_moderate
-			traits = {
-			}
-		}
-	}
-}
+﻿# Intentionally empty: Sir Alan Burns, Governor of the Gold Coast, is created in "glc- gold coast.txt".
+# This copy named French Somaliland (DJI) by mistake and made him its ruler.

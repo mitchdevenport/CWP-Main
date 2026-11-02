@@ -6,5 +6,8 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_liberal_republic = yes
+		# A grand duchy governed by its prime minister, as in CWP 1.5 (its hereditary head of government)
+		set_variable = cwp_parliamentary_monarchy
+		activate_law = law_type:law_monarchy
 	}
 }

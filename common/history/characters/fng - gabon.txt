@@ -1,5 +1,5 @@
 ﻿CHARACTERS = {
-	c:DJI ?= {
+	c:FNG ?= { # Governor of Gabon (the original file named French Somaliland by mistake)
 		create_character = {
 			first_name = "Numa"
 			last_name = "Sadoul"

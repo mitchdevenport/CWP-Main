@@ -6,6 +6,8 @@
 		effect_starting_military_technologies_tier_3 = yes
 		# Laws
 		effect_starting_laws_1946_soviet_socialist_republic = yes
+		# King Michael reigned until 1947, as in CWP 1.5 (its hereditary head of government)
+		activate_law = law_type:law_monarchy
 		# Government at game start (CWP 1.5 release)
 		ig:ig_trade_unions = { add_ruling_interest_group = yes }
 		ig:ig_landowners = { add_ruling_interest_group = yes }

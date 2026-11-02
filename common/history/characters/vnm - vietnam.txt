@@ -1,5 +1,5 @@
 ﻿CHARACTERS = {
-	c:TSW ?= {
+	c:VNM ?= { # High Commissioner for Indochina (the original file named Bechuanaland by mistake)
 		create_character = {
 			first_name = "Georges_Thierry"
 			last_name = "dArgenlieu"			# d'Argenlieu

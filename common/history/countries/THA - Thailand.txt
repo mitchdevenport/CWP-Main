@@ -6,5 +6,6 @@
 		effect_starting_military_technologies_tier_4 = yes
 		# Laws
 		effect_starting_laws_1946_middle_eastern_constitutional_monarchy = yes
+		set_variable = cwp_parliamentary_monarchy # Governed by Prime Minister Seni Pramoj, as in CWP 1.5 (gov_parliamentary_monarchy)
 	}
 }
