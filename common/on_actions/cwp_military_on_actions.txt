@@ -1,0 +1,25 @@
+﻿# Military / WMD on_actions, hooked from common/on_actions/00_code_on_actions.txt
+
+# Fired from on_monthly_pulse_country
+# Root = Country
+cwp_military_monthly_pulse_country = {
+	effect = {
+		onaction_readiness_calculation = yes
+		onaction_nuclear_calculation = yes
+	}
+}
+
+# Fired from on_building_built
+# Root = Building
+cwp_military_on_building_built = {
+	effect = {
+		if = {
+			limit = {
+				is_building_type = building_nuclear_research_facility
+			}
+			owner = {
+				set_variable = nuclear_facility_established
+			}
+		}
+	}
+}

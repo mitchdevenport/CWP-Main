@@ -270,6 +270,9 @@ law_disarmed_nation = {
 		country_officers_pol_str_mult = -0.25
 		state_building_barrack_max_level_add = -100
 		state_building_conscription_center_max_level_add = -100
+		state_building_nuclear_weapons_facility_max_level_add = -100
+		state_building_chemical_weapons_facility_max_level_add = -100
+		state_building_biological_weapons_facility_max_level_add = -100
 	}
 
 	can_impose = {

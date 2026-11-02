@@ -1,0 +1,4 @@
+﻿l_english:
+ notification_intervention_third_party_joins_name: "Third Party Joins Intervention"
+ notification_intervention_third_party_joins_desc: "A third party has joined the intervention."
+ notification_intervention_third_party_joins_tooltip: "#header $notification_intervention_third_party_joins_name$#!\n$TOOLTIP_DELIMITER$\n$notification_intervention_third_party_joins_desc$"

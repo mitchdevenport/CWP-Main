@@ -1,0 +1,54 @@
+﻿### East/West blocs
+# The Western and Eastern Blocs are power blocs (common/history/power_blocs/00_power_blocs.txt):
+# the Western Bloc is the power bloc of the United States, the Eastern Bloc the power bloc of the Soviet Union.
+# Diplomatic alignment with a superpower is membership of its power bloc (subjects follow their overlord's bloc).
+
+# Leader or member of the Western Bloc
+is_in_western_bloc = {
+	exists = c:USA
+	c:USA = { is_in_power_bloc = yes }
+	OR = {
+		c:USA = THIS
+		is_in_same_power_bloc = c:USA
+	}
+}
+
+# Leader or member of the Eastern Bloc
+is_in_eastern_bloc = {
+	exists = c:RUS
+	c:RUS = { is_in_power_bloc = yes }
+	OR = {
+		c:RUS = THIS
+		is_in_same_power_bloc = c:RUS
+	}
+}
+
+is_western_bloc_leader = {
+	is_in_western_bloc = yes
+	is_power_bloc_leader = yes
+}
+
+is_eastern_bloc_leader = {
+	is_in_eastern_bloc = yes
+	is_power_bloc_leader = yes
+}
+
+is_western_bloc_member = {
+	is_in_western_bloc = yes
+	is_power_bloc_leader = no
+}
+
+is_eastern_bloc_member = {
+	is_in_eastern_bloc = yes
+	is_power_bloc_leader = no
+}
+
+is_aligned_USA = {
+	is_in_western_bloc = yes
+	NOT = { c:USA = THIS }
+}
+
+is_aligned_RUS = {
+	is_in_eastern_bloc = yes
+	NOT = { c:RUS = THIS }
+}

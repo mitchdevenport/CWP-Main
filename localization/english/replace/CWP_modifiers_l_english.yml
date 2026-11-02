@@ -304,7 +304,7 @@
   state_positive_habitability_effect: "Increased Habitability"
   state_negative_habitability_effect: "Decreased Habitability"
   nuclear_damage: "Nuclear Destruction"
-  state_slum_modifier: "$building_slums$ State Capacity"
+  state_slum_modifier: "Slums"
   state_skyscraper_modifier: "$building_skyscraper$ State Capacity"
   excellent_solar_capacity: "Excellent Solar Capacity"
   excellent_wind_capacity: "Excellent Wind Capacity"

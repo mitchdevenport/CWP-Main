@@ -1,0 +1,7 @@
+﻿l_english:
+ # Restored from master's localization/english/CWP/CWP_modifiers_l_english.yml
+ efficient_hubs: "Efficient Airports"
+ # Restored from master's localization/english/CWP/CWP_interfaces_l_english.yml (fallback of the custom localisations)
+ no: "No"
+ # Restored from master's localization/english/CWP/CWP_goods_l_english.yml (used by INF_MEDIA_PRICE)
+ media: "Media"

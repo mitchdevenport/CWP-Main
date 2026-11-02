@@ -102,7 +102,15 @@ fascist_spain = {
 	possible = {
 		exists = c:SPA
 		THIS = c:SPA
-		cwp_coat_of_arms_dictatorship_government_trigger = yes
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+		OR = {
+			has_law_or_variant = law_type:law_presidential_republic
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_council_republic
+		}
 	}
 }
 
@@ -145,7 +153,13 @@ brazil_integralist = {
 	possible = {
 		exists = c:BRZ
 		THIS = c:BRZ
-		cwp_coat_of_arms_fascist_ideology_trigger = yes
+		any_interest_group = {
+			is_in_government = yes
+			OR = {
+				has_ideology = ideology:ideology_fascist
+				has_ideology = ideology:ideology_integralist
+			}
+		}
 	}
 }
 
@@ -161,7 +175,13 @@ brazil_republican = {
 			has_law_or_variant = law_type:law_cooperative_ownership
 		}
 		NOT = {
-			cwp_coat_of_arms_fascist_ideology_trigger = yes
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					has_ideology = ideology:ideology_fascist
+					has_ideology = ideology:ideology_integralist
+				}
+			}
 		}
 	}
 }

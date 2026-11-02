@@ -6,6 +6,9 @@
 
 # Production Method Groups:
 
+  # Nuclear Research Facility:
+  pmg_base_nuclear_research_facility: "Nuclear Research Facility"
+
   # Nuclear Weapons Facility:
   pmg_base_nuclear_weapons_facility: "Base"
   pmg_organization_nuclear_weapons_facility: "Organization"
@@ -28,6 +31,10 @@
 
 
 # Production Methods:
+
+  # Nuclear Research Facility - pmg_base_nuclear_research_facility:
+  pm_nuclear_fission_testing: "Nuclear Fission Testing"
+  pm_nuclear_warhead_testing: "Nuclear Warhead Testing"
 
   # Nuclear Weapons Facility - pmg_base_nuclear_weapons_facility:
   pm_no_nuclear_production: "No Nuclear Weapon Production"

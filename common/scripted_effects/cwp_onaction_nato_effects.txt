@@ -1,0 +1,130 @@
+﻿onaction_nato_cohesion_calculation = {
+	if = {
+		limit = {
+			has_global_variable = nato
+			is_in_nato = yes
+		}
+		if = {
+			limit = {
+				is_meeting_nato_standards = no
+			}
+			remove_modifier = nato_cohesion
+			remove_modifier = nato_not_meeting_standards
+			add_modifier = {
+				name = nato_not_meeting_standards
+			}
+		}
+		else = {
+			remove_modifier = nato_not_meeting_standards
+			remove_modifier = nato_cohesion
+			add_modifier = {
+				name = nato_cohesion
+				multiplier = nato_cohesion
+			}
+		}
+	}
+	# Former members lose their NATO modifiers
+	else_if = {
+		limit = {
+			OR = {
+				has_modifier = nato_cohesion
+				has_modifier = nato_not_meeting_standards
+			}
+		}
+		remove_modifier = nato_cohesion
+		remove_modifier = nato_not_meeting_standards
+	}
+}
+
+# Keeps the NATO mutual assistance treaties in place between all members, however they joined
+onaction_nato_mutual_assistance_sync = {
+	if = {
+		limit = {
+			has_global_variable = nato
+			is_in_nato = yes
+		}
+		effect_nato_create_mutual_assistance_treaties = yes
+	}
+}
+
+onaction_nato_application = {
+	# NATO Applications
+	if = {
+		limit = {
+			has_variable = application_progress_nato
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = nato_application_list
+						target = THIS
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = nato_application_list
+				target = THIS
+			}
+		}
+		if = {
+			limit = {
+				application_progress_nato <= 100
+			}
+			change_variable = {
+				name = application_progress_nato
+				add = 3
+			}
+		}
+		if = {
+			limit = {
+				application_progress_nato <= 100
+				nato_supporting_countries > nato_membersize
+			}
+			change_variable = {
+				name = application_progress_nato
+				add = 2
+			}
+		}
+		if = {
+			limit = {
+				application_progress_nato >= 100
+				application_progress_nato <= 150
+			}
+			change_variable = {
+				name = application_progress_nato
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				application_progress_nato >= 100
+				nato_supporting_countries >= nato_membersize
+				is_meeting_nato_standards = yes
+			}
+			effect_nato_application_approved = yes
+			trigger_event = nato_application_events.1
+		}
+		else_if = {
+			limit = {
+				application_progress_nato >= 150
+				NOT = {
+					nato_supporting_countries >= nato_membersize
+				}
+			}
+			effect_nato_application_rejected = yes
+			trigger_event = nato_application_events.2
+		}
+	}
+}
+
+onaction_nato_ai_voting = {
+	# NATO Voting for AI
+	if = {
+		limit = {
+			is_ai = yes
+			is_in_nato = yes
+		}
+		trigger_event = nato_ai_voting.1
+	}
+}

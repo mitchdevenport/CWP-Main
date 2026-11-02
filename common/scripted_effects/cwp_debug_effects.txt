@@ -1,0 +1,20 @@
+﻿## Hack to suppress variable errors, try to fix them instead (restored from CWP 1.5)
+# The engine warns about variables that script only sets or only reads, even when localization or the GUI
+# uses them. The limit can never be true, so this never changes anything.
+fix_variable_error = {  # Usage: fix_variable_error = { X = whatever_variable }
+	if = {
+		limit = {
+			has_variable = $X$
+			var:$X$ = flag:$X$
+			exists = scope:$X$
+			scope:$X$ = flag:$X$
+		}
+		set_variable = {
+			name = $X$
+			value = flag:$X$
+		}
+		flag:$X$ = {
+			save_scope_as = $X$
+		}
+	}
+}

@@ -1,0 +1,273 @@
+﻿namespace = nato_formation
+
+nato_formation.1 = {
+	# USA Attempts to form NATO
+	type = country_event
+	placement = root
+	title = nato_formation.1.t
+	desc = nato_formation.1.d
+	flavor = nato_formation.1.f
+	duration = 3
+	icon = "gfx/interface/icons/cwp_icons/nato.dds"
+	trigger = {
+	}
+	immediate = {
+		add_to_global_variable_list = {
+			name = nato_members
+			target = ROOT
+		}
+		set_variable = nato_leader
+	}
+	event_image = {
+		texture = "gfx/interface/event_pictures/nato_formation.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	option = { # Sends delegations to potential members
+		name = nato_formation.1.a
+		highlighted_option = yes
+		every_country = {
+			limit = {
+				OR = {
+					c:BEL ?= THIS
+					c:CAN ?= THIS
+					c:DEN ?= THIS
+					c:FRA ?= THIS
+					c:ICL ?= THIS
+					c:ITA ?= THIS
+					c:LUX ?= THIS
+					c:NET ?= THIS
+					c:NOR ?= THIS
+					c:POR ?= THIS
+					c:GBR ?= THIS
+				}
+				# Countries of the Eastern Bloc are not invited
+				is_in_eastern_bloc = no
+			}
+			trigger_event = nato_formation.2
+		}
+		trigger_event = {
+			id = nato_formation.3
+			days = 100
+		}
+		trigger_event = {
+			id = nato_formation.5
+			days = 102
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+nato_formation.2 = {
+	# Western bloc gets option to accept
+	type = country_event
+	placement = root
+	title = nato_formation.2.t
+	desc = nato_formation.2.d
+	flavor = nato_formation.2.f
+	duration = 3
+	icon = "gfx/interface/icons/cwp_icons/nato.dds"
+	trigger = {
+	}
+	immediate = {
+	}
+	event_image = {
+		texture = "gfx/interface/event_pictures/nato_formation.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	option = { # Joins in the formation of NATO
+		default_option = yes
+		name = nato_formation.2.a
+		highlighted_option = yes
+		add_to_global_variable_list = {
+			name = nato_members
+			target = ROOT
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = { # Doesnt join in the formation of nato
+		name = nato_formation.2.b
+		highlighted_option = yes
+	}
+}
+
+nato_formation.3 = {
+	# Forms NATO Treaties to USA
+	type = country_event
+	placement = root
+	title = nato_formation.3.t
+	desc = nato_formation.3.d
+	flavor = nato_formation.3.f
+	duration = 3
+	icon = "gfx/interface/icons/cwp_icons/nato.dds"
+	trigger = {
+		NOT = {
+			has_variable = nato_treaty_event
+		}
+	}
+	immediate = {
+		set_variable = nato_treaty_event
+	}
+	event_image = {
+		texture = "gfx/interface/event_pictures/nato_generic.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	option = { # Joins in the formation of NATO
+		name = nato_formation.3.a
+		effect_nato_create_mutual_assistance_treaties = yes
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_nato = yes
+					NOT = { THIS = ROOT }
+				}
+				trigger_event = nato_formation.4
+			}
+		}
+	}
+}
+
+nato_formation.4 = {
+	# Forms NATO to others
+	type = country_event
+	placement = root
+	hidden = yes
+	trigger = {
+		NOT = {
+			has_variable = nato_treaty_event
+		}
+	}
+	immediate = {
+		set_variable = nato_treaty_event
+		effect_nato_create_mutual_assistance_treaties = yes
+	}
+}
+
+nato_formation.5 = {
+	# NATO Headquarters
+	type = country_event
+	placement = root
+	title = nato_formation.5.t
+	desc = nato_formation.5.d
+	flavor = nato_formation.5.f
+	duration = 3
+	icon = "gfx/interface/icons/cwp_icons/nato.dds"
+	trigger = {
+		NOT = {
+			has_global_variable = nato_headquarters
+		}
+	}
+	immediate = {
+		set_global_variable = nato_low_mandated_readiness
+		set_global_variable = nato_medium_mandated_contribution
+		set_global_variable = nato
+	}
+	event_image = {
+		texture = "gfx/interface/event_pictures/nato_generic.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	option = { # London
+		default_option = yes
+		name = nato_formation.5.a
+		trigger = {
+			exists = c:GBR
+			c:GBR = {
+				is_in_nato = yes
+			}
+			exists = s:STATE_HOME_COUNTIES.region_state:GBR
+		}
+		set_global_variable = {
+			name = nato_headquarters
+			value = s:STATE_HOME_COUNTIES.region_state:GBR
+		}
+		c:GBR = {
+			add_modifier = {
+				name = nato_headquarters_host
+			}
+		}
+	}
+	option = { # Paris
+		name = nato_formation.5.b
+		trigger = {
+			exists = c:FRA
+			c:FRA = {
+				is_in_nato = yes
+			}
+			exists = s:STATE_ILE_DE_FRANCE.region_state:FRA
+		}
+		set_global_variable = {
+			name = nato_headquarters
+			value = s:STATE_ILE_DE_FRANCE.region_state:FRA
+		}
+		c:FRA = {
+			add_modifier = {
+				name = nato_headquarters_host
+			}
+		}
+	}
+	option = { # Brussels
+		name = nato_formation.5.c
+		trigger = {
+			exists = c:BEL
+			c:BEL = {
+				is_in_nato = yes
+			}
+			exists = s:STATE_FLANDERS.region_state:BEL
+		}
+		set_global_variable = {
+			name = nato_headquarters
+			value = s:STATE_FLANDERS.region_state:BEL
+		}
+		c:BEL = {
+			add_modifier = {
+				name = nato_headquarters_host
+			}
+		}
+	}
+	option = { # None of the candidate hosts joined: the founder hosts NATO
+		name = nato_formation.5.e
+		trigger = {
+			NOR = {
+				AND = {
+					exists = c:GBR
+					c:GBR = {
+						is_in_nato = yes
+					}
+					exists = s:STATE_HOME_COUNTIES.region_state:GBR
+				}
+				AND = {
+					exists = c:FRA
+					c:FRA = {
+						is_in_nato = yes
+					}
+					exists = s:STATE_ILE_DE_FRANCE.region_state:FRA
+				}
+				AND = {
+					exists = c:BEL
+					c:BEL = {
+						is_in_nato = yes
+					}
+					exists = s:STATE_FLANDERS.region_state:BEL
+				}
+			}
+		}
+		set_global_variable = {
+			name = nato_headquarters
+			value = ROOT.capital
+		}
+		add_modifier = {
+			name = nato_headquarters_host
+		}
+	}
+}

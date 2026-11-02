@@ -1,0 +1,30 @@
+﻿# Restored from the original mod's common/scripted_effects/cwp_onaction_effects.txt
+
+onaction_nuclear_calculation = {
+	# Nuclear Calculations
+	if = {
+		limit = {
+			has_modifier = atomic_capable
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_variable = nuclear_stockpile
+				}
+			}
+			set_variable = {
+				name = nuclear_stockpile
+				value = 0
+			}
+		}
+		change_variable = {
+			name = nuclear_stockpile
+			add = nuclear_stockpile_sum
+		}
+		clamp_variable = {
+			name = nuclear_stockpile
+			max = 1000000
+			min = 0
+		}
+	}
+}

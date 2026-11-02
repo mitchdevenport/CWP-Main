@@ -1,0 +1,15 @@
+﻿# Fired off on_monthly_pulse_country (common/on_actions/00_code_on_actions.txt)
+
+# NATO and Warsaw Pact: standards, applications and AI votes
+cwp_blocs_monthly_country = {
+	effect = {
+		onaction_nato_cohesion_calculation = yes
+		onaction_nato_mutual_assistance_sync = yes
+		onaction_nato_application = yes
+		onaction_nato_ai_voting = yes
+		onaction_warsaw_cohesion_calculation = yes
+		onaction_warsaw_mutual_assistance_sync = yes
+		onaction_warsaw_application = yes
+		onaction_warsaw_ai_voting = yes
+	}
+}

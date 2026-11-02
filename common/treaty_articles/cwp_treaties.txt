@@ -1,0 +1,326 @@
+﻿### Treaties of the Cold War
+# master: diplomatic pacts in common/diplomatic_actions/27_cwp_treaties.txt.
+# Alliances and defensive pacts are treaty articles since 1.10, so the Five Eyes alliance and the
+# NATO / Warsaw Pact mutual assistance pacts are articles. They cannot be broken individually:
+# members leave through the Leave the Five Eyes / Leave NATO / Leave the Warsaw Pact decisions,
+# after which their treaties end because the requirements to maintain them are no longer met.
+
+treaty_five_eyes = {
+	kind = mutual
+	cost = 50
+
+	relations_progress_per_day = 1.5
+	relations_improvement_max = 80
+
+	icon = "gfx/interface/icons/lens_toolbar_icons/treaty_five_eyes.dds"
+
+	flags = {
+		is_alliance
+		is_military_access
+		friendly
+	}
+
+	usage_limit = once_per_treaty
+
+	# Formed in history (common/history/treaties/cwp_five_eyes.txt)
+	visible = {
+		is_five_eyes_country = yes
+		scope:other_country = { is_five_eyes_country = yes }
+	}
+
+	possible = {
+		NOT = { has_war_with = scope:other_country }
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = treaty_five_eyes_requirement_tt
+				scope:first_country = { is_five_eyes_country = yes }
+				scope:second_country = { is_five_eyes_country = yes }
+			}
+		}
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = "DIPLOMATIC_PACT_REQUIREMENT_AT_PEACE"
+				scope:first_country = {
+					NOT = { has_war_with = scope:second_country }
+				}
+			}
+		}
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = "DIPLOMATIC_PACT_REQUIREMENT_DIPLOMATIC_AUTONOMY"
+				scope:first_country = { aggressive_diplomatic_plays_permitted = yes }
+				scope:second_country = { aggressive_diplomatic_plays_permitted = yes }
+			}
+		}
+	}
+
+	can_ratify = {
+		scope:first_country = {
+			NOT = {
+				any_scope_treaty = {
+					binds = scope:second_country
+					any_scope_article = { has_type = treaty_five_eyes }
+				}
+			}
+		}
+	}
+
+	can_withdraw = {
+		custom_tooltip = {
+			text = treaty_five_eyes_can_withdraw_tt
+			always = no
+		}
+	}
+
+	on_entry_into_force = {}
+
+	on_withdrawal = {
+		scope:withdrawing_country = {
+			change_relations = {
+				country = scope:non_withdrawing_country
+				value = -30
+			}
+			create_bidirectional_truce = {
+				country = scope:non_withdrawing_country
+				months = 12
+			}
+		}
+	}
+
+	on_break = {}
+
+	ai = {
+		treaty_categories = {
+			military
+		}
+
+		evaluation_chance = {
+			value = 0
+		}
+
+		article_ai_usage = {
+			none
+		}
+
+		inherent_accept_score = {
+			value = 0
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
+				value = "relations(scope:other_country)"
+				min = -100
+				max = 50
+			}
+		}
+	}
+}
+
+treaty_nato_mutual_assistance = {
+	kind = mutual
+	cost = 50
+
+	relations_progress_per_day = 1.5
+	relations_improvement_max = 80
+
+	icon = "gfx/interface/icons/lens_toolbar_icons/treaty_nato_mutual_assistance.dds"
+
+	flags = {
+		is_defensive_pact
+		friendly
+	}
+
+	usage_limit = once_per_treaty
+
+	# Created between all NATO members (common/scripted_effects/cwp_nato_effects.txt)
+	visible = {
+		is_in_nato = yes
+		scope:other_country = { is_in_nato = yes }
+	}
+
+	possible = {
+		NOT = { has_war_with = scope:other_country }
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = treaty_nato_mutual_assistance_requirement_tt
+				scope:first_country = { is_in_nato = yes }
+				scope:second_country = { is_in_nato = yes }
+			}
+		}
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = "DIPLOMATIC_PACT_REQUIREMENT_AT_PEACE"
+				scope:first_country = {
+					NOT = { has_war_with = scope:second_country }
+				}
+			}
+		}
+	}
+
+	can_ratify = {
+		scope:first_country = {
+			NOT = {
+				any_scope_treaty = {
+					binds = scope:second_country
+					any_scope_article = { has_type = treaty_nato_mutual_assistance }
+				}
+			}
+		}
+	}
+
+	can_withdraw = {
+		custom_tooltip = {
+			text = treaty_nato_mutual_assistance_can_withdraw_tt
+			scope:withdrawing_country = { is_in_nato = no }
+		}
+	}
+
+	on_entry_into_force = {}
+
+	on_withdrawal = {
+		scope:withdrawing_country = {
+			change_relations = {
+				country = scope:non_withdrawing_country
+				value = -30
+			}
+			create_bidirectional_truce = {
+				country = scope:non_withdrawing_country
+				months = 12
+			}
+		}
+	}
+
+	on_break = {}
+
+	ai = {
+		treaty_categories = {
+			military_defense
+		}
+
+		evaluation_chance = {
+			value = 0
+		}
+
+		article_ai_usage = {
+			none
+		}
+
+		inherent_accept_score = {
+			value = 50
+		}
+	}
+}
+
+treaty_warsaw_pact_mutual_assistance = {
+	kind = mutual
+	cost = 50
+
+	relations_progress_per_day = 1.5
+	relations_improvement_max = 80
+
+	icon = "gfx/interface/icons/lens_toolbar_icons/treaty_warsaw_pact_mutual_assistance.dds"
+
+	flags = {
+		is_defensive_pact
+		friendly
+	}
+
+	usage_limit = once_per_treaty
+
+	# Created between all Warsaw Pact members (common/scripted_effects/cwp_warsaw_pact_effects.txt)
+	visible = {
+		is_in_warsaw_pact = yes
+		scope:other_country = { is_in_warsaw_pact = yes }
+	}
+
+	possible = {
+		NOT = { has_war_with = scope:other_country }
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = treaty_warsaw_pact_mutual_assistance_requirement_tt
+				scope:first_country = { is_in_warsaw_pact = yes }
+				scope:second_country = { is_in_warsaw_pact = yes }
+			}
+		}
+	}
+
+	requirement_to_maintain = {
+		trigger = {
+			custom_tooltip = {
+				text = "DIPLOMATIC_PACT_REQUIREMENT_AT_PEACE"
+				scope:first_country = {
+					NOT = { has_war_with = scope:second_country }
+				}
+			}
+		}
+	}
+
+	can_ratify = {
+		scope:first_country = {
+			NOT = {
+				any_scope_treaty = {
+					binds = scope:second_country
+					any_scope_article = { has_type = treaty_warsaw_pact_mutual_assistance }
+				}
+			}
+		}
+	}
+
+	can_withdraw = {
+		custom_tooltip = {
+			text = treaty_warsaw_pact_mutual_assistance_can_withdraw_tt
+			scope:withdrawing_country = { is_in_warsaw_pact = no }
+		}
+	}
+
+	on_entry_into_force = {}
+
+	on_withdrawal = {
+		scope:withdrawing_country = {
+			change_relations = {
+				country = scope:non_withdrawing_country
+				value = -30
+			}
+			create_bidirectional_truce = {
+				country = scope:non_withdrawing_country
+				months = 12
+			}
+		}
+	}
+
+	on_break = {}
+
+	ai = {
+		treaty_categories = {
+			military_defense
+		}
+
+		evaluation_chance = {
+			value = 0
+		}
+
+		article_ai_usage = {
+			none
+		}
+
+		inherent_accept_score = {
+			value = 50
+		}
+	}
+}

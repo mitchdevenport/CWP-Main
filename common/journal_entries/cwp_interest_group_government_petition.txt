@@ -156,8 +156,11 @@
 
 	on_timeout = {
 		if = {
-			limit = { is_enacting_law = scope:government_petition_law.type }
-			scope:government_petition_ig = {
+			limit = {
+				exists = scope:government_petition_law
+				is_enacting_law = scope:government_petition_law.type
+			}
+			scope:government_petition_ig ?= {
 				if = {
 					limit = { is_powerful = yes }
 					add_modifier = {
@@ -190,7 +193,7 @@
 			}
 		}
 		else = {
-			scope:government_petition_ig = {
+			scope:government_petition_ig ?= {
 				if = {
 					limit = { is_powerful = yes }
 					add_modifier = {
@@ -215,7 +218,7 @@
 	}
 
 	on_fail = {
-		scope:government_petition_ig = {
+		scope:government_petition_ig ?= {
 			add_modifier = {
 				name = modifier_failed_to_meet_petition
 				days = long_modifier_time

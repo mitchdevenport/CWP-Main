@@ -73,6 +73,12 @@
 
 # Journal Entry:
   je_cwp_coup: "Coup!"
+
+  cwp_coup_je_reason_text_0: "Sensing an opportunity to seize power"
+  cwp_coup_je_reason_text_1: "Seeking to halt the enactment of [ROOT.Var('cwp_coup_loc_law_variable').GetLaw.GetName]"
+  cwp_coup_je_reason_text_2: "Enraged by the sitting government's failure to advance their legislative agenda"
+  cwp_coup_je_reason_text_3: "In retribution for the sitting government's betrayal of their commitment"
+  cwp_coup_je_reason_text_6: "Seeking to install a regime more amicable to [ROOT.Var('cwp_coup_loc_lobby_country_variable').GetCountry.GetName]"
   je_cwp_coup_reason: "[ROOT.GetCountry.GetCustom('get_coup_je_text')], the [SCOPE.sCharacter('cwp_coup_character_leader').GetCustom('ordered_personality_traits_loc')|l] [SCOPE.sCharacter('cwp_coup_character_leader').GetRankName] [SCOPE.sCharacter('cwp_coup_character_leader').GetFullName] and [SCOPE.sCharacter('cwp_coup_character_leader').GetHerHis] allies amongst the [SCOPE.gsInterestGroup('cwp_coup_interest_group').GetName] have begun to maneuver towards seizing state power through force of arms.\n\nWhilst this [concept_journal_entry] is active, the rate at which the $concept_coup$ will #tooltippable;tooltip:[GetPlayer.GetTooltipTag],coup_progress_factors_tt advance#! or #tooltippable;tooltip:[GetPlayer.GetTooltipTag],coup_regress_factors_tt deplete#! will be determined by [SCOPE.sCharacter('cwp_coup_character_leader').GetPrimaryRoleTitle] [SCOPE.sCharacter('cwp_coup_character_leader').GetLastName]'s [concept_coup_strength] ([SCOPE.sCharacter('cwp_coup_character_leader').MakeScope.Var('monthly_cached_commander_coup_strength').GetValue|v2]) subtracted by [ROOT.GetCountry.GetName]'s [concept_coup_resistance] ([SCOPE.ScriptValue('country_coup_resistance')|v2]). If #b Progress#! reaches #v 100%#!, and [SCOPE.sCharacter('cwp_coup_character_leader').GetLastNameNoFormatting] is able to launch [SCOPE.sCharacter('cwp_coup_character_leader').GetHerHis] [concept_coup], there is a risk of our government being overturned."
 
 

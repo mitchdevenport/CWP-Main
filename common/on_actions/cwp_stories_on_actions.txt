@@ -1,0 +1,12 @@
+﻿# Country and historical story content (restored from master)
+# Hooked into on_monthly_pulse_country (common/on_actions/00_code_on_actions.txt, on_actions list)
+cwp_stories_monthly_events = {
+	events = {
+		french_west_africa_events.1		# French West Africa and the Fourth Republic
+		a_new_constitution.101		# France: Legacy of the Resistance -> drafting a new constitution
+		libya.1		# Gaddafi's rise
+		libya.2		# Gaddafi as an agitator if he never came to power
+		saarland.2		# 1955 Saar Statute referendum (takes place after the West German unification journal entry)
+		ddr_flavor.1		# Walter Ulbricht
+	}
+}

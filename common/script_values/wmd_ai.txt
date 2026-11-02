@@ -1,0 +1,4 @@
+﻿# Placeholder kept from the original mod, the AI does not launch nuclear strikes yet
+ai_fire_nuke_desire = {
+	value = 0
+}

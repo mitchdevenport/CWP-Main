@@ -1,0 +1,7 @@
+﻿# Monetary policy law group restored from master's common/law_groups/00_laws.txt
+lawgroup_monetary_policy = {
+	law_group_category = economy
+	affected_by_regime_change = yes
+
+	ideological_opinion_impact = 2.0
+}

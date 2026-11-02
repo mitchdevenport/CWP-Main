@@ -1,0 +1,72 @@
+﻿# Economy (central banks, currencies, IMF) named on_actions
+# Hooked into the code on_actions of common/on_actions/00_code_on_actions.txt
+
+# Fired off on_monthly_pulse (no root): drop countries that no longer exist from the central bank and IMF lists
+cwp_economy_global_monthly_pulse = {
+	effect = {
+		every_in_global_list = {
+			variable = central_bank_list
+			limit = {
+				is_country_alive = no
+			}
+			add_to_temporary_list = cwp_economy_dead_countries
+		}
+		every_in_global_list = {
+			variable = imf_members
+			limit = {
+				is_country_alive = no
+			}
+			add_to_temporary_list = cwp_economy_dead_countries
+		}
+		every_in_list = {
+			list = cwp_economy_dead_countries
+			remove_list_global_variable = {
+				name = central_bank_list
+				target = THIS
+			}
+			remove_list_global_variable = {
+				name = imf_members
+				target = THIS
+			}
+		}
+	}
+}
+
+# Fired off on_monthly_pulse_country (root = country)
+cwp_economy_monthly_pulse = {
+	effect = {
+		onaction_imf_calculation = yes
+		onaction_fiscal_calculation = yes
+		onaction_monetary_variables_creation = yes
+		onaction_currency_calculation = yes
+	}
+}
+
+# Fired off on_half_yearly_pulse_country (root = country)
+cwp_economy_half_yearly_events = {
+	events = {
+		cwp_bank_reevaluation.1
+		cwp_bank_reevaluation.2
+		delay = {
+			days = {
+				0
+				90
+			}
+		}
+		economic_events.1		# Farming Subsidies
+	}
+}
+
+# Fired off on_country_released_as_independent, on_country_released_as_own_subject,
+# on_country_released_as_overlord_subject, on_country_released_as_company_subject,
+# on_revolution_start and on_secession_start (root = parent country, scope:target = new country)
+cwp_economy_new_country_setup = {
+	effect = {
+		if = {
+			limit = {
+				exists = scope:target
+			}
+			onaction_currency_calculation_annex = yes
+		}
+	}
+}

@@ -1,0 +1,323 @@
+﻿#############################################################################
+################################ UN APPLICATIONS ############################
+#############################################################################
+#### Varcheck
+un_resolution_visible_sidepanel = {
+	scope = country
+	is_shown = {
+		has_variable = un_member
+		has_global_variable = pending_resolution
+	}
+}
+
+un_approve_membership_varcheck = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_shown = {
+		has_variable = un_member
+		scope:applicant_country_scope = {
+			NOT = {
+				is_target_in_variable_list = {
+					name = un_supporting
+					target = ROOT
+				}
+			}
+		}
+	}
+}
+
+un_abstain_membership_varcheck = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_shown = {
+		has_variable = un_member
+		scope:applicant_country_scope = {
+			NOT = {
+				is_target_in_variable_list = {
+					name = un_abstaining
+					target = ROOT
+				}
+			}
+		}
+	}
+}
+
+un_reject_membership_varcheck = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_shown = {
+		has_variable = un_member
+		scope:applicant_country_scope = {
+			NOT = {
+				is_target_in_variable_list = {
+					name = un_rejecting
+					target = ROOT
+				}
+			}
+		}
+	}
+}
+
+##### Effects
+un_approve_membership = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	effect = {
+		scope:applicant_country_scope = {
+			add_to_variable_list = {
+				name = un_supporting
+				target = ROOT
+			}
+			change_variable = {
+				name = un_supporting_list_size
+				add = 1
+			}
+			if = {
+				limit = {
+					is_target_in_variable_list = {
+						name = un_rejecting
+						target = ROOT
+					}
+				}
+				change_variable = {
+					name = un_supporting_list_size
+					add = 1
+				}
+			}
+			remove_list_variable = {
+				name = un_rejecting
+				target = ROOT
+			}
+			remove_list_variable = {
+				name = un_abstaining
+				target = ROOT
+			}
+		}
+	}
+}
+
+un_abstain_membership = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	effect = {
+		scope:applicant_country_scope = {
+			add_to_variable_list = {
+				name = un_abstaining
+				target = ROOT
+			}
+			if = {
+				limit = {
+					is_target_in_variable_list = {
+						name = un_supporting
+						target = ROOT
+					}
+				}
+				change_variable = {
+					name = un_supporting_list_size
+					subtract = 1
+				}
+			}
+			if = {
+				limit = {
+					is_target_in_variable_list = {
+						name = un_rejecting
+						target = ROOT
+					}
+				}
+				change_variable = {
+					name = un_supporting_list_size
+					add = 1
+				}
+			}
+			remove_list_variable = {
+				name = un_supporting
+				target = ROOT
+			}
+			remove_list_variable = {
+				name = un_rejecting
+				target = ROOT
+			}
+		}
+	}
+}
+
+un_reject_membership = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	effect = {
+		scope:applicant_country_scope = {
+			add_to_variable_list = {
+				name = un_rejecting
+				target = ROOT
+			}
+			change_variable = {
+				name = un_supporting_list_size
+				subtract = 1
+			}
+			if = {
+				limit = {
+					is_target_in_variable_list = {
+						name = un_supporting
+						target = ROOT
+					}
+				}
+				change_variable = {
+					name = un_supporting_list_size
+					subtract = 1
+				}
+			}
+			remove_list_variable = {
+				name = un_supporting
+				target = ROOT
+			}
+			remove_list_variable = {
+				name = un_abstaining
+				target = ROOT
+			}
+		}
+	}
+}
+
+##########################################
+showmodifier_declaration_human_rights = {
+	scope = country
+	effect = {
+		add_modifier = declaration_of_human_rights
+	}
+}
+
+add_opposing = {
+	scope = country
+	effect = {
+		set_variable = is_opposing
+		remove_variable = is_supporting
+	}
+}
+
+add_supporting = {
+	scope = country
+	effect = {
+		set_variable = is_supporting
+		remove_variable = is_opposing
+	}
+}
+
+add_abstaining = {
+	scope = country
+	effect = {
+		remove_variable = is_supporting
+		remove_variable = is_opposing
+	}
+}
+
+add_veto = {
+	scope = country
+	is_valid = {
+		has_variable = unsc_member
+		has_global_variable = pending_resolution
+	}
+	effect = {
+		set_global_variable = {
+			name = vetoed
+			value = 0
+		}
+	}
+}
+
+#############################################################################
+################################ GENERIC GUI ################################
+#############################################################################
+############# Declaration of Human Rights
+# Varcheck
+declaration_of_human_rights_varcheck = {
+	scope = country
+	is_shown = {
+		NOR = {
+			has_global_variable = pending_resolution
+			has_global_variable = declaration_of_human_rightscomplete
+			has_global_variable = declaration_of_human_rightsfail
+		}
+	}
+}
+# Execute
+activate_declaration_of_human_rights_je = {
+	scope = country
+	effect = {
+		activate_declaration_of_human_rights_je = yes
+	}
+}
+
+############# Decolonization Resolution
+# Varcheck
+decolonization_resolution_varcheck = {
+	scope = country
+	is_shown = {
+		NOR = {
+			has_global_variable = pending_resolution
+			has_global_variable = decolonization_resolutioncomplete
+			has_global_variable = decolonization_resolutionfail
+		}
+	}
+}
+# Execute
+activate_un_decolonization_je = {
+	scope = country
+	effect = {
+		activate_un_decolonization_je = yes
+	}
+}
+
+############# UNCLOS I
+# Varcheck
+unclos1_varcheck = {
+	scope = country
+	is_shown = {
+		NOR = {
+			has_global_variable = pending_resolution
+			has_global_variable = unclos1complete
+			has_global_variable = unclos1fail
+		}
+	}
+}
+# Execute
+activate_unclos1_je = {
+	scope = country
+	effect = {
+		activate_unclos1_je = yes
+	}
+}
+
+############# Resolution on Korea
+# Varcheck
+korean_resolution_varcheck = {
+	scope = country
+	is_shown = {
+		exists = c:STK
+		exists = c:NRK
+		NOR = {
+			has_global_variable = pending_resolution
+			has_global_variable = korean_resolution_complete
+			has_global_variable = korean_resolution_fail
+			exists = c:KOR
+		}
+	}
+}
+# Execute
+activate_korean_resolution_je = {
+	scope = country
+	effect = {
+		activate_korean_resolution_je = yes
+	}
+}

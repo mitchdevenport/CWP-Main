@@ -1,0 +1,12 @@
+﻿l_english:
+ # Throughput modifiers used by the restored companies (common/company_types)
+ building_automobile_manufactories_throughput_add: "$building_automobile_manufactories$ building [concept_throughput]"
+ building_automobile_manufactories_throughput_add_desc: "A bonus or penalty to both input and output of $building_automobile_manufactories$"
+ building_chemical_plants_throughput_add: "$building_chemical_plants$ building [concept_throughput]"
+ building_chemical_plants_throughput_add_desc: "A bonus or penalty to both input and output of $building_chemical_plants$"
+ building_oil_refineries_throughput_add: "$building_oil_refineries$ building [concept_throughput]"
+ building_oil_refineries_throughput_add_desc: "A bonus or penalty to both input and output of $building_oil_refineries$"
+ building_semiconductor_fabs_throughput_add: "$building_semiconductor_fabs$ building [concept_throughput]"
+ building_semiconductor_fabs_throughput_add_desc: "A bonus or penalty to both input and output of $building_semiconductor_fabs$"
+ building_tank_factory_throughput_add: "$building_tank_factory$ building [concept_throughput]"
+ building_tank_factory_throughput_add_desc: "A bonus or penalty to both input and output of $building_tank_factory$"

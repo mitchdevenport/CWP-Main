@@ -1,0 +1,211 @@
+﻿# Technologies of the 1.5 nuclear tree map onto the current tree as follows:
+# uranium_extraction, nuclear_fission, brute_force_particle_separation, nuclear_research_facilities, atomic_bomb -> civil_nuclear_power
+# chemical_weapons -> industrial_chemistry, germ_warfare and biological_warfare -> industrial_fermentation
+
+effect_nuclear_weapon_researching_nation = {
+	add_technology_researched = civil_nuclear_power
+	activate_law = law_type:law_deterrence
+}
+
+effect_nuclear_capable_nation = {
+	add_technology_researched = civil_nuclear_power
+	activate_law = law_type:law_deterrence
+	add_modifier = {
+		name = civilian_nuclear_capable
+	}
+	add_modifier = {
+		name = atomic_capable
+	}
+	set_variable = show_targeted_states_map
+	set_variable = {
+		name = nuclear_yield
+		value = 25
+	}
+	set_variable = {
+		name = nuclear_stockpile
+		value = $stockpile$
+	}
+	set_variable = {
+		name = nuclear_deployment_percentage
+		value = 20
+	}
+	set_variable = air_burst_focus
+}
+
+# The original also activated law_unrestricted_human_testing (biotech law group), which does not exist in the current law design
+#effect_biochem_researching_nation = {
+#	activate_law = law_type:law_unrestricted_human_testing
+#}
+
+effect_biochem_allowing_nation = {
+	add_technology_researched = industrial_chemistry
+	add_technology_researched = industrial_fermentation
+	activate_law = law_type:law_first_strike
+}
+
+effect_ai_increase_readiness = {
+	change_variable = {
+		name = var_readiness
+		add = 1
+	}
+	set_variable = {
+		name = ai_changed_readiness
+		days = 60
+	}
+}
+
+effect_ai_maintain_readiness = {
+	set_variable = {
+		name = ai_changed_readiness
+		days = 60
+	}
+}
+
+effect_ai_decrease_readiness = {
+	change_variable = {
+		name = var_readiness
+		subtract = 1
+	}
+	set_variable = {
+		name = ai_changed_readiness
+		days = 60
+	}
+}
+
+effect_create_nuclear_head = {
+	if = {
+		limit = {
+			NOT = {
+				has_variable = nuclear_program_head
+			}
+		}
+		create_character = {
+			interest_group = ig_intelligentsia
+			save_scope_as = nuclear_program_head_scope
+		}
+		set_variable = {
+			name = nuclear_program_head
+			value = scope:nuclear_program_head_scope
+		}
+		scope:nuclear_program_head_scope = {
+			place_character_in_void = 2000
+		}
+	}
+}
+
+effect_select_nuclear_test_states = {
+	clear_variable_list = nuclear_test_sites_proposed
+	every_scope_state = {
+		owner = {
+			add_to_variable_list = {
+				name = nuclear_test_sites_proposed
+				target = PREV
+			}
+		}
+	}
+	ordered_in_list = {
+		variable = nuclear_test_sites_proposed
+		order_by = state_population
+		position = nuclear_test_sites_bottom1
+		check_range_bounds = no
+		owner = {
+			set_variable = {
+				name = nuclear_proposed_site_1
+				value = PREV
+			}
+		}
+	}
+	if = {
+		limit = {
+			nuclear_test_sites_viable >= 2
+		}
+		ordered_in_list = {
+			variable = nuclear_test_sites_proposed
+			order_by = state_population
+			position = nuclear_test_sites_bottom2
+			check_range_bounds = no
+			owner = {
+				set_variable = {
+					name = nuclear_proposed_site_2
+					value = PREV
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			nuclear_test_sites_viable >= 3
+		}
+		ordered_in_list = {
+			variable = nuclear_test_sites_proposed
+			order_by = state_population
+			position = nuclear_test_sites_bottom3
+			check_range_bounds = no
+			owner = {
+				set_variable = {
+					name = nuclear_proposed_site_3
+					value = PREV
+				}
+			}
+		}
+	}
+	clear_variable_list = nuclear_test_sites_proposed
+}
+
+remove_proposed_nuclear_sites = {
+	remove_variable = nuclear_proposed_site_1
+	remove_variable = nuclear_proposed_site_2
+	remove_variable = nuclear_proposed_site_3
+}
+
+effect_order_target_list_by_population = {
+	clear_variable_list = wmd_target_list_ordered
+	ordered_in_list = {
+		variable = wmd_target_list
+		order_by = state_population
+		max = 2000
+		check_range_bounds = no
+		ROOT = {
+			add_to_variable_list = {
+				name = wmd_target_list_ordered
+				target = PREV
+			}
+		}
+	}
+	clear_variable_list = wmd_target_list
+	every_in_list = {
+		variable = wmd_target_list_ordered
+		ROOT = {
+			add_to_variable_list = {
+				name = wmd_target_list
+				target = PREV
+			}
+		}
+	}
+	clear_variable_list = wmd_target_list_ordered
+}
+
+effect_clear_wmd_list_c_if_empty = {
+	every_in_list = {
+		variable = wmd_target_list_c
+		save_temporary_scope_as = wmd_list_country
+		if = {
+			limit = {
+				ROOT = {
+					NOT = {
+						any_in_list = {
+							variable = wmd_target_list
+							owner = scope:wmd_list_country
+						}
+					}
+				}
+			}
+			ROOT = {
+				remove_list_variable = {
+					name = wmd_target_list_c
+					target = scope:wmd_list_country
+				}
+			}
+		}
+	}
+}

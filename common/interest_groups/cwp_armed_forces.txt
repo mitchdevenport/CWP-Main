@@ -5,6 +5,7 @@
 	index = 0
 
 	ideologies = {
+		ideology_confident_fiscalist	# CWP monetary policy stance; shifts with bank credibility
 		ideology_jingoist
 		ideology_cwp_security_establishment
 		ideology_patriotic

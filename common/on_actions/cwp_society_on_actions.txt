@@ -1,0 +1,249 @@
+﻿# CWP society systems: corruption, pollution/habitability, slums, dynamic ideologies, state atheism and generic JEs.
+# Each named on_action is added to the on_actions list of the code on_action named in its comment.
+
+# on_monthly_pulse (no root scope)
+cwp_society_monthly_pulse = {
+	effect = {
+		# Global temperature target, cached once a month for the state habitability pulse
+		set_global_variable = {
+			name = cwp_global_temp_celsius
+			value = global_temp_target_celsius
+		}
+	}
+}
+
+# on_monthly_pulse_country (root = country)
+cwp_society_monthly_pulse_country = {
+	effect = {
+		onaction_corruption_calculation = yes
+	}
+}
+
+# on_monthly_pulse_state (root = state)
+cwp_society_monthly_pulse_state = {
+	effect = {
+		onaction_slums_modifier = yes
+		# Habitability Calculations
+		onaction_calc_monthly_habitability = yes
+		onaction_set_habitability_effects = yes
+	}
+}
+
+# on_yearly_pulse_country (root = country)
+cwp_society_yearly_pulse_country = {
+	random_events = {
+		chance_to_happen = 65
+		400 = 0
+		#IG Suppression
+		20 = ig_suppression_events.1
+		# Assassination
+		10 = assassination_events.1
+	}
+}
+
+# on_acquired_technology (root = country, scope:technology = the technology acquired)
+cwp_society_acquired_technology = {
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = has_climate_research
+				}
+				has_technology_researched = climate_sciences
+			}
+			set_variable = has_climate_research
+		}
+	}
+}
+
+# on_law_checkpoint_advance (root = country)
+cwp_society_law_checkpoint_advance = {
+	trigger = {
+		is_enacting_law = law_type:law_state_atheism
+	}
+	random_events = {
+		10 = 0
+		10 = state_atheism.2
+		10 = state_atheism.6
+	}
+}
+
+# on_law_checkpoint_debate (root = country)
+cwp_society_law_checkpoint_debate = {
+	trigger = {
+		is_enacting_law = law_type:law_state_atheism
+	}
+	random_events = {
+		10 = 0
+		10 = state_atheism.1
+		10 = state_atheism.5
+	}
+}
+
+# on_law_checkpoint_stall (root = country)
+cwp_society_law_checkpoint_stall = {
+	trigger = {
+		is_enacting_law = law_type:law_state_atheism
+	}
+	random_events = {
+		10 = 0
+		10 = state_atheism.3
+		10 = state_atheism.4
+	}
+}
+
+# on_law_enactment_pass (root = country; the law is still being enacted)
+cwp_society_law_enactment_pass = {
+	effect = {
+		onaction_racial_tension_modifier = yes
+		### DYNAMIC IDEOLOGIES ###
+		### NOTE: pregame setup is done by setup_starting_ideologies (common/history/global/cwp_society_global.txt)
+		### Laborists (Trade Unions) ###
+		#enable social
+		if = {
+			limit = {
+				OR = {
+					is_enacting_law = law_type:law_laissez_faire
+					is_enacting_law = law_type:law_interventionism
+					is_enacting_law = law_type:law_traditionalism
+					is_enacting_law = law_type:law_agrarianism
+					is_enacting_law = law_type:law_industry_banned
+				}
+				ig:ig_trade_unions ?= {
+					NOR = {
+						has_ideology = ideology:ideology_cwp_free_trade_unionism
+						interest_group_supports_political_movement = yes
+					}
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.1
+			}
+		}
+		#enable vanguardist
+		else_if = {
+			limit = {
+				OR = {
+					is_enacting_law = law_type:law_command_economy
+					is_enacting_law = law_type:law_council_republic
+				}
+				ig:ig_trade_unions ?= {
+					NOR = {
+						has_ideology = ideology:ideology_populist
+						interest_group_supports_political_movement = yes
+					}
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.3
+			}
+		}
+		#enable socialist
+		else_if = {
+			limit = {
+				is_enacting_law = law_type:law_cooperative_ownership
+				ig:ig_trade_unions ?= {
+					NOR = {
+						AND = {
+							has_ideology = ideology:ideology_socialist
+							NOT = {
+								has_ideology = ideology:ideology_populist
+							}
+						}
+						interest_group_supports_political_movement = yes
+					}
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.4
+			}
+		}
+		### Elites (Landowners) ###
+		#enable royalist
+		if = {
+			limit = {
+				OR = {
+					is_enacting_law = law_type:law_monarchy
+					is_enacting_law = law_type:law_theocracy
+				}
+				ig:ig_landowners ?= {
+					has_ideology = ideology:ideology_republican_paternalistic
+					interest_group_supports_political_movement = no
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.16
+			}
+		}
+		#enable republican (abolishing a monarchy is handled by je_abolish_monarchy instead)
+		else_if = {
+			limit = {
+				OR = {
+					is_enacting_law = law_type:law_presidential_republic
+					is_enacting_law = law_type:law_parliamentary_republic
+					is_enacting_law = law_type:law_council_republic
+				}
+				NOT = {
+					has_law_or_variant = law_type:law_monarchy
+				}
+				ig:ig_landowners ?= {
+					has_ideology = ideology:ideology_paternalistic
+					interest_group_supports_political_movement = no
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.17
+			}
+		}
+		#enable traditionalist
+		if = {
+			limit = {
+				OR = {
+					is_enacting_law = law_type:law_traditionalism
+					is_enacting_law = law_type:law_agrarianism
+					is_enacting_law = law_type:law_industry_banned
+				}
+				ig:ig_landowners ?= {
+					NOR = {
+						has_ideology = ideology:ideology_hierarchic
+						interest_group_supports_political_movement = yes
+					}
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.18
+			}
+		}
+		#enable materialistic
+		else_if = {
+			limit = {
+				OR = {
+					is_enacting_law = law_type:law_laissez_faire
+					is_enacting_law = law_type:law_interventionism
+					is_enacting_law = law_type:law_command_economy
+					is_enacting_law = law_type:law_cooperative_ownership
+				}
+				ig:ig_landowners ?= {
+					NOR = {
+						has_ideology = ideology:ideology_cwp_commercial_landowners
+						interest_group_supports_political_movement = yes
+					}
+				}
+			}
+			trigger_event = {
+				id = dynamic_ideologies.19
+			}
+		}
+	}
+}
+
+# on_country_released_as_independent, on_country_released_as_own_subject, on_country_released_as_overlord_subject
+# and on_country_released_as_company_subject (root = releasing country, scope:target = released country)
+cwp_society_country_released = {
+	effect = {
+		onaction_corruption_calculation_2 = yes
+		scope:target = {
+			setup_starting_ideologies = yes
+		}
+	}
+}

@@ -1,0 +1,142 @@
+﻿namespace = corruption_events
+
+corruption_events.1 = { # Anti-Corruption Purge Started
+	type = country_event
+	placement = ROOT
+	title = corruption_events.1.t
+	desc = corruption_events.1.d
+	flavor = corruption_events.1.f
+
+	duration = 3
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_springtime_of_nations.bk2"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/springtime_of_nation"
+
+	trigger = {
+		# triggered by the anti_corruption_purge decision
+	}
+
+	option = {
+		name = corruption_events.1.a
+		highlighted_option = yes
+		default_option = yes
+	}
+}
+
+# Corruption setup (master's debug.100 - debug.103)
+# Fired one day after game start from history; corruption is only simulated for players
+corruption_events.100 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		is_player = yes
+	}
+
+	immediate = {
+		every_interest_group = {
+			calc_ig_corruption = yes
+		}
+		if = {
+			limit = {
+				has_modifier = corruption_modifier_effects
+			}
+			remove_modifier = corruption_modifier_effects
+		}
+		add_modifier = {
+			name = corruption_modifier_effects
+			multiplier = corruption_modifier
+		}
+	}
+}
+
+corruption_events.101 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		is_player = yes
+	}
+
+	immediate = {
+		every_interest_group = {
+			calc_ig_corruption = yes
+			set_variable = {
+				name = ig_corruption
+				value = random_corruption_low_value
+			}
+		}
+		if = {
+			limit = {
+				has_modifier = corruption_modifier_effects
+			}
+			remove_modifier = corruption_modifier_effects
+		}
+		add_modifier = {
+			name = corruption_modifier_effects
+			multiplier = corruption_modifier
+		}
+	}
+}
+
+corruption_events.102 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		is_player = yes
+	}
+
+	immediate = {
+		every_interest_group = {
+			calc_ig_corruption = yes
+			set_variable = {
+				name = ig_corruption
+				value = random_corruption_medium_value
+			}
+		}
+		if = {
+			limit = {
+				has_modifier = corruption_modifier_effects
+			}
+			remove_modifier = corruption_modifier_effects
+		}
+		add_modifier = {
+			name = corruption_modifier_effects
+			multiplier = corruption_modifier
+		}
+	}
+}
+
+corruption_events.103 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		is_player = yes
+	}
+
+	immediate = {
+		every_interest_group = {
+			calc_ig_corruption = yes
+			set_variable = {
+				name = ig_corruption
+				value = random_corruption_high_value
+			}
+		}
+		if = {
+			limit = {
+				has_modifier = corruption_modifier_effects
+			}
+			remove_modifier = corruption_modifier_effects
+		}
+		add_modifier = {
+			name = corruption_modifier_effects
+			multiplier = corruption_modifier
+		}
+	}
+}

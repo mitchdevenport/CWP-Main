@@ -1,0 +1,49 @@
+﻿je_ddr_the_socialist_state = {
+	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	group = je_group_historical_content
+
+	possible = {
+		AND = {
+			exists = c:DDR
+			this = c:DDR
+			c:RUS ?= {
+				has_diplomatic_pact = {
+					who = c:DDR
+					type = military_occupation
+				}
+			}
+		}
+	}
+	fail = {
+		NOT = {
+			c:RUS ?= {
+				has_diplomatic_pact = {
+					who = c:DDR
+					type = military_occupation
+				}
+			}
+		}
+	}
+	immediate = {
+	}
+	complete = {
+		#has_law = law_type:law_council_republic #Is enacted per event
+		has_law = law_type:law_single_party_state
+		has_law = law_type:law_state_atheism
+		OR = {
+			has_law = law_type:law_command_economy
+			has_law = law_type:law_cooperative_ownership
+		}
+		NOT = { has_law = law_type:law_disarmed_nation }
+	}
+	timeout = 2727 # 17.June.1953
+	on_complete = {
+		change_subject_type = subject_type_puppet
+	}
+	on_timeout = {
+		trigger_event = uprising_of_1953.1
+	}
+	weight = 100
+}

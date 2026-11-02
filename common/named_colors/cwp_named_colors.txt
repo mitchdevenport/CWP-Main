@@ -1,0 +1,7 @@
+﻿# Map colours used by common/dynamic_country_map_colors/cwp_dynamic_map_colors.txt that vanilla does not define
+colors = {
+	4chan_germany = rgb { 50 50 50 }
+	holy_roman_grey = rgb { 150 177 161 }
+	prussian_blue = rgb { 0 49 83 }
+	dark_grey = hsv360 { 0 0 25 }
+}

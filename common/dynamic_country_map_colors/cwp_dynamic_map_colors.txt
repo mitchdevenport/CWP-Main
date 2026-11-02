@@ -1,0 +1,295 @@
+﻿# Dynamic map colours restored from master's 00_default.txt (keys absent from the current 00_default.txt).
+# Laws and triggers mapped to the current law set; the generic entries stay last so that specific ones take precedence.
+
+peru_bolivia = {
+	color = "peru_bolivia"
+
+	possible = {
+		OR = {
+			AND = {
+				exists = c:PEU
+				THIS = c:PEU
+			}
+			AND = {
+				exists = c:BOL
+				THIS = c:BOL
+			}
+		}
+		owns_entire_state_region = STATE_LA_PAZ
+		owns_entire_state_region = STATE_LIMA
+	}
+}
+
+korea_monarchy_blue = {
+	color = "joseon_blue"
+
+	possible = {
+		exists = c:KOR
+		THIS = c:KOR
+		has_law_or_variant = law_type:law_monarchy
+	}
+}
+
+ukraine_free_territory = {
+	color = "black"
+
+	possible = {
+		exists = c:UKR
+		THIS = c:UKR
+		has_law_or_variant = law_type:law_council_republic
+		has_law_or_variant = law_type:law_anarchy
+	}
+}
+
+turkish_republic = {
+	color = "turkish_republic_red"
+
+	possible = {
+		exists = c:TUR
+		THIS = c:TUR
+		OR = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+purple_naples = {
+	color = "naples_purple"
+
+	possible = {
+		exists = c:SIC
+		THIS = c:SIC
+		NOT = {
+			owns_entire_state_region = STATE_SICILY
+		}
+		owns_entire_state_region = STATE_CAMPANIA
+	}
+}
+
+dark_khmer = {
+	color = "khmer_green"
+
+	possible = {
+		exists = c:CAM
+		THIS = c:CAM
+		NOT = {
+			is_country_type = unrecognized
+		}
+	}
+}
+
+imperial_japan = {
+	color = "white"
+
+	possible = {
+		exists = c:JAP
+		THIS = c:JAP
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+		OR = {
+			has_law_or_variant = law_type:law_monarchy
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+communist_china = {
+	color = "communist_china_red"
+
+	possible = {
+		exists = c:CHI
+		THIS = c:CHI
+		has_law_or_variant = law_type:law_council_republic
+	}
+}
+
+republican_china = {
+	color = "azure"
+
+	possible = {
+		exists = c:CHI
+		THIS = c:CHI
+		OR = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+		}
+	}
+}
+
+han_imperial_china = {
+	color = "red_china"
+
+	possible = {
+		exists = c:CHI
+		THIS = c:CHI
+		NOT = {
+			country_has_primary_culture = cu:manchu
+		}
+		has_law_or_variant = law_type:law_monarchy
+	}
+}
+
+republican_portugal = {
+	color = "green_dark"
+
+	possible = {
+		exists = c:POR
+		THIS = c:POR
+		OR = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+		}
+	}
+}
+
+unpleasant_germany = {
+	color = "4chan_germany"
+
+	possible = {
+		exists = c:GER
+		THIS = c:GER
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_single_party_state
+		}
+		OR = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+			has_law_or_variant = law_type:law_council_republic
+		}
+		ruler ?= {
+			OR = {
+				has_ideology = ideology:ideology_fascist
+				has_ideology = ideology:ideology_integralist
+			}
+		}
+	}
+}
+
+holy_roman_empire = {
+	color = "holy_roman_grey"
+
+	possible = {
+		exists = c:GER
+		THIS = c:GER
+		has_law_or_variant = law_type:law_monarchy
+	}
+}
+
+prussia = {
+	color = "prussian_blue"
+
+	possible = {
+		exists = c:DDR
+		THIS = c:DDR
+		OR = {
+			has_law_or_variant = law_type:law_monarchy
+			overlord ?= {
+				has_law_or_variant = law_type:law_monarchy
+			}
+		}
+	}
+}
+
+roman_rome = {
+	color = "roman_red"
+
+	possible = {
+		exists = c:PAP
+		THIS = c:PAP
+		OR = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+			has_law_or_variant = law_type:law_council_republic
+		}
+	}
+}
+
+republican_france = {
+	color = "revolutionary_blue"
+
+	possible = {
+		exists = c:FRA
+		THIS = c:FRA
+		NOT = {
+			has_law_or_variant = law_type:law_autocracy
+		}
+		OR = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+			has_law_or_variant = law_type:law_presidential_republic
+		}
+	}
+}
+
+islamic_state = {
+	color = "dark_grey"
+
+	possible = {
+		OR = {
+			AND = {
+				exists = c:IRQ
+				THIS = c:IRQ
+			}
+			AND = {
+				exists = c:LEV
+				THIS = c:LEV
+			}
+			AND = {
+				exists = c:ARA
+				THIS = c:ARA
+			}
+		}
+		OR = {
+			has_law_or_variant = law_type:law_theocracy
+			AND = {
+				OR = {
+					has_law_or_variant = law_type:law_autocracy
+					has_law_or_variant = law_type:law_single_party_state
+				}
+				OR = {
+					has_law_or_variant = law_type:law_parliamentary_republic
+					has_law_or_variant = law_type:law_presidential_republic
+					has_law_or_variant = law_type:law_council_republic
+				}
+				ruler ?= {
+					OR = {
+						has_ideology = ideology:ideology_fascist
+						has_ideology = ideology:ideology_integralist
+					}
+				}
+			}
+		}
+	}
+}
+
+saudi_green = {
+	color = "green"
+
+	possible = {
+		exists = c:NEJ
+		THIS = c:NEJ
+		has_law_or_variant = law_type:law_monarchy
+	}
+}
+
+generic_black_anarchist = {
+	color = "black"
+
+	possible = {
+		has_law_or_variant = law_type:law_anarchy
+	}
+}
+
+generic_red_communist = {
+	color = "red"
+
+	possible = {
+		has_law_or_variant = law_type:law_cooperative_ownership
+	}
+}

@@ -8,4 +8,11 @@ ideology_jingoist = {
 		law_national_militia = disapprove
 		law_peasant_levies = disapprove
 	}
+
+	lawgroup_wmds = {
+		law_first_strike = strongly_approve
+		law_deterrence = approve
+		law_civilian_applications = neutral
+		law_no_wmds = strongly_disapprove
+	}
 }

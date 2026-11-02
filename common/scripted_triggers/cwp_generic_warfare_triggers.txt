@@ -1,0 +1,65 @@
+﻿# Adoption checks for the generic warfare journal entries (common/journal_entries/CWP_Generic_Warfare.txt).
+# The original measured barracks production method usage across the country (80%) or on a front (40%).
+# Here the army composition is measured instead, using the lower threshold while the country is at war.
+
+# $OPTION$ = mobilization option key
+cwp_gw_mobilization_option_adopted = {
+	OR = {
+		army_mobilization_option_fraction = {
+			target = mobilization_option:$OPTION$
+			value >= 0.8
+		}
+		AND = {
+			is_at_war = yes
+			army_mobilization_option_fraction = {
+				target = mobilization_option:$OPTION$
+				value >= 0.4
+			}
+		}
+	}
+}
+
+# $UNIT$ = combat unit type key of a frontline brigade
+cwp_gw_frontline_unit_adopted = {
+	OR = {
+		country_army_unit_type_fraction = {
+			target = unit_type:$UNIT$
+			value >= 0.2
+		}
+		AND = {
+			is_at_war = yes
+			country_army_unit_type_fraction = {
+				target = unit_type:$UNIT$
+				value >= 0.1
+			}
+		}
+	}
+}
+
+# $UNIT$ = combat unit type key of a fire support or aviation unit
+cwp_gw_support_unit_adopted = {
+	OR = {
+		country_army_unit_type_fraction = {
+			target = unit_type:$UNIT$
+			value >= 0.1
+		}
+		AND = {
+			is_at_war = yes
+			country_army_unit_type_fraction = {
+				target = unit_type:$UNIT$
+				value >= 0.05
+			}
+		}
+	}
+}
+
+# $PM$ = barracks training production method (see cwp_barracks_pm_share_* in cwp_generic_warfare_values.txt)
+cwp_gw_barracks_training_adopted = {
+	OR = {
+		cwp_barracks_pm_share_$PM$ >= 0.8
+		AND = {
+			is_at_war = yes
+			cwp_barracks_pm_share_$PM$ >= 0.4
+		}
+	}
+}

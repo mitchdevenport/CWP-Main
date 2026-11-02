@@ -1,0 +1,648 @@
+﻿namespace = generic_military_events
+
+generic_military_events.1 = {	# Infantry
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.1.title
+	desc = generic_military_events.1.desc
+	flavor = generic_military_events.1.flavor
+
+	trigger = { # Triggered by the Infantry journal entries
+	}
+
+	option = {
+		name = generic_military_events.1.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_soldiers
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.1.b
+		add_modifier = {
+			name = defensive_focused_soldiers
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.1.c
+		add_modifier = {
+			name = mobility_focused_soldiers
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.1.d
+		add_modifier = {
+			name = endurance_focused_soldiers
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.1.e
+		add_modifier = {
+			name = well_trained_soldiers
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.2 = {	# Tanks
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.2.title
+	desc = generic_military_events.2.desc
+	flavor = generic_military_events.2.flavor
+
+	trigger = { # Triggered by the Tanks journal entries
+	}
+
+	option = {
+		name = generic_military_events.2.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_tanks
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.2.b
+		add_modifier = {
+			name = defensive_focused_tanks
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.2.c
+		add_modifier = {
+			name = mobility_focused_tanks
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.2.d
+		add_modifier = {
+			name = endurance_focused_tanks
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.2.e
+		add_modifier = {
+			name = well_trained_tanks
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.3 = {	# Artillery
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.3.title
+	desc = generic_military_events.3.desc
+	flavor = generic_military_events.3.flavor
+
+	trigger = { # Triggered by the Artillery journal entries
+	}
+
+	option = {
+		name = generic_military_events.3.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_artillery
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.3.b
+		add_modifier = {
+			name = defensive_focused_artillery
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.3.c
+		add_modifier = {
+			name = mobility_focused_artillery
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.3.d
+		add_modifier = {
+			name = endurance_focused_artillery
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.3.e
+		add_modifier = {
+			name = well_trained_artillery
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.4 = {	# Motorization
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.4.title
+	desc = generic_military_events.4.desc
+	flavor = generic_military_events.4.flavor
+
+	trigger = { # Triggered by the Motorization journal entries
+	}
+
+	option = {
+		name = generic_military_events.4.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_motorization
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.4.b
+		add_modifier = {
+			name = defensive_focused_motorization
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.4.c
+		add_modifier = {
+			name = mobility_focused_motorization
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.4.d
+		add_modifier = {
+			name = endurance_focused_motorization
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.4.e
+		add_modifier = {
+			name = well_trained_motorization
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.5 = {	# Reconnaissance
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.5.title
+	desc = generic_military_events.5.desc
+	flavor = generic_military_events.5.flavor
+
+	trigger = { # Triggered by the Reconnaissance journal entries
+	}
+
+	option = {
+		name = generic_military_events.5.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_reconnaissance
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.5.b
+		add_modifier = {
+			name = defensive_focused_reconnaissance
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.5.c
+		add_modifier = {
+			name = mobility_focused_reconnaissance
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.5.d
+		add_modifier = {
+			name = endurance_focused_reconnaissance
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.5.e
+		add_modifier = {
+			name = well_trained_reconnaissance
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.7 = {	# Medical
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.7.title
+	desc = generic_military_events.7.desc
+	flavor = generic_military_events.7.flavor
+
+	trigger = { # Triggered by the Medical journal entries
+	}
+
+	option = {
+		name = generic_military_events.7.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_medical
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.7.b
+		add_modifier = {
+			name = defensive_focused_medical
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.7.c
+		add_modifier = {
+			name = mobility_focused_medical
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.7.d
+		add_modifier = {
+			name = endurance_focused_medical
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.7.e
+		add_modifier = {
+			name = well_trained_medical
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.8 = {	# Jet Fighters
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.8.title
+	desc = generic_military_events.8.desc
+	flavor = generic_military_events.8.flavor
+
+	trigger = { # Triggered by the Jet Fighters journal entries
+	}
+
+	option = {
+		name = generic_military_events.8.a
+		default_option = yes
+		add_modifier = {
+			name = offensive_focused_jet_fighters
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.8.b
+		add_modifier = {
+			name = defensive_focused_jet_fighters
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.8.c
+		add_modifier = {
+			name = mobility_focused_jet_fighters
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.8.d
+		add_modifier = {
+			name = lethality_focused_jet_fighters
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+	option = {
+		name = generic_military_events.8.e
+		add_modifier = {
+			name = well_trained_jet_fighters
+			days = normal_modifier_time		# 5 Years
+		}
+	}
+}
+
+generic_military_events.9 = {	# Deep Battle Military Theory
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.9.title
+	desc = generic_military_events.9.desc
+	flavor = generic_military_events.9.flavor
+
+	trigger = { # Triggered by the Deep Battle journal entry
+	}
+
+	option = {
+		name = generic_military_events.9.a
+		trigger = {
+			can_research = mobile_warfare
+			NOT = { has_technology_researched = mobile_warfare }
+		}
+		add_technology_progress = { progress = 2500 technology = mobile_warfare }
+	}
+	option = {
+		name = generic_military_events.9.b
+		default_option = yes
+		add_modifier = {
+			name = well_trained_military_theory
+			days = long_modifier_time		# 10 Years
+		}
+	}
+}
+
+generic_military_events.10 = {	# Combined Arms Warfare Military Theory
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.10.title
+	desc = generic_military_events.10.desc
+	flavor = generic_military_events.10.flavor
+
+	trigger = { # Triggered by the Combined Arms Warfare journal entry
+	}
+
+	option = {
+		name = generic_military_events.10.a
+		trigger = {
+			can_research = squad_specialist_weapons
+			NOT = { has_technology_researched = squad_specialist_weapons }
+		}
+		add_technology_progress = { progress = 2500 technology = squad_specialist_weapons }
+	}
+	option = {
+		name = generic_military_events.10.b
+		default_option = yes
+		add_modifier = {
+			name = well_trained_military_theory
+			days = long_modifier_time		# 10 Years
+		}
+	}
+}
+
+generic_military_events.11 = {	# Mechanized Warfare Military Theory
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.11.title
+	desc = generic_military_events.11.desc
+	flavor = generic_military_events.11.flavor
+
+	trigger = { # Triggered by the Mechanized Warfare journal entry
+	}
+
+	option = {
+		name = generic_military_events.11.a
+		trigger = {
+			can_research = armored_personnel_carriers
+			NOT = { has_technology_researched = armored_personnel_carriers }
+		}
+		add_technology_progress = { progress = 3000 technology = armored_personnel_carriers }
+	}
+	option = {
+		name = generic_military_events.11.b
+		default_option = yes
+		add_modifier = {
+			name = well_trained_military_theory
+			days = long_modifier_time		# 10 Years
+		}
+	}
+}
+
+generic_military_events.12 = {	# Advanced Combined Arms Warfare Military Theory
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.12.title
+	desc = generic_military_events.12.desc
+	flavor = generic_military_events.12.flavor
+
+	trigger = { # Triggered by the Advanced Combined Arms Warfare journal entry
+	}
+
+	option = {
+		name = generic_military_events.12.a
+		trigger = {
+			can_research = airmobile_warfare
+			NOT = { has_technology_researched = airmobile_warfare }
+		}
+		add_technology_progress = { progress = 4000 technology = airmobile_warfare }
+	}
+	option = {
+		name = generic_military_events.12.b
+		default_option = yes
+		add_modifier = {
+			name = well_trained_military_theory
+			days = long_modifier_time		# 10 Years
+		}
+	}
+}
+
+generic_military_events.13 = {	# Early Network Warfare Military Theory
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.13.title
+	desc = generic_military_events.13.desc
+	flavor = generic_military_events.13.flavor
+
+	trigger = { # Triggered by the Early Network Warfare journal entry
+	}
+
+	option = {
+		name = generic_military_events.13.a
+		trigger = {
+			can_research = recon_drones
+			NOT = { has_technology_researched = recon_drones }
+		}
+		add_technology_progress = { progress = 5000 technology = recon_drones }
+	}
+	option = {
+		name = generic_military_events.13.b
+		default_option = yes
+		add_modifier = {
+			name = well_trained_military_theory
+			days = long_modifier_time		# 10 Years
+		}
+	}
+}
+
+generic_military_events.14 = {	# Total Network Warfare Military Theory
+	type = country_event
+	placement = ROOT
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_fire"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	title = generic_military_events.14.title
+	desc = generic_military_events.14.desc
+	flavor = generic_military_events.14.flavor
+
+	trigger = { # Triggered by the Total Network Warfare journal entry
+	}
+
+	option = {
+		name = generic_military_events.14.a
+		trigger = {
+			can_research = fourth_generation_warfare
+			NOT = { has_technology_researched = fourth_generation_warfare }
+		}
+		add_technology_progress = { progress = 5000 technology = fourth_generation_warfare }
+	}
+	option = {
+		name = generic_military_events.14.b
+		default_option = yes
+		add_modifier = {
+			name = well_trained_military_theory
+			days = long_modifier_time		# 10 Years
+		}
+	}
+}

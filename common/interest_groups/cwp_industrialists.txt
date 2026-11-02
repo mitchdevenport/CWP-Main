@@ -5,6 +5,7 @@
 	index = 2
 
 	ideologies = {
+		ideology_confident_monetarist	# CWP monetary policy stance; shifts with bank credibility
 		ideology_plutocratic
 		ideology_laissez_faire
 		ideology_cwp_organized_employers

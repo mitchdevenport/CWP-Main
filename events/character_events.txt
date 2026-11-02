@@ -26,6 +26,7 @@ character_events.2 = { #Rich industrialist wants to build a university
 			is_incorporated = yes
 			has_building = building_urban_center
 			NOT = { has_building = building_university }
+			can_construct_building = building_university
 		}
 	}
 
@@ -37,6 +38,7 @@ character_events.2 = { #Rich industrialist wants to build a university
 				is_incorporated = yes
 				has_building = building_urban_center
 				NOT = { has_building = building_university }
+				can_construct_building = building_university
 			}
 			save_scope_as = university_state
 		}

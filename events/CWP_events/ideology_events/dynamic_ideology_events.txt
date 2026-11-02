@@ -1,0 +1,235 @@
+﻿namespace = dynamic_ideologies
+# Fired from cwp_society_law_enactment_pass (common/on_actions/cwp_society_on_actions.txt).
+# The ideology changes themselves are in common/scripted_effects/cwp_political_setup.txt.
+# Master's Urbanist, Moralist, Bureaucrat, Entrepreneur, Patriot and Securocrat shifts (events 5, 7-15, 20-25 and 99)
+# have no counterpart among the current interest groups and ideologies.
+
+#################
+### LABORISTS ###
+#################
+dynamic_ideologies.1 = {
+	type = country_event
+	title = dynamic_ideologies.1.t
+	desc = dynamic_ideologies.1.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_trade_unions
+	}
+	immediate = {
+		ig:ig_trade_unions = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.1.a
+		default_option = yes
+		ig:ig_trade_unions = {
+			dynamic_ideology_unions_social = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+dynamic_ideologies.3 = {
+	type = country_event
+	title = dynamic_ideologies.3.t
+	desc = dynamic_ideologies.3.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_trade_unions
+	}
+	immediate = {
+		ig:ig_trade_unions = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.3.a
+		default_option = yes
+		ig:ig_trade_unions = {
+			dynamic_ideology_unions_vanguardist = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+dynamic_ideologies.4 = {
+	type = country_event
+	title = dynamic_ideologies.4.t
+	desc = dynamic_ideologies.4.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_trade_unions
+	}
+	immediate = {
+		ig:ig_trade_unions = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.4.a
+		default_option = yes
+		ig:ig_trade_unions = {
+			dynamic_ideology_unions_socialist = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##############
+### ELITES ###
+##############
+dynamic_ideologies.16 = {
+	type = country_event
+	title = dynamic_ideologies.16.t
+	desc = dynamic_ideologies.16.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_landowners
+	}
+	immediate = {
+		ig:ig_landowners = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.16.a
+		default_option = yes
+		ig:ig_landowners = {
+			dynamic_ideology_landowners_royalist = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+dynamic_ideologies.17 = {
+	type = country_event
+	title = dynamic_ideologies.17.t
+	desc = dynamic_ideologies.17.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_landowners
+	}
+	immediate = {
+		ig:ig_landowners = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.17.a
+		default_option = yes
+		ig:ig_landowners = {
+			dynamic_ideology_landowners_republican = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+dynamic_ideologies.18 = {
+	type = country_event
+	title = dynamic_ideologies.18.t
+	desc = dynamic_ideologies.18.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_landowners
+	}
+	immediate = {
+		ig:ig_landowners = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.18.a
+		default_option = yes
+		ig:ig_landowners = {
+			dynamic_ideology_landowners_traditionalist = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+dynamic_ideologies.19 = {
+	type = country_event
+	title = dynamic_ideologies.19.t
+	desc = dynamic_ideologies.19.d
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		#todo pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = ig:ig_landowners
+	}
+	immediate = {
+		ig:ig_landowners = {
+			save_scope_as = dynamic_ideology_ig
+		}
+	}
+	option = {
+		name = dynamic_ideologies.19.a
+		default_option = yes
+		ig:ig_landowners = {
+			dynamic_ideology_landowners_materialistic = yes
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}

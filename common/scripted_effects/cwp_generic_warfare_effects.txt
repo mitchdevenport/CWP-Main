@@ -1,0 +1,41 @@
+﻿# Country scope: equipment and doctrines whose technology is already known when the country appears
+# count as integrated, so the generic warfare journal entries only follow advances made afterwards.
+cwp_generic_warfare_initialize_known_doctrines = {
+	# Infantry training
+	if = { limit = { has_technology_researched = divisional_organization } set_variable = post_war_infantry_je_done }
+	if = { limit = { has_technology_researched = mobile_warfare } set_variable = 2nd_generation_infantry_je_done }
+	if = { limit = { has_technology_researched = squad_specialist_weapons } set_variable = 3rd_generation_infantry_je_done }
+	if = { limit = { has_technology_researched = fourth_generation_warfare } set_variable = 4th_generation_infantry_je_done }
+	# Tanks
+	if = { limit = { has_technology_researched = main_battle_tanks } set_variable = mbt_je_done }
+	if = { limit = { has_technology_researched = composite_armor } set_variable = 2nd_mbt_je_done }
+	if = { limit = { has_technology_researched = depleted_uranium_rounds } set_variable = 3rd_mbt_je_done }
+	# Artillery
+	if = { limit = { has_technology_researched = mobile_warfare } set_variable = self_propelled_artillery_je_done }
+	if = { limit = { has_technology_researched = rocketry } set_variable = mlrs_artillery_je_done }
+	if = { limit = { has_technology_researched = tactical_ballistic_weapons } set_variable = guided_missile_artillery_je_done }
+	# Motorization
+	if = { limit = { has_technology_researched = mobile_warfare } set_variable = motorized_je_done }
+	if = { limit = { has_technology_researched = armored_personnel_carriers } set_variable = armoured_personal_carriers_je_done }
+	if = { limit = { has_technology_researched = composite_armor } set_variable = infantry_fighting_vehicles_je_done }
+	if = { limit = { has_technology_researched = fourth_generation_warfare } set_variable = multi_role_armored_fighting_vehicles_je_done }
+	# Reconnaissance
+	if = { limit = { has_technology_researched = mobile_warfare } set_variable = motorized_reconnaissance_je_done }
+	if = { limit = { has_technology_researched = utility_helicopters } set_variable = helicopter_reconnaissance_je_done }
+	if = { limit = { has_technology_researched = recon_drones } set_variable = drone_reconnaissance_je_done }
+	# Medical
+	if = { limit = { has_technology_researched = divisional_organization } set_variable = combat_medics_je_done }
+	if = { limit = { has_technology_researched = utility_helicopters } set_variable = army_field_hospitals_je_done }
+	# Aircraft
+	if = { limit = { has_technology_researched = jet_engine } set_variable = jet_fighters_je_done }
+	if = { limit = { has_technology_researched = heavy_jet_engines } set_variable = supersonic_jet_fighters_je_done }
+	if = { limit = { has_technology_researched = multi_role_jets } set_variable = 4th_generation_jet_fighters_je_done }
+	if = { limit = { has_technology_researched = stealth_aircraft } set_variable = 5th_generation_jet_fighters_je_done }
+	# Military theory
+	if = { limit = { has_technology_researched = mobile_warfare } set_variable = deep_battle_je_done }
+	if = { limit = { has_technology_researched = squad_specialist_weapons } set_variable = combined_arms_warfare_je_done }
+	if = { limit = { has_technology_researched = armored_personnel_carriers } set_variable = mechanized_warfare_je_done }
+	if = { limit = { has_technology_researched = airmobile_warfare } set_variable = advanced_combined_arms_je_done }
+	if = { limit = { has_technology_researched = recon_drones } set_variable = early_network_warfare_je_done }
+	if = { limit = { has_technology_researched = fourth_generation_warfare } set_variable = total_network_warfare_je_done }
+}

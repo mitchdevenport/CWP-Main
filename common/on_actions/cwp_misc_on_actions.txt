@@ -1,0 +1,6 @@
+﻿# Chaos mode game rule (see events/debug_events.txt)
+cwp_misc_chaos_mode_events = {
+	events = {
+		debug.999
+	}
+}

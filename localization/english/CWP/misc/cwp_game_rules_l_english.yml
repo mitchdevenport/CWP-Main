@@ -1,0 +1,17 @@
+﻿l_english:
+ rule_cwp_chaos_mode: "Chaos Mode"
+ setting_cwp_no_chaos_mode: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_no_chaos_mode_desc No Chaos Mode#!#!"
+ setting_cwp_no_chaos_mode_desc: "A normal game."
+ setting_cwp_chaos_mode_on: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_chaos_mode_on_desc #high Chaos Mode!#!#!#!"
+ setting_cwp_chaos_mode_on_desc: "A game with a twist. #warning This mode is unsupported and will cause issues with the game. #bold Use at your own risk! #! #!"
+
+ rule_cwp_central_bank_control: "Central Bank Control"
+ setting_cwp_player_control: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_player_control_desc #high Player Control#!#!#!"
+ setting_cwp_player_control_desc: "The player controls the Central Bank at all times."
+ setting_cwp_dynamic_control: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_dynamic_control_desc Dynamic Control#!#!"
+ setting_cwp_dynamic_control_desc: "Control of the Central Bank is dependent on laws."
+ setting_cwp_ai_control: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_cwp_ai_control_desc #high AI Control#!#!#!"
+ setting_cwp_ai_control_desc: "The AI controls the Central Bank at all times."
+
+ setting_unrealistic_formable_nations: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_unrealistic_formable_nations_desc Unrealistic Formable Nations#!#!"
+ setting_unrealistic_formable_nations_desc: "Unrealistic but not impossible countries like Iberia or Maphilindo can be formed"

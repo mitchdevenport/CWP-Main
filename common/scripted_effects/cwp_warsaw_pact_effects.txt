@@ -1,0 +1,80 @@
+﻿effect_warsaw_pact_application_approved = {
+	remove_variable = warsaw_pact_supporting_list_size
+	remove_variable = application_progress_warsaw_pact
+	clear_variable_list = warsaw_pact_supporting
+	clear_variable_list = warsaw_pact_rejecting
+	remove_list_global_variable = {
+		name = warsaw_pact_application_list
+		target = THIS
+	}
+	add_to_global_variable_list = {
+		name = warsaw_pact_members
+		target = THIS
+	}
+}
+
+effect_warsaw_pact_application_rejected = {
+	remove_variable = warsaw_pact_supporting_list_size
+	remove_variable = application_progress_warsaw_pact
+	clear_variable_list = warsaw_pact_supporting
+	clear_variable_list = warsaw_pact_rejecting
+	remove_list_global_variable = {
+		name = warsaw_pact_application_list
+		target = THIS
+	}
+	set_variable = {
+		name = warsaw_pact_application_rejected
+		days = 365
+	}
+}
+
+# The Warsaw Pact mutual assistance treaties of a country that leaves the Warsaw Pact end automatically (see common/treaty_articles/cwp_treaties.txt)
+effect_warsaw_pact_leave = {
+	remove_list_global_variable = {
+		name = warsaw_pact_members
+		target = THIS
+	}
+	remove_modifier = warsaw_pact_cohesion
+	remove_modifier = warsaw_pact_not_meeting_standards
+}
+
+# Gives this Warsaw Pact member a Warsaw Pact mutual assistance treaty with every other member it is not yet bound to
+effect_warsaw_pact_create_mutual_assistance_treaties = {
+	save_temporary_scope_as = warsaw_pact_treaty_member
+	every_country = {
+		limit = {
+			is_in_warsaw_pact = yes
+			NOT = { THIS = scope:warsaw_pact_treaty_member }
+			NOT = {
+				any_scope_treaty = {
+					binds = scope:warsaw_pact_treaty_member
+					any_scope_article = { has_type = treaty_warsaw_pact_mutual_assistance }
+				}
+			}
+		}
+		save_temporary_scope_as = warsaw_pact_treaty_partner
+		if = {
+			limit = {
+				can_create_treaty = {
+					first_country = scope:warsaw_pact_treaty_member
+					second_country = scope:warsaw_pact_treaty_partner
+					is_draft = no
+					binding_period = { years = 20 }
+					articles_to_create = {
+						{ article = treaty_warsaw_pact_mutual_assistance }
+					}
+				}
+			}
+			create_treaty = {
+				name = treaty_name_warsaw_treaty
+				first_country = scope:warsaw_pact_treaty_member
+				second_country = scope:warsaw_pact_treaty_partner
+				is_draft = no
+				binding_period = { years = 20 }
+				articles_to_create = {
+					{ article = treaty_warsaw_pact_mutual_assistance }
+				}
+			}
+		}
+	}
+}

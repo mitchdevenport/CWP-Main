@@ -1,0 +1,91 @@
+﻿form_warsaw_pact = {
+	is_shown = {
+		exists = c:RUS
+		c:RUS = THIS
+		NOT = {
+			has_global_variable = warsaw_pact_leader
+		}
+	}
+	possible = {
+		country_rank >= rank_value:great_power
+		has_technology_researched = political_internationalism
+	}
+	when_taken = {
+		trigger_event = warsaw_pact_formation.1
+		set_global_variable = {
+			name = warsaw_pact_leader
+			value = ROOT
+		}
+	}
+	ai_chance = {
+		value = 100
+	}
+}
+
+join_warsaw_pact = {
+	is_shown = {
+		exists = c:RUS
+		is_subject = no
+		has_global_variable = warsaw_pact
+		country_is_in_europe = yes
+		NOR = {
+			is_in_warsaw_pact = yes
+			is_target_in_global_variable_list = {
+				name = warsaw_pact_application_list
+				target = THIS
+			}
+			has_variable = warsaw_pact_application_rejected
+		}
+		is_aligned_RUS = yes
+	}
+	possible = {
+		NOR = {
+			is_aligned_USA = yes
+			is_at_war = yes
+		}
+		is_aligned_RUS = yes
+	}
+	when_taken = {
+		set_variable = {
+			name = application_progress_warsaw_pact
+			value = 0
+		}
+		set_variable = {
+			name = warsaw_pact_supporting_list_size
+			value = 0
+		}
+		add_to_global_variable_list = {
+			name = warsaw_pact_application_list
+			target = THIS
+		}
+	}
+	ai_chance = {
+		value = 10
+	}
+}
+
+leave_warsaw_pact = {
+	is_shown = {
+		is_in_warsaw_pact = yes
+	}
+	possible = {
+		exists = c:RUS
+		c:RUS = {
+			relations:root <= relations_threshold:poor
+		}
+		is_aligned_RUS = no
+	}
+	when_taken = {
+		effect_warsaw_pact_leave = yes
+	}
+	ai_chance = {
+		value = 0
+		# Members that have joined the Western Bloc leave
+		if = {
+			limit = {
+				is_aligned_USA = yes
+			}
+			add = 10
+		}
+	}
+}

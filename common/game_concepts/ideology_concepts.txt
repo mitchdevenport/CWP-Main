@@ -1,0 +1,44 @@
+﻿concept_ideology_social = {
+}
+
+concept_ideology_vanguardist = {
+}
+
+concept_ideology_socialist = {
+}
+
+concept_ideology_republican = {
+}
+
+concept_ideology_royalist = {
+}
+
+concept_ideology_materialistic = {
+}
+
+concept_ideology_traditionalist = {
+}
+
+concept_ideology_confident_fiscalist = {
+}
+
+concept_ideology_worried_fiscalist = {
+}
+
+concept_ideology_fearful_fiscalist = {
+}
+
+concept_ideology_panicked_fiscalist = {
+}
+
+concept_ideology_confident_monetarist = {
+}
+
+concept_ideology_worried_monetarist = {
+}
+
+concept_ideology_fearful_monetarist = {
+}
+
+concept_ideology_panicked_monetarist = {
+}

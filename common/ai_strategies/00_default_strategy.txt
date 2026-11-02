@@ -248,6 +248,39 @@ ai_strategy_default = {
 			add = 5
 		}
 
+		# CWP: bonus if they are in the same Cold War bloc
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_in_western_bloc = yes
+						scope:target_country = { is_in_western_bloc = yes }
+					}
+					AND = {
+						is_in_eastern_bloc = yes
+						scope:target_country = { is_in_eastern_bloc = yes }
+					}
+				}
+			}
+			add = 10
+		}
+		# CWP: obligations from the opposing bloc have no value
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_in_western_bloc = yes
+						scope:target_country = { is_in_eastern_bloc = yes }
+					}
+					AND = {
+						is_in_eastern_bloc = yes
+						scope:target_country = { is_in_western_bloc = yes }
+					}
+				}
+			}
+			subtract = 100
+		}
+
 		multiply = {
 			value = "scope:target_country.relations:root"
 			multiply = 0.01
@@ -850,6 +883,23 @@ ai_strategy_default = {
 			}
 		}
 
+		# CWP: bonus if they are in the same Cold War bloc
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_in_western_bloc = yes
+						scope:overlord = { is_in_western_bloc = yes }
+					}
+					AND = {
+						is_in_eastern_bloc = yes
+						scope:overlord = { is_in_eastern_bloc = yes }
+					}
+				}
+			}
+			add = 10
+		}
+
 		if = {
 			limit = { is_in_customs_union_with = scope:overlord }
 			add = 10
@@ -987,13 +1037,19 @@ ai_strategy_default = {
 
 		# Braver against pariah countries
 		if = {
-			limit = { scope:target_country.infamy >= infamy_threshold:pariah }
+			limit = {
+				exists = scope:target_country
+				scope:target_country.infamy >= infamy_threshold:pariah
+			}
 			add = 1
 		}
 
 		# Braver against own overlord in general
 		if = {
-			limit = { is_subject_of = scope:target_country }
+			limit = {
+				exists = scope:target_country
+				is_subject_of = scope:target_country
+			}
 			add = 1
 		}
 	}
@@ -1914,6 +1970,12 @@ ai_strategy_default = {
 					multiply = 1.25 # Yes, this is actually intended to be an increase - it's to partially compensate for lowered conquer/dominate desires
 				}
 
+				# CWP: nuclear powers are antagonized rather than attacked
+				if = {
+					limit = { scope:target_country = { has_modifier = atomic_capable } }
+					multiply = 2
+				}
+
 				if = {
 					limit = {
 						AND = {
@@ -2122,6 +2184,12 @@ ai_strategy_default = {
 					multiply = 0.75
 				}
 
+				# CWP: nuclear powers are practically never conquest targets
+				if = {
+					limit = { scope:target_country = { has_modifier = atomic_capable } }
+					multiply = 0.01
+				}
+
 				# AI implications for Power Blocs: 'conquer' secret goal is more likely towards the country from another Bloc
 				if = {
 					limit = { country_is_in_different_power_bloc = { TARGET = scope:target_country } }
@@ -2307,6 +2375,12 @@ ai_strategy_default = {
 				if = {
 					limit = { has_game_rule = low_ai_aggression }
 					multiply = 0.75
+				}
+
+				# CWP: nuclear powers are practically never targets for domination
+				if = {
+					limit = { scope:target_country = { has_modifier = atomic_capable } }
+					multiply = 0.01
 				}
 
 				# Shouldn't usually upset diplomatic pacts unless they're bankrupt or infamous

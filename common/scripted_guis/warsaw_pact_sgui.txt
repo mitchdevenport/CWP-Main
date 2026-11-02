@@ -1,0 +1,273 @@
+﻿#############################################################################
+########################## WARSAW PACT APPLICATIONS ########################
+#############################################################################
+#### Varcheck
+warsaw_pact_leader_varcheck = {
+	scope = country
+	is_shown = {
+		has_variable = warsaw_pact_leader
+	}
+}
+
+warsaw_pact_approve_membership_varcheck = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_shown = {
+		is_in_warsaw_pact = yes
+		scope:applicant_country_scope = {
+			NOT = {
+				is_target_in_variable_list = {
+					name = warsaw_pact_supporting
+					target = ROOT
+				}
+			}
+		}
+	}
+}
+
+warsaw_pact_reject_membership_varcheck = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_shown = {
+		is_in_warsaw_pact = yes
+		scope:applicant_country_scope = {
+			NOT = {
+				is_target_in_variable_list = {
+					name = warsaw_pact_rejecting
+					target = ROOT
+				}
+			}
+		}
+	}
+}
+
+##### Effects
+warsaw_pact_approve_membership = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_valid = {
+		is_in_warsaw_pact = yes
+		scope:applicant_country_scope = {
+			has_variable = application_progress_warsaw_pact
+		}
+	}
+	effect = {
+		scope:applicant_country_scope = {
+			if = {
+				limit = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = warsaw_pact_supporting
+							target = ROOT
+						}
+					}
+				}
+				add_to_variable_list = {
+					name = warsaw_pact_supporting
+					target = ROOT
+				}
+				change_variable = {
+					name = warsaw_pact_supporting_list_size
+					add = 1
+				}
+			}
+			# Withdraw an earlier rejection
+			if = {
+				limit = {
+					is_target_in_variable_list = {
+						name = warsaw_pact_rejecting
+						target = ROOT
+					}
+				}
+				change_variable = {
+					name = warsaw_pact_supporting_list_size
+					add = 1
+				}
+			}
+			remove_list_variable = {
+				name = warsaw_pact_rejecting
+				target = ROOT
+			}
+		}
+	}
+}
+
+warsaw_pact_reject_membership = {
+	scope = country
+	saved_scopes = {
+		applicant_country_scope
+	}
+	is_valid = {
+		is_in_warsaw_pact = yes
+		scope:applicant_country_scope = {
+			has_variable = application_progress_warsaw_pact
+		}
+	}
+	effect = {
+		scope:applicant_country_scope = {
+			if = {
+				limit = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = warsaw_pact_rejecting
+							target = ROOT
+						}
+					}
+				}
+				add_to_variable_list = {
+					name = warsaw_pact_rejecting
+					target = ROOT
+				}
+				change_variable = {
+					name = warsaw_pact_supporting_list_size
+					subtract = 1
+				}
+			}
+			# Withdraw an earlier approval
+			if = {
+				limit = {
+					is_target_in_variable_list = {
+						name = warsaw_pact_supporting
+						target = ROOT
+					}
+				}
+				change_variable = {
+					name = warsaw_pact_supporting_list_size
+					subtract = 1
+				}
+			}
+			remove_list_variable = {
+				name = warsaw_pact_supporting
+				target = ROOT
+			}
+		}
+	}
+}
+
+####### Readiness
+warsaw_pact_low_readiness = {
+	scope = country
+	is_valid = {
+		has_variable = warsaw_pact_leader
+		NOR = {
+			has_global_variable = warsaw_pact_low_mandated_readiness
+			has_global_variable = warsaw_pact_readiness_changed
+		}
+	}
+	effect = {
+		remove_global_variable = warsaw_pact_medium_mandated_readiness
+		remove_global_variable = warsaw_pact_high_mandated_readiness
+		set_global_variable = warsaw_pact_low_mandated_readiness
+		set_global_variable = {
+			name = warsaw_pact_readiness_changed
+			days = 365
+		}
+	}
+}
+
+warsaw_pact_medium_readiness = {
+	scope = country
+	is_valid = {
+		has_variable = warsaw_pact_leader
+		NOR = {
+			has_global_variable = warsaw_pact_medium_mandated_readiness
+			has_global_variable = warsaw_pact_readiness_changed
+		}
+	}
+	effect = {
+		remove_global_variable = warsaw_pact_low_mandated_readiness
+		remove_global_variable = warsaw_pact_high_mandated_readiness
+		set_global_variable = warsaw_pact_medium_mandated_readiness
+		set_global_variable = {
+			name = warsaw_pact_readiness_changed
+			days = 365
+		}
+	}
+}
+
+warsaw_pact_high_readiness = {
+	scope = country
+	is_valid = {
+		has_variable = warsaw_pact_leader
+		NOR = {
+			has_global_variable = warsaw_pact_high_mandated_readiness
+			has_global_variable = warsaw_pact_readiness_changed
+		}
+	}
+	effect = {
+		remove_global_variable = warsaw_pact_low_mandated_readiness
+		remove_global_variable = warsaw_pact_medium_mandated_readiness
+		set_global_variable = warsaw_pact_high_mandated_readiness
+		set_global_variable = {
+			name = warsaw_pact_readiness_changed
+			days = 365
+		}
+	}
+}
+
+####### Contribution
+warsaw_pact_low_contribution = {
+	scope = country
+	is_valid = {
+		has_variable = warsaw_pact_leader
+		NOR = {
+			has_global_variable = warsaw_pact_low_mandated_contribution
+			has_global_variable = warsaw_pact_contribution_changed
+		}
+	}
+	effect = {
+		remove_global_variable = warsaw_pact_medium_mandated_contribution
+		remove_global_variable = warsaw_pact_high_mandated_contribution
+		set_global_variable = warsaw_pact_low_mandated_contribution
+		set_global_variable = {
+			name = warsaw_pact_contribution_changed
+			days = 365
+		}
+	}
+}
+
+warsaw_pact_medium_contribution = {
+	scope = country
+	is_valid = {
+		has_variable = warsaw_pact_leader
+		NOR = {
+			has_global_variable = warsaw_pact_medium_mandated_contribution
+			has_global_variable = warsaw_pact_contribution_changed
+		}
+	}
+	effect = {
+		remove_global_variable = warsaw_pact_low_mandated_contribution
+		remove_global_variable = warsaw_pact_high_mandated_contribution
+		set_global_variable = warsaw_pact_medium_mandated_contribution
+		set_global_variable = {
+			name = warsaw_pact_contribution_changed
+			days = 365
+		}
+	}
+}
+
+warsaw_pact_high_contribution = {
+	scope = country
+	is_valid = {
+		has_variable = warsaw_pact_leader
+		NOR = {
+			has_global_variable = warsaw_pact_high_mandated_contribution
+			has_global_variable = warsaw_pact_contribution_changed
+		}
+	}
+	effect = {
+		remove_global_variable = warsaw_pact_low_mandated_contribution
+		remove_global_variable = warsaw_pact_medium_mandated_contribution
+		set_global_variable = warsaw_pact_high_mandated_contribution
+		set_global_variable = {
+			name = warsaw_pact_contribution_changed
+			days = 365
+		}
+	}
+}

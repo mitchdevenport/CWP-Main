@@ -1,0 +1,266 @@
+﻿effect_unsc_member = {
+	set_variable = {
+		name = unsc_member
+		value = 0
+	}
+}
+
+effect_un_member = {
+	set_variable = {
+		name = un_member
+		value = 0
+	}
+}
+
+effect_un_observer = {
+	set_variable = {
+		name = un_observer
+		value = 0
+	}
+}
+
+effect_un_application_approved = {
+	remove_variable = un_observer
+	remove_variable = un_supporting_list_size
+	remove_variable = application_progress_un
+	clear_variable_list = un_supporting
+	clear_variable_list = un_abstaining
+	clear_variable_list = un_rejecting
+	remove_list_global_variable = {
+		name = un_application_list
+		target = THIS
+	}
+	effect_un_member = yes
+	set_country_type = recognized
+}
+
+effect_un_application_rejected = {
+	remove_variable = un_supporting_list_size
+	remove_variable = application_progress_un
+	clear_variable_list = un_supporting
+	clear_variable_list = un_abstaining
+	clear_variable_list = un_rejecting
+	remove_list_global_variable = {
+		name = un_application_list
+		target = THIS
+	}
+	set_variable = {
+		name = un_application_rejected
+		days = 365
+	}
+}
+
+effect_reset_un_lists = {
+	set_global_variable = {
+		name = pending_resolution_progress
+		value = 0
+	}
+	every_country = {
+		if = {
+			limit = {
+				has_variable = is_supporting
+			}
+			remove_variable = is_supporting
+		}
+		if = {
+			limit = {
+				has_variable = is_opposing
+			}
+			remove_variable = is_opposing
+		}
+	}
+	remove_global_variable = asking_un_intervention_country
+	remove_global_variable = vetoed
+	remove_global_variable = pending_resolution
+}
+
+# Clears the bookkeeping of a finished UN intervention vote (requesting country and its enemies)
+effect_clear_un_intervention = {
+	every_country = {
+		limit = {
+			OR = {
+				has_variable = asking_un_intervention
+				has_variable = un_intervention_enemy_country
+			}
+		}
+		remove_variable = asking_un_intervention
+		remove_variable = un_intervention_enemy_country
+	}
+}
+
+# The country asking for a UN intervention gives up its own war goals so that the ultimatum is a ceasefire on the status quo
+# scope:asking_un_intervention_country = country that asked for the intervention
+# scope:un_intervention_enemy_country = its enemy
+effect_un_remove_wargoal_of_type = {
+	every_diplomatic_play = {
+		limit = {
+			is_war = yes
+			any_scope_play_involved = {
+				this = scope:asking_un_intervention_country
+			}
+			scope:asking_un_intervention_country = {
+				play_participant_has_war_goal_of_type_against = {
+					type = $TYPE$
+					target = scope:un_intervention_enemy_country
+				}
+			}
+		}
+		remove_war_goal = {
+			who = scope:asking_un_intervention_country
+			type = $TYPE$
+		}
+	}
+}
+
+effect_remove_wargoals = {
+	effect_un_remove_wargoal_of_type = { TYPE = conquer_state }
+	effect_un_remove_wargoal_of_type = { TYPE = return_state }
+	effect_un_remove_wargoal_of_type = { TYPE = take_treaty_port }
+	effect_un_remove_wargoal_of_type = { TYPE = make_tributary }
+	effect_un_remove_wargoal_of_type = { TYPE = make_protectorate }
+	effect_un_remove_wargoal_of_type = { TYPE = make_dominion }
+	effect_un_remove_wargoal_of_type = { TYPE = make_personal_union }
+	effect_un_remove_wargoal_of_type = { TYPE = make_chartered_company }
+	effect_un_remove_wargoal_of_type = { TYPE = make_crown_land }
+	effect_un_remove_wargoal_of_type = { TYPE = reduce_autonomy }
+	effect_un_remove_wargoal_of_type = { TYPE = humiliation }
+	effect_un_remove_wargoal_of_type = { TYPE = regime_change }
+	effect_un_remove_wargoal_of_type = { TYPE = open_market }
+	effect_un_remove_wargoal_of_type = { TYPE = ban_slavery }
+	effect_un_remove_wargoal_of_type = { TYPE = revoke_claim }
+	effect_un_remove_wargoal_of_type = { TYPE = revoke_all_claims }
+	effect_un_remove_wargoal_of_type = { TYPE = contain_threat }
+	effect_un_remove_wargoal_of_type = { TYPE = annex_country }
+	effect_un_remove_wargoal_of_type = { TYPE = unification }
+	effect_un_remove_wargoal_of_type = { TYPE = unification_leadership }
+	effect_un_remove_wargoal_of_type = { TYPE = liberate_subject }
+	effect_un_remove_wargoal_of_type = { TYPE = liberate_country }
+	effect_un_remove_wargoal_of_type = { TYPE = independence }
+	effect_un_remove_wargoal_of_type = { TYPE = secession }
+	effect_un_remove_wargoal_of_type = { TYPE = transfer_subject }
+	effect_un_remove_wargoal_of_type = { TYPE = release_as_subject }
+	effect_un_remove_wargoal_of_type = { TYPE = force_nationalization }
+	effect_un_remove_wargoal_of_type = { TYPE = foreign_investment_rights }
+	effect_un_remove_wargoal_of_type = { TYPE = enforce_treaty_article }
+	effect_un_remove_wargoal_of_type = { TYPE = break_enforced_treaties }
+	effect_un_remove_wargoal_of_type = { TYPE = colonization_rights }
+	effect_un_remove_wargoal_of_type = { TYPE = increase_autonomy }
+	effect_un_remove_wargoal_of_type = { TYPE = join_power_bloc }
+	effect_un_remove_wargoal_of_type = { TYPE = leave_power_bloc }
+	effect_un_remove_wargoal_of_type = { TYPE = demand_strait_access }
+	effect_un_remove_wargoal_of_type = { TYPE = demand_toll_exemption }
+	effect_un_remove_wargoal_of_type = { TYPE = demand_no_tolls }
+	effect_un_remove_wargoal_of_type = { TYPE = demand_no_strait_closure }
+}
+
+effect_ai_vote_yes = {
+	set_variable = is_supporting
+	remove_variable = is_opposing
+	set_variable = {
+		name = un_alreadyvoted
+		days = 50
+	}
+}
+
+effect_ai_vote_no = {
+	set_variable = is_opposing
+	remove_variable = is_supporting
+	set_variable = {
+		name = un_alreadyvoted
+		days = 50
+	}
+}
+
+effect_ai_vote_neutral = {
+	remove_variable = is_supporting
+	remove_variable = is_opposing
+	set_variable = {
+		name = un_alreadyvoted
+		days = 50
+	}
+}
+
+##### Rebuild UN list
+rebuild_un_memberlist = {
+	clear_global_variable_list = un_members_list
+	every_country = {
+		limit = {
+			has_variable = un_member
+		}
+		add_to_global_variable_list = {
+			name = un_members_list
+			target = THIS
+		}
+	}
+}
+
+##### Rebuild every list shown in the International Organizations and UN panels
+rebuild_un_lists = {
+	clear_global_variable_list = unsc_members_list
+	clear_global_variable_list = un_members_list
+	clear_global_variable_list = un_observers_list
+	clear_global_variable_list = un_nonmember_list
+	clear_global_variable_list = un_headquarters_holder
+	clear_global_variable_list = un_application_list
+	set_global_variable = {
+		name = var_un_memberlist
+		value = 0
+	}
+	every_country = {
+		if = {
+			limit = {
+				has_variable = application_progress_un
+			}
+			add_to_global_variable_list = {
+				name = un_application_list
+				target = THIS
+			}
+		}
+		if = {
+			limit = {
+				has_variable = unsc_member
+			}
+			add_to_global_variable_list = {
+				name = unsc_members_list
+				target = THIS
+			}
+		}
+		if = {
+			limit = {
+				has_variable = un_member
+			}
+			add_to_global_variable_list = {
+				name = un_members_list
+				target = THIS
+			}
+			change_global_variable = {
+				name = var_un_memberlist
+				add = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_variable = un_observer
+			}
+			add_to_global_variable_list = {
+				name = un_observers_list
+				target = THIS
+			}
+		}
+		else = {
+			add_to_global_variable_list = {
+				name = un_nonmember_list
+				target = THIS
+			}
+		}
+		if = {
+			limit = {
+				has_variable = un_headquarters_holder
+			}
+			add_to_global_variable_list = {
+				name = un_headquarters_holder
+				target = THIS
+			}
+		}
+	}
+}

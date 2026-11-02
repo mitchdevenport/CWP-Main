@@ -1,0 +1,213 @@
+﻿# CWP political setup
+# Master's effect_create_law_package is superseded by common/scripted_effects/cwp_starting_law_packages.txt.
+
+### Dynamic ideologies ###
+# Master's interest groups shifted ideology as the laws they lived under changed (see
+# events/CWP_events/ideology_events/dynamic_ideology_events.txt). Mapped onto the current interest groups:
+#   Laborists -> Trade Unions:  Social = Free Trade Unionism, Vanguardist = Populist + Socialist
+#                               (the state-socialist setup of ig_trade_unions on_enable), Socialist = Socialist
+#   Elites    -> Landowners:    Royalist = Paternalistic, Republican = Republican Paternalistic,
+#                               Traditionalist = Hierarchic, Materialistic = Commercial Landowners
+
+# Interest group scope (ig_trade_unions)
+dynamic_ideology_unions_social = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_populist
+		}
+		remove_ideology = ideology_populist
+	}
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_socialist
+		}
+		remove_ideology = ideology_socialist
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_cwp_free_trade_unionism
+			}
+		}
+		add_ideology = ideology_cwp_free_trade_unionism
+	}
+}
+
+dynamic_ideology_unions_vanguardist = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_cwp_free_trade_unionism
+		}
+		remove_ideology = ideology_cwp_free_trade_unionism
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_populist
+			}
+		}
+		add_ideology = ideology_populist
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_socialist
+			}
+		}
+		add_ideology = ideology_socialist
+	}
+}
+
+dynamic_ideology_unions_socialist = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_cwp_free_trade_unionism
+		}
+		remove_ideology = ideology_cwp_free_trade_unionism
+	}
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_populist
+		}
+		remove_ideology = ideology_populist
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_socialist
+			}
+		}
+		add_ideology = ideology_socialist
+	}
+}
+
+# Interest group scope (ig_landowners)
+dynamic_ideology_landowners_royalist = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_republican_paternalistic
+		}
+		remove_ideology = ideology_republican_paternalistic
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_paternalistic
+			}
+		}
+		add_ideology = ideology_paternalistic
+	}
+}
+
+dynamic_ideology_landowners_republican = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_paternalistic
+		}
+		remove_ideology = ideology_paternalistic
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_republican_paternalistic
+			}
+		}
+		add_ideology = ideology_republican_paternalistic
+	}
+}
+
+dynamic_ideology_landowners_traditionalist = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_cwp_commercial_landowners
+		}
+		remove_ideology = ideology_cwp_commercial_landowners
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_hierarchic
+			}
+		}
+		add_ideology = ideology_hierarchic
+	}
+}
+
+dynamic_ideology_landowners_materialistic = {
+	if = {
+		limit = {
+			has_ideology = ideology:ideology_hierarchic
+		}
+		remove_ideology = ideology_hierarchic
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_ideology = ideology:ideology_cwp_commercial_landowners
+			}
+		}
+		add_ideology = ideology_cwp_commercial_landowners
+	}
+}
+
+# Country scope. Pregame setup (history) and newly released countries.
+setup_starting_ideologies = {
+	### LABORISTS (Trade Unions) ###
+	ig:ig_trade_unions ?= {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_council_republic
+						has_law_or_variant = law_type:law_command_economy
+					}
+				}
+			}
+			dynamic_ideology_unions_vanguardist = yes
+		}
+		else_if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_cooperative_ownership
+				}
+			}
+			dynamic_ideology_unions_socialist = yes
+		}
+		else = {
+			dynamic_ideology_unions_social = yes
+		}
+	}
+	### ELITES (Landowners) ###
+	ig:ig_landowners ?= {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_presidential_republic
+						has_law_or_variant = law_type:law_parliamentary_republic
+						has_law_or_variant = law_type:law_council_republic
+					}
+				}
+			}
+			dynamic_ideology_landowners_republican = yes
+		}
+		else = {
+			dynamic_ideology_landowners_royalist = yes
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_traditionalism
+						has_law_or_variant = law_type:law_agrarianism
+						has_law_or_variant = law_type:law_industry_banned
+					}
+				}
+			}
+			dynamic_ideology_landowners_traditionalist = yes
+		}
+		else = {
+			dynamic_ideology_landowners_materialistic = yes
+		}
+	}
+}

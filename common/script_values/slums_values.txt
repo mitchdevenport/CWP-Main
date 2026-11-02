@@ -1,0 +1,48 @@
+﻿# Slums (informal settlements) - state scope
+# Master's slums were auto-placed building_slums levels housing slum dwellers; with no slum building,
+# slum-dweller pop type or housing good in this version, the same state-level size drives state_slum_modifier directly.
+state_slum_determiner = {
+	value = state_population
+	divide = 100000
+	round = yes
+}
+
+state_max_slums = {
+	value = 0
+	#### Unemployment
+	if = {
+		limit = {
+			state_unemployment_rate >= 0.6
+		}
+		add = state_slum_determiner
+	}
+	else_if = {
+		limit = {
+			state_unemployment_rate >= 0.4
+		}
+		add = state_slum_determiner
+		divide = 1.5
+	}
+	else_if = {
+		limit = {
+			state_unemployment_rate >= 0.3
+		}
+		add = state_slum_determiner
+		divide = 2
+	}
+	else_if = {
+		limit = {
+			state_unemployment_rate >= 0.2
+		}
+		add = state_slum_determiner
+		divide = 2.5
+	}
+	else_if = {
+		limit = {
+			state_unemployment_rate >= 0.1
+		}
+		add = state_slum_determiner
+		divide = 3
+	}
+	round = yes
+}

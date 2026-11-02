@@ -1,0 +1,62 @@
+﻿### East/West blocs (see common/scripted_triggers/cwp_bloc_triggers.txt)
+# The blocs are the power blocs of the United States and the Soviet Union.
+
+# Founds the Western Bloc with this country as its leader
+effect_western_bloc_leader = {
+	if = {
+		limit = {
+			is_in_power_bloc = no
+			is_subject = no
+		}
+		create_power_bloc = {
+			name = WEST_BLOC
+			map_color = { 66 94 193 }
+			identity = identity_ideological_union
+			principle = principle_creative_legislature_2
+		}
+	}
+}
+
+# Founds the Eastern Bloc with this country as its leader
+effect_eastern_bloc_leader = {
+	if = {
+		limit = {
+			is_in_power_bloc = no
+			is_subject = no
+		}
+		create_power_bloc = {
+			name = EAST_BLOC
+			map_color = hsv{ 0.96 0.8 0.35 }
+			identity = identity_ideological_union
+			principle = principle_ideological_truth_2
+		}
+	}
+}
+
+# Aligns this country with the United States by joining the Western Bloc
+effect_western_bloc_nation = {
+	if = {
+		limit = {
+			exists = c:USA
+			c:USA = { is_in_power_bloc = yes }
+			is_subject = no
+			is_power_bloc_leader = no
+			is_in_western_bloc = no
+		}
+		join_power_bloc = c:USA
+	}
+}
+
+# Aligns this country with the Soviet Union by joining the Eastern Bloc
+effect_eastern_bloc_nation = {
+	if = {
+		limit = {
+			exists = c:RUS
+			c:RUS = { is_in_power_bloc = yes }
+			is_subject = no
+			is_power_bloc_leader = no
+			is_in_eastern_bloc = no
+		}
+		join_power_bloc = c:RUS
+	}
+}

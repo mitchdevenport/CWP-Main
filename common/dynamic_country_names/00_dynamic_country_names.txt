@@ -1349,6 +1349,22 @@ EOT = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = dyn_c_jordan_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
 }
 
 PAL = {
@@ -1373,6 +1389,22 @@ PAL = {
 		trigger = {
 			scope:actor ?= {
 				is_subject_of = c:ISR
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_palestine_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
 			}
 		}
 	}
@@ -2476,6 +2508,22 @@ ALR = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = dyn_c_rif_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
 }
 
 LBY = {
@@ -2872,6 +2920,22 @@ SDN = {
 			}
 		}
 	}
+	dynamic_country_name = {
+		name = dyn_c_sudan_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
 }
 
 FEZ = {
@@ -2917,9 +2981,9 @@ BNI = {
 		priority = 0
 		trigger = {
 			exists = scope:actor
-		#	scope:actor ?= {
-		#		has_variable = benin_name_change
-		#	}
+			scope:actor ?= {
+				has_variable = benin_name_change
+			}
 		}
 	}
 }
@@ -3541,7 +3605,7 @@ ESW = {
 						is_subject_of = c:GBR
 					}
 				}
-			#	NOT = { scope:actor ?= { has_variable = swaziland_name_change } }
+				NOT = { scope:actor ?= { has_variable = swaziland_name_change } }
 			}
 		}
 	}
@@ -3588,6 +3652,266 @@ TSW = {
 		priority = 0
 		trigger = {
 			cwp_coat_of_arms_british_subject_ensign_trigger = yes
+		}
+	}
+}
+
+MLT = {
+	dynamic_country_name = {
+		name = dyn_c_malta_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+SYR = {
+	dynamic_country_name = {
+		name = dyn_c_syria_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+LEB = {
+	dynamic_country_name = {
+		name = dyn_c_lebanon_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+TUN = {
+	dynamic_country_name = {
+		name = dyn_c_tunisia_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+EGY = {
+	dynamic_country_name = {
+		name = dyn_c_egypt_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+MOR = {
+	dynamic_country_name = {
+		name = dyn_c_morocco_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+ALD = {
+	dynamic_country_name = {
+		name = dyn_c_algeria_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+WSH = {
+	dynamic_country_name = {
+		name = dyn_c_western_sahara_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+BKF = {
+	dynamic_country_name = {
+		name = dyn_c_burkina_faso
+		adjective = dyn_c_burkina_faso_adj
+		is_main_tag_only = no
+		priority = 0
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				has_variable = burkina_faso_name_change
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_burkina_faso_jamahiriya
+		adjective = dyn_c_burkina_faso_adj
+		is_main_tag_only = no
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+MAU = {
+	dynamic_country_name = {
+		name = dyn_c_mauritania_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+MAL = {
+	dynamic_country_name = {
+		name = dyn_c_mali_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+NGR = {
+	dynamic_country_name = {
+		name = dyn_c_niger_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
+		}
+	}
+}
+
+CHD = {
+	dynamic_country_name = {
+		name = dyn_c_chad_jamahiriya
+		is_main_tag_only = yes
+		priority = 10
+		trigger = {
+			exists = c:LBY
+			exists = scope:actor
+			scope:actor ?= {
+				is_subject_of = c:LBY
+				is_subject_type = subject_type_jamahiriya
+			}
+			c:LBY = {
+				has_law = law_type:law_cooperative_ownership
+			}
 		}
 	}
 }

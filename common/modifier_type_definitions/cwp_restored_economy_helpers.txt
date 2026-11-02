@@ -1,0 +1,29 @@
+﻿# Monetary policy law modifiers restored from master's common/modifier_types/CWP_00_modifier_types.txt
+# (descriptive only, the monetary system reads the laws directly)
+country_gold_standard_reduce_inflationdeflation_change = {
+	script_only = yes
+	decimals = 0
+	color = bad
+	percent = yes
+}
+
+country_inflation_change_from_interest_rates = {
+	script_only = yes
+	decimals = 0
+	color = good
+	percent = yes
+}
+
+country_minting_from_monetary_policy = {
+	script_only = yes
+	decimals = 0
+	color = good
+	percent = yes
+}
+
+country_bank_credibility = {
+	script_only = yes
+	decimals = 0
+	color = good
+	percent = yes
+}

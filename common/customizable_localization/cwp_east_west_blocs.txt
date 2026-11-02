@@ -1,0 +1,55 @@
+﻿is_western_bloc_member_loc = {
+	# Western Bloc Member
+	type = country
+	text = {
+		trigger = {
+			is_western_bloc_member = yes
+		}
+		localization_key = "YES"
+	}
+	text = {
+		localization_key = "NO"
+	}
+}
+
+is_eastern_bloc_member_loc = {
+	# Eastern Bloc Member
+	type = country
+	text = {
+		trigger = {
+			is_eastern_bloc_member = yes
+		}
+		localization_key = "YES"
+	}
+	text = {
+		localization_key = "NO"
+	}
+}
+
+is_western_bloc_leader_loc = {
+	# Western Bloc Leader
+	type = country
+	text = {
+		trigger = {
+			is_western_bloc_leader = yes
+		}
+		localization_key = "YES"
+	}
+	text = {
+		localization_key = "NO"
+	}
+}
+
+is_eastern_bloc_leader_loc = {
+	# Eastern Bloc Leader
+	type = country
+	text = {
+		trigger = {
+			is_eastern_bloc_leader = yes
+		}
+		localization_key = "YES"
+	}
+	text = {
+		localization_key = "NO"
+	}
+}

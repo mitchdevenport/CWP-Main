@@ -1,0 +1,46 @@
+﻿# Jamahiriya: only created through Gaddafi's unification journal entry and events (libya.*)
+jamahiriya = {
+	# for breaking only
+	groups = { general }
+
+	can_use_obligations = yes
+
+	show_in_lens = no
+
+	potential = { always = no }
+
+	pact = {
+		cost = 50
+		has_junior_participant = yes
+		maintenance_paid_by = first_country
+		target_requires_approval_to_break = yes
+
+		subject_type = subject_type_jamahiriya
+
+		actor_can_break = {
+			is_diplomatic_play_committed_participant = no
+		}
+
+		target_can_break = {
+			is_diplomatic_play_committed_participant = no
+		}
+
+		manual_break_effect = {
+			create_bidirectional_truce = { country = scope:target_country months = 12 }
+		}
+
+		auto_break_effect = {
+			create_bidirectional_truce = { country = scope:target_country months = 12 }
+		}
+	}
+
+	ai = {
+		will_break = {
+			is_subject_of = scope:target_country
+			has_attitude = {
+				who = scope:target_country
+				attitude = rebellious
+			}
+		}
+	}
+}

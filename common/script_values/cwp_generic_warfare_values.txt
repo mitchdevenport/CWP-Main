@@ -1,0 +1,77 @@
+﻿cwp_barracks_levels_total = {
+	value = 0
+	every_scope_state = {
+		limit = {
+			has_building = building_barrack
+		}
+		add = b:building_barrack.level
+	}
+}
+
+cwp_barracks_pm_share_pm_codified_instruction_barracks = {
+	value = 0
+	every_scope_state = {
+		limit = {
+			is_production_method_active = {
+				building_type = building_barrack
+				production_method = pm_codified_instruction_barracks
+			}
+		}
+		add = b:building_barrack.level
+	}
+	divide = {
+		value = cwp_barracks_levels_total
+		min = 1
+	}
+}
+
+cwp_barracks_pm_share_pm_basic_training_barracks = {
+	value = 0
+	every_scope_state = {
+		limit = {
+			is_production_method_active = {
+				building_type = building_barrack
+				production_method = pm_basic_training_barracks
+			}
+		}
+		add = b:building_barrack.level
+	}
+	divide = {
+		value = cwp_barracks_levels_total
+		min = 1
+	}
+}
+
+cwp_barracks_pm_share_pm_nco_instruction_barracks = {
+	value = 0
+	every_scope_state = {
+		limit = {
+			is_production_method_active = {
+				building_type = building_barrack
+				production_method = pm_nco_instruction_barracks
+			}
+		}
+		add = b:building_barrack.level
+	}
+	divide = {
+		value = cwp_barracks_levels_total
+		min = 1
+	}
+}
+
+cwp_barracks_pm_share_pm_combat_schooling_barracks = {
+	value = 0
+	every_scope_state = {
+		limit = {
+			is_production_method_active = {
+				building_type = building_barrack
+				production_method = pm_combat_schooling_barracks
+			}
+		}
+		add = b:building_barrack.level
+	}
+	divide = {
+		value = cwp_barracks_levels_total
+		min = 1
+	}
+}

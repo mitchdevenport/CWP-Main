@@ -1,0 +1,137 @@
+﻿# United Nations initial state (restored from master's country histories and common/history/global/00_global.txt)
+# GLOBAL history is executed after all country history
+GLOBAL = {
+	### Permanent members of the Security Council
+	c:USA ?= {
+		effect_unsc_member = yes
+	}
+	c:GBR ?= {
+		effect_unsc_member = yes
+	}
+	c:FRA ?= {
+		effect_unsc_member = yes
+	}
+	c:RUS ?= {
+		effect_unsc_member = yes
+	}
+	c:ROC ?= {
+		effect_unsc_member = yes
+	}
+
+	### Member states
+	c:ARG ?= { effect_un_member = yes }
+	c:AST ?= { effect_un_member = yes }
+	c:BEL ?= { effect_un_member = yes }
+	c:BOL ?= { effect_un_member = yes }
+	c:BRZ ?= { effect_un_member = yes }
+	c:CAN ?= { effect_un_member = yes }
+	c:CHL ?= { effect_un_member = yes }
+	c:CLM ?= { effect_un_member = yes }
+	c:COS ?= { effect_un_member = yes }
+	c:CUB ?= { effect_un_member = yes }
+	c:CZH ?= { effect_un_member = yes }
+	c:DEN ?= { effect_un_member = yes }
+	c:ECU ?= { effect_un_member = yes }
+	c:EGY ?= { effect_un_member = yes }
+	c:ELS ?= { effect_un_member = yes }
+	c:ETH ?= { effect_un_member = yes }
+	c:FRA ?= { effect_un_member = yes }
+	c:GBR ?= { effect_un_member = yes }
+	c:GRE ?= { effect_un_member = yes }
+	c:GUA ?= { effect_un_member = yes }
+	c:HAI ?= { effect_un_member = yes }
+	c:HND ?= { effect_un_member = yes }
+	c:HON ?= { effect_un_member = yes }
+	c:IDS ?= { effect_un_member = yes }
+	c:IRQ ?= { effect_un_member = yes }
+	c:LEB ?= { effect_un_member = yes }
+	c:LIB ?= { effect_un_member = yes }
+	c:LUX ?= { effect_un_member = yes }
+	c:MEX ?= { effect_un_member = yes }
+	c:NEJ ?= { effect_un_member = yes }
+	c:NET ?= { effect_un_member = yes }
+	c:NIC ?= { effect_un_member = yes }
+	c:NOR ?= { effect_un_member = yes }
+	c:NRK ?= { effect_un_member = yes }
+	c:NZL ?= { effect_un_member = yes }
+	c:PER ?= { effect_un_member = yes }
+	c:PEU ?= { effect_un_member = yes }
+	c:PHI ?= { effect_un_member = yes }
+	c:PNM ?= { effect_un_member = yes }
+	c:POL ?= { effect_un_member = yes }
+	c:POR ?= { effect_un_member = yes }
+	c:PRG ?= { effect_un_member = yes }
+	c:ROC ?= { effect_un_member = yes }
+	c:RUS ?= { effect_un_member = yes }
+	c:SAF ?= { effect_un_member = yes }
+	c:STK ?= { effect_un_member = yes }
+	c:SYR ?= { effect_un_member = yes }
+	c:TUR ?= { effect_un_member = yes }
+	c:URU ?= { effect_un_member = yes }
+	c:USA ?= { effect_un_member = yes }
+	c:VNM ?= { effect_un_member = yes }
+	c:VNZ ?= { effect_un_member = yes }
+	c:YUG ?= { effect_un_member = yes }
+
+	### Observer states
+	c:SWI ?= {
+		effect_un_observer = yes
+	}
+
+	### Headquarters
+	c:GBR ?= {
+		set_variable = {
+			name = un_headquarters_holder
+			value = 0
+		}
+	}
+
+	### International recognition: sovereign states outside the United Nations are not recognized internationally
+	# Colonial (historical colony), decentralized and company country types are left untouched
+	every_country = {
+		limit = {
+			NOT = {
+				has_variable = un_member
+			}
+			is_country_type = recognized
+		}
+		set_country_type = unrecognized
+	}
+	every_country = {
+		limit = {
+			has_variable = un_member
+			is_country_type = unrecognized
+		}
+		set_country_type = recognized
+	}
+
+	### UN lists used by the International Organizations and UN panels
+	rebuild_un_lists = yes
+
+	### Decolonization: the colonial empires start with their empire's future in question
+	c:GBR ?= {
+		add_journal_entry = {
+			type = je_decolonization
+		}
+	}
+	c:FRA ?= {
+		add_journal_entry = {
+			type = je_decolonization
+		}
+	}
+	c:BEL ?= {
+		add_journal_entry = {
+			type = je_decolonization
+		}
+	}
+	c:NET ?= {
+		add_journal_entry = {
+			type = je_decolonization
+		}
+	}
+	c:POR ?= {
+		add_journal_entry = {
+			type = je_decolonization
+		}
+	}
+}

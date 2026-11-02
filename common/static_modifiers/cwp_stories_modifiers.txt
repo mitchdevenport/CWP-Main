@@ -1,0 +1,74 @@
+﻿# Modifiers used by the restored country/historical story content (journal entries, events, decisions)
+# Ported from master's common/modifiers/cwp_state_modifiers.txt and cwp_event_modifers.txt
+
+# Chinese Civil War: the Kuomintang retreat to Formosa (decision roc_great_retreat, je_great_retreat)
+kuomintang_relocation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_corruption.dds
+	state_migration_pull_add = 400
+}
+
+# Indian Partition (indian_partition.* events)
+# market_land_trade_capacity_add no longer exists: the loss of land trade is represented through infrastructure
+state_noncooperation_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_tax_capacity_mult = -0.35
+	state_mortality_mult = 0.20
+	state_english_standard_of_living_add = -4
+	state_infrastructure_mult = -0.2
+}
+
+state_totalnoncooperation_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_tax_capacity_mult = -0.45
+	state_mortality_mult = 0.50
+	state_english_standard_of_living_add = -8
+	state_infrastructure_mult = -0.3
+}
+
+# state_radicals_from_discrimination_mult no longer exists: represented as turmoil
+state_religiousriots_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_mortality_mult = 0.75
+	state_turmoil_effects_mult = 0.5
+}
+
+state_scorchedearth_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_mortality_mult = 0.50
+	state_turmoil_effects_mult = 0.50
+}
+
+state_farmriots_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_mortality_mult = 0.10
+	state_turmoil_effects_mult = 0.25
+}
+
+state_epidemic_a_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_mortality_mult = 0.10
+	state_tax_collection_mult = -0.25
+}
+
+state_epidemic_b_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_mortality_mult = 0.25
+	state_tax_collection_mult = -0.125
+}
+
+state_epidemic_c_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_mortality_mult = 0.75
+	state_tax_collection_mult = 0.25
+}
+
+# Convoys are produced as merchant marine since 1.9
+indian_naval_mutiny_full = {
+	icon = gfx/interface/icons/timed_modifier_icons/navalmutiny_full.dds
+	goods_output_merchant_marine_mult = -0.5
+}
+
+british_indian_relief_convoys = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_raj_negative.dds
+	goods_output_merchant_marine_mult = -0.25
+}

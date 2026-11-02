@@ -1,0 +1,97 @@
+﻿readiness = {
+	value = 0
+	if = {
+		limit = {
+			has_variable = var_readiness
+		}
+		value = var:var_readiness
+		min = 1
+		max = 5
+	}
+}
+
+# Multiplier of readiness_modifier: each readiness level counts as 20%
+readiness_modifier_multiplier = {
+	value = readiness
+	multiply = 20
+}
+
+ai_ideal_readiness = {
+	value = 0
+	# Factors that increase readiness
+	if = {
+		limit = {
+			is_diplomatic_play_target = yes
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			is_diplomatic_play_initiator = yes
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			is_at_war = yes
+		}
+		add = 2
+	}
+	# Factors that decrease readiness
+	if = {
+		limit = {
+			is_at_war = no
+		}
+		subtract = 2.5
+	}
+	if = {
+		limit = {
+			is_diplomatic_play_target = no
+		}
+		subtract = 2.5
+	}
+	if = {
+		limit = {
+			has_variable = nuclear_strike_readiness
+		}
+		value = 5
+	}
+	round = yes
+	min = {
+		value = 1
+		if = {
+			limit = {
+				OR = {
+					country_rank = rank_value:great_power
+					country_rank = rank_value:superpower
+				}
+			}
+			value = 2
+		}
+		if = {
+			limit = {
+				OR = {
+					is_target_in_global_variable_list = {
+						name = warsaw_pact_application_list
+						target = THIS
+					}
+					is_in_warsaw_pact = yes
+				}
+			}
+			add = warsaw_pact_mandated_readiness
+		}
+		if = {
+			limit = {
+				OR = {
+					is_target_in_global_variable_list = {
+						name = nato_application_list
+						target = THIS
+					}
+					is_in_nato = yes
+				}
+			}
+			add = nato_mandated_readiness
+		}
+	}
+	max = 5
+}

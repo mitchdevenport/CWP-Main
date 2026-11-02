@@ -1,0 +1,7 @@
+﻿l_english:
+ # Pollution
+ GLOBAL_POLLUTION: "#BOL Pollution/Month:#! #N [GetPlayer.MakeScope.ScriptValue('global_pollution_generation')|Nk] #!\n#BOL Avg. Temperature#! #N [GetPlayer.MakeScope.ScriptValue('global_temp_target_celsius')|N]°C#!"
+ POLLUTION_TOOLTIP_TITLE: "#T [concept_pollution]#!"
+
+ # Slums
+ state_slum_modifier_desc: "Unemployed and destitute [Concept('concept_pop', '$concept_pops$')] crowd into informal settlements on the edges of this state's cities, worsening health and unrest."

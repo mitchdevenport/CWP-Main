@@ -1,0 +1,42 @@
+﻿# Modifier types restored from master's common/modifier_types/CWP_00_modifier_types.txt (society systems)
+
+# Corruption
+country_corruption_add = {
+	script_only = yes
+	decimals = 0
+	color = bad
+	percent = yes
+	game_data = {
+		ai_value = 0
+	}
+}
+
+country_corruption_increase_add = {
+	script_only = yes
+	decimals = 0
+	color = bad
+	percent = yes
+	game_data = {
+		ai_value = 0
+	}
+}
+
+interest_group_corruption_decay = {
+	script_only = yes
+	decimals = 2
+	color = good
+	percent = yes
+	game_data = {
+		ai_value = 0
+	}
+}
+
+# Used by anti_corruption_purge_conducted (master: state_administrators_mortality_mult)
+state_bureaucrats_mortality_mult = {
+	decimals = 0
+	color = bad
+	percent = yes
+	game_data = {
+		ai_value = 0
+	}
+}

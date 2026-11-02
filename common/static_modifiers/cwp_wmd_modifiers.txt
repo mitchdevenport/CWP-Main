@@ -14,62 +14,62 @@ civilian_nuclear_capable = {
 	country_prestige_add = 100
 }
 
-#developing_atomic_bomb = {
-#	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-#	country_expenses_add = 100000
-#}
+developing_atomic_bomb = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_expenses_add = 100000
+}
 
-#atomic_capable = {
-#	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-#	country_prestige_add = 500
-#	state_building_nuclear_weapons_facility_max_level_add = 5
-#}
+atomic_capable = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_prestige_add = 500
+	state_building_nuclear_weapons_facility_max_level_add = 5
+}
 
-#developing_thermonuclear_bomb = {
-#	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-#	country_expenses_add = 125000
-#}
+developing_thermonuclear_bomb = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_expenses_add = 125000
+}
 
-#thermonuclear_capable = {
-#	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-#	country_prestige_add = 1000
-#	state_building_nuclear_weapons_facility_max_level_add = 5
-#}
+thermonuclear_capable = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_prestige_add = 1000
+	state_building_nuclear_weapons_facility_max_level_add = 5
+}
 
 developing_icbm = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
 	country_expenses_add = 100000
 }
 
-#icbm_capable = {
-#	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-#	country_prestige_add = 1000
-#	state_building_nuclear_weapons_silo_max_level_add = 20
-#}
+icbm_capable = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_prestige_add = 1000
+	state_building_nuclear_weapons_silo_max_level_add = 20
+}
 
 ### State Modifiers
+# 1.5's state_migration_push_mult no longer exists; the push it gave is expressed as lower migration attraction.
 
 nuclear_strike = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	#state_migration_push_mult = 0.01
-	state_migration_pull_mult = -0.01
+	state_migration_pull_mult = -0.02
 	state_mortality_mult = 0.0025
 }
 
 atomic_test_conducted = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	#state_migration_push_mult = 0.15
+	state_migration_pull_mult = -0.15
 	state_mortality_mult = 0.25
 }
 
 thermonuclear_test_conducted = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	#state_migration_push_mult = 0.30
+	state_migration_pull_mult = -0.30
 	state_mortality_mult = 0.50
 }
 
 nuclear_disaster = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	#state_migration_push_mult = 0.01
+	state_migration_pull_mult = -0.01
 	state_mortality_mult = 0.005
 }

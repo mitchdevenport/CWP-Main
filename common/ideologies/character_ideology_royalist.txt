@@ -12,6 +12,14 @@ ideology_royalist = {
 		law_council_republic = strongly_disapprove
 	}
 
+	lawgroup_monetary_policy = {
+		law_gold_standard = strongly_approve
+		law_government_controlled = disapprove
+		law_government_interference = disapprove
+		law_independent_monetary_policy = approve
+		law_pegged_currency = neutral
+	}
+
 	country_trigger = {}
 
 	interest_group_leader_trigger = {

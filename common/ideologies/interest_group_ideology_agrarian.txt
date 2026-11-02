@@ -35,4 +35,11 @@ ideology_agrarian = {
 		law_hindu_caste_not_enforced = neutral
 		law_affirmative_action = neutral
 	}
+
+	lawgroup_wmds = {
+		law_first_strike = strongly_disapprove
+		law_deterrence = disapprove
+		law_civilian_applications = neutral
+		law_no_wmds = approve
+	}
 }

@@ -1,0 +1,131 @@
+﻿je_un_intervention = {
+	icon = "gfx/interface/icons/cwp_icons/united_nations.dds"
+	group = je_group_foreign_affairs
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	possible = {
+		OR = {
+			has_variable = un_member
+			has_variable = unsc_member
+		}
+		has_global_variable = un_intervention_vote
+		NOT = {
+			has_global_variable = vetoed
+		}
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				has_variable = asking_un_intervention
+			}
+			save_scope_as = asking_un_intervention_country
+		}
+		if = {
+			limit = {
+				exists = scope:asking_un_intervention_country
+			}
+			every_country = {
+				limit = {
+					has_war_with = scope:asking_un_intervention_country
+				}
+				save_scope_as = un_intervention_enemy_country
+			}
+		}
+	}
+	current_value = {
+		value = pending_resolution_progress_value
+	}
+	goal_add_value = {
+		add = 100
+	}
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = unsc_member
+				}
+				change_global_variable = {
+					name = pending_resolution_progress
+					add = 1
+				}
+			}
+		}
+	}
+	complete = {
+		OR = {
+			scope:asking_un_intervention_country ?= {
+				is_at_war = no
+			}
+			AND = {
+				scope:journal_entry = {
+					is_goal_complete = yes
+				}
+				custom_tooltip = {
+					text = "WILL_COMPLETE_UN"
+					supporting_value_total > opposing_value_total
+				}
+			}
+		}
+	}
+	fail = {
+		OR = {
+			AND = {
+				scope:journal_entry = {
+					is_goal_complete = yes
+				}
+				custom_tooltip = {
+					text = "WILL_FAIL_UN"
+					opposing_value_total >= supporting_value_total
+				}
+			}
+			custom_tooltip = {
+				text = "IS_VETOED"
+				has_global_variable = vetoed
+			}
+		}
+	}
+	invalid = {
+		NOT = {
+			has_global_variable = un_intervention_vote
+		}
+	}
+	on_complete = {
+		hidden_effect = {
+			if = {
+				limit = {
+					scope:asking_un_intervention_country ?= {
+						is_at_war = yes
+					}
+				}
+				every_country = {
+					limit = {
+						has_variable = un_member
+					}
+					trigger_event = {
+						# Generic SUCCESS Event for all UN Members
+						id = un_dynamic_resolution_events.1
+					}
+				}
+			}
+			else = {
+				effect_clear_un_intervention = yes
+			}
+			remove_global_variable = un_intervention_vote
+		}
+		effect_reset_un_lists = yes
+	}
+	on_fail = {
+		hidden_effect = {
+			every_country = {
+				trigger_event = {
+					# Generic FAIL Event for all countries
+					id = un_dynamic_resolution_events.3
+				}
+			}
+			remove_global_variable = un_intervention_vote
+		}
+		effect_reset_un_lists = yes
+	}
+	progressbar = yes
+	can_deactivate = yes
+	weight = 100
+}

@@ -1,0 +1,49 @@
+﻿# CWP society systems setup (master: common/history/global/00_global.txt and country history)
+GLOBAL = {
+	## Corruption Variables
+	# Starting corruption levels from master's country history
+	c:USA ?= { effect_corruption_low = yes }
+	c:GBR ?= { effect_corruption_low = yes }
+	c:NET ?= { effect_corruption_low = yes }
+	c:SWE ?= { effect_corruption_low = yes }
+	c:PHI ?= { effect_corruption_low = yes }
+	c:BRZ ?= { effect_corruption_medium = yes }
+	c:HUN ?= { effect_corruption_medium = yes }
+	c:NRK ?= { effect_corruption_medium = yes }
+	c:PRC ?= { effect_corruption_medium = yes }
+	c:ROM ?= { effect_corruption_medium = yes }
+	c:RUS ?= { effect_corruption_medium = yes }
+	c:STK ?= { effect_corruption_medium = yes }
+	c:TUR ?= { effect_corruption_medium = yes }
+	c:VNM ?= { effect_corruption_medium = yes }
+	c:ROC ?= { effect_corruption_high = yes }
+	every_country = {
+		trigger_event = {
+			id = corruption_events.100
+			days = 1
+		}
+	}
+	## Habitability Setup
+	# Range (%):
+	# -1 < 0 < 1
+	every_country = {
+		every_scope_state = {
+			onaction_calc_starting_habitability = yes
+			onaction_set_habitability_effects = yes
+		}
+	}
+	set_global_variable = {
+		name = cwp_global_temp_celsius
+		value = global_temp_target_celsius
+	}
+	every_country = {
+		limit = {
+			has_technology_researched = climate_sciences
+		}
+		set_variable = has_climate_research
+	}
+	## Dynamic Ideologies Setup
+	every_country = {
+		setup_starting_ideologies = yes
+	}
+}

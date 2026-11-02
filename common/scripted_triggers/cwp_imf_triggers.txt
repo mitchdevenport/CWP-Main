@@ -1,0 +1,34 @@
+﻿has_met_imf_requirements = {
+	custom_tooltip = {
+		text = IMF_LOAN_PAID
+		trigger_if = {
+			limit = {
+				has_variable = imf_debt
+			 }
+			 var:imf_debt <= 0 
+		}
+	}
+	has_law = law_type:law_laissez_faire
+	trigger_if = {
+		limit = {
+			has_law = law_type:law_government_controlled
+		}
+		or = {
+			has_law = law_type:law_government_interference
+			has_law = law_type:law_independent_monetary_policy
+		}
+	}
+	trigger_if = {
+		limit = {
+			has_law = law_type:law_government_interference
+		}
+		has_law = law_type:law_independent_monetary_policy
+	}
+	has_law = law_type:law_free_trade
+}
+is_imf_member = {
+	is_target_in_global_variable_list = {
+		name = imf_members
+		target = THIS
+	}
+}

@@ -1,0 +1,154 @@
+﻿TREATIES = {
+	### Five Eyes (UKUSA Agreement, 1946)
+	# master: common/history/diplomacy/00_five_eyes.txt
+	if = {
+		limit = {
+			exists = c:USA
+			exists = c:GBR
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:USA
+			second_country = c:GBR
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:USA
+			exists = c:CAN
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:USA
+			second_country = c:CAN
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:USA
+			exists = c:NZL
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:USA
+			second_country = c:NZL
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:USA
+			exists = c:AST
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:USA
+			second_country = c:AST
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:GBR
+			exists = c:CAN
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:GBR
+			second_country = c:CAN
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:GBR
+			exists = c:NZL
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:GBR
+			second_country = c:NZL
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:GBR
+			exists = c:AST
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:GBR
+			second_country = c:AST
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:CAN
+			exists = c:NZL
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:CAN
+			second_country = c:NZL
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:CAN
+			exists = c:AST
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:CAN
+			second_country = c:AST
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:NZL
+			exists = c:AST
+		}
+		create_treaty = {
+			name = treaty_name_five_eyes
+			first_country = c:NZL
+			second_country = c:AST
+			is_draft = no
+			articles_to_create = {
+				{ article = treaty_five_eyes }
+			}
+		}
+	}
+}

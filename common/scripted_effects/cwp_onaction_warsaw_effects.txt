@@ -1,0 +1,130 @@
+﻿onaction_warsaw_application = {
+	# Warsaw Pact Applications
+	if = {
+		limit = {
+			has_variable = application_progress_warsaw_pact
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = warsaw_pact_application_list
+						target = THIS
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = warsaw_pact_application_list
+				target = THIS
+			}
+		}
+		if = {
+			limit = {
+				application_progress_warsaw_pact <= 100
+			}
+			change_variable = {
+				name = application_progress_warsaw_pact
+				add = 3
+			}
+		}
+		if = {
+			limit = {
+				application_progress_warsaw_pact <= 100
+				warsaw_pact_supporting_countries >= 1
+			}
+			change_variable = {
+				name = application_progress_warsaw_pact
+				add = 2
+			}
+		}
+		if = {
+			limit = {
+				application_progress_warsaw_pact >= 100
+				application_progress_warsaw_pact <= 150
+			}
+			change_variable = {
+				name = application_progress_warsaw_pact
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				application_progress_warsaw_pact >= 100
+				warsaw_pact_supporting_countries >= warsaw_pact_membersize
+			}
+			effect_warsaw_pact_application_approved = yes
+			trigger_event = warsaw_pact_application_events.1
+		}
+		else_if = {
+			limit = {
+				application_progress_warsaw_pact >= 150
+				NOT = {
+					warsaw_pact_supporting_countries >= warsaw_pact_membersize
+				}
+			}
+			effect_warsaw_pact_application_rejected = yes
+			trigger_event = warsaw_pact_application_events.2
+		}
+	}
+}
+
+onaction_warsaw_ai_voting = {
+	# Warsaw Pact Voting for AI
+	if = {
+		limit = {
+			is_ai = yes
+			is_in_warsaw_pact = yes
+		}
+		trigger_event = warsaw_pact_ai_voting.1
+	}
+}
+
+onaction_warsaw_cohesion_calculation = {
+	# Military Alliance Calculations / Warsaw Pact
+	if = {
+		limit = {
+			has_global_variable = warsaw_pact
+			is_in_warsaw_pact = yes
+		}
+		if = {
+			limit = {
+				is_meeting_warsaw_pact_standards = no
+			}
+			remove_modifier = warsaw_pact_cohesion
+			remove_modifier = warsaw_pact_not_meeting_standards
+			add_modifier = {
+				name = warsaw_pact_not_meeting_standards
+			}
+		}
+		else = {
+			remove_modifier = warsaw_pact_not_meeting_standards
+			remove_modifier = warsaw_pact_cohesion
+			add_modifier = {
+				name = warsaw_pact_cohesion
+				multiplier = warsaw_pact_cohesion
+			}
+		}
+	}
+	# Former members lose their Warsaw Pact modifiers
+	else_if = {
+		limit = {
+			OR = {
+				has_modifier = warsaw_pact_cohesion
+				has_modifier = warsaw_pact_not_meeting_standards
+			}
+		}
+		remove_modifier = warsaw_pact_cohesion
+		remove_modifier = warsaw_pact_not_meeting_standards
+	}
+}
+
+# Keeps the Warsaw Pact mutual assistance treaties in place between all members, however they joined
+onaction_warsaw_mutual_assistance_sync = {
+	if = {
+		limit = {
+			has_global_variable = warsaw_pact
+			is_in_warsaw_pact = yes
+		}
+		effect_warsaw_pact_create_mutual_assistance_treaties = yes
+	}
+}

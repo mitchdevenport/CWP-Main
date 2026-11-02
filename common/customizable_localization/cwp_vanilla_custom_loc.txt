@@ -1,0 +1,1344 @@
+﻿# Vanilla definitions still used by CWP text.
+# CWP replaces this folder (see .metadata/metadata.json replace_paths and the placeholder files), which also
+# removed definitions that CWP events, journal entries and the law negotiation system still reference.
+# Copied from Victoria 3 1.14; references to 1836-era content that CWP does not have (techs every 1946 country
+# already has, Prussia, corporate state laws, opium addiction) were removed and Washington D.C. is STATE_CHESAPEAKE.
+
+
+# From vanilla common/customizable_localization/00_characters.txt
+custom_insult_loc = {
+	type = character
+	random_valid = yes
+	text = {
+		localization_key = basic_insult_custom
+	}
+	text = {
+		localization_key = fool_insult_custom
+	}
+	text = {
+		trigger = {
+			has_trait = syphilis
+		}
+		localization_key = syphilis_insult_custom
+	}
+	text = {
+		trigger = {
+			has_trait = alcoholic
+		}
+		localization_key = alcoholic_insult_custom
+	}
+	text = {
+		trigger = {
+			has_trait = beetle_ear
+		}
+		localization_key = beetle_ear_insult_custom
+	}
+}
+
+getMsMr = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = no
+		}
+		localization_key = mr_loc
+	}
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = ms_loc
+	}
+}
+
+ordered_personality_traits_loc = {
+	type = character
+	text = {
+		trigger = {
+			has_trait = direct
+		}
+		localization_key = direct
+	}
+	text = {
+		trigger = {
+			has_trait = persistent
+		}
+		localization_key = persistent
+	}
+	text = {
+		trigger = {
+			has_trait = cautious
+		}
+		localization_key = cautious
+	}
+	text = {
+		trigger = {
+			has_trait = arrogant
+		}
+		localization_key = arrogant
+	}
+	text = {
+		trigger = {
+			has_trait = bigoted
+		}
+		localization_key = bigoted
+	}
+	text = {
+		trigger = {
+			has_trait = reckless
+		}
+		localization_key = reckless
+	}
+
+	text = {
+		trigger = {
+			has_trait = tactful
+		}
+		localization_key = tactful
+	}
+	text = {
+		trigger = {
+			has_trait = ambitious
+		}
+		localization_key = ambitious
+	}
+	text = {
+		trigger = {
+			has_trait = imperious
+		}
+		localization_key = imperious
+	}
+	text = {
+		trigger = {
+			has_trait = wrathful
+		}
+		localization_key = wrathful
+	}
+	text = {
+		trigger = {
+			has_trait = reserved
+		}
+		localization_key = reserved
+	}
+	text = {
+		trigger = {
+			has_trait = cruel
+		}
+		localization_key = cruel
+	}
+	text = {
+		trigger = {
+			has_trait = meticulous
+		}
+		localization_key = meticulous
+	}
+	text = {
+		trigger = {
+			has_trait = charismatic
+		}
+		localization_key = charismatic
+	}
+	text = {
+		trigger = {
+			has_trait = romantic
+		}
+		localization_key = romantic
+	}
+	text = {
+		trigger = {
+			has_trait = brave
+		}
+		localization_key = brave
+	}
+	text = {
+		trigger = {
+			has_trait = innovative
+		}
+		localization_key = innovative
+	}
+}
+
+personality_traits_loc = {
+	type = character
+	random_valid = yes
+	text = {
+		trigger = {
+			has_trait = direct
+		}
+		localization_key = direct
+	}
+	text = {
+		trigger = {
+			has_trait = persistent
+		}
+		localization_key = persistent
+	}
+	text = {
+		trigger = {
+			has_trait = cautious
+		}
+		localization_key = cautious
+	}
+	text = {
+		trigger = {
+			has_trait = arrogant
+		}
+		localization_key = arrogant
+	}
+	text = {
+		trigger = {
+			has_trait = bigoted
+		}
+		localization_key = bigoted
+	}
+	text = {
+		trigger = {
+			has_trait = reckless
+		}
+		localization_key = reckless
+	}
+
+	text = {
+		trigger = {
+			has_trait = tactful
+		}
+		localization_key = tactful
+	}
+	text = {
+		trigger = {
+			has_trait = ambitious
+		}
+		localization_key = ambitious
+	}
+	text = {
+		trigger = {
+			has_trait = imperious
+		}
+		localization_key = imperious
+	}
+	text = {
+		trigger = {
+			has_trait = wrathful
+		}
+		localization_key = wrathful
+	}
+	text = {
+		trigger = {
+			has_trait = reserved
+		}
+		localization_key = reserved
+	}
+	text = {
+		trigger = {
+			has_trait = cruel
+		}
+		localization_key = cruel
+	}
+	text = {
+		trigger = {
+			has_trait = meticulous
+		}
+		localization_key = meticulous
+	}
+	text = {
+		trigger = {
+			has_trait = charismatic
+		}
+		localization_key = charismatic
+	}
+	text = {
+		trigger = {
+			has_trait = romantic
+		}
+		localization_key = romantic
+	}
+	text = {
+		trigger = {
+			has_trait = brave
+		}
+		localization_key = brave
+	}
+	text = {
+		trigger = {
+			has_trait = innovative
+		}
+		localization_key = innovative
+	}
+}
+
+wedding_son_daughter = {
+	type = character
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = royal_marriage_son
+	}
+	text = {
+		trigger = {
+			is_female = no
+		}
+		localization_key = royal_marriage_daughter
+	}
+}
+
+
+# From vanilla common/customizable_localization/02_events.txt
+GetDivinity = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				religion = rel:catholic
+				religion = rel:protestant
+				religion = rel:orthodox
+				religion = rel:oriental_orthodox
+			}
+		}
+		localization_key = custom_god
+	}
+	text = {
+		trigger = { religion = rel:jewish }
+		localization_key = custom_the_lord
+	}
+	text = {
+		trigger = {
+			OR = {
+				religion = rel:sunni
+				religion = rel:shiite
+			}
+		}
+		localization_key = custom_allah
+	}
+	text = {
+		trigger = {
+			religion = rel:hindu
+			religion = rel:sikh
+		}
+		localization_key = custom_gods
+	}
+	text = {
+		trigger = {
+			religion = rel:shinto
+		}
+		localization_key = custom_gods
+	}
+	text = {
+		trigger = {
+			religion = rel:animist
+		}
+		localization_key = custom_gods
+	}
+	text = {
+		trigger = {
+			NOR = {
+				religion = rel:catholic
+				religion = rel:protestant
+				religion = rel:orthodox
+				religion = rel:oriental_orthodox
+				religion = rel:jewish
+				religion = rel:sunni
+				religion = rel:shiite
+				religion = rel:hindu
+				religion = rel:sikh
+				religion = rel:shinto
+				religion = rel:animist
+			}
+		}
+		localization_key = custom_god #we use "god" as the standard translation, but this could be tweaked
+	}
+}
+
+assassin_description = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = assassin_description_young_man
+	}
+
+	text = {
+		localization_key = assassin_description_young_woman
+	}
+
+	text = {
+		localization_key = assassin_description_unemployed
+	}
+
+	text = {
+		localization_key = assassin_description_angry_man
+	}
+
+	text = {
+		trigger = {
+			exists = c:USA
+			c:USA ?= THIS
+		}
+		localization_key = assassin_description_mkc
+	}
+}
+
+assassin_movement = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = assassin_movement_leapt
+	}
+
+	text = {
+		localization_key = assassin_movement_calmly
+	}
+
+	text = {
+		localization_key = assassin_movement_stepped
+	}
+
+	text = {
+		localization_key = assassin_movement_shadows
+	}
+
+	text = {
+		localization_key = assassin_movement_crowd
+	}
+
+
+}
+
+assassination_aftermath = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = assassination_aftermath_caught
+	}
+
+	text = {
+		localization_key = assassination_aftermath_cyanide_fail
+	}
+
+	text = {
+		localization_key = assassination_aftermath_cyanide_success
+	}
+
+	text = {
+		localization_key = assassination_aftermath_escape
+	}
+
+	text = {
+		localization_key = assassination_aftermath_shout
+	}
+
+	text = {
+		localization_key = assassination_aftermath_river
+	}
+
+	text = {
+		localization_key = assassination_aftermath_shot
+	}
+
+	text = {
+		localization_key = assassination_aftermath_helpers
+	}
+
+
+	text = {
+		localization_key = assassination_aftermath_film
+	}
+
+	text = {
+		localization_key = assassination_sewer_escape
+	}
+
+}
+
+assassination_death = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = assassination_death_fatally
+	}
+
+	text = {
+		localization_key = assassination_death_died_instantly
+	}
+
+
+}
+
+assassination_type = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = shooting_assassination
+	}
+}
+
+fatal_injury_gunshot = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = fatal_injury_gunshot_head
+	}
+
+	text = {
+		localization_key = fatal_injury_gunshot_heart
+	}
+
+	text = {
+		localization_key = fatal_injury_gunshot_multiple
+	}
+
+	text = {
+		localization_key = fatal_injury_gunshot_dead_guard
+	}
+
+	text = {
+		localization_key = fatal_injury_bomb_thrown
+	}
+}
+
+fiction_cliche = {
+	type = country
+
+	text = {
+		trigger = {
+			OR = {
+				country_has_primary_culture = cu:russian
+			}
+		}
+		localization_key = fanfic_ship_russia
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				is_in_geographic_region = geographic_region_europe
+				is_in_geographic_region = geographic_region_north_america
+			}
+		}
+		localization_key = fanfic_ship_west
+	}
+
+	text = {
+		trigger = {
+			is_in_geographic_region = geographic_region_south_america
+		}
+		localization_key = fanfic_ship_south_america
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				country_has_primary_culture = cu:han
+				country_has_primary_culture = cu:manchu
+			}
+		}
+		localization_key = fanfic_ship_china
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				country_has_primary_culture = cu:japanese
+				country_has_primary_culture = cu:korean
+			}
+		}
+		localization_key = fanfic_ship_japan
+	}
+
+	text = {
+		localization_key = fanfic_ship_generic
+	}
+
+}
+
+generic_newspaper_type = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = custom_newspaper_times
+	}
+	text = {
+		localization_key = custom_newspaper_gazette
+	}
+
+	text = {
+		localization_key = custom_newspaper_herald
+	}
+
+	text = {
+		localization_key = custom_newspaper_daily
+	}
+
+	text = {
+		localization_key = custom_newspaper_edition
+	}
+
+	text = {
+		localization_key = custom_newspaper_chronicle
+	}
+
+	text = {
+		localization_key = custom_newspaper_evening_news
+	}
+
+	text = {
+		localization_key = custom_newspaper_evening_post
+	}
+
+	text = {
+		localization_key = custom_newspaper_guardian
+	}
+
+	text = {
+		localization_key = custom_newspaper_observer
+	}
+
+
+	text = {
+		localization_key = custom_newspaper_tribune
+	}
+
+	text = {
+		localization_key = custom_newspaper_standard
+	}
+
+	text = {
+		localization_key = custom_newspaper_journal
+	}
+
+	text = {
+		localization_key = custom_newspaper_globe
+	}
+
+	text = {
+		localization_key = custom_newspaper_daily_news
+	}
+
+	text = {
+		localization_key = custom_newspaper_sentinel
+	}
+
+	text = {
+		localization_key = custom_newspaper_informer
+	}
+
+	text = {
+		localization_key = custom_newspaper_bulletin
+	}
+}
+
+place_event = {
+	type = country
+	random_valid = yes
+	text = {
+		trigger = {
+			country_has_monarchy_law = yes
+		}
+		localization_key = place_event_palace
+	}
+
+	text = {
+		localization_key = place_event_parade
+	}
+
+	text = {
+		trigger = {
+			has_law_or_variant = law_type:law_parliamentary_republic
+		}
+		localization_key = place_event_parliament
+	}
+
+	text = {
+		localization_key = place_event_townsquare
+	}
+
+	text = {
+		trigger = {
+			has_technology_researched = military_aviation
+		}
+		localization_key = place_event_airfield
+	}
+
+	text = {
+
+		localization_key = place_event_hospital
+	}
+
+	text = {
+
+		localization_key = place_event_opera
+	}
+
+	text = {
+		localization_key = place_event_destroyer
+	}
+
+
+	text = {
+		trigger = {
+			exists = c:SWE
+			c:SWE ?= THIS
+			owns_entire_state_region = STATE_SVEALAND
+		}
+		localization_key = place_event_gamla_stan
+	}
+
+	text = {
+		trigger = {
+			exists = c:SWE
+			c:SWE ?= THIS
+			owns_entire_state_region = STATE_SVEALAND
+		}
+		localization_key = place_event_gustav
+	}
+
+	text = {
+		trigger = {
+			exists = c:RUS
+			c:RUS ?= THIS
+			owns_entire_state_region = STATE_MOSCOW
+		}
+		localization_key = place_event_kremlin
+	}
+
+	text = {
+		trigger = {
+			exists = c:USA
+			c:USA ?= THIS
+			owns_entire_state_region = STATE_CHESAPEAKE
+		}
+		localization_key = place_event_whitehouse
+	}
+
+	text = {
+		trigger = {
+			exists = c:GBR
+			c:GBR ?= THIS
+		}
+		localization_key = place_event_houses_of_parliament
+	}
+
+	text = {
+		trigger = {
+			exists = c:GBR
+			c:GBR ?= THIS
+		}
+		localization_key = place_event_jersey
+	}
+
+	text = {
+		trigger = {
+			exists = c:BRZ
+			c:BRZ ?= THIS
+		}
+		localization_key = place_event_largo
+	}
+
+	text = {
+		trigger = {
+			exists = c:NET
+			c:NET ?= THIS
+		}
+		localization_key = place_event_binnenhof
+	}
+
+
+}
+
+travelling_verb = {
+	type = country
+	random_valid = yes
+	text = {
+		localization_key = travelling_verb_arriving
+	}
+
+	text = {
+		localization_key = travelling_verb_visiting
+	}
+
+	text = {
+		trigger = {
+			has_technology_researched = combustion_engine
+		}
+		localization_key = travelling_verb_driving
+	}
+
+	text = {
+		localization_key = travelling_verb_wrong_turn
+	}
+
+	text = {
+		localization_key = travelling_verb_speech
+	}
+
+	text = {
+		localization_key = travelling_verb_stopped
+	}
+
+
+}
+
+
+# From vanilla common/customizable_localization/05_negotiation_custom_loc.txt
+BribeLine = {
+	type = interest_group
+	#log_loc_errors = no
+
+	text = {
+		trigger = {
+			root.amenability_level = 1
+		}
+		localization_key = bribe_tier_1
+	}
+	text = {
+		trigger = {
+			root.amenability_level = 2
+		}
+		localization_key = bribe_tier_2
+	}
+	text = {
+		trigger = {
+			root.amenability_level = 4
+		}
+		localization_key = bribe_tier_3
+	}
+}
+
+FailurePromiseLine = {
+	type = interest_group
+	#log_loc_errors = no
+
+	text = {
+		trigger = {
+			root.amenability_level = 1
+		}
+		localization_key = FailurePromiseLine_1
+	}
+	text = {
+		trigger = {
+			root.amenability_level = 2
+		}
+		localization_key = FailurePromiseLine_2
+	}
+	text = {
+		trigger = {
+			root.amenability_level = 4
+		}
+		localization_key = FailurePromiseLine_3
+	}
+}
+
+GetPromisedTaxLevelLoc = {
+	type = interest_group
+	#log_loc_errors = no
+
+	text = {
+		trigger = {
+			root.amenability_level = 1
+		}
+		localization_key = tax_tier_low_short
+	}
+
+	text = {
+		trigger = {
+			root.amenability_level = 2
+		}
+		localization_key = tax_tier_low
+	}
+	text = {
+		trigger = {
+			root.amenability_level > 2
+		}
+		localization_key = tax_tier_very_low
+	}
+}
+
+NegotiationLevelName = {
+	type = interest_group
+	#log_loc_errors = no
+
+	text = {
+		trigger = {
+			root.amenability_level = 1
+		}
+		localization_key = negotiation_tier_1
+	}
+	text = {
+		trigger = {
+			root.amenability_level = 2
+		}
+		localization_key = negotiation_tier_2
+	}
+	text = {
+		trigger = {
+			root.amenability_level = 4
+		}
+		localization_key = negotiation_tier_3
+	}
+}
+
+
+# From vanilla common/customizable_localization/ip3_custom_loc.txt
+country_legislature_name = {
+	type = country
+	text = {
+		trigger = {
+			has_law_or_variant = law_type:law_technocracy
+		}
+		localization_key = legislature_board_of_directors
+	}
+	text = {
+		trigger = {
+			country_has_primary_culture = cu:russian
+			has_law_or_variant = law_type:law_council_republic
+		}
+		localization_key = legislature_congress_of_soviets
+	}
+	text = {
+		trigger = {
+			NOT = {
+			country_has_primary_culture = cu:russian
+			}
+			has_law_or_variant = law_type:law_council_republic
+		}
+		localization_key = legislature_congress_of_councils
+	}
+	text = {
+		trigger = {
+			OR = {
+				c:USA ?= this
+				AND = {
+					is_in_geographic_region = geographic_region_south_america
+					OR = {
+						has_law_or_variant = law_type:law_parliamentary_republic
+						has_law_or_variant = law_type:law_presidential_republic
+					}
+				}
+			}
+		}
+		localization_key = legislature_congress
+	}
+	text = {
+		trigger = {
+			AND = {
+				c:RUS ?= this
+				OR = {
+					has_law = law_type:law_monarchy
+					has_law_or_variant = law_type:law_presidential_republic
+					has_law_or_variant = law_type:law_parliamentary_republic
+				}
+			}
+		}
+		localization_key = legislature_duma
+	}
+	text = {
+		trigger = {
+			c:AUS ?= this
+			country_has_voting_franchise = no
+		}
+		localization_key = legislature_reichsrat
+	}
+	text = {
+		trigger = {
+			c:AUS ?= this
+			country_has_voting_franchise = yes
+		}
+		localization_key = legislature_diet
+	}
+	text = {
+		trigger = {
+			c:SWI ?= this
+		}
+		localization_key = legislature_federal_diet
+	}
+	text = {
+		trigger = {
+			OR = {
+				c:SWE ?= this
+				AND = {
+					c:SCA ?= this
+					was_formed_from = SWE
+				}
+			}
+		}
+		localization_key = legislature_riksdag
+	}
+	text = {
+		trigger = {
+			OR = {
+				c:NOR ?= this
+				AND = {
+					c:SCA ?= this
+					was_formed_from = NOR
+				}
+			}
+		}
+		localization_key = legislature_storting
+	}
+	text = {
+		trigger = {
+			OR = {
+				c:DEN ?= this
+				AND = {
+					c:SCA ?= this
+					was_formed_from = DEN
+				}
+			}
+		}
+		localization_key = legislature_folketing
+	}
+	text = {
+		trigger = {
+			OR = {
+				c:ICL ?= this
+				AND = {
+					c:SCA ?= this
+					was_formed_from = ICL
+				}
+			}
+		}
+		localization_key = legislature_althing
+	}
+	text = {
+		trigger = {
+			c:BAV ?= this
+		}
+		localization_key = legislature_landtag
+	}
+	text = {
+		trigger = {
+			AND = {
+				c:JAP ?= this
+				has_law = law_type:law_monarchy
+				country_has_voting_franchise = no
+			}
+		}
+		localization_key = legislature_grand_council_of_state
+	}
+	text = {
+		trigger = {
+			AND = {
+				c:JAP ?= this
+				has_law = law_type:law_monarchy
+				country_has_voting_franchise = yes
+			}
+		}
+		localization_key = legislature_diet
+	}
+	text = {
+		trigger = {
+			AND = {
+				c:CHI ?= this
+				has_law = law_type:law_monarchy
+				country_has_voting_franchise = no
+			}
+		}
+		localization_key = legislature_grand_council
+	}
+	text = {
+		trigger = {
+			AND = {
+				c:CHI ?= this
+				has_law = law_type:law_monarchy
+				country_has_voting_franchise = yes
+			}
+		}
+		localization_key = legislature_advisory_council
+	}
+	text = {
+		trigger = {
+			OR = {
+				c:FRA ?= this
+				c:BUL ?= this
+				has_law_or_variant = law_type:law_parliamentary_republic
+				has_law_or_variant = law_type:law_presidential_republic
+			}
+		}
+		localization_key = legislature_national_assembly
+	}
+	text = {
+		trigger = {
+			country_has_voting_franchise = yes
+		}
+		localization_key = legislature_parliament
+	}
+	text = { # Fallback
+		trigger = {
+			country_has_voting_franchise = no
+		}
+		localization_key = legislature_court
+	}
+}
+
+
+# From vanilla common/customizable_localization/ip4_custom_loc.txt
+getGeneralAdmiral = {
+	type = character
+	text = {
+		trigger = {
+			has_role_of_type = general
+		}
+		localization_key = concept_general
+	}
+	text = {
+		trigger = {
+			has_role_of_type = admiral
+		}
+		localization_key = concept_admiral
+	}
+}
+
+
+# From vanilla common/customizable_localization/victoria_custom_loc.txt
+anti_lobby_demand_text_def = {
+	type = country
+	text = { # Break Alliance
+		trigger = {
+			has_variable = anti_lobby_proposal_break_alliance
+		}
+		localization_key = anti_lobby_proposal_break_alliance_def
+	}
+	text = { # Break Trade Agreement
+		trigger = {
+			has_variable = anti_lobby_proposal_revoke_trade_privilege
+		}
+		localization_key = anti_lobby_proposal_revoke_trade_privilege_def
+	}
+	text = { # Break Defensive Pact
+		trigger = {
+			has_variable = anti_lobby_proposal_break_defensive_pact
+		}
+		localization_key = anti_lobby_proposal_break_defensive_pact_def
+	}
+	text = { # Embargo
+		trigger = {
+			has_variable = anti_lobby_proposal_embargo
+		}
+		localization_key = anti_lobby_proposal_embargo_def
+	}
+	text = { # Rivalry
+		trigger = {
+			has_variable = anti_lobby_proposal_rivalry
+		}
+		localization_key = anti_lobby_proposal_rivalry_def
+	}
+	text = { # War
+		trigger = {
+			has_variable = anti_lobby_proposal_war
+		}
+		localization_key = anti_lobby_proposal_war_def
+	}
+	text = { # Leave Power Bloc
+		trigger = {
+			has_variable = anti_lobby_proposal_leave_power_bloc
+		}
+		localization_key = anti_lobby_proposal_leave_power_bloc_def
+	}
+}
+
+anti_lobby_opportunity_text_def = {
+	type = country
+	text = { # Defensive Pact
+		trigger = {
+			has_variable = anti_lobby_proposal_defensive_pact
+		}
+		localization_key = pro_lobby_proposal_defensive_pact_def
+	}
+	text = { # Alliance
+		trigger = {
+			has_variable = anti_lobby_proposal_alliance
+		}
+		localization_key = pro_lobby_proposal_alliance_def
+	}
+	text = { # Trade Agreement
+		trigger = {
+			has_variable = anti_lobby_proposal_trade_privilege
+		}
+		localization_key = pro_lobby_proposal_trade_privilege_def
+	}
+	text = { # Power Bloc
+		trigger = {
+			has_variable = anti_lobby_proposal_power_bloc
+		}
+		localization_key = pro_lobby_proposal_power_bloc_def
+	}
+	text = { # Power Bloc
+		trigger = {
+			has_variable = anti_lobby_proposal_power_bloc_invite
+		}
+		localization_key = pro_lobby_proposal_power_bloc_invite_def
+	}
+	text = { # Investment Agreement
+		trigger = {
+			has_variable = anti_lobby_proposal_investment_agreement
+		}
+		localization_key = pro_lobby_proposal_investment_agreement_def
+	}
+	text = { # Military Assistance
+		trigger = {
+			has_variable = anti_lobby_proposal_military_assistance
+		}
+		localization_key = pro_lobby_proposal_military_assistance_def
+	}
+}
+
+petition_trait_descriptor = { # Character scope
+	type = character
+	text = {
+		trigger = {
+			OR = {
+				has_trait = basic_political_operator
+				has_trait = experienced_political_operator
+				has_trait = expert_political_operator
+			}
+		}
+		localization_key = political_operator_trait_tt
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_trait = charismatic
+				has_trait = inspirational_orator
+				has_trait = firebrand
+			}
+		}
+		localization_key = charismatic_trait_tt
+	}
+	text = {
+		trigger = {
+			has_trait = ambitious
+		}
+		localization_key = ambitious_trait_tt
+	}
+	text = {
+		trigger = {
+			has_trait = persistent
+		}
+		localization_key = persistent_trait_tt
+	}
+}
+
+pro_lobby_demand_text_def = {
+	type = country
+	text = { # Break Alliance
+		trigger = {
+			has_variable = pro_lobby_proposal_break_alliance
+		}
+		localization_key = anti_lobby_proposal_break_alliance_def
+	}
+	text = { # Break Trade Agreement
+		trigger = {
+			has_variable = pro_lobby_proposal_revoke_trade_privilege
+		}
+		localization_key = anti_lobby_proposal_revoke_trade_privilege_def
+	}
+	text = { # Break Defensive Pact
+		trigger = {
+			has_variable = pro_lobby_proposal_break_defensive_pact
+		}
+		localization_key = anti_lobby_proposal_break_defensive_pact_def
+	}
+	text = { # Embargo
+		trigger = {
+			has_variable = pro_lobby_proposal_embargo
+		}
+		localization_key = anti_lobby_proposal_embargo_def
+	}
+	text = { # Rivalry
+		trigger = {
+			has_variable = pro_lobby_proposal_rivalry
+		}
+		localization_key = anti_lobby_proposal_rivalry_def
+	}
+	text = { # War
+		trigger = {
+			has_variable = pro_lobby_proposal_war
+		}
+		localization_key = anti_lobby_proposal_war_def
+	}
+	text = { # Leave Power Bloc
+		trigger = {
+			has_variable = pro_lobby_proposal_leave_power_bloc
+		}
+		localization_key = anti_lobby_proposal_leave_power_bloc_def
+	}
+}
+
+pro_lobby_opportunity_text_def = {
+	type = country
+	text = { # Defensive Pact
+		trigger = {
+			has_variable = pro_lobby_proposal_defensive_pact
+		}
+		localization_key = pro_lobby_proposal_defensive_pact_def
+	}
+	text = { # Alliance
+		trigger = {
+			has_variable = pro_lobby_proposal_alliance
+		}
+		localization_key = pro_lobby_proposal_alliance_def
+	}
+	text = { # Trade Agreement
+		trigger = {
+			has_variable = pro_lobby_proposal_trade_privilege
+		}
+		localization_key = pro_lobby_proposal_trade_privilege_def
+	}
+	text = { # Power Bloc
+		trigger = {
+			has_variable = pro_lobby_proposal_power_bloc
+		}
+		localization_key = pro_lobby_proposal_power_bloc_def
+	}
+	text = { # Power Bloc
+		trigger = {
+			has_variable = pro_lobby_proposal_power_bloc_invite
+		}
+		localization_key = pro_lobby_proposal_power_bloc_invite_def
+	}
+	text = { # Investment Agreement
+		trigger = {
+			has_variable = pro_lobby_proposal_investment_agreement
+		}
+		localization_key = pro_lobby_proposal_investment_agreement_def
+	}
+	text = { # Military Assistance
+		trigger = {
+			has_variable = pro_lobby_proposal_military_assistance
+		}
+		localization_key = pro_lobby_proposal_military_assistance_def
+	}
+}
+
+
+# From vanilla common/customizable_localization/victoria_ip4_custom_loc.txt
+get_coup_je_text = { # CWP: reads cwp_coup_reason_variable (common/scripted_effects/cwp_coup_scripted_effects.txt)
+	type = country
+	text = {
+		trigger = {
+			var:cwp_coup_reason_variable ?= 1
+		}
+		localization_key = cwp_coup_je_reason_text_1
+	}
+	text = {
+		trigger = {
+			var:cwp_coup_reason_variable ?= 2
+		}
+		localization_key = cwp_coup_je_reason_text_2
+	}
+	text = {
+		trigger = {
+			var:cwp_coup_reason_variable ?= 3
+		}
+		localization_key = cwp_coup_je_reason_text_3
+	}
+	text = {
+		trigger = {
+			var:cwp_coup_reason_variable ?= 6
+		}
+		localization_key = cwp_coup_je_reason_text_6
+	}
+	text = {
+		localization_key = cwp_coup_je_reason_text_0
+	}
+}

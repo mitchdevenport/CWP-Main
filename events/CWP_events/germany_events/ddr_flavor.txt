@@ -1,0 +1,44 @@
+﻿namespace = ddr_flavor
+ddr_flavor.1 = {
+	type = country_event
+	title = ddr_flavor.1.t
+	desc = ddr_flavor.1.d
+	flavor = ddr_flavor.1.f
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "middleeast_courtroom_upheaval"		#todo: use appriorate pic
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = c:DDR
+		this = c:DDR
+		has_law = law_type:law_single_party_state
+		year < 1960
+		NOT = { has_variable = ulbricht_triggered }
+	}
+
+	option = {
+		name = ddr_flavor.1.a
+		default_option = yes
+		create_character = {
+			first_name = "Walter"
+			last_name = "Ulbricht"
+			culture = cu:north_german
+			ig_leader = yes
+			religion = rel:atheist
+			ruler = yes
+			historical = yes
+			ideology = ideology_cwp_marxist_leninist #Became a Stalinist over time
+			interest_group = ig:ig_trade_unions
+			birth_date = 1893.6.30
+			traits = {
+				ruthless
+				demagogue #Had his own cult of personality
+			}
+		}
+		set_variable = ulbricht_triggered
+		activate_law = law_type:law_council_republic
+	}
+}

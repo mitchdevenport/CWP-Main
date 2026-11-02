@@ -1,0 +1,166 @@
+﻿# Scripted effects restored from master's common/scripted_effects/cwp_onaction_effects.txt (society systems)
+
+# Country scope, monthly. Corruption is only simulated for player countries.
+onaction_corruption_calculation = {
+	# Corruption Calculations
+	if = {
+		limit = {
+			is_player = yes
+		}
+		every_interest_group = {
+			calc_ig_corruption = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_variable = var_corruption
+				}
+			}
+			set_variable = {
+				name = var_corruption
+				value = corruption_baseline
+			}
+		}
+		else_if = {
+			limit = {
+				var:var_corruption < 0
+			}
+			set_variable = {
+				name = var_corruption
+				value = 0
+			}
+		}
+		else_if = {
+			limit = {
+				var:var_corruption >= 100
+			}
+			set_variable = {
+				name = var_corruption
+				value = 100
+			}
+		}
+		if = {
+			limit = {
+				var:var_corruption <= corruption_baseline
+			}
+			change_variable = {
+				name = var_corruption
+				add = {
+					value = corruption_baseline
+					subtract = var:var_corruption
+					max = 0.5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				var:var_corruption >= corruption_baseline
+			}
+			change_variable = {
+				name = var_corruption
+				add = {
+					value = corruption_baseline
+					subtract = var:var_corruption
+					min = -0.5
+				}
+			}
+		}
+		# Adds appropriate modifier
+		if = {
+			limit = {
+				has_modifier = corruption_modifier_effects
+			}
+			remove_modifier = corruption_modifier_effects
+		}
+		add_modifier = {
+			name = corruption_modifier_effects
+			multiplier = corruption_modifier
+		}
+	}
+	else_if = {
+		limit = {
+			has_variable = var_corruption
+		}
+		remove_variable = var_corruption
+		if = {
+			limit = {
+				has_modifier = corruption_modifier_effects
+			}
+			remove_modifier = corruption_modifier_effects
+		}
+	}
+}
+
+# Root = releasing country, scope:target = released country
+onaction_corruption_calculation_2 = {
+	# Corruption Calculations
+	if = {
+		limit = {
+			has_variable = var_corruption
+		}
+		if = {
+			limit = {
+				var:var_corruption <= 20
+			}
+			scope:target = {
+				effect_corruption_low = yes
+			}
+		}
+		else_if = {
+			limit = {
+				var:var_corruption <= 50
+			}
+			scope:target = {
+				effect_corruption_medium = yes
+			}
+		}
+		else = {
+			scope:target = {
+				effect_corruption_high = yes
+			}
+		}
+	}
+}
+
+# State scope, monthly
+onaction_slums_modifier = {
+	if = {
+		limit = {
+			has_modifier = state_slum_modifier
+		}
+		remove_modifier = state_slum_modifier
+	}
+	if = {
+		limit = {
+			state_max_slums > 0
+		}
+		add_modifier = {
+			name = state_slum_modifier
+			multiplier = {
+				value = state_max_slums
+				round = yes
+				max = 100
+			}
+		}
+	}
+}
+
+# Country scope, on law enactment pass: changing the citizenship law stirs up racial tension
+onaction_racial_tension_modifier = {
+	if = {
+		limit = {
+			OR = {
+				is_enacting_law = law_type:law_ethnostate
+				is_enacting_law = law_type:law_national_supremacy
+				is_enacting_law = law_type:law_racial_segregation
+				is_enacting_law = law_type:law_cultural_exclusion
+				is_enacting_law = law_type:law_multicultural
+			}
+		}
+		add_modifier = {
+			name = racial_tension
+			is_decaying = yes
+			months = 120
+		}
+	}
+}

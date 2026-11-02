@@ -1,0 +1,13 @@
+﻿### Treaties of the Cold War (master: common/diplomatic_actions/27_cwp_treaties.txt)
+
+# The five signatories of the UKUSA Agreement, as long as they have not left the Five Eyes
+is_five_eyes_country = {
+	OR = {
+		c:USA ?= THIS
+		c:GBR ?= THIS
+		c:CAN ?= THIS
+		c:AST ?= THIS
+		c:NZL ?= THIS
+	}
+	NOT = { has_variable = left_five_eyes }
+}

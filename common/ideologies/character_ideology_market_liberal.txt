@@ -41,6 +41,14 @@ ideology_market_liberal = {
 		law_commercialized_agriculture = approve
 	}
 
+	lawgroup_monetary_policy = {
+		law_gold_standard = neutral
+		law_government_controlled = strongly_disapprove
+		law_government_interference = disapprove
+		law_independent_monetary_policy = strongly_approve
+		law_pegged_currency = neutral
+	}
+
 	country_trigger = {
 		# capitalism must be relevant
 		exists = ig:ig_industrialists

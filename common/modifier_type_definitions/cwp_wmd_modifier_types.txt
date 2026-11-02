@@ -1,0 +1,69 @@
+﻿# Weapons of Mass Destruction
+
+# State - Building Nuclear Weapons Facility
+state_building_nuclear_weapons_facility_max_level_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+
+# State - Building Nuclear Weapons Silo
+state_building_nuclear_weapons_silo_max_level_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+
+# State - Building Chemical Weapons Facility
+state_building_chemical_weapons_facility_max_level_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+
+# State - Building Biological Weapons Facility
+state_building_biological_weapons_facility_max_level_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+
+# Country - Nuclear Warheads (display only, the stockpile itself is driven by script values in wmd_values.txt)
+country_nuclear_weapons_growth_add={
+	script_only = yes
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+country_nuclear_weapons_decay_add={
+	script_only = yes
+	decimals=0
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+country_nuclear_weapons_max_add={
+	script_only = yes
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}

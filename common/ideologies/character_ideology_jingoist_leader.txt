@@ -11,6 +11,13 @@ ideology_jingoist_leader = {
 		law_peasant_levies = disapprove
 	}
 
+	lawgroup_wmds = {
+		law_first_strike = neutral
+		law_deterrence = strongly_approve
+		law_civilian_applications = approve
+		law_no_wmds = disapprove
+	}
+
 	interest_group_leader_trigger = {
 		ideology_jingoist_leader_valid_trigger = yes
 	}

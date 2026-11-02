@@ -388,7 +388,12 @@ cwp_coat_of_arms_undemocratic_monarchy_government_trigger = {
 # Independent Country Trigger
 cwp_coat_of_arms_independent_trigger = {
 	exists = scope:actor
-	scope:actor ?= { is_subject = no }
+	scope:actor ?= {
+		OR = {
+			is_subject = no
+			has_variable = independent_flag	# set by the Adopt Independent Flag decision
+		}
+	}
 }
 
 # Colonial Ensign Trigger

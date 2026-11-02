@@ -1,0 +1,41 @@
+﻿# Vanilla definitions still used by CWP text (script values shown in localization).
+# CWP replaces this folder (see .metadata/metadata.json replace_paths and the placeholder files), which also
+# removed definitions that CWP events, journal entries and the law negotiation system still reference.
+# Copied unchanged from Victoria 3 1.14.
+
+
+# From vanilla common/script_values/00_diplomacy_values.txt
+overlords_overlord_army_projection_comparison = {
+	if = {
+		limit = {
+			exists = this.overlord.overlord
+		}
+		add = this.overlord.overlord.army_power_projection
+	}
+	if = {
+		limit = {
+			army_power_projection > 0
+		}
+		divide = army_power_projection
+	}
+}
+
+
+# From vanilla common/script_values/ip4_je_values.txt
+country_coup_resistance = {
+	add = {
+		desc = "coup_legitimacy_tt"
+		value = legitimacy
+		divide = 10
+	}
+	add = {
+		desc = "coup_resistance_modifier_add_tt"
+		value = 1
+		add = modifier:country_coup_resistance_add
+	}
+	multiply = {
+		desc = "coup_resistance_modifier_tt"
+		value = 1
+		add = modifier:country_coup_resistance_mult
+	}
+}

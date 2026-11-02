@@ -195,6 +195,11 @@ building_nuclear_power_plant = {
 	can_build_government = {
 		owner = {
 			has_modifier = civilian_nuclear_capable
+			OR = {
+				has_law = law_type:law_civilian_applications
+				has_law = law_type:law_deterrence
+				has_law = law_type:law_first_strike
+			}
 		}
 	}
 	can_build_private = {

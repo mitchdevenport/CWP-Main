@@ -1,0 +1,13 @@
+﻿not_un_member = {
+	script_context = player_country
+	texture = "gfx/interface/icons/cwp_icons/united_nations.dds"
+
+	valid = {
+		NOT = {
+			has_variable = un_member
+		}
+	}
+
+	type = alert
+	color = yellow
+}

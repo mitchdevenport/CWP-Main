@@ -1,0 +1,130 @@
+﻿# Military readiness and Weapons of Mass Destruction setup, restored from the original mod's history
+# (common/history/global/00_global.txt, the per-country law packages and the USA/RUS country histories)
+GLOBAL = {
+	## Readiness
+	every_country = {
+		limit = {
+			NOT = {
+				has_variable = var_readiness
+			}
+		}
+		set_variable = {
+			name = var_readiness
+			value = 3
+		}
+	}
+
+	## Weapons of Mass Destruction laws
+	every_country = {
+		limit = {
+			NOR = {
+				has_law = law_type:law_civilian_applications
+				has_law = law_type:law_deterrence
+				has_law = law_type:law_first_strike
+			}
+		}
+		activate_law = law_type:law_no_wmds
+	}
+	c:FRA ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:GBR ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:CZH ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:GRN ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:ICL ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:KUR ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:NRK ?= {
+		activate_law = law_type:law_deterrence
+	}
+	c:LUX ?= {
+		activate_law = law_type:law_first_strike
+	}
+	c:NET ?= {
+		activate_law = law_type:law_civilian_applications
+	}
+	c:SAF ?= {
+		activate_law = law_type:law_civilian_applications
+	}
+	c:SWI ?= {
+		activate_law = law_type:law_civilian_applications
+	}
+	c:TUR ?= {
+		activate_law = law_type:law_civilian_applications
+	}
+	c:YUG ?= {
+		activate_law = law_type:law_civilian_applications
+	}
+
+	## Nuclear powers
+	c:USA ?= {
+		effect_nuclear_capable_nation = {
+			stockpile = 2
+		}
+		activate_law = law_type:law_first_strike
+	}
+	c:RUS ?= {
+		effect_nuclear_weapon_researching_nation = yes
+		effect_biochem_allowing_nation = yes
+		activate_law = law_type:law_deterrence
+		add_modifier = {
+			name = german_scientists
+			years = 15
+		}
+		developing_nuclear_weapons = {
+			progressValue = 30
+		}
+	}
+
+	## American nuclear infrastructure
+	s:STATE_NEW_YORK.region_state:USA ?= {
+		create_building = {
+			building = building_nuclear_weapons_facility
+			add_ownership = {
+				country = {
+					country = c:USA
+					levels = 1
+				}
+			}
+			reserves = 1
+			activate_production_methods = {
+				pm_nuclear_stockpile_maintenance
+			}
+		}
+	}
+	s:STATE_WASHINGTON.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+	s:STATE_OREGON.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+	s:STATE_FLORIDA.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+	s:STATE_NEW_ENGLAND.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+	s:STATE_CAROLINAS.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+	s:STATE_CALIFORNIA.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+	s:STATE_MICRONESIA.region_state:USA ?= {
+		cwp_create_starting_strategic_airbase = yes
+	}
+
+	every_country = {
+		onaction_readiness_modifier_update = yes
+		cwp_generic_warfare_initialize_known_doctrines = yes
+	}
+}

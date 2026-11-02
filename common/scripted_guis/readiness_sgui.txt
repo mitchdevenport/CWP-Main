@@ -1,0 +1,176 @@
+﻿raise_readiness = {
+	scope = country
+
+	is_valid = {
+		readiness < 5
+		NOT = {
+			has_variable = changed_readiness
+		}
+	}
+
+	effect = {
+		change_variable = {
+			name = var_readiness
+			add = 1
+		}
+		set_variable = {
+			name = changed_readiness
+			days = 30
+		}
+		onaction_readiness_modifier_update = yes
+	}
+}
+
+lower_readiness = {
+	scope = country
+
+	is_valid = {
+		readiness > 1
+		NOT = {
+			has_variable = changed_readiness
+		}
+	}
+
+	effect = {
+		change_variable = {
+			name = var_readiness
+			subtract = 1
+		}
+		set_variable = {
+			name = changed_readiness
+			days = 30
+		}
+		onaction_readiness_modifier_update = yes
+	}
+}
+
+
+is_at_readiness_1 = {
+	scope = country
+
+	is_shown = {
+		readiness = 1
+	}
+}
+
+is_at_readiness_2 = {
+	scope = country
+
+	is_shown = {
+		readiness = 2
+	}
+}
+
+is_at_readiness_3 = {
+	scope = country
+
+	is_shown = {
+		readiness = 3
+	}
+}
+
+is_at_readiness_4 = {
+	scope = country
+
+	is_shown = {
+		readiness = 4
+	}
+}
+
+is_at_readiness_5 = {
+	scope = country
+
+	is_shown = {
+		readiness = 5
+	}
+}
+
+can_lower_readiness = {
+	scope = country
+
+	is_shown = {
+		readiness > 1
+		NOT = {
+			has_variable = changed_readiness
+		}
+	}
+}
+
+can_raise_readiness = {
+	scope = country
+
+	is_shown = {
+		readiness < 5
+		NOT = {
+			has_variable = changed_readiness
+		}
+	}
+}
+
+
+# Modifiers for tooltip
+showmodifier_readiness_current = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = readiness_modifier_multiplier
+		}
+	}
+}
+
+showmodifier_readiness_1 = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = 20
+		}
+	}
+}
+
+showmodifier_readiness_2 = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = 40
+		}
+	}
+}
+
+showmodifier_readiness_3 = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = 60
+		}
+	}
+}
+
+showmodifier_readiness_4 = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = 80
+		}
+	}
+}
+
+showmodifier_readiness_5 = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = 100
+		}
+	}
+}

@@ -1,0 +1,1011 @@
+﻿# Generic warfare journal entries, restored from the original mod where they had been commented out since its
+# military rework. The original tracked barracks production methods per unit category (country-wide or on a front).
+# They now follow the current military: barracks training production methods, combat unit types and mobilization
+# options (see common/scripted_triggers/cwp_generic_warfare_triggers.txt). Communications and the equipment
+# generations without a counterpart in the current tree were not restored.
+
+
+############ Infantry ############
+
+je_post_war_infantry = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = post_war_infantry_je_done }
+	}
+
+	possible = {
+		has_technology_researched = divisional_organization
+	}
+
+	complete = {
+		OR = {
+			cwp_gw_barracks_training_adopted = { PM = pm_codified_instruction_barracks }
+			AND = {
+				NOT = { has_variable = post_war_infantry_je_done }
+				has_technology_researched = mobile_warfare
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.1 }
+		set_variable = post_war_infantry_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = post_war_infantry_je_done
+	}
+}
+
+je_2nd_generation_infantry = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = divisional_organization
+		NOT = { has_variable = 2nd_generation_infantry_je_done }
+	}
+
+	possible = {
+		has_technology_researched = mobile_warfare
+		has_variable = post_war_infantry_je_done
+	}
+
+	complete = {
+		OR = {
+			cwp_gw_barracks_training_adopted = { PM = pm_basic_training_barracks }
+			AND = {
+				NOT = { has_variable = 2nd_generation_infantry_je_done }
+				has_technology_researched = squad_specialist_weapons
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.1 }
+		set_variable = 2nd_generation_infantry_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 2nd_generation_infantry_je_done
+	}
+}
+
+je_3rd_generation_infantry = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = mobile_warfare
+		NOT = { has_variable = 3rd_generation_infantry_je_done }
+	}
+
+	possible = {
+		has_technology_researched = squad_specialist_weapons
+		has_variable = 2nd_generation_infantry_je_done
+	}
+
+	complete = {
+		OR = {
+			cwp_gw_barracks_training_adopted = { PM = pm_nco_instruction_barracks }
+			AND = {
+				NOT = { has_variable = 3rd_generation_infantry_je_done }
+				has_technology_researched = fourth_generation_warfare
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.1 }
+		set_variable = 3rd_generation_infantry_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 3rd_generation_infantry_je_done
+	}
+}
+
+je_4th_generation_infantry = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = squad_specialist_weapons
+		NOT = { has_variable = 4th_generation_infantry_je_done }
+	}
+
+	possible = {
+		has_technology_researched = fourth_generation_warfare
+		has_variable = 3rd_generation_infantry_je_done
+	}
+
+	complete = {
+		cwp_gw_barracks_training_adopted = { PM = pm_combat_schooling_barracks }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.1 }
+		set_variable = 4th_generation_infantry_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 4th_generation_infantry_je_done
+	}
+}
+
+
+############ Tanks ############
+
+je_main_battle_tanks = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = mbt_je_done }
+	}
+
+	possible = {
+		has_technology_researched = main_battle_tanks
+	}
+
+	complete = {
+		OR = {
+			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+			AND = {
+				NOT = { has_variable = mbt_je_done }
+				has_technology_researched = composite_armor
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.2 }
+		set_variable = mbt_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = mbt_je_done
+	}
+}
+
+je_2nd_generation_main_battle_tanks = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = main_battle_tanks
+		NOT = { has_variable = 2nd_mbt_je_done }
+	}
+
+	possible = {
+		has_technology_researched = composite_armor
+		has_variable = mbt_je_done
+	}
+
+	complete = {
+		OR = {
+			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+			AND = {
+				NOT = { has_variable = 2nd_mbt_je_done }
+				has_technology_researched = depleted_uranium_rounds
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.2 }
+		set_variable = 2nd_mbt_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 2nd_mbt_je_done
+	}
+}
+
+je_3rd_generation_main_battle_tanks = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = composite_armor
+		NOT = { has_variable = 3rd_mbt_je_done }
+	}
+
+	possible = {
+		has_technology_researched = depleted_uranium_rounds
+		has_variable = 2nd_mbt_je_done
+	}
+
+	complete = {
+		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_depleted_uranium_munitions }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.2 }
+		set_variable = 3rd_mbt_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 3rd_mbt_je_done
+	}
+}
+
+
+############ Artillery ############
+
+je_self_propelled_artillery = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = armored_warfare
+		NOT = { has_variable = self_propelled_artillery_je_done }
+	}
+
+	possible = {
+		has_technology_researched = mobile_warfare
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_self_propelled_guns }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.3 }
+		set_variable = self_propelled_artillery_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = self_propelled_artillery_je_done
+	}
+}
+
+je_mlrs_artillery = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = mobile_warfare
+		NOT = { has_variable = mlrs_artillery_je_done }
+	}
+
+	possible = {
+		has_technology_researched = rocketry
+		has_variable = self_propelled_artillery_je_done
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_rocket_artillery }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.3 }
+		set_variable = mlrs_artillery_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = mlrs_artillery_je_done
+	}
+}
+
+je_guided_missile_artillery = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = rocketry
+		NOT = { has_variable = guided_missile_artillery_je_done }
+	}
+
+	possible = {
+		has_technology_researched = tactical_ballistic_weapons
+		has_variable = mlrs_artillery_je_done
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tbm_launchers }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.3 }
+		set_variable = guided_missile_artillery_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = guided_missile_artillery_je_done
+	}
+}
+
+
+############ Motorization ############
+
+je_motorized = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = motorized_je_done }
+	}
+
+	possible = {
+		has_technology_researched = mobile_warfare
+	}
+
+	complete = {
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_motorization }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.4 }
+		set_variable = motorized_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = motorized_je_done
+	}
+}
+
+je_armoured_personal_carriers = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = mobile_warfare
+		NOT = { has_variable = armoured_personal_carriers_je_done }
+	}
+
+	possible = {
+		has_technology_researched = armored_personnel_carriers
+		has_variable = motorized_je_done
+	}
+
+	complete = {
+		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.4 }
+		set_variable = armoured_personal_carriers_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = armoured_personal_carriers_je_done
+	}
+}
+
+je_infantry_fighting_vehicle_carriers = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = armored_personnel_carriers
+		NOT = { has_variable = infantry_fighting_vehicles_je_done }
+	}
+
+	possible = {
+		has_technology_researched = composite_armor
+		has_variable = armoured_personal_carriers_je_done
+	}
+
+	complete = {
+		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_atgm_deployment }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.4 }
+		set_variable = infantry_fighting_vehicles_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = infantry_fighting_vehicles_je_done
+	}
+}
+
+je_multi_role_armored_fighting_vehicles = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = composite_armor
+		NOT = { has_variable = multi_role_armored_fighting_vehicles_je_done }
+	}
+
+	possible = {
+		has_technology_researched = fourth_generation_warfare
+		has_variable = infantry_fighting_vehicles_je_done
+	}
+
+	complete = {
+		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_tactical_brigade }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.4 }
+		set_variable = multi_role_armored_fighting_vehicles_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = multi_role_armored_fighting_vehicles_je_done
+	}
+}
+
+
+############ Reconnaissance ############
+
+je_motorized_reconnaissance = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = motorized_reconnaissance_je_done }
+	}
+
+	possible = {
+		has_technology_researched = mobile_warfare
+	}
+
+	complete = {
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_mobile_recon }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.5 }
+		set_variable = motorized_reconnaissance_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = motorized_reconnaissance_je_done
+	}
+}
+
+je_helicopter_reconnaissance = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = mobile_warfare
+		NOT = { has_variable = helicopter_reconnaissance_je_done }
+	}
+
+	possible = {
+		has_technology_researched = utility_helicopters
+		has_variable = motorized_reconnaissance_je_done
+	}
+
+	complete = {
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_helicopter_recon }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.5 }
+		set_variable = helicopter_reconnaissance_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = helicopter_reconnaissance_je_done
+	}
+}
+
+je_drone_reconnaissance = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = utility_helicopters
+		NOT = { has_variable = drone_reconnaissance_je_done }
+	}
+
+	possible = {
+		has_technology_researched = recon_drones
+		has_variable = helicopter_reconnaissance_je_done
+	}
+
+	complete = {
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_recon_drones }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.5 }
+		set_variable = drone_reconnaissance_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = drone_reconnaissance_je_done
+	}
+}
+
+
+############ Medical ############
+
+je_combat_medics = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = combat_medics_je_done }
+	}
+
+	possible = {
+		has_technology_researched = divisional_organization
+	}
+
+	complete = {
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_first_aid }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.7 }
+		set_variable = combat_medics_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = combat_medics_je_done
+	}
+}
+
+je_army_field_hospitals = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = divisional_organization
+		NOT = { has_variable = army_field_hospitals_je_done }
+	}
+
+	possible = {
+		has_technology_researched = utility_helicopters
+		has_variable = combat_medics_je_done
+	}
+
+	complete = {
+		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_field_hospitals }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.7 }
+		set_variable = army_field_hospitals_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = army_field_hospitals_je_done
+	}
+}
+
+
+############ Aircraft ############
+
+je_jet_fighters = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = military_aviation
+		NOT = { has_variable = jet_fighters_je_done }
+	}
+
+	possible = {
+		has_technology_researched = jet_engine
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_air_superiority_fighters }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.8 }
+		set_variable = jet_fighters_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = jet_fighters_je_done
+	}
+}
+
+je_supersonic_jet_fighters = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = jet_engine
+		NOT = { has_variable = supersonic_jet_fighters_je_done }
+	}
+
+	possible = {
+		has_technology_researched = heavy_jet_engines
+		has_variable = jet_fighters_je_done
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tactical_bombers }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.8 }
+		set_variable = supersonic_jet_fighters_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = supersonic_jet_fighters_je_done
+	}
+}
+
+je_4th_generation_jet_fighters = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = heavy_jet_engines
+		NOT = { has_variable = 4th_generation_jet_fighters_je_done }
+	}
+
+	possible = {
+		has_technology_researched = multi_role_jets
+		has_variable = supersonic_jet_fighters_je_done
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.8 }
+		set_variable = 4th_generation_jet_fighters_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 4th_generation_jet_fighters_je_done
+	}
+}
+
+je_5th_generation_jet_fighters = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = multi_role_jets
+		NOT = { has_variable = 5th_generation_jet_fighters_je_done }
+	}
+
+	possible = {
+		has_technology_researched = stealth_aircraft
+		has_variable = 4th_generation_jet_fighters_je_done
+	}
+
+	complete = {
+		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_stealth_aircraft }
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.8 }
+		set_variable = 5th_generation_jet_fighters_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = 5th_generation_jet_fighters_je_done
+	}
+}
+
+
+############ Military Theory ############
+
+je_deep_battle = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = armored_warfare
+		NOT = { has_variable = deep_battle_je_done }
+	}
+
+	possible = {
+		can_research = mobile_warfare
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_rail_logistics }
+			}
+			AND = {
+				NOT = { has_variable = deep_battle_je_done }
+				has_technology_researched = squad_specialist_weapons
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.9 }
+		set_variable = deep_battle_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = deep_battle_je_done
+	}
+}
+
+je_combined_arms_warfare = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = divisional_organization
+		NOT = { has_variable = combined_arms_warfare_je_done }
+	}
+
+	possible = {
+		can_research = squad_specialist_weapons
+		has_variable = deep_battle_je_done
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				cwp_gw_barracks_training_adopted = { PM = pm_basic_training_barracks }
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_motorization }
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_wartime_artillery }
+			}
+			AND = {
+				NOT = { has_variable = combined_arms_warfare_je_done }
+				has_technology_researched = armored_personnel_carriers
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.10 }
+		set_variable = combined_arms_warfare_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = combined_arms_warfare_je_done
+	}
+}
+
+je_mechanized_warfare = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = main_battle_tanks
+		NOT = { has_variable = mechanized_warfare_je_done }
+	}
+
+	possible = {
+		can_research = armored_personnel_carriers
+		has_variable = combined_arms_warfare_je_done
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				cwp_gw_barracks_training_adopted = { PM = pm_nco_instruction_barracks }
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_self_propelled_guns }
+			}
+			AND = {
+				NOT = { has_variable = mechanized_warfare_je_done }
+				has_technology_researched = airmobile_warfare
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.11 }
+		set_variable = mechanized_warfare_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = mechanized_warfare_je_done
+	}
+}
+
+je_advanced_combined_arms = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = armored_personnel_carriers
+		NOT = { has_variable = advanced_combined_arms_je_done }
+	}
+
+	possible = {
+		can_research = airmobile_warfare
+		has_variable = mechanized_warfare_je_done
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_atgm_deployment }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_rocket_artillery }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+			}
+			AND = {
+				NOT = { has_variable = advanced_combined_arms_je_done }
+				has_technology_researched = recon_drones
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.12 }
+		set_variable = advanced_combined_arms_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = advanced_combined_arms_je_done
+	}
+}
+
+je_early_network_warfare = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = airmobile_warfare
+		NOT = { has_variable = early_network_warfare_je_done }
+	}
+
+	possible = {
+		can_research = recon_drones
+		has_variable = advanced_combined_arms_je_done
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_air_mobile_brigade }
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_helicopter_recon }
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_manpad_deployment }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+			}
+			AND = {
+				NOT = { has_variable = early_network_warfare_je_done }
+				has_technology_researched = fourth_generation_warfare
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.13 }
+		set_variable = early_network_warfare_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = early_network_warfare_je_done
+	}
+}
+
+je_total_network_warfare = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_technology
+
+	is_shown_when_inactive = {
+		has_technology_researched = recon_drones
+		NOT = { has_variable = total_network_warfare_je_done }
+	}
+
+	possible = {
+		can_research = fourth_generation_warfare
+		has_variable = early_network_warfare_je_done
+	}
+
+	complete = {
+		OR = {
+			AND = {
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_recon_drones }
+				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_field_hospitals }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tbm_launchers }
+				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_stealth_aircraft }
+			}
+			AND = {
+				NOT = { has_variable = total_network_warfare_je_done }
+				has_technology_researched = fourth_generation_warfare
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = generic_military_events.14 }
+		set_variable = total_network_warfare_je_done
+	}
+
+	timeout = 3650		# 10 years
+
+	on_timeout = {
+		set_variable = total_network_warfare_je_done
+	}
+}

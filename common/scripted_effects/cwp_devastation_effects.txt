@@ -371,6 +371,18 @@ effect_remove_military = {
 		}
 		remove_building = building_naval_administration
 	}
+	if = {
+		limit = { has_building = building_nuclear_weapons_facility }
+		remove_building = building_nuclear_weapons_facility
+	}
+	if = {
+		limit = { has_building = building_chemical_weapons_facility }
+		remove_building = building_chemical_weapons_facility
+	}
+	if = {
+		limit = { has_building = building_biological_weapons_facility }
+		remove_building = building_biological_weapons_facility
+	}
 }
 
 effect_remove_military_industry = {

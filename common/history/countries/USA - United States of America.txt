@@ -7,5 +7,57 @@
 		# Laws
 		effect_starting_laws_1946_liberal_republic = yes
 		activate_law = law_type:law_elected_bureaucrats
+
+		# Starting companies (as in the CWP 1.8 update)
+		add_company = company_type:company_general_motors
+		company:company_general_motors = {
+			set_company_establishment_date = 1908.9.16
+			set_company_state_region = s:STATE_MICHIGAN
+		}
+		add_company = company_type:company_ford_motor
+		company:company_ford_motor = {
+			set_company_establishment_date = 1903.6.16
+			set_company_state_region = s:STATE_MICHIGAN
+		}
+		add_company = company_type:company_chrysler
+		company:company_chrysler = {
+			set_company_establishment_date = 1925.6.6
+			set_company_state_region = s:STATE_MICHIGAN
+		}
+		add_company = company_type:company_us_steel_corp
+		company:company_us_steel_corp = {
+			set_company_establishment_date = 1901.3.2
+			set_company_state_region = s:STATE_KEYSTONE
+		}
+		add_company = company_type:company_standard_oil
+		company:company_standard_oil = {
+			set_company_establishment_date = 1882.1.2
+			set_company_state_region = s:STATE_TEXAS
+		}
+		add_company = company_type:company_north_american_aviation
+		company:company_north_american_aviation = {
+			set_company_establishment_date = 1928.2.23
+			set_company_state_region = s:STATE_CALIFORNIA
+		}
+		add_company = company_type:company_general_electric
+		company:company_general_electric = {
+			set_company_establishment_date = 1892.4.15
+			set_company_state_region = s:STATE_NEW_ENGLAND
+		}
+		add_company = company_type:company_john_deere
+		company:company_john_deere = {
+			set_company_establishment_date = 1837.2.7
+			set_company_state_region = s:STATE_ILLINOIS
+		}
+		add_company = company_type:company_weyerhaeuser
+		company:company_weyerhaeuser = {
+			set_company_establishment_date = 1900.1.18
+			set_company_state_region = s:STATE_WASHINGTON
+		}
+		add_company = company_type:company_westinghouse_corp
+		company:company_westinghouse_corp = {
+			set_company_establishment_date = 1886.8.8
+			set_company_state_region = s:STATE_KEYSTONE
+		}
 	}
 }

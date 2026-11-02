@@ -1,0 +1,46 @@
+﻿GLOBAL = {
+	# Country and historical stories that start with the game (master: common/history/countries)
+	c:USA ?= {
+		add_journal_entry = { type = west_german_unification }
+	}
+	c:FRA ?= {
+		add_journal_entry = { type = west_german_unification }
+	}
+	c:GBR ?= {
+		add_journal_entry = { type = indian_partition }
+		add_journal_entry = { type = west_german_unification }
+		add_journal_entry = { type = newfoundland_referendum }
+	}
+	c:CAN ?= {
+		add_journal_entry = { type = newfoundland_referendum }
+	}
+	c:NEW ?= {
+		add_journal_entry = { type = newfoundland_referendum }
+	}
+	c:HND ?= {
+		add_journal_entry = { type = indian_partition }
+	}
+	c:DDR ?= {
+		add_journal_entry = { type = je_ddr_the_socialist_state }
+	}
+	c:RUS ?= {
+		add_journal_entry = { type = sovietization_eastern_europe }
+	}
+
+	# Chinese Civil War: states that can change hands through the armistice events (master: common/history/global/00_global.txt)
+	effect_china_states_scopes_setup = yes
+
+	# Post-war situation (master: common/history/countries)
+	c:JAP ?= {
+		effect_forced_disarmament = yes
+	}
+	c:PRC ?= {
+		effect_last_stand = yes
+	}
+	c:ROC ?= {
+		effect_last_stand = yes
+	}
+	c:IDS ?= {
+		effect_last_stand = yes
+	}
+}

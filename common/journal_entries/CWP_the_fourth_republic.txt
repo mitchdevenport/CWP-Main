@@ -1,0 +1,12 @@
+﻿je_the_fourth_republic = {
+	#todo Icon needs to be changed
+	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
+	group = je_group_internal_affairs
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	possible = {
+		c:WAU ?= this
+	}
+	immediate = {
+		#set_variable = var_je_the_fourth_republic
+	}
+}

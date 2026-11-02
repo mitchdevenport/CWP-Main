@@ -1,0 +1,11 @@
+﻿# Used by CORRUPTION_EFFECTS_TOOL to list the effects of the current corruption level in the corruption tooltip
+showmodifier_corruption = {
+	scope = country
+
+	effect = {
+		add_modifier = {
+			name = corruption_modifier_effects
+			multiplier = corruption_modifier
+		}
+	}
+}

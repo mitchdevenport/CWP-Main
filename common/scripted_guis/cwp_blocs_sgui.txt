@@ -1,0 +1,15 @@
+﻿### East/West blocs (see common/scripted_triggers/cwp_bloc_triggers.txt)
+# For interface elements that show bloc membership (master: country panel bloc icons)
+western_bloc_country_varcheck = {
+	scope = country
+	is_shown = {
+		is_in_western_bloc = yes
+	}
+}
+
+eastern_bloc_country_varcheck = {
+	scope = country
+	is_shown = {
+		is_in_eastern_bloc = yes
+	}
+}

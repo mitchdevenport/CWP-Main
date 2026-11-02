@@ -1,0 +1,462 @@
+﻿add_state_to_target_list = {
+	scope = country
+	saved_scopes = { state_to_add }
+
+	is_valid = {
+		OR = {
+			has_modifier = atomic_capable
+			has_modifier = thermonuclear_capable
+		}
+		nuclear_stockpile_sv > wmd_target_list_size
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_variable_list = {
+						name = wmd_target_list_c
+						target = scope:state_to_add.owner
+					}
+				}
+			}
+			add_to_variable_list = {
+				name = wmd_target_list_c
+				target = scope:state_to_add.owner
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_variable_list = {
+						name = wmd_target_list
+						target = scope:state_to_add
+					}
+				}
+			}
+			add_to_variable_list = {
+				name = wmd_target_list
+				target = scope:state_to_add
+			}
+		}
+		effect_order_target_list_by_population = yes
+		effect_reset_relevant_coverage = yes
+	}
+}
+
+can_add_state_to_target_list = {
+	scope = country
+	saved_scopes = { target_selected_state }
+
+	is_shown = {
+		OR = {
+			has_modifier = atomic_capable
+			has_modifier = thermonuclear_capable
+		}
+		nuclear_stockpile_sv > wmd_target_list_size
+	}
+}
+
+targetlist_remove_country = {
+	scope = country
+	saved_scopes = { target_list_selected_country }
+
+	effect = {
+		every_in_list = {
+			variable = wmd_target_list
+			limit = {
+				owner = scope:target_list_selected_country
+			}
+			ROOT = {
+				remove_list_variable = {
+					name = wmd_target_list
+					target = PREV
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = targetlist_expanded_country
+				scope:target_list_selected_country = var:targetlist_expanded_country
+			}
+			remove_variable = targetlist_expanded_country
+		}
+		remove_list_variable = {
+			name = wmd_target_list_c
+			target = scope:target_list_selected_country
+		}
+		effect_reset_relevant_coverage = yes
+	}
+}
+
+targetlist_remove_state = {
+	scope = country
+	saved_scopes = { target_list_selected_state }
+
+	effect = {
+		remove_list_variable = {
+			name = wmd_target_list
+			target = scope:target_list_selected_state
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_in_list = {
+						variable = wmd_target_list
+						owner = scope:target_list_selected_state.owner
+					}
+				}
+			}
+			remove_list_variable = {
+				name = wmd_target_list_c
+				target = scope:target_list_selected_state.owner
+			}
+			remove_variable = targetlist_expanded_country
+		}
+		effect_reset_relevant_coverage = yes
+	}
+}
+
+wmd_nuclear_can_fire_warheads = {
+	scope = country
+
+	is_shown = {
+		readiness >= 5
+		has_variable = nuclear_deployment_percentage
+		OR = {
+			has_variable = air_burst_focus
+			has_variable = ground_burst_focus
+		}
+		OR = {
+			AND = {
+				has_law = law_type:law_deterrence
+				any_scope_state = {
+					has_modifier = nuclear_strike
+				}
+			}
+			has_law = law_type:law_first_strike
+		}
+		nuclear_stockpile_sv > 0
+		nuclear_stockpile_sv >= wmd_target_list_size
+		has_variable_list = wmd_target_list
+	}
+}
+
+wmd_nuclear_cannot_fire_readiness = {
+	scope = country
+
+	is_shown = {
+		readiness = 5
+	}
+}
+
+wmd_nuclear_cannot_fire_deployment_percentage = {
+	scope = country
+
+	is_shown = {
+		has_variable = nuclear_deployment_percentage
+	}
+}
+
+wmd_nuclear_cannot_fire_no_focus = {
+	scope = country
+
+	is_shown = {
+		OR = {
+			has_variable = air_burst_focus
+			has_variable = ground_burst_focus
+		}
+	}
+}
+
+wmd_nuclear_cannot_fire_no_nukes = {
+	scope = country
+
+	is_shown = {
+		nuclear_stockpile_sv > 0
+	}
+}
+
+wmd_nuclear_cannot_fire_target_size = {
+	scope = country
+
+	is_shown = {
+		nuclear_stockpile_sv >= wmd_target_list_size
+	}
+}
+
+wmd_nuclear_cannot_fire_no_target = {
+	scope = country
+
+	is_shown = {
+		has_variable_list = wmd_target_list
+	}
+}
+
+wmd_nuclear_cannot_fire_law = {
+	scope = country
+
+	is_shown = {
+		OR = {
+			AND = {
+				has_law = law_type:law_deterrence
+				any_scope_state = {
+					has_modifier = nuclear_strike
+				}
+			}
+			has_law = law_type:law_first_strike
+		}
+	}
+}
+
+wmd_nuclear_detonation_focus_air = {
+	scope = country
+
+	effect = {
+		remove_variable = ground_burst_focus
+		set_variable = air_burst_focus
+	}
+}
+
+wmd_nuclear_detonation_focus_ground = {
+	scope = country
+
+	effect = {
+		remove_variable = air_burst_focus
+		set_variable = ground_burst_focus
+	}
+}
+
+targetlist_is_set = {
+	scope = country
+
+	is_shown = {
+		has_variable_list = wmd_target_list
+	}
+}
+
+targetlist_add_visible = {
+	scope = country
+	saved_scopes = { target_selected_state }
+
+	is_shown = {
+		OR = {
+			has_modifier = atomic_capable
+			has_modifier = thermonuclear_capable
+		}
+		NOT = {
+			is_target_in_variable_list = {
+				name = wmd_target_list
+				target = scope:target_selected_state
+			}
+		}
+	}
+}
+
+state_is_in_targetlist = {
+	scope = country
+	saved_scopes = { target_selected_state }
+
+	is_shown = {
+		is_target_in_variable_list = {
+			name = wmd_target_list
+			target = scope:target_selected_state
+		}
+		has_variable = show_targeted_states_map
+	}
+}
+
+targetlist_expand_info = {
+	scope = country
+	saved_scopes = { target_list_selected_country }
+
+	effect = {
+		set_variable = {
+			name = targetlist_expanded_country
+			value = scope:target_list_selected_country
+		}
+	}
+}
+
+targetlist_contract_info = {
+	scope = country
+
+	effect = {
+		remove_variable = targetlist_expanded_country
+	}
+}
+
+targetlist_expanded_visible_c = {
+	scope = country
+	saved_scopes = { target_list_selected_country }
+
+	is_shown = {
+		OR = {
+			AND = {
+				has_variable = targetlist_expanded_country
+				scope:target_list_selected_country = var:targetlist_expanded_country
+			}
+			NOT = {
+				has_variable = targetlist_expanded_country
+			}
+		}
+	}
+}
+
+targetlist_expanded_visible_s = {
+	scope = country
+	saved_scopes = { target_list_selected_state }
+
+	is_shown = {
+		has_variable = targetlist_expanded_country
+		scope:target_list_selected_state.owner = var:targetlist_expanded_country
+	}
+}
+
+wmd_fire_nuclear_warheads = {
+	scope = country
+
+	is_valid = {
+		readiness >= 5
+		has_variable = nuclear_deployment_percentage
+		OR = {
+			has_variable = air_burst_focus
+			has_variable = ground_burst_focus
+		}
+		OR = {
+			AND = {
+				has_law = law_type:law_deterrence
+				any_scope_state = {
+					has_modifier = nuclear_strike
+				}
+			}
+			has_law = law_type:law_first_strike
+		}
+		nuclear_stockpile_sv > 0
+		nuclear_stockpile_sv >= wmd_target_list_size
+		has_variable_list = wmd_target_list
+	}
+
+	effect = {
+		trigger_event = {
+			id = wmd_attack_events.1
+			popup = yes
+		}
+	}
+}
+
+wmd_deployment_20 = {
+	scope = country
+
+	effect = {
+		set_variable = {
+			name = nuclear_deployment_percentage
+			value = 20
+		}
+	}
+}
+
+wmd_deployment_40 = {
+	scope = country
+
+	effect = {
+		set_variable = {
+			name = nuclear_deployment_percentage
+			value = 40
+		}
+	}
+}
+
+wmd_deployment_60 = {
+	scope = country
+
+	effect = {
+		set_variable = {
+			name = nuclear_deployment_percentage
+			value = 60
+		}
+	}
+}
+
+wmd_deployment_80 = {
+	scope = country
+
+	effect = {
+		set_variable = {
+			name = nuclear_deployment_percentage
+			value = 80
+		}
+	}
+}
+
+wmd_deployment_100 = {
+	scope = country
+
+	effect = {
+		set_variable = {
+			name = nuclear_deployment_percentage
+			value = 100
+		}
+	}
+}
+
+is_atomic_capable = {
+	scope = country
+
+	is_shown = {
+		has_modifier = atomic_capable
+	}
+}
+
+is_thermonuclear_capable = {
+	scope = country
+
+	is_shown = {
+		has_modifier = thermonuclear_capable
+	}
+}
+
+is_icbm_capable = {
+	scope = country
+
+	is_shown = {
+		has_modifier = icbm_capable
+	}
+}
+
+can_open_wmd_screen = {
+	scope = country
+
+	is_shown = {
+		OR = {
+			has_modifier = atomic_capable
+			has_modifier = thermonuclear_capable
+		}
+	}
+}
+
+show_targeted_states_on_map = {
+	scope = country
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = show_targeted_states_map
+				}
+			}
+			set_variable = show_targeted_states_map
+		}
+		else = {
+			remove_variable = show_targeted_states_map
+		}
+	}
+}
+
+wmd_autotarget = {
+	scope = country
+
+	effect = {
+		effect_select_target_countries_ai = yes
+	}
+}

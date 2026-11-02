@@ -1,0 +1,65 @@
+﻿namespace = treaty_of_san_francisco
+treaty_of_san_francisco.1 = {
+	type = country_event
+	orphan = yes	# superseded by decolonization.507 (Release Japan) in master
+	title = treaty_of_san_francisco.1.t
+	desc = treaty_of_san_francisco.1.d
+	flavor = treaty_of_san_francisco.1.f
+	icon = "gfx/interface/icons/cwp_icons/united_nations.dds"
+	event_image = {
+		texture = "gfx/interface/event_pictures/treaty_of_san_francisco.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"	# TODO: sounds
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	duration = 3
+	trigger = {
+		exists = c:JAP
+		this = c:JAP
+		game_date >= 1951.9.1
+		not = {
+			has_variable = treaty_of_san_francisco_event_fired
+		}
+	}
+	immediate = {
+		set_variable = treaty_of_san_francisco_event_fired
+	}
+	option = {
+		name = treaty_of_san_francisco.1.a
+		# The end of the American occupation
+		if = {
+			limit = {
+				is_subject_of = c:USA
+			}
+			make_independent = yes
+		}
+		# The Treaty of Mutual Cooperation and Security (defensive pacts are treaty articles in 1.14)
+		if = {
+			limit = {
+				exists = c:USA
+				can_create_treaty = {
+					first_country = root
+					second_country = c:USA
+					is_draft = no
+					articles_to_create = {
+						{
+							article = defensive_pact
+						}
+					}
+				}
+			}
+			create_treaty = {
+				first_country = root
+				second_country = c:USA
+				is_draft = no
+				articles_to_create = {
+					{
+						article = defensive_pact
+					}
+				}
+			}
+		}
+		c:JAP = {
+			#activate_law = law_type:law_disarmed_nation # Originally disabled disarmed nation modifier
+		}
+	}
+}

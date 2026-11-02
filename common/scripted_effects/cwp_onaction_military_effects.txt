@@ -1,0 +1,66 @@
+﻿onaction_readiness_calculation = {
+	# Countries created after game start begin at the same Medium readiness as the starting countries
+	if = {
+		limit = {
+			NOT = {
+				has_variable = var_readiness
+			}
+		}
+		set_variable = {
+			name = var_readiness
+			value = 3
+		}
+		cwp_generic_warfare_initialize_known_doctrines = yes
+	}
+	# AI Calculations
+	if = {
+		limit = {
+			has_variable = var_readiness
+			is_ai = yes
+		}
+		onaction_ai_readiness_calculations = yes
+	}
+	onaction_readiness_modifier_update = yes
+}
+
+onaction_ai_readiness_calculations = {
+	if = {
+		limit = {
+			NOT = {
+				has_variable = ai_changed_readiness
+			}
+		}
+		if = {
+			limit = {
+				readiness < ai_ideal_readiness
+			}
+			effect_ai_increase_readiness = yes
+		}
+		if = {
+			limit = {
+				readiness = ai_ideal_readiness
+			}
+			effect_ai_maintain_readiness = yes
+		}
+		if = {
+			limit = {
+				readiness > ai_ideal_readiness
+			}
+			effect_ai_decrease_readiness = yes
+		}
+	}
+}
+
+# The original only previewed readiness_modifier in tooltips ("this country would gain"); it is applied here at 20% per level
+onaction_readiness_modifier_update = {
+	if = {
+		limit = {
+			has_variable = var_readiness
+		}
+		remove_modifier = readiness_modifier
+		add_modifier = {
+			name = readiness_modifier
+			multiplier = readiness_modifier_multiplier
+		}
+	}
+}

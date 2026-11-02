@@ -1,0 +1,80 @@
+﻿effect_nato_application_approved = {
+	remove_variable = nato_supporting_list_size
+	remove_variable = application_progress_nato
+	clear_variable_list = nato_supporting
+	clear_variable_list = nato_rejecting
+	remove_list_global_variable = {
+		name = nato_application_list
+		target = THIS
+	}
+	add_to_global_variable_list = {
+		name = nato_members
+		target = THIS
+	}
+}
+
+effect_nato_application_rejected = {
+	remove_variable = nato_supporting_list_size
+	remove_variable = application_progress_nato
+	clear_variable_list = nato_supporting
+	clear_variable_list = nato_rejecting
+	remove_list_global_variable = {
+		name = nato_application_list
+		target = THIS
+	}
+	set_variable = {
+		name = nato_application_rejected
+		days = 365
+	}
+}
+
+# The NATO mutual assistance treaties of a country that leaves NATO end automatically (see common/treaty_articles/cwp_treaties.txt)
+effect_nato_leave = {
+	remove_list_global_variable = {
+		name = nato_members
+		target = THIS
+	}
+	remove_modifier = nato_cohesion
+	remove_modifier = nato_not_meeting_standards
+}
+
+# Gives this NATO member a NATO mutual assistance treaty with every other member it is not yet bound to
+effect_nato_create_mutual_assistance_treaties = {
+	save_temporary_scope_as = nato_treaty_member
+	every_country = {
+		limit = {
+			is_in_nato = yes
+			NOT = { THIS = scope:nato_treaty_member }
+			NOT = {
+				any_scope_treaty = {
+					binds = scope:nato_treaty_member
+					any_scope_article = { has_type = treaty_nato_mutual_assistance }
+				}
+			}
+		}
+		save_temporary_scope_as = nato_treaty_partner
+		if = {
+			limit = {
+				can_create_treaty = {
+					first_country = scope:nato_treaty_member
+					second_country = scope:nato_treaty_partner
+					is_draft = no
+					binding_period = { years = 20 }
+					articles_to_create = {
+						{ article = treaty_nato_mutual_assistance }
+					}
+				}
+			}
+			create_treaty = {
+				name = treaty_name_north_atlantic_treaty
+				first_country = scope:nato_treaty_member
+				second_country = scope:nato_treaty_partner
+				is_draft = no
+				binding_period = { years = 20 }
+				articles_to_create = {
+					{ article = treaty_nato_mutual_assistance }
+				}
+			}
+		}
+	}
+}

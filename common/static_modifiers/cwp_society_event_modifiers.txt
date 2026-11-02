@@ -1,0 +1,243 @@
+﻿# Modifiers used by the restored assassination, IG suppression and urbanization events. Vanilla definitions;
+# their vanilla files (static_modifiers/02_event_modifiers.txt, 104_modifiers.txt, content_1_modifiers.txt) are blanked by the mod.
+assassination_caught_em_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add = 15
+}
+
+assassination_dead_ruler_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_legitimacy_base_add = -10
+}
+
+assassination_ig_monitored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+assassination_ig_not_monitored_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 1
+}
+
+assassination_success_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_mult = -0.2
+}
+
+deposed_ruler_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	character_popularity_add = -50
+}
+
+hightened_security = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_authority_mult = -0.1
+}
+
+snitch_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	character_popularity_add = -20
+}
+
+suspicious_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult = -0.15
+}
+
+blackmailed_ig_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+	interest_group_pop_attraction_mult = -0.2
+}
+
+bribing_scandal_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+founded_fear = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_authority_mult = 0.05
+}
+
+founded_fear_legitimacy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_legitimacy_base_add = 15
+}
+
+ig_autosabotage_leader_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	character_popularity_add = -30
+}
+
+ig_autosabotage_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pop_attraction_mult = -0.2
+}
+
+imprisoned_ig_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -3
+	interest_group_pop_attraction_mult = -0.3
+}
+
+imprisoned_ig_people_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_authority_mult = 0.1
+	country_legitimacy_base_add = -20
+}
+
+modifier_article_damages_ig_reputation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pop_attraction_mult = -0.15
+}
+
+modifier_intimidating_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -1
+	interest_group_pop_attraction_mult = -0.20
+}
+
+modifier_intimidating_ig_cost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_authority_mult = -0.10
+}
+
+modifier_paying_journalist = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+plot_backing_down_bad_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+plot_backing_down_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 1
+}
+
+sneaky_suppressed_meeting_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult = -0.15
+}
+
+suppressed_meeting_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -1
+	interest_group_pol_str_mult = -0.15
+}
+
+suppression_discovered = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_legitimacy_base_add = -10
+}
+
+suppression_leader_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	character_popularity_add = -20
+}
+
+suppression_scandal_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pop_attraction_mult = -0.2
+}
+
+undermined_ig_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pop_attraction_mult = -0.2
+}
+
+undermined_lower_class_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+	interest_group_pop_attraction_mult = -0.1
+}
+
+undermined_upper_class_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -1
+	interest_group_pop_attraction_mult = -0.2
+}
+
+violent_suppressed_meeting_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+	interest_group_pol_str_mult = -0.25
+}
+
+ig_urbanization_industrialists = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 2
+	interest_group_pop_attraction_mult = 0.1
+}
+
+luxurious_parties = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	state_upper_strata_expected_sol_add = 3
+}
+
+modifier_army_bases = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_armed_forces_approval_add = 3
+	interest_group_ig_industrialists_approval_add = -2
+}
+
+modifier_better_farms_no_subsistence_farming = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_construction_mult = 0.05
+	building_group_bg_agriculture_throughput_add = 0.15
+	state_aristocrats_investment_pool_efficiency_mult = 0.25
+}
+
+modifier_factories_no_subsistence_farming = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_construction_mult = 0.05
+	building_group_bg_manufacturing_throughput_add = 0.1
+	state_capitalists_investment_pool_efficiency_mult = 0.5
+}
+
+modifier_heavily_urbanized = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_loyalists_from_political_movements_mult = 0.25
+}
+
+modifier_ig_happy_urbanization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 2
+}
+
+modifier_ig_happy_urbanization_bad = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+modifier_ignored_ig_urbanization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -1
+	interest_group_pol_str_mult = -0.1
+}
+
+modifier_listened_to_advice = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_industrialists_approval_add = 2
+}
+
+modifier_urban_centers = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_urban_center_throughput_add = 0.33
+}
+
+modifier_urbanized_state = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_loyalists_from_political_movements_mult = 0.2
+}
+
+subsistence_farms_ignored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	state_construction_mult = 0.05
+	state_conscription_rate_add = 0.35
+	building_training_rate_mult = 0.35
+}

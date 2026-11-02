@@ -1,0 +1,94 @@
+﻿form_nato = {
+	is_shown = {
+		exists = c:USA
+		c:USA = THIS
+		NOT = {
+			has_global_variable = nato_leader
+		}
+	}
+	possible = {
+		country_rank >= rank_value:superpower
+		has_technology_researched = political_internationalism
+	}
+	when_taken = {
+		trigger_event = nato_formation.1
+		set_global_variable = {
+			name = nato_leader
+			value = ROOT
+		}
+	}
+	ai_chance = {
+		value = 100
+	}
+}
+
+join_nato = {
+	is_shown = {
+		exists = c:USA
+		is_subject = no
+		has_global_variable = nato
+		OR = {
+			country_is_in_europe = yes
+			c:CAN ?= THIS
+		}
+		NOR = {
+			is_in_nato = yes
+			is_target_in_global_variable_list = {
+				name = nato_application_list
+				target = THIS
+			}
+			has_variable = nato_application_rejected
+		}
+		is_aligned_USA = yes
+	}
+	possible = {
+		NOR = {
+			is_aligned_RUS = yes
+			is_at_war = yes
+		}
+		is_aligned_USA = yes
+	}
+	when_taken = {
+		set_variable = {
+			name = application_progress_nato
+			value = 0
+		}
+		set_variable = {
+			name = nato_supporting_list_size
+			value = 0
+		}
+		add_to_global_variable_list = {
+			name = nato_application_list
+			target = THIS
+		}
+	}
+	ai_chance = {
+		value = 10
+	}
+}
+
+leave_nato = {
+	is_shown = {
+		is_in_nato = yes
+	}
+	possible = {
+		exists = c:USA
+		c:USA = {
+			relations:root <= relations_threshold:poor
+		}
+		is_aligned_USA = no
+	}
+	when_taken = {
+		effect_nato_leave = yes
+	}
+	ai_chance = {
+		value = 0
+		# Members that have joined the Eastern Bloc leave
+		if = {
+			limit = {
+				is_aligned_RUS = yes
+			}
+			add = 10
+		}
+	}
+}

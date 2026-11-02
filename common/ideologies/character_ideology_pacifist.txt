@@ -11,6 +11,13 @@ ideology_pacifist = {
 		law_mass_conscription = disapprove
 	}
 
+	lawgroup_wmds = {
+		law_first_strike = strongly_disapprove
+		law_deterrence = disapprove
+		law_civilian_applications = strongly_approve
+		law_no_wmds = strongly_approve
+	}
+
 	interest_group_leader_trigger = {
 		ideology_pacifist_valid_trigger = yes
 	}

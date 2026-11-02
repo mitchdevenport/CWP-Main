@@ -1,0 +1,28 @@
+﻿effect_forced_disarmament = {
+	activate_law = law_type:law_disarmed_nation
+	add_modifier = {
+		name = forced_disarmament
+		days = long_modifier_time
+	}
+}
+
+effect_last_stand = {
+	add_modifier = {
+		name = last_stand
+		days = normal_modifier_time
+	}
+}
+
+effect_remove_obsessions = {
+	every_scope_state = {
+		limit = {
+			is_homeland_of_country_cultures = prev
+			NOT = { has_modifier = banned_obsession }
+		}
+		add_modifier = {
+			name = banned_obsession
+			days = normal_modifier_time
+			is_decaying = yes
+		}
+	}
+}

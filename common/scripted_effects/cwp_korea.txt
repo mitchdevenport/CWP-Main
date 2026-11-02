@@ -1,0 +1,152 @@
+﻿scripted_effect_korean_reunification = {
+	#Unifier
+	if = {
+		limit = {
+			korean_reunification_total_vote_unifier_stk >= korean_reunification_total_vote_unifier_nrk
+		}
+		c:STK = {
+			save_scope_as = korean_unifier
+		}
+		c:NRK = {
+			save_scope_as = not_korean_unifier
+		}
+	}
+	else = {
+		c:NRK = {
+			save_scope_as = korean_unifier
+		}
+		c:STK = {
+			save_scope_as = not_korean_unifier
+		}
+	}
+	#Government System | May be redesigned to be more interesting
+	#(the centralization and bureaucratic system law groups were merged into the bureaucracy law group)
+	if = {
+		limit = {
+			korean_reunification_total_vote_government_system_mix >= korean_reunification_total_vote_government_system_like_unifier
+		}
+		scope:korean_unifier = {
+			activate_law = scope:not_korean_unifier.active_law:lawgroup_bureaucracy.type
+		}
+	}
+	#Economical System | May be redesigned to be more interesting
+	if = {
+		limit = {
+			korean_reunification_total_vote_economical_system_mix >= korean_reunification_total_vote_economical_system_like_unifier
+		}
+		scope:korean_unifier = {
+			activate_law = scope:not_korean_unifier.active_law:lawgroup_taxation.type
+			activate_law = scope:not_korean_unifier.active_law:lawgroup_health_system.type
+		}
+	}
+	#reconstruction
+	if = {
+		limit = {
+			korean_reunification_total_vote_reconstruction_yes >= korean_reunification_total_vote_reconstruction_no
+		}
+		scope:not_korean_unifier = {
+			every_scope_state = {
+				add_modifier = {
+					name = reconstruction_promised
+					months = 120
+				}
+			}
+		}
+	}
+	#Complete reunification
+	scope:korean_unifier = {
+		annex = scope:not_korean_unifier
+	}
+	scope:korean_unifier = {
+		# Seoul becomes capital
+		if = {
+			limit = {
+				owns_entire_state_region = STATE_SEOUL
+			}
+			set_capital = STATE_SEOUL
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_colonial_administration
+			}
+			activate_law = law_type:law_presidential_republic
+		}
+		if = {
+			limit = {
+				is_subject_type = subject_type_military_occupation
+			}
+			overlord = {
+				save_scope_as = korean_unifier_former_overlord
+			}
+			change_relations = {
+				country = scope:korean_unifier_former_overlord
+				value = 100
+			}
+			scope:korean_unifier_former_overlord = {
+				set_secret_goal = {
+					country = scope:korean_unifier
+					secret_goal = protect
+				}
+			}
+			make_independent = yes
+			create_treaty = {
+				first_country = scope:korean_unifier
+				second_country = scope:korean_unifier_former_overlord
+				is_draft = no
+				articles_to_create = {
+					{
+						article = alliance
+					}
+				}
+			}
+		}
+	}
+	#Faction | Diplomatic alignment with the bloc leaders is represented by the American and Soviet power blocs
+	if = {
+		limit = {
+			korean_reunification_total_vote_faction_west >= korean_reunification_total_vote_faction_east
+			korean_reunification_total_vote_faction_west >= korean_reunification_total_vote_faction_neutral
+			c:USA ?= {
+				is_power_bloc_leader = yes
+			}
+			scope:korean_unifier = {
+				is_subject = no
+			}
+		}
+		custom_tooltip = {
+			text = korea_aligns_west
+			scope:korean_unifier = {
+				join_power_bloc = c:USA
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			korean_reunification_total_vote_faction_east >= korean_reunification_total_vote_faction_west
+			korean_reunification_total_vote_faction_east >= korean_reunification_total_vote_faction_neutral
+			c:RUS ?= {
+				is_power_bloc_leader = yes
+			}
+			scope:korean_unifier = {
+				is_subject = no
+			}
+		}
+		custom_tooltip = {
+			text = korea_aligns_east
+			scope:korean_unifier = {
+				join_power_bloc = c:RUS
+			}
+		}
+	}
+	else = {
+		scope:korean_unifier = {
+			custom_tooltip = {
+				text = korea_becomes_neutral
+				add_modifier = {
+					name = forced_neutrality
+					months = 120
+				}
+			}
+		}
+	}
+}

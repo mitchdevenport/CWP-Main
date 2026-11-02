@@ -1,0 +1,16 @@
+﻿declaration_of_human_rights = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_radicals_and_loyalists_from_sol_change_mult = 0.25
+	state_standard_of_living_add = 0.5
+	country_radicals_from_conquest_mult = 0.25
+	state_radicalism_increases_cultural_erasure_mult = 0.25
+	state_radicalism_increases_open_prejudice_mult = 0.25
+	state_radicalism_increases_second_rate_citizen_mult = 0.25
+	state_radicalism_increases_violent_hostility_mult = 0.25
+}
+
+unclos1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	building_group_bg_fishing_throughput_add = 0.25
+	state_trade_capacity_mult = 0.025
+}

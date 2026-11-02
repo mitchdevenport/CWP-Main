@@ -1,0 +1,1807 @@
+﻿# From modding tool, do not modify by hand!
+# Regenerated for the current law design: each value keeps its master name (used by the localization and events)
+# but evaluates the interest group stance on the equivalent current law.
+
+france_constitution_ig_stance_law_executive_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_presidential_republic
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_presidential_republic
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_presidential_republic
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_presidential_republic
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_parliamentary_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_parliamentary_republic
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_parliamentary_republic
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_parliamentary_republic
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_parliamentary_republic
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_council_republic_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_council_republic
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_council_republic
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_council_republic
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_council_republic
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_representative_democracy_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_census_voting
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_census_voting
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_census_voting
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_census_voting
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_consensus_democracy_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_direct_democracy_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_universal_suffrage
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_unitary_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_devolved_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_federalized_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_free_market_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_laissez_faire
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_laissez_faire
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_laissez_faire
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_laissez_faire
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_interventionism_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_interventionism
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_interventionism
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_interventionism
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_interventionism
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_cooperative_ownership_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_cooperative_ownership
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_cooperative_ownership
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_cooperative_ownership
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_cooperative_ownership
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_appointed_bureaucrats_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_appointed_bureaucrats
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_independent_bureaucrats_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_elected_bureaucrats
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_income_taxation_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_proportional_taxation
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_capital_gains_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_graduated_taxation
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_graduated_taxation
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_graduated_taxation
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_graduated_taxation
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_church_disestablishment_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_total_separation
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_total_separation
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_total_separation
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_total_separation
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_freedom_of_conscience_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_freedom_of_conscience
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_freedom_of_conscience
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_freedom_of_conscience
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_freedom_of_conscience
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_state_funded_schools_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_public_schools
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_public_schools
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_public_schools
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_public_schools
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_mixed_funded_schools_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_private_schools
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_private_schools
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_private_schools
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_private_schools
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_right_of_assembly_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_right_of_assembly
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_right_of_assembly
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_right_of_assembly
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_right_of_assembly
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_protected_speech_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_protected_speech
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_protected_speech
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_protected_speech
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_protected_speech
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_total_nationalization_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_command_economy
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_command_economy
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_command_economy
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_command_economy
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_national_champions
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_national_champions
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_national_champions
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_national_champions
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_compulsory_education_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+france_constitution_ig_stance_law_compulsory_higher_education_value = {
+	value = 0
+	if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = strongly_approve
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = approve
+			}
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = disapprove
+			}
+		}
+		add = -2
+	}
+	else_if = {
+		limit = {
+			law_stance = {
+				law = law_type:law_compulsory_primary_school
+				value = strongly_disapprove
+			}
+		}
+		add = -4
+	}
+}
+
+########################################################################################################################
+# Communist
+france_constitution_communist_stance_on_law_executive_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_executive_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_executive_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_parliamentary_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_parliamentary_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_parliamentary_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_council_republic_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_council_republic_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_council_republic_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_representative_democracy_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_consensus_democracy_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_direct_democracy_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_unitary_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_unitary_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_unitary_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_devolved_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_devolved_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_devolved_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_federalized_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_federalized_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_federalized_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_free_market_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_free_market_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_free_market_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_interventionism_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_interventionism_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_interventionism_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_cooperative_ownership_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_appointed_bureaucrats_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_independent_bureaucrats_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_income_taxation_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_income_taxation_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_income_taxation_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_capital_gains_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_capital_gains_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_capital_gains_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_church_disestablishment_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_freedom_of_conscience_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_state_funded_schools_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_mixed_funded_schools_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_right_of_assembly_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_protected_speech_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_protected_speech_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_protected_speech_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_total_nationalization_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_heavy_industry_nationalization_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_compulsory_education_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+france_constitution_communist_stance_on_law_compulsory_higher_education_value = {
+	value = 0
+	add = ig:ig_bureaucrats.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	add = ig:ig_trade_unions.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	divide = france_constitution_communist_clout
+}
+
+########################################################################################################################
+# Socialist
+france_constitution_socialist_stance_on_law_executive_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_executive_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_parliamentary_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_parliamentary_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_council_republic_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_council_republic_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_representative_democracy_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_consensus_democracy_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_direct_democracy_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_unitary_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_unitary_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_devolved_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_devolved_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_federalized_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_federalized_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_free_market_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_free_market_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_interventionism_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_interventionism_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_cooperative_ownership_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_appointed_bureaucrats_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_independent_bureaucrats_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_income_taxation_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_income_taxation_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_capital_gains_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_capital_gains_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_church_disestablishment_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_freedom_of_conscience_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_state_funded_schools_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_mixed_funded_schools_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_right_of_assembly_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_protected_speech_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_protected_speech_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_total_nationalization_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_heavy_industry_nationalization_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_compulsory_education_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+france_constitution_socialist_stance_on_law_compulsory_higher_education_value = {
+	value = 0
+	add = ig:ig_intelligentsia.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	divide = france_constitution_socialist_clout
+}
+
+########################################################################################################################
+# Moralist
+france_constitution_moralist_stance_on_law_executive_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_executive_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_executive_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_executive_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_parliamentary_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_parliamentary_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_parliamentary_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_parliamentary_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_council_republic_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_council_republic_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_council_republic_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_council_republic_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_representative_democracy_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_consensus_democracy_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_direct_democracy_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_unitary_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_unitary_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_unitary_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_unitary_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_devolved_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_devolved_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_devolved_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_devolved_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_federalized_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_federalized_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_federalized_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_federalized_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_free_market_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_free_market_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_free_market_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_free_market_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_interventionism_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_interventionism_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_interventionism_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_interventionism_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_cooperative_ownership_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_appointed_bureaucrats_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_independent_bureaucrats_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_income_taxation_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_income_taxation_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_income_taxation_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_income_taxation_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_capital_gains_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_capital_gains_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_capital_gains_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_capital_gains_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_church_disestablishment_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_freedom_of_conscience_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_state_funded_schools_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_mixed_funded_schools_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_right_of_assembly_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_protected_speech_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_protected_speech_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_protected_speech_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_protected_speech_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_total_nationalization_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_heavy_industry_nationalization_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_compulsory_education_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+france_constitution_moralist_stance_on_law_compulsory_higher_education_value = {
+	value = 0
+	add = ig:ig_devout.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	add = ig:ig_landowners.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	add = ig:ig_rural_folk.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	divide = france_constitution_moralist_clout
+}
+
+########################################################################################################################
+# Gaullist
+france_constitution_gaullist_stance_on_law_executive_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_executive_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_executive_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_executive_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_parliamentary_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_parliamentary_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_parliamentary_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_parliamentary_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_council_republic_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_council_republic_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_council_republic_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_council_republic_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_representative_democracy_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_representative_democracy_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_consensus_democracy_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_consensus_democracy_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_direct_democracy_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_direct_democracy_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_unitary_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_unitary_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_unitary_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_unitary_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_devolved_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_devolved_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_devolved_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_devolved_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_federalized_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_federalized_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_federalized_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_federalized_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_free_market_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_free_market_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_free_market_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_free_market_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_interventionism_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_interventionism_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_interventionism_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_interventionism_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_cooperative_ownership_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_cooperative_ownership_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_appointed_bureaucrats_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_appointed_bureaucrats_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_independent_bureaucrats_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_independent_bureaucrats_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_income_taxation_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_income_taxation_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_income_taxation_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_income_taxation_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_capital_gains_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_capital_gains_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_capital_gains_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_capital_gains_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_church_disestablishment_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_church_disestablishment_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_freedom_of_conscience_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_freedom_of_conscience_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_state_funded_schools_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_state_funded_schools_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_mixed_funded_schools_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_mixed_funded_schools_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_right_of_assembly_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_right_of_assembly_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_protected_speech_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_protected_speech_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_protected_speech_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_protected_speech_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_total_nationalization_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_total_nationalization_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_heavy_industry_nationalization_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_heavy_industry_nationalization_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_compulsory_education_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_compulsory_education_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+france_constitution_gaullist_stance_on_law_compulsory_higher_education_value = {
+	value = 0
+	add = ig:ig_armed_forces.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	add = ig:ig_industrialists.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	add = ig:ig_petty_bourgeoisie.france_constitution_ig_stance_law_compulsory_higher_education_value_weighted
+	divide = france_constitution_gaullist_clout
+}
+
+########################################################################################################################

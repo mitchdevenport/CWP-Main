@@ -1,0 +1,194 @@
+﻿add_to_target_list_country = {
+	groups = {
+		general
+	}
+
+	requires_approval = no
+
+	potential = {
+		OR = {
+			has_modifier = atomic_capable
+			has_modifier = thermonuclear_capable
+		}
+		scope:target_country = {
+			NOT = {
+				any_scope_state = {
+					count = all
+					ROOT = {
+						is_target_in_variable_list = {
+							name = wmd_target_list
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+
+	possible = {
+		wmd_target_list_slots_left >= scope:target_country.num_states
+	}
+
+	accept_effect = {
+		if = {
+			limit = {
+				NOT = {
+					is_target_in_variable_list = {
+						name = wmd_target_list_c
+						target = scope:target_country
+					}
+				}
+			}
+			add_to_variable_list = {
+				name = wmd_target_list_c
+				target = scope:target_country
+			}
+		}
+		scope:target_country = {
+			every_scope_state = {
+				ROOT = {
+					if = {
+						limit = {
+							NOT = {
+								is_target_in_variable_list = {
+									name = wmd_target_list
+									target = PREV
+								}
+							}
+						}
+						add_to_variable_list = {
+							name = wmd_target_list
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+		effect_order_target_list_by_population = yes
+		effect_reset_relevant_coverage = yes
+	}
+
+	# Target lists are a player tool, the AI does not plan nuclear strikes
+	ai = {
+		evaluation_chance = {
+			value = 0
+		}
+	}
+}
+
+request_nuclear_bomb_deployment = {
+	groups = {
+		general
+	}
+
+	requires_approval = yes
+	should_notify_third_parties = yes
+
+	potential = {
+		OR = {
+			has_modifier = atomic_capable
+			has_modifier = thermonuclear_capable
+		}
+		scope:target_country = {
+			NOR = {
+				has_variable = deployed_nuclear_bombs
+				has_war_with = ROOT
+				country_rank >= rank_value:superpower
+			}
+		}
+	}
+
+	possible = {
+		scope:target_country = {
+			relations:root > 20
+			NOR = {
+				has_variable = deployed_nuclear_bombs
+				has_war_with = ROOT
+				country_rank >= rank_value:superpower
+			}
+		}
+	}
+
+	accept_effect = {
+		scope:target_country = {
+			set_variable = {
+				name = deployed_nuclear_bombs
+				value = root
+			}
+		}
+		effect_reset_relevant_coverage = yes
+		ROOT = {
+			save_scope_as = initiator
+		}
+		scope:target_country = {
+			save_scope_as = target
+		}
+		every_country = {
+			limit = {
+				NOR = {
+					THIS = ROOT
+					THIS = scope:target_country
+				}
+				is_adjacent_to_country = scope:target_country
+				country_rank >= rank_value:great_power
+			}
+			trigger_event = {
+				id = wmd_deployment_events.1
+			}
+		}
+	}
+
+	pact = {
+		cost = 50
+		is_two_sided_pact = no
+		show_in_outliner = yes
+
+		relations_progress_per_day = 2		# At 100, +1 relations
+		relations_improvement_max = 80
+
+		requirement_to_maintain = {
+			trigger = {
+				NOT = {
+					has_war_with = scope:target_country
+				}
+			}
+
+			show_about_to_break_warning = {
+				scope:target_country.relations:root <= -20
+			}
+		}
+
+		manual_break_effect = {
+			scope:target_country = {
+				remove_variable = deployed_nuclear_bombs
+			}
+		}
+
+		auto_break_effect = {
+			scope:target_country = {
+				remove_variable = deployed_nuclear_bombs
+			}
+		}
+	}
+
+	ai = {
+		evaluation_chance = {
+			value = 0
+		}
+
+		# Root is the AI country asked to host the warheads, scope:actor the country asking
+		accept_score = {
+			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -25
+			}
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
+				value = scope:actor.relations:root
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+﻿concept_nuclear_weapons = {}
+
+concept_nuclear_stockpile = {}
+
+concept_nuclear_stockpile_max = {}
+
+# concept_readiness is defined by the base game since 1.14 (naval readiness); CWP overrides its loc in replace/CWP_concepts_l_english.yml
+
+concept_nuclear_program = {}
+
+concept_nuclear_reactor = {}
+
+concept_nuclear_test = {}
+
+concept_atomic_bomb = {}
+
+concept_thermonuclear_bomb = {}
+
+concept_detonation_focus = {}
+
+concept_deployment_percentage = {}
+
+concept_wmd_target_list = {}
+
+concept_wmd_coverage = {}
+
+concept_nuclear_strike_effectiveness = {}
+
+concept_nuclear_delivery_effectiveness = {}

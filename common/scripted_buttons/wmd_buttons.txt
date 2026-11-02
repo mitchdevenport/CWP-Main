@@ -1,0 +1,309 @@
+﻿pause_nuclear_program_button = {
+	name = "pause_nuclear_program_button"
+	desc = "pause_nuclear_program_button_desc"
+
+	visible = {
+		NOT = {
+			has_variable = nuclear_program_paused
+		}
+	}
+
+	#Country scope
+	ai_chance = {
+		value = 0
+	}
+
+	possible = { always = yes }
+
+	effect = {
+		set_variable = nuclear_program_paused
+		if = {
+			limit = {
+				has_journal_entry = je_acquire_civilian_nuclear_capability
+			}
+			remove_modifier = developing_civilian_nuclear_capability
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_develop_atomic_bomb
+			}
+			remove_modifier = developing_atomic_bomb
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_develop_thermonuclear_bomb
+			}
+			remove_modifier = developing_thermonuclear_bomb
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_develop_icbms
+			}
+			remove_modifier = developing_icbm
+		}
+	}
+}
+
+resume_nuclear_program_button = {
+	name = "resume_nuclear_program_button"
+	desc = "resume_nuclear_program_button_desc"
+
+	visible = {
+		has_variable = nuclear_program_paused
+	}
+
+	#Country scope
+	ai_chance = {
+		value = 0
+	}
+
+	possible = { always = yes }
+
+	effect = {
+		remove_variable = nuclear_program_paused
+		if = {
+			limit = {
+				has_journal_entry = je_acquire_civilian_nuclear_capability
+			}
+			add_modifier = {
+				name = developing_civilian_nuclear_capability
+			}
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_develop_atomic_bomb
+			}
+			add_modifier = {
+				name = developing_atomic_bomb
+			}
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_develop_thermonuclear_bomb
+			}
+			add_modifier = {
+				name = developing_thermonuclear_bomb
+			}
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_develop_icbms
+			}
+			add_modifier = {
+				name = developing_icbm
+			}
+		}
+	}
+}
+
+survey_nuclear_test_site_button = {
+	name = "survey_nuclear_test_site_button"
+	desc = "survey_nuclear_test_site_button_desc"
+
+	visible = {
+		NOR = {
+			has_variable = nuclear_test_site
+			has_variable = surveying_nuclear_test_site
+		}
+	}
+
+	# The original left the AI unable to test (TODO AI scripting), which stalled AI programs at 80 progress
+	ai_chance = {
+		value = 25
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = NUCLEARPROGRAM_PROGRESS_ABOVE_70
+			var:nuclear_program_progress >= 70
+		}
+		custom_tooltip = {
+			text = NUCLEAR_PROGRAM_NOT_CONDUCTED_TEST
+			NOT = {
+				has_variable = nuclear_test_conducted
+			}
+		}
+	}
+
+	effect = {
+		trigger_event = {
+			id = nuclear_program_events.4
+		}
+		set_variable = surveying_nuclear_test_site
+	}
+}
+
+conduct_nuclear_test_button = {
+	name = "conduct_nuclear_test_button"
+	desc = "conduct_nuclear_test_button_desc"
+
+	visible = {
+		OR = {
+			has_journal_entry = je_acquire_civilian_nuclear_capability
+			AND = {
+				has_journal_entry = je_develop_atomic_bomb
+				has_variable = nuclear_test_site
+			}
+			AND = {
+				has_journal_entry = je_develop_thermonuclear_bomb
+				has_variable = nuclear_test_site
+			}
+			AND = {
+				has_journal_entry = je_develop_icbms
+				has_variable = nuclear_test_site
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 25
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = NUCLEARPROGRAM_PROGRESS_ABOVE_80
+			var:nuclear_program_progress >= 80
+		}
+		custom_tooltip = {
+			text = NUCLEAR_PROGRAM_NOT_CONDUCTED_TEST
+			NOT = {
+				has_variable = nuclear_test_conducted
+			}
+		}
+	}
+
+	effect = {
+		if = { # Civilian Nuclear Capability
+			limit = {
+				has_journal_entry = je_acquire_civilian_nuclear_capability
+			}
+			add_treasury = -100000
+			random_list = {
+				1 = {
+					modifier = {
+						add = nuclear_test_success_chance
+					}
+					trigger_event = {
+						id = nuclear_program_events.1
+						days = 14
+					}
+				}
+				1 = {
+					modifier = {
+						add = nuclear_test_fail_chance
+					}
+					trigger_event = {
+						id = nuclear_program_events.2
+						days = 14
+					}
+				}
+				10 = {
+					trigger_event = {
+						id = nuclear_program_events.3
+						days = 14
+					}
+				}
+			}
+			set_variable = {
+				name = nuclear_test_conducted
+				months = 3
+			}
+		}
+		if = { # Atomic Nuclear Capability
+			limit = {
+				has_journal_entry = je_develop_atomic_bomb
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						add = nuclear_test_success_chance
+					}
+					trigger_event = { # Test Succeeds
+						id = nuclear_program_events.5
+					}
+				}
+				1 = {
+					modifier = {
+						add = nuclear_test_fail_chance
+					}
+					trigger_event = { # Test Fails
+						id = nuclear_program_events.6
+					}
+				}
+				10 = {
+					trigger_event = { # Test CRITICALLY Fails
+						id = nuclear_program_events.7
+					}
+				}
+			}
+			set_variable = {
+				name = nuclear_test_conducted
+				months = 3
+			}
+		}
+		if = { # Thermonuclear Capability
+			limit = {
+				has_journal_entry = je_develop_thermonuclear_bomb
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						add = nuclear_test_success_chance
+					}
+					trigger_event = { # Test Succeeds
+						id = nuclear_program_events.8
+					}
+				}
+				1 = {
+					modifier = {
+						add = nuclear_test_fail_chance
+					}
+					trigger_event = { # Test Fails
+						id = nuclear_program_events.9
+					}
+				}
+				10 = {
+					trigger_event = { # Test CRITICALLY Fails
+						id = nuclear_program_events.10
+					}
+				}
+			}
+			set_variable = {
+				name = nuclear_test_conducted
+				months = 3
+			}
+		}
+		if = { # ICBM Capability
+			limit = {
+				has_journal_entry = je_develop_icbms
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						add = nuclear_test_success_chance_icbm
+					}
+					trigger_event = { # Test Succeeds
+						id = nuclear_program_events.11
+					}
+				}
+				1 = {
+					modifier = {
+						add = nuclear_test_fail_chance_icbm
+					}
+					trigger_event = { # Test Fails
+						id = nuclear_program_events.12
+					}
+				}
+				10 = {
+					trigger_event = { # Test CRITICALLY Fails
+						id = nuclear_program_events.13
+					}
+				}
+			}
+			set_variable = {
+				name = nuclear_test_conducted
+				months = 3
+			}
+		}
+	}
+}

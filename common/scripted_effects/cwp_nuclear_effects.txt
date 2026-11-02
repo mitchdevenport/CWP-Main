@@ -1,0 +1,186 @@
+﻿# Collects the strategic regions of all targeted states (shown as coverage in the WMD panel)
+effect_reset_relevant_coverage = {
+	clear_variable_list = strategic_regions
+	every_in_list = {
+		variable = wmd_target_list
+		region = {
+			save_temporary_scope_as = wmd_target_region
+		}
+		ROOT = {
+			if = {
+				limit = {
+					NOT = {
+						is_target_in_variable_list = {
+							name = strategic_regions
+							target = scope:wmd_target_region
+						}
+					}
+				}
+				add_to_variable_list = {
+					name = strategic_regions
+					target = scope:wmd_target_region
+				}
+			}
+		}
+	}
+}
+
+developing_nuclear_weapons = {
+	add_journal_entry = {
+		type = je_develop_atomic_bomb
+	}
+	set_variable = {
+		name = nuclear_program_progress
+		value = $progressValue$
+	}
+	add_modifier = {
+		name = developing_atomic_bomb
+	}
+	effect_create_nuclear_head = yes
+}
+
+# Nuclear program journal entries keep a progress already set by history (e.g. the Soviet program starting at 30)
+nuclear_program_je_initialize = {
+	if = {
+		limit = {
+			NOT = {
+				has_variable = nuclear_program_progress
+			}
+		}
+		set_variable = {
+			name = nuclear_program_progress
+			value = 0
+		}
+	}
+}
+
+# State scope: fallout of a test that went critically wrong, spreading to the neighbouring states
+nuclear_test_site_disaster_effect = {
+	add_modifier = {
+		name = nuclear_disaster
+		years = 10
+		is_decaying = yes
+		multiplier = 100
+	}
+	every_neighbouring_state = {
+		add_modifier = {
+			name = nuclear_disaster
+			years = 10
+			is_decaying = yes
+			multiplier = 50
+		}
+	}
+}
+
+# Country scope (the country hosting the warheads): sends the stationed warheads home
+wmd_remove_deployed_nuclear_weapons_effect = {
+	scope:initiator = {
+		remove_diplomatic_pact = {
+			country = ROOT
+			type = request_nuclear_bomb_deployment
+		}
+		change_relations = {
+			country = ROOT
+			value = -20
+		}
+	}
+	remove_variable = deployed_nuclear_bombs
+}
+
+# State scope: a level 1 government owned strategic airbase as placed by the original building history
+cwp_create_starting_strategic_airbase = {
+	create_building = {
+		building = building_strategic_airbase
+		add_ownership = {
+			country = {
+				country = owner
+				levels = 1
+			}
+		}
+		reserves = 1
+		activate_production_methods = {
+			pm_reinforced_strategic_airbase
+		}
+	}
+}
+
+# State scope, scope:initiator = striking country. kill_population_percent_in_state only accepts a literal percentage,
+# so nuclear_strike_population_kill (0 - 0.9) is rounded to the nearest 5% step.
+cwp_nuclear_strike_kill_population_effect = {
+	if = {
+		limit = { nuclear_strike_population_kill >= 0.875 }
+		kill_population_percent_in_state = { percent = 0.9 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.825 }
+		kill_population_percent_in_state = { percent = 0.85 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.775 }
+		kill_population_percent_in_state = { percent = 0.8 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.725 }
+		kill_population_percent_in_state = { percent = 0.75 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.675 }
+		kill_population_percent_in_state = { percent = 0.7 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.625 }
+		kill_population_percent_in_state = { percent = 0.65 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.575 }
+		kill_population_percent_in_state = { percent = 0.6 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.525 }
+		kill_population_percent_in_state = { percent = 0.55 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.475 }
+		kill_population_percent_in_state = { percent = 0.5 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.425 }
+		kill_population_percent_in_state = { percent = 0.45 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.375 }
+		kill_population_percent_in_state = { percent = 0.4 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.325 }
+		kill_population_percent_in_state = { percent = 0.35 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.275 }
+		kill_population_percent_in_state = { percent = 0.3 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.225 }
+		kill_population_percent_in_state = { percent = 0.25 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.175 }
+		kill_population_percent_in_state = { percent = 0.2 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.125 }
+		kill_population_percent_in_state = { percent = 0.15 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.075 }
+		kill_population_percent_in_state = { percent = 0.1 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill >= 0.025 }
+		kill_population_percent_in_state = { percent = 0.05 }
+	}
+	else_if = {
+		limit = { nuclear_strike_population_kill > 0 }
+		kill_population_percent_in_state = { percent = 0.01 }
+	}
+}

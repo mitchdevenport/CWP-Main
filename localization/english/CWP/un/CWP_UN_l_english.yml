@@ -1,0 +1,45 @@
+﻿l_english:
+ # United Nations membership (master CWP_UN_l_english.yml)
+ APPLY_TO_JOIN_UN: "#header Apply for [concept_united_nations] Membership#!\nThe criteria for admission of new members to the UN are set out in Chapter II, Article 4 of the UN Charter.\n#indent_newline:10  \n- Membership in the United Nations is open to all peace-loving states which accept the obligations contained in the present Charter and, in the judgement of the Organization, are able and willing to carry out these obligations.\n\n - The admission of any such state to membership in the United Nations will be effected by a decision of the General Assembly upon the recommendation of the Security Council.#!\n\nA recommendation for admission from the Security Council requires #p affirmative#! votes from at least #i nine#! of the council's fifteen members, with none of the five permanent members using their #n veto#! power. The Security Council's recommendation must then be approved in the General Assembly by a two-thirds majority vote.\n\n#instruction Click to begin UN Membership accession.#!"
+ UN_APPLICATION_BAR_TOOLTIP: "[Country.GetName] is currently applying to become a [concept_united_nations] [concept_member_state]\n\nThe current application progress for [Country.GetName] is #p [Country.MakeScope.ScriptValue('application_progress_un')]%#!\n [Country.GetName] requires a total of #p [Country.MakeScope.ScriptValue('required_support_un')] support#! and currently has #v [Country.MakeScope.ScriptValue('supporting_countries')] support#!\n\n\n#i Once the application process is complete [Country.GetNameNoFlag] will formally join the [concept_united_nations]"
+ APPROVE_UN_MEMBERSHIP: "Formally #p Approve#! [Country.GetAdjective] bid for [concept_united_nations] membership"
+ ABSTAIN_UN_MEMBERSHIP: "Formally #v Abstain#! from [Country.GetAdjective] bid for [concept_united_nations] membership"
+ REJECT_UN_MEMBERSHIP: "Formally #n Reject#! [Country.GetAdjective] bid for [concept_united_nations] membership"
+ JOINASOBSERVERUN_TOOLTIP: "Join the [concept_united_nations] as an observer, with the ability to request membership at a later date."
+ STARTMEMBERSHIPUN_TOOLTIP: "Formally request to join the [concept_united_nations] as a [concept_member_state], allowing us to gain full recognition as a sovereign state and all the privileges that come with it."
+ JOINASOBSERVERUN: "Join"
+ STARTMEMBERSHIPUN: "Join"
+
+ # International Organizations panel (master CWP_interfaces/CWP_organizations)
+ INTERNATIONAL_ORGANIZATIONS: "Organizations"
+ INTERNATIONAL_ORGANIZATIONS_DESC: "[concept_international_organization] are a stable set of norms and rules meant to govern the behaviors of a [concept_country] in an international system.\n \n These organizations may be political, economic, or military in nature and may be established by treaties and by extension of other international organizations such as the [concept_united_nations]."
+ UN_DESC: "[concept_united_nations_desc]"
+ APPROVE: "Approve"
+ ABSTAIN: "Abstain"
+ yes: "Yes"
+ # International Organizations panel tabs
+ INTERNATIONAL_TAB_GENERAL: "General international organizations, such as the [concept_united_nations]"
+ INTERNATIONAL_TAB_DIPLOMATIC: "Military alliances, such as [concept_nato] and the [concept_warsaw_pact]"
+ INTERNATIONAL_TAB_ECONOMIC: "Economic organizations, such as the [concept_imf]"
+
+ # Alerts (master CWP_alerts_l_english.yml)
+ alert_not_un_member_name: "Not a [concept_united_nations] member"
+ alert_not_un_member_desc: "[GetPlayer.GetName] is not currently a member of the [concept_united_nations], and as such is not recognized internationally and cannot vote on any [concept_united_nations] resolutions"
+ alert_not_un_member_hint: "Almost all sovereign nations maintain a seat in the [concept_united_nations], and our presence there would be an important step in securing our place in the world\n\n#i Open the International Organizations Panel to apply to the [concept_united_nations]#!"
+ alert_not_un_member_action: ""
+ not_un_member_setting_name: "Not a UN Member"
+
+ # UN Embargo (master CWP_diplomacy_l_english.yml)
+ un_embargo: "UN Embargo"
+ un_embargo_desc: "#header UN Embargo#!\n$TOOLTIP_DELIMITER$\nAn [concept_ongoing_diplomatic_action] that places an UN Embargo on another [concept_country]."
+ un_embargo_action_notification_name: "UN Embargo"
+ un_embargo_action_notification_desc: "[INITIATOR_COUNTRY.GetName] have placed a UN [concept_embargo] on us. Trade with their [concept_market] will no longer function."
+ un_embargo_action_notification_third_party_name: "UN Embargo"
+ un_embargo_action_notification_third_party_desc: "[INITIATOR_COUNTRY.GetName] began UN Embargoing [TARGET_COUNTRY.GetName]."
+ un_embargo_action_propose_name: "UN Embargo"
+ un_embargo_action_break_name: "End UN Embargo"
+ un_embargo_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName] placed UN Embargo on [SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName]."
+ un_embargo_action_notification_break_name: "UN Embargo Ended"
+ un_embargo_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] ceased UN Embargo on us."
+ un_embargo_action_notification_third_party_break_name: "UN Embargo Ended"
+ un_embargo_action_notification_third_party_break_desc: "[INITIATOR_COUNTRY.GetName] ended their UN Embargo with [TARGET_COUNTRY.GetName]."

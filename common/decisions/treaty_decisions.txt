@@ -1,0 +1,86 @@
+﻿leave_treaty_of_five_eyes = {
+	is_shown = {
+		any_scope_treaty = {
+			any_scope_article = {
+				has_type = treaty_five_eyes
+			}
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = treaty_five_eyes_possible_decision
+			any_scope_treaty = {
+				any_scope_article = {
+					has_type = treaty_five_eyes
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				exists = c:GBR
+			}
+			c:GBR = {
+				relations:root <= 10
+			}
+		}
+	}
+
+	when_taken = {
+		every_country = {
+			limit = {
+				any_scope_treaty = {
+					binds = ROOT
+					any_scope_article = {
+						has_type = treaty_five_eyes
+					}
+				}
+			}
+			change_relations = {
+				country = root
+				value = -50
+			}
+		}
+		# Ends our Five Eyes treaties (see treaty_five_eyes)
+		custom_tooltip = {
+			text = leave_treaty_of_five_eyes_tt
+			set_variable = left_five_eyes
+		}
+	}
+
+	ai_chance = {
+		value = -100
+		if = {
+			limit = {
+				c:GBR ?= {
+					relations:root <= 50
+				}
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				c:CAN ?= {
+					relations:root <= 50
+				}
+			}
+			add = 20
+		}
+		if = {
+			limit = {
+				c:AST ?= {
+					relations:root <= 50
+				}
+			}
+			add = 20
+		}
+		if = {
+			limit = {
+				c:NZL ?= {
+					relations:root <= 50
+				}
+			}
+			add = 10
+		}
+	}
+}

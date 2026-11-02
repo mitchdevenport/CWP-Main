@@ -1,0 +1,10 @@
+﻿# Modifier types needed by restored story modifiers (tag: stories)
+# goods_output_merchant_marine_mult replaces master's removed country_convoys_capacity_mult (indian_naval_mutiny_full, british_indian_relief_convoys)
+goods_output_merchant_marine_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

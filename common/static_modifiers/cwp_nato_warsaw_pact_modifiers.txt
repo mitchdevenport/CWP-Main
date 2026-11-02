@@ -1,0 +1,12 @@
+﻿# NATO / Warsaw Pact headquarters (master: common/modifiers/cwp_country_modifiers.txt)
+# The NATO / Warsaw Pact standards modifiers are in common/static_modifiers/cwp_military_modifiers.txt
+
+nato_headquarters_host = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_add = 200
+}
+
+warsaw_pact_headquarters_host = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_add = 200
+}

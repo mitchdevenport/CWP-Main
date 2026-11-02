@@ -53,6 +53,14 @@ ideology_fascist = {
 		law_council_republic = strongly_disapprove
 	}
 
+	lawgroup_monetary_policy = {
+		law_gold_standard = neutral
+		law_government_controlled = strongly_approve
+		law_government_interference = approve
+		law_independent_monetary_policy = disapprove
+		law_pegged_currency = strongly_disapprove
+	}
+
 	country_trigger = {}
 
 	interest_group_leader_trigger = {
