@@ -113,7 +113,6 @@ types cwp_wmd_panel {
 								size = { 450 40 }
 								using = default_button_map_interaction
 								parentanchor = hcenter
-								direction = vertical
 								datacontext = "[Scope.AccessStrategicRegion]"
 								raw_text = "[StrategicRegion.GetName]: [GuiScope.SetRoot( StrategicRegion.MakeScope ).AddScope('initiator', GetPlayer.MakeScope ).ScriptValue('nuclear_strike_strategic_region_coverage')|v1%] "
 								tooltip = "NUCLEAR_STRATEGIC_REGION_TOOLTIP"
