@@ -516,7 +516,7 @@ STATE_KRALOVEC = {
         discovered_amount = 7
 
     }
-    naval_exit_id = 647
+    naval_exit_id = 3000
 }
 
 STATE_MAZOVIA = {

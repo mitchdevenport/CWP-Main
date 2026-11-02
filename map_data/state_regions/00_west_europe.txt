@@ -132,7 +132,7 @@ STATE_SOUTH_JUTLAND = {
         type = "building_natural_gas_well"
         undiscovered_amount = 2
     }
-    naval_exit_id = 674
+    naval_exit_id = 3019
 }
 
 STATE_ZEALAND = {

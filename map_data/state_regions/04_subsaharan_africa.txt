@@ -742,7 +742,7 @@ STATE_GUINEA_ISLANDS = {
         building_fishing_wharf = 6
         building_lead_mine = 20
     }
-    naval_exit_id = 738
+    naval_exit_id = 3091
 }
 
 STATE_MOCAMBIQUE = {
