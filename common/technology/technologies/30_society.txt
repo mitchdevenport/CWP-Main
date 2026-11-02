@@ -390,8 +390,16 @@ political_internationalism = {
 	unlocking_technologies = {
 		international_relations_theory
 	}
+	# As CWP 1.5's Blocs technology (which this replaced): great powers prioritise it from 1949 so NATO and the Warsaw Pact form on time
 	ai_weight = {
 		value = 1
+		if = {
+			limit = {
+				game_date > 1949.1.1
+				country_rank >= rank_value:great_power
+			}
+			add = 100
+		}
 	}
 }
 
