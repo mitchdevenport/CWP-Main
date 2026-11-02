@@ -20,7 +20,8 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
 Known load-time messages that are not caused by script errors: six "Naval node from spline anchor ..."
 messages (anchors in CWP's spline network that only the map editor can fix), the terrain manipulator
 checksum warning (fixed by saving in the map editor), and the `CInterestGroupTypeDatabase::ExpectedNumItems`
-assertion (CWP has more interest groups than vanilla). During a campaign the engine may also log single
+assertion (CWP has more interest groups than vanilla). "submarine_base_entity has no attach point named
+loc_figurehead" appears when a submarine leads a fleet; the base game's submarine has no such locator either. During a campaign the engine may also log single
 assertions about shipping lanes from a `NULL_OBJ` state (probably the ports behind those spline anchors), dead
 or invalid formations travelling, `War.GetWarParticipant` and interest group leaders that cannot be generated.
 None of them names a CWP script location and the war support values involved are vanilla's, so they look
