@@ -26,6 +26,12 @@
 			name = loc_foam
 			position = { 0.0 0.03 0.0 }
 		}
+
+		# Flagship ornament on the sail (1.14 attaches it to this locator; the submarine model has none)
+		locator = {
+			name = loc_figurehead
+			position = { 0.0 0.18 0.0 }
+		}
 	
 		# Positions of damage decals
 		damage_decal_positions = {
@@ -84,6 +90,12 @@
 		locator = {
 			name = loc_foam
 			position = { 0.0 0.03 0.0 }
+		}
+
+		# Flagship ornament on the sail (1.14 attaches it to this locator; the submarine model has none)
+		locator = {
+			name = loc_figurehead
+			position = { 0.0 0.18 0.0 }
 		}
 	
 		# Positions of damage decals
@@ -144,6 +156,12 @@
 			name = loc_foam
 			position = { 0.0 0.03 0.0 }
 		}
+
+		# Flagship ornament on the sail (1.14 attaches it to this locator; the submarine model has none)
+		locator = {
+			name = loc_figurehead
+			position = { 0.0 0.18 0.0 }
+		}
 	
 		# Positions of damage decals
 		damage_decal_positions = {
@@ -201,6 +219,12 @@
 		locator = {
 			name = loc_foam
 			position = { 0.0 0.03 0.0 }
+		}
+
+		# Flagship ornament on the sail (1.14 attaches it to this locator; the submarine model has none)
+		locator = {
+			name = loc_figurehead
+			position = { 0.0 0.18 0.0 }
 		}
 	
 		# Positions of damage decals
