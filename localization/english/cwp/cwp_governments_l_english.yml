@@ -46,6 +46,13 @@ l_english:
   gov_party_led_monarchy_provincial: "$gov_party_led_monarchy$"
   gov_party_led_monarchy_provincial_desc: "$gov_party_led_monarchy_desc$"
 
+# Colonial administrations and military governments (restored from CWP 1.5)
+  gov_military_governorate: "Military Administration"
+  gov_military_governorate_desc: "This is a [concept_government_type] where the [concept_country] is an occupied state ruled by a Military Governor installed by a foreign power.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+  RULER_MILITARY_GOVERNOR: "Military Governor"
+  gov_provisional_government: "Provisional Government"
+  gov_provisional_government_desc: "This is a [concept_government_type] where a provisional administration governs the [concept_country] until it adopts a new constitution.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+
 # Presidential Republics
   gov_presidential_autocracy: "Presidential Autocracy"
   gov_presidential_autocracy_desc: "The president holds absolute power over the government and its people, with no legal limitations on their authority."
