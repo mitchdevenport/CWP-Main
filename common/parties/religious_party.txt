@@ -5,40 +5,27 @@ religious_party = {
 	color = { 100 100 100 }
 	name = {
 		first_valid = {
-
-			triggered_desc = {
-				desc = party_catholic_peoples_party
-				trigger = {
-					exists = c:AUS
-					c:AUS ?= this
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_christian_democrat_FRA
+				trigger = { c:FRA ?= THIS }
 			}
-			triggered_desc = {
-				desc = party_portuguese_catholic_centre
-				trigger = {
-					exists = c:POR
-					c:POR ?= this
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_christian_democrat_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
 			}
-			triggered_desc = {
-				desc = party_catholic_right
-				trigger = {
-					exists = c:SWI
-					c:SWI ?= this
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_christian_democrat_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_christian_democrat_BAV
+				trigger = { c:BAV ?= THIS }
 			}
 			triggered_desc = {
 				desc = party_anti_revolutionary_party
 				trigger = {
 					exists = c:NET
 					c:NET ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_learned_council
-				trigger = {
-					exists = c:PER
-					c:PER ?= this
 				}
 			}
 			triggered_desc = {
@@ -56,27 +43,6 @@ religious_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_clerical_party
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_union_of_the_russian_people
-				trigger = {
-					exists = c:RUS
-					c:RUS ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_know_nothing_party
-				trigger = {
-					exists = c:USA
-					c:USA ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_zentrum
 				trigger = {
 					AND = {
@@ -86,20 +52,6 @@ religious_party = {
 						}
 						country_has_state_religion = rel:catholic
 					}
-				}
-			}
-			triggered_desc = {
-				desc = party_conservative_catholics
-				trigger = {
-					exists = c:ITA
-					c:ITA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_moderate_venstre
-				trigger = {
-					exists = c:NOR
-					c:NOR ?= this
 				}
 			}
 			triggered_desc = {

@@ -4,43 +4,24 @@ anarchist_party = {
 	color = { 0 0 0 }
 	name = {
 		first_valid = {
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_anarchist_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_anarchist_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_anarchist_DDR
+				trigger = { c:DDR ?= THIS }
+			}
 			triggered_desc = {
 				desc = party_cnt
 				trigger = {
 					exists = c:SPA
 					c:SPA ?= THIS
 				}
-			}
-			triggered_desc = {
-				desc = party_socialist_league
-				trigger = {
-					exists = c:GBR
-					c:GBR ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_anarcho_communist_federation
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_maximalist_federation
-				trigger = { country_has_primary_culture = cu:portuguese }
-			}
-			triggered_desc = {
-				desc = party_young_socialists
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:norwegian
-						country_has_primary_culture = cu:danish
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_italian_syndicalist_union
-				trigger = { country_has_primary_culture = cu:italian }
 			}
 			triggered_desc = {
 				desc = party_anarchist

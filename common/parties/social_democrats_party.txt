@@ -6,6 +6,18 @@ social_democrat_party = {
 	color = { 241 24 138 }
 	name = {
 		first_valid = {
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_social_democrat_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_social_democrat_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_social_democrat_DDR
+				trigger = { c:DDR ?= THIS }
+			}
 			triggered_desc = {
 				desc = party_labour_party
 				trigger = {
@@ -35,34 +47,6 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_ftsf
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_menshevik_party
-				trigger = {
-					exists = c:RUS
-					c:RUS ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_finnish_labor_party
-				trigger = {
-					exists = c:FIN
-					c:FIN ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_belgian_workers_party
-				trigger = {
-					exists = c:BEL
-					c:BEL ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_sdapo
 				trigger = {
 					exists = c:AUS
@@ -84,66 +68,10 @@ social_democrat_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_social_democratic_workers_party
-				trigger = {
-					exists = c:NET
-					c:NET ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_common_peoples_party
-				trigger = {
-					exists = c:JAP
-					c:JAP ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_democrat_party
-				trigger = {
-					exists = c:PER
-					c:PER ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_socialist_workers_federation
-				trigger = {
-					exists = c:TUR
-					c:TUR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_laborist_party
-				trigger = {
-					exists = c:MEX
-					c:MEX ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_confederate_socialist_party
-				trigger = {
-					exists = c:CSA
-					c:CSA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_seke
-				trigger = {
-					exists = c:GRE
-					c:GRE ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_labor_party
 				trigger = {
 					exists = c:NOR
 					c:NOR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_socialist_labor_party
-				trigger = {
-					exists = c:CAN
-					c:CAN ?= this
 				}
 			}
 			triggered_desc = {

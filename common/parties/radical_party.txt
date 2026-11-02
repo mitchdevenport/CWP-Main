@@ -13,13 +13,6 @@ radical_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_democratic_progressive_party
-				trigger = {
-					exists = c:SPA
-					c:SPA ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_free_democratic_party
 				trigger = {
 					exists = c:SWI
@@ -32,87 +25,6 @@ radical_party = {
 					exists = c:FIN
 					c:FIN ?= this
 				}
-			}
-			triggered_desc = {
-				desc = party_free_thinking_democratic_league
-				trigger = {
-					exists = c:NET
-					c:NET ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_radical_liberal_party
-				trigger = {
-					exists = c:LUX
-					c:LUX ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_progressive_club
-				trigger = {
-					exists = c:AUS
-					c:AUS ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_radical_peoples_party
-				trigger = {
-					exists = c:SER
-					c:SER ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_revival_party
-				trigger = {
-					exists = c:PER
-					c:PER ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_mexican_liberal_party
-				trigger = {
-					exists = c:MEX
-					c:MEX ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_democratic_progressive_party
-				trigger = {
-					exists = c:GBR
-					c:GBR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_freedom_and_accord_party
-				trigger = {
-					exists = c:TUR
-					c:TUR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_trudovik_group
-				trigger = {
-					exists = c:RUS
-					c:RUS ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_republican_union
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_the_far_left
-				trigger = {
-					exists = c:ITA
-					c:ITA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_tongmenghui
-				trigger = { any_primary_culture = { has_discrimination_trait = heritage_han } }
 			}
 			triggered_desc = {
 				desc = party_progressive_party
@@ -137,40 +49,10 @@ radical_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_national_union
-				trigger = {
-					exists = c:PEU
-					c:PEU ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_progressive_dissidence
-				trigger = {
-					exists = c:POR
-					c:POR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_radical_peoples_party
-				trigger = {
-					exists = c:NOR
-					c:NOR ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_social_liberal_party
 				trigger = {
 					exists = c:DEN
 					c:DEN ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_free_minded_peoples_party
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:north_german
-						country_has_primary_culture = cu:south_german
-					}
 				}
 			}
 			triggered_desc = {

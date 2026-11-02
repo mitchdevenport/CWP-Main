@@ -5,60 +5,23 @@ liberal_party = {
 	color = { 255 214 13 }
 	name = {
 		first_valid = {
-			triggered_desc = {
-				desc = party_civilista_party
-				trigger = {
-					exists = c:PEU
-					c:PEU ?= this
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_liberal_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_liberal_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_liberal_DDR
+				trigger = { c:DDR ?= THIS }
 			}
 			triggered_desc = {
-				desc = party_national_civic_union
-				trigger = {
-					exists = c:ARG
-					c:ARG ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_whigs
-				trigger = {
-					exists = c:GBR
-					c:GBR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_republicans
+				desc = party_us_democrats # CWP: the New Deal Democrats are the American liberal party
 				trigger = {
 					exists = c:USA
 					c:USA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_democrats
-				trigger = {
-					exists = c:SWI
-					c:SWI ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_republican_party
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_libertador_party
-				trigger = {
-					exists = c:BRZ
-					c:BRZ ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_kadets_party
-				trigger = {
-					exists = c:RUS
-					c:RUS ?= this
 				}
 			}
 			triggered_desc = {
@@ -69,62 +32,6 @@ liberal_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_liberal_union
-				trigger = {
-					exists = c:NET
-					c:NET ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_league
-				trigger = {
-					exists = c:LUX
-					c:LUX ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_young_finnish_party
-				trigger = {
-					exists = c:FIN
-					c:FIN ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_constitutional_party
-				trigger = {
-					exists = c:AUS
-					c:AUS ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_peoples_party
-				trigger = {
-					exists = c:CRO
-					c:CRO ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_society_for_progress
-				trigger = {
-					exists = c:PER
-					c:PER ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_blue_party
-				trigger = {
-					exists = c:PRG
-					c:PRG ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_great_liberal_party
-				trigger = {
-					exists = c:VNZ
-					c:VNZ ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_colorado_party
 				trigger = {
 					exists = c:URU
@@ -132,76 +39,10 @@ liberal_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_empire_reform_association
-				trigger = {
-					exists = c:CHI
-					c:CHI ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_progressive_republican_party
-				trigger = {
-					exists = c:TUR
-					c:TUR ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_constitutional_reform_party
-				trigger = {
-					exists = c:JAP
-					c:JAP ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_neoteristikon_komma
-				trigger = {
-					exists = c:GRE
-					c:GRE ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_the_left
-				trigger = {
-					exists = c:ITA
-					c:ITA ?= this
-				}
-			}
-			triggered_desc = {
 				desc = party_national_liberal_party
 				trigger = {
 					exists = c:ROM
 					c:ROM ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_whig_party
-				trigger = {
-					exists = c:USA
-					c:USA ?= this
-				}
-			}
-			triggered_desc = {
-				desc = party_progress_party
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:north_german
-						country_has_primary_culture = cu:south_german
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_progressive_party
-				trigger = {
-					OR = {
-						AND = {
-							exists = c:SPA
-							c:SPA ?= this
-						}
-						AND = {
-							exists = c:POR
-							c:POR ?= this
-						}
-					}
 				}
 			}
 			triggered_desc = {

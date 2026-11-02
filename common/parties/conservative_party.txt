@@ -5,137 +5,27 @@ conservative_party = {
 	color = { 108 64 179 }
 	name = {
 		first_valid = {
-			triggered_desc = {
-				desc = party_christian_social_party
-				trigger = {
-					exists = c:AUS
-					c:AUS ?= THIS
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_conservative_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_conservative_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_conservative_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_conservative_BAV
+				trigger = { c:BAV ?= THIS }
 			}
 			triggered_desc = {
-				desc = party_constitutional_party
-				trigger = {
-					exists = c:PEU
-					c:PEU ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_national_autonomist
-				trigger = {
-					exists = c:ARG
-					c:ARG ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_tories
-				trigger = {
-					exists = c:GBR
-					c:GBR ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_us_democrats
+				desc = party_republicans # CWP: the Republicans are the American conservative party
 				trigger = {
 					exists = c:USA
 					c:USA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_moderate_party
-				trigger = {
-					exists = c:SPA
-					c:SPA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_regenerator_party
-				trigger = {
-					exists = c:POR
-					c:POR ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_lantmanna_party
-				trigger = {
-					exists = c:SWE
-					c:SWE ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_finnish_party
-				trigger = {
-					exists = c:FIN
-					c:FIN ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_catholic_party
-				trigger = {
-					exists = c:BEL
-					c:BEL ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_party_of_the_right
-				trigger = {
-					exists = c:LUX
-					c:LUX ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_peoples_party
-				trigger = {
-					exists = c:MON
-					c:MON ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_party_of_order
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_federal_republican_party
-				trigger = {
-					exists = c:BRZ
-					c:BRZ ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_octobrist_party
-				trigger = {
-					exists = c:RUS
-					c:RUS ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_constitutional_association
-				trigger = {
-					exists = c:CHI
-					c:CHI ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_imperial_rule_party
-				trigger = {
-					exists = c:JAP
-					c:JAP ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_moderate_socialists_party
-				trigger = {
-					exists = c:PER
-					c:PER ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_ethnikon_komma
-				trigger = {
-					exists = c:GRE
-					c:GRE ?= THIS
 				}
 			}
 			triggered_desc = {
@@ -153,13 +43,6 @@ conservative_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_the_right
-				trigger = {
-					exists = c:ITA
-					c:ITA ?= THIS
-				}
-			}
-			triggered_desc = {
 				desc = party_hoyre
 				trigger = {
 					exists = c:NOR
@@ -167,24 +50,10 @@ conservative_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_democratic_party
+				desc = party_republicans # CWP: the Republicans are the American conservative party
 				trigger = {
 					exists = c:USA
 					c:USA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_hojre
-				trigger = {
-					exists = c:DEN
-					c:DEN ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_conservative_party
-				trigger = {
-					exists = c:CAN
-					c:CAN ?= THIS
 				}
 			}
 			triggered_desc = {
@@ -523,8 +392,8 @@ conservative_party = {
 		if = { # landowners and industrialists hate labor rights
 			limit = {
 				has_ideology = ideology:ideology_laissez_faire
-				OR = {
-					owner = {
+				owner = {
+					OR = {
 						has_law_or_variant = law_type:law_regulatory_bodies
 						has_law_or_variant = law_type:law_worker_protections
 					}
@@ -539,8 +408,8 @@ conservative_party = {
 		if = { # conservatives hate welfare
 			limit = {
 				has_ideology = ideology:ideology_individualist
-				OR = {
-					owner = {
+				owner = {
+					OR = {
 						has_law_or_variant = law_type:law_wage_subsidies
 						has_law_or_variant = law_type:law_old_age_pension
 					}

@@ -6,32 +6,23 @@ agrarian_party = {
 	color = { 64 173 59 }
 	name = {
 		first_valid = {
-			triggered_desc = {
-				desc = party_irish_national_land_league
-				trigger = {
-					exists = c:IRE
-					c:IRE ?= THIS
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_agrarian_FRA
+				trigger = { c:FRA ?= THIS }
 			}
-			triggered_desc = {
-				desc = party_independent_agriculture_party
-				trigger = {
-					exists = c:GBR
-					c:GBR ?= THIS
-				}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_agrarian_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_agrarian_DDR
+				trigger = { c:DDR ?= THIS }
 			}
 			triggered_desc = {
 				desc = party_farmers_party
 				trigger = {
 					exists = c:NOR
 					c:NOR ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_free_peoples_party
-				trigger = {
-					exists = c:DEN
-					c:DEN ?= THIS
 				}
 			}
 			triggered_desc = {
@@ -42,68 +33,10 @@ agrarian_party = {
 				}
 			}
 			triggered_desc = {
-				desc = party_peoples_party
-				trigger = {
-					exists = c:FIN
-					c:FIN ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_agrarian_and_farmer_party
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_conservative_republican_party
-				trigger = {
-					country_has_primary_culture = cu:brazilian
-					OR = {
-						has_law_or_variant = law_type:law_presidential_republic
-						has_law_or_variant = law_type:law_parliamentary_republic
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_landbund
-				trigger = {
-					exists = c:AUS
-					c:AUS ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_national_peasant_accord
-				trigger = {
-					exists = c:SER
-					c:SER ?= THIS
-				}
-			}
-			triggered_desc = {
 				desc = party_agrarian_national_union
 				trigger = {
 					exists = c:BUL
 					c:BUL ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_national_farmer_party
-				trigger = {
-					exists = c:HUN
-					c:HUN ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_peoples_party
-				trigger = {
-					exists = c:USA
-					c:USA ?= THIS
-				}
-			}
-			triggered_desc = {
-				desc = party_patrons_of_industry
-				trigger = {
-					country_has_primary_culture = cu:anglo_canadian
 				}
 			}
 			triggered_desc = {
@@ -116,15 +49,6 @@ agrarian_party = {
 				desc = party_peoples_party
 				trigger = {
 					country_has_primary_culture = cu:polish
-				}
-			}
-			triggered_desc = {
-				desc = party_agrarian_league
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:north_german
-						country_has_primary_culture = cu:south_german
-					}
 				}
 			}
 			triggered_desc = {

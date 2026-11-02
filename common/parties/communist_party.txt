@@ -2,43 +2,22 @@
 	color = { 150 20 20 }
 	name = {
 		first_valid = {
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_communist_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_communist_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = { # CWP 1.5
+				desc = party_cwp_communist_DDR
+				trigger = { c:DDR ?= THIS }
+			}
 			triggered_desc = {
 				desc = party_bolsheviks
 				trigger = {
 					country_has_primary_culture = cu:russian
-					any_interest_group = {
-						is_powerful = yes
-						leader = { cwp_vanguardist_party_character = yes }
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_british_socialist_party
-				trigger = {
-					exists = c:GBR
-					c:GBR ?= THIS
-					any_interest_group = {
-						is_powerful = yes
-						leader = { cwp_vanguardist_party_character = yes }
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_pcf
-				trigger = {
-					exists = c:FRA
-					c:FRA ?= THIS
-					any_interest_group = {
-						is_powerful = yes
-						leader = { cwp_vanguardist_party_character = yes }
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_kps
-				trigger = {
-					exists = c:SWI
-					c:SWI ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -145,28 +124,6 @@
 				}
 			}
 			triggered_desc = {
-				desc = party_justice_party
-				trigger = {
-					exists = c:PER
-					c:PER ?= THIS
-					any_interest_group = {
-						is_powerful = yes
-						leader = { cwp_vanguardist_party_character = yes }
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_socialist_workers_party
-				trigger = {
-					exists = c:MEX
-					c:MEX ?= THIS
-					any_interest_group = {
-						is_powerful = yes
-						leader = { cwp_vanguardist_party_character = yes }
-					}
-				}
-			}
-			triggered_desc = {
 				desc = party_kke
 				trigger = {
 					exists = c:GRE
@@ -199,18 +156,6 @@
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_workingmens_party
-				trigger = {
-					AND = {
-						country_has_primary_culture = cu:american
-						any_interest_group = {
-							is_powerful = yes
-							leader = { cwp_vanguardist_party_character = yes }
-						}
 					}
 				}
 			}
