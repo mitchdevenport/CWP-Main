@@ -13,8 +13,8 @@
 		OR = {
 
 			#Is Germany
-			this = c:GER
-			this = c:DDR
+			c:GER ?= this
+			c:DDR ?= this
 
 			#Is Germanys overlord
 			c:GER = {is_subject_of = PREV}
@@ -23,37 +23,37 @@
 			#Is a German releasable
 			AND = {
 				exists = c:RHI
-				this = c:RHI
+				c:RHI ?= this
 				is_subject = no
 			}
 			AND = {
 				exists = c:BAV
-				this = c:BAV
+				c:BAV ?= this
 				is_subject = no
 			}
 			AND = {
 				exists = c:SAX
-				this = c:SAX
+				c:SAX ?= this
 				is_subject = no
 			}
 			AND = {
 				exists = c:HAN
-				this = c:HAN
+				c:HAN ?= this
 				is_subject = no
 			}
 			AND = {
 				exists = c:WUR
-				this = c:WUR
+				c:WUR ?= this
 				is_subject = no
 			}
 			AND = {
 				exists = c:SAA
-				this = c:SAA
+				c:SAA ?= this
 				is_subject = no
 			}
 			AND = {
 				exists = c:BRL
-				this = c:BRL
+				c:BRL ?= this
 				is_subject = no
 			}
 
@@ -148,7 +148,7 @@
 		}
 
 		if = {
-			limit = { this = c:GER } #Do this only once
+			limit = { c:GER ?= this } #Do this only once
 
 			#Events simulate the AI voting behavior
 			#For some reason only one event can be triggered per block
@@ -194,7 +194,7 @@
 		effect = {
 
 		if = {
-			limit = { this = c:GER } #Do this only once
+			limit = { c:GER ?= this } #Do this only once
 
 				#Events simulate the AI voting behavior
 				#For some reason only one event can be triggered per block
@@ -252,7 +252,7 @@
 	on_timeout = {
 
 		if = {
-			limit = { this = c:GER } #Do this only once
+			limit = { c:GER ?= this } #Do this only once
 
 			#Unifier
 			if = {

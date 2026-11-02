@@ -108,30 +108,5 @@ GLOBAL = {
 	### UN lists used by the International Organizations and UN panels
 	rebuild_un_lists = yes
 
-	### Decolonization: the colonial empires start with their empire's future in question
-	c:GBR ?= {
-		add_journal_entry = {
-			type = je_decolonization
-		}
-	}
-	c:FRA ?= {
-		add_journal_entry = {
-			type = je_decolonization
-		}
-	}
-	c:BEL ?= {
-		add_journal_entry = {
-			type = je_decolonization
-		}
-	}
-	c:NET ?= {
-		add_journal_entry = {
-			type = je_decolonization
-		}
-	}
-	c:POR ?= {
-		add_journal_entry = {
-			type = je_decolonization
-		}
-	}
+	### Decolonization: je_decolonization activates on its own for the colonial empires (is_shown_when_inactive + possible)
 }

@@ -7,7 +7,7 @@
 	possible = {
 		and = {
 			exists = c:ROC
-			this = c:ROC
+			c:ROC ?= this
 		}
 		c:PRC ?= {
 			has_war_with = ROOT

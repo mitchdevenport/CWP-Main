@@ -26,7 +26,7 @@ kalmar_union = {
 
 	possible = {
 		exists = c:SCA
-		THIS = c:SCA
+		c:SCA ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 		ruler = {
 			has_culture = cu:danish
@@ -39,7 +39,7 @@ fennoscandia = {
 
 	possible = {
 		exists = c:SCA
-		THIS = c:SCA
+		c:SCA ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 		ruler = {
 			has_culture = cu:finnish
@@ -52,7 +52,7 @@ usa_monarchy = {
 
 	possible = {
 		exists = c:USA
-		THIS = c:USA
+		c:USA ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 	}
 }
@@ -61,7 +61,7 @@ united_netherlands = {
 	color = "united_netherlands_orange"
 	possible = {
 		exists = c:NET
-		THIS = c:NET
+		c:NET ?= THIS
 		owns_entire_state_region = STATE_FLANDERS
 		owns_entire_state_region = STATE_WALLONIA
 	}
@@ -71,7 +71,7 @@ mexican_empire = {
 	color = "mexican_empire_green"
 	possible = {
 		exists = c:MEX
-		THIS = c:MEX
+		c:MEX ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 	}
 }
@@ -81,7 +81,7 @@ austria_hungary = {
 
 	possible = {
 		exists = c:AUS
-		THIS = c:AUS
+		c:AUS ?= THIS
 		country_has_primary_culture = cu:hungarian
 	}
 }
@@ -91,7 +91,7 @@ communist_austria = {
 
 	possible = {
 		exists = c:AUS
-		THIS = c:AUS
+		c:AUS ?= THIS
 		has_law_or_variant = law_type:law_cooperative_ownership
 	}
 }
@@ -101,7 +101,7 @@ fascist_spain = {
 
 	possible = {
 		exists = c:SPA
-		THIS = c:SPA
+		c:SPA ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_autocracy
 			has_law_or_variant = law_type:law_single_party_state
@@ -119,7 +119,7 @@ communist_britain = {
 
 	possible = {
 		exists = c:GBR
-		THIS = c:GBR
+		c:GBR ?= THIS
 		has_law_or_variant = law_type:law_cooperative_ownership
 	}
 }
@@ -129,7 +129,7 @@ communist_germany = {
 
 	possible = {
 		exists = c:GER
-		THIS = c:GER
+		c:GER ?= THIS
 		has_law_or_variant = law_type:law_cooperative_ownership
 	}
 }
@@ -139,7 +139,7 @@ spain_republican = {
 
 	possible = {
 		exists = c:SPA
-		THIS = c:SPA
+		c:SPA ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_parliamentary_republic
 			has_law_or_variant = law_type:law_presidential_republic
@@ -152,7 +152,7 @@ brazil_integralist = {
 
 	possible = {
 		exists = c:BRZ
-		THIS = c:BRZ
+		c:BRZ ?= THIS
 		any_interest_group = {
 			is_in_government = yes
 			OR = {
@@ -168,7 +168,7 @@ brazil_republican = {
 
 	possible = {
 		exists = c:BRZ
-		THIS = c:BRZ
+		c:BRZ ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_parliamentary_republic
 			has_law_or_variant = law_type:law_presidential_republic
@@ -191,7 +191,7 @@ spain_communist = {
 
 	possible = {
 		exists = c:SPA
-		THIS = c:SPA
+		c:SPA ?= THIS
 		has_law_or_variant = law_type:law_cooperative_ownership
 	}
 }
@@ -201,7 +201,7 @@ soviet_red = {
 
 	possible = {
 		exists = c:RUS
-		THIS = c:RUS
+		c:RUS ?= THIS
 		has_law_or_variant = law_type:law_cooperative_ownership
 	}
 }
@@ -211,7 +211,7 @@ commune_france = {
 
 	possible = {
 		exists = c:FRA
-		THIS = c:FRA
+		c:FRA ?= THIS
 		has_law_or_variant = law_type:law_cooperative_ownership
 	}
 }

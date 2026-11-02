@@ -263,8 +263,6 @@ types cwp_wmd_panel {
 		widget = {
 			parentanchor = hcenter
 			minimumsize = { 520 40 }
-			spacing = 30
-			direction = horizontal
 	
 			flowcontainer = {
 				margin = { 15 15 }

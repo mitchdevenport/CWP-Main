@@ -8,7 +8,7 @@ is_in_western_bloc = {
 	exists = c:USA
 	c:USA = { is_in_power_bloc = yes }
 	OR = {
-		c:USA = THIS
+		c:USA ?= THIS
 		is_in_same_power_bloc = c:USA
 	}
 }
@@ -18,7 +18,7 @@ is_in_eastern_bloc = {
 	exists = c:RUS
 	c:RUS = { is_in_power_bloc = yes }
 	OR = {
-		c:RUS = THIS
+		c:RUS ?= THIS
 		is_in_same_power_bloc = c:RUS
 	}
 }
@@ -45,10 +45,10 @@ is_eastern_bloc_member = {
 
 is_aligned_USA = {
 	is_in_western_bloc = yes
-	NOT = { c:USA = THIS }
+	NOT = { c:USA ?= THIS }
 }
 
 is_aligned_RUS = {
 	is_in_eastern_bloc = yes
-	NOT = { c:RUS = THIS }
+	NOT = { c:RUS ?= THIS }
 }

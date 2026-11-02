@@ -16,7 +16,7 @@ saarland.1 = { # France creates the Saar Protectorate
 	trigger = {
 		AND = {
 			exists = c:FRA
-			this = c:FRA
+			c:FRA ?= this
 			exists = s:STATE_RHINELAND.region_state:FOZ
 			c:FOZ = {is_subject_of = c:FRA}
 			NOT = {exists = c:SAA}
@@ -109,7 +109,7 @@ saarland.2 = { # 1955 Saar Statute referendum
 	trigger = {
 		AND = {
 			exists = c:SAA
-			this = c:SAA
+			c:SAA ?= this
 			game_date >= 1955.10.23
 			is_subject_of = c:FRA
 		}

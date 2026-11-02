@@ -10,70 +10,70 @@ religious_party = {
 				desc = party_catholic_peoples_party
 				trigger = {
 					exists = c:AUS
-					this = c:AUS
+					c:AUS ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_portuguese_catholic_centre
 				trigger = {
 					exists = c:POR
-					this = c:POR
+					c:POR ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_catholic_right
 				trigger = {
 					exists = c:SWI
-					this = c:SWI
+					c:SWI ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_anti_revolutionary_party
 				trigger = {
 					exists = c:NET
-					this = c:NET
+					c:NET ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_learned_council
 				trigger = {
 					exists = c:PER
-					this = c:PER
+					c:PER ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_traditionalist_communion
 				trigger = {
 					exists = c:SPA
-					this = c:SPA
+					c:SPA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_christian_peoples_party
 				trigger = {
 					exists = c:BEL
-					this = c:BEL
+					c:BEL ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_clerical_party
 				trigger = {
 					exists = c:FRA
-					this = c:FRA
+					c:FRA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_union_of_the_russian_people
 				trigger = {
 					exists = c:RUS
-					this = c:RUS
+					c:RUS ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_know_nothing_party
 				trigger = {
 					exists = c:USA
-					this = c:USA
+					c:USA ?= this
 				}
 			}
 			triggered_desc = {
@@ -92,14 +92,14 @@ religious_party = {
 				desc = party_conservative_catholics
 				trigger = {
 					exists = c:ITA
-					this = c:ITA
+					c:ITA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_moderate_venstre
 				trigger = {
 					exists = c:NOR
-					this = c:NOR
+					c:NOR ?= this
 				}
 			}
 			triggered_desc = {

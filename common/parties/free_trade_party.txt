@@ -9,63 +9,63 @@ free_trade_party = {
 				desc = party_democratic_alliance
 				trigger = {
 					exists = c:FRA
-					THIS = c:FRA
+					c:FRA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_peelites
 				trigger = {
 					exists = c:GBR
-					THIS = c:GBR
+					c:GBR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_historic_party
 				trigger = {
 					exists = c:POR
-					THIS = c:POR
+					c:POR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_old_lantmanna_party
 				trigger = {
 					exists = c:SWE
-					THIS = c:SWE
+					c:SWE ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_communications_clique
 				trigger = {
 					exists = c:CHI
-					THIS = c:CHI
+					c:CHI ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_national_party
 				trigger = {
 					exists = c:CHL
-					THIS = c:CHL
+					c:CHL ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_party_of_peaceful_renovation
 				trigger = {
 					exists = c:RUS
-					THIS = c:RUS
+					c:RUS ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_constitutional_union_party
 				trigger = {
 					exists = c:USA
-					THIS = c:USA
+					c:USA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_federalist_party
 				trigger = {
 					exists = c:NEN
-					THIS = c:NEN
+					c:NEN ?= THIS
 				}
 			}
 			triggered_desc = {
@@ -78,7 +78,7 @@ free_trade_party = {
 				desc = party_free_conservative_party
 				trigger = {
 					exists = c:NOR
-					THIS = c:NOR
+					c:NOR ?= THIS
 				}
 			}
 			triggered_desc = {

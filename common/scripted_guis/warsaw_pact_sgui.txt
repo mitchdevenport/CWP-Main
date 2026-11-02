@@ -72,6 +72,10 @@ warsaw_pact_approve_membership = {
 					name = warsaw_pact_supporting
 					target = ROOT
 				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = warsaw_pact_supporting_list_size } }
+					set_variable = { name = warsaw_pact_supporting_list_size value = 0 }
+				}
 				change_variable = {
 					name = warsaw_pact_supporting_list_size
 					add = 1
@@ -84,6 +88,10 @@ warsaw_pact_approve_membership = {
 						name = warsaw_pact_rejecting
 						target = ROOT
 					}
+				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = warsaw_pact_supporting_list_size } }
+					set_variable = { name = warsaw_pact_supporting_list_size value = 0 }
 				}
 				change_variable = {
 					name = warsaw_pact_supporting_list_size
@@ -124,6 +132,10 @@ warsaw_pact_reject_membership = {
 					name = warsaw_pact_rejecting
 					target = ROOT
 				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = warsaw_pact_supporting_list_size } }
+					set_variable = { name = warsaw_pact_supporting_list_size value = 0 }
+				}
 				change_variable = {
 					name = warsaw_pact_supporting_list_size
 					subtract = 1
@@ -136,6 +148,10 @@ warsaw_pact_reject_membership = {
 						name = warsaw_pact_supporting
 						target = ROOT
 					}
+				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = warsaw_pact_supporting_list_size } }
+					set_variable = { name = warsaw_pact_supporting_list_size value = 0 }
 				}
 				change_variable = {
 					name = warsaw_pact_supporting_list_size

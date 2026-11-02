@@ -28,7 +28,7 @@
 
 	is_shown_when_inactive = {
 		exists = c:LBY
-		this = c:LBY
+		c:LBY ?= this
 	}
 
 	possible = {

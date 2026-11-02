@@ -13,7 +13,7 @@ ddr_flavor.1 = {
 	duration = 3
 	trigger = {
 		exists = c:DDR
-		this = c:DDR
+		c:DDR ?= this
 		has_law = law_type:law_single_party_state
 		year < 1960
 		NOT = { has_variable = ulbricht_triggered }

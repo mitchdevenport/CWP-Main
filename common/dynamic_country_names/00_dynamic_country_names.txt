@@ -13,7 +13,7 @@ DEFAULT = {
 			exists = c:FSA
 			exists = scope:actor
 			scope:actor ?= {
-				this = c:FSA
+				c:FSA ?= this
 			}
 		}
 	}

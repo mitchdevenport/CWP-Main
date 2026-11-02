@@ -10,49 +10,49 @@ agrarian_party = {
 				desc = party_irish_national_land_league
 				trigger = {
 					exists = c:IRE
-					THIS = c:IRE
+					c:IRE ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_independent_agriculture_party
 				trigger = {
 					exists = c:GBR
-					THIS = c:GBR
+					c:GBR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_farmers_party
 				trigger = {
 					exists = c:NOR
-					THIS = c:NOR
+					c:NOR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_free_peoples_party
 				trigger = {
 					exists = c:DEN
-					THIS = c:DEN
+					c:DEN ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_farmers_league
 				trigger = {
 					exists = c:SWE
-					THIS = c:SWE
+					c:SWE ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_peoples_party
 				trigger = {
 					exists = c:FIN
-					THIS = c:FIN
+					c:FIN ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_agrarian_and_farmer_party
 				trigger = {
 					exists = c:FRA
-					THIS = c:FRA
+					c:FRA ?= THIS
 				}
 			}
 			triggered_desc = {
@@ -69,35 +69,35 @@ agrarian_party = {
 				desc = party_landbund
 				trigger = {
 					exists = c:AUS
-					THIS = c:AUS
+					c:AUS ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_national_peasant_accord
 				trigger = {
 					exists = c:SER
-					THIS = c:SER
+					c:SER ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_agrarian_national_union
 				trigger = {
 					exists = c:BUL
-					THIS = c:BUL
+					c:BUL ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_national_farmer_party
 				trigger = {
 					exists = c:HUN
-					THIS = c:HUN
+					c:HUN ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_peoples_party
 				trigger = {
 					exists = c:USA
-					THIS = c:USA
+					c:USA ?= THIS
 				}
 			}
 			triggered_desc = {

@@ -9,189 +9,189 @@ conservative_party = {
 				desc = party_christian_social_party
 				trigger = {
 					exists = c:AUS
-					THIS = c:AUS
+					c:AUS ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_constitutional_party
 				trigger = {
 					exists = c:PEU
-					THIS = c:PEU
+					c:PEU ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_national_autonomist
 				trigger = {
 					exists = c:ARG
-					THIS = c:ARG
+					c:ARG ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_tories
 				trigger = {
 					exists = c:GBR
-					THIS = c:GBR
+					c:GBR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_us_democrats
 				trigger = {
 					exists = c:USA
-					THIS = c:USA
+					c:USA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_moderate_party
 				trigger = {
 					exists = c:SPA
-					THIS = c:SPA
+					c:SPA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_regenerator_party
 				trigger = {
 					exists = c:POR
-					THIS = c:POR
+					c:POR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_lantmanna_party
 				trigger = {
 					exists = c:SWE
-					THIS = c:SWE
+					c:SWE ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_finnish_party
 				trigger = {
 					exists = c:FIN
-					THIS = c:FIN
+					c:FIN ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_catholic_party
 				trigger = {
 					exists = c:BEL
-					THIS = c:BEL
+					c:BEL ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_party_of_the_right
 				trigger = {
 					exists = c:LUX
-					THIS = c:LUX
+					c:LUX ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_peoples_party
 				trigger = {
 					exists = c:MON
-					THIS = c:MON
+					c:MON ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_party_of_order
 				trigger = {
 					exists = c:FRA
-					THIS = c:FRA
+					c:FRA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_federal_republican_party
 				trigger = {
 					exists = c:BRZ
-					THIS = c:BRZ
+					c:BRZ ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_octobrist_party
 				trigger = {
 					exists = c:RUS
-					THIS = c:RUS
+					c:RUS ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_constitutional_association
 				trigger = {
 					exists = c:CHI
-					THIS = c:CHI
+					c:CHI ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_imperial_rule_party
 				trigger = {
 					exists = c:JAP
-					THIS = c:JAP
+					c:JAP ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_moderate_socialists_party
 				trigger = {
 					exists = c:PER
-					THIS = c:PER
+					c:PER ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_ethnikon_komma
 				trigger = {
 					exists = c:GRE
-					THIS = c:GRE
+					c:GRE ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_blanco_party
 				trigger = {
 					exists = c:URU
-					THIS = c:URU
+					c:URU ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_colorado_party
 				trigger = {
 					exists = c:PRG
-					THIS = c:PRG
+					c:PRG ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_the_right
 				trigger = {
 					exists = c:ITA
-					THIS = c:ITA
+					c:ITA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_hoyre
 				trigger = {
 					exists = c:NOR
-					THIS = c:NOR
+					c:NOR ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_democratic_party
 				trigger = {
 					exists = c:USA
-					THIS = c:USA
+					c:USA ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_hojre
 				trigger = {
 					exists = c:DEN
-					THIS = c:DEN
+					c:DEN ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_liberal_conservative_party
 				trigger = {
 					exists = c:CAN
-					THIS = c:CAN
+					c:CAN ?= THIS
 				}
 			}
 			triggered_desc = {
 				desc = party_congress_nationalist_party
 				trigger = {
 					exists = c:HND
-					THIS = c:HND
+					c:HND ?= THIS
 				}
 			}
 			triggered_desc = {

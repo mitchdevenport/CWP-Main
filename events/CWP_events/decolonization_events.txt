@@ -128,7 +128,7 @@ decolonization.3 = {
 			if = {
 				limit = {
 					exists = c:FRA
-					root = c:FRA
+					c:FRA ?= root
 					num_states > 4
 					is_subject_type = subject_type_puppet
 					NOT = {
@@ -351,7 +351,7 @@ decolonization.102 = {
 				if = {
 					limit = {
 						exists = c:FRA
-						root = c:FRA
+						c:FRA ?= root
 						num_states > 4
 						is_subject_type = subject_type_puppet
 						NOT = {
@@ -2617,7 +2617,7 @@ decolonization.999 = {
 				if = {
 					limit = {
 						exists = c:FRA
-						root = c:FRA
+						c:FRA ?= root
 						num_states > 4
 						is_subject_type = subject_type_puppet
 						NOT = {

@@ -13,7 +13,7 @@ libya.1 = { #Spawns Gaddafi
 	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
 	trigger = {
 		exists = c:LBY
-		this = c:LBY
+		c:LBY ?= this
 		is_subject = no
 		year > 1961 #Gaddafi needs to be adult 
 		year < 1980 #Gaddafi becomes an Agitator in 1980
@@ -70,7 +70,7 @@ libya.2 = { #Alternative event if Gaddafi never spawned; Spawns him as an Agitat
 	hidden = yes
 	trigger = {
 		exists = c:LBY
-		this = c:LBY
+		c:LBY ?= this
 		year >= 1975
 		NOT = {has_variable = gaddafi_spawned}
 	}

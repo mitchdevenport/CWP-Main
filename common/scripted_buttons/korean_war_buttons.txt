@@ -10,11 +10,11 @@
 				is_subject_of = root
 			}
 			AND = {
-				this = c:STK
+				c:STK ?= this
 				is_subject = no
 			}
 			AND = {
-				this = c:NRK
+				c:NRK ?= this
 				is_subject = no
 			}
 		}
@@ -25,13 +25,13 @@
 			limit = {
 				trigger_if = {
 					limit = {
-						this = c:STK
+						c:STK ?= this
 					}
 					army_size < c:NRK.army_size
 				}
 				trigger_else_if = {
 					limit = {
-						this = c:NRK
+						c:NRK ?= this
 					}
 					army_size < c:STK.army_size
 				}
@@ -40,7 +40,7 @@
 		}
 		if = {
 			limit = {
-				this = c:STK
+				c:STK ?= this
 				global_var:korean_tensions > 50
 			}
 			add = 100
@@ -63,11 +63,11 @@
 					is_subject_of = root
 				}
 				AND = {
-					this = c:STK
+					c:STK ?= this
 					is_subject = no
 				}
 				AND = {
-					this = c:NRK
+					c:NRK ?= this
 					is_subject = no
 				}
 			}
@@ -112,11 +112,11 @@ korean_war_aggressive_stance_button = {
 				is_subject_of = root
 			}
 			AND = {
-				this = c:STK
+				c:STK ?= this
 				is_subject = no
 			}
 			AND = {
-				this = c:NRK
+				c:NRK ?= this
 				is_subject = no
 			}
 		}
@@ -127,13 +127,13 @@ korean_war_aggressive_stance_button = {
 			limit = {
 				trigger_if = {
 					limit = {
-						this = c:STK
+						c:STK ?= this
 					}
 					army_size > c:NRK.army_size
 				}
 				trigger_else_if = {
 					limit = {
-						this = c:NRK
+						c:NRK ?= this
 					}
 					army_size > c:STK.army_size
 				}
@@ -142,7 +142,7 @@ korean_war_aggressive_stance_button = {
 		}
 		if = {
 			limit = {
-				this = c:NRK
+				c:NRK ?= this
 				global_var:korean_tensions < 50
 			}
 			add = 100
@@ -159,11 +159,11 @@ korean_war_aggressive_stance_button = {
 					is_subject_of = root
 				}
 				AND = {
-					this = c:STK
+					c:STK ?= this
 					is_subject = no
 				}
 				AND = {
-					this = c:NRK
+					c:NRK ?= this
 					is_subject = no
 				}
 			}

@@ -1,7 +1,7 @@
 ﻿form_nato = {
 	is_shown = {
 		exists = c:USA
-		c:USA = THIS
+		c:USA ?= THIS
 		NOT = {
 			has_global_variable = nato_leader
 		}

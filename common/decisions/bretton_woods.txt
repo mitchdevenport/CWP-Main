@@ -4,7 +4,7 @@
 		exists = c:USA
 		nor = {
 			has_journal_entry = je_bretton_woods_agreement
-			this = c:USA
+			c:USA ?= this
 		}
 	}
 	possible = {
@@ -45,7 +45,7 @@ leave_bretton_woods_agreement = {
 		has_journal_entry = je_bretton_woods_agreement
 		exists = c:USA
 		not = {
-			this = c:USA
+			c:USA ?= this
 		}
 	}
 	possible = {
@@ -82,7 +82,7 @@ leave_bretton_woods_agreement = {
 end_bretton_woods_agreement = {
 	is_shown = {
 		exists = c:USA
-		this = c:USA
+		c:USA ?= this
 		or = {
 			has_global_variable = bretton_woods_agreement
 			has_journal_entry = je_bretton_woods_agreement

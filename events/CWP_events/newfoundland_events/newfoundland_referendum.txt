@@ -16,7 +16,7 @@ newfoundland_referendum.1 = { # Calling a Newfoundland National Convention
 	
 	trigger = {
 		game_date >= 1946.1.1
-		this = c:GBR
+		c:GBR ?= this
 		NOT = { has_global_variable = newfoundland_referendum_started }
 	}
 	
@@ -90,7 +90,7 @@ newfoundland_referendum.2 = { # Where are we sending delegates? London? Ottawa? 
 	
 	trigger = {
 		game_date >= 1946.5.30
-		this = c:NEW
+		c:NEW ?= this
 		NOT = { has_global_variable = where_are_we_sending_delegates }
 		has_global_variable = newfoundland_national_convention_start
 	}
@@ -208,7 +208,7 @@ newfoundland_referendum.3 = { # London Delegation
 	
 	trigger = {
 		game_date >= 1947.4.30
-		this = c:GBR
+		c:GBR ?= this
 		NOR = {
 			has_global_variable = london_delegation_started
 			has_global_variable = london_delegation_finished
@@ -316,7 +316,7 @@ newfoundland_referendum.4 = { # Ottawa Delegation
 	
 	trigger = {
 		game_date >= 1947.4.30
-		this = c:CAN
+		c:CAN ?= this
 		NOR = {
 			has_global_variable = ottawa_delegation_started
 			has_global_variable = ottawa_delegation_finished
@@ -406,7 +406,7 @@ newfoundland_referendum.51 = { # Should independence be an option for Newfoundla
 	duration = 2
 	
 	trigger = {
-		this = c:GBR
+		c:GBR ?= this
 		NOT = { has_global_variable = independence_decision_uk }
 		game_date >= 1947.12.30
 		has_global_variable = london_delegation_finished
@@ -494,7 +494,7 @@ newfoundland_referendum.52 = { # Should independence be an option for Newfoundla
 	duration = 2
 	
 	trigger = {
-		this = c:CAN
+		c:CAN ?= this
 		NOT = { has_global_variable = independence_decision_canada }
 		game_date >= 1947.12.30
 		has_global_variable = ottawa_delegation_finished
@@ -582,7 +582,7 @@ newfoundland_referendum.6 = { # First Referendum - Independence possible
 	duration = 1
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.5.30
 		has_global_variable = newfoundland_first_referendum_yes_independence
 		NOT = { has_global_variable = newfoundland_first_referendum_started }
@@ -1026,7 +1026,7 @@ newfoundland_referendum.7 = { # First Referendum - Independence not possible
 	duration = 1
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.5.30
 		has_global_variable = newfoundland_first_referendum_no_independence
 		NOT = { has_global_variable = newfoundland_first_referendum_started }
@@ -1366,7 +1366,7 @@ newfoundland_referendum.8 = { # Second Referendum - Confederate with Canada or B
 	duration = 1
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.6.30
 		has_global_variable = newfoundland_first_referendum_failed
 		NOT = {	has_global_variable = newfoundland_second_referendum_started }
@@ -1602,7 +1602,7 @@ newfoundland_referendum.9 = { # British Dominion - Newfoundland POV
 	duration = 2
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.7.30
 		has_global_variable = newfoundland_dominion
 		NOT = { has_global_variable = newfoundland_referendum_done }
@@ -1639,7 +1639,7 @@ newfoundland_referendum.10 = { # Confederate with Canada - Canada POV
 	duration = 2
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.7.30
 		has_global_variable = newfoundland_confederate
 		NOT = { has_global_variable = newfoundland_referendum_done }
@@ -1678,7 +1678,7 @@ newfoundland_referendum.11 = { # puppet
 	duration = 2
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.7.30
 		has_global_variable = newfoundland_puppet
 		NOT = { has_global_variable = newfoundland_referendum_done }
@@ -1714,7 +1714,7 @@ newfoundland_referendum.12 = { # Independence
 	duration = 2
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		game_date >= 1948.7.30
 		has_global_variable = newfoundland_independent
 		NOT = { has_global_variable = newfoundland_referendum_done }
@@ -1751,7 +1751,7 @@ newfoundland_referendum.13 = { # British Dominion - Canadian POV
 	duration = 2
 	
 	trigger = {
-		this = c:CAN
+		c:CAN ?= this
 		has_global_variable = newfoundland_dominion
 	}
 	
@@ -1782,7 +1782,7 @@ newfoundland_referendum.14 = { # British Dominion - British POV
 	duration = 2
 	
 	trigger = {
-		this = c:GBR
+		c:GBR ?= this
 		has_global_variable = newfoundland_dominion
 	}
 	
@@ -1813,7 +1813,7 @@ newfoundland_referendum.15 = { # Confederate with Canada - British POV
 	duration = 2
 	
 	trigger = {
-		this = c:GBR
+		c:GBR ?= this
 		has_global_variable = newfoundland_confederate
 	}
 	
@@ -1844,7 +1844,7 @@ newfoundland_referendum.16 = { # Confederate with Canada - Canadian POV
 	duration = 2
 	
 	trigger = {
-		this = c:CAN
+		c:CAN ?= this
 		has_global_variable = newfoundland_confederate
 	}
 	
@@ -1875,7 +1875,7 @@ newfoundland_referendum.17 = { # Remain a British puppet - British POV
 	duration = 2
 	
 	trigger = {
-		this = c:GBR
+		c:GBR ?= this
 		has_global_variable = newfoundland_puppet
 	}
 	
@@ -1906,7 +1906,7 @@ newfoundland_referendum.18 = { # Remain a British puppet - Canadian POV
 	duration = 2
 	
 	trigger = {
-		this = c:CAN
+		c:CAN ?= this
 		has_global_variable = newfoundland_puppet
 	}
 	
@@ -1937,7 +1937,7 @@ newfoundland_referendum.19 = { # Newfoundland Independence - British POV
 	duration = 2
 	
 	trigger = {
-		this = c:GBR
+		c:GBR ?= this
 		has_global_variable = newfoundland_independent
 	}
 	
@@ -1968,7 +1968,7 @@ newfoundland_referendum.20 = { # Newfoundland Independence - Canadian POV
 	duration = 2
 	
 	trigger = {
-		this = c:CAN
+		c:CAN ?= this
 		has_global_variable = newfoundland_independent
 	}
 	
@@ -1999,7 +1999,7 @@ newfoundland_referendum.21 = { # Does the USA send a join market offer to an ind
 	duration = 3
 	
 	trigger = {
-		this = c:USA
+		c:USA ?= this
 		has_global_variable = newfoundland_referendum_done
 		c:NEW = {
 			is_subject = no
@@ -2053,7 +2053,7 @@ newfoundland_referendum.22 = { # Does Newfoundland join the USA's market?
 	duration = 2
 	
 	trigger = {
-		this = c:NEW
+		c:NEW ?= this
 		has_global_variable = newfoundland_referendum_done
 		has_global_variable = usa_sends_market_access_offer
 		is_subject = no

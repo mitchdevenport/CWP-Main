@@ -8,7 +8,7 @@
 		has_law_or_variant = law_type:law_council_republic
 		has_law_or_variant = law_type:law_state_religion
 		exists = c:PAP
-		c:PAP = ROOT
+		c:PAP ?= ROOT
 	}
 
 	on_government_type_change = {

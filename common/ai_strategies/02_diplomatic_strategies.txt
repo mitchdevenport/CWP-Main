@@ -352,7 +352,7 @@ ai_strategy_economic_imperialism = {
 				navy_size >= 25
 				scope:target_country = {
 					exists = c:JAP
-					this = c:JAP
+					c:JAP ?= this
 					has_law_or_variant = law_type:law_isolationism
 					gdp >= 5000000
 				}
@@ -534,7 +534,7 @@ ai_strategy_economic_imperialism = {
 						limit = {
 							scope:target_country = {
 								exists = c:JAP
-								this = c:JAP
+								c:JAP ?= this
 								has_law_or_variant = law_type:law_isolationism
 							}
 						}
@@ -567,7 +567,7 @@ ai_strategy_economic_imperialism = {
 						limit = {
 							scope:target_country = {
 								exists = c:JAP
-								this = c:JAP
+								c:JAP ?= this
 								has_law_or_variant = law_type:law_isolationism
 							}
 						}

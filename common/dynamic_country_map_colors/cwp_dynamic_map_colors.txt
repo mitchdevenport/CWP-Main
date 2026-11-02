@@ -8,11 +8,11 @@ peru_bolivia = {
 		OR = {
 			AND = {
 				exists = c:PEU
-				THIS = c:PEU
+				c:PEU ?= THIS
 			}
 			AND = {
 				exists = c:BOL
-				THIS = c:BOL
+				c:BOL ?= THIS
 			}
 		}
 		owns_entire_state_region = STATE_LA_PAZ
@@ -25,7 +25,7 @@ korea_monarchy_blue = {
 
 	possible = {
 		exists = c:KOR
-		THIS = c:KOR
+		c:KOR ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 	}
 }
@@ -35,7 +35,7 @@ ukraine_free_territory = {
 
 	possible = {
 		exists = c:UKR
-		THIS = c:UKR
+		c:UKR ?= THIS
 		has_law_or_variant = law_type:law_council_republic
 		has_law_or_variant = law_type:law_anarchy
 	}
@@ -46,7 +46,7 @@ turkish_republic = {
 
 	possible = {
 		exists = c:TUR
-		THIS = c:TUR
+		c:TUR ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_parliamentary_republic
 			has_law_or_variant = law_type:law_presidential_republic
@@ -60,7 +60,7 @@ purple_naples = {
 
 	possible = {
 		exists = c:SIC
-		THIS = c:SIC
+		c:SIC ?= THIS
 		NOT = {
 			owns_entire_state_region = STATE_SICILY
 		}
@@ -73,7 +73,7 @@ dark_khmer = {
 
 	possible = {
 		exists = c:CAM
-		THIS = c:CAM
+		c:CAM ?= THIS
 		NOT = {
 			is_country_type = unrecognized
 		}
@@ -85,7 +85,7 @@ imperial_japan = {
 
 	possible = {
 		exists = c:JAP
-		THIS = c:JAP
+		c:JAP ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_autocracy
 			has_law_or_variant = law_type:law_single_party_state
@@ -104,7 +104,7 @@ communist_china = {
 
 	possible = {
 		exists = c:CHI
-		THIS = c:CHI
+		c:CHI ?= THIS
 		has_law_or_variant = law_type:law_council_republic
 	}
 }
@@ -114,7 +114,7 @@ republican_china = {
 
 	possible = {
 		exists = c:CHI
-		THIS = c:CHI
+		c:CHI ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_parliamentary_republic
 			has_law_or_variant = law_type:law_presidential_republic
@@ -127,7 +127,7 @@ han_imperial_china = {
 
 	possible = {
 		exists = c:CHI
-		THIS = c:CHI
+		c:CHI ?= THIS
 		NOT = {
 			country_has_primary_culture = cu:manchu
 		}
@@ -140,7 +140,7 @@ republican_portugal = {
 
 	possible = {
 		exists = c:POR
-		THIS = c:POR
+		c:POR ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_parliamentary_republic
 			has_law_or_variant = law_type:law_presidential_republic
@@ -153,7 +153,7 @@ unpleasant_germany = {
 
 	possible = {
 		exists = c:GER
-		THIS = c:GER
+		c:GER ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_autocracy
 			has_law_or_variant = law_type:law_single_party_state
@@ -177,7 +177,7 @@ holy_roman_empire = {
 
 	possible = {
 		exists = c:GER
-		THIS = c:GER
+		c:GER ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 	}
 }
@@ -187,7 +187,7 @@ prussia = {
 
 	possible = {
 		exists = c:DDR
-		THIS = c:DDR
+		c:DDR ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_monarchy
 			overlord ?= {
@@ -202,7 +202,7 @@ roman_rome = {
 
 	possible = {
 		exists = c:PAP
-		THIS = c:PAP
+		c:PAP ?= THIS
 		OR = {
 			has_law_or_variant = law_type:law_parliamentary_republic
 			has_law_or_variant = law_type:law_presidential_republic
@@ -216,7 +216,7 @@ republican_france = {
 
 	possible = {
 		exists = c:FRA
-		THIS = c:FRA
+		c:FRA ?= THIS
 		NOT = {
 			has_law_or_variant = law_type:law_autocracy
 		}
@@ -234,15 +234,15 @@ islamic_state = {
 		OR = {
 			AND = {
 				exists = c:IRQ
-				THIS = c:IRQ
+				c:IRQ ?= THIS
 			}
 			AND = {
 				exists = c:LEV
-				THIS = c:LEV
+				c:LEV ?= THIS
 			}
 			AND = {
 				exists = c:ARA
-				THIS = c:ARA
+				c:ARA ?= THIS
 			}
 		}
 		OR = {
@@ -273,7 +273,7 @@ saudi_green = {
 
 	possible = {
 		exists = c:NEJ
-		THIS = c:NEJ
+		c:NEJ ?= THIS
 		has_law_or_variant = law_type:law_monarchy
 	}
 }

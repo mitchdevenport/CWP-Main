@@ -17,7 +17,7 @@ german_reunification.1 = { #Reunification agreement
 			base = 100
 		}	
 		trigger = {
-			this = c:GER
+			c:GER ?= this
 		}
 		show_as_tooltip = { 
 
@@ -81,7 +81,7 @@ german_reunification.1 = { #Reunification agreement
 			base = 100
 		}	
 		trigger = {
-			this = c:DDR
+			c:DDR ?= this
 		}
 		scripted_effect_german_reunification = yes
 
@@ -253,13 +253,13 @@ german_reunification.101 = {
 			}
 			modifier = {
 				trigger = { #We want to become the German unifier
-					this = c:GER
+					c:GER ?= this
 				}
 				add = 100
 			}
 			modifier = {
 				trigger = { #We do not vote for our competitor
-					this = c:DDR
+					c:DDR ?= this
 				}
 				add = -100000
 			}
@@ -327,7 +327,7 @@ german_reunification.101 = {
 			}
 			modifier = { #We hate the other Germany and want nothing to do with it
 				trigger = {
-					this = c:GER
+					c:GER ?= this
 					c:DDR = {
 						THIS.relations:root <= relations_threshold:hostile
 					}
@@ -336,7 +336,7 @@ german_reunification.101 = {
 			}
 			modifier = { #We hate the other Germany and want nothing to do with it
 				trigger = {
-					this = c:DDR
+					c:DDR ?= this
 					c:GER = {
 						THIS.relations:root <= relations_threshold:hostile
 					}
@@ -345,9 +345,9 @@ german_reunification.101 = {
 			}
 			modifier = {
 				trigger = { #We are the real Germany, why should we vote against reunification?
-					this = c:GER
+					c:GER ?= this
 					any_state = {
-   						owner = c:DDR
+   						c:DDR ?= owner
    						has_claim_by = root
   					}
 				}
@@ -355,9 +355,9 @@ german_reunification.101 = {
 			}
 			modifier = {
 				trigger = { #We are the real Germany, why should we vote against reunification?
-					this = c:DDR
+					c:DDR ?= this
 					any_state = {
-   						owner = c:GER
+   						c:GER ?= owner
    						has_claim_by = root
   					}
 				}
@@ -405,13 +405,13 @@ german_reunification.101 = {
 			}
 			modifier = {
 				trigger = { #We want to become the German unifier
-					this = c:DDR
+					c:DDR ?= this
 				}
 				add = 100
 			}
 			modifier = {
 				trigger = { #We do not vote for our competitor
-					this = c:GER
+					c:GER ?= this
 				}
 				add = -100000
 			}
@@ -676,8 +676,8 @@ german_reunification.104 = {
 			modifier = {
 				trigger = { #We want to remain part of our faction
 					OR = {
-						this = c:GER
-						this = c:DDR
+						c:GER ?= this
+						c:DDR ?= this
 					}
 					is_target_in_global_variable_list = { name = nato_members target = this} 
 				}
@@ -758,8 +758,8 @@ german_reunification.104 = {
 			modifier = {
 				trigger = { #We want to remain part of our faction
 					OR = {
-						this = c:GER
-						this = c:DDR
+						c:GER ?= this
+						c:DDR ?= this
 					}
 					is_target_in_global_variable_list = { name = warsaw_pact_members target = this} 
 				}
@@ -822,8 +822,8 @@ german_reunification.105 = {
 			modifier = {
 				trigger = { #After reunification we should try to become stronger
 					OR = {
-						this = c:GER
-						this = c:DDR
+						c:GER ?= this
+						c:DDR ?= this
 					}
 					ROOT = {
 						country_rank < rank_value:great_power
@@ -834,8 +834,8 @@ german_reunification.105 = {
 			modifier = {
 				trigger = { #We are strong enough and do not have to take into account weaker states
 					OR = {
-						this = c:GER
-						this = c:DDR
+						c:GER ?= this
+						c:DDR ?= this
 					}
 					ROOT = {
 						country_rank >= rank_value:great_power
@@ -903,7 +903,7 @@ german_reunification.106 = {
 			base = 15 #Claims threaten stability, therefore only low chance
 			modifier = { #German conservatives wanted to keep their claims
 				trigger = {
-					this = c:GER
+					c:GER ?= this
 				}
 				add = 50
 			}

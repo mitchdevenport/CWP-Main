@@ -62,6 +62,7 @@
 			every_country = {
 				limit = {
 					has_variable = un_member
+					NOT = { has_journal_entry = je_un_intervention }
 				}
 				add_journal_entry = {
 					type = je_un_intervention
@@ -89,11 +90,11 @@
 				exists = c:NRK
 				OR = {
 					AND = {
-						c:STK = root
+						c:STK ?= root
 						has_war_with = c:NRK
 					}
 					AND = {
-						c:NRK = root
+						c:NRK ?= root
 						has_war_with = c:STK
 					}
 				}

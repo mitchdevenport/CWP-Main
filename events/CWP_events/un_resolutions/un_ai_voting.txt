@@ -293,6 +293,10 @@ un_ai_voting.2 = {
 							}
 						}
 					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = un_supporting_list_size } }
+						set_variable = { name = un_supporting_list_size value = 0 }
+					}
 					change_variable = {
 						name = un_supporting_list_size
 						add = 1
@@ -308,6 +312,10 @@ un_ai_voting.2 = {
 							name = un_rejecting
 							target = ROOT
 						}
+					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = un_supporting_list_size } }
+						set_variable = { name = un_supporting_list_size value = 0 }
 					}
 					change_variable = {
 						name = un_supporting_list_size
@@ -364,6 +372,10 @@ un_ai_voting.2 = {
 							target = ROOT
 						}
 					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = un_supporting_list_size } }
+						set_variable = { name = un_supporting_list_size value = 0 }
+					}
 					change_variable = {
 						name = un_supporting_list_size
 						subtract = 1
@@ -375,6 +387,10 @@ un_ai_voting.2 = {
 							name = un_rejecting
 							target = ROOT
 						}
+					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = un_supporting_list_size } }
+						set_variable = { name = un_supporting_list_size value = 0 }
 					}
 					change_variable = {
 						name = un_supporting_list_size
@@ -429,6 +445,10 @@ un_ai_voting.2 = {
 							}
 						}
 					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = un_supporting_list_size } }
+						set_variable = { name = un_supporting_list_size value = 0 }
+					}
 					change_variable = {
 						name = un_supporting_list_size
 						subtract = 1
@@ -444,6 +464,10 @@ un_ai_voting.2 = {
 							name = un_supporting
 							target = ROOT
 						}
+					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = un_supporting_list_size } }
+						set_variable = { name = un_supporting_list_size value = 0 }
 					}
 					change_variable = {
 						name = un_supporting_list_size

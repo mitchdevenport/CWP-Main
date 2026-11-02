@@ -9,56 +9,56 @@ military_party = {
 				desc = party_true_peoples_party
 				trigger = {
 					exists = c:MON
-					this = c:MON
+					c:MON ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_national_party
 				trigger = {
 					exists = c:SER
-					this = c:SER
+					c:SER ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_union_of_rights
 				trigger = {
 					exists = c:FRA
-					this = c:FRA
+					c:FRA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_imperial_clan_party
 				trigger = {
 					exists = c:CHI
-					this = c:CHI
+					c:CHI ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_russian_all_military_union
 				trigger = {
 					exists = c:RUS
-					this = c:RUS
+					c:RUS ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_imperial_way_party
 				trigger = {
 					exists = c:JAP
-					this = c:JAP
+					c:JAP ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_patriotic_union
 				trigger = {
 					exists = c:SPA
-					this = c:SPA
+					c:SPA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_regressivist_party
 				trigger = {
 					exists = c:BRZ
-					this = c:BRZ
+					c:BRZ ?= this
 				}
 			}
 			triggered_desc = {

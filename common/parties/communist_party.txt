@@ -16,7 +16,7 @@
 				desc = party_british_socialist_party
 				trigger = {
 					exists = c:GBR
-					THIS = c:GBR
+					c:GBR ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -27,7 +27,7 @@
 				desc = party_pcf
 				trigger = {
 					exists = c:FRA
-					THIS = c:FRA
+					c:FRA ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -38,7 +38,7 @@
 				desc = party_kps
 				trigger = {
 					exists = c:SWI
-					THIS = c:SWI
+					c:SWI ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -49,7 +49,7 @@
 				desc = party_nkp
 				trigger = {
 					exists = c:NOR
-					THIS = c:NOR
+					c:NOR ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -60,7 +60,7 @@
 				desc = party_dkp
 				trigger = {
 					exists = c:DEN
-					THIS = c:DEN
+					c:DEN ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -71,7 +71,7 @@
 				desc = party_skp
 				trigger = {
 					exists = c:SWE
-					THIS = c:SWE
+					c:SWE ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -82,7 +82,7 @@
 				desc = party_skp
 				trigger = {
 					exists = c:FIN
-					THIS = c:FIN
+					c:FIN ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -93,7 +93,7 @@
 				desc = party_kpl
 				trigger = {
 					exists = c:LUX
-					THIS = c:LUX
+					c:LUX ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -104,7 +104,7 @@
 				desc = party_bkp
 				trigger = {
 					exists = c:BUL
-					THIS = c:BUL
+					c:BUL ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -115,7 +115,7 @@
 				desc = party_mkp
 				trigger = {
 					exists = c:HUN
-					THIS = c:HUN
+					c:HUN ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -126,7 +126,7 @@
 				desc = party_kpo
 				trigger = {
 					exists = c:AUS
-					THIS = c:AUS
+					c:AUS ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -137,7 +137,7 @@
 				desc = party_jcp
 				trigger = {
 					exists = c:JAP
-					THIS = c:JAP
+					c:JAP ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -148,7 +148,7 @@
 				desc = party_justice_party
 				trigger = {
 					exists = c:PER
-					THIS = c:PER
+					c:PER ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -159,7 +159,7 @@
 				desc = party_socialist_workers_party
 				trigger = {
 					exists = c:MEX
-					THIS = c:MEX
+					c:MEX ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }
@@ -170,7 +170,7 @@
 				desc = party_kke
 				trigger = {
 					exists = c:GRE
-					THIS = c:GRE
+					c:GRE ?= THIS
 					any_interest_group = {
 						is_powerful = yes
 						leader = { cwp_vanguardist_party_character = yes }

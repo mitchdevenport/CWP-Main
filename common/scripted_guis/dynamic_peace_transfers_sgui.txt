@@ -41,7 +41,7 @@
 					NOT = {
 						has_variable = process_done
 					}
-					owner = c:ROC
+					c:ROC ?= owner
 				}
 				set_variable = process_done
 				#set_state_owner = scope:controller
@@ -61,7 +61,7 @@
 					NOT = {
 						has_variable = process_done
 					}
-					owner = c:PRC
+					c:PRC ?= owner
 				}
 				set_variable = process_done
 				#set_state_owner = scope:controller

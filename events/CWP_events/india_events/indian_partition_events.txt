@@ -7,7 +7,7 @@ indian_partition.1 = {
 	hidden = yes
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_1
 		}
@@ -361,7 +361,7 @@ indian_partition.2 = {
 	duration = 3
 	trigger = {
 		exists = c:GBR
-		this = c:GBR
+		c:GBR ?= this
 		exists = c:HND
 		NOT = {
 			has_variable = indian_partition_2
@@ -719,14 +719,14 @@ indian_partition.3 = {
 			modifier = {
 				trigger = {
 					exists = c:BLH
-					this = c:BLH
+					c:BLH ?= this
 				}
 				add = -250
 			}
 			modifier = {
 				trigger = {
 					exists = c:KAS
-					this = c:KAS
+					c:KAS ?= this
 				}
 				add = 250
 			}
@@ -860,14 +860,14 @@ indian_partition.3 = {
 			modifier = {
 				trigger = {
 					exists = c:HYD
-					this = c:HYD
+					c:HYD ?= this
 				}
 				add = -500
 			}
 			modifier = {
 				trigger = {
 					exists = c:BLH
-					this = c:BLH
+					c:BLH ?= this
 				}
 				add = 1000
 			}
@@ -1111,7 +1111,7 @@ indian_partition.3 = {
 			modifier = {
 				trigger = {
 					exists = c:KAS
-					this = c:KAS
+					c:KAS ?= this
 				}
 				add = 250
 			}
@@ -1222,7 +1222,7 @@ indian_partition.80 = {
 	duration = 3
 	trigger = {
 		exists = c:PAK
-		this = c:PAK
+		c:PAK ?= this
 		NOT = {
 			has_variable = indian_partition_80
 		}
@@ -1270,7 +1270,7 @@ indian_partition.101 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		game_date > 1946.2.10
 		NOT = {
 			has_variable = indian_partition_101
@@ -1377,7 +1377,7 @@ indian_partition.102 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_102
 		}
@@ -1486,7 +1486,7 @@ indian_partition.103 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_103
 		}
@@ -1599,7 +1599,7 @@ indian_partition.104 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_104
 		}
@@ -1696,7 +1696,7 @@ indian_partition.105 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_105
 		}
@@ -1804,7 +1804,7 @@ indian_partition.106 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_106
 		}
@@ -1897,7 +1897,7 @@ indian_partition.107 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_107
 		}
@@ -2011,7 +2011,7 @@ indian_partition.108 = {
 	duration = 3
 	trigger = {
 		exists = c:HND
-		this = c:HND
+		c:HND ?= this
 		NOT = {
 			has_variable = indian_partition_108
 		}
@@ -2105,7 +2105,7 @@ indian_partition.201 = {
 	duration = 3
 	trigger = {
 		exists = c:GBR
-		this = c:GBR
+		c:GBR ?= this
 		NOT = {
 			has_variable = indian_partition_201
 		}
@@ -2185,7 +2185,7 @@ indian_partition.202 = {
 	duration = 3
 	trigger = {
 		exists = c:GBR
-		this = c:GBR
+		c:GBR ?= this
 		NOT = {
 			has_variable = indian_partition_202
 		}
@@ -2263,7 +2263,7 @@ indian_partition.203 = {
 	duration = 3
 	trigger = {
 		exists = c:GBR
-		this = c:GBR
+		c:GBR ?= this
 		NOT = {
 			has_variable = indian_partition_203
 		}
@@ -2337,7 +2337,7 @@ indian_partition.204 = {
 	duration = 3
 	trigger = {
 		exists = c:GBR
-		this = c:GBR
+		c:GBR ?= this
 		NOT = {
 			has_variable = indian_partition_204
 		}

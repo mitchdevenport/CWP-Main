@@ -76,6 +76,10 @@ un_approve_membership = {
 				name = un_supporting
 				target = ROOT
 			}
+			if = { # the counter is only created with the application
+				limit = { NOT = { has_variable = un_supporting_list_size } }
+				set_variable = { name = un_supporting_list_size value = 0 }
+			}
 			change_variable = {
 				name = un_supporting_list_size
 				add = 1
@@ -86,6 +90,10 @@ un_approve_membership = {
 						name = un_rejecting
 						target = ROOT
 					}
+				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = un_supporting_list_size } }
+					set_variable = { name = un_supporting_list_size value = 0 }
 				}
 				change_variable = {
 					name = un_supporting_list_size
@@ -122,6 +130,10 @@ un_abstain_membership = {
 						target = ROOT
 					}
 				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = un_supporting_list_size } }
+					set_variable = { name = un_supporting_list_size value = 0 }
+				}
 				change_variable = {
 					name = un_supporting_list_size
 					subtract = 1
@@ -133,6 +145,10 @@ un_abstain_membership = {
 						name = un_rejecting
 						target = ROOT
 					}
+				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = un_supporting_list_size } }
+					set_variable = { name = un_supporting_list_size value = 0 }
 				}
 				change_variable = {
 					name = un_supporting_list_size
@@ -162,6 +178,10 @@ un_reject_membership = {
 				name = un_rejecting
 				target = ROOT
 			}
+			if = { # the counter is only created with the application
+				limit = { NOT = { has_variable = un_supporting_list_size } }
+				set_variable = { name = un_supporting_list_size value = 0 }
+			}
 			change_variable = {
 				name = un_supporting_list_size
 				subtract = 1
@@ -172,6 +192,10 @@ un_reject_membership = {
 						name = un_supporting
 						target = ROOT
 					}
+				}
+				if = { # the counter is only created with the application
+					limit = { NOT = { has_variable = un_supporting_list_size } }
+					set_variable = { name = un_supporting_list_size value = 0 }
 				}
 				change_variable = {
 					name = un_supporting_list_size

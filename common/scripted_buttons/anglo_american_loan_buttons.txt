@@ -2,7 +2,7 @@
 	name = "anglo_american_loan_resume_payment"
 	desc = "anglo_american_loan_resume_payment_desc"
 
-	visible = { this = c:GBR }
+	visible = { c:GBR ?= this }
 	
 	#Country scope
 	ai_chance = {
@@ -57,7 +57,7 @@ anglo_american_stop_payment_button = {
 	name = "anglo_american_loan_stop_payment"
 	desc = "anglo_american_loan_stop_payment_desc"
 
-	visible = { this = c:GBR }
+	visible = { c:GBR ?= this }
 	
 	#Country scope
 	ai_chance = {
@@ -100,7 +100,7 @@ anglo_american_increase_payment_button = {
 	name = "anglo_american_loan_increase_payment"
 	desc = "anglo_american_loan_increase_payment_desc"
 
-	visible = { this = c:GBR }
+	visible = { c:GBR ?= this }
 	
 	#Country scope
 	ai_chance = {
@@ -185,7 +185,7 @@ anglo_american_decrease_payment_button = {
 	name = "anglo_american_loan_decrease_payment"
 	desc = "anglo_american_loan_decrease_payment_desc"
 
-	visible = { this = c:GBR }
+	visible = { c:GBR ?= this }
 	
 	#Country scope
 	ai_chance = {

@@ -7,25 +7,25 @@
 					limit = {
 						exists = c:AST
 					}
-					this = c:AST
+					c:AST ?= this
 				}
 				trigger_if = {
 					limit = {
 						exists = c:NZL
 					}
-					this = c:NZL
+					c:NZL ?= this
 				}
 				trigger_if = {
 					limit = {
 						exists = c:CAN
 					}
-					this = c:CAN
+					c:CAN ?= this
 				}
 				trigger_if = {
 					limit = {
 						exists = c:HND
 					}
-					this = c:HND
+					c:HND ?= this
 				}
 			}
 			NOT = { has_variable = independent_flag }
@@ -50,28 +50,28 @@
 		if = {
 			limit = {
 				exists = c:HND
-				this = c:HND
+				c:HND ?= this
 			}
 			add = 100
 		}
 		if = {
 			limit = {
 				exists = c:CAN
-				this = c:CAN
+				c:CAN ?= this
 			}
 			add = -10
 		}
 		if = {
 			limit = {
 				exists = c:AST
-				this = c:AST
+				c:AST ?= this
 			}
 			add = -80
 		}
 		if = {
 			limit = {
 				exists = c:NZL
-				this = c:NZL
+				c:NZL ?= this
 			}
 			add = -70
 		}

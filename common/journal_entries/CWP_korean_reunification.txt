@@ -10,8 +10,8 @@
 		exists = c:STK
 		OR = {
 			#Is Korea
-			this = c:NRK
-			this = c:STK
+			c:NRK ?= this
+			c:STK ?= this
 			#Is Korea's overlord
 			c:NRK = {
 				is_subject_of = PREV
@@ -21,10 +21,10 @@
 			}
 			#Is allied with Korea
 			any_scope_ally = {
-				this = c:NRK
+				c:NRK ?= this
 			}
 			any_scope_ally = {
-				this = c:STK
+				c:STK ?= this
 			}
 			#Is aligned with Korea (diplomatic alignment is represented by power blocs in 1.14)
 			is_in_same_power_bloc = c:NRK
@@ -123,7 +123,7 @@
 		}
 		if = {
 			limit = {
-				this = c:STK
+				c:STK ?= this
 			}
 			#Do this only once
 			#Events simulate the AI voting behavior
@@ -182,7 +182,7 @@
 		effect = {
 			if = {
 				limit = {
-					this = c:STK
+					c:STK ?= this
 				}
 				#Do this only once
 				#Events simulate the AI voting behavior
@@ -250,7 +250,7 @@
 	on_timeout = {
 		if = {
 			limit = {
-				this = c:STK
+				c:STK ?= this
 			}
 			#Do this only once
 			#Unifier

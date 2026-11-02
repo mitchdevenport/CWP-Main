@@ -9,105 +9,105 @@ radical_party = {
 				desc = party_radical_civic_union
 				trigger = {
 					exists = c:ARG
-					this = c:ARG
+					c:ARG ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_democratic_progressive_party
 				trigger = {
 					exists = c:SPA
-					this = c:SPA
+					c:SPA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_free_democratic_party
 				trigger = {
 					exists = c:SWI
-					this = c:SWI
+					c:SWI ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_national_progressive_party
 				trigger = {
 					exists = c:FIN
-					this = c:FIN
+					c:FIN ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_free_thinking_democratic_league
 				trigger = {
 					exists = c:NET
-					this = c:NET
+					c:NET ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_radical_liberal_party
 				trigger = {
 					exists = c:LUX
-					this = c:LUX
+					c:LUX ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_progressive_club
 				trigger = {
 					exists = c:AUS
-					this = c:AUS
+					c:AUS ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_radical_peoples_party
 				trigger = {
 					exists = c:SER
-					this = c:SER
+					c:SER ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_revival_party
 				trigger = {
 					exists = c:PER
-					this = c:PER
+					c:PER ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_mexican_liberal_party
 				trigger = {
 					exists = c:MEX
-					this = c:MEX
+					c:MEX ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_democratic_progressive_party
 				trigger = {
 					exists = c:GBR
-					this = c:GBR
+					c:GBR ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_freedom_and_accord_party
 				trigger = {
 					exists = c:TUR
-					this = c:TUR
+					c:TUR ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_trudovik_group
 				trigger = {
 					exists = c:RUS
-					this = c:RUS
+					c:RUS ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_republican_union
 				trigger = {
 					exists = c:FRA
-					this = c:FRA
+					c:FRA ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_the_far_left
 				trigger = {
 					exists = c:ITA
-					this = c:ITA
+					c:ITA ?= this
 				}
 			}
 			triggered_desc = {
@@ -120,11 +120,11 @@ radical_party = {
 					OR = {
 						AND = {
 							exists = c:JAP
-							this = c:JAP
+							c:JAP ?= this
 						}
 						AND = {
 							exists = c:USA
-							this = c:USA
+							c:USA ?= this
 						}
 					}
 				}
@@ -133,35 +133,35 @@ radical_party = {
 				desc = party_radical_liberal_party
 				trigger = {
 					exists = c:ECU
-					this = c:ECU
+					c:ECU ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_national_union
 				trigger = {
 					exists = c:PEU
-					this = c:PEU
+					c:PEU ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_progressive_dissidence
 				trigger = {
 					exists = c:POR
-					this = c:POR
+					c:POR ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_radical_peoples_party
 				trigger = {
 					exists = c:NOR
-					this = c:NOR
+					c:NOR ?= this
 				}
 			}
 			triggered_desc = {
 				desc = party_social_liberal_party
 				trigger = {
 					exists = c:DEN
-					this = c:DEN
+					c:DEN ?= this
 				}
 			}
 			triggered_desc = {

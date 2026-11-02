@@ -120,7 +120,7 @@
 	invalid = {
 		not = {
 			exists = c:FRA
-			c:FRA = root
+			c:FRA ?= root
 		}
 	}
 	# effect which is executed when 'invalid' trigger becomes true

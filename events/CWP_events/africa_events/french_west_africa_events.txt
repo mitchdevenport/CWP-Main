@@ -13,7 +13,7 @@ french_west_africa_events.1 = {
 	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
 	trigger = {
 		exists = c:WAU
-		this = c:WAU
+		c:WAU ?= this
 		game_date > 1946.1.1
 		not = {
 			has_variable = french_west_africa_1_done

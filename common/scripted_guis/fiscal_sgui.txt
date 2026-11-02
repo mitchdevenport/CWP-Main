@@ -659,7 +659,7 @@ bretton_woods_is_usa_enabled = {
 	scope = country
 	is_shown = {
 		THIS = {
-			this = c:USA
+			c:USA ?= this
 		}
 	}
 }

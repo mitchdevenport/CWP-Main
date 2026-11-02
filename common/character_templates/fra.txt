@@ -22,7 +22,7 @@ fra_jean_paul_sartre_template = {
 	agitator_usage = {
 		country_trigger = {
             exists = c:FRA
-            this = c:FRA
+            c:FRA ?= this
 		}
         interest_group_trigger = {
             is_marginal = no
@@ -52,7 +52,7 @@ fra_raymond_aron_template = {
 	agitator_usage = {
 		country_trigger = {
             exists = c:FRA
-            this = c:FRA
+            c:FRA ?= this
 		}
         interest_group_trigger = {
             is_marginal = no
@@ -83,7 +83,7 @@ fra_simone_de_beauvoir_template = {
 	agitator_usage = {
 		country_trigger = {
             exists = c:FRA
-            this = c:FRA
+            c:FRA ?= this
 		}
         interest_group_trigger = {
             is_marginal = no

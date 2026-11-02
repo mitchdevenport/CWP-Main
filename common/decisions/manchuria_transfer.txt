@@ -3,7 +3,7 @@
 		and = {
 			exists = c:PRC
 			exists = c:RUS
-			this = c:RUS
+			c:RUS ?= this
 			c:RUS = {
 				or = {
 					has_state_in_state_region = STATE_HINGGAN
@@ -16,7 +16,7 @@
 	}
 	possible = {
 		exists = c:RUS
-		this = c:RUS
+		c:RUS ?= this
 		c:RUS = {
 			or = {
 				has_state_in_state_region = STATE_HINGGAN

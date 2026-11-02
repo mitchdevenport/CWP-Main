@@ -20,7 +20,7 @@ usa_agitator_martin_luther_king = {
 	agitator_usage = {
 		country_trigger = {
 			exists = c:USA
-			this = c:USA
+			c:USA ?= this
 		}
 		interest_group_trigger = {
 			OR = {

@@ -17,8 +17,8 @@
 		}
 		OR = {
 			#Is Korea
-			this = c:NRK
-			this = c:STK
+			c:NRK ?= this
+			c:STK ?= this
 			#Is Korea's overlord
 			c:NRK = {
 				is_subject_of = PREV
@@ -28,10 +28,10 @@
 			}
 			#Is allied with Korea
 			any_scope_ally = {
-				this = c:NRK
+				c:NRK ?= this
 			}
 			any_scope_ally = {
-				this = c:STK
+				c:STK ?= this
 			}
 			#If an additional country is to be added per event | unused
 			is_target_in_global_variable_list = {
@@ -97,8 +97,8 @@
 		if = {
 			limit = {
 				OR = {
-					this = c:STK
-					this = c:NRK
+					c:STK ?= this
+					c:NRK ?= this
 				}
 			}
 			if = {
@@ -138,7 +138,7 @@
 				}
 				if = {
 					limit = {
-						this = c:STK
+						c:STK ?= this
 						exists = c:USA
 					}
 					save_temporary_scope_value_as = {
@@ -186,8 +186,8 @@
 				limit = {
 					OR = {
 						#Is Korea
-						this = c:NRK
-						this = c:STK
+						c:NRK ?= this
+						c:STK ?= this
 						#Is Korea's overlord
 						c:NRK = {
 							is_subject_of = PREV
@@ -223,7 +223,7 @@
 	on_fail = {
 		if = {
 			limit = {
-				this = c:STK
+				c:STK ?= this
 			}
 			c:NRK = {
 				add_modifier = {

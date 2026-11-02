@@ -101,7 +101,7 @@
 			}
 			if = {
 				limit = {
-					this = c:GBR
+					c:GBR ?= this
 					has_variable = paying_anglo_american_loans
 					not = {
 						has_variable = anglo_american_monthly_check

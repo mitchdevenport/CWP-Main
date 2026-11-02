@@ -277,8 +277,12 @@ imf_global_debt = {
 }
 
 imf_contribution_share = {
-	value = imf_contribution_value
-	divide = imf_reserves
+	value = 0
+	if = { # No share while the IMF holds no reserves (avoids dividing by zero)
+		limit = { imf_reserves > 0 }
+		value = imf_contribution_value
+		divide = imf_reserves
+	}
 }
 
 imf_reserves = {
@@ -570,9 +574,12 @@ imf_loan_payment_years_left = {
 			has_variable = imf_debt_years
 		}
 		add = var:imf_debt_years
-		subtract = {
-			value = var:imf_loan_payment_months_current
-			divide = 12
+		if = { # set by the loan journal entry once it is active
+			limit = { has_variable = imf_loan_payment_months_current }
+			subtract = {
+				value = var:imf_loan_payment_months_current
+				divide = 12
+			}
 		}
 	}
 

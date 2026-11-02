@@ -1120,7 +1120,7 @@ ai_strategy_default = {
 		if = {
 			limit = {
 				exists = c:SWI
-				this = c:SWI
+				c:SWI ?= this
 			}
 			multiply = 0.1
 		}

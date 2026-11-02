@@ -14507,76 +14507,76 @@ effect_dissolve_nation = {
 			trigger_if = {
 				limit = {
 					exists = c:WAU
-					prev = c:WAU
+					c:WAU ?= prev
 					exists = c:CDI
 					prev = {
 						owns_entire_state_region = STATE_WINDWARD_COAST
 					}
 				}
-				this = c:CDI
+				c:CDI ?= this
 			}
 			trigger_else_if = {
 				limit = {
 					exists = c:VNM
-					prev = c:VNM
+					c:VNM ?= prev
 					exists = c:DAI
 					prev = {
 						owns_entire_state_region = STATE_MEKONG
 					}
 				}
-				this = c:DAI
+				c:DAI ?= this
 			}
 			trigger_else_if = {
 				limit = {
 					exists = c:GBR
-					prev = c:GBR
+					c:GBR ?= prev
 					exists = c:ENG
 					prev = {
 						owns_entire_state_region = STATE_WEST_MIDLANDS
 					}
 				}
-				this = c:ENG
+				c:ENG ?= this
 			}
 			trigger_else_if = {
 				limit = {
 					exists = c:YUG
-					prev = c:YUG
+					c:YUG ?= prev
 					exists = c:SER
 					prev = {
 						owns_entire_state_region = STATE_KOSOVO
 					}
 				}
-				this = c:SER
+				c:SER ?= this
 			}
 			trigger_else_if = {
 				limit = {
 					exists = c:EQA
-					prev = c:EQA
+					c:EQA ?= prev
 					exists = c:CHD
 					prev = {
 						owns_entire_state_region = STATE_CHAD
 					}
 				}
-				this = c:CHD
+				c:CHD ?= this
 			}
 			trigger_else_if = {
 				limit = {
 					exists = c:RUS
-					prev = c:RUS
+					c:RUS ?= prev
 					exists = c:RSF
 				}
-				this = c:RSF
+				c:RSF ?= this
 			}
 			trigger_else_if = {
 				limit = {
 					exists = c:MYM
-					prev = c:MYM
+					c:MYM ?= prev
 					exists = c:KRN
 					prev = {
 						has_strategic_land_adjacency = c:KRN
 					}
 				}
-				this = c:KRN
+				c:KRN ?= this
 			}
 			trigger_else_if = {
 				limit = {

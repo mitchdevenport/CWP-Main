@@ -7,7 +7,7 @@
 	possible = {
 		has_law_or_variant = law_type:law_theocracy
 		exists = c:TIB
-		c:TIB = ROOT
+		c:TIB ?= ROOT
 	}
 
 	on_government_type_change = {
@@ -29,11 +29,11 @@ gov_papacy = {
 		OR = {
 			AND = {
 				exists = c:PAP
-				c:PAP = ROOT
+				c:PAP ?= ROOT
 			}
 			AND = {
 				exists = c:ITA
-				c:ITA = ROOT
+				c:ITA ?= ROOT
 			}
 		}
 	}
@@ -54,7 +54,7 @@ gov_bhutanese_dual_system_dharma = {
 
 	possible = {
 		exists = c:BHU
-		c:BHU = ROOT
+		c:BHU ?= ROOT
 		has_law_or_variant = law_type:law_theocracy
 	}
 
@@ -78,7 +78,7 @@ gov_prince_bishopric = {					# Oddball political system present in Montenegro, w
 	possible = {
 		has_law_or_variant = law_type:law_theocracy
 		exists = c:MON
-		c:MON = ROOT
+		c:MON ?= ROOT
 	}
 
 	on_government_type_change = {
@@ -103,11 +103,11 @@ gov_zaidi_imamate = {
 		OR = {
 			AND = {
 				exists = c:ZAI
-				c:ZAI = ROOT
+				c:ZAI ?= ROOT
 			}
 			AND = {
 				exists = c:YEM
-				c:YEM = ROOT
+				c:YEM ?= ROOT
 			}
 		}
 	}

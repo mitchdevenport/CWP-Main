@@ -119,8 +119,8 @@ ai_strategy_superpower_industrial_complex = {
 
 	possible = {
 		OR = {
-			this = c:USA
-			this = c:RUS
+			c:USA ?= this
+			c:RUS ?= this
 		}
 	}
 
@@ -192,8 +192,8 @@ ai_strategy_maintain_hegemony = {
 		country_rank = rank_value:superpower
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
+				c:USA ?= this
+				c:RUS ?= this
 			}
 		}
 	}
@@ -255,12 +255,12 @@ ai_strategy_postwar_reconstruction = {
 	possible = {
 		OR = {
 			country_is_in_europe = yes
-			this = c:JAP
+			c:JAP ?= this
 		}
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
+				c:USA ?= this
+				c:RUS ?= this
 			}
 		}
 		NOT = { has_law_or_variant = law_type:law_industry_banned }
@@ -360,12 +360,12 @@ ai_strategy_high_value_export_economy = {
 	possible = {
 		OR = {
 			country_is_in_europe = yes
-			this = c:JAP
+			c:JAP ?= this
 		}
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
+				c:USA ?= this
+				c:RUS ?= this
 			}
 		}
 		game_date >= 1955.1.1
@@ -466,9 +466,9 @@ ai_strategy_industrial_expansion = {
 		}
 		NOT = {
 			OR = {
-				this = c:JAP
-				this = c:RUS
-				this = c:USA
+				c:JAP ?= this
+				c:RUS ?= this
+				c:USA ?= this
 			}
 		}
 		NOT = { has_law_or_variant = law_type:law_industry_banned }
@@ -577,9 +577,9 @@ ai_strategy_elite_controlled_production = {
 		}
 		NOT = {
 			OR = {
-				this = c:JAP
-				this = c:RUS
-				this = c:USA
+				c:JAP ?= this
+				c:RUS ?= this
+				c:USA ?= this
 			}
 		}
 		NOT = {
@@ -681,8 +681,8 @@ ai_strategy_petroleum_export_economy = {
 		country_is_in_middle_east = yes
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
+				c:USA ?= this
+				c:RUS ?= this
 			}
 		}
 	}
@@ -693,10 +693,10 @@ ai_strategy_petroleum_export_economy = {
 		if = {
 			limit = {
 				OR = {
-					this = c:NEJ
-					this = c:IRQ
-					this = c:PER
-					this = c:EGY
+					c:NEJ ?= this
+					c:IRQ ?= this
+					c:PER ?= this
+					c:EGY ?= this
 				}
 			}
 			add = 250
@@ -753,9 +753,9 @@ ai_strategy_agricultural_expansion = {
 		}
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
-				this = c:JAP
+				c:USA ?= this
+				c:RUS ?= this
+				c:JAP ?= this
 			}
 		}
 		NOT = { country_rank = rank_value:superpower }
@@ -767,8 +767,8 @@ ai_strategy_agricultural_expansion = {
 		if = {
 			limit = {
 				OR = {
-					this = c:BRZ
-					this = c:ARG
+					c:BRZ ?= this
+					c:ARG ?= this
 				}
 			}
 			add = 250
@@ -818,9 +818,9 @@ ai_strategy_plantation_economy = {
 		}
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
-				this = c:JAP
+				c:USA ?= this
+				c:RUS ?= this
+				c:JAP ?= this
 			}
 		}
 		NOT = { country_rank = rank_value:superpower }
@@ -900,9 +900,9 @@ ai_strategy_resource_expansion = {
 		}
 		NOT = {
 			OR = {
-				this = c:USA
-				this = c:RUS
-				this = c:JAP
+				c:USA ?= this
+				c:RUS ?= this
+				c:JAP ?= this
 			}
 		}
 		NOT = { country_rank = rank_value:superpower }

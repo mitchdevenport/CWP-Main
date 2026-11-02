@@ -23,7 +23,7 @@ economic_events.1 = {
 		}
 		any_scope_state = {
 			AND = {
-				market = {
+				market ?= {
 					OR = {
 						mg:grain = {
 							market_goods_pricier > 0.25

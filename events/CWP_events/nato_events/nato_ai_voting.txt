@@ -59,6 +59,10 @@ nato_ai_voting.1 = { # AI Application voting mechanism
 							}
 						}
 					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = nato_supporting_list_size } }
+						set_variable = { name = nato_supporting_list_size value = 0 }
+					}
 					change_variable = {
 						name = nato_supporting_list_size
 						add = 1
@@ -74,6 +78,10 @@ nato_ai_voting.1 = { # AI Application voting mechanism
 							name = nato_rejecting
 							target = ROOT
 						}
+					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = nato_supporting_list_size } }
+						set_variable = { name = nato_supporting_list_size value = 0 }
 					}
 					change_variable = {
 						name = nato_supporting_list_size
@@ -133,6 +141,10 @@ nato_ai_voting.1 = { # AI Application voting mechanism
 							}
 						}
 					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = nato_supporting_list_size } }
+						set_variable = { name = nato_supporting_list_size value = 0 }
+					}
 					change_variable = {
 						name = nato_supporting_list_size
 						subtract = 1
@@ -148,6 +160,10 @@ nato_ai_voting.1 = { # AI Application voting mechanism
 							name = nato_supporting
 							target = ROOT
 						}
+					}
+					if = { # the counter is only created with the application
+						limit = { NOT = { has_variable = nato_supporting_list_size } }
+						set_variable = { name = nato_supporting_list_size value = 0 }
 					}
 					change_variable = {
 						name = nato_supporting_list_size

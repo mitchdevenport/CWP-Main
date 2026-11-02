@@ -82,17 +82,24 @@
 }
 
 imf_ai_debt_ideal_payment_percentage = {
-	value = {
-		value = imf_debt_value
-		add = {
-			value = imf_debt_interest_growth
-			multiply = imf_loan_years_left_to_months
+	value = 0.05 # minimum payment (also once the loan term is over; the loan journal entry then fails)
+	if = { # spread the debt and its interest over the months left on the loan
+		limit = {
+			imf_debt_value > 0
+			imf_loan_years_left_to_months > 0
 		}
-		divide = imf_loan_years_left_to_months
+		value = {
+			value = imf_debt_value
+			add = {
+				value = imf_debt_interest_growth
+				multiply = imf_loan_years_left_to_months
+			}
+			divide = imf_loan_years_left_to_months
+		}
+		divide = imf_debt_value
+		multiply = 100
+		add = 0.05
 	}
-	divide = imf_debt_value
-	multiply = 100
-	add = 0.05
 }
 
 imf_ai_monthly_credit_payment_percentage = {

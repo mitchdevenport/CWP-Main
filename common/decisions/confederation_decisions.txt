@@ -2,7 +2,7 @@
 	is_shown = {
 		exists = c:IDS
 		NOT = {
-			this = c:IDS
+			c:IDS ?= this
 		}
 		this = {
 			capital.region = sr:region_indonesia
@@ -85,12 +85,12 @@ join_canada = {
 	is_shown = {
 		exists = c:CAN
 		NOT = {
-			this = c:CAN
+			c:CAN ?= this
 		}
 		NAND = {
 			has_global_variable = newfoundland_referendum_done
 			exists = c:NEW
-			this = c:NEW
+			c:NEW ?= this
 			NOR = {
 				game_date > 1976.1.1
 				has_modifier = declared_bankruptcy
@@ -180,7 +180,7 @@ join_india = {
 	is_shown = {
 		exists = c:HND
 		NOR = {
-			this = c:HND
+			c:HND ?= this
 		}
 		this = {
 			capital.region = sr:region_india
@@ -243,7 +243,7 @@ join_pakistan = {
 	is_shown = {
 		exists = c:PAK
 		NOR = {
-			this = c:PAK
+			c:PAK ?= this
 		}
 		this = {
 			capital.region = sr:region_india
@@ -307,8 +307,8 @@ merge_austrias = {
 		exists = c:AUS
 		exists = c:AOA
 		OR = {
-			this = c:AUS
-			this = c:AOA
+			c:AUS ?= this
+			c:AOA ?= this
 		}
 		OR = {
 			AND = {
@@ -334,13 +334,13 @@ merge_austrias = {
 		is_diplomatic_play_committed_participant = no
 		trigger_if = {
 			limit = {
-				this = c:AUS
+				c:AUS ?= this
 			}
 			c:AUS.num_states < c:AOA.num_states
 		}
 		trigger_else_if = {
 			limit = {
-				this = c:AOA
+				c:AOA ?= this
 			}
 			c:AOA.num_states < c:AUS.num_states
 		}
@@ -351,7 +351,7 @@ merge_austrias = {
 	when_taken = {
 		if = {
 			limit = {
-				this = c:AUS
+				c:AUS ?= this
 			}
 			if = {
 				limit = {
@@ -365,7 +365,7 @@ merge_austrias = {
 		}
 		if = {
 			limit = {
-				this = c:AOA
+				c:AOA ?= this
 			}
 			if = {
 				limit = {
