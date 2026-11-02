@@ -1,6 +1,5 @@
 ﻿GLOBAL = {
 	# Country and historical stories that start with the game (master: common/history/countries)
-	# West German unification and the Newfoundland referendum activate on their own (is_shown_when_inactive + possible)
 	c:GBR ?= {
 		add_journal_entry = { type = indian_partition }
 	}

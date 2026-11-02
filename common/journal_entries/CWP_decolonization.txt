@@ -22,10 +22,17 @@
 	}
 
 	possible = {
-		country_rank < rank_value:minor_power
+		OR = {
+			country_rank < rank_value:minor_power
+			has_variable = cwp_decolonization_pending # 1946 colonial empires and costly colonial wars (effect_decolonization_after_war)
+		}
 	}
 
 	immediate = {
+		if = {
+			limit = { has_variable = cwp_decolonization_pending }
+			remove_variable = cwp_decolonization_pending
+		}
 		if = {
 			limit = {
 				NOT = {

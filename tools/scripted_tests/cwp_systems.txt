@@ -1,0 +1,224 @@
+﻿### Cold War Project systems
+# End-to-end checks that the mod's systems run in a real campaign. Start a 1946 game (observing or playing),
+# enable tests with the `scripted_tests none` console command and run the game until 1961; the results file is
+# written to the Victoria 3 user folder. See tools/scripted_tests/scripted_tests.md in the game for the format.
+# Historical milestones use generous deadlines because the AI does not follow history exactly (NATO and the
+# Warsaw Pact need the superpowers to research Political Internationalism first, as in CWP 1.5).
+
+last_date = "1961.1.2"
+
+tests = {
+	## Present from the start
+	cwp_cold_war_blocs = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:USA ?= { is_power_bloc_leader = yes }
+			c:RUS ?= { is_power_bloc_leader = yes }
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+	cwp_united_nations_founded = {
+		acceptable_fail_rate = 0.0
+		success = {
+			any_country = {
+				count >= 30
+				has_variable = un_member
+			}
+			c:USA ?= { has_variable = unsc_member }
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+	cwp_imf_founded = {
+		acceptable_fail_rate = 0.0
+		success = {
+			any_in_global_list = {
+				variable = imf_members
+				count >= 20
+			}
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+	cwp_currencies_assigned = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:USA ?= { has_variable = cwp_currency }
+			c:GBR ?= { has_variable = cwp_currency }
+			c:FRA ?= { has_variable = cwp_currency }
+			c:RUS ?= { has_variable = cwp_currency }
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+	cwp_us_starting_companies = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:USA ?= {
+				has_company = company_type:company_general_motors
+				has_company = company_type:company_ford_motor
+				any_company = { count >= 9 }
+			}
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+	cwp_us_nuclear_arsenal = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:USA ?= { has_variable = nuclear_stockpile }
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+	cwp_starting_stories = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:GBR ?= {
+				has_journal_entry = indian_partition
+				has_journal_entry = je_decolonization
+				has_journal_entry = west_german_unification
+				has_journal_entry = newfoundland_referendum
+			}
+			c:FRA ?= { has_journal_entry = je_decolonization }
+			c:RUS ?= { has_journal_entry = sovietization_eastern_europe }
+			c:DDR ?= { has_journal_entry = je_ddr_the_socialist_state }
+		}
+		fail = {
+			game_date > "1946.2.1"
+		}
+	}
+
+	## Monthly simulation
+	cwp_economy_simulated = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:FRA ?= {
+				has_variable = inflation_rate
+				has_variable = money_supply
+				NOT = { var:inflation_rate = 0 }
+			}
+		}
+		fail = {
+			game_date > "1947.1.1"
+		}
+	}
+	cwp_climate_tracked = {
+		acceptable_fail_rate = 0.0
+		success = {
+			has_global_variable = cwp_global_temp_celsius
+		}
+		fail = {
+			game_date > "1946.3.1"
+		}
+	}
+
+	## AI-driven developments
+	cwp_nato_formed = {
+		acceptable_fail_rate = 0.0
+		success = {
+			any_in_global_list = {
+				variable = nato_members
+				count >= 3
+			}
+		}
+		fail = {
+			game_date > "1961.1.1"
+		}
+	}
+	cwp_warsaw_pact_formed = {
+		acceptable_fail_rate = 0.0
+		success = {
+			any_in_global_list = {
+				variable = warsaw_pact_members
+				count >= 3
+			}
+		}
+		fail = {
+			game_date > "1961.1.1"
+		}
+	}
+	cwp_soviet_atomic_test = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:RUS ?= { has_variable = nuclear_test_conducted }
+		}
+		fail = {
+			game_date > "1958.1.1"
+		}
+	}
+	cwp_un_vote_held = {
+		acceptable_fail_rate = 0.0
+		success = {
+			has_global_variable = pending_resolution
+		}
+		fail = {
+			game_date > "1958.1.1"
+		}
+	}
+	cwp_indian_partition = {
+		acceptable_fail_rate = 0.0
+		success = {
+			exists = c:PAK
+		}
+		fail = {
+			game_date > "1952.1.1"
+		}
+	}
+	cwp_west_german_state = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:GER ?= { is_subject = no }
+		}
+		fail = {
+			game_date > "1958.1.1"
+		}
+	}
+	cwp_libyan_independence = {
+		acceptable_fail_rate = 0.0
+		success = {
+			c:LBY ?= { is_subject = no }
+		}
+		fail = {
+			game_date > "1958.1.1"
+		}
+	}
+	cwp_newfoundland_question_settled = {
+		acceptable_fail_rate = 0.0
+		success = {
+			NOT = { any_country = { has_journal_entry = newfoundland_referendum } }
+		}
+		fail = {
+			game_date > "1955.1.1"
+		}
+	}
+	cwp_decolonization = {
+		acceptable_fail_rate = 0.0
+		success = {
+			any_country = {
+				count >= 3
+				has_variable = decolonized_nation
+			}
+		}
+		fail = {
+			game_date > "1961.1.1"
+		}
+	}
+	cwp_coups = {
+		acceptable_fail_rate = 0.0
+		success = {
+			has_global_variable = num_coups
+			global_var:num_coups >= 1
+		}
+		fail = {
+			game_date > "1961.1.1"
+		}
+	}
+}

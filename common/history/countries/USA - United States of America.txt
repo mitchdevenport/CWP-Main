@@ -8,7 +8,8 @@
 		effect_starting_laws_1946_liberal_republic = yes
 		activate_law = law_type:law_elected_bureaucrats
 
-		# Starting companies (as in the CWP 1.8 update)
+		# Starting companies (as in the CWP 1.8 update; they own buildings in common/history/buildings/05_north_america.txt).
+		# North American Aviation is not among them because the 1946 economy has no Californian aircraft industry for it.
 		add_company = company_type:company_general_motors
 		company:company_general_motors = {
 			set_company_establishment_date = 1908.9.16
@@ -33,11 +34,6 @@
 		company:company_standard_oil = {
 			set_company_establishment_date = 1882.1.2
 			set_company_state_region = s:STATE_TEXAS
-		}
-		add_company = company_type:company_north_american_aviation
-		company:company_north_american_aviation = {
-			set_company_establishment_date = 1928.2.23
-			set_company_state_region = s:STATE_CALIFORNIA
 		}
 		add_company = company_type:company_general_electric
 		company:company_general_electric = {

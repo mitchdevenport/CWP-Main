@@ -1633,41 +1633,21 @@
 			create_building={
 				building="building_automobile_manufactories"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_chrysler
 						country="c:USA"
-						levels=1
-						region="STATE_OZARK_PLATEAU"
+						levels=2
 					}
-					building={
-						type="building_financial_district"
+					company={
+						type=company_ford_motor
 						country="c:USA"
-						levels=1
-						region="STATE_CUMBERLAND_PLATEAU"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=5
-						region="STATE_NEW_YORK"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_ALABAMA"
+						levels=8
 					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
 						levels=1
 						region="STATE_TEXAS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=2
-						region="STATE_CALIFORNIA"
 					}
 					building={
 						type="building_financial_district"
@@ -1896,6 +1876,11 @@
 			create_building={
 				building="building_steelworks"
 				add_ownership={
+					company={
+						type=company_us_steel_corp
+						country="c:USA"
+						levels=37
+					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
@@ -1917,7 +1902,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=76
+						levels=39
 						region="STATE_NEW_YORK"
 					}
 					building={
@@ -2144,47 +2129,10 @@
 			create_building={
 				building="building_combustion_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_westinghouse_corp
 						country="c:USA"
-						levels=1
-						region="STATE_ILLINOIS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_INDIANA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CAROLINAS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=2
-						region="STATE_CALIFORNIA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CHESAPEAKE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=20
-						region="STATE_NEW_YORK"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_NEW_ENGLAND"
+						levels=27
 					}
 				}
 				reserves=1
@@ -3845,6 +3793,11 @@
 			create_building={
 				building="building_paper_manufactories"
 				add_ownership={
+					company={
+						type=company_weyerhaeuser
+						country="c:USA"
+						levels=5
+					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
@@ -3884,7 +3837,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=13
+						levels=8
 						region="STATE_WASHINGTON"
 					}
 					country={
@@ -4185,29 +4138,16 @@
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
-					building={
-						type="building_manor_house"
+					company={
+						type=company_weyerhaeuser
 						country="c:USA"
-						levels=4
-						region="STATE_MICHIGAN"
+						levels=17
 					}
 					building={
 						type="building_manor_house"
 						country="c:USA"
 						levels=2
 						region="STATE_CAROLINAS"
-					}
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=5
-						region="STATE_OHIO"
-					}
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=5
-						region="STATE_ILLINOIS"
 					}
 					building={
 						type="building_manor_house"
@@ -4248,7 +4188,7 @@
 					building={
 						type="building_manor_house"
 						country="c:USA"
-						levels=4
+						levels=1
 						region="STATE_CUMBERLAND_PLATEAU"
 					}
 					building={
@@ -4611,11 +4551,10 @@
 			create_building={
 				building="building_tool_manufactories"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_john_deere
 						country="c:USA"
 						levels=1
-						region="STATE_CUMBERLAND_PLATEAU"
 					}
 				}
 				reserves=1
@@ -9770,11 +9709,10 @@
 			create_building={
 				building="building_consumer_electronics_manufactories"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_general_electric
 						country="c:USA"
 						levels=1
-						region="STATE_NEW_YORK"
 					}
 				}
 				reserves=1
@@ -9923,17 +9861,16 @@
 			create_building={
 				building="building_consumer_electronics_manufactories"
 				add_ownership={
+					company={
+						type=company_general_electric
+						country="c:USA"
+						levels=20
+					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
 						levels=3
 						region="STATE_GREAT_PLAINS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=6
-						region="STATE_CALIFORNIA"
 					}
 					building={
 						type="building_financial_district"
@@ -9950,19 +9887,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=7
-						region="STATE_MISSISSIPPI_VALLEY"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=5
-						region="STATE_ILLINOIS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=5
+						levels=3
 						region="STATE_NEW_YORK"
 					}
 					building={
@@ -11854,11 +11779,10 @@
 			create_building={
 				building="building_steelworks"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_us_steel_corp
 						country="c:USA"
 						levels=1
-						region="STATE_INDIANA"
 					}
 				}
 				reserves=1
@@ -13088,17 +13012,10 @@
 			create_building={
 				building="building_combustion_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_westinghouse_corp
 						country="c:USA"
-						levels=2
-						region="STATE_MICHIGAN"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_TEXAS"
+						levels=3
 					}
 				}
 				reserves=1
@@ -14542,17 +14459,10 @@
 			create_building={
 				building="building_combustion_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_westinghouse_corp
 						country="c:USA"
-						levels=1
-						region="STATE_CUMBERLAND_PLATEAU"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_TEXAS"
+						levels=2
 					}
 					country={
 						country="c:USA"
@@ -18764,11 +18674,10 @@
 			create_building={
 				building="building_steelworks"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_us_steel_corp
 						country="c:USA"
 						levels=1
-						region="STATE_NEW_YORK"
 					}
 				}
 				reserves=1
@@ -19309,6 +19218,16 @@
 			create_building={
 				building="building_motor_industry"
 				add_ownership={
+					company={
+						type=company_chrysler
+						country="c:USA"
+						levels=5
+					}
+					company={
+						type=company_john_deere
+						country="c:USA"
+						levels=10
+					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
@@ -19330,7 +19249,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=104
+						levels=89
 						region="STATE_ILLINOIS"
 					}
 					building={
@@ -19745,17 +19664,10 @@
 			create_building={
 				building="building_combustion_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_westinghouse_corp
 						country="c:USA"
-						levels=1
-						region="STATE_VIRGINIAS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CUMBERLAND_PLATEAU"
+						levels=2
 					}
 				}
 				reserves=1
@@ -20939,47 +20851,10 @@
 			create_building={
 				building="building_steelworks"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_us_steel_corp
 						country="c:USA"
-						levels=7
-						region="STATE_NEW_YORK"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=19
-						region="STATE_NEW_ENGLAND"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_GREAT_PLAINS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CALIFORNIA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CHESAPEAKE"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_NEW_MEXICO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=3
-						region="STATE_OHIO"
+						levels=33
 					}
 				}
 				reserves=1
@@ -21059,11 +20934,10 @@
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_us_steel_corp
 						country="c:USA"
 						levels=2
-						region="STATE_NEW_ENGLAND"
 					}
 				}
 				reserves=1
@@ -28931,17 +28805,10 @@
 			create_building={
 				building="building_oil_rig"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_standard_oil
 						country="c:USA"
-						levels=6
-						region="STATE_TEXAS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CALIFORNIA"
+						levels=7
 					}
 				}
 				reserves=1
@@ -29011,23 +28878,10 @@
 			create_building={
 				building="building_combustion_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_westinghouse_corp
 						country="c:USA"
-						levels=1
-						region="STATE_OZARK_PLATEAU"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_ILLINOIS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=2
-						region="STATE_TEXAS"
+						levels=4
 					}
 				}
 				reserves=1
@@ -29368,45 +29222,14 @@
 			create_building={
 				building="building_paper_manufactories"
 				add_ownership={
+					company={
+						type=company_weyerhaeuser
+						country="c:USA"
+						levels=7
+					}
 					country={
 						country="c:USA"
 						levels=2
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=2
-						region="STATE_CAROLINAS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_OHIO"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_ILLINOIS"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_ARIZONA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_LOUISIANA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_CALIFORNIA"
 					}
 				}
 				reserves=1
@@ -30443,11 +30266,10 @@
 			create_building={
 				building="building_combustion_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=company_westinghouse_corp
 						country="c:USA"
 						levels=1
-						region="STATE_CUMBERLAND_PLATEAU"
 					}
 				}
 				reserves=1
@@ -30750,6 +30572,21 @@
 			create_building={
 				building="building_motor_industry"
 				add_ownership={
+					company={
+						type=company_chrysler
+						country="c:USA"
+						levels=15
+					}
+					company={
+						type=company_ford_motor
+						country="c:USA"
+						levels=25
+					}
+					company={
+						type=company_general_motors
+						country="c:USA"
+						levels=20
+					}
 					building={
 						type="building_financial_district"
 						country="c:USA"
@@ -30777,7 +30614,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=73
+						levels=13
 						region="STATE_CALIFORNIA"
 					}
 					building={

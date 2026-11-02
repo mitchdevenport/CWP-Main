@@ -14863,9 +14863,7 @@ effect_decolonization_after_war = {
 					num_casualties > scope:decolonization_casualty_threshold
 				}
 			}
-			add_journal_entry = {
-				type = je_decolonization
-			}
+			set_variable = cwp_decolonization_pending # activates je_decolonization (see its possible trigger)
 		}
 	}
 }

@@ -108,5 +108,12 @@ GLOBAL = {
 	### UN lists used by the International Organizations and UN panels
 	rebuild_un_lists = yes
 
-	### Decolonization: je_decolonization activates on its own for the colonial empires (is_shown_when_inactive + possible)
+	### Decolonization: the colonial empires start with their empire's future in question
+	# In 1.14 add_journal_entry cannot start a journal entry that is shown as inactive, so the flag lets
+	# je_decolonization activate for them (see its possible trigger)
+	c:GBR ?= { set_variable = cwp_decolonization_pending }
+	c:FRA ?= { set_variable = cwp_decolonization_pending }
+	c:BEL ?= { set_variable = cwp_decolonization_pending }
+	c:NET ?= { set_variable = cwp_decolonization_pending }
+	c:POR ?= { set_variable = cwp_decolonization_pending }
 }
