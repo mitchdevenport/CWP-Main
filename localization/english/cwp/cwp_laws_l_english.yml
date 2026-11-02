@@ -31,3 +31,15 @@
 # Migration Laws:
   law_encourage_migration: "Encourage Migration"
   law_encourage_migration_desc: "The state actively encourages immigration through permissive quotas, migration incentives, and policies meant to attract new arrivals."
+
+  # Law and law group descriptions
+  lawgroup_corporate_affairs_desc: "How the state regulates companies, monopolies and corporate power."
+  lawgroup_judiciary_desc: "How far the courts stand apart from those who govern."
+  law_arbitrary_legalism_desc: "The law is whatever those in power say it is. Courts rubber-stamp the decisions of the state, and justice is dispensed at the pleasure of the rulers."
+  law_puppet_judiciary_desc: "Courts exist and trials are held, but judges serve at the pleasure of the government and seldom rule against it."
+  law_judicial_interference_desc: "The judiciary enjoys a measure of independence, yet the government shapes appointments and leans on the courts in politically sensitive cases."
+  law_independent_judiciary_desc: "The courts are independent of the government and impartial, able to hold even the state to account."
+  law_domestic_intelligence_agency_desc: "A professional intelligence service watches for espionage, subversion and terrorism at home, under at least nominal legal oversight."
+  law_disarmed_nation_desc: "The nation keeps no military of its own and relies on other nations for its defense."
+  law_state_atheism: "State Atheism"
+  law_state_atheism_desc: "The state actively discourages religious participation, discriminating against all faiths."

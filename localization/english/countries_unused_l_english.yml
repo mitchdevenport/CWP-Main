@@ -660,3 +660,13 @@ l_english:
   dyn_c_zambezi_free_state: "Zambezi Free State"
   dyn_c_zambian_republic_adj: "Zambian"
   dyn_c_zambian_republic: "Zambia"
+
+  # Restored names of unused tags
+  CMB: "Colombia"
+  CMB_ADJ: "Colombian"
+  DOM: "Santo Domingo"
+  DOM_ADJ: "Dominican"
+  PRA: "Grão-Pará"
+  PRA_ADJ: "Paraense"
+  ROK: "Korea"
+  ROK_ADJ: "Korean"

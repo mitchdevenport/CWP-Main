@@ -105,3 +105,5 @@
  concept_imf_credit_desc: "IMF Credit is the amount of money given to a nation as part of either an [concept_concessionary_loan_imf] or [concept_nonconcessionary_loan_imf] loan."
  concept_imf_bailout: "IMF Bailout"
  concept_imf_bailout_desc: "IMF Bailouts are a special type of loan with no interest that wipes out a country's domestic debt but have terms and conditions that have to be met in order to complete."
+ superpower_desc: "[concept_superpower_desc]"
+ decentralized_power_desc: "[concept_decentralized_nation_desc]"

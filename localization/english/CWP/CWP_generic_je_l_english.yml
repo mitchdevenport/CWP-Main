@@ -294,3 +294,4 @@
   cwp_interstate_highway_suburban_corridors_tt: "All Incorporated states receive [GetStaticModifier('cwp_interstate_highway_suburban_corridors').GetName|v] for 10 years."
   
   nuclear_research_facility_tt: "We have established the Nuclear Research Facility"
+  je_group_political_crises: "Political Crises"

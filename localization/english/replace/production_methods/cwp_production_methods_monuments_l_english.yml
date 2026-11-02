@@ -120,3 +120,8 @@
   pm_power_bloc_statue_trade_league: "Trade League"
   pm_power_bloc_statue_religious: "Religious"
   pm_power_bloc_prestige_only: "Prestige Only"
+  pm_clerical_building_saint_basils_cathedral: "Clerical"
+  pm_cultural_building_saint_basils_cathedral: "Cultural"
+  pmg_base_building_kremlin: "Kremlin"
+  pmg_base_building_national_mall: "National Mall"
+  pmg_base_monte_carlo_casinos: "Monte Carlo Casinos"

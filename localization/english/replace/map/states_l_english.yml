@@ -150,3 +150,6 @@
 # Sakhalin
 
  STATE_SAKHALIN_japanese_cwp:0 "Karafuto"
+ STATE_BALTIC_SEA: "Baltic Sea"
+ STATE_BLACK_SEA: "Black Sea"
+ STATE_ATLANTIC_SEABOARD: "Atlantic Seaboard"

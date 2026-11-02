@@ -249,7 +249,7 @@
   a_new_constitution.312: "The Law of 1905"
   a_new_constitution.312.t: "The Law of 1905"
   a_new_constitution.312.d: "Ever since 1905, Church and State have been separated in France. Socialists propose to enshrine this principle in the Constitution."
-  a_new_constitution.312.f: "Article 1: 'The Republic guarantees freedom of conscience. It guarantees the free exercise of worship [...]'. Article 2: 'The Republic does not recognize, salute or subsidize any religion. [...]'\n\nWhile it would be the most consensual thing to do, enshrining these principles into the Constitution would slightly upset Christian democrats."
+  a_new_constitution.312.f: "Article 1: 'The Republic guarantees freedom of conscience. It guarantees the free exercise of worship (...)'. Article 2: 'The Republic does not recognize, salute or subsidize any religion. (...)'\n\nWhile it would be the most consensual thing to do, enshrining these principles into the Constitution would slightly upset Christian democrats."
   a_new_constitution.312.a: "Our Republic will remain secular."
   a_new_constitution.312.a.tt: "$TOOLTIP_DELIMITER$\n$communist_stance_church_disestablishment$\n$socialist_stance_church_disestablishment$\n$moralist_stance_church_disestablishment$\n$gaullist_stance_church_disestablishment$"
   a_new_constitution.312.b: "France is a Catholic nation!"

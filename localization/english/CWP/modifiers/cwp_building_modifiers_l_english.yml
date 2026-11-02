@@ -79,3 +79,9 @@
   # Explosives
   building_explosives_industry_throughput_add: "$building_explosives_industry$ building [concept_throughput]"
   building_explosives_industry_throughput_add_desc: "A bonus or penalty to both input and output of $building_explosives_industry$"
+
+  # Building modifiers
+  building_banks_throughput_add: "$building_banks$ building [concept_throughput]"
+  building_banks_throughput_add_desc: "A bonus or penalty to both input and output of $building_banks$"
+  building_bauxite_mine_throughput_add: "$building_bauxite_mine$ building [concept_throughput]"
+  building_bauxite_mine_throughput_add_desc: "A bonus or penalty to both input and output of $building_bauxite_mine$"

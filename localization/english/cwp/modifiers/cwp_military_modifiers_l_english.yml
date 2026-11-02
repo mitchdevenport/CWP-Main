@@ -267,3 +267,17 @@
   ship_battle_against_ship_type_underway_replenishment_ship_hull_damage_add_desc: "$ship_hull_damage_add_desc$"
   ship_battle_against_ship_type_underway_replenishment_ship_hull_damage_mult: "$ship_type_underway_replenishment_ship$ $ship_hull_damage_mult$"
   ship_battle_against_ship_type_underway_replenishment_ship_hull_damage_mult_desc: "$ship_hull_damage_mult_desc$"
+
+  # Combat unit type modifiers
+  unit_combat_unit_type_tactical_brigade_offense_add: "$combat_unit_type_tactical_brigade$ $unit_offense_add$"
+  unit_combat_unit_type_tactical_brigade_offense_add_desc: "$combat_unit_type_tactical_brigade$ $unit_offense_add$"
+  unit_combat_unit_type_wartime_artillery_offense_mult: "$combat_unit_type_wartime_artillery$ $unit_offense_mult$"
+  unit_combat_unit_type_wartime_artillery_offense_mult_desc: "$combat_unit_type_wartime_artillery$ $unit_offense_mult$"
+  unit_combat_unit_type_self_propelled_guns_offense_mult: "$combat_unit_type_self_propelled_guns$ $unit_offense_mult$"
+  unit_combat_unit_type_self_propelled_guns_offense_mult_desc: "$combat_unit_type_self_propelled_guns$ $unit_offense_mult$"
+  unit_combat_unit_type_rocket_artillery_offense_mult: "$combat_unit_type_rocket_artillery$ $unit_offense_mult$"
+  unit_combat_unit_type_rocket_artillery_offense_mult_desc: "$combat_unit_type_rocket_artillery$ $unit_offense_mult$"
+  unit_combat_unit_type_airmobile_howitzers_offense_mult: "$combat_unit_type_airmobile_howitzers$ $unit_offense_mult$"
+  unit_combat_unit_type_airmobile_howitzers_offense_mult_desc: "$combat_unit_type_airmobile_howitzers$ $unit_offense_mult$"
+  unit_combat_unit_type_tbm_launchers_offense_mult: "$combat_unit_type_tbm_launchers$ $unit_offense_mult$"
+  unit_combat_unit_type_tbm_launchers_offense_mult_desc: "$combat_unit_type_tbm_launchers$ $unit_offense_mult$"

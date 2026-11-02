@@ -34,3 +34,11 @@
 
   # Trade Union Variants:
   ig_variant_laborists: "[GetInterestGroupVariant('ig_trade_unions',GetPlayer).GetNameWithCountryVariant]"
+
+  # Interest group traits
+  ig_trait_corruption: "Corruption"
+  ig_trait_corruption_desc: "A cut of every contract and budget line that passes through our hands is simply the cost of doing business."
+  ig_trait_civil_service_2: "$ig_trait_civil_service$"
+  ig_trait_civil_service_2_desc: "$ig_trait_civil_service_desc$"
+  ig_trait_accommodating_government: "Accommodating Government"
+  ig_trait_accommodating_government_desc: "A contented administration smooths the passage of the government's legislation."

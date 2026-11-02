@@ -1353,3 +1353,27 @@
   #ESW - Eswatini
   dyn_c_british_eswatini: "Swaziland"
   dyn_c_british_eswatini_adj: "Swazi"
+
+  # Restored country names
+  GLI: "Galicia"
+  GLI_ADJ: "Galician"
+  LOU: "Louisiana"
+  LOU_ADJ: "Louisianan"
+  KUR: "Kurdistan"
+  KUR_ADJ: "Kurdish"
+  PAL: "Palestine"
+  PAL_ADJ: "Palestinian"
+
+  # Restored dynamic country names
+  dyn_c_scandinavia_kalmar_union: "Kalmar Union"
+  dyn_c_empire_of_china: "Empire of China"
+  dyn_c_empire_of_china_adj: "Chinese"
+  dyn_c_sumatra: "Sumatra"
+  dyn_c_sumatra_adj: "Sumatran"
+  dyn_c_peru_bolivia: "Peru-Bolivia"
+  dyn_c_peru_bolivia_adj: "Peru-Bolivian"
+  dyn_c_mahdist_state: "Mahdist State"
+  dyn_c_mahdist_state_adj: "Mahdist"
+  dyn_c_funj_state: "Funj State"
+  dyn_c_funj_state_adj: "Funj"
+  dyn_c_confederate_state_of_america: "Confederate States of America"

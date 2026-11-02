@@ -28,3 +28,17 @@
   region_english_channel: "English Channel"
   region_southern_africa: "Southern Africa"
   region_great_lakes: "Great Lakes"
+
+  # Geographic regions
+  geographic_region_asia_minor: "Asia Minor"
+  geographic_region_atlantic_seaboard: "Atlantic Seaboard"
+  geographic_region_central_africa: "Central Africa"
+  geographic_region_golden_circle: "Golden Circle"
+  geographic_region_horn_of_africa: "Horn of Africa"
+  geographic_region_pacific_seaboard: "Pacific Seaboard"
+
+  # Straits
+  strait_english_channel: "Strait of Dover"
+  strait_san_bernardino: "San Bernardino Strait"
+  strait_sunda_1: "Sunda Strait"
+  strait_sunda_2: "Sunda Strait"

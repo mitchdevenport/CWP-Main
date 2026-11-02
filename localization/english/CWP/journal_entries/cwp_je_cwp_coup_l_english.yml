@@ -116,3 +116,23 @@
   cwp_if_coup_is_successful_tt: "If the [concept_coup] is successful: #indent_newline:3 "
 
   cwp_preemptive_coup_tt: "The government has forced an immediate confrontation"
+
+  # Coup strength and resistance breakdowns
+  coup_clout_of_coup_interest_group_tt: "$coup_clout_of_golpista_ig_tt$"
+  cwp_coup_commander_colony_location_tt: "$coup_commander_colony_location_tt$"
+  cwp_coup_commander_core_location_tt: "$coup_commander_core_location_tt$"
+  cwp_coup_commander_no_location_tt: "$coup_commander_no_location_tt$"
+  cwp_coup_commander_periphery_location_tt: "$coup_commander_periphery_location_tt$"
+  cwp_coup_commander_unassigned_location_tt: "$coup_commander_unassigned_location_tt$"
+  cwp_coup_commander_popularity_tt: "$coup_popularity_tt$"
+  cwp_coup_commander_rank_tt: "$coup_commander_rank_tt$"
+  cwp_coup_commander_strength_modifier_add_tt: "$coup_strength_modifier_add_tt$"
+  cwp_coup_commander_strength_modifier_tt: "$coup_strength_modifier_tt$"
+  cwp_coup_interest_group_clout_tt: "$coup_clout_tt$"
+  cwp_coup_legitimacy_tt: "$coup_legitimacy_tt$"
+  cwp_coup_resistance_modifier_add_tt: "$coup_resistance_modifier_add_tt$"
+  cwp_coup_resistance_modifier_tt: "$coup_resistance_modifier_tt$"
+  cwp_appeased_cwp_coup_character_interest_group_tt: "$appeased_golpista_igs_tt$"
+  cwp_coup_character_coup_strength_tt: "[concept_coup_strength] of coupist [concept_commander] ([GetPlayer.MakeScope.ScriptValue('cwp_commander_coup_strength_country_display')|2v]): #indent_newline:3 \n[GetPlayer.MakeScope.GetScriptValueDesc('cwp_commander_coup_strength_country_display')]#!"
+  cwp_country_coup_resistance_tt: "[concept_coup_resistance] value of [concept_country] ([GetPlayer.MakeScope.ScriptValue('cwp_country_coup_resistance')|2v]): #indent_newline:3 \n[GetPlayer.MakeScope.GetScriptValueDesc('cwp_country_coup_resistance_reversed')]#!"
+  cwp_orchestrate_coup_aborted_tt: "The orchestrated [concept_coup] has been aborted"
