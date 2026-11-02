@@ -1018,7 +1018,7 @@ types imf
 												raw_text = "Submit | #v [GetPlayer.MakeScope.ScriptValue('imf_application_loan_approval_chance_div')|+1%] Approval Chance#!"
 												onclick = "[GetScriptedGui('imf_submit_loan_application').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 												onclick = "[GetVariableSystem.Clear('ApplyLoan')]"
-												enabled = "[GreaterThan_CFixedPoint(GetPlayer.MakeScope.Var('imf_loan_application_amount').GetValue, '(CFixedPoint)1')]"
+												enabled = "[And(GreaterThan_CFixedPoint(GetPlayer.MakeScope.Var('imf_loan_application_amount').GetValue, '(CFixedPoint)1'), GetScriptedGui('can_apply_imf_loan').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]" # the form can stay open after the country stops being able to apply
 												tooltip = "IMF_LOAN_APPROVAL_TOOLTIP"
 											}
 											background = {

@@ -138,6 +138,7 @@ on_action_change_domestic_currency_value = {
 	if = { limit = { var:cwp_currency = flag:currency_pln } change_global_variable = { name = currency_pln_v $mathAction$ = $mathAction2$ } }
 	if = { limit = { var:cwp_currency = flag:currency_cad } change_global_variable = { name = currency_cad_v $mathAction$ = $mathAction2$ } }
 	if = { limit = { var:cwp_currency = flag:currency_aud } change_global_variable = { name = currency_aud_v $mathAction$ = $mathAction2$ } }
+	if = { limit = { var:cwp_currency = flag:currency_nzd } change_global_variable = { name = currency_nzd_v $mathAction$ = $mathAction2$ } }
 	if = { limit = { var:cwp_currency = flag:currency_aup } change_global_variable = { name = currency_aup_v $mathAction$ = $mathAction2$ } }
 	if = { limit = { var:cwp_currency = flag:currency_nzp } change_global_variable = { name = currency_nzp_v $mathAction$ = $mathAction2$ } }
 	if = { limit = { var:cwp_currency = flag:currency_itl } change_global_variable = { name = currency_itl_v $mathAction$ = $mathAction2$ } }

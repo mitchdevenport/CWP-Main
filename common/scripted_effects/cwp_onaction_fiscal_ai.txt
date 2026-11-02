@@ -187,7 +187,7 @@ onaction_ai_buy_foreign_currency_calculation = {
                         }
                     }
                 }
-                if = {
+                else_if = {
                     limit = {
                         var:ai_currency_buy_country.money_supply_5 >= foreign_reserves_capacity_left
                     }

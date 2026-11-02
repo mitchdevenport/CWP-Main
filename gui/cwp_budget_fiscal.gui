@@ -187,7 +187,7 @@ types cwp_budget_fiscal {
 												size = { 70 30 }
 												using = expand_button_bg_no_fade
 												text = "[SelectLocalization(EqualTo_CFixedPoint(GetPlayer.MakeScope.ScriptValue('interest_rate'), GetPlayer.MakeScope.ScriptValue('interest_rate_gui')), 'CURRENT_INTEREST_RATE', 'TARGET_INTEREST_RATE')]"
-												enabled = "[Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.ScriptValue('interest_rate'), GetPlayer.MakeScope.ScriptValue('interest_rate_gui')))]"
+												enabled = "[And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.ScriptValue('interest_rate'), GetPlayer.MakeScope.ScriptValue('interest_rate_gui'))), GetScriptedGui('can_set_interest_rates').IsShown( GuiScope.SetRoot(GetPlayer.MakeScope).End))]" # same limits as the -/+ buttons, a target set earlier is not submitted
 												onclick = "[GetScriptedGui('submit_interest_rate').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 											}
 											button = {

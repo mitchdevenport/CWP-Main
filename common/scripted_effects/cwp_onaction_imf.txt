@@ -228,6 +228,11 @@ remove_imf_member = {
 	}
 	remove_variable = imf_debt_years
 	remove_variable = imf_loan_application_payment_due_years_current
+	# Only members are recalculated monthly, so former members would keep their last IMF expenses and income
+	remove_modifier = imf_contribution
+	remove_modifier = imf_debt_payment
+	remove_modifier = imf_credit_payment
+	remove_modifier = imf_credit_returns
 }
 set_imf_starting_values = {
     set_variable = {

@@ -119,7 +119,7 @@ imf_decrease_loan_application_amount = {
 				subtract = imf_application_loan_increase_val
 			}
 		}
-		if = {
+		else_if = {
 			limit = {
 				var:imf_loan_application_amount <= imf_application_loan_increase_val
 			}
@@ -227,7 +227,7 @@ imf_decrease_upfront_principal = {
 				subtract = imf_application_upfront_principle_change_val
 			}
 		}
-		if = {
+		else_if = {
 			limit = {
 				var:imf_loan_application_upfront_principal <= imf_application_upfront_principle_change_val
 			}

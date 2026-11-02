@@ -33,7 +33,7 @@ buy_foreign_currency = {
 				}
 			}
 		}
-		if = {
+		else_if = {
 			limit = {
 				scope:currency_exchange_country.money_supply_5 >= foreign_reserves_capacity_left
 			}
@@ -111,7 +111,7 @@ lower_interest_rate = {
 				subtract = 0.5
 			}
 		}
-		if = {
+		else_if = {
 			limit = {
 				var:interest_rate_gui > -1.5  # Zero lower bound, -1.5% is the lowest interest rate
 				var:interest_rate_gui <= 0
@@ -231,7 +231,7 @@ devalue_currency = {
 		}
 		set_variable = {
 			name = altered_currency
-			months = 12
+			years = 5
 		}
 	}
 }
@@ -524,7 +524,7 @@ can_buy_currency = {
 			}
 		}
 		scope:currency_exchange_country = {
-			not = {
+			nor = {
 				has_law = law_type:law_isolationism
 				has_law = law_type:law_canton_system
 				and = {
