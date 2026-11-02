@@ -1898,6 +1898,10 @@ on_secession_end = {
 			days = 1
 			popup = yes
 		}
+
+		# Company buildings of dead companies left in the states that changed hands (common/scripted_effects/cwp_company_effects.txt)
+		cwp_remove_orphaned_company_buildings_in_country = yes
+		scope:target ?= { cwp_remove_orphaned_company_buildings_in_country = yes }
 	}
 }
 
@@ -1909,6 +1913,9 @@ on_civil_war_won = {
 	}
 
 	effect = {
+		# Company buildings of the defeated side's dead companies (common/scripted_effects/cwp_company_effects.txt)
+		cwp_remove_orphaned_company_buildings_in_country = yes
+
 		if = {
 			limit = { has_variable = anti_monarchist_revolution }
 			if = {

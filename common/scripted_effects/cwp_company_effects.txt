@@ -1,0 +1,83 @@
+﻿# Victoria 3 1.14 gives every company a building of its own type (building_<company type>, building group
+# bg_company_headquarter) in its home state. A civil war hands the government's states to the rebels together with
+# these buildings; when the rebels win (or a secession succeeds) the old government's companies die but their buildings
+# stay, and the state's new owner can never establish that company type there (error.log: "Tried to create building
+# of Type building_company_... but such a building already exists"). Annexations do not need this: the game removes
+# the buildings itself. Never remove a living company's building - the game then disbands the company.
+# Add new company types to the list in cwp_remove_orphaned_company_buildings.
+
+# Root = state, TYPE = company type
+cwp_remove_orphaned_company_building = {
+	if = {
+		limit = {
+			any_scope_building = { is_building_type = building_$TYPE$ }
+			owner = {
+				NOT = { has_company = company_type:$TYPE$ }
+			}
+		}
+		remove_building = building_$TYPE$
+	}
+}
+
+# Root = state
+cwp_remove_orphaned_company_buildings = {
+	cwp_remove_orphaned_company_building = { TYPE = company_rolls_royce_holdings }
+	cwp_remove_orphaned_company_building = { TYPE = company_british_broadcasting_company }
+	cwp_remove_orphaned_company_building = { TYPE = company_british_petroleum_corporation }
+	cwp_remove_orphaned_company_building = { TYPE = company_international_business_machines }
+	cwp_remove_orphaned_company_building = { TYPE = company_boeing }
+	cwp_remove_orphaned_company_building = { TYPE = company_walt_disney_productions }
+	cwp_remove_orphaned_company_building = { TYPE = company_general_motors }
+	cwp_remove_orphaned_company_building = { TYPE = company_ford_motor }
+	cwp_remove_orphaned_company_building = { TYPE = company_chrysler }
+	cwp_remove_orphaned_company_building = { TYPE = company_us_steel_corp }
+	cwp_remove_orphaned_company_building = { TYPE = company_standard_oil }
+	cwp_remove_orphaned_company_building = { TYPE = company_north_american_aviation }
+	cwp_remove_orphaned_company_building = { TYPE = company_general_electric }
+	cwp_remove_orphaned_company_building = { TYPE = company_john_deere }
+	cwp_remove_orphaned_company_building = { TYPE = company_weyerhaeuser }
+	cwp_remove_orphaned_company_building = { TYPE = company_westinghouse_corp }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_agriculture_1 }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_agriculture_2 }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_fabrics }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_plantations_1 }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_plantations_2 }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_forestry }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_fishing }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_metal_mining }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_mineral_mining }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_rare_earth_mining }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_uranium_mining }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_oil_and_gas }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_steelworks }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_electronics }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_chemicals }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_arms_industry }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_shipyards }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_aerospace }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_automobiles }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_semiconductors }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_computers }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_engines }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_machinery }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_consumer_electronics }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_pharmaceuticals }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_home_goods }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_groceries }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_paper }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_textiles }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_power }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_tourism }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_broadcasting }
+	cwp_remove_orphaned_company_building = { TYPE = company_basic_financial }
+}
+
+# Root = country: removes the company buildings in its states whose company type it does not have
+cwp_remove_orphaned_company_buildings_in_country = {
+	every_scope_state = {
+		limit = {
+			any_scope_building = { is_building_group = bg_company_headquarter }
+		}
+		cwp_remove_orphaned_company_buildings = yes
+	}
+}
