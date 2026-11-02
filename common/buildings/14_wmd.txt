@@ -30,6 +30,7 @@ building_nuclear_weapons_facility = {
 	city_type = city
 	has_max_level = yes
 	levels_per_mesh = 0
+	downsizeable = no # the AI otherwise dismantles the nuclear arsenal's infrastructure within weeks
 	unlocking_technologies = {
 		civil_nuclear_power
 	}
@@ -53,6 +54,7 @@ building_strategic_airbase = {
 	icon = "gfx/interface/icons/building_icons/nuclear_research_facility.dds"
 	city_type = city
 	levels_per_mesh = 0
+	downsizeable = no # the AI otherwise dismantles the nuclear arsenal's infrastructure within weeks
 	unlocking_technologies = {
 		civil_nuclear_power
 	}
@@ -77,6 +79,7 @@ building_nuclear_weapons_silo = {
 	city_type = city
 	has_max_level = yes
 	levels_per_mesh = 0
+	downsizeable = no # the AI otherwise dismantles the nuclear arsenal's infrastructure within weeks
 	unlocking_technologies = {
 		tactical_ballistic_weapons
 	}
