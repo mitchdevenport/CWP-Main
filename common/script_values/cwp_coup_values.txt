@@ -187,9 +187,10 @@ cwp_commander_coup_strength = {
 		value = modifier:character_coup_strength_add
 	}
 
-	multiply = {	# Coup strength modifier of the commander
+	multiply = {	# Coup strength modifier of the commander (a percentage, as in cwp_commander_coup_strength_country_display)
 		desc = "cwp_coup_commander_strength_modifier_tt"
-		value = modifier:character_coup_strength_mult
+		value = 1
+		add = modifier:character_coup_strength_mult
 	}
 }
 
