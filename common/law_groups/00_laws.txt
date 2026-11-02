@@ -170,7 +170,5 @@ lawgroup_migration = {
 
 lawgroup_labour_associations = {
 	law_group_category = human_rights
-	ideological_opinion_impact = 0.5
-
 	ideological_opinion_impact = 2.0
 }

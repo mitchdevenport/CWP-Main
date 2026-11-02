@@ -575,7 +575,8 @@ pm_default_building_interstate_highway_system = {
 		}
 	}
 
-	state_modifiers = {
+	# Formation modifiers only reach formations from the country, not from a state
+	country_modifiers = {
 		workforce_scaled = {
 			military_formation_mobilization_speed_mult = 0.10
 		}

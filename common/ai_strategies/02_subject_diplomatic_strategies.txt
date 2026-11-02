@@ -228,9 +228,6 @@ ai_strategy_subject_strengthen_self = {
 	wargoal_weights = {
 		independence = 0.0
 		increase_autonomy = 2.0
-	}
-	
-	wargoal_weights = {
 		conquer_state = 1.5
 		return_state = 1.5
 	}

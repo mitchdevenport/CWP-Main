@@ -169,6 +169,7 @@ STATE_OREGON = {
     capped_resources = {
         building_wind_farm = 50
         building_hydroelectric_power_plant = 45
+        building_fishing_wharf = 5
     }
     # state_trait_geothermal_reservoirs }
     city = x87ED27
@@ -185,9 +186,6 @@ STATE_OREGON = {
     resource = {
         type = "building_natural_gas_well"
         undiscovered_amount = 4
-    }
-    capped_resources = {
-        building_fishing_wharf = 5
     }
     naval_exit_id = 3154
 }
@@ -704,6 +702,8 @@ STATE_HAWAIIAN_ISLANDS = {
     capped_resources = {
         building_solar_farm = 30
         building_wind_farm = 30
+        building_iron_mine = 12
+        building_fishing_wharf = 8
     }
     # state_trait_geothermal_reservoirs }
     city = xB5403E
@@ -713,10 +713,6 @@ STATE_HAWAIIAN_ISLANDS = {
     wood = x6090C0
     arable_land = 15
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_coffee_plantations bg_cotton_plantations bg_tea_plantations bg_tobacco_plantations bg_sugar_plantations bg_banana_plantations bg_logging }
-    capped_resources = {
-        building_iron_mine = 12
-        building_fishing_wharf = 8
-    }
     naval_exit_id = 3001
 }
 
@@ -1438,6 +1434,8 @@ STATE_JALISCO = {
     traits = { state_trait_sierra_madre_occidental state_trait_natural_forests_5 }
     capped_resources = {
         building_solar_farm = 55
+        building_iron_mine = 33
+        building_fishing_wharf = 8
     }
     # state_trait_geothermal_reservoirs }
     city = xE34EE3
@@ -1450,10 +1448,6 @@ STATE_JALISCO = {
     resource = {
         type = "building_natural_gas_well"
         undiscovered_amount = 6
-    }
-    capped_resources = {
-        building_iron_mine = 33
-        building_fishing_wharf = 8
     }
     naval_exit_id = 3155
 }

@@ -606,18 +606,16 @@ pm_trade_center = {
 		unscaled = {
 			state_migration_pull_mult = 0.25
 		}
+		workforce_scaled = {
+			state_weekly_trades_add = 1
+			state_trade_capacity_add = 10
+		}
 	}
 
 	building_modifiers = {
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
 			building_employment_clerks_add = 400
-		}
-	}
-	state_modifiers = {
-		workforce_scaled = {
-			state_weekly_trades_add = 1
-			state_trade_capacity_add = 10
 		}
 	}
 }

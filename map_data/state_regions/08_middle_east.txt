@@ -635,6 +635,8 @@ STATE_AYDIN = {
     traits = {}
     capped_resources = {
         building_wind_farm = 35
+        building_coal_mine = 48
+        building_fishing_wharf = 15
     }
     # state_trait_geothermal_reservoirs }
     city = xE8A5DB
@@ -647,10 +649,6 @@ STATE_AYDIN = {
     resource = {
         type = "building_uranium_mine"
         undiscovered_amount = 10
-    }
-    capped_resources = {
-        building_coal_mine = 48
-        building_fishing_wharf = 15
     }
     naval_exit_id = 3035
 }
