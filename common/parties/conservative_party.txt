@@ -102,7 +102,7 @@ conservative_party = {
 
 		if = { # socialists and radicals won't join conservative parties
 			limit = {
-				leader = {
+				leader ?= {
 					OR = {
 						cwp_communist_party_character = yes
 						cwp_vanguardist_party_character = yes
@@ -121,7 +121,7 @@ conservative_party = {
 
 		if = { # conservatives love conservativism
 			limit = {
-				leader = {
+				leader ?= {
 					OR = {
 						has_ideology = ideology:ideology_traditionalist
 						has_ideology = ideology:ideology_royalist
@@ -159,7 +159,7 @@ conservative_party = {
 					any_interest_group = {
 						is_member_of_party = owner.py:conservative_party
 						is_powerful = yes
-						leader = { has_ideology = ideology:ideology_jingoist_leader }
+						leader ?= { has_ideology = ideology:ideology_jingoist_leader }
 					}
 				}
 			}
@@ -182,7 +182,7 @@ conservative_party = {
 
 		if = { # various progressives dislike conservativism
 			limit = {
-				leader = {
+				leader ?= {
 					OR = {
 						has_ideology = ideology:ideology_feminist
 						has_ideology = ideology:ideology_pacifist
@@ -209,7 +209,7 @@ conservative_party = {
 		# Abolitionists won't join conservative party
 		if = {
 			limit = {
-				leader = { has_ideology = ideology:ideology_abolitionist }
+				leader ?= { has_ideology = ideology:ideology_abolitionist }
 				owner = { NOT = { has_law_or_variant = law_type:law_slavery_banned } }
 			}
 			add = {
@@ -336,7 +336,7 @@ conservative_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_patriotic
-					leader = { has_ideology = ideology:ideology_authoritarian }
+					leader ?= { has_ideology = ideology:ideology_authoritarian }
 				}
 				owner = {
 					NOR = {
@@ -361,7 +361,7 @@ conservative_party = {
 				OR = {
 					has_ideology = ideology:ideology_patriarchal
 					has_ideology = ideology:ideology_patriotic
-					leader = { has_ideology = ideology:ideology_authoritarian }
+					leader ?= { has_ideology = ideology:ideology_authoritarian }
 				}
 			}
 			add = {

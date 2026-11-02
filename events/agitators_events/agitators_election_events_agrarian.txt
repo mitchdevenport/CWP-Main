@@ -51,7 +51,7 @@ agitators_election_events_agrarian.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -64,7 +64,7 @@ agitators_election_events_agrarian.1 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		agrarian_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -72,7 +72,7 @@ agitators_election_events_agrarian.1 = {
 	option = {
 		name = agitators_election_events_agrarian.1.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -83,7 +83,7 @@ agitators_election_events_agrarian.1 = {
 			name = modifier_engaged_rural_population
 			days = normal_modifier_time
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 	}
@@ -138,7 +138,7 @@ agitators_election_events_agrarian.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -151,7 +151,7 @@ agitators_election_events_agrarian.2 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		agrarian_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -159,14 +159,14 @@ agitators_election_events_agrarian.2 = {
 	option = {
 		name = agitators_election_events_agrarian.2.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
 
 	option = {
 		name = agitators_election_events_agrarian.2.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 		random_active_party = {
@@ -253,7 +253,7 @@ agitators_election_events_agrarian.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -275,7 +275,7 @@ agitators_election_events_agrarian.3 = {
 				save_scope_as = armed_forces_party_scope
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -283,13 +283,13 @@ agitators_election_events_agrarian.3 = {
 	option = {
 		name = agitators_election_events_agrarian.3.a
 		default_option = yes
-		scope:armed_forces_party_scope = {
+		scope:armed_forces_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:armed_forces_scope = {
+		scope:armed_forces_scope ?= {
 			add_modifier = {
 				name = modifier_public_pacifism
 				days = normal_modifier_time
@@ -299,10 +299,10 @@ agitators_election_events_agrarian.3 = {
 
 	option = {
 		name = agitators_election_events_agrarian.3.b
-		scope:armed_forces_party_scope = {
+		scope:armed_forces_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
 	}
@@ -360,7 +360,7 @@ agitators_election_events_agrarian.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -373,7 +373,7 @@ agitators_election_events_agrarian.4 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		agrarian_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -385,14 +385,14 @@ agitators_election_events_agrarian.4 = {
 			name = modifier_no_colonial_affairs_support_agrarian_party
 			days = normal_modifier_time
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 	}
 
 	option = {
 		name = agitators_election_events_agrarian.4.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -454,7 +454,7 @@ agitators_election_events_agrarian.5 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -483,7 +483,7 @@ agitators_election_events_agrarian.5 = {
 		ig:ig_industrialists ?= {
 			save_scope_as = industrialists_ig
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -491,10 +491,10 @@ agitators_election_events_agrarian.5 = {
 	option = {
 		name = agitators_election_events_agrarian.5.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:industry_enroachment_state = {
+		scope:industry_enroachment_state ?= {
 			add_modifier = {
 				name = modifier_industry_banned_support_agrarian_party
 				days = normal_modifier_time
@@ -508,10 +508,10 @@ agitators_election_events_agrarian.5 = {
 
 	option = {
 		name = agitators_election_events_agrarian.5.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
-		scope:industry_enroachment_state = {
+		scope:industry_enroachment_state ?= {
 			add_radicals_in_state = {
 				value = small_radicals
 				interest_group = scope:rural_folk_ig

@@ -81,7 +81,7 @@ agitators_election_events_fascist.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -103,7 +103,7 @@ agitators_election_events_fascist.1 = {
 				save_scope_as = communist_party_ig
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -125,17 +125,17 @@ agitators_election_events_fascist.1 = {
 		}
 		random_list = {
 			50 = {
-				scope:communist_party_scope = {
+				scope:communist_party_scope ?= {
 					add_momentum = momentum_medium_decrease
 				}
 			}
 			25 = {
-				scope:communist_party_scope = {
+				scope:communist_party_scope ?= {
 					add_momentum = momentum_large_decrease
 				}
 			}
 			25 = {
-				scope:communist_party_scope = {
+				scope:communist_party_scope ?= {
 					add_momentum = momentum_small_decrease
 				}
 			}
@@ -148,7 +148,7 @@ agitators_election_events_fascist.1 = {
 			value = small_radicals
 			interest_group = scope:communist_party_ig
 		}
-		scope:communist_party_scope = {
+		scope:communist_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		random_scope_character = {
@@ -196,10 +196,10 @@ agitators_election_events_fascist.1 = {
 			value = small_radicals
 			strata = middle
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_condemned_for_violent_rhetoric
 				days = normal_modifier_time
@@ -287,7 +287,7 @@ agitators_election_events_fascist.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -303,7 +303,7 @@ agitators_election_events_fascist.2 = {
 		ig:ig_industrialists ?= {
 			save_scope_as = industrialists_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -311,10 +311,10 @@ agitators_election_events_fascist.2 = {
 	option = {
 		name = agitators_election_events_fascist.2.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:industrialists_scope = {
+		scope:industrialists_scope ?= {
 			add_modifier = {
 				name = modifier_courted_by_fascists
 				days = normal_modifier_time
@@ -332,7 +332,7 @@ agitators_election_events_fascist.2 = {
 			}
 		}
 		highlighted_option = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_industrialists_rebuffed_advance
 				days = normal_modifier_time
@@ -420,7 +420,7 @@ agitators_election_events_fascist.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -433,7 +433,7 @@ agitators_election_events_fascist.3 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		fascist_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -441,7 +441,7 @@ agitators_election_events_fascist.3 = {
 	option = {
 		name = agitators_election_events_fascist.3.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 		if = {
@@ -465,7 +465,7 @@ agitators_election_events_fascist.3 = {
 
 	option = {
 		name = agitators_election_events_fascist.3.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
 		random_active_party = {
@@ -563,7 +563,7 @@ agitators_election_events_fascist.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -584,7 +584,7 @@ agitators_election_events_fascist.4 = {
 
 			save_scope_as = scary_communist_country
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -596,7 +596,7 @@ agitators_election_events_fascist.4 = {
 			country = scope:scary_communist_country
 			value = -20
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 			random_member = {
 				add_modifier = {
@@ -610,7 +610,7 @@ agitators_election_events_fascist.4 = {
 
 	option = {
 		name = agitators_election_events_fascist.4.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 			random_member = {
 				add_modifier = {
@@ -624,12 +624,12 @@ agitators_election_events_fascist.4 = {
 	option = {
 		name = agitators_election_events_fascist.4.c
 		trigger = {
-			scope:scary_communist_country = {
+			scope:scary_communist_country ?= {
 				relations:root >= relations_threshold:cordial
 			}
 		}
 		highlighted_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
 		add_radicals = {
@@ -722,7 +722,7 @@ agitators_election_events_fascist.5 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -761,7 +761,7 @@ agitators_election_events_fascist.5 = {
 			}
 			save_scope_as = hate_crime_state
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -769,14 +769,14 @@ agitators_election_events_fascist.5 = {
 	option = {
 		name = agitators_election_events_fascist.5.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		add_radicals = {
 			value = small_radicals
 			interest_group = scope:agitator_ig_scope
 		}
-		scope:hate_crime_state = {
+		scope:hate_crime_state ?= {
 			add_culture_standard_of_living_modifier = {
 				culture = scope:hate_crime_culture
 				days = short_modifier_time
@@ -787,14 +787,14 @@ agitators_election_events_fascist.5 = {
 
 	option = {
 		name = agitators_election_events_fascist.5.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 		add_radicals = {
 			value = medium_radicals
 			culture = scope:hate_crime_culture
 		}
-		scope:hate_crime_state = {
+		scope:hate_crime_state ?= {
 			add_culture_standard_of_living_modifier = {
 				culture = scope:hate_crime_culture
 				days = short_modifier_time
@@ -805,7 +805,7 @@ agitators_election_events_fascist.5 = {
 
 	option = {
 		name = agitators_election_events_fascist.5.c
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 		add_loyalists = {
@@ -816,7 +816,7 @@ agitators_election_events_fascist.5 = {
 			value = large_radicals
 			culture = scope:hate_crime_culture
 		}
-		scope:hate_crime_state = {
+		scope:hate_crime_state ?= {
 			add_culture_standard_of_living_modifier = {
 				culture = scope:hate_crime_culture
 				days = short_modifier_time

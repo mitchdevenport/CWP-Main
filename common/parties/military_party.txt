@@ -66,7 +66,7 @@ military_party = {
 		}
 
 		if = { # jingoists like the military party
-			limit = { leader = { has_ideology = ideology:ideology_jingoist_leader } }
+			limit = { leader ?= { has_ideology = ideology:ideology_jingoist_leader } }
 			add = {
 				value = 10
 				desc = "from_jingoist"
@@ -92,7 +92,7 @@ military_party = {
 				OR = {
 					has_ideology = ideology:ideology_jingoist
 					has_ideology = ideology:ideology_particularist
-					leader = {
+					leader ?= {
 						OR = {
 							has_ideology = ideology:ideology_fascist
 							has_ideology = ideology:ideology_anarchist
@@ -113,7 +113,7 @@ military_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_proletarian
-					leader = { cwp_social_democrat_party_character = yes }
+					leader ?= { cwp_social_democrat_party_character = yes }
 					has_ideology = ideology:ideology_loyalist
 				}
 				owner = {
@@ -157,7 +157,7 @@ military_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_patriotic
-					leader = { has_ideology = ideology:ideology_authoritarian }
+					leader ?= { has_ideology = ideology:ideology_authoritarian }
 				}
 				owner = {
 					NOR = {
@@ -182,7 +182,7 @@ military_party = {
 				OR = {
 					has_ideology = ideology:ideology_patriarchal
 					has_ideology = ideology:ideology_patriotic
-					leader = { has_ideology = ideology:ideology_authoritarian }
+					leader ?= { has_ideology = ideology:ideology_authoritarian }
 				}
 			}
 			add = {
@@ -192,7 +192,7 @@ military_party = {
 		}
 
 		if = { # authoritarians like militarism
-			limit = { leader = { has_ideology = ideology:ideology_authoritarian } }
+			limit = { leader ?= { has_ideology = ideology:ideology_authoritarian } }
 			add = {
 				value = 5
 				desc = from_authoritarian

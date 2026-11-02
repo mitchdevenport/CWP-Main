@@ -54,7 +54,7 @@ agitators_election_events_social_democrat.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -73,7 +73,7 @@ agitators_election_events_social_democrat.1 = {
 			}
 			save_scope_as = communist_party_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -81,7 +81,7 @@ agitators_election_events_social_democrat.1 = {
 	option = {
 		name = agitators_election_events_social_democrat.1.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 		add_loyalists = {
@@ -92,10 +92,10 @@ agitators_election_events_social_democrat.1 = {
 
 	option = {
 		name = agitators_election_events_social_democrat.1.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:communist_party_scope = {
+		scope:communist_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}
@@ -157,7 +157,7 @@ agitators_election_events_social_democrat.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -180,7 +180,7 @@ agitators_election_events_social_democrat.2 = {
 			}
 			save_scope_as = socdem_agitation_state
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -188,14 +188,14 @@ agitators_election_events_social_democrat.2 = {
 	option = {
 		name = agitators_election_events_social_democrat.2.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 		add_loyalists = {
 			value = medium_radicals
 			strata = lower
 		}
-		scope:socdem_agitation_state = {
+		scope:socdem_agitation_state ?= {
 			add_modifier = {
 				name = modifier_engaged_urban_poor
 				days = long_modifier_time
@@ -205,7 +205,7 @@ agitators_election_events_social_democrat.2 = {
 
 	option = {
 		name = agitators_election_events_social_democrat.2.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 		add_modifier = {
@@ -268,7 +268,7 @@ agitators_election_events_social_democrat.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -284,7 +284,7 @@ agitators_election_events_social_democrat.3 = {
 		ig:ig_trade_unions ?= {
 			save_scope_as = trade_union_ig
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -292,21 +292,21 @@ agitators_election_events_social_democrat.3 = {
 	option = {
 		name = agitators_election_events_social_democrat.3.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 	}
 
 	option = {
 		name = agitators_election_events_social_democrat.3.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 		add_loyalists = {
 			value = medium_radicals
 			interest_group = scope:trade_union_ig
 		}
-		scope:trade_union_ig = {
+		scope:trade_union_ig ?= {
 			add_modifier = {
 				name = modifier_social_democratic_unionizing
 				days = normal_modifier_time
@@ -364,7 +364,7 @@ agitators_election_events_social_democrat.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -377,7 +377,7 @@ agitators_election_events_social_democrat.4 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		socdem_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -385,14 +385,14 @@ agitators_election_events_social_democrat.4 = {
 	option = {
 		name = agitators_election_events_social_democrat.4.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
 
 	option = {
 		name = agitators_election_events_social_democrat.4.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		add_radicals = {
@@ -451,7 +451,7 @@ agitators_election_events_social_democrat.5 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -464,7 +464,7 @@ agitators_election_events_social_democrat.5 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		socdem_agitator_election_scope_effect = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -476,10 +476,10 @@ agitators_election_events_social_democrat.5 = {
 			name = modifier_suffrage_support_socdem_party
 			days = normal_modifier_time
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_supporter_of_franchise
 				days = normal_modifier_time
@@ -489,7 +489,7 @@ agitators_election_events_social_democrat.5 = {
 
 	option = {
 		name = agitators_election_events_social_democrat.5.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 	}

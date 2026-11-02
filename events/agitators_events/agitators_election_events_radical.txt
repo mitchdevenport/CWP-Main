@@ -50,7 +50,7 @@ agitators_election_events_radical.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -69,7 +69,7 @@ agitators_election_events_radical.1 = {
 		ig:ig_devout ?= {
 			save_scope_as = devout_ig
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -77,10 +77,10 @@ agitators_election_events_radical.1 = {
 	option = {
 		name = agitators_election_events_radical.1.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_excessively_radical_prescription
 				days = normal_modifier_time
@@ -97,10 +97,10 @@ agitators_election_events_radical.1 = {
 
 	option = {
 		name = agitators_election_events_radical.1.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_radical_prescriptions
 				days = normal_modifier_time
@@ -119,10 +119,10 @@ agitators_election_events_radical.1 = {
 		trigger = {
 			has_law_or_variant = law_type:law_no_social_security
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
-		scope:capital_scope = {
+		scope:capital_scope ?= {
 			add_modifier = {
 				name = modifier_just_give_them_money_smh
 				days = normal_modifier_time
@@ -184,7 +184,7 @@ agitators_election_events_radical.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -203,7 +203,7 @@ agitators_election_events_radical.2 = {
 		ig:ig_intelligentsia ?= {
 			save_scope_as = intelligentsia_ig
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -211,17 +211,17 @@ agitators_election_events_radical.2 = {
 	option = {
 		name = agitators_election_events_radical.2.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 	}
 
 	option = {
 		name = agitators_election_events_radical.2.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:monarch_scope = {
+		scope:monarch_scope ?= {
 			add_modifier = {
 				name = modifier_agitator_hates_the_monarchy_monarch
 				days = normal_modifier_time
@@ -334,7 +334,7 @@ agitators_election_events_radical.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -366,7 +366,7 @@ agitators_election_events_radical.3 = {
 		ig:ig_petty_bourgeoisie ?= {
 			save_scope_as = pb_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -374,7 +374,7 @@ agitators_election_events_radical.3 = {
 	option = {
 		name = agitators_election_events_radical.3.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 		add_radicals = {
@@ -385,7 +385,7 @@ agitators_election_events_radical.3 = {
 
 	option = {
 		name = agitators_election_events_radical.3.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}
@@ -479,7 +479,7 @@ agitators_election_events_radical.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -538,7 +538,7 @@ agitators_election_events_radical.4 = {
 			save_scope_as = anti_democratic_character
 		}
 		save_scope_as = self_referential_reference
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -546,7 +546,7 @@ agitators_election_events_radical.4 = {
 	option = {
 		name = agitators_election_events_radical.4.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 		add_modifier = {
@@ -557,14 +557,14 @@ agitators_election_events_radical.4 = {
 
 	option = {
 		name = agitators_election_events_radical.4.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
 		add_modifier = {
 			name = modifier_radical_suffrage_opposition
 			days = normal_modifier_time
 		}
-		scope:anti_democratic_character = {
+		scope:anti_democratic_character ?= {
 			add_modifier = {
 				name = modifier_radical_suffrage_further_support
 				days = normal_modifier_time
@@ -622,7 +622,7 @@ agitators_election_events_radical.5 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -641,7 +641,7 @@ agitators_election_events_radical.5 = {
 		capital = {
 			save_scope_as = capital_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -649,10 +649,10 @@ agitators_election_events_radical.5 = {
 	option = {
 		name = agitators_election_events_radical.5.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_doing_great_things
 				days = normal_modifier_time
@@ -663,13 +663,13 @@ agitators_election_events_radical.5 = {
 
 	option = {
 		name = agitators_election_events_radical.5.b
-		scope:monarch_scope = {
+		scope:monarch_scope ?= {
 			add_modifier = {
 				name = modifier_monarch_support_from_sedition
 				days = normal_modifier_time
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_not_doing_great_things
 				days = normal_modifier_time
@@ -683,10 +683,10 @@ agitators_election_events_radical.5 = {
 
 	option = {
 		name = agitators_election_events_radical.5.c
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:capital_scope = {
+		scope:capital_scope ?= {
 			add_modifier = {
 				name = modifier_radical_republicanism_support
 				days = normal_modifier_time

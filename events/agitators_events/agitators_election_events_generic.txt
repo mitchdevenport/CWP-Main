@@ -35,7 +35,7 @@ agitators_election_events_generic.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -48,7 +48,7 @@ agitators_election_events_generic.1 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -56,17 +56,17 @@ agitators_election_events_generic.1 = {
 	option = {
 		name = agitators_election_events_generic.1.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 	}
 
 	option = {
 		name = agitators_election_events_generic.1.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			random_member = {
 				add_modifier = {
 					name = modifier_prestigious_endorsement
@@ -109,7 +109,7 @@ agitators_election_events_generic.2 = {
 		}
 		OR = {
 			AND = {
-				scope:first_agitator = {
+				scope:first_agitator ?= {
 					has_socialist_ideology = yes
 				}
 				any_active_party = {
@@ -122,7 +122,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:first_agitator = {
+				scope:first_agitator ?= {
 					has_progressive_ideology = yes
 				}
 				any_active_party = {
@@ -135,7 +135,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:first_agitator = {
+				scope:first_agitator ?= {
 					has_liberal_ideology = yes
 				}
 				any_active_party = {
@@ -148,7 +148,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:first_agitator = {
+				scope:first_agitator ?= {
 					has_reactionary_ideology = yes
 				}
 				any_active_party = {
@@ -161,7 +161,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:first_agitator = {
+				scope:first_agitator ?= {
 					has_conservative_ideology = yes
 				}
 				any_active_party = {
@@ -185,7 +185,7 @@ agitators_election_events_generic.2 = {
 		}
 		OR = {
 			AND = {
-				scope:second_agitator = {
+				scope:second_agitator ?= {
 					has_socialist_ideology = yes
 				}
 				any_active_party = {
@@ -198,7 +198,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:second_agitator = {
+				scope:second_agitator ?= {
 					has_progressive_ideology = yes
 				}
 				any_active_party = {
@@ -211,7 +211,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:second_agitator = {
+				scope:second_agitator ?= {
 					has_liberal_ideology = yes
 				}
 				any_active_party = {
@@ -224,7 +224,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:second_agitator = {
+				scope:second_agitator ?= {
 					has_reactionary_ideology = yes
 				}
 				any_active_party = {
@@ -237,7 +237,7 @@ agitators_election_events_generic.2 = {
 				}
 			}
 			AND = {
-				scope:second_agitator = {
+				scope:second_agitator ?= {
 					has_conservative_ideology = yes
 				}
 				any_active_party = {
@@ -251,7 +251,7 @@ agitators_election_events_generic.2 = {
 			}
 		}
 		NOT = {
-			scope:first_agitator_party_scope = {
+			scope:first_agitator_party_scope ?= {
 				this = scope:second_agitator_party_scope
 			}
 		}
@@ -259,10 +259,10 @@ agitators_election_events_generic.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
-			scope:agitator_scope_2 = {
+			scope:agitator_scope_2 ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -277,7 +277,7 @@ agitators_election_events_generic.2 = {
 			NOT = {
 				exists = scope:agitator_2_party_scope
 			}
-			scope:agitator_party_scope = {
+			scope:agitator_party_scope ?= {
 				this = scope:agitator_2_party_scope
 			}
 			in_election_campaign = no
@@ -287,7 +287,7 @@ agitators_election_events_generic.2 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 		random_scope_character = {
@@ -302,31 +302,31 @@ agitators_election_events_generic.2 = {
 					OR = {
 						AND = {
 							has_socialist_ideology = yes
-							scope:agitator_scope = {
+							scope:agitator_scope ?= {
 								has_socialist_ideology = yes
 							}
 						}
 						AND = {
 							has_progressive_ideology = yes
-							scope:agitator_scope = {
+							scope:agitator_scope ?= {
 								has_progressive_ideology = yes
 							}
 						}
 						AND = {
 							has_liberal_ideology = yes
-							scope:agitator_scope = {
+							scope:agitator_scope ?= {
 								has_liberal_ideology = yes
 							}
 						}
 						AND = {
 							has_reactionary_ideology = yes
-							scope:agitator_scope = {
+							scope:agitator_scope ?= {
 								has_reactionary_ideology = yes
 							}
 						}
 						AND = {
 							has_conservative_ideology = yes
-							scope:agitator_scope = {
+							scope:agitator_scope ?= {
 								has_conservative_ideology = yes
 							}
 						}
@@ -337,7 +337,7 @@ agitators_election_events_generic.2 = {
 		}
 		if = {
 			limit = {
-				scope:agitator_scope_2 = {
+				scope:agitator_scope_2 ?= {
 					has_socialist_ideology = yes
 				}
 				any_active_party = {
@@ -364,7 +364,7 @@ agitators_election_events_generic.2 = {
 		}
 		else_if = {
 			limit = {
-				scope:agitator_scope_2 = {
+				scope:agitator_scope_2 ?= {
 					has_progressive_ideology = yes
 				}
 				any_active_party = {
@@ -391,7 +391,7 @@ agitators_election_events_generic.2 = {
 		}
 		else_if = {
 			limit = {
-				scope:agitator_scope_2 = {
+				scope:agitator_scope_2 ?= {
 					has_liberal_ideology = yes
 				}
 				any_active_party = {
@@ -418,7 +418,7 @@ agitators_election_events_generic.2 = {
 		}
 		else_if = {
 			limit = {
-				scope:agitator_scope_2 = {
+				scope:agitator_scope_2 ?= {
 					has_reactionary_ideology = yes
 				}
 				any_active_party = {
@@ -445,7 +445,7 @@ agitators_election_events_generic.2 = {
 		}
 		else_if = {
 			limit = {
-				scope:agitator_scope_2 = {
+				scope:agitator_scope_2 ?= {
 					has_conservative_ideology = yes
 				}
 				any_active_party = {
@@ -481,20 +481,20 @@ agitators_election_events_generic.2 = {
 	option = {
 		name = agitators_election_events_generic.2.a
 		default_option = yes
-		scope:agitator_2_party_scope = {
+		scope:agitator_2_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
 
 	option = {
 		name = agitators_election_events_generic.2.b
-		scope:agitator_2_party_scope = {
+		scope:agitator_2_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}
@@ -537,7 +537,7 @@ agitators_election_events_generic.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -560,7 +560,7 @@ agitators_election_events_generic.3 = {
 			}
 			save_scope_as = agitator_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 		save_agitator_election_scopes = yes
@@ -577,7 +577,7 @@ agitators_election_events_generic.3 = {
 			value = small_radicals
 			interest_group = scope:agitator_ig_scope
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		random_active_party = {
@@ -600,7 +600,7 @@ agitators_election_events_generic.3 = {
 			value = large_radicals
 			interest_group = scope:agitator_ig_scope
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		random_active_party = {
@@ -615,7 +615,7 @@ agitators_election_events_generic.3 = {
 
 	option = {
 		name = agitators_election_events_generic.3.c
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		random_active_party = {
@@ -672,7 +672,7 @@ agitators_election_events_generic.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -701,7 +701,7 @@ agitators_election_events_generic.4 = {
 			}
 			save_scope_as = opposition_party_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -709,7 +709,7 @@ agitators_election_events_generic.4 = {
 	option = {
 		name = agitators_election_events_generic.4.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 		scope:opposition_party_scope ?= {
@@ -768,7 +768,7 @@ agitators_election_events_generic.5 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -781,12 +781,12 @@ agitators_election_events_generic.5 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		save_agitator_election_scopes = yes
-		scope:agitator_ig_scope = {
+		scope:agitator_ig_scope ?= {
 			leader = {
 				save_scope_as = agitator_ig_leader_scope
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -794,14 +794,14 @@ agitators_election_events_generic.5 = {
 	option = {
 		name = agitators_election_events_generic.5.a
 		default_option = yes
-		scope:agitator_ig_leader_scope = {
+		scope:agitator_ig_leader_scope ?= {
 			add_modifier = {
 				name = modifier_embarassed_by_comrade
 				days = normal_modifier_time
 				multiplier = 2
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -809,20 +809,20 @@ agitators_election_events_generic.5 = {
 	option = {
 		name = agitators_election_events_generic.5.b
 		trigger = {
-			scope:agitator_ig_leader_scope = {
+			scope:agitator_ig_leader_scope ?= {
 				NOR = {
 					has_trait = arrogant
 					has_trait = imperious
 				}
 			}
 		}
-		scope:agitator_ig_leader_scope = {
+		scope:agitator_ig_leader_scope ?= {
 			add_modifier = {
 				name = modifier_embarassed_by_comrade
 				days = normal_modifier_time
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 	}
@@ -830,14 +830,14 @@ agitators_election_events_generic.5 = {
 	option = {
 		name = agitators_election_events_generic.5.c
 		trigger = {
-			scope:agitator_ig_leader_scope = {
+			scope:agitator_ig_leader_scope ?= {
 				OR = {
 					has_trait = arrogant
 					has_trait = imperious
 				}
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
 	}
@@ -904,7 +904,7 @@ agitators_election_events_generic.6 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -948,7 +948,7 @@ agitators_election_events_generic.6 = {
 			save_scope_as = agitator_scope
 		}
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -956,7 +956,7 @@ agitators_election_events_generic.6 = {
 	option = {
 		name = agitators_election_events_generic.6.a
 		default_option = yes
-		scope:agitator_party_scope= {
+		scope:agitator_party_scope?= {
 			add_momentum = momentum_medium
 		}
 		add_modifier = {
@@ -967,7 +967,7 @@ agitators_election_events_generic.6 = {
 
 	option = {
 		name = agitators_election_events_generic.6.b
-		scope:agitator_party_scope= {
+		scope:agitator_party_scope?= {
 			add_momentum = momentum_small
 		}
 		add_modifier = {
@@ -1011,7 +1011,7 @@ agitators_election_events_generic.7 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -1024,7 +1024,7 @@ agitators_election_events_generic.7 = {
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -1032,7 +1032,7 @@ agitators_election_events_generic.7 = {
 	option = {
 		name = agitators_election_events_generic.7.a
 		default_option = yes
-		scope:agitator_party_scope= {
+		scope:agitator_party_scope?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -1040,16 +1040,16 @@ agitators_election_events_generic.7 = {
 	option = {
 		name = agitators_election_events_generic.7.b
 		trigger = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				NOT = {
 					has_trait = ambitious
 				}
 			}
 		}
-		scope:agitator_party_scope= {
+		scope:agitator_party_scope?= {
 			add_momentum = momentum_small
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_trait = ambitious
 		}
 	}
@@ -1138,7 +1138,7 @@ agitators_election_events_generic.8 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -1205,7 +1205,7 @@ agitators_election_events_generic.8 = {
 			}
 		}
 
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			random_member = {
 				limit = {
 					NOT = {
@@ -1215,7 +1215,7 @@ agitators_election_events_generic.8 = {
 				save_scope_as = snubbed_ig_scope
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -1223,10 +1223,10 @@ agitators_election_events_generic.8 = {
 	option = {
 		name = agitators_election_events_generic.8.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_fair_dealer
 				days = normal_modifier_time
@@ -1236,17 +1236,17 @@ agitators_election_events_generic.8 = {
 
 	option = {
 		name = agitators_election_events_generic.8.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:snubbed_ig_scope = {
+		scope:snubbed_ig_scope ?= {
 			add_modifier = {
 				name = modifier_preferred_in_party
 				days = normal_modifier_time
 				multiplier = -2
 			}
 		}
-		scope:agitator_ig_scope = {
+		scope:agitator_ig_scope ?= {
 			add_modifier = {
 				name = modifier_preferred_in_party
 				days = normal_modifier_time
@@ -1313,7 +1313,7 @@ agitators_election_events_generic.9 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -1357,7 +1357,7 @@ agitators_election_events_generic.9 = {
 			save_scope_as = agitator_scope
 		}
 		save_agitator_election_scopes = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -1365,14 +1365,14 @@ agitators_election_events_generic.9 = {
 	option = {
 		name = agitators_election_events_generic.9.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 	}
 
 	option = {
 		name = agitators_election_events_generic.9.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 			random_member = {
 				add_modifier = {
@@ -1421,7 +1421,7 @@ agitators_election_events_generic.10 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -1440,7 +1440,7 @@ agitators_election_events_generic.10 = {
 			}
 			save_scope_as = tumultuous_state_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -1448,20 +1448,20 @@ agitators_election_events_generic.10 = {
 	option = {
 		name = agitators_election_events_generic.10.a
 		default_option = yes
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_trait = scarred
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}
 
 	option = {
 		name = agitators_election_events_generic.10.b
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_trait = wounded
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -1474,11 +1474,11 @@ agitators_election_events_generic.10 = {
 				has_law_or_variant = law_type:law_national_guard
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_trait = wounded
 			add_trait = shellshocked
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}

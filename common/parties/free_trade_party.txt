@@ -45,7 +45,7 @@ free_trade_party = {
 				is_marginal = no
 				OR = {
 					is_interest_group_type = ig_industrialists
-					leader = { cwp_market_liberal_party_character = yes }
+					leader ?= { cwp_market_liberal_party_character = yes }
 				}
 			}
 		}
@@ -62,7 +62,7 @@ free_trade_party = {
 		if = { # # industrialists/market liberals split from liberals as the economy modernises
 			limit = {
 				OR = {
-					leader = { cwp_market_liberal_party_character = yes }
+					leader ?= { cwp_market_liberal_party_character = yes }
 					has_ideology = ideology:ideology_laissez_faire
 				}
 			}
@@ -113,7 +113,7 @@ free_trade_party = {
 			limit = {
 				is_powerful = yes
 				OR = {
-					leader = { cwp_market_liberal_party_character = yes }
+					leader ?= { cwp_market_liberal_party_character = yes }
 					has_ideology = ideology:ideology_laissez_faire
 				}
 				NOT = { owner = { has_law_or_variant = law_type:law_universal_suffrage } }
@@ -129,7 +129,7 @@ free_trade_party = {
 			limit = {
 				is_powerful = no
 				owner = { ig:ig_industrialists ?= { is_powerful = yes } }
-				leader = { cwp_market_liberal_party_character = yes }
+				leader ?= { cwp_market_liberal_party_character = yes }
 			}
 			add = {
 				value = 5
@@ -173,7 +173,7 @@ free_trade_party = {
 			limit = {
 				owner = { NOT = { has_law_or_variant = law_type:law_child_labor_allowed } }
 				OR = {
-					leader = { cwp_market_liberal_party_character = yes }
+					leader ?= { cwp_market_liberal_party_character = yes }
 					has_ideology = ideology:ideology_laissez_faire
 				}
 			}
@@ -187,7 +187,7 @@ free_trade_party = {
 			limit = {
 				owner = { NOT = { has_law_or_variant = law_type:law_free_trade } }
 				OR = {
-					leader = { cwp_market_liberal_party_character = yes }
+					leader ?= { cwp_market_liberal_party_character = yes }
 					has_ideology = ideology:ideology_laissez_faire
 				}
 			}
@@ -229,8 +229,8 @@ free_trade_party = {
 				owner = { has_law_or_variant = law_type:law_universal_suffrage }
 				OR = {
 					has_ideology = ideology:ideology_paternalistic
-					leader = { has_ideology = ideology:ideology_fascist }
-					leader = { has_ideology = ideology:ideology_integralist }
+					leader ?= { has_ideology = ideology:ideology_fascist }
+					leader ?= { has_ideology = ideology:ideology_integralist }
 				}
 			}
 			add = {
@@ -291,7 +291,7 @@ free_trade_party = {
 					has_ideology = ideology:ideology_paternalistic
 					has_ideology = ideology:ideology_laissez_faire
 					has_ideology = ideology:ideology_agrarian
-					leader = { cwp_market_liberal_party_character = yes }
+					leader ?= { cwp_market_liberal_party_character = yes }
 				}
 			}
 			add = {
@@ -320,7 +320,7 @@ free_trade_party = {
 		}
 
 		if = { # protectionism bad
-			limit = { leader = { has_ideology = ideology:ideology_protectionist } }
+			limit = { leader ?= { has_ideology = ideology:ideology_protectionist } }
 			add = {
 				value = -10
 				desc = from_protectionist_leader

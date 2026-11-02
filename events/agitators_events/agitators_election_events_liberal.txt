@@ -53,7 +53,7 @@ agitators_election_events_liberal.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -69,7 +69,7 @@ agitators_election_events_liberal.1 = {
 		capital = {
 			save_scope_as = capital_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -77,17 +77,17 @@ agitators_election_events_liberal.1 = {
 	option = {
 		name = agitators_election_events_liberal.1.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}
 
 	option = {
 		name = agitators_election_events_liberal.1.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_average_ao3_writer
 				days = normal_modifier_time
@@ -164,7 +164,7 @@ agitators_election_events_liberal.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -205,7 +205,7 @@ agitators_election_events_liberal.2 = {
 				save_scope_as = opposition_party_scope
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -213,24 +213,24 @@ agitators_election_events_liberal.2 = {
 	option = {
 		name = agitators_election_events_liberal.2.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
 
 	option = {
 		name = agitators_election_events_liberal.2.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_trait = honorable
 		}
 	}
 
 	option = {
 		name = agitators_election_events_liberal.2.c
-		scope:opposition_party_scope = {
+		scope:opposition_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -291,7 +291,7 @@ agitators_election_events_liberal.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -313,7 +313,7 @@ agitators_election_events_liberal.3 = {
 		capital = {
 			save_scope_as = capital_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -321,14 +321,14 @@ agitators_election_events_liberal.3 = {
 	option = {
 		name = agitators_election_events_liberal.3.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
 
 	option = {
 		name = agitators_election_events_liberal.3.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 		add_modifier = {
@@ -344,7 +344,7 @@ agitators_election_events_liberal.3 = {
 				is_party_type = radical_party
 			}
 		}
-		scope:radical_party_scope = {
+		scope:radical_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -408,7 +408,7 @@ agitators_election_events_liberal.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -430,7 +430,7 @@ agitators_election_events_liberal.4 = {
 			}
 			save_scope_as = rally_state
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -438,17 +438,17 @@ agitators_election_events_liberal.4 = {
 	option = {
 		name = agitators_election_events_liberal.4.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large
 		}
 	}
 
 	option = {
 		name = agitators_election_events_liberal.4.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
-		scope:rally_state = {
+		scope:rally_state ?= {
 			add_modifier = {
 				name = modifier_rally_freedom_of_speech
 				days = normal_modifier_time
@@ -458,13 +458,13 @@ agitators_election_events_liberal.4 = {
 
 	option = {
 		name = agitators_election_events_liberal.4.c
-		scope:rally_state = {
+		scope:rally_state ?= {
 			add_radicals_in_state = {
 				value = medium_radicals
 				interest_group = scope:agitator_scope.interest_group
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}

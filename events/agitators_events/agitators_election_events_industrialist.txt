@@ -50,7 +50,7 @@ agitators_election_events_industrialist.1 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -66,7 +66,7 @@ agitators_election_events_industrialist.1 = {
 		ig:ig_industrialists ?= {
 			save_scope_as = industrialists_ig
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -74,14 +74,14 @@ agitators_election_events_industrialist.1 = {
 	option = {
 		name = agitators_election_events_industrialist.1.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
 
 	option = {
 		name = agitators_election_events_industrialist.1.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
 		scope:agitator_scope.interest_group = {
@@ -100,7 +100,7 @@ agitators_election_events_industrialist.1 = {
 				has_law_or_variant = law_type:law_graduated_taxation
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small
 		}
 		add_radicals = {
@@ -165,7 +165,7 @@ agitators_election_events_industrialist.2 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -185,7 +185,7 @@ agitators_election_events_industrialist.2 = {
 			}
 			save_scope_as = friendly_country_scope
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -193,7 +193,7 @@ agitators_election_events_industrialist.2 = {
 	option = {
 		name = agitators_election_events_industrialist.2.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 		change_relations = {
@@ -204,10 +204,10 @@ agitators_election_events_industrialist.2 = {
 
 	option = {
 		name = agitators_election_events_industrialist.2.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_diplomatic_agitator
 				days = normal_modifier_time
@@ -231,12 +231,12 @@ agitators_election_events_industrialist.2 = {
 				}
 			}
 			20 = {
-				scope:agitator_party_scope = {
+				scope:agitator_party_scope ?= {
 					add_momentum = momentum_medium
 				}
 			}
 			10 = {
-				scope:agitator_scope = {
+				scope:agitator_scope ?= {
 					exile_character_with_martyrdom = yes
 					hidden_effect = {
 						every_country = {
@@ -317,7 +317,7 @@ agitators_election_events_industrialist.3 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -342,7 +342,7 @@ agitators_election_events_industrialist.3 = {
 			}
 			save_scope_as = armed_forces_char
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -350,10 +350,10 @@ agitators_election_events_industrialist.3 = {
 	option = {
 		name = agitators_election_events_industrialist.3.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
-		scope:armed_forces_ig = {
+		scope:armed_forces_ig ?= {
 			add_modifier = {
 				name = modifier_unpatriotic_election_agitator
 				days = short_modifier_time
@@ -363,10 +363,10 @@ agitators_election_events_industrialist.3 = {
 
 	option = {
 		name = agitators_election_events_industrialist.3.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_small_decrease
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			add_modifier = {
 				name = modifier_unpatriotic_agitator_character
 				days = short_modifier_time
@@ -376,7 +376,7 @@ agitators_election_events_industrialist.3 = {
 
 	option = {
 		name = agitators_election_events_industrialist.3.c
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 		random_scope_state = {
@@ -385,7 +385,7 @@ agitators_election_events_industrialist.3 = {
 			}
 			start_building_construction = building_barrack
 		}
-		scope:armed_forces_ig = {
+		scope:armed_forces_ig ?= {
 			add_modifier = {
 				name = modifier_patriotic_election_work
 				days = short_modifier_time
@@ -445,7 +445,7 @@ agitators_election_events_industrialist.4 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -464,7 +464,7 @@ agitators_election_events_industrialist.4 = {
 				save_scope_as = trade_union_leader_scope
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -472,10 +472,10 @@ agitators_election_events_industrialist.4 = {
 	option = {
 		name = agitators_election_events_industrialist.4.a
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
-		scope:trade_unions_ig = {
+		scope:trade_unions_ig ?= {
 			add_modifier = {
 				name = modifier_leaning_in_to_trade_unions
 				days = short_modifier_time
@@ -485,7 +485,7 @@ agitators_election_events_industrialist.4 = {
 
 	option = {
 		name = agitators_election_events_industrialist.4.b
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 		add_modifier = {
@@ -544,7 +544,7 @@ agitators_election_events_industrialist.5 = {
 
 	cancellation_trigger = {
 		OR = {
-			scope:agitator_scope = {
+			scope:agitator_scope ?= {
 				is_character_alive = no
 			}
 			NOT = {
@@ -563,7 +563,7 @@ agitators_election_events_industrialist.5 = {
 				save_scope_as = trade_union_leader_scope
 			}
 		}
-		scope:agitator_scope = {
+		scope:agitator_scope ?= {
 			set_variable = { name = agitator_election_participation days = 180 }
 		}
 	}
@@ -575,7 +575,7 @@ agitators_election_events_industrialist.5 = {
 				has_law_or_variant = law_type:law_compulsory_primary_school
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium
 		}
 	}
@@ -583,7 +583,7 @@ agitators_election_events_industrialist.5 = {
 	option = {
 		name = agitators_election_events_industrialist.5.b
 		default_option = yes
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_medium_decrease
 		}
 	}
@@ -596,12 +596,12 @@ agitators_election_events_industrialist.5 = {
 				is_marginal = no
 			}
 		}
-		scope:agitator_party_scope = {
+		scope:agitator_party_scope ?= {
 			add_momentum = momentum_large_decrease
 		}
 		random_list = {
 			20 = {
-				scope:agitator_scope = {
+				scope:agitator_scope ?= {
 					add_trait = cruel
 				}
 			}
