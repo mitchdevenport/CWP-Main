@@ -148,7 +148,7 @@ types cwp_budget_fiscal {
 								margin = { 10 10 }
 								direction = vertical
 								spacing = 10
-								hbox = {
+								flowcontainer = { # 1.14: boxes cannot be direct children of a flowcontainer
 									flowcontainer = {
 										margin_top = 0
 										direction = vertical
@@ -207,7 +207,7 @@ types cwp_budget_fiscal {
 										}
 									}
 								}
-								hbox = {
+								flowcontainer = { # 1.14: boxes cannot be direct children of a flowcontainer
 									flowcontainer = {
 										margin_top = 10
 										direction = vertical
