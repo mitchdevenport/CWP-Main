@@ -450,7 +450,7 @@ AUS = { # Austria
 		subject_canton = KUK
 		priority = 100
 		trigger = {
-			scope:actor = { country_has_primary_culture = cu:hungarian }
+			scope:actor ?= { country_has_primary_culture = cu:hungarian }
 		}
 	}
 	flag_definition = {
@@ -1123,7 +1123,7 @@ CHI = { # China
 		coa_with_overlord_canton = CHI_han_empire
 		priority = 5
 		trigger = {
-			scope:actor = {
+			scope:actor ?= {
 				NOT = { country_has_primary_culture = cu:manchu }
 				has_law_or_variant = law_type:law_monarchy
 			}
@@ -1526,7 +1526,7 @@ DEI = { # Dutch East India Company
 #			cwp_coat_of_arms_law_republic_trigger = yes
 #			AND = {
 #				exists = c:NET
-#				c:NET = {
+#				c:NET ?= {
 #					has_diplomatic_pact = {
 #						who = c:DEI
 #						type = dominion
@@ -1916,7 +1916,7 @@ GBR = { # Great Britain / United Kingdom
 		priority = 22
 		trigger = {
 			exists = scope:actor
-			scope:actor = { capital = { state_region = s:STATE_LANCASHIRE } }
+			scope:actor ?= { capital = { state_region = s:STATE_LANCASHIRE } }
 		}
 	}
 	flag_definition = {
@@ -1924,7 +1924,7 @@ GBR = { # Great Britain / United Kingdom
 		priority = 23
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
-			scope:actor = { capital = { state_region = s:STATE_LANCASHIRE } }
+			scope:actor ?= { capital = { state_region = s:STATE_LANCASHIRE } }
 		}
 	}
 	flag_definition = {
@@ -1932,7 +1932,7 @@ GBR = { # Great Britain / United Kingdom
 		priority = 1500
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
-			scope:actor = { NOT = { capital = { state_region = s:STATE_LANCASHIRE } } }
+			scope:actor ?= { NOT = { capital = { state_region = s:STATE_LANCASHIRE } } }
 		}
 	}
 	flag_definition = {
@@ -5414,7 +5414,7 @@ UKR = { # Ukraine
 		priority = 1600
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law_or_variant = law_type:law_council_republic
 			}
 		}

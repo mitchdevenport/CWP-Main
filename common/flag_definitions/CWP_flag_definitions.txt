@@ -253,7 +253,7 @@ MTB = { # Zimbabwe
 		priority = 10
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				OR = {
 					AND = {
 						OR = {
@@ -285,7 +285,7 @@ LZO = { # Zambia
 		priority = 10
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				OR = {
 					AND = {
 						OR = {
@@ -327,7 +327,7 @@ NAM = {
 		trigger = {
 			exists = scope:actor
 			exists = c:SAF
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:SAF
 			}
 		}
@@ -768,7 +768,7 @@ PRC = {
 		trigger = { 
 			cwp_coat_of_arms_law_council_republic_trigger = yes
 			AND = {
-				scope:actor = {
+				scope:actor ?= {
 					is_diplomatic_play_enemy_of = c:ROC
 				}
 				exists = c:ROC
@@ -925,7 +925,7 @@ AST = { # Australia
 			cwp_coat_of_arms_british_subject_ensign_trigger = yes
 			and = {
 				exists = c:GBR
-				c:GBR = {
+				c:GBR ?= {
 					has_diplomatic_pact = {
 						who = c:AST
 						type = dominion
@@ -944,7 +944,7 @@ AST = { # Australia
 				limit = {
 					exists = c:GBR
 				}
-				scope:actor = { c:GBR.relations:root >= 30 } # you can also use top_overlord.relations:root
+				scope:actor ?= { c:GBR ?= { relations:root >= 30 } } # you can also use top_overlord.relations:root
 			}
 			NOT = { cwp_coat_of_arms_independent_trigger = yes }
 		}
@@ -1030,7 +1030,7 @@ NZL = { # New Zealand
 				limit = {
 					exists = c:GBR
 				}
-				scope:actor = { c:GBR.relations:root >= 30 } # you can also use top_overlord.relations:root
+				scope:actor ?= { c:GBR ?= { relations:root >= 30 } } # you can also use top_overlord.relations:root
 			}
 			NOT = { cwp_coat_of_arms_independent_trigger = yes }
 		}
@@ -1116,7 +1116,7 @@ CAN = { # Canada
 				limit = {
 					exists = c:GBR
 				}
-				scope:actor = { c:GBR.relations:root >= 30 } # you can also use top_overlord.relations:root
+				scope:actor ?= { c:GBR ?= { relations:root >= 30 } } # you can also use top_overlord.relations:root
 			}
 			NOT = { cwp_coat_of_arms_independent_trigger = yes }
 		}
@@ -1319,7 +1319,7 @@ DDR = { # East Germany
 					exists = c:RUS
 					exists = c:DDR
 				}
-				c:RUS = {
+				c:RUS ?= {
 					has_diplomatic_pact = {
 						who = c:DDR
 						type = military_occupation
@@ -1339,7 +1339,7 @@ DDR = { # East Germany
 				cwp_coat_of_arms_law_council_republic_trigger = yes
 				#AND = {
 				#	cwp_coat_of_arms_russian_subject_ensign_trigger = yes
-				#	c:RUS = { cwp_coat_of_arms_law_council_republic_trigger = yes }
+				#	c:RUS ?= { cwp_coat_of_arms_law_council_republic_trigger = yes }
 				#}
 			}
 		}	
@@ -2489,7 +2489,7 @@ OMA = { # Oman
 		priority = 2
 		trigger = {
 			NOT = {
-				scope:actor = {
+				scope:actor ?= {
 					has_law_or_variant = law_type:law_isolationism
 				}
 			}
@@ -2937,7 +2937,7 @@ LBY = {
 		trigger = {
 			exists = scope:actor
 			exists = c:GBR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:GBR
 			}
 		}
@@ -3009,7 +3009,7 @@ SDN = {
 		trigger = {
 			exists = scope:actor
 			exists = c:GBR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:GBR
 			}
 		}
@@ -3040,7 +3040,7 @@ ERI = {
 		trigger = {
 			exists = scope:actor
 			exists = c:GBR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:GBR
 			}
 		}
@@ -3062,7 +3062,7 @@ DJI = {
 		trigger = {
 			exists = scope:actor
 			exists = c:FRA
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:FRA
 			}
 		}
@@ -3120,7 +3120,7 @@ SLL = {
 		trigger = {
 			exists = scope:actor
 			exists = c:GBR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:GBR
 			}
 		}
@@ -3142,7 +3142,7 @@ SML = {
 		trigger = {
 			exists = scope:actor
 			exists = c:GBR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:GBR
 			}
 		}
@@ -3173,7 +3173,7 @@ MKU = {
 		trigger = {
 			exists = scope:actor
 			exists = c:POR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:POR
 			}
 		}
@@ -3203,7 +3203,7 @@ MGS = {
 		trigger = {
 			exists = scope:actor
 			exists = c:FRA
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:FRA
 			}
 		}
@@ -3225,7 +3225,7 @@ OVM = {
 		trigger = {
 			exists = scope:actor
 			exists = c:POR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:POR
 			}
 		}
@@ -3247,7 +3247,7 @@ CNG = {
 		trigger = {
 			exists = scope:actor
 			exists = c:BEL
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:BEL
 			}
 		}
@@ -3285,7 +3285,7 @@ RWD = {
 		trigger = {
 			exists = scope:actor
 			exists = c:BEL
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:BEL
 			}
 		}
@@ -3307,7 +3307,7 @@ BRD = {
 		trigger = {
 			exists = scope:actor
 			exists = c:BEL
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:BEL
 			}
 		}
@@ -3337,7 +3337,7 @@ DLA = {
 		trigger = {
 			exists = scope:actor
 			exists = c:FRA
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:FRA
 			}
 		}
@@ -3360,7 +3360,7 @@ EWE = {
 		trigger = {
 			exists = scope:actor
 			exists = c:FRA
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:FRA
 			}
 		}
@@ -3382,7 +3382,7 @@ GNB = {
 		trigger = {
 			exists = scope:actor
 			exists = c:POR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:POR
 			}
 		}
@@ -3414,7 +3414,7 @@ WAU = {
 		trigger = {
 			exists = scope:actor
 			exists = c:FRA
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:FRA
 			}
 		}
@@ -3436,7 +3436,7 @@ EQA = {
 		trigger = {
 			exists = scope:actor
 			exists = c:FRA
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:FRA
 			}
 		}
@@ -3711,7 +3711,7 @@ MAO = {
 		trigger = {
 			exists = scope:actor
 			exists = c:POR
-			scope:actor = {
+			scope:actor ?= {
 				is_subject_of = c:POR
 			}
 		}

@@ -1360,7 +1360,7 @@ EOT = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -1403,7 +1403,7 @@ PAL = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -1626,7 +1626,7 @@ HND = {
 		priority = 0
 		trigger = {
 			exists = c:GBR
-			c:GBR = {
+			c:GBR ?= {
 				has_diplomatic_pact = {
 					who = c:HND
 					type = puppet
@@ -2483,7 +2483,7 @@ ALR = {
 		priority = 0
 		trigger = {
 			exists = c:SPA
-			c:SPA = {
+			c:SPA ?= {
 				has_diplomatic_pact = {
 					who = c:ALR
 					type = protectorate
@@ -2499,7 +2499,7 @@ ALR = {
 		priority = 0
 		trigger = {
 			exists = c:SPA
-			c:SPA = {
+			c:SPA ?= {
 				has_diplomatic_pact = {
 					who = c:ALR
 					type = puppet
@@ -2519,7 +2519,7 @@ ALR = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -2931,7 +2931,7 @@ SDN = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3668,7 +3668,7 @@ MLT = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3687,7 +3687,7 @@ SYR = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3706,7 +3706,7 @@ LEB = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3725,7 +3725,7 @@ TUN = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3744,7 +3744,7 @@ EGY = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3763,7 +3763,7 @@ MOR = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3782,7 +3782,7 @@ ALD = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3801,7 +3801,7 @@ WSH = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3833,7 +3833,7 @@ BKF = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3852,7 +3852,7 @@ MAU = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3871,7 +3871,7 @@ MAL = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3890,7 +3890,7 @@ NGR = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
@@ -3909,7 +3909,7 @@ CHD = {
 				is_subject_of = c:LBY
 				is_subject_type = subject_type_jamahiriya
 			}
-			c:LBY = {
+			c:LBY ?= {
 				has_law = law_type:law_cooperative_ownership
 			}
 		}
