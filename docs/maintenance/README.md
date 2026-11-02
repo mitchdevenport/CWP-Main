@@ -52,6 +52,17 @@ Politics rules the 1.14 engine enforces:
   `add_ruling_interest_group` in country history.
 - `gov_parliamentary_monarchy` (prime minister governs, monarchy names and flags) applies to monarchies with the
   `cwp_parliamentary_monarchy` variable; set it before enacting the monarchy law.
+- A country takes the first government type (in file load order) whose `possible` trigger passes.
+  `law_colonial_administration` is a variant of `law_monarchy`, so the colonial and military administrations in
+  `common/government_types/cwp_colonial_administrations.txt` must load before the monarchies in `cwp_monarchy.txt`.
+- Every country that owns land at the start needs a file in `common/history/countries` with its law package and
+  technologies. Without one it starts as an absolute monarchy with the default laws and no technologies.
+- Electoral confidence starts at the freedom index (urbanization and literacy, `eagle_burger_freedom_index`), which
+  is low for most of the 1946 world, and CWP has no events that raise it. Countries that hold elections at the start
+  therefore get the base game's decaying grace for newly introduced elections (`initialize_electoral_confidence`).
+
+The AI may downsize any government building it considers unprofitable; buildings it must keep (the WMD
+infrastructure, conscription centers) are `downsizeable = no`.
 
 ## End-to-end tests
 
