@@ -379,7 +379,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_no_administration_outsourcing" "pm_telephones" }
+				activate_production_methods={ "pm_filing_systems" "pm_no_administration_outsourcing" "pm_telephones" }
 			}
 			create_building={
 				building="building_construction_sector"
@@ -1296,7 +1296,7 @@
 				add_ownership={
 					country={
 						country="c:IDS"
-						levels=4
+						levels=2
 					}
 				}
 				reserves=1
@@ -3847,11 +3847,11 @@
 				add_ownership={
 					country={
 						country="c:WPP"
-						levels=179
+						levels=36
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_paper_manufactories"
@@ -4047,7 +4047,7 @@
 				add_ownership={
 					country={
 						country="c:IDS"
-						levels=5
+						levels=2
 					}
 				}
 				reserves=1
@@ -4944,7 +4944,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=6
+						levels=4
 					}
 				}
 				reserves=1
@@ -5479,7 +5479,7 @@
 				add_ownership={
 					country={
 						country="c:PHI"
-						levels=71
+						levels=21
 					}
 				}
 				reserves=1
@@ -5594,7 +5594,7 @@
 				add_ownership={
 					country={
 						country="c:PHI"
-						levels=95
+						levels=28
 					}
 				}
 				reserves=1
@@ -5786,7 +5786,7 @@
 				add_ownership={
 					country={
 						country="c:PHI"
-						levels=67
+						levels=20
 					}
 				}
 				reserves=1
@@ -6889,7 +6889,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 		}
 	}

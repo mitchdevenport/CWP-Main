@@ -19,7 +19,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=62
+						levels=15
 					}
 				}
 				reserves=1
@@ -196,7 +196,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=59
+						levels=14
 					}
 				}
 				reserves=1
@@ -273,7 +273,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=66
+						levels=60
 					}
 				}
 				reserves=1
@@ -473,7 +473,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=65
+						levels=35
 					}
 				}
 				reserves=1
@@ -608,7 +608,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=54
+						levels=40
 					}
 				}
 				reserves=1
@@ -1549,11 +1549,11 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=40
+						levels=8
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_hydroelectric_power_plant"
@@ -1686,11 +1686,11 @@
 				add_ownership={
 					country={
 						country="c:PRC"
-						levels=99
+						levels=20
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2431,7 +2431,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=72
+						levels=19
 					}
 				}
 				reserves=1
@@ -2575,7 +2575,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=49
+						levels=12
 					}
 				}
 				reserves=1
@@ -2831,7 +2831,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=47
+						levels=11
 					}
 				}
 				reserves=1
@@ -3023,7 +3023,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=41
+						levels=10
 					}
 				}
 				reserves=1
@@ -3216,7 +3216,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=57
+						levels=41
 					}
 				}
 				reserves=1
@@ -3478,7 +3478,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=35
+						levels=33
 					}
 				}
 				reserves=1
@@ -3869,7 +3869,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_no_administration_outsourcing" "pm_telephones" }
+				activate_production_methods={ "pm_filing_systems" "pm_no_administration_outsourcing" "pm_telephones" }
 			}
 			create_building={
 				building="building_tank_factory"
@@ -4130,7 +4130,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=75
+						levels=48
 					}
 				}
 				reserves=1
@@ -4496,7 +4496,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=56
+						levels=14
 					}
 				}
 				reserves=1
@@ -4998,7 +4998,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=43
+						levels=40
 					}
 				}
 				reserves=1
@@ -5090,7 +5090,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=82
+						levels=19
 					}
 				}
 				reserves=1
@@ -5483,7 +5483,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=54
+						levels=19
 					}
 				}
 				reserves=1
@@ -5642,7 +5642,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=67
+						levels=33
 					}
 				}
 				reserves=1
@@ -5782,11 +5782,11 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=48
+						levels=10
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_no_administration_outsourcing" "pm_telephones" }
+				activate_production_methods={ "pm_filing_systems" "pm_no_administration_outsourcing" "pm_telephones" }
 			}
 			create_building={
 				building="building_hydroelectric_power_plant"
@@ -6077,7 +6077,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=28
+						levels=14
 					}
 				}
 				reserves=1
@@ -6399,7 +6399,7 @@
 				add_ownership={
 					country={
 						country="c:ROC"
-						levels=67
+						levels=45
 					}
 				}
 				reserves=1
@@ -6891,7 +6891,7 @@
 				add_ownership={
 					country={
 						country="c:VNM"
-						levels=127
+						levels=16
 					}
 				}
 				reserves=1
@@ -7036,11 +7036,11 @@
 				add_ownership={
 					country={
 						country="c:THA"
-						levels=15
+						levels=3
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -7219,11 +7219,11 @@
 				add_ownership={
 					country={
 						country="c:VNM"
-						levels=162
+						levels=5
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_service_sectors"
@@ -7296,11 +7296,11 @@
 				add_ownership={
 					country={
 						country="c:VNM"
-						levels=133
+						levels=3
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_port"
@@ -7524,11 +7524,11 @@
 				add_ownership={
 					country={
 						country="c:VNM"
-						levels=159
+						levels=13
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_cotton_plantation"
@@ -7776,11 +7776,11 @@
 				add_ownership={
 					country={
 						country="c:VNM"
-						levels=32
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_sugar_plantation"
@@ -7923,11 +7923,11 @@
 				add_ownership={
 					country={
 						country="c:THA"
-						levels=23
+						levels=5
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_railway"
@@ -8062,11 +8062,11 @@
 				add_ownership={
 					country={
 						country="c:THA"
-						levels=34
+						levels=7
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_port"
@@ -8595,11 +8595,11 @@
 				add_ownership={
 					country={
 						country="c:THA"
-						levels=11
+						levels=2
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_railway"
@@ -14817,11 +14817,11 @@
 				add_ownership={
 					country={
 						country="c:STK"
-						levels=20
+						levels=4
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_professional_bureaucratic_services" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_professional_bureaucratic_services" }
 			}
 			create_building={
 				building="building_hydroelectric_power_plant"
@@ -15035,12 +15035,58 @@
 				add_ownership={
 					country={
 						country="c:NRK"
-						levels=36
+						levels=7
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_traditional_packaging_fishing" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_operations" "pm_axes_and_saws" "pm_manual_transportation_misc" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_framed_construction" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_BUSAN={
@@ -15614,12 +15660,58 @@
 				add_ownership={
 					country={
 						country="c:NRK"
-						levels=100
+						levels=20
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_operations" "pm_axes_and_saws" "pm_manual_transportation_misc" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_cotton_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_traditional_packaging_fishing" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_PYONGYANG={
@@ -15629,12 +15721,91 @@
 				add_ownership={
 					country={
 						country="c:NRK"
-						levels=213
+						levels=43
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_cotton_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_operations" "pm_axes_and_saws" "pm_manual_transportation_misc" }
+			}
+			create_building={
+				building="building_paper_manufactories"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=7
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pre_war_paper" "pm_no_automation" }
+			}
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_manual_harvesting" "pm_no_secondary" "pm_manual_transportation_agro" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_traditional_packaging_fishing" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pesticides_tobacco_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:NRK"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 		region_state:STK={
 			create_building={

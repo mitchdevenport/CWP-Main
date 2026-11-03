@@ -1,6 +1,41 @@
 ﻿BUILDINGS={
 	s:STATE_IVORY_COAST={
 		region_state:WAU={
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pesticides_tobacco_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_coffee_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_coffee_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_WINDWARD_COAST={
@@ -16,6 +51,63 @@
 				reserves=1
 				activate_production_methods={ "pm_no_administration_outsourcing" "pm_mail_couriers" "pm_filing_systems" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_coffee_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_coffee_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_operations" "pm_axes_and_saws" "pm_manual_transportation_misc" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pesticides_tobacco_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_basic_rolling_stock" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_SENEGAL={
@@ -31,6 +123,85 @@
 				reserves=1
 				activate_production_methods={ "pm_no_administration_outsourcing" "pm_mail_couriers" "pm_filing_systems" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_aluminum_refinery"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_hall_heroult_process" "pm_no_aluminum_recycling" "pm_no_automation" }
+			}
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pesticides_sugar_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_millet_farm"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_millet_farm" "pm_manual_harvesting" "pm_fig_orchards_millet" "pm_manual_transportation_agro" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_basic_rolling_stock" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_framed_construction" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_resource_extraction_iron" "pm_standard_process" "pm_manual_transportation_mines" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_GAMBIA={
@@ -375,6 +546,30 @@
 				reserves=1
 				activate_production_methods={ "pm_no_administration_outsourcing" "pm_mail_couriers" "pm_filing_systems" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_millet_farm"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_millet_farm" "pm_manual_harvesting" "pm_fig_orchards_millet" "pm_manual_transportation_agro" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_cotton_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_SIERRA_LEONE={
@@ -423,11 +618,11 @@
 				add_ownership={
 					country={
 						country="c:SIL"
-						levels=5
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_railway"
@@ -2232,6 +2427,41 @@
 	}
 	s:STATE_OUTER_HAUSALAND={
 		region_state:WAU={
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=15
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_resource_extraction_coal" "pm_standard_process" "pm_bulk_rail_transportation_mines" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_operations" "pm_axes_and_saws" "pm_manual_transportation_misc" }
+			}
+			create_building={
+				building="building_millet_farm"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_millet_farm" "pm_manual_harvesting" "pm_fig_orchards_millet" "pm_manual_transportation_agro" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_BORNU={
@@ -3237,6 +3467,96 @@
 				reserves=1
 				activate_production_methods={ "pm_no_administration_outsourcing" "pm_mail_couriers" "pm_filing_systems" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_coffee_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=13
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_coffee_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_bauxite_mine"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_resource_extraction_bauxite" "pm_standard_process" "pm_bulk_rail_transportation_mines" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pesticides_tobacco_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steel_framed_construction" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_manual_resource_extraction_gold" "pm_standard_process" "pm_manual_transportation_mines" }
+			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_trains" "pm_basic_rolling_stock" }
+			}
+			create_building={
+				building="building_millet_farm"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_millet_farm" "pm_manual_harvesting" "pm_fig_orchards_millet" "pm_manual_transportation_agro" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_GHANA={
@@ -3999,6 +4319,41 @@
 				reserves=1
 				activate_production_methods={ "pm_no_administration_outsourcing" "pm_mail_couriers" "pm_filing_systems" }
 			}
+			# CWP 1.5 starting economy (docs/maintenance/restore_starting_economies.py)
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=6
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pesticides_tobacco_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_cotton_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			create_building={
+				building="building_coffee_plantation"
+				add_ownership={
+					country={
+						country="c:WAU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_growing_coffee_plantation" "pm_manual_harvesting_plantation" "pm_no_transport_plantation" }
+			}
+			# end of CWP 1.5 starting economy
 		}
 	}
 	s:STATE_LINDI={
@@ -6097,11 +6452,11 @@
 				add_ownership={
 					country={
 						country="c:LZO"
-						levels=3
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_tea_plantation"
@@ -6680,7 +7035,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 		}
 		region_state:SML={
@@ -6743,11 +7098,11 @@
 				add_ownership={
 					country={
 						country="c:SML"
-						levels=4
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_tool_manufactories"
@@ -7050,11 +7405,11 @@
 				add_ownership={
 					country={
 						country="c:MGS"
-						levels=4
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_coffee_plantation"
@@ -7978,7 +8333,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_banana_plantation"
@@ -13021,11 +13376,11 @@
 				add_ownership={
 					country={
 						country="c:LZO"
-						levels=4
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -13690,11 +14045,11 @@
 				add_ownership={
 					country={
 						country="c:MTB"
-						levels=82
+						levels=16
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_paper_manufactories"

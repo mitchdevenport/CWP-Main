@@ -121,7 +121,7 @@
 				add_ownership={
 					country={
 						country="c:ECU"
-						levels=13
+						levels=6
 					}
 				}
 				reserves=1
@@ -1313,11 +1313,11 @@
 				add_ownership={
 					country={
 						country="c:VNZ"
-						levels=6
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_no_administration_outsourcing" "pm_telephones" }
+				activate_production_methods={ "pm_filing_systems" "pm_no_administration_outsourcing" "pm_telephones" }
 			}
 			create_building={
 				building="building_port"
@@ -9062,7 +9062,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=6
+						levels=3
 					}
 				}
 				reserves=1
@@ -10129,7 +10129,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=46
+						levels=21
 					}
 				}
 				reserves=1
@@ -10872,7 +10872,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -12197,7 +12197,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=5
+						levels=3
 					}
 				}
 				reserves=1
@@ -12909,7 +12909,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=27
+						levels=12
 					}
 				}
 				reserves=1
@@ -13686,7 +13686,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=6
+						levels=3
 					}
 				}
 				reserves=1
@@ -14263,7 +14263,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=7
+						levels=3
 					}
 				}
 				reserves=1
@@ -14614,7 +14614,7 @@
 				add_ownership={
 					country={
 						country="c:ARG"
-						levels=7
+						levels=3
 					}
 				}
 				reserves=1

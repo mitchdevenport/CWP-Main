@@ -351,7 +351,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=10
+						levels=4
 					}
 				}
 				reserves=1
@@ -714,7 +714,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=12
+						levels=9
 					}
 				}
 				reserves=1
@@ -970,7 +970,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=5
+						levels=1
 					}
 				}
 				reserves=1
@@ -1076,7 +1076,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=13
+						levels=4
 					}
 				}
 				reserves=1
@@ -1879,7 +1879,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -3400,11 +3400,11 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_port"
@@ -5828,7 +5828,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_no_administration_outsourcing" "pm_telephones" }
+				activate_production_methods={ "pm_filing_systems" "pm_no_administration_outsourcing" "pm_telephones" }
 			}
 			create_building={
 				building="building_university"
@@ -6133,7 +6133,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_service_sectors"

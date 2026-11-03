@@ -1742,11 +1742,11 @@
 				add_ownership={
 					country={
 						country="c:NIC"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_combustion_plant"
@@ -1959,11 +1959,11 @@
 				add_ownership={
 					country={
 						country="c:PNM"
-						levels=17
+						levels=3
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_sugar_plantation"
@@ -2294,11 +2294,11 @@
 				add_ownership={
 					country={
 						country="c:HAI"
-						levels=24
+						levels=5
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_banana_plantation"

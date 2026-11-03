@@ -17,11 +17,11 @@
 				add_ownership={
 					country={
 						country="c:AST"
-						levels=19
+						levels=4
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_organic_administration" "pm_mail_couriers" "pm_no_administration_outsourcing" }
+				activate_production_methods={ "pm_filing_systems" "pm_mail_couriers" "pm_no_administration_outsourcing" }
 			}
 			create_building={
 				building="building_combustion_plant"
