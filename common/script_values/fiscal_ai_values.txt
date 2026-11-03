@@ -184,6 +184,13 @@ ai_wants_contractionary = {
 		}
 		multiply = 0
 	}
+	# A money supply 10% or more below target pulls inflation down every month (see inflation_growth)
+	if = {
+		limit = {
+			money_supply_percentage <= -10
+		}
+		multiply = 0
+	}
 }
 
 ai_wants_stable = {
@@ -229,6 +236,12 @@ ai_wants_stable = {
 	if = {
 		limit = {
 			inflation_value < 0
+		}
+		multiply = 0
+	}
+	if = {
+		limit = {
+			money_supply_percentage <= -10
 		}
 		multiply = 0
 	}
@@ -290,6 +303,14 @@ ai_wants_expansionary = {
 	if = {
 		limit = {
 			inflation_value < 0
+		}
+		add = 1000
+	}
+	# Restore a money supply 10% or more below target before it drags inflation into a deflation spiral: off the
+	# gold standard, large gold reserves drain the money supply every month (money_supply_growth_from_gold)
+	if = {
+		limit = {
+			money_supply_percentage <= -10
 		}
 		add = 1000
 	}
