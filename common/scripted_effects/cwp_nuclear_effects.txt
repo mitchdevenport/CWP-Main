@@ -185,7 +185,18 @@ cwp_nuclear_strike_kill_population_effect = {
 	}
 }
 
-# The outcome of a nuclear test (conduct_nuclear_test_button), rolled in nuclear_program_events.14
+# Rolls a test ordered with conduct_nuclear_test_button, from the weekly pulse of the program's journal entry
+nuclear_test_resolve_pending_effect = {
+	if = {
+		limit = {
+			has_variable = nuclear_test_pending
+		}
+		remove_variable = nuclear_test_pending
+		nuclear_test_outcome_effect = yes
+	}
+}
+
+# The outcome of a nuclear test (conduct_nuclear_test_button); also shown in the button's tooltip
 nuclear_test_outcome_effect = {
 	if = { # Civilian Nuclear Capability
 		limit = {

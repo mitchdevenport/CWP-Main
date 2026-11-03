@@ -460,12 +460,3 @@ nuclear_program_events.13 = { # ICBM Test Critical Failure
 		highlighted_option = yes
 	}
 }
-
-nuclear_program_events.14 = { # Rolls the outcome of a nuclear test (conduct_nuclear_test_button)
-	type = country_event
-	hidden = yes
-
-	immediate = {
-		nuclear_test_outcome_effect = yes
-	}
-}

@@ -189,15 +189,14 @@ conduct_nuclear_test_button = {
 			}
 			add_treasury = -100000
 		}
-		# The outcome is rolled in a hidden event: rolled in the button itself, the AI's tests only ever came out
-		# as plain failures (the same random_list rolls with the right odds in an event)
+		# The outcome is rolled by the program's journal entry within a week (nuclear_test_resolve_pending_effect).
+		# Rolled while the button is pressed (in the button, or in an event it fires even a day later), every test in a
+		# campaign repeated the first one's outcome: 25 plain failures in a row for the USSR from 1950 to 1959 in one run
 		show_as_tooltip = {
 			nuclear_test_outcome_effect = yes
 		}
 		hidden_effect = {
-			trigger_event = {
-				id = nuclear_program_events.14
-			}
+			set_variable = nuclear_test_pending
 		}
 		set_variable = {
 			name = nuclear_test_conducted

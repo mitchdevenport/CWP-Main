@@ -43,6 +43,12 @@ je_acquire_civilian_nuclear_capability = {
 		}
 	}
 
+	on_weekly_pulse = {
+		effect = {
+			nuclear_test_resolve_pending_effect = yes
+		}
+	}
+
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
@@ -70,6 +76,7 @@ je_acquire_civilian_nuclear_capability = {
 	}
 
 	on_fail = {
+		remove_variable = nuclear_test_pending
 		remove_modifier = developing_civilian_nuclear_capability
 		remove_variable = nuclear_program_progress
 		remove_variable = nuclear_program_paused
@@ -125,6 +132,12 @@ je_develop_atomic_bomb = {
 		}
 	}
 
+	on_weekly_pulse = {
+		effect = {
+			nuclear_test_resolve_pending_effect = yes
+		}
+	}
+
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
@@ -166,6 +179,7 @@ je_develop_atomic_bomb = {
 	}
 
 	on_fail = {
+		remove_variable = nuclear_test_pending
 		remove_variable = nuclear_test_site
 		remove_variable = nuclear_program_progress
 		remove_variable = nuclear_program_paused
@@ -222,6 +236,12 @@ je_develop_thermonuclear_bomb = {
 		}
 	}
 
+	on_weekly_pulse = {
+		effect = {
+			nuclear_test_resolve_pending_effect = yes
+		}
+	}
+
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
@@ -253,6 +273,7 @@ je_develop_thermonuclear_bomb = {
 	}
 
 	on_fail = {
+		remove_variable = nuclear_test_pending
 		remove_variable = nuclear_test_site
 		remove_variable = nuclear_program_progress
 		remove_variable = nuclear_program_paused
@@ -310,6 +331,12 @@ je_develop_icbms = {
 		}
 	}
 
+	on_weekly_pulse = {
+		effect = {
+			nuclear_test_resolve_pending_effect = yes
+		}
+	}
+
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
@@ -341,6 +368,7 @@ je_develop_icbms = {
 	}
 
 	on_fail = {
+		remove_variable = nuclear_test_pending
 		remove_variable = nuclear_test_site
 		remove_variable = nuclear_program_progress
 		remove_variable = nuclear_program_paused
