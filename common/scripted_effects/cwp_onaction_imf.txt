@@ -249,6 +249,7 @@ set_imf_starting_values = {
     }
 	if = {
 		limit = {
+			has_variable = imf_debt # unset when the effect only runs for a tooltip
 			var:imf_debt >= 1
 		}
 		set_variable = {
@@ -274,6 +275,7 @@ set_imf_starting_values = {
 	}
 	if = {
 		limit = {
+			has_variable = imf_debt
 			var:imf_debt > 1
 			var:imf_debt_type = 1
 		}
@@ -283,6 +285,7 @@ set_imf_starting_values = {
 	}
 	if = {
 		limit = {
+			has_variable = imf_debt
 			var:imf_debt > 1
 			var:imf_debt_type = 2
 		}

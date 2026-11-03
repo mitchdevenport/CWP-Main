@@ -138,7 +138,7 @@ neighbor_events.1 = {
 			}
 		}
 		save_scope_as = originator
-		scope:neighbor_country = { post_notification = neighbor_events_1 }
+		scope:neighbor_country ?= { post_notification = neighbor_events_1 }
 	}
 
 	option = {
@@ -350,7 +350,7 @@ neighbor_events.4 = {
 			country = scope:neighbor_country
 			value = 30
 		}
-		scope:neighbor_country = {
+		scope:neighbor_country ?= {
 			add_modifier = {
 				name = foreign_investment
 				days = normal_modifier_time
@@ -626,7 +626,7 @@ neighbor_events.7 = {
 	option = {
 		name = neighbor_events.7.c
 		default_option = yes
-		scope:neighbor_neighbor_state = {
+		scope:neighbor_neighbor_state ?= {
 			add_radicals_in_state = {
 				value = medium_radicals
 			}

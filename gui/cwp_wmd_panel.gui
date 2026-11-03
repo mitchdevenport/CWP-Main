@@ -357,7 +357,6 @@ types cwp_wmd_panel {
 					datamodel = "[GetPlayer.MakeScope.GetList('wmd_target_list_c')]"
 					item = {
 						flowcontainer = {
-							parentanchor = hcenter
 							direction = vertical
 							minimumsize = { 420 60 }
 							datacontext = "[Scope.AccessCountry]"

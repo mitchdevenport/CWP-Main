@@ -254,7 +254,7 @@ types nato_panel
 										}
 										textbox = {
 											using = tooltip_above
-											raw_text = "[GetPlayer.MakeScope.ScriptValue('nato_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('nato_navysize')] [Concept('concept_ship','$concept_ships$')]"
+											raw_text = "[GetPlayer.MakeScope.ScriptValue('nato_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('nato_navysize')] [concept_ship]"
 											using = fontsize_large
 										}
 									}
@@ -426,7 +426,7 @@ types nato_panel
 										}
 										textbox = {
 											using = tooltip_above
-											raw_text = "[GetPlayer.MakeScope.ScriptValue('nato_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('nato_navysize')] [Concept('concept_ship','$concept_ships$')]"
+											raw_text = "[GetPlayer.MakeScope.ScriptValue('nato_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('nato_navysize')] [concept_ship]"
 											using = fontsize_large
 										}
 									}
@@ -722,7 +722,7 @@ types nato_panel
 														textbox = {
 															parentanchor = hcenter
 															align = center
-															raw_text = "[Concept('concept_ship','$concept_ships$')]"
+															raw_text = "[concept_ship]"
 														}
 														textbox = {
 															parentanchor = hcenter

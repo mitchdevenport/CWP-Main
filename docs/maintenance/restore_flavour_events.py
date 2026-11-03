@@ -290,6 +290,9 @@ def fixes(text, c):
             return "\n" + ind + "else_if = {\n" + lim + m.group(2)
         text = re.sub(r"\n([ \t]*)else_if = \{\n(\s*random_country = \{\s*limit = \{(.*?)\}\s*save_scope_as = rival_country)",
                       add_limit, text, flags=re.S)
+    # vanilla bug: the neighbour's state can change hands (occupation zones merge) before the event is answered
+    if c == "neighbor_events":
+        text = re.sub(r"scope:(neighbor_state|neighbor_neighbor_state|neighbor_country) = \{", r"scope:\1 ?= {", text)
     # vanilla bug: the agitator law events save the government IG and its leader only when one supports the law
     if c == "agitators_events/agitator_law_events_2":
         text = re.sub(r"scope:(govnas|da_boss) = \{", r"scope:\1 ?= {", text)

@@ -751,9 +751,12 @@ imf_application_loan_approval_chance = {
 		limit = {
 			imf_application_loan_amount >= imf_reserves
 		}
-		value = -100
-		desc = IMF_APPROVAL_EXCEEDS_RESERVES
-		format = "IMF_APPROVAL_TOOLTIP_FORMAT"
+		multiply = 0 # the application fails whatever else it has going for it; the add shows why in the tooltip
+		add = {
+			value = -100
+			desc = IMF_APPROVAL_EXCEEDS_RESERVES
+			format = "IMF_APPROVAL_TOOLTIP_FORMAT"
+		}
 	}
 	max = 100
 	min = -100

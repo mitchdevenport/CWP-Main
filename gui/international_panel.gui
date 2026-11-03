@@ -315,6 +315,9 @@ types international
 								tooltip = "JOINASOBSERVERUN_TOOLTIP"
 								text = "JOINASOBSERVERUN"
 								onclick = "[GetScriptedGui('join_un_observer_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								onclick = "[GetScriptedGui('build_UN_nations_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" # refresh the open panel's lists
+								onclick = "[GetScriptedGui('build_UN_observers_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								onclick = "[GetScriptedGui('build_UN_nonmember_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 								enabled = "[GetScriptedGui('join_un_observer_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 								using = fontsize_medium
 							}
@@ -326,6 +329,9 @@ types international
 								tooltip = "STARTMEMBERSHIPUN_TOOLTIP"
 								text = "STARTMEMBERSHIPUN"
 								onclick = "[GetScriptedGui('join_un_member_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								onclick = "[GetScriptedGui('build_UN_nations_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" # refresh the open panel's lists
+								onclick = "[GetScriptedGui('build_UN_observers_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								onclick = "[GetScriptedGui('build_UN_nonmember_list_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 								using = fontsize_medium
 							}
 						}
@@ -363,7 +369,7 @@ types international
 					margin_top = 10
 					margin_bottom = 10
 					widget = {
-						size = { @panel_width  220 }
+						size = { @panel_width  240 } # room for a headquarters name that wraps
 						button = { # Icon
 							parentanchor = left|top
 							position = { 30 5 }
@@ -417,6 +423,9 @@ types international
 								}
 								textbox = {
 									raw_text = "[GetGlobalVariable('nato_headquarters').GetState.GetName], [GetGlobalVariable('nato_headquarters').GetState.GetOwner.GetName]"
+									max_width = 320 # long country names wrap instead of running off the card
+									multiline = yes
+									autoresize = yes
 									using = fontsize_large
 								}
 							}
@@ -481,7 +490,7 @@ types international
 					margin_top = 10
 					margin_bottom = 10
 					widget = {
-						size = { @panel_width  220 }
+						size = { @panel_width  240 } # room for a headquarters name that wraps
 						button = { # Icon
 							parentanchor = left|top
 							position = { 30 5 }
@@ -535,6 +544,9 @@ types international
 								}
 								textbox = {
 									raw_text = "[GetGlobalVariable('warsaw_pact_headquarters').GetState.GetName], [GetGlobalVariable('warsaw_pact_headquarters').GetState.GetOwner.GetName]"
+									max_width = 320 # long country names wrap instead of running off the card
+									multiline = yes
+									autoresize = yes
 									using = fontsize_large
 								}
 							}

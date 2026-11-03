@@ -254,7 +254,7 @@ types warsaw_pact_panel
 										}
 										textbox = {
 											using = tooltip_above
-											raw_text = "[GetPlayer.MakeScope.ScriptValue('warsaw_pact_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('warsaw_pact_navysize')] [Concept('concept_ship','$concept_ships$')]"
+											raw_text = "[GetPlayer.MakeScope.ScriptValue('warsaw_pact_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('warsaw_pact_navysize')] [concept_ship]"
 											using = fontsize_large
 										}
 									}
@@ -426,7 +426,7 @@ types warsaw_pact_panel
 										}
 										textbox = {
 											using = tooltip_above
-											raw_text = "[GetPlayer.MakeScope.ScriptValue('warsaw_pact_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('warsaw_pact_navysize')] [Concept('concept_ship','$concept_ships$')]"
+											raw_text = "[GetPlayer.MakeScope.ScriptValue('warsaw_pact_armysize')] [concept_battalion] - [GetPlayer.MakeScope.ScriptValue('warsaw_pact_navysize')] [concept_ship]"
 											using = fontsize_large
 										}
 									}
@@ -722,7 +722,7 @@ types warsaw_pact_panel
 														textbox = {
 															parentanchor = hcenter
 															align = center
-															raw_text = "[Concept('concept_ship','$concept_ships$')]"
+															raw_text = "[concept_ship]"
 														}
 														textbox = {
 															parentanchor = hcenter
