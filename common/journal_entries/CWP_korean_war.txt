@@ -165,6 +165,13 @@
 						}
 					}
 				}
+				# CWP 1.5 aligned the new Korean states with their former occupiers; alignment is power bloc membership in 1.14
+				if = {
+					limit = {
+						scope:korean_war_former_overlord = { is_power_bloc_leader = yes }
+					}
+					join_power_bloc = scope:korean_war_former_overlord
+				}
 			}
 		}
 	}
