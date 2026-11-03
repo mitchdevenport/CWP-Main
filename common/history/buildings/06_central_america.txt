@@ -2153,17 +2153,6 @@
 				activate_production_methods={ "pm_manual_resource_extraction_coal" "pm_standard_process" "pm_bulk_rail_transportation_mines" }
 			}
 			create_building={
-				building="building_panama_strait"
-				add_ownership={
-					country={
-						country="c:PNM"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_canal_base" }
-			}
-			create_building={
 				building="building_small_arms_manufactories"
 				add_ownership={
 					country={
@@ -2231,6 +2220,31 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_nitrated_compounds" "pm_pneumatic_hydraulic_control_for_explosives_industry" }
+			}
+		}
+		# The Panama Canal Zone (CWP 1.5): the canal and a port
+		region_state:USA={
+			create_building={
+				building="building_panama_strait"
+				add_ownership={
+					country={
+						country="c:USA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_canal_base" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:USA"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
 			}
 		}
 	}

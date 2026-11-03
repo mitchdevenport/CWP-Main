@@ -1083,17 +1083,6 @@
 				activate_production_methods={ "pm_no_administration_outsourcing" "pm_mail_couriers" "pm_filing_systems" }
 			}
 			create_building={
-				building="building_suez_strait"
-				add_ownership={
-					country={
-						country="c:EGY"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_canal_advanced" }
-			}
-			create_building={
 				building="building_railway"
 				add_ownership={
 					country={
@@ -1175,6 +1164,31 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_manual_resource_extraction_lead" "pm_manual_transportation_mines" "pm_standard_process" }
+			}
+		}
+		# The British Suez Canal Zone (CWP 1.5): the canal and a port
+		region_state:GBR={
+			create_building={
+				building="building_suez_strait"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_canal_advanced" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
 			}
 		}
 	}

@@ -8633,8 +8633,14 @@
 				xC650E1
 				xB0B080
 				xEE835F
-				xD0EF40
 				x849816
+			}
+		}
+		# The Panama Canal Zone (CWP 1.5); decolonization.519 returns it to Panama
+		create_state = {
+			country = c:USA
+			owned_provinces = {
+				xD0EF40
 			}
 		}
 		add_homeland = cu:central_american
@@ -19686,6 +19692,12 @@
 				xAF35C9
 				x44F1F5
 				xD431F9
+			}
+		}
+		# The British Suez Canal Zone (CWP 1.5)
+		create_state = {
+			country = c:GBR
+			owned_provinces = {
 				xC01060
 				x8ED45E
 			}

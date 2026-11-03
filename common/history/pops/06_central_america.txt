@@ -69,19 +69,29 @@
 		region_state:PNM = {
 			create_pop = {
 				culture = central_american
-				size = 417325
+				size = 408318
 			}
 			create_pop = {
 				culture = afro_caribeno
-				size = 292076
+				size = 271261
 			}
 			create_pop = {
 				culture = north_andean
 				size = 45021
 			}
+		}
+		region_state:USA = {
+			create_pop = {
+				culture = central_american
+				size = 9007
+			}
 			create_pop = {
 				culture = american
 				size = 24655
+			}
+			create_pop = {
+				culture = afro_caribeno
+				size = 20815
 			}
 		}
 	}

@@ -95,15 +95,30 @@
 		region_state:EGY = {
 			create_pop = {
 				culture = arab
-				size = 334907
+				size = 309145
 			}
 			create_pop = {
 				culture = maghrebi
-				size = 139812
+				size = 129057
 			}
 			create_pop = {
 				culture = israelite
-				size = 20632
+				size = 19045
+			}
+		}
+		region_state:GBR = {
+			create_pop = {
+				culture = arab
+				size = 25762
+			}
+			create_pop = {
+				# Siwi People
+				culture = maghrebi
+				size = 10755
+			}
+			create_pop = {
+				culture = israelite
+				size = 1587
 			}
 		}
 	}
