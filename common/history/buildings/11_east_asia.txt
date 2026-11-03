@@ -3854,7 +3854,7 @@
 				add_ownership={
 					country={
 						country="c:MAO"
-						levels=18
+						levels=1
 					}
 				}
 				reserves=1

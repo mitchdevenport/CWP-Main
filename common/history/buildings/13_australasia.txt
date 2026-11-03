@@ -4334,7 +4334,7 @@
 				add_ownership={
 					country={
 						country="c:NZL"
-						levels=32
+						levels=2
 					}
 				}
 				reserves=1
@@ -4863,7 +4863,7 @@
 				add_ownership={
 					country={
 						country="c:NZL"
-						levels=12
+						levels=1
 					}
 				}
 				reserves=1

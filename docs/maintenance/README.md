@@ -71,13 +71,16 @@ Politics rules the 1.14 engine enforces:
 
 Economy rules:
 - The building history (`common/history/buildings`) is generated. The generator left Czechoslovakia, Yugoslavia,
-  Romania, Bulgaria, Albania, North Korea and French West Africa with nothing but government buildings, which
-  bankrupted those countries and cost the Soviet sphere some 40 million people in 1946. After regenerating the
+  Romania, Bulgaria, Albania, North Korea and French West Africa with nothing but government buildings, so those
+  countries had almost no GDP or income and fell into default within weeks. After regenerating the
   history, run `python docs/maintenance/restore_starting_economies.py`: it rebuilds the economy of every state whose
   owner has no economic building from CWP 1.5's building history (see the script for the conversion rules).
 - Starting government administrations use filing systems and are sized to the bureaucracy each country used on
   1 February 1946 (about 25% spare), without leaving any state short of tax capacity. Administrations several
   times larger than needed cost more than the country earns and push it into default within months.
+- Starting universities cost at most a tenth of their country's income on 1 February 1946 (the great powers spend
+  1-5%). The generator had given small countries dozens of levels (Uruguay 117, Ecuador 69) that cost several times
+  their income.
 - Inflation (`inflation_growth` in `common/script_values/fiscal_values.txt`) accumulates the price levels of a
   basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
   expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long
