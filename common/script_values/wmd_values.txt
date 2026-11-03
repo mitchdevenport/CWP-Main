@@ -145,8 +145,11 @@ nuclear_stockpile_decay = {
 		}
 	}
 	divide = 3
+	# Warheads beyond the storage of the country's facilities and silos are lost. A new nuclear power has no storage
+	# yet and keeps the warhead of its test until it builds some.
 	if = {
 		limit = {
+			nuclear_stockpile_max > 0
 			nuclear_stockpile_sv > nuclear_stockpile_max
 		}
 		subtract = {
