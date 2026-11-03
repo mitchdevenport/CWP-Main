@@ -208,6 +208,7 @@
  add_to_target_list_country_action_notification_desc: "[INITIATOR_COUNTRY.GetName] has added all states of [TARGET_COUNTRY.GetName] to its [concept_wmd_target_list]."
  request_nuclear_bomb_deployment: "Station [concept_nuclear_weapons]"
  request_nuclear_bomb_deployment_desc: "Station our [concept_nuclear_weapons] in another country, increasing our [concept_wmd_coverage] of the strategic regions around it."
+ cwp_no_nuclear_weapons_stationed_tt: "No country stations [concept_nuclear_weapons] in [SCOPE.sCountry('target_country').GetName] yet"
  request_nuclear_bomb_deployment_action_name: "Station [concept_nuclear_weapons]"
  request_nuclear_bomb_deployment_action_propose_name: "Ask to station [concept_nuclear_weapons]"
  request_nuclear_bomb_deployment_action_break_name: "Cancel [concept_nuclear_weapons] Deployment"

@@ -26,18 +26,17 @@
 
 			country_rank < ROOT.country_rank # One step or more below
 			
-			any_political_lobby = {
-				OR = {
-					is_political_lobby_type = lobby_pro_country
-					is_political_lobby_type = lobby_pro_overlord
-				}
-
-				custom_tooltip = {
-					text = lobby_is_friendly_tt
+			# The engine cannot describe any_political_lobby here ("missing perspective"), so the whole check gets one line
+			custom_tooltip = {
+				text = lobby_is_friendly_tt
+				any_political_lobby = {
+					OR = {
+						is_political_lobby_type = lobby_pro_country
+						is_political_lobby_type = lobby_pro_overlord
+					}
 					target = ROOT
+					save_temporary_scope_as = relevant_lobby
 				}
-				
-				save_temporary_scope_as = relevant_lobby
 			}
 			any_scope_character = {
 				OR = {

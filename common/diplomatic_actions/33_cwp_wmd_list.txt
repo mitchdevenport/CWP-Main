@@ -101,8 +101,11 @@ request_nuclear_bomb_deployment = {
 	possible = {
 		scope:target_country = {
 			relations:root > 20
+			custom_tooltip = {
+				text = cwp_no_nuclear_weapons_stationed_tt
+				NOT = { has_variable = deployed_nuclear_bombs }
+			}
 			NOR = {
-				has_variable = deployed_nuclear_bombs
 				has_war_with = ROOT
 				country_rank >= rank_value:superpower
 			}
