@@ -66,6 +66,9 @@ Economy rules:
   basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
   expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long
   campaign before adding goods to it.
+- Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
+  `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
+  step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.
 
 Military rules:
 - Starting armies and fleets come from `common/history/military_formations`. The engine adds formation units on

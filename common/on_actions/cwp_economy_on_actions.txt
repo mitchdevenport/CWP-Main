@@ -39,6 +39,7 @@ cwp_economy_monthly_pulse = {
 		onaction_fiscal_calculation = yes
 		onaction_monetary_variables_creation = yes
 		onaction_currency_calculation = yes
+		onaction_investment_pool_softcap = yes
 	}
 }
 

@@ -1,17 +1,14 @@
 ﻿full_investment_pool = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	state_engineers_investment_pool_contribution_add = -0.001
+	# Every pop type that pays into the investment pool (see base_values in 00_code_static_modifiers.txt)
 	state_capitalists_investment_pool_contribution_add = -0.001
-	state_bureaucrats_investment_pool_contribution_add = -0.001
 	state_aristocrats_investment_pool_contribution_add = -0.001
+	state_shopkeepers_investment_pool_contribution_add = -0.001
 	state_clergymen_investment_pool_contribution_add = -0.001
-	state_clerks_investment_pool_contribution_add = -0.001
+	state_bureaucrats_investment_pool_contribution_add = -0.001
 	state_engineers_investment_pool_contribution_add = -0.001
-	state_clerks_investment_pool_contribution_add = -0.001
-	state_academics_investment_pool_contribution_add = -0.001
-	state_laborers_investment_pool_contribution_add = -0.001
-	state_engineers_investment_pool_contribution_add = -0.001
-	state_peasants_investment_pool_contribution_add = -0.001
+	state_farmers_investment_pool_contribution_add = -0.001
+	state_machinists_investment_pool_contribution_add = -0.001
 }
 
 kuomintang_political_dominance = {
