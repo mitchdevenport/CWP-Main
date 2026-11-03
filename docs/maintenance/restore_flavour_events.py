@@ -296,6 +296,8 @@ def fixes(text, c):
     # vanilla bug: the agitator law events save the government IG and its leader only when one supports the law
     if c == "agitators_events/agitator_law_events_2":
         text = re.sub(r"scope:(govnas|da_boss) = \{", r"scope:\1 ?= {", text)
+    if c == "agitators_events/agitators_law_events":
+        text = re.sub(r"scope:supporting_ig = \{", r"scope:supporting_ig ?= {", text)
     # vanilla bug: revolution_pulse_events.13 fires at medium progress but saves its scopes from a low progress revolution
     if c == "agitators_events/revolution_events_02":
         k = text.find("revolution_pulse_events.13 = {")
