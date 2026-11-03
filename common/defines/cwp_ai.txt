@@ -69,3 +69,11 @@ NAI = {
 	UNITS_PERCENTAGE_TO_BE_CONSIDERED_IN_DISADVANTAGE = 0.9
 	DIPLO_PLAY_SWAY_UNWANTED_OFFER = -1000 # For being offered unwanted wargoal or obligation
 }
+
+# Power blocs stand in for CWP 1.5's diplomatic alignment, which only the aligned country could break. The AI bloc leader
+# still expels members, but only from a bloc with very low cohesion that also gains from losing them or is on bad
+# terms with them (base game: 100). Members leave on their own under the rules in can_leave
+# (common/power_bloc_identities/cwp_power_bloc_identities_ideological_union.txt).
+NAI = {
+	POWER_BLOC_KICK_MEMBER_SCORE_THRESHOLD = 250
+}
