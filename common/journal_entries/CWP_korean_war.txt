@@ -43,23 +43,29 @@
 	possible = {
 		exists = c:NRK
 		exists = c:STK
-		NOR = {
-			c:STK = {
-				has_truce_with = c:NRK
-			}
-			c:NRK = {
-				has_truce_with = c:STK
+		custom_tooltip = {
+			text = cwp_koreas_no_truce_tt
+			NOR = {
+				c:STK = {
+					has_truce_with = c:NRK
+				}
+				c:NRK = {
+					has_truce_with = c:STK
+				}
 			}
 		}
 		#Does not trigger if Korea is at war
-		NOT = {
-			c:NRK = {
-				is_diplomatic_play_target = yes
+		custom_tooltip = {
+			text = cwp_koreas_not_diplomatic_play_targets_tt
+			NOT = {
+				c:NRK = {
+					is_diplomatic_play_target = yes
+				}
 			}
-		}
-		NOT = {
-			c:STK = {
-				is_diplomatic_play_target = yes
+			NOT = {
+				c:STK = {
+					is_diplomatic_play_target = yes
+				}
 			}
 		}
 		OR = {
@@ -118,10 +124,12 @@
 					country = scope:korean_war_former_overlord
 					value = 100
 				}
-				scope:korean_war_former_overlord = {
-					set_secret_goal = {
-						country = root
-						secret_goal = protect
+				hidden_effect = {
+					scope:korean_war_former_overlord = {
+						set_secret_goal = {
+							country = root
+							secret_goal = protect
+						}
 					}
 				}
 				# Alliances and bankrolling are treaty articles in 1.14 and require an independent partner

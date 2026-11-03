@@ -26,9 +26,15 @@
 			any_scope_ally = {
 				c:STK ?= this
 			}
-			#Is aligned with Korea (diplomatic alignment is represented by power blocs in 1.14)
-			is_in_same_power_bloc = c:NRK
-			is_in_same_power_bloc = c:STK
+			#Is the superpower Korea is aligned with (CWP 1.5's alignment pact; in 1.14 the leader of Korea's power bloc)
+			AND = {
+				is_power_bloc_leader = yes
+				is_in_same_power_bloc = c:NRK
+			}
+			AND = {
+				is_power_bloc_leader = yes
+				is_in_same_power_bloc = c:STK
+			}
 			#If an additional country is to be added per event | unused
 			is_target_in_global_variable_list = {
 				name = je_korean_reunification_can_vote
@@ -43,14 +49,17 @@
 		exists = c:NRK
 		exists = c:STK
 		#Does not trigger if Korea is at war
-		NOT = {
-			c:NRK = {
-				is_diplomatic_play_target = yes
+		custom_tooltip = {
+			text = cwp_koreas_not_diplomatic_play_targets_tt
+			NOT = {
+				c:NRK = {
+					is_diplomatic_play_target = yes
+				}
 			}
-		}
-		NOT = {
-			c:STK = {
-				is_diplomatic_play_target = yes
+			NOT = {
+				c:STK = {
+					is_diplomatic_play_target = yes
+				}
 			}
 		}
 		OR = {
@@ -128,65 +137,7 @@
 			#Do this only once
 			#Events simulate the AI voting behavior
 			#For some reason only one event can be triggered per block
-			every_in_global_list = {
-				variable = je_korean_reunification_can_vote
-				limit = {
-					is_player = no
-				}
-				trigger_event = korean_reunification.101
-			}
-			every_in_global_list = {
-				variable = je_korean_reunification_can_vote
-				limit = {
-					is_player = no
-				}
-				trigger_event = korean_reunification.102
-			}
-			every_in_global_list = {
-				variable = je_korean_reunification_can_vote
-				limit = {
-					is_player = no
-				}
-				trigger_event = korean_reunification.103
-			}
-			every_in_global_list = {
-				variable = je_korean_reunification_can_vote
-				limit = {
-					is_player = no
-				}
-				trigger_event = korean_reunification.104
-			}
-			every_in_global_list = {
-				variable = je_korean_reunification_can_vote
-				limit = {
-					is_player = no
-				}
-				trigger_event = korean_reunification.105
-			}
-			every_in_global_list = {
-				variable = je_korean_reunification_can_vote
-				limit = {
-					is_player = no
-				}
-				trigger_event = korean_reunification.106
-			}
-		}
-		if = {
-			limit = {
-				is_player = yes
-			}
-			trigger_event = korean_reunification.4
-		}
-	}
-	on_monthly_pulse = {
-		effect = {
-			if = {
-				limit = {
-					c:STK ?= this
-				}
-				#Do this only once
-				#Events simulate the AI voting behavior
-				#For some reason only one event can be triggered per block
+			hidden_effect = {
 				every_in_global_list = {
 					variable = je_korean_reunification_can_vote
 					limit = {
@@ -228,6 +179,68 @@
 						is_player = no
 					}
 					trigger_event = korean_reunification.106
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_player = yes
+			}
+			trigger_event = korean_reunification.4
+		}
+	}
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					c:STK ?= this
+				}
+				#Do this only once
+				#Events simulate the AI voting behavior
+				#For some reason only one event can be triggered per block
+				hidden_effect = {
+					every_in_global_list = {
+						variable = je_korean_reunification_can_vote
+						limit = {
+							is_player = no
+						}
+						trigger_event = korean_reunification.101
+					}
+					every_in_global_list = {
+						variable = je_korean_reunification_can_vote
+						limit = {
+							is_player = no
+						}
+						trigger_event = korean_reunification.102
+					}
+					every_in_global_list = {
+						variable = je_korean_reunification_can_vote
+						limit = {
+							is_player = no
+						}
+						trigger_event = korean_reunification.103
+					}
+					every_in_global_list = {
+						variable = je_korean_reunification_can_vote
+						limit = {
+							is_player = no
+						}
+						trigger_event = korean_reunification.104
+					}
+					every_in_global_list = {
+						variable = je_korean_reunification_can_vote
+						limit = {
+							is_player = no
+						}
+						trigger_event = korean_reunification.105
+					}
+					every_in_global_list = {
+						variable = je_korean_reunification_can_vote
+						limit = {
+							is_player = no
+						}
+						trigger_event = korean_reunification.106
+					}
 				}
 			}
 		}

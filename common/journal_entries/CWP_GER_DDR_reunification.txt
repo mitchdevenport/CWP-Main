@@ -94,7 +94,10 @@
 		exists = c:DDR
 
 		#Does not trigger if East Germany tries to become independent from RUS
-		NOT = { c:DDR = {is_diplomatic_play_target = yes} }
+		custom_tooltip = {
+			text = cwp_ddr_not_diplomatic_play_target_tt
+			NOT = { c:DDR = {is_diplomatic_play_target = yes} }
+		}
 
 		OR = {
 
@@ -152,52 +155,7 @@
 
 			#Events simulate the AI voting behavior
 			#For some reason only one event can be triggered per block
-			every_in_global_list = {
-				variable = je_german_reunification_can_vote
-				limit = { is_player = no }
-				trigger_event = german_reunification.101
-			}
-			every_in_global_list = {
-				variable = je_german_reunification_can_vote
-				limit = { is_player = no }
-				trigger_event = german_reunification.102
-			}
-			every_in_global_list = {
-				variable = je_german_reunification_can_vote
-				limit = { is_player = no }
-				trigger_event = german_reunification.103
-			}
-			every_in_global_list = {
-				variable = je_german_reunification_can_vote
-				limit = { is_player = no }
-				trigger_event = german_reunification.104
-			}
-			every_in_global_list = {
-				variable = je_german_reunification_can_vote
-				limit = { is_player = no }
-				trigger_event = german_reunification.105
-			}
-			every_in_global_list = {
-				variable = je_german_reunification_can_vote
-				limit = { is_player = no }
-				trigger_event = german_reunification.106
-			}
-		}
-
-		if = {
-			limit = { is_player = yes }
-			trigger_event = german_reunification.4
-		}
-	}
-
-	on_monthly_pulse = {
-		effect = {
-
-		if = {
-			limit = { c:GER ?= this } #Do this only once
-
-				#Events simulate the AI voting behavior
-				#For some reason only one event can be triggered per block
+			hidden_effect = {
 				every_in_global_list = {
 					variable = je_german_reunification_can_vote
 					limit = { is_player = no }
@@ -227,6 +185,55 @@
 					variable = je_german_reunification_can_vote
 					limit = { is_player = no }
 					trigger_event = german_reunification.106
+				}
+			}
+		}
+
+		if = {
+			limit = { is_player = yes }
+			trigger_event = german_reunification.4
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+
+		if = {
+			limit = { c:GER ?= this } #Do this only once
+
+				#Events simulate the AI voting behavior
+				#For some reason only one event can be triggered per block
+				hidden_effect = {
+					every_in_global_list = {
+						variable = je_german_reunification_can_vote
+						limit = { is_player = no }
+						trigger_event = german_reunification.101
+					}
+					every_in_global_list = {
+						variable = je_german_reunification_can_vote
+						limit = { is_player = no }
+						trigger_event = german_reunification.102
+					}
+					every_in_global_list = {
+						variable = je_german_reunification_can_vote
+						limit = { is_player = no }
+						trigger_event = german_reunification.103
+					}
+					every_in_global_list = {
+						variable = je_german_reunification_can_vote
+						limit = { is_player = no }
+						trigger_event = german_reunification.104
+					}
+					every_in_global_list = {
+						variable = je_german_reunification_can_vote
+						limit = { is_player = no }
+						trigger_event = german_reunification.105
+					}
+					every_in_global_list = {
+						variable = je_german_reunification_can_vote
+						limit = { is_player = no }
+						trigger_event = german_reunification.106
+					}
 				}
 			}
 		}

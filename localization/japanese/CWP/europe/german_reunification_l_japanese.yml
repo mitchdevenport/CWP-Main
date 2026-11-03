@@ -3,6 +3,7 @@
  je_german_reunification: "German Reunification"
  je_german_reunification_reason: "Amidst a world fraught with unpredictability, a historic event unfolds on the global stage – the German reunification. In an unforeseen turn of events, long-lost kin from the East and West have cast aside the shadows of division and embraced the path of unity."
  JE_GERMAN_REUNIFICATION_REASON_VOTING: "#green We are currently entitled to negotiate the reunification of Germany.#"
+ cwp_ddr_not_diplomatic_play_target_tt: "East Germany is not the target of a [concept_diplomatic_play]"
  JE_GERMAN_REUNIFICATION_PREREQUISITE_NATO: "Both Germanys or their overlords are NATO members"
  JE_GERMAN_REUNIFICATION_PREREQUISITE_WARSAW_PACT: "Both Germanys or their overlords are Warsaw Pact members"
  ger_reunification_button: "Negotiation Screen"

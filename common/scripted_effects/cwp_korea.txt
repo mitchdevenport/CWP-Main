@@ -82,13 +82,18 @@
 				country = scope:korean_unifier_former_overlord
 				value = 100
 			}
-			scope:korean_unifier_former_overlord = {
-				set_secret_goal = {
-					country = scope:korean_unifier
-					secret_goal = protect
+			hidden_effect = {
+				scope:korean_unifier_former_overlord = {
+					set_secret_goal = {
+						country = scope:korean_unifier
+						secret_goal = protect
+					}
 				}
 			}
-			make_independent = yes
+			custom_tooltip = {
+				text = cwp_korean_unifier_independent_tt
+				make_independent = yes
+			}
 			create_treaty = {
 				first_country = scope:korean_unifier
 				second_country = scope:korean_unifier_former_overlord
