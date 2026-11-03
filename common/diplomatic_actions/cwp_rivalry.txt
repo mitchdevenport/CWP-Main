@@ -244,6 +244,14 @@
 		}
 
 		will_break = {
+			# CWP: an AI superpower keeps its rivalry with a superpower of another bloc. The 1946 history makes the United
+			# States and the Soviet Union rivals, but the AI turned conciliatory within weeks and ended the rivalry in most
+			# campaigns (CWP 1.5's rivalries could not be ended for five years)
+			NAND = {
+				country_rank = rank_value:superpower
+				scope:target_country = { country_rank = rank_value:superpower }
+				country_is_in_different_power_bloc = { TARGET = scope:target_country }
+			}
 			NOR = {
 				has_attitude = {
 					who = scope:target_country
