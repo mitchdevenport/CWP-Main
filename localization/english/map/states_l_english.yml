@@ -447,7 +447,7 @@
  STATE_SHANDONG:0 "Shandong"
  STATE_BEIJING:0 "Beijing"
  STATE_SHANXI:0 "Shanxi"
- STATE_XIAN:0 "Xi'an"
+ STATE_XIAN:0 "Xi’an"
  STATE_NINGXIA:0 "Ningxia"
  STATE_GANSU:0 "Gansu"
  STATE_QINGHAI:0 "Qinghai"
@@ -772,7 +772,7 @@
 
 # Shengjing
 
- STATE_SHENGJING_russian_cwp:0 "Shen'yan"
+ STATE_SHENGJING_russian_cwp:0 "Shen’yan"
  STATE_SHENGJING_japanese_cwp:0 "Shenyang"
 
 # Outer Manchuria
