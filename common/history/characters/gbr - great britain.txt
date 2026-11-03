@@ -8,7 +8,7 @@
 			ruler = yes
 			ig_leader = yes
 			birth_date = 1883.01.03
-			interest_group = ig_intelligentsia
+			interest_group = ig_trade_unions # leads Labour's strongest group, as a parliamentary prime minister must in 1.14 (CWP 1.5: Urbanists)
 			ideology = ideology_cwp_democratic_socialist
 			traits = {
 			}
@@ -20,7 +20,7 @@
 			culture = cu:welsh
 			ig_leader = yes
 			birth_date = 1887.11.15
-			interest_group = ig_trade_unions
+			interest_group = ig_intelligentsia # Labour's left wing (CWP 1.5: Laborists)
 			ideology = ideology_cwp_democratic_socialist
 			traits = {
 			}

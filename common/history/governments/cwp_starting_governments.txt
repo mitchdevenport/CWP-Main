@@ -12,7 +12,7 @@ GOVERNMENT = {
 	c:EGY ?= { cwp_set_starting_government = { IG = ig_armed_forces } cwp_add_starting_government = { IG = ig_landowners } }
 	c:FIN ?= { set_next_election_date = 1946.3.9 cwp_set_starting_government = { IG = ig_armed_forces } }
 	c:FRA ?= { set_next_election_date = 1947.11.4 cwp_set_starting_government = { IG = ig_petty_bourgeoisie } }
-	c:GBR ?= { set_ruling_interest_groups = { ig_intelligentsia } } # without its party, so the Prime Minister's interest group leads the government
+	c:GBR ?= { set_next_election_date = 1946.2.1 cwp_set_starting_government = { IG = ig_trade_unions } }
 	c:GRE ?= { cwp_set_starting_government = { IG = ig_petty_bourgeoisie } }
 	c:HND ?= { cwp_set_starting_government = { IG = ig_armed_forces } }
 	c:ICL ?= { cwp_set_starting_government = { IG = ig_landowners } }
