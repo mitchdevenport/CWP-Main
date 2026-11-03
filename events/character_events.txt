@@ -22,6 +22,7 @@ character_events.2 = { #Rich industrialist wants to build a university
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	trigger = {
+		has_technology_researched = academia # can_construct_building does not check the unlocking technology
 		any_scope_state = {
 			is_incorporated = yes
 			has_building = building_urban_center
@@ -32,7 +33,7 @@ character_events.2 = { #Rich industrialist wants to build a university
 
 	immediate = {
 		debug_log = "EVENT_LOG_TRIGGERED"
-		ig:ig_industrialists ?= { leader = { save_scope_as = university_benefactor } }
+		ig:ig_industrialists ?= { leader ?= { save_scope_as = university_benefactor } }
 		random_scope_state = {
 			limit = {
 				is_incorporated = yes
@@ -54,7 +55,7 @@ character_events.2 = { #Rich industrialist wants to build a university
  				reserves=1
  			}
 		}
-		scope:university_benefactor.interest_group = {
+		scope:university_benefactor.interest_group ?= {
 			add_modifier = {
 				name = modifier_university_built
 				days = normal_modifier_time
@@ -64,7 +65,7 @@ character_events.2 = { #Rich industrialist wants to build a university
 
 	option = {
 		name = character_events.2.b
-		scope:university_benefactor.interest_group = {
+		scope:university_benefactor.interest_group ?= {
 			add_modifier = {
 				name = modifier_blocked_building_university
 				days = normal_modifier_time
@@ -339,7 +340,7 @@ character_events.4 = { #Devout leader sleeping with a nun
 			is_ruler_of_own_country = no
 			age > 18
 			is_busy = no
-			interest_group = {
+			interest_group ?= {
 				is_marginal = no
 				is_interest_group_type = ig_devout
 			}
@@ -354,7 +355,7 @@ character_events.4 = { #Devout leader sleeping with a nun
 				is_ruler_of_own_country = no
 				age > 18
 				is_busy = no
-				interest_group = {
+				interest_group ?= {
 					is_marginal = no
 					is_interest_group_type = ig_devout
 				}

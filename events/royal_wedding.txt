@@ -275,7 +275,7 @@ wedding.3 = {
 			triggered_desc = {
 				desc = wedding.3.d1
 				trigger = {
-					ruler.interest_group = {
+					ruler.interest_group ?= {
 						OR = {
 							ig_approval <= angry
 							ig_counts_as_marginal = yes
@@ -328,7 +328,7 @@ wedding.3 = {
 		debug_log = "EVENT_LOG_TRIGGERED"
 		ruler = {
 			save_scope_as = abdicating_monarch
-			interest_group = {
+			interest_group ?= {
 				save_scope_as = monarch_ig
 			}
 		}
