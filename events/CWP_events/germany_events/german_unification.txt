@@ -1029,6 +1029,7 @@ west_german_unification.4 = {
 			type = dominion
 		}
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 2
 			NOT = {
 				has_global_variable = german_reunification_neutral_germany
@@ -1056,6 +1057,7 @@ west_german_unification.4 = {
 			type = protectorate
 		}
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 4
 			NOT = {
 				has_global_variable = german_reunification_neutral_germany
@@ -1083,6 +1085,7 @@ west_german_unification.4 = {
 			type = puppet
 		}
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 6
 			NOT = {
 				has_global_variable = german_reunification_neutral_germany
@@ -1230,6 +1233,7 @@ west_german_unification.5 = {
 		name = west_german_unification.5.b
 		set_global_variable = german_reunification_denazification
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 3
 		}
 		add_modifier = {
@@ -1282,6 +1286,7 @@ west_german_unification.5 = {
 		set_global_variable = german_reunification_denazification
 		set_global_variable = germania_delanda_est
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 6
 		}
 		change_infamy = 75
@@ -1439,6 +1444,7 @@ west_german_unification.6 = {
 		name = west_german_unification.6.b
 		default_option = yes
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 2
 		}
 		every_country = {
@@ -1480,6 +1486,7 @@ west_german_unification.6 = {
 		# Form the federation of the Danube
 		name = west_german_unification.6.c
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 4
 		}
 		every_country = {
@@ -1869,6 +1876,7 @@ west_german_unification.8 = {
 		# Keep Germany Demilitarized
 		name = west_german_unification.8.b
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 3
 		}
 		default_option = yes
@@ -1931,6 +1939,7 @@ west_german_unification.8 = {
 		# Make Germany Neutral
 		name = west_german_unification.8.c
 		trigger = {
+			has_global_variable = german_reunification_voting
 			global_var:german_reunification_voting > 6
 		}
 		hidden_effect = {
