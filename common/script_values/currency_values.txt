@@ -88,6 +88,7 @@ currency_value_growth = {
 	if = {
 		limit = {
 			has_variable = pegged_currency
+			exists = var:pegged_currency
 		}
 		value = {
 			value = var:pegged_currency.currency_value_growth

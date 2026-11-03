@@ -33,6 +33,7 @@ fiscal_money_supply_calculation = {
     else_if = {
         limit = {
             has_variable = pegged_currency
+            exists = var:pegged_currency
         }
         set_variable = {
             name = inflation_rate

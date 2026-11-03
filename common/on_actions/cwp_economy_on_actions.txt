@@ -35,6 +35,18 @@ cwp_economy_global_monthly_pulse = {
 # Fired off on_monthly_pulse_country (root = country)
 cwp_economy_monthly_pulse = {
 	effect = {
+		# A currency pegged to a country that no longer exists loses its peg, as when a peg fails
+		if = {
+			limit = {
+				has_variable = pegged_currency
+				NOT = { exists = var:pegged_currency }
+			}
+			remove_variable = pegged_currency_je_val
+			remove_variable = maintain_pegged_currency_je_val
+			remove_variable = pegged_currency
+			remove_variable = peg_target_set
+			activate_law = law_type:law_independent_monetary_policy
+		}
 		onaction_imf_calculation = yes
 		onaction_fiscal_calculation = yes
 		onaction_monetary_variables_creation = yes
