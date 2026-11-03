@@ -1,0 +1,123 @@
+﻿# Stir National Agitation (CWP 1.5's foster_national_agitation; vanilla 1.14 dropped the interaction but kept its
+# notification and localization). Tech decolonization_tech -> political_internationalism; the cooldown is read in
+# days as vanilla and the other CWP interactions do (1.5 used months, which made it 76 years).
+foster_national_agitation = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_ethno_nationalist.dds"
+	clicksound = "event:/SFX/DLC/1.3_ip1/UI/agitator_promote"
+
+	potential = {
+		is_in_exile_pool = no
+		is_in_void = no
+		has_role_of_type = agitator
+		owner = scope:actor
+		owner = {
+			any_primary_culture = {
+				this = root.culture
+			}
+			has_technology_researched = political_internationalism
+		}
+	}
+
+	show_requirements = yes
+
+	possible = {
+		root.culture = {
+			save_temporary_scope_as = agitator_culture
+		}
+		this.interest_group = {
+			is_in_government = yes
+		}
+		# A custom tooltip: the generated one for any_state has no perspective in a character interaction
+		custom_tooltip = {
+			text = cwp_foster_national_agitation_target_tt
+			any_state = {
+				this.state_region = {
+					is_homeland = root.culture
+				}
+				custom_tooltip = {
+					text = is_rival_of_owner_tt
+					OR = {
+						owner = {
+							has_diplomatic_pact = {
+								who = root.owner
+								type = rivalry
+							}
+						}
+						root.owner = {
+							has_diplomatic_pact = {
+								who = prev.owner
+								type = rivalry
+							}
+						}
+					}
+				}
+				custom_tooltip = {
+					text = not_homeland_of_states_tt
+					owner = {
+						NOR = {
+							this = root.owner
+							any_primary_culture = {
+								this = root.culture
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		root.culture = {
+			save_scope_as = agitation_culture
+		}
+		root.owner = {
+			save_scope_as = agitation_sponsor
+		}
+		random_state = {
+			limit = {
+				state_region = {
+					is_homeland = root.culture
+				}
+				OR = {
+					owner = {
+						has_diplomatic_pact = {
+							who = root.owner
+							type = rivalry
+						}
+					}
+					root.owner = {
+						has_diplomatic_pact = {
+							who = prev.owner
+							type = rivalry
+						}
+					}
+				}
+				owner = {
+					NOR = {
+						this = root.owner
+						any_primary_culture = {
+							this = root.culture
+						}
+					}
+				}
+			}
+			save_scope_as = agitation_state
+			add_radicals_in_state = {
+				culture = root.culture
+				value = large_radicals
+			}
+			owner = {
+				post_notification = nationalism_national_agitation_occurred
+				change_relations = {
+					country = root.owner value = -10
+				}
+			}
+		}
+	}
+
+	cooldown = { days = short_modifier_time }
+
+	ai_chance = {
+		value = 100
+	}
+}
