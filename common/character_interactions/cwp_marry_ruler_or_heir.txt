@@ -25,7 +25,7 @@ marry_ruler_or_heir = {
 			NOT = { is_subject_type = subject_type_personal_union }
 			has_law = law_type:law_monarchy
 			religion = scope:actor.religion
-			ruler = {
+			ruler ?= {
 				age > 36
 				hidden_trigger = { NOT = { has_variable = marriage_target } }
 			}
