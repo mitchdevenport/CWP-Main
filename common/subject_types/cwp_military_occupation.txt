@@ -27,10 +27,9 @@ subject_type_military_occupation = {
 		subject_type_dominion
 	}
 
-	lower_autonomy_subject_type_alternatives = {
-		subject_type_puppet
-		subject_type_colony
-	}
+	# No lower-autonomy alternatives: the AI decreases the autonomy of subjects with low liberty desire, which turned
+	# occupied Japan into a puppet that the Release Japan event no longer recognised. CWP's postwar stories end each
+	# occupation, as in CWP 1.5.
 
 	valid_overlord_country_types = {
 		recognized
