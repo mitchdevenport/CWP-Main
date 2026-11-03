@@ -72,6 +72,9 @@ Politics rules the 1.14 engine enforces:
   govern without their party bring none, and a party can start with none until its first election (Britain's
   Labour did, while the American Democrats start with 24%). Britain therefore holds its first election in February
   1946, as in CWP 1.5 (and as the base game does in 1836).
+- High and very high taxes cost 5 and 10 legitimacy as in CWP 1.5 (the base game's 10 and 20,
+  `common/static_modifiers/00_code_static_modifiers.txt`): 23 countries start with the high or very high taxes of
+  their CWP 1.5 history.
 
 Economy rules:
 - The building history (`common/history/buildings`) is generated. The generator left Czechoslovakia, Yugoslavia,
