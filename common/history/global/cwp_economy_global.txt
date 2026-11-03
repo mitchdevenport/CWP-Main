@@ -954,9 +954,9 @@ GLOBAL = {
 				has_variable = inflation_rate
 			}
 		}
-		set_variable = {
+		set_variable = { # 0 as in CWP 1.5: Bretton Woods fails once US inflation leaves -0.5% to 5%, so a 5% start ended it in January 1946
 			name = inflation_rate
-			value = 5
+			value = 0
 		}
 	}
 	every_country = {

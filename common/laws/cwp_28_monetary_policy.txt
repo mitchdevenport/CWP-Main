@@ -84,6 +84,12 @@ law_government_controlled = {
 			has_law = law_type:law_protectionism
 			has_law = law_type:law_free_trade
 		}
+		# The AI United States keeps the gold standard while the Bretton Woods agreement stands: it ends the agreement
+		# with the end_bretton_woods_agreement decision (otherwise every signatory lost its peg within two years)
+		NAND = {
+			c:USA ?= this
+			has_global_variable = bretton_woods_agreement
+		}
 	}
 	ai_enact_weight_modifier = {
 		#Petitions
@@ -133,6 +139,12 @@ law_government_interference = {
 			has_law = law_type:law_protectionism
 			has_law = law_type:law_free_trade
 		}
+		# The AI United States keeps the gold standard while the Bretton Woods agreement stands: it ends the agreement
+		# with the end_bretton_woods_agreement decision (otherwise every signatory lost its peg within two years)
+		NAND = {
+			c:USA ?= this
+			has_global_variable = bretton_woods_agreement
+		}
 	}
 	ai_enact_weight_modifier = {
 		#Petitions
@@ -174,6 +186,14 @@ law_independent_monetary_policy = {
 				}
 				remove_global_variable = bretton_woods_agreement
 			}
+		}
+	}
+	ai_will_do = {
+		# The AI United States keeps the gold standard while the Bretton Woods agreement stands: it ends the agreement
+		# with the end_bretton_woods_agreement decision (otherwise every signatory lost its peg within two years)
+		NAND = {
+			c:USA ?= this
+			has_global_variable = bretton_woods_agreement
 		}
 	}
 	ai_enact_weight_modifier = {
