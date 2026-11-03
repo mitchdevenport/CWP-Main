@@ -658,6 +658,8 @@ west_german_unification.3 = {
 	immediate = {
 		change_tag = GER
 		make_independent = yes
+		# Adenauer is created as ruler below; without this the government change looks for a ruler among leaders that do not exist yet
+		set_variable = { name = keep_current_ruler_var days = 7 }
 		activate_law = law_type:law_parliamentary_republic
 		activate_law = law_type:law_census_voting
 		activate_law = law_type:law_national_militia
