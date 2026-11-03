@@ -10,7 +10,9 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
    placeholders for new vanilla files and reports placeholders whose vanilla file is gone (`--prune`
    removes them). Never delete a placeholder by hand; when the mod needs a vanilla file's content, put
    CWP's version at that path instead (see `common/customizable_localization/cwp_vanilla_custom_loc.txt`
-   for vanilla definitions that CWP text still uses).
+   for vanilla definitions that CWP text still uses). Files that match a vanilla file name except for letter
+   case are renamed to the vanilla spelling: the game would otherwise load both spellings, so on Windows the
+   mod file ran twice (country histories were applied twice). Stage the renames with `git add -A`.
 2. `python docs/maintenance/naval_network.py` - rebuilds `common/travel_network/naval_network.txt`
    (the fleet waypoint graph) for the CWP map from vanilla's graph. Re-run it when the map or vanilla's
    network changes. Requires numpy and Pillow.

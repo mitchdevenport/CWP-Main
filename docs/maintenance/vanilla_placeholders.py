@@ -16,6 +16,10 @@ Run it from the mod root after every game update (and commit the result):
 
 Existing placeholders whose vanilla counterpart no longer exists are reported
 (``--prune`` deletes them).
+
+A mod file whose name matches a vanilla file except for letter case is renamed to the vanilla
+spelling: the game treats the two spellings as different files, and on a case-insensitive file
+system both resolve to the mod file, which then runs twice (country histories applied twice).
 """
 import argparse
 import json
@@ -53,7 +57,7 @@ def main():
     with open(os.path.join(args.mod, ".metadata", "metadata.json"), encoding="utf-8-sig") as f:
         replace_paths = json.load(f)["game_custom_data"]["replace_paths"]
 
-    created, stale = [], []
+    created, stale, renamed = [], [], []
     for rel_dir in replace_paths:
         if rel_dir.startswith(SKIP_PREFIXES):
             continue
@@ -66,8 +70,17 @@ def main():
                     n for n in os.listdir(vanilla_dir)
                     if os.path.isfile(os.path.join(vanilla_dir, n)) and n.lower().endswith(SCRIPT_EXTENSIONS)
                 }
+        mod_names = {n.lower(): n for n in os.listdir(mod_dir)} if os.path.isdir(mod_dir) else {}
         for name in sorted(vanilla_files):
             target = os.path.join(mod_dir, name)
+            existing = mod_names.get(name.lower())
+            if existing is not None and existing != name:
+                renamed.append(f"{rel_dir}/{existing} -> {name}")
+                if not args.check:
+                    tmp = target + ".casefix"
+                    os.rename(os.path.join(mod_dir, existing), tmp)
+                    os.rename(tmp, target)
+                continue
             if os.path.exists(target):
                 continue
             created.append(f"{rel_dir}/{name}")
@@ -86,6 +99,11 @@ def main():
                         if args.prune and not args.check:
                             os.remove(path)
 
+    if renamed:
+        print(f"{'Would rename' if args.check else 'Renamed'} {len(renamed)} file(s) to the vanilla letter case "
+              "(stage the renames with git add -A):")
+        for r in renamed:
+            print("  ~", r)
     verb = "Would create" if args.check else "Created"
     print(f"{verb} {len(created)} placeholder(s).")
     for c in created:
@@ -94,7 +112,7 @@ def main():
         print(f"{len(stale)} placeholder(s) no longer shadow a vanilla file" + (" (deleted)." if args.prune and not args.check else ":"))
         for s in stale:
             print("  -", s)
-    return 1 if args.check and created else 0
+    return 1 if args.check and (created or renamed) else 0
 
 
 if __name__ == "__main__":
