@@ -128,14 +128,17 @@ china_frontline_saving_events.2 = {
 				set_state_owner = controller
 			}
 		}
-		every_diplomatic_play = {
-			limit = {
-				exists = c:PRC
-				exists = c:ROC
-				initiator_is = c:PRC
-				target_is = c:ROC
+		custom_tooltip = { # the generated end_play tooltip has no perspective here
+			text = cwp_chinese_civil_war_ends_tt
+			every_diplomatic_play = {
+				limit = {
+					exists = c:PRC
+					exists = c:ROC
+					initiator_is = c:PRC
+					target_is = c:ROC
+				}
+				end_play = yes
 			}
-			end_play = yes
 		}
 		#effect_china_states_scopes_transfer = yes
 		ai_chance = {
@@ -176,14 +179,17 @@ china_frontline_saving_events.3 = {
 				set_state_owner = controller
 			}
 		}
-		every_diplomatic_play = {
-			limit = {
-				exists = c:PRC
-				exists = c:ROC
-				initiator_is = c:PRC
-				target_is = c:ROC
+		custom_tooltip = { # the generated end_play tooltip has no perspective here
+			text = cwp_chinese_civil_war_ends_tt
+			every_diplomatic_play = {
+				limit = {
+					exists = c:PRC
+					exists = c:ROC
+					initiator_is = c:PRC
+					target_is = c:ROC
+				}
+				end_play = yes
 			}
-			end_play = yes
 		}
 		#effect_china_states_scopes_transfer = yes
 		ai_chance = {

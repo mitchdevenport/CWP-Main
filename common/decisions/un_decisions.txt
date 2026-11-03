@@ -8,9 +8,12 @@
 	}
 
 	possible = {
-		any_diplomatic_play = {
-			target_is = root
-			is_war = yes
+		custom_tooltip = { # the generated any_diplomatic_play tooltip has no perspective in a decision
+			text = un_intervention_attacked_tt
+			any_diplomatic_play = {
+				target_is = root
+				is_war = yes
+			}
 		}
 		custom_tooltip = {
 			text = is_un_member

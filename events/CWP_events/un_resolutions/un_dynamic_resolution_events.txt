@@ -123,12 +123,15 @@ un_dynamic_resolution_events.2 = {
 		# Option to Accept peace terms
 		name = un_dynamic_resolution_events.2.a
 		highlighted_option = yes
-		every_diplomatic_play = {
-			limit = {
-				target_is = scope:asking_un_intervention_country
-				initiator_is = scope:un_intervention_enemy_country
+		custom_tooltip = { # the generated end_play tooltip has no perspective here
+			text = un_intervention_war_ends_tt
+			every_diplomatic_play = {
+				limit = {
+					target_is = scope:asking_un_intervention_country
+					initiator_is = scope:un_intervention_enemy_country
+				}
+				end_play = yes
 			}
-			end_play = yes
 		}
 		scope:un_intervention_enemy_country = {
 			create_bidirectional_truce = {

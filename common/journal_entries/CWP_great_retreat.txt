@@ -48,13 +48,16 @@
 		}
 	}
 	fail = {
-		not = {
-			or = {
-				s:STATE_FORMOSA.region_state:ROC ?= {
-					controller = c:ROC
-				}
-				c:ROC ?= {
-					owns_entire_state_region = STATE_FORMOSA
+		custom_tooltip = { # the controller trigger has no tooltip text in 1.14
+			text = je_great_retreat_formosa_lost_tt
+			not = {
+				or = {
+					s:STATE_FORMOSA.region_state:ROC ?= {
+						controller = c:ROC
+					}
+					c:ROC ?= {
+						owns_entire_state_region = STATE_FORMOSA
+					}
 				}
 			}
 		}
@@ -69,12 +72,15 @@
 		s:STATE_FORMOSA.region_state:ROC ?= {
 			remove_modifier = kuomintang_relocation
 		}
-		every_diplomatic_play = {
-			limit = {
-				initiator_is = c:PRC
-				target_is = c:ROC
+		custom_tooltip = { # the generated end_play tooltip has no perspective here
+			text = je_great_retreat_war_ends_tt
+			every_diplomatic_play = {
+				limit = {
+					initiator_is = c:PRC
+					target_is = c:ROC
+				}
+				end_play = yes
 			}
-			end_play = yes
 		}
 	}
 	on_fail = {

@@ -255,9 +255,9 @@ imf_submit_loan_application = {
 			name = imf_interest_rate_domestic
 			value = imf_interest_rate_domestic
 		}
-		set_variable = {
+		set_variable = { # the term the loan is granted for (the form shows at least 1 year before the player changes it)
 			name = imf_loan_application_payment_due_years_current
-			value = var:imf_loan_application_payment_due_years
+			value = imf_application_payment_due_years
 		}
 		imf_loan_application_consideration = yes
 	}

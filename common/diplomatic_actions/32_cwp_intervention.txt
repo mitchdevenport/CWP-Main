@@ -27,8 +27,11 @@ intervention = {
 	}
 
 	possible = {
-		any_diplomatic_play = {
-			intervene_war_check = yes
+		custom_tooltip = { # the generated any_diplomatic_play tooltip has no perspective here
+			text = intervention_war_check_tt
+			any_diplomatic_play = {
+				intervene_war_check = yes
+			}
 		}
 		scope:target_country = {
 			"relations(root)" < relations_threshold:amicable
