@@ -50,6 +50,9 @@ develop = {
 		relations_progress_per_day = 2		# At 100, +1 relations
 		relations_improvement_max = 80
 		income_transfer = 0.25
+		# 1.14 transfers nothing from a pact based on the receiving country without a cap on the payer's share; CWP 1.5 had
+		# none, so the cap only stops a suzerain paying more than a quarter of its own income
+		max_paying_country_income_to_transfer = 0.25
 		second_country_gets_income_transfer = yes
 		income_transfer_based_on_second_country = yes
 
