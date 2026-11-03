@@ -49,3 +49,9 @@
  treaty_warsaw_pact_mutual_assistance_requirement_tt: "Both countries are members of the [concept_warsaw_pact]"
  treaty_warsaw_pact_mutual_assistance_can_withdraw_tt: "Members can only end this [concept_treaty] by leaving the [concept_warsaw_pact]"
  treaty_warsaw_pact_mutual_assistance_possible_decision: "[GetPlayer.GetName] is part of the #v Warsaw Pact#!"
+
+ # Alliances of the 1946 start
+ treaty_name_benelux_alliance: "Benelux Alliance"
+ treaty_name_anglo_french_alliance: "Anglo-French Alliance"
+ treaty_name_ogdensburg_agreement: "Ogdensburg Agreement"
+ treaty_name_azerbaijani_kurdish_alliance: "Azerbaijani-Kurdish Alliance"

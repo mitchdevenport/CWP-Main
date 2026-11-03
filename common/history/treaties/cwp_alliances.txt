@@ -1,0 +1,98 @@
+﻿TREATIES = {
+	### Alliances of the 1946 start
+	# master: common/history/diplomacy (alliance pacts, which are treaty articles since 1.14)
+	# Benelux
+	if = {
+		limit = {
+			exists = c:BEL
+			exists = c:NET
+		}
+		create_treaty = {
+			name = treaty_name_benelux_alliance
+			first_country = c:BEL
+			second_country = c:NET
+			is_draft = no
+			articles_to_create = {
+				{ article = alliance }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:BEL
+			exists = c:LUX
+		}
+		create_treaty = {
+			name = treaty_name_benelux_alliance
+			first_country = c:BEL
+			second_country = c:LUX
+			is_draft = no
+			articles_to_create = {
+				{ article = alliance }
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = c:NET
+			exists = c:LUX
+		}
+		create_treaty = {
+			name = treaty_name_benelux_alliance
+			first_country = c:NET
+			second_country = c:LUX
+			is_draft = no
+			articles_to_create = {
+				{ article = alliance }
+			}
+		}
+	}
+	# United Kingdom and France
+	if = {
+		limit = {
+			exists = c:GBR
+			exists = c:FRA
+		}
+		create_treaty = {
+			name = treaty_name_anglo_french_alliance
+			first_country = c:GBR
+			second_country = c:FRA
+			is_draft = no
+			articles_to_create = {
+				{ article = alliance }
+			}
+		}
+	}
+	# United States and Canada (Permanent Joint Board on Defence, 1940)
+	if = {
+		limit = {
+			exists = c:USA
+			exists = c:CAN
+		}
+		create_treaty = {
+			name = treaty_name_ogdensburg_agreement
+			first_country = c:USA
+			second_country = c:CAN
+			is_draft = no
+			articles_to_create = {
+				{ article = alliance }
+			}
+		}
+	}
+	# Azerbaijan People's Government and the Republic of Mahabad (April 1946)
+	if = {
+		limit = {
+			exists = c:AZR
+			exists = c:KUR
+		}
+		create_treaty = {
+			name = treaty_name_azerbaijani_kurdish_alliance
+			first_country = c:AZR
+			second_country = c:KUR
+			is_draft = no
+			articles_to_create = {
+				{ article = alliance }
+			}
+		}
+	}
+}
