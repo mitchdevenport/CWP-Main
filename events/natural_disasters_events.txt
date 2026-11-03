@@ -340,7 +340,6 @@ natural_disaster_events.5 = { #Crop Failure
 			state_region = {
 				has_harvest_condition = disease_outbreak
 				NOT = { has_variable = natural_disaster_cooldown }
-				NOT = { has_variable = krakatoa_crop_failure }
 			}
 		}
 	}
@@ -355,7 +354,6 @@ natural_disaster_events.5 = { #Crop Failure
 				state_region = {
 					has_harvest_condition = disease_outbreak
 					NOT = { has_variable = natural_disaster_cooldown }
-					NOT = { has_variable = krakatoa_crop_failure }
 				}
 			}
 			save_scope_as = crop_fail_state

@@ -36,7 +36,7 @@ agitators_election_events_fascist.1 = {
 				AND = {
 					trigger_if = {
 						limit = {
-							this.interest_group = {
+							this.interest_group ?= {
 								has_party = yes
 							}
 						}
@@ -54,7 +54,7 @@ agitators_election_events_fascist.1 = {
 								law = law_type:law_ethnostate
 								value > strongly_approve # Equals 'count'
 							}
-							interest_group = {
+							interest_group ?= {
 								law_stance = {
 									law = law_type:law_ethnostate
 									value > neutral
@@ -242,7 +242,7 @@ agitators_election_events_fascist.2 = {
 				AND = {
 					trigger_if = {
 						limit = {
-							this.interest_group = {
+							this.interest_group ?= {
 								has_party = yes
 							}
 						}
@@ -260,7 +260,7 @@ agitators_election_events_fascist.2 = {
 								law = law_type:law_ethnostate
 								value > strongly_approve # Equals 'count'
 							}
-							interest_group = {
+							interest_group ?= {
 								law_stance = {
 									law = law_type:law_ethnostate
 									value > neutral
@@ -378,7 +378,7 @@ agitators_election_events_fascist.3 = {
 				AND = {
 					trigger_if = {
 						limit = {
-							this.interest_group = {
+							this.interest_group ?= {
 								has_party = yes
 							}
 						}
@@ -396,7 +396,7 @@ agitators_election_events_fascist.3 = {
 								law = law_type:law_ethnostate
 								value > strongly_approve # Equals 'count'
 							}
-							interest_group = {
+							interest_group ?= {
 								law_stance = {
 									law = law_type:law_ethnostate
 									value > neutral
@@ -518,7 +518,7 @@ agitators_election_events_fascist.4 = {
 				AND = {
 					trigger_if = {
 						limit = {
-							this.interest_group = {
+							this.interest_group ?= {
 								has_party = yes
 							}
 						}
@@ -536,7 +536,7 @@ agitators_election_events_fascist.4 = {
 								law = law_type:law_ethnostate
 								value > strongly_approve # Equals 'count'
 							}
-							interest_group = {
+							interest_group ?= {
 								law_stance = {
 									law = law_type:law_ethnostate
 									value > neutral
@@ -673,7 +673,7 @@ agitators_election_events_fascist.5 = {
 				AND = {
 					trigger_if = {
 						limit = {
-							this.interest_group = {
+							this.interest_group ?= {
 								has_party = yes
 							}
 						}
@@ -691,7 +691,7 @@ agitators_election_events_fascist.5 = {
 								law = law_type:law_ethnostate
 								value > strongly_approve # Equals 'count'
 							}
-							interest_group = {
+							interest_group ?= {
 								law_stance = {
 									law = law_type:law_ethnostate
 									value > neutral

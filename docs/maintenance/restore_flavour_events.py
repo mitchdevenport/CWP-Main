@@ -303,6 +303,13 @@ def fixes(text, c):
         j = text.find("civil_war_progress_low = yes", i)
         if k >= 0 and 0 <= i < j < text.find("\toption = {", i):
             text = text[:j] + "civil_war_progress_medium = yes" + text[j + len("civil_war_progress_low = yes"):]
+    # CWP has no prohibition laws: drop the organised crime event's tie-in with them
+    if c == "crime_events":
+        text = re.sub(r"\n[ \t]*if = \{\s*limit = \{\s*has_variable = prohibition_laws_var\s*\}\s*custom_tooltip = [A-Za-z_.]+\s*"
+                      r"change_variable = \{\s*name = prohibition_laws_var\s*add = -?\d+\s*\}\s*\}", "", text)
+    # CWP has no Krakatoa events: drop the natural disasters' check for their crop failure
+    if c == "natural_disasters_events":
+        text = re.sub(r"(?m)^[ \t]*NOT = \{ has_variable = krakatoa_crop_failure \}[ \t]*\r?\n", "", text)
     # vanilla bug: the mega disaster counters test a country variable, so they never count past 1
     text = re.sub(r"exists = var:(number_of_mega_[a-z]+)", r"has_global_variable = \1", text)
     # vanilla bugs: `ruler` evaluated in interest group scope; a trigger's temporary scope used in immediate

@@ -36,7 +36,7 @@ agitators_election_events_liberal.1 = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -130,7 +130,7 @@ agitators_election_events_liberal.2 = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -270,7 +270,7 @@ agitators_election_events_liberal.3 = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -384,7 +384,7 @@ agitators_election_events_liberal.4 = {
 				has_ideology = ideology:ideology_market_liberal
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}

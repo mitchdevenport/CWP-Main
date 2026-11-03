@@ -34,7 +34,7 @@ agitators_election_events_agrarian.1 = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -121,7 +121,7 @@ agitators_election_events_agrarian.2 = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -218,7 +218,7 @@ agitators_election_events_agrarian.3 = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -340,7 +340,7 @@ agitators_election_events_agrarian.4 = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -430,7 +430,7 @@ agitators_election_events_agrarian.5 = {
 				has_ideology = ideology:ideology_agrarian
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}

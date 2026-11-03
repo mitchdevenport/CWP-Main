@@ -33,7 +33,7 @@ agitators_election_events_radical.1 = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -165,7 +165,7 @@ agitators_election_events_radical.2 = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -286,7 +286,7 @@ agitators_election_events_radical.3 = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -422,7 +422,7 @@ agitators_election_events_radical.4 = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -433,7 +433,7 @@ agitators_election_events_radical.4 = {
 			}
 		}
 		any_scope_character = {
-			interest_group = {
+			interest_group ?= {
 				has_party = yes
 				NOT = {
 					this.party = {
@@ -451,7 +451,7 @@ agitators_election_events_radical.4 = {
 						law = law_type:law_universal_suffrage
 						value > strongly_approve # Equals 'count'
 					}
-					interest_group = {
+					interest_group ?= {
 						law_stance = {
 							law = law_type:law_slavery_banned
 							value < neutral
@@ -494,7 +494,7 @@ agitators_election_events_radical.4 = {
 		radical_agitator_election_scope_effect = yes
 		random_scope_character = {
 			limit = {
-				interest_group = {
+				interest_group ?= {
 					has_party = yes
 					NOT = {
 						this.party = {
@@ -512,7 +512,7 @@ agitators_election_events_radical.4 = {
 							law = law_type:law_universal_suffrage
 							value > strongly_approve # Equals 'count'
 						}
-						interest_group = {
+						interest_group ?= {
 							law_stance = {
 								law = law_type:law_universal_suffrage
 								value < neutral
@@ -530,7 +530,7 @@ agitators_election_events_radical.4 = {
 					is_ruler_of_own_country = yes
 				}
 			}
-			interest_group = {
+			interest_group ?= {
 				party = {
 					save_scope_as = anti_democratic_party
 				}
@@ -604,7 +604,7 @@ agitators_election_events_radical.5 = {
 				has_ideology = ideology:ideology_radical
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}

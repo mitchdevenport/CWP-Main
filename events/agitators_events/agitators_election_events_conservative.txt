@@ -107,7 +107,7 @@ agitators_election_events_conservative.1 = {
 				has_ideology = ideology:ideology_traditionalist
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -230,7 +230,7 @@ agitators_election_events_conservative.2 = {
 				has_ideology = ideology:ideology_traditionalist
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -340,7 +340,7 @@ agitators_election_events_conservative.2 = {
 			}
 			save_scope_as = revolutionary_nation_cw_scope
 			ruler = {
-				interest_group = {
+				interest_group ?= {
 					save_scope_as = revolutionary_ig
 				}
 			}
@@ -474,7 +474,7 @@ agitators_election_events_conservative.3 = {
 				has_ideology = ideology:ideology_traditionalist
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -635,7 +635,7 @@ agitators_election_events_conservative.4 = {
 				has_ideology = ideology:ideology_traditionalist
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
@@ -755,7 +755,7 @@ agitators_election_events_conservative.5 = {
 				has_ideology = ideology:ideology_traditionalist
 				trigger_if = {
 					limit = {
-						this.interest_group = {
+						this.interest_group ?= {
 							has_party = yes
 						}
 					}
