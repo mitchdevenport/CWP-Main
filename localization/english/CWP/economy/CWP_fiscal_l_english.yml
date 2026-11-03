@@ -57,7 +57,6 @@
  INF_FURNITURE_PRICE: "Price of Furniture @furniture!"
  INF_ELECTRICITY_PRICE: "Price of $electricity$ @electricity!"
  INF_MEDIA_PRICE: "Price of $media$ @media!"
- INF_PHARMACEUTICALS_PRICE: "Price of $pharmaceuticals$ @pharmaceuticals!"
  # Bank Credibility
  BNK_TOOLTIP_FORMAT: "$TAB$$VALUE|+0$ from $KEY$"
  BNK_GOLD_RESERVES: "Excess Gold Reserves"

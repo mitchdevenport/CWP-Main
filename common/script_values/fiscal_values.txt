@@ -517,6 +517,10 @@ money_supply_growth_from_gold = {
 		}
 		subtract = {
 			value = gold_reserves
+			# In 1.5 the reserves could not exceed their limit, so this drain always stayed below what an expansionary
+			# policy adds (gold_reserves_limit / 30 a month). 1.14 lets reserves pile up beyond the limit, and an
+			# uncapped drain sank the money supply and the economy of any country running long surpluses.
+			max = gold_reserves_limit
 			divide = 10
 		}
 	}
@@ -736,12 +740,8 @@ inflation_growth = {
 		desc = INF_MEDIA_PRICE
 		format = "INFLATION_GROWTH_TOOLTIP_FORMAT"
 	}
-	# Pharmaceuticals
-	add = {
-		value = inflation_pharmaceuticals_price
-		desc = INF_PHARMACEUTICALS_PRICE
-		format = "INFLATION_GROWTH_TOOLTIP_FORMAT"
-	}
+	# 1.5's basket also had healthcare, which is no longer a good (health care is an institution). Pharmaceuticals
+	# are not a stand-in: they are oversupplied in nearly every market and pushed every country into deflation.
 	# From Deficit Money Supply
 	if = {
 		limit = {
@@ -1898,166 +1898,6 @@ inflation_media_price = {
 			owner = {
 				market ?= {
 					mg:media = {
-						market_goods_pricier >= 0.7
-						market_goods_pricier < 0.8
-					}
-				}
-			}
-		}
-		add = 0.7
-	}
-}
-
-inflation_pharmaceuticals_price = {
-	# Pharmaceuticals
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier <= -0.7
-						market_goods_pricier > -0.8
-					}
-				}
-			}
-		}
-		subtract = 0.6
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier <= -0.6
-						market_goods_pricier > -0.7
-					}
-				}
-			}
-		}
-		subtract = 0.5
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier <= -0.5
-						market_goods_pricier > -0.6
-					}
-				}
-			}
-		}
-		subtract = 0.4
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier <= -0.4
-						market_goods_pricier > -0.5
-					}
-				}
-			}
-		}
-		subtract = 0.3
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier <= -0.3
-						market_goods_pricier > -0.4
-					}
-				}
-			}
-		}
-		subtract = 0.1
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier <= -0.2
-						market_goods_pricier > -0.3
-					}
-				}
-			}
-		}
-		subtract = 0.05
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier >= 0.2
-						market_goods_pricier < 0.3
-					}
-				}
-			}
-		}
-		add = 0.2
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier >= 0.3
-						market_goods_pricier < 0.4
-					}
-				}
-			}
-		}
-		add = 0.3
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier >= 0.4
-						market_goods_pricier < 0.5
-					}
-				}
-			}
-		}
-		add = 0.4
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier >= 0.5
-						market_goods_pricier < 0.6
-					}
-				}
-			}
-		}
-		add = 0.5
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
-						market_goods_pricier >= 0.6
-						market_goods_pricier < 0.7
-					}
-				}
-			}
-		}
-		add = 0.6
-	}
-	if = {
-		limit = {
-			owner = {
-				market ?= {
-					mg:pharmaceuticals = {
 						market_goods_pricier >= 0.7
 						market_goods_pricier < 0.8
 					}

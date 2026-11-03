@@ -61,6 +61,12 @@ Politics rules the 1.14 engine enforces:
   is low for most of the 1946 world, and CWP has no events that raise it. Countries that hold elections at the start
   therefore get the base game's decaying grace for newly introduced elections (`initialize_electoral_confidence`).
 
+Economy rules:
+- Inflation (`inflation_growth` in `common/script_values/fiscal_values.txt`) accumulates the price levels of a
+  basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
+  expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long
+  campaign before adding goods to it.
+
 Military rules:
 - Starting armies and fleets come from `common/history/military_formations`. The engine adds formation units on
   top of the barracks in `common/history/buildings` (those form an extra default army), so a country with
