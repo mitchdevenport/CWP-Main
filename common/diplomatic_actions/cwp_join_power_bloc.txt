@@ -25,6 +25,18 @@
 			}
 		}
 
+		# CWP: members of the Western and Eastern Blocs keep their alignment unless they may leave it (see can_leave in
+		# cwp_power_bloc_identities_ideological_union.txt)
+		trigger_if = {
+			limit = {
+				OR = {
+					is_in_western_bloc = yes
+					is_in_eastern_bloc = yes
+				}
+			}
+			can_leave_power_bloc = yes
+		}
+
 		scope:target_country.power_bloc ?= {
 			leverage_advantage = {
 				target = root

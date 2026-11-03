@@ -78,6 +78,15 @@ Economy rules:
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.
 
+Power bloc rules:
+- The Western and Eastern Blocs stand in for CWP 1.5's diplomatic alignment with a superpower. Members run by the AI
+  only leave (or switch blocs through invitations, join requests or treaties) when the superpower falls below great
+  power rank, relations with it turn hostile, or their own politics turn against it (`can_leave` in
+  `common/power_bloc_identities/cwp_power_bloc_identities_ideological_union.txt`).
+- The AI expels members when its bloc's cohesion is low, and cohesion follows the leader's legitimacy, which is low in
+  the first weeks of 1946. Every bloc therefore starts the game at least half cohesive with the one-year
+  `cwp_postwar_alignment` modifier (`on_game_started` in `common/on_actions/00_code_on_actions.txt`).
+
 Military rules:
 - Starting armies and fleets come from `common/history/military_formations`. The engine adds formation units on
   top of the barracks in `common/history/buildings` (those form an extra default army), so a country with

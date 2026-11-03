@@ -24,10 +24,53 @@
 	can_leave = {
 		OR = {
 			is_power_bloc_leader = yes
-			power_bloc = {
-				leverage_advantage = {
-					target = root
-					value <= 30
+			AND = {
+				power_bloc = {
+					leverage_advantage = {
+						target = root
+						value <= 30
+					}
+				}
+				# CWP: the Western and Eastern Blocs stand in for CWP 1.5's diplomatic alignment with a superpower. Countries run by
+				# the AI only broke that alignment when the superpower fell below great power rank, relations with it turned hostile
+				# or their own politics turned against it: a Western member with a radical leftist government and economy, an
+				# Eastern member with neither. Bloc invitations and join requests check this too.
+				OR = {
+					is_player = yes
+					AND = {
+						is_in_western_bloc = no
+						is_in_eastern_bloc = no
+					}
+					AND = {
+						is_in_western_bloc = yes
+						OR = {
+							AND = {
+								has_radical_leftist_economy = yes
+								has_radical_leftist_government = yes
+							}
+							c:USA ?= {
+								OR = {
+									country_rank < rank_value:great_power
+									"relations(ROOT)" <= relations_threshold:hostile
+								}
+							}
+						}
+					}
+					AND = {
+						is_in_eastern_bloc = yes
+						OR = {
+							AND = {
+								has_radical_leftist_economy = no
+								has_radical_leftist_government = no
+							}
+							c:RUS ?= {
+								OR = {
+									country_rank < rank_value:great_power
+									"relations(ROOT)" <= relations_threshold:hostile
+								}
+							}
+						}
+					}
 				}
 			}
 		}

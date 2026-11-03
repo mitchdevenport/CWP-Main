@@ -301,6 +301,8 @@
  cwp_interstate_highway_connected_states: "Strategic Highway Readiness"
  cwp_interstate_highway_suburban_corridors: "Suburban Highway Corridors"
  cwp_interstate_highway_suburban_program: "Suburban Highway Program"
+ cwp_postwar_alignment: "Post-War Alignment"
+ cwp_postwar_alignment_desc: "The wartime coalitions have only just become the blocs of the Cold War, and their members still stand together."
  goods_input_cement_add: "@cement! Cement input per level"
  goods_input_cement_add_desc: "The amount of @cement! Cement consumed by buildings"
  goods_output_cement_add: "@cement! Cement output per level"

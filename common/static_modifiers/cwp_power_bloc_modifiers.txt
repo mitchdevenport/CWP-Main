@@ -1,1 +1,8 @@
-﻿
+﻿# The power blocs founded before 1946 during the first year of the game (on_game_started in 00_code_on_actions.txt).
+# The game judges bloc cohesion by the legitimacy of the bloc leaders, which is low in the first weeks of 1946 (wartime
+# taxes, governments without a majority of the votes the game assigns on the start date); without this the United
+# States expels founding members of the Western Bloc in January 1946.
+cwp_postwar_alignment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	power_bloc_cohesion_add = 60
+}

@@ -5,6 +5,24 @@
 # No root scope set
 on_game_started = {
 	effect = {
+		# CWP: the Cold War blocs were founded in 1945, but the game sets their cohesion from the legitimacy of their leaders,
+		# which is low in the first weeks of 1946 (wartime taxes, governments without a majority of the start date votes).
+		# The Western Bloc started at 0 and the United States expelled its founding members within weeks. Every bloc starts
+		# at least half cohesive and keeps a cohesion bonus through 1946 (cwp_power_bloc_modifiers.txt).
+		every_power_bloc = {
+			add_modifier = {
+				name = cwp_postwar_alignment
+				months = 12
+			}
+			if = {
+				limit = { current_cohesion_number < 50 }
+				add_cohesion_number = {
+					value = 50
+					subtract = current_cohesion_number
+				}
+			}
+		}
+
 		# Memento Mori
 		every_country = {
 			every_interest_group = {

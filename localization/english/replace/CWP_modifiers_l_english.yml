@@ -340,6 +340,8 @@
   nato_member: "NATO Member"
   nato_not_meeting_standards: "NATO Standards Unmet"
   nato_cohesion: "NATO Cohesion"
+  cwp_postwar_alignment: "Post-War Alignment"
+  cwp_postwar_alignment_desc: "The wartime coalitions have only just become the blocs of the Cold War, and their members still stand together."
   warsaw_pact_member: "Warsaw Pact Member"
   warsaw_pact_not_meeting_standards: "Warsaw Pact Standards Unmet"
   warsaw_pact_cohesion: "Warsaw Pact Cohesion"
