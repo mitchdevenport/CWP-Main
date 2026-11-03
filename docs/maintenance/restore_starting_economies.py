@@ -208,9 +208,15 @@ def load_country_setup():
             calls = re.findall(r"\b(effect_starting_\w+)\s*=\s*yes", body)
             techs = set(re.findall(r"add_technology_researched\s*=\s*(\w+)", body))
             laws = set(re.findall(r"activate_law\s*=\s*law_type:(\w+)", body))
-            for call in calls:
+            pending, seen = list(calls), set()
+            while pending:  # law packages can call other packages
+                call = pending.pop()
+                if call in seen:
+                    continue
+                seen.add(call)
                 techs |= set(re.findall(r"add_technology_researched\s*=\s*(\w+)", effects.get(call, "")))
                 laws |= set(re.findall(r"activate_law\s*=\s*law_type:(\w+)", effects.get(call, "")))
+                pending += re.findall(r"\b(effect_starting_\w+)\s*=\s*yes", effects.get(call, ""))
             tier = next((c for c in calls if c.startswith("effect_starting_production_technologies")), None)
             entry = setup.setdefault(m.group(1), {"tier": None, "techs": set(), "laws": set()})
             entry["tier"] = entry["tier"] or tier
