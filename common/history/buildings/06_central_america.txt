@@ -1977,7 +1977,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PNM"
-						levels=10
+						levels=8
 						region="STATE_PANAMA"
 					}
 				}

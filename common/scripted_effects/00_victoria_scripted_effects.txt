@@ -1585,10 +1585,13 @@ exile_character_with_martyrdom = {
 			}
 		}
 	}
-	clean_up_exile_character_roles = yes
+	# Exile first, then drop the roles (base game 1.14 order: a character without roles counts as retired and can't be exiled)
 	if = {
 		limit = { is_in_exile_pool = no }
 		exile_character = yes
+	}
+	hidden_effect = {
+		clean_up_exile_character_roles = yes
 	}
 }
 

@@ -11,7 +11,7 @@ buildings that state had in CWP 1.5:
   dropped (hospitals, rubber, silk, opium and phosphorus);
 * levels are scaled by how much the generated history scaled each building type for the countries it kept;
 * farms the state region does not allow are switched to an allowed crop; levels are capped by the state's resources
-  and arable land;
+  and arable land (in a state region split between countries, by the state's share of its provinces);
 * production methods are CWP 1.5's where they still exist, otherwise the ones the generated history uses most for
   that building in countries with the same starting production technologies, checked against the country's starting
   technologies and laws;
@@ -189,6 +189,8 @@ def load_state_regions():
                 "capped": {k: int(v) for k, v in re.findall(r"(\w+)\s*=\s*(\d+)", capped.group(1))} if capped else {},
                 "discovered": discovered,
                 "port": bool(re.search(r"\bport\s*=\s*x[0-9A-Fa-f]+", body)),
+                "provinces": len(re.search(r"\bprovinces\s*=\s*\{([^}]*)\}", body).group(1).split())
+                if re.search(r"\bprovinces\s*=\s*\{", body) else 0,
             }
     return regions
 
@@ -226,13 +228,21 @@ def load_country_setup():
 
 
 def state_owners():
+    """({state: set of owner tags}, {(state, tag): number of provinces owned}) from the state history."""
     owners = collections.defaultdict(set)
+    provinces = collections.Counter()
     for path in glob.glob(os.path.join(MOD, "common", "history", "states", "*.txt")):
         text = strip_comments(read(path))
         for m, start, end in children(text, r"s:(STATE_\w+)\s*=\s*\{"):
-            for c in re.finditer(r"create_state\s*=\s*\{\s*country\s*=\s*c:(\w+)", text[start:end]):
+            for _, cstart, cend in children(text[start:end], r"create_state\s*=\s*\{"):
+                body = text[start:end][cstart:cend]
+                c = re.search(r"country\s*=\s*c:(\w+)", body)
+                if not c:
+                    continue
                 owners[m.group(1)].add(c.group(1))
-    return owners
+                owned = re.search(r"owned_provinces\s*=\s*\{([^}]*)\}", body)
+                provinces[(m.group(1), c.group(1))] += len(owned.group(1).split()) if owned else 0
+    return owners, provinces
 
 
 # ---------------------------------------------------------------- main
@@ -244,7 +254,7 @@ def main():
     buildings, groups, methods = load_buildings()
     regions = load_state_regions()
     setup = load_country_setup()
-    owners = state_owners()
+    owners, owned_provinces = state_owners()
 
     head_files = {}
     head = collections.defaultdict(list)
@@ -366,7 +376,15 @@ def main():
             wanted[btype] += max(1, round(e["level"] * scale(btype)))
             master_pms.setdefault(btype, [pm for pm in e["pms"]])
 
-        # caps
+        # caps; the game divides the resources and arable land of a split state region between its states by their
+        # share of the provinces (4 of Seoul's 13 provinces get 2 of its 8 fishing wharves)
+        share = 1.0
+        if len(owners.get(state, ())) > 1 and region["provinces"] and owned_provinces[(state, tag)]:
+            share = min(1.0, owned_provinces[(state, tag)] / region["provinces"])
+
+        def state_cap(amount):
+            return min(amount - used[btype], math.floor(amount * share))
+
         final = collections.Counter()
         arable = {}
         for btype, level in wanted.items():
@@ -375,9 +393,9 @@ def main():
                 arable[btype] = level
                 continue
             if btype in region["capped"]:
-                cap = region["capped"][btype] - used[btype]
+                cap = state_cap(region["capped"][btype])
             elif btype in region["discovered"]:
-                cap = region["discovered"][btype] - used[btype]
+                cap = state_cap(region["discovered"][btype])
             elif any(btype in r["capped"] or btype in r["discovered"] for r in regions.values()) \
                     or any(group in r["arable_groups"] for r in regions.values()):
                 cap = 0  # a resource this state does not have
@@ -389,7 +407,7 @@ def main():
                 notes.append(f"{tag} {state}: {btype} capped {level} -> {max(cap, 0)}")
             if cap > 0:
                 final[btype] = min(level, cap)
-        room = region["arable_land"] - arable_used
+        room = min(region["arable_land"] - arable_used, math.floor(region["arable_land"] * share))
         total = sum(arable.values())
         if total > room:
             notes.append(f"{tag} {state}: arable buildings {total} > arable land {room}, scaled down")

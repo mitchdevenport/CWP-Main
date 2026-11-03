@@ -235,12 +235,12 @@ arrange_accident = {
 		}
 
 		if = {
-			limit = { scope:actor ?= { ruler = { has_trait = cruel } } }
+			limit = { scope:actor ?= { ruler ?= { has_trait = cruel } } }
 			add = 15
 		}
 
 		if = {
-			limit = { scope:actor ?= { ruler = { has_trait = imperious } } }
+			limit = { scope:actor ?= { ruler ?= { has_trait = imperious } } }
 			add = 10
 		}
 
