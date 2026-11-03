@@ -1019,6 +1019,12 @@ indian_partition.3 = {
 		custom_tooltip = {
 			text = indian_partition.3.d.tt
 		}
+		# The state stays independent: like a colony released into independence, it leaves the colonial administration
+		# it inherited from India by adopting a constitution
+		if = {
+			limit = { has_law = law_type:law_colonial_administration }
+			trigger_event = { id = independence.2 days = 7 popup = yes }
+		}
 		ai_chance = {
 			base = 100
 			modifier = {
@@ -1145,6 +1151,11 @@ indian_partition.50 = {
 		}
 		set_variable = indian_partition_50
 		set_variable = cwp_parliamentary_monarchy # Dominion of India: a prime minister governs (gov_parliamentary_monarchy)
+		# The colonial administration ends with independence (the event leaves behind the colonial institutions)
+		if = {
+			limit = { has_law = law_type:law_colonial_administration }
+			activate_law = law_type:law_monarchy
+		}
 		# India no longer Protestantism
 		set_state_religion = rel:hindu
 		# Accepting the Cultures of India
@@ -1231,6 +1242,11 @@ indian_partition.80 = {
 	immediate = {
 		set_variable = indian_partition_80
 		set_variable = cwp_parliamentary_monarchy # Dominion of Pakistan: a prime minister governs (gov_parliamentary_monarchy)
+		# Pakistan is formed out of the colonial administration of India; it gets its own government
+		if = {
+			limit = { has_law = law_type:law_colonial_administration }
+			activate_law = law_type:law_monarchy
+		}
 		if = {
 			limit = {
 				exists = c:HND
