@@ -184,3 +184,123 @@ cwp_nuclear_strike_kill_population_effect = {
 		kill_population_percent_in_state = { percent = 0.01 }
 	}
 }
+
+# The outcome of a nuclear test (conduct_nuclear_test_button), rolled in nuclear_program_events.14
+nuclear_test_outcome_effect = {
+	if = { # Civilian Nuclear Capability
+		limit = {
+			has_journal_entry = je_acquire_civilian_nuclear_capability
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = nuclear_test_success_chance
+				}
+				trigger_event = {
+					id = nuclear_program_events.1
+					days = 14
+				}
+			}
+			1 = {
+				modifier = {
+					add = nuclear_test_fail_chance
+				}
+				trigger_event = {
+					id = nuclear_program_events.2
+					days = 14
+				}
+			}
+			10 = {
+				trigger_event = {
+					id = nuclear_program_events.3
+					days = 14
+				}
+			}
+		}
+	}
+	if = { # Atomic Nuclear Capability
+		limit = {
+			has_journal_entry = je_develop_atomic_bomb
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = nuclear_test_success_chance
+				}
+				trigger_event = { # Test Succeeds
+					id = nuclear_program_events.5
+				}
+			}
+			1 = {
+				modifier = {
+					add = nuclear_test_fail_chance
+				}
+				trigger_event = { # Test Fails
+					id = nuclear_program_events.6
+				}
+			}
+			10 = {
+				trigger_event = { # Test CRITICALLY Fails
+					id = nuclear_program_events.7
+				}
+			}
+		}
+	}
+	if = { # Thermonuclear Capability
+		limit = {
+			has_journal_entry = je_develop_thermonuclear_bomb
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = nuclear_test_success_chance
+				}
+				trigger_event = { # Test Succeeds
+					id = nuclear_program_events.8
+				}
+			}
+			1 = {
+				modifier = {
+					add = nuclear_test_fail_chance
+				}
+				trigger_event = { # Test Fails
+					id = nuclear_program_events.9
+				}
+			}
+			10 = {
+				trigger_event = { # Test CRITICALLY Fails
+					id = nuclear_program_events.10
+				}
+			}
+		}
+	}
+	if = { # ICBM Capability
+		limit = {
+			has_journal_entry = je_develop_icbms
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = nuclear_test_success_chance_icbm
+				}
+				trigger_event = { # Test Succeeds
+					id = nuclear_program_events.11
+				}
+			}
+			1 = {
+				modifier = {
+					add = nuclear_test_fail_chance_icbm
+				}
+				trigger_event = { # Test Fails
+					id = nuclear_program_events.12
+				}
+			}
+			10 = {
+				trigger_event = { # Test CRITICALLY Fails
+					id = nuclear_program_events.13
+				}
+			}
+		}
+	}
+
+}

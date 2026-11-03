@@ -107,9 +107,10 @@ survey_nuclear_test_site_button = {
 		}
 	}
 
-	# The original left the AI unable to test (TODO AI scripting), which stalled AI programs at 80 progress
+	# The original left the AI unable to test (TODO AI scripting), which stalled AI programs at 80 progress.
+	# A lower chance left AI programs waiting years for a test site.
 	ai_chance = {
-		value = 25
+		value = 100
 	}
 
 	possible = {
@@ -155,8 +156,17 @@ conduct_nuclear_test_button = {
 		}
 	}
 
+	# The AI tests whenever it can (a lower chance left AI programs stalled at 80 progress for decades),
+	# keeping a reserve for the cost of civilian tests
 	ai_chance = {
-		value = 25
+		value = 100
+		if = {
+			limit = {
+				has_journal_entry = je_acquire_civilian_nuclear_capability
+				gold_reserves < 200000
+			}
+			value = 0
+		}
 	}
 
 	possible = {
@@ -173,137 +183,25 @@ conduct_nuclear_test_button = {
 	}
 
 	effect = {
-		if = { # Civilian Nuclear Capability
+		if = {
 			limit = {
 				has_journal_entry = je_acquire_civilian_nuclear_capability
 			}
 			add_treasury = -100000
-			random_list = {
-				1 = {
-					modifier = {
-						add = nuclear_test_success_chance
-					}
-					trigger_event = {
-						id = nuclear_program_events.1
-						days = 14
-					}
-				}
-				1 = {
-					modifier = {
-						add = nuclear_test_fail_chance
-					}
-					trigger_event = {
-						id = nuclear_program_events.2
-						days = 14
-					}
-				}
-				10 = {
-					trigger_event = {
-						id = nuclear_program_events.3
-						days = 14
-					}
-				}
-			}
-			set_variable = {
-				name = nuclear_test_conducted
-				months = 3
+		}
+		# The outcome is rolled in a hidden event: rolled in the button itself, the AI's tests only ever came out
+		# as plain failures (the same random_list rolls with the right odds in an event)
+		show_as_tooltip = {
+			nuclear_test_outcome_effect = yes
+		}
+		hidden_effect = {
+			trigger_event = {
+				id = nuclear_program_events.14
 			}
 		}
-		if = { # Atomic Nuclear Capability
-			limit = {
-				has_journal_entry = je_develop_atomic_bomb
-			}
-			random_list = {
-				1 = {
-					modifier = {
-						add = nuclear_test_success_chance
-					}
-					trigger_event = { # Test Succeeds
-						id = nuclear_program_events.5
-					}
-				}
-				1 = {
-					modifier = {
-						add = nuclear_test_fail_chance
-					}
-					trigger_event = { # Test Fails
-						id = nuclear_program_events.6
-					}
-				}
-				10 = {
-					trigger_event = { # Test CRITICALLY Fails
-						id = nuclear_program_events.7
-					}
-				}
-			}
-			set_variable = {
-				name = nuclear_test_conducted
-				months = 3
-			}
-		}
-		if = { # Thermonuclear Capability
-			limit = {
-				has_journal_entry = je_develop_thermonuclear_bomb
-			}
-			random_list = {
-				1 = {
-					modifier = {
-						add = nuclear_test_success_chance
-					}
-					trigger_event = { # Test Succeeds
-						id = nuclear_program_events.8
-					}
-				}
-				1 = {
-					modifier = {
-						add = nuclear_test_fail_chance
-					}
-					trigger_event = { # Test Fails
-						id = nuclear_program_events.9
-					}
-				}
-				10 = {
-					trigger_event = { # Test CRITICALLY Fails
-						id = nuclear_program_events.10
-					}
-				}
-			}
-			set_variable = {
-				name = nuclear_test_conducted
-				months = 3
-			}
-		}
-		if = { # ICBM Capability
-			limit = {
-				has_journal_entry = je_develop_icbms
-			}
-			random_list = {
-				1 = {
-					modifier = {
-						add = nuclear_test_success_chance_icbm
-					}
-					trigger_event = { # Test Succeeds
-						id = nuclear_program_events.11
-					}
-				}
-				1 = {
-					modifier = {
-						add = nuclear_test_fail_chance_icbm
-					}
-					trigger_event = { # Test Fails
-						id = nuclear_program_events.12
-					}
-				}
-				10 = {
-					trigger_event = { # Test CRITICALLY Fails
-						id = nuclear_program_events.13
-					}
-				}
-			}
-			set_variable = {
-				name = nuclear_test_conducted
-				months = 3
-			}
+		set_variable = {
+			name = nuclear_test_conducted
+			months = 3
 		}
 	}
 }
