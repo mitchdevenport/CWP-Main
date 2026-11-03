@@ -1930,11 +1930,12 @@ ai_strategy_default = {
 					add = 500
 				}
 
+				# CWP 1.5 made ideology weigh three times as much as the base game in whom the AI antagonizes
 				multiply = {
 					value = "ai_ideological_opinion(scope:target_country)"
-					multiply = -0.05
+					multiply = -0.15
 					add = 1
-					min = 0.5
+					min = 0.25
 					max = 2.0
 				}
 
