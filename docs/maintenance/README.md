@@ -68,9 +68,10 @@ Politics rules the 1.14 engine enforces:
 - Electoral confidence starts at the freedom index (urbanization and literacy, `eagle_burger_freedom_index`), which
   is low for most of the 1946 world, and CWP has no events that raise it. Countries that hold elections at the start
   therefore get the base game's decaying grace for newly introduced elections (`initialize_electoral_confidence`).
-- A government's share of the votes, worth up to 65 legitimacy, comes only from the last election: until a country's
-  first election it is 0. Britain therefore holds its first election in February 1946, as in CWP 1.5 (and as the
-  base game does in 1836).
+- A government's share of the votes, worth up to 65 legitimacy, belongs to the parties in it: interest groups that
+  govern without their party bring none, and a party can start with none until its first election (Britain's
+  Labour did, while the American Democrats start with 24%). Britain therefore holds its first election in February
+  1946, as in CWP 1.5 (and as the base game does in 1836).
 
 Economy rules:
 - The building history (`common/history/buildings`) is generated. The generator left Czechoslovakia, Yugoslavia,
