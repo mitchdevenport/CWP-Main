@@ -188,6 +188,7 @@ ai_wants_contractionary = {
 	if = {
 		limit = {
 			money_supply_percentage <= -10
+			ai_interest_from_inflation <= 0
 		}
 		multiply = 0
 	}
@@ -242,6 +243,7 @@ ai_wants_stable = {
 	if = {
 		limit = {
 			money_supply_percentage <= -10
+			ai_interest_from_inflation <= 0
 		}
 		multiply = 0
 	}
@@ -311,6 +313,7 @@ ai_wants_expansionary = {
 	if = {
 		limit = {
 			money_supply_percentage <= -10
+			ai_interest_from_inflation <= 0 # inflation not above target: a country fighting inflation keeps its tight money
 		}
 		add = 1000
 	}
