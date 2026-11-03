@@ -109,6 +109,11 @@ Military rules:
   `activate_production_method` in its formation block instead.
 - Fleets are made of individual ships (`ship = { type = ship_type:... count = N }`). Naval administrations only
   recruit their crews (1,000 sailors per level), so the building history must give enough levels for them.
+- Nuclear warheads are the `nuclear_stockpile` variable (`common/script_values/wmd_values.txt`). Storage is two per
+  weapons facility level plus the silos' capacity; warheads beyond it decay at the stockpile divided by the storage
+  each month. A country that completes the atomic bomb journal entry gets one warhead and no facility, so with no
+  storage the overflow decay is skipped (CWP 1.5 divided by zero there; with the divisor clamped to 1 the warhead
+  was destroyed at the first monthly tick). The AI does not build facilities or silos on its own.
 
 The AI may downsize any government building it considers unprofitable; buildings it must keep (the WMD
 infrastructure, conscription centers) are `downsizeable = no`.
