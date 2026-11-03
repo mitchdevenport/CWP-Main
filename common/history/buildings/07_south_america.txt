@@ -846,17 +846,6 @@
 				activate_production_methods={ "pm_self_propelled_artillery_prod" "pm_battle_rifles" "pm_articulated_robotic_automation_industry_for_small_arms_manufactories" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:FRA"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_naval_administration"
 				add_ownership={
 					country={

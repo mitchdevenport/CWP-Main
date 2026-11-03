@@ -9473,17 +9473,6 @@
 				activate_production_methods={ "pm_coal_fired_plant" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:GBR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={

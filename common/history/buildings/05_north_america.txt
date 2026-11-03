@@ -597,17 +597,6 @@
 				activate_production_methods={ "pm_copper_lines" "pm_panel_rotary_switchboard" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=9
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_skyscraper"
 				add_ownership={
 					building={
@@ -1427,17 +1416,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_traditional_furniture" "pm_no_home_appliances" "pm_conveyor_assembly_lines_industry_for_furniture_manufactories" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_non_formal_training_barracks" }
 			}
 			create_building={
 				building="building_naval_administration"
@@ -2497,17 +2475,6 @@
 				activate_production_methods={ "pm_pneumatic_hydraulic_control_for_synthetics_plant" "pm_polyester" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=9
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_service_sectors"
 				add_ownership={
 					building={
@@ -3320,17 +3287,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_copper_lines" "pm_panel_rotary_switchboard" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=8
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_naval_administration"
@@ -4538,17 +4494,6 @@
 				activate_production_methods={ "pm_precalciner_cement_kilns" "pm_pneumatic_hydraulic_control_for_cement_plants" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=10
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_tool_manufactories"
 				add_ownership={
 					company={
@@ -5244,17 +5189,6 @@
 				activate_production_methods={ "pm_oil_fired_plant" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=9
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_beverage_industries"
 				add_ownership={
 					building={
@@ -5800,17 +5734,6 @@
 				subsidized=no
 				reserves=1
 				activate_production_methods={ "pm_trade_center" "pm_globalized_trade" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=8
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_telecommunications"
@@ -6473,17 +6396,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_rotary_drilling" "pm_pipelines" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=12
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_banks"
@@ -7495,17 +7407,6 @@
 				activate_production_methods={ "pm_mechanized_extraction_coal" "pm_bulk_rail_transportation_mines" "pm_bulk_explosives_coal" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_tool_manufactories"
 				add_ownership={
 					building={
@@ -8305,17 +8206,6 @@
 				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_no_polymer_additives" "pm_no_polymer_process_controls" "pm_ziegler_natta_catalysts" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=4
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_skyscraper"
@@ -9666,17 +9556,6 @@
 				activate_production_methods={ "pm_precalciner_cement_kilns" "pm_pneumatic_hydraulic_control_for_cement_plants" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=6
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_skyscraper"
 				add_ownership={
 					building={
@@ -9846,17 +9725,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_basic_rolling_stock" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=8
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_consumer_electronics_manufactories"
@@ -11065,17 +10933,6 @@
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=10
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_banks"
 				add_ownership={
 					building={
@@ -11370,17 +11227,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_copper_lines" "pm_operator_switchboard" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=12
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_oil_rig"
@@ -12731,17 +12577,6 @@
 				activate_production_methods={ "pm_precalciner_cement_kilns" "pm_pneumatic_hydraulic_control_for_cement_plants" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=10
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
@@ -13842,17 +13677,6 @@
 				activate_production_methods={ "pm_bulk_rail_transportation_mines" "pm_bulk_explosives_lead" "pm_bucket_wheel_excavators_lead" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=7
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_service_sectors"
 				add_ownership={
 					building={
@@ -14879,17 +14703,6 @@
 				activate_production_methods={ "pm_early_chemical_agriculture_maize_farm" "pm_early_mechanized_harvesting_for_maize_farm" "pm_citrus_orchards" "pm_hauling_trucks_agro_for_maize_farm" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_media_industry"
 				add_ownership={
 					building={
@@ -15389,17 +15202,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_copper_lines" "pm_panel_rotary_switchboard" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=6
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_service_sectors"
@@ -16344,17 +16146,6 @@
 				activate_production_methods={ "pm_hall_heroult_process" "pm_primary_aluminum_scrap_recovery" "pm_no_automation" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_naval_administration"
 				add_ownership={
 					country={
@@ -17061,17 +16852,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_tanker_trucks" "pm_waterflooding_recovery" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=6
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_skyscraper"
@@ -17861,17 +17641,6 @@
 				activate_production_methods={ "pm_traditional_packaging_fishing" "pm_post_war_side_trawling" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=7
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_naval_administration"
 				add_ownership={
 					country={
@@ -18562,17 +18331,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_trains" "pm_basic_rolling_stock" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=9
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_plastic_refineries"
@@ -19407,17 +19165,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_polymer_additives" "pm_no_polymer_process_controls" "pm_ziegler_natta_catalysts" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=9
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_synthetics_plant"
@@ -20393,17 +20140,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=14
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_university"
@@ -21881,17 +21617,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_typewriters_paper" "pm_office_telephones_skyscraper" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=7
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_small_arms_manufactories"
@@ -28899,17 +28624,6 @@
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=12
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_consumer_electronics_manufactories"
 				add_ownership={
 					building={
@@ -29601,17 +29315,6 @@
 				activate_production_methods={ "pm_copper_lines" "pm_panel_rotary_switchboard" }
 			}
 			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
-			}
-			create_building={
 				building="building_skyscraper"
 				add_ownership={
 					building={
@@ -29932,17 +29635,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=4
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_service_sectors"
@@ -30909,17 +30601,6 @@
 				subsidized=yes
 				reserves=1
 				activate_production_methods={ "pm_precalciner_cement_kilns" "pm_pneumatic_hydraulic_control_for_cement_plants" }
-			}
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=9
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_nco_instruction_barracks" }
 			}
 			create_building={
 				building="building_food_industry"

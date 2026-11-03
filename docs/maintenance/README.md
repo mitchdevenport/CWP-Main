@@ -61,6 +61,14 @@ Politics rules the 1.14 engine enforces:
   is low for most of the 1946 world, and CWP has no events that raise it. Countries that hold elections at the start
   therefore get the base game's decaying grace for newly introduced elections (`initialize_electoral_confidence`).
 
+Military rules:
+- Starting armies and fleets come from `common/history/military_formations`. The engine adds formation units on
+  top of the barracks in `common/history/buildings` (those form an extra default army), so a country with
+  starting formations has no barracks in the building history; set its barracks training with
+  `activate_production_method` in its formation block instead.
+- Fleets are made of individual ships (`ship = { type = ship_type:... count = N }`). Naval administrations only
+  recruit their crews (1,000 sailors per level), so the building history must give enough levels for them.
+
 The AI may downsize any government building it considers unprofitable; buildings it must keep (the WMD
 infrastructure, conscription centers) are `downsizeable = no`.
 
