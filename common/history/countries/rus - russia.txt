@@ -6,9 +6,11 @@
 		effect_starting_military_technologies_tier_1 = yes
 		# Laws
 		effect_starting_laws_1946_soviet_socialist_republic = yes
-		# Government at game start (CWP 1.5 release)
-		ig:ig_trade_unions = { add_ruling_interest_group = yes }
-		ig:ig_armed_forces = { add_ruling_interest_group = yes }
+		# Government at game start. CWP 1.5's (laborists and securocrats: the Trade Unions and Armed Forces) cost the
+		# Soviet Union all its legitimacy under the 1.14 rules, so the game dropped them at the start and left Stalin's
+		# Intelligentsia governing alone. The Bureaucrats, Stalin's group in CWP 1.5, govern with it.
+		ig:ig_intelligentsia = { add_ruling_interest_group = yes }
+		ig:ig_bureaucrats = { add_ruling_interest_group = yes }
 		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
 		set_tax_level = very_high
 		remove_primary_culture = cu:ukrainian

@@ -72,6 +72,11 @@ Politics rules the 1.14 engine enforces:
   govern without their party bring none, and a party can start with none until its first election (Britain's
   Labour did, while the American Democrats start with 24%). Britain therefore holds its first election in February
   1946, as in CWP 1.5 (and as the base game does in 1836).
+- At the start the game removes the interest groups that cost legitimacy from each government
+  (`STARTUP_MIN_LEGITIMACY_IG_BARRIER`), whether they were set in country history or in `common/history/governments`.
+  Check a starting government in game (the Government tab, or `is_in_government` on day one). CWP 1.5's Soviet
+  government (the Trade Unions and Armed Forces) cost the USSR all its legitimacy and was reduced to Stalin's
+  Intelligentsia, so the USSR starts with the Intelligentsia and the Bureaucrats (Stalin's group in CWP 1.5).
 - High and very high taxes cost 5 and 10 legitimacy as in CWP 1.5 (the base game's 10 and 20,
   `common/static_modifiers/00_code_static_modifiers.txt`): 23 countries start with the high or very high taxes of
   their CWP 1.5 history.
