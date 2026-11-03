@@ -35,7 +35,19 @@ types international
 			text = "INTERNATIONAL_ORGANIZATIONS"
 		}
 
-		blockoverride "entire_back_button" {}
+		# The header art has a socket for the back button; the panel is not in the panel history, so back closes it
+		blockoverride "entire_back_button" {
+			back_button_large = {
+				position = { 8 30 }
+				input_action = "back"
+				onclick = "[GetVariableSystem.Clear('international_open')]"
+				onclick = "[GetVariableSystem.Clear('un_panel')]"
+				onclick = "[GetVariableSystem.Clear('banks_panel')]"
+				onclick = "[GetVariableSystem.Clear('nato_panel')]"
+				onclick = "[GetVariableSystem.Clear('warsaw_pact_panel')]"
+				onclick = "[GetVariableSystem.Clear('imf_panel')]"
+			}
+		}
 
 		blockoverride "header_close_button" {
 			onclick = "[GetVariableSystem.Clear('international_open')]"
