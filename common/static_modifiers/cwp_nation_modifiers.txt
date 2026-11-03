@@ -31,6 +31,12 @@ legacy_of_kemalism = {
 	interest_group_ig_intelligentsia_pol_str_mult = 0.35
 }
 
+# The Soviet Union at the 1946 start (CWP 1.5): applied with a multiplier of 2000
+emerging_superpower = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_add = 1
+}
+
 last_stand = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_war_support_casualties_mult = -1

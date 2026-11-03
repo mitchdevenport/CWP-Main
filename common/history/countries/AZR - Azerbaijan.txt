@@ -9,5 +9,7 @@
 		effect_starting_laws_1946_peoples_democracy = yes
 		# Government at game start (CWP 1.5 release)
 		ig:ig_trade_unions = { add_ruling_interest_group = yes }
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_tax_level = very_high
 	}
 }

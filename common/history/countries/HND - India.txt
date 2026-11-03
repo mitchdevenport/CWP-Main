@@ -8,5 +8,23 @@
 		effect_starting_laws_1946_south_asian_dominion = yes
 		# Governed by the Viceroy and Governor-General: a colonial administration, as in CWP 1.5 (its administrative head of government)
 		activate_law = law_type:law_colonial_administration
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_state_religion = rel:protestant
+		add_primary_culture = cu:english
+		remove_primary_culture = cu:kannauji
+		remove_primary_culture = cu:awadhi
+		remove_primary_culture = cu:bihari
+		remove_primary_culture = cu:rajput
+		remove_primary_culture = cu:kashmiri
+		remove_primary_culture = cu:nepali
+		remove_primary_culture = cu:bengali
+		remove_primary_culture = cu:tani
+		remove_primary_culture = cu:manipuri
+		remove_primary_culture = cu:oriya
+		remove_primary_culture = cu:marathi
+		remove_primary_culture = cu:telegu
+		remove_primary_culture = cu:kannada
+		remove_primary_culture = cu:malayalam
+		remove_primary_culture = cu:tamil
 	}
 }

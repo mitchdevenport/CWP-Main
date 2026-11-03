@@ -8,5 +8,7 @@
 		effect_starting_laws_1946_south_asian_dominion = yes
 		# Governed by the Governor of Ceylon: a colonial administration, as in CWP 1.5 (its administrative head of government)
 		activate_law = law_type:law_colonial_administration
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_state_religion = rel:theravada
 	}
 }

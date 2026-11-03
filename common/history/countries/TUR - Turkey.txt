@@ -9,5 +9,8 @@
 		# Government at game start (CWP 1.5 release)
 		ig:ig_intelligentsia = { add_ruling_interest_group = yes }
 		# CWP 1.5 also seated the Armed Forces; under parliamentary rule the stronger Armed Forces would displace Inonu as Prime Minister
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_tax_level = high
+		add_modifier = { name = legacy_of_kemalism }
 	}
 }

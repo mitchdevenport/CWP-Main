@@ -8,5 +8,7 @@
 		# Laws
 		effect_starting_laws_1946_japanese_occupation_democracy = yes
 		# An occupied, disarmed democracy like Japan; the Figl government is set in common/history/governments
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_tax_level = high
 	}
 }

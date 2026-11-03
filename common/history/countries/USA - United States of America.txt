@@ -55,5 +55,8 @@
 			set_company_establishment_date = 1886.8.8
 			set_company_state_region = s:STATE_KEYSTONE
 		}
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_tax_level = very_high
+		set_market_capital = STATE_NEW_YORK
 	}
 }

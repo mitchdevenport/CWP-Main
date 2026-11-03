@@ -9,5 +9,7 @@
 		# A grand duchy governed by its prime minister, as in CWP 1.5 (its hereditary head of government)
 		set_variable = cwp_parliamentary_monarchy
 		activate_law = law_type:law_monarchy
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_tax_level = high
 	}
 }

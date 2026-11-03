@@ -6,5 +6,11 @@
 		effect_starting_military_technologies_tier_2 = yes
 		# Laws
 		effect_starting_laws_1946_japanese_occupation_democracy = yes
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		set_tax_level = high
+		set_government_wage_level = low
+		add_taxed_goods = g:tobacco
+		set_capital = STATE_KANTO
+		set_market_capital = STATE_KANTO
 	}
 }

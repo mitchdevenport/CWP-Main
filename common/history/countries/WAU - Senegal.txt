@@ -6,5 +6,17 @@
 		effect_starting_military_technologies_tier_5 = yes
 		# Laws
 		effect_starting_laws_1946_colonial_administration = yes
+		# CWP 1.5 starting state, dropped when the country histories were rewritten for 1.13
+		add_primary_culture = cu:french
+		remove_primary_culture = cu:maghrebi
+		remove_primary_culture = cu:fulani
+		remove_primary_culture = cu:akan
+		remove_primary_culture = cu:mossi
+		remove_primary_culture = cu:hausa
+		remove_primary_culture = cu:yoruba
+		remove_primary_culture = cu:igbo
+		remove_primary_culture = cu:kongo
+		remove_primary_culture = cu:kanuri
+		remove_primary_culture = cu:nilotes
 	}
 }
