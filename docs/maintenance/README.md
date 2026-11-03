@@ -14,7 +14,13 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
 2. `python docs/maintenance/naval_network.py` - rebuilds `common/travel_network/naval_network.txt`
    (the fleet waypoint graph) for the CWP map from vanilla's graph. Re-run it when the map or vanilla's
    network changes. Requires numpy and Pillow.
-3. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
+3. `python docs/maintenance/restore_flavour_events.py` - rebuilds CWP's copies of the base game's flavour
+   events (law debates, election campaigns, revolutions, exiles, decrees, natural disasters, ...) from the
+   installed game: the event files CWP 1.5 had, limited to the events it used and adapted to CWP's buildings,
+   laws and 1946 technology level, plus the base game modifiers, triggers and hooks they need
+   (`cwp_vanilla_event_*.txt`, `common/on_actions/cwp_flavour_events_on_actions.txt`). Review the diff; when
+   the base game renames something the events use, extend the script's mappings rather than editing the output.
+4. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
    main menu and after starting a game.
 
 Known load-time messages that are not caused by script errors: six "Naval node from spline anchor ..."

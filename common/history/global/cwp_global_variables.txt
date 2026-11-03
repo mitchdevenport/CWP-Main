@@ -6,6 +6,11 @@
 	set_global_variable = { name = failed_coups value = 0 }
 	set_global_variable = { name = successful_coups value = 0 }
 
+	# Mega disasters so far (natural_disaster_events, initialised by the base game's global history)
+	set_global_variable = { name = number_of_mega_earthquakes value = 0 }
+	set_global_variable = { name = number_of_mega_floods value = 0 }
+	set_global_variable = { name = number_of_mega_eruptions value = 0 }
+
 	### Variable Errors Fixing - HACK! Fix these eventually (restored from CWP 1.5)
 	every_country = {
 		# Used only in the GUI
