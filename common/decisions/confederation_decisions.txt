@@ -5,6 +5,7 @@
 			c:IDS ?= this
 		}
 		this = {
+			exists = capital
 			capital.region = sr:region_indonesia
 			any_primary_culture = {
 				is_primary_culture_of = c:IDS
@@ -97,6 +98,7 @@ join_canada = {
 			}
 		}
 		this = {
+			exists = capital
 			OR = {
 				capital.region = sr:region_atlantic_seaboard
 				capital.region = sr:region_pacific_seaboard
@@ -183,6 +185,7 @@ join_india = {
 			c:HND ?= this
 		}
 		this = {
+			exists = capital
 			capital.region = sr:region_india
 			any_primary_culture = {
 				is_primary_culture_of = c:HND
@@ -246,6 +249,7 @@ join_pakistan = {
 			c:PAK ?= this
 		}
 		this = {
+			exists = capital
 			capital.region = sr:region_india
 			any_primary_culture = {
 				is_primary_culture_of = c:PAK

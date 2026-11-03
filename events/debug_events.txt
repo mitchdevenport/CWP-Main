@@ -12,7 +12,10 @@ debug.999 = {
 	}
 	immediate = {
 		set_global_variable = cwp_chaos_mode
-		make_independent = yes
+		if = {
+			limit = { is_subject = yes }
+			make_independent = yes
+		}
 		every_state = {
 			limit = { is_capital = no }
 			set_state_type = unincorporated

@@ -3337,7 +3337,7 @@ west_german_unification.999 = {
 					}
 				}
 			}
-			c:USA = {
+			c:USA ?= {
 				set_variable = west_german_leader
 			}
 		}
@@ -3356,7 +3356,7 @@ west_german_unification.999 = {
 					}
 				}
 			}
-			c:GBR = {
+			c:GBR ?= {
 				set_variable = west_german_leader
 			}
 		}
@@ -3381,7 +3381,7 @@ west_german_unification.999 = {
 					}
 				}
 			}
-			c:FRA = {
+			c:FRA ?= {
 				set_variable = west_german_leader
 			}
 		}
@@ -3410,7 +3410,7 @@ west_german_unification.999 = {
 					}
 				}
 			}
-			c:BOZ = {
+			c:BOZ ?= {
 				set_variable = west_german_unifier
 			}
 		}
@@ -3429,7 +3429,7 @@ west_german_unification.999 = {
 					}
 				}
 			}
-			c:AOZ = {
+			c:AOZ ?= {
 				set_variable = west_german_unifier
 			}
 		}
@@ -3454,7 +3454,7 @@ west_german_unification.999 = {
 					}
 				}
 			}
-			c:FOZ = {
+			c:FOZ ?= {
 				set_variable = west_german_unifier
 			}
 		}

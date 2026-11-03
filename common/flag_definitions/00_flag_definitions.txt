@@ -1916,7 +1916,7 @@ GBR = { # Great Britain / United Kingdom
 		priority = 22
 		trigger = {
 			exists = scope:actor
-			scope:actor ?= { capital = { state_region = s:STATE_LANCASHIRE } }
+			scope:actor ?= { capital ?= { state_region = s:STATE_LANCASHIRE } }
 		}
 	}
 	flag_definition = {
@@ -1924,7 +1924,7 @@ GBR = { # Great Britain / United Kingdom
 		priority = 23
 		trigger = {
 			cwp_coat_of_arms_law_council_republic_trigger = yes
-			scope:actor ?= { capital = { state_region = s:STATE_LANCASHIRE } }
+			scope:actor ?= { capital ?= { state_region = s:STATE_LANCASHIRE } }
 		}
 	}
 	flag_definition = {
