@@ -1,0 +1,219 @@
+﻿# Heads of the United States' starting companies in 1946 (common/history/countries/USA - United States of America.txt).
+# Created in common/history/characters/usa - usa.txt, as the base game creates its starting executives. Without them
+# the game generated the same executive (name and age) for most of these companies.
+
+USA_cwp_charles_e_wilson_gm = { # Charles E. Wilson, president of General Motors 1941-1953
+	first_name = Charles
+	last_name = Wilson
+	historical = yes
+	birth_date = 1890.7.18
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_MICHIGAN
+	traits = {
+		ambitious
+		career_businessperson
+		experienced_entrepreneur
+	}
+	company = company:company_general_motors
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_general_motors
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_henry_ford_ii = { # Henry Ford II, president of the Ford Motor Company 1945-1960
+	first_name = Henry
+	last_name = Ford_II
+	historical = yes
+	birth_date = 1917.9.4
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_MICHIGAN
+	traits = {
+		ambitious
+		career_businessperson
+		basic_entrepreneur
+	}
+	company = company:company_ford_motor
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_ford_motor
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_k_t_keller = { # K. T. Keller, president of Chrysler 1935-1950
+	first_name = Kaufman
+	last_name = Keller
+	historical = yes
+	birth_date = 1885.11.27
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_MICHIGAN
+	traits = {
+		persistent
+		career_businessperson
+		experienced_entrepreneur
+	}
+	company = company:company_chrysler
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_chrysler
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_benjamin_fairless = { # Benjamin F. Fairless, president of U.S. Steel 1938-1953
+	first_name = Benjamin
+	last_name = Fairless
+	historical = yes
+	birth_date = 1890.5.3
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_KEYSTONE
+	traits = {
+		persistent
+		career_businessperson
+		experienced_entrepreneur
+	}
+	company = company:company_us_steel_corp
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_us_steel_corp
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_eugene_holman = { # Eugene Holman, president of Standard Oil 1944-1954
+	first_name = Eugene
+	last_name = Holman
+	historical = yes
+	birth_date = 1895.5.2
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_TEXAS
+	traits = {
+		meticulous
+		career_businessperson
+		basic_entrepreneur
+	}
+	company = company:company_standard_oil
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_standard_oil
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_charles_e_wilson_ge = { # Charles E. Wilson, president of General Electric 1940-1950
+	first_name = Charles
+	last_name = Wilson
+	historical = yes
+	birth_date = 1886.11.18
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_NEW_ENGLAND
+	traits = {
+		tactful
+		career_businessperson
+		experienced_entrepreneur
+	}
+	company = company:company_general_electric
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_general_electric
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_charles_deere_wiman = { # Charles Deere Wiman, president of Deere & Company 1928-1955
+	first_name = Charles
+	last_name = Wiman
+	historical = yes
+	birth_date = 1892.10.26
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_ILLINOIS
+	traits = {
+		innovative
+		career_businessperson
+		basic_entrepreneur
+	}
+	company = company:company_john_deere
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_john_deere
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_john_weyerhaeuser = { # J. P. Weyerhaeuser Jr., president of the Weyerhaeuser Timber Company 1933-1947
+	first_name = John
+	last_name = Weyerhaeuser
+	historical = yes
+	birth_date = 1899.1.1 # approximate
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_WASHINGTON
+	traits = {
+		persistent
+		career_businessperson
+		basic_entrepreneur
+	}
+	company = company:company_weyerhaeuser
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_weyerhaeuser
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}
+
+USA_cwp_gwilym_price = { # Gwilym A. Price, president of Westinghouse 1946-1955
+	first_name = Gwilym
+	last_name = Price
+	historical = yes
+	birth_date = 1895.1.1 # approximate
+	culture = cu:american
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	home_region = STATE_KEYSTONE
+	traits = {
+		tactful
+		career_businessperson
+		basic_entrepreneur
+	}
+	company = company:company_westinghouse_corp
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_westinghouse_corp
+		}
+		earliest_usage_date = 1946.1.1
+		latest_usage_date = 1960.1.1
+	}
+}

@@ -146,5 +146,16 @@
 			last_name = Bush
 		}
 		#Kids
+
+		## Executives of the starting companies (common/character_templates/cwp_usa_executives.txt) ##
+		create_character = { template = USA_cwp_charles_e_wilson_gm }
+		create_character = { template = USA_cwp_henry_ford_ii }
+		create_character = { template = USA_cwp_k_t_keller }
+		create_character = { template = USA_cwp_benjamin_fairless }
+		create_character = { template = USA_cwp_eugene_holman }
+		create_character = { template = USA_cwp_charles_e_wilson_ge }
+		create_character = { template = USA_cwp_charles_deere_wiman }
+		create_character = { template = USA_cwp_john_weyerhaeuser }
+		create_character = { template = USA_cwp_gwilym_price }
 	}
 }
