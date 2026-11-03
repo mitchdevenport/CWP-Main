@@ -1,0 +1,67 @@
+﻿# CWP 1.5 Administer and Develop pacts (common/diplomatic_actions/29_cwp_administer.txt, 30_cwp_develop.txt)
+# Bureaucracy lent to an administered subject: one point per 100,000 inhabitants
+cwp_colonial_administration_amount = {
+	value = total_population
+	divide = 100000
+	round = yes
+}
+
+# Bureaucracy a suzerain pays for every subject it administers
+cwp_colonial_administration_total = {
+	value = 0
+	every_subject_or_below = {
+		limit = {
+			root = {
+				has_diplomatic_pact = {
+					who = prev
+					type = administer
+				}
+			}
+		}
+		add = cwp_colonial_administration_amount
+	}
+}
+
+# Construction lent to a developed subject: one point per 100,000 of its gold reserve limit
+cwp_colonial_development_amount = {
+	value = gold_reserves_limit
+	divide = 100000
+	round = yes
+}
+
+# Construction a suzerain pays for every subject it develops
+cwp_colonial_development_total = {
+	value = 0
+	every_subject_or_below = {
+		limit = {
+			root = {
+				has_diplomatic_pact = {
+					who = prev
+					type = develop
+				}
+			}
+		}
+		add = cwp_colonial_development_amount
+	}
+}
+
+# CWP 1.5 Intervention diplomatic action (scope: diplomatic play)
+great_power_allies_initiator = {
+	value = 0
+	every_scope_initiator_ally = {
+		limit = {
+			country_rank >= rank_value:great_power
+		}
+		add = 1
+	}
+}
+
+great_power_allies_target = {
+	value = 0
+	every_scope_target_ally = {
+		limit = {
+			country_rank >= rank_value:great_power
+		}
+		add = 1
+	}
+}
