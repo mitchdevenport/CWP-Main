@@ -52,11 +52,11 @@
 									margin = { 10 10 }
 									using = dropdown_background
 								}
-								#need a gui wizard to fix this
+								# Flag and name on one row, then the currency figures (1.14 sizes text boxes only with autoresize, so the figures
+								# overlapped on the flag)
 								flowcontainer = {
-									minimumsize = { 500 0 }
-									margin_bottom = 5
 									direction = horizontal
+									spacing = 10
 									flowcontainer = {
 										margin = { 10 10 }
 										small_flag = {
@@ -66,81 +66,85 @@
 											datacontext = "[Scope.AccessCountry]"
 										}
 									}
-
-									flowcontainer = {
-										parentanchor = hcenter
-										direction = horizontal
-										spacing = 15
-										textbox = {
-											parentanchor = hcenter
-											#align = left
-											raw_text = "[Country.GetAdjectiveNoFlag] [concept_central_bank] | [Country.GetCustom('bank_credibility_loc')]"
-										}
+									textbox = {
+										autoresize = yes
+										parentanchor = vcenter
+										align = left|nobaseline
+										raw_text = "[Country.GetAdjectiveNoFlag] [concept_central_bank] | [Country.GetCustom('bank_credibility_loc')]"
 									}
-
-									flowcontainer = {
-										direction = horizontal
-										maximumsize = { 500 -1 }
-										layoutpolicy_horizontal = expanding
-										margin_top = 20
+								}
+								flowcontainer = {
+									direction = horizontal
+									margin_left = 20
+									spacing = 40
+									tooltip = "CURRENCY_TOOLTIP"
 										flowcontainer = {
 											direction = vertical
-											spacing = 25
+											spacing = 6
 											textbox = {
+												autoresize = yes
 												parentanchor = hcenter
-												align = center
+												align = center|nobaseline
 												raw_text = "Currency"
 											}
 											textbox = {
-												align = center
+												autoresize = yes
+												parentanchor = hcenter
+												align = center|nobaseline
 												raw_text = "#v [Country.GetCustom('currency_text_loc')][Country.MakeScope.Var('cwp_currency').GetFlagName]#!"
 											}
 										}
 										flowcontainer = {
 											direction = vertical
-											spacing = 25
+											spacing = 6
 											textbox = {
+												autoresize = yes
 												parentanchor = hcenter
-												align = center
+												align = center|nobaseline
 												raw_text = "Exchange Rate"
 											}
 											textbox = {
-												margin_top = 20
-												align = center
+												autoresize = yes
+												parentanchor = hcenter
+												align = center|nobaseline
 												text = "CURRENCY_VALUE_TOOLTIP"
 											}
 										}
 										flowcontainer = {
 											direction = vertical
-											spacing = 25
+											spacing = 6
 											textbox = {
-												align = center
+												autoresize = yes
+												parentanchor = hcenter
+												align = center|nobaseline
 												raw_text = "Value"
 											}
 											textbox = {
-												align = center
+												autoresize = yes
+												parentanchor = hcenter
+												align = center|nobaseline
 												raw_text = "#v [Country.MakeScope.ScriptValue('currency_average_difference_to_global_AI')|d%]#!"
 											}
-											
 										}
 										flowcontainer = {
 											direction = vertical
-											spacing = 25
+											spacing = 6
 											textbox = {
-												align = center
+												autoresize = yes
+												parentanchor = hcenter
+												align = center|nobaseline
 												raw_text = "Inflation"
 											}
 											textbox = {
-												align = center
+												autoresize = yes
+												parentanchor = hcenter
+												align = center|nobaseline
 												raw_text = "#v [Country.MakeScope.ScriptValue('inflation_value')|d%]#!"
 											}
-											
 										}
-									}
-									tooltip = "CURRENCY_TOOLTIP"
 								}
 								flowcontainer = {
-									margin_top = 40
+									margin_top = 10
 									parentanchor = hcenter
 									direction = vertical
 									button = {
