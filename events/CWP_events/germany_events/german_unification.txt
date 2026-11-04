@@ -142,13 +142,24 @@ west_german_unification.1 = {
 			exists = c:FRA
 			c:FRA ?= this
 			exists = c:SAA
-			has_diplomatic_pact = {
-				who = c:FOZ
-				type = military_occupation
+			exists = c:FOZ
+			trigger_if = { # option requirements are all evaluated for their tooltip; the zone ends with West Germany
+				limit = {
+					exists = c:FOZ
+				}
+				has_diplomatic_pact = {
+					who = c:FOZ
+					type = military_occupation
+				}
 			}
-			has_diplomatic_pact = {
-				who = c:SAA
-				type = puppet
+			trigger_if = {
+				limit = {
+					exists = c:SAA
+				}
+				has_diplomatic_pact = {
+					who = c:SAA
+					type = puppet
+				}
 			}
 		}
 	}
