@@ -142,6 +142,11 @@ Economy rules:
 - Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.
+- Every country has 50 innovation, 50 more maximum innovation and 25 tech spread of its own (base values, as in
+  CWP 1.5 and the base game), which the Schools institution adds to (10, 10 and 5 per level). The technology costs of
+  `common/technology/eras` are CWP 1.5's and assume that base: with research left to Schools alone, which the AI
+  keeps at level 0 or 1, 67 of 164 countries researched under 5 points a week in 1970 and India, Republican China,
+  Egypt and Ethiopia researched nothing from 1950 to 1970.
 
 Power bloc rules:
 - The Western and Eastern Blocs stand in for CWP 1.5's diplomatic alignment with a superpower. Members run by the AI

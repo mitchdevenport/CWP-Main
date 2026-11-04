@@ -5,9 +5,11 @@
 
 # Global Static Modifiers
 base_values = {
-	country_weekly_innovation_add = 0
-	country_weekly_innovation_max_add = 0
-	country_tech_spread_add = 0
+	# Every country's own research, as in CWP 1.5 and the base game (the Schools institution adds to it): without it
+	# most of the world researched nothing for decades at the era costs of common/technology/eras
+	country_weekly_innovation_add = 50
+	country_weekly_innovation_max_add = 50
+	country_tech_spread_add = 25
 
 	country_loan_interest_rate_add = 0.2
 
