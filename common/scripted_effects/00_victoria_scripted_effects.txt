@@ -1824,6 +1824,7 @@ handle_revolutionary_sps = {
 			limit = { #Adds all IGs that are in your party to the government
 				is_in_government = no
 				has_party = yes
+				is_insurrectionary = no
 			}
 			add_ruling_interest_group = yes
 		}
