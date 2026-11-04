@@ -22,7 +22,12 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
    laws and 1946 technology level, plus the base game modifiers, triggers and hooks they need
    (`cwp_vanilla_event_*.txt`, `common/on_actions/cwp_flavour_events_on_actions.txt`). Review the diff; when
    the base game renames something the events use, extend the script's mappings rather than editing the output.
-4. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
+4. `python docs/maintenance/cwp_terminology.py` - regenerates CWP 1.5's terminology (divisions for battalions,
+   the Education Index for literacy) in `localization/<language>/replace/cwp_terminology_l_<language>.yml` from the
+   base game's current English and Japanese text, substituting only the displayed words, so the overrides keep the
+   base game's latest wording, data functions and icons. Text that needs more than the substitution belongs in the
+   mod's own localization files: the script skips keys the mod defines elsewhere.
+5. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
    main menu and after starting a game.
 
 Known load-time messages that are not caused by script errors: six "Naval node from spline anchor ..."
