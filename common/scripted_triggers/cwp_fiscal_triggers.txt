@@ -14,6 +14,13 @@ cwp_has_healthy_economy = {
 	}
 }
 
+# The United States while Bretton Woods holds: the agreement fails for every signatory once US inflation leaves -0.5 to 5%
+# (je_bretton_woods_agreement), so the AI's monetary policy keeps it inside (ai_wants_contractionary/stable/expansionary)
+cwp_ai_defends_bretton_woods = {
+	has_global_variable = bretton_woods_agreement
+	c:USA ?= THIS
+}
+
 currency_leader_exists = {
 	any_country = {
 		is_leading_central_bank = yes

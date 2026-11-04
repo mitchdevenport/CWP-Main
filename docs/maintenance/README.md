@@ -137,6 +137,13 @@ Economy rules:
 - Under the gold standard the interest rate is fixed and inflation moves a tenth as fast, so the money supply is
   the AI's only tool against inflation there. The AI's preference for loose money when it is in debt or its
   economy is unhealthy therefore yields to inflation of 10% or more (`common/script_values/fiscal_ai_values.txt`).
+- Bretton Woods (`je_bretton_woods_agreement`) fails for every signatory once US inflation leaves -0.5 to 5%, while
+  CWP 1.5 meant it to last until the United States ends it by decision (the AI after 1970). Under the gold standard
+  the money supply moves inflation only once it is 10% off target, a year or more after a policy change, and the
+  AI's gold reserve bonuses kept a gold-rich United States contracting until inflation fell below zero: test games
+  lost the agreement in the 1950s both below -0.5 and above 5%. While it holds, the AI's United States therefore
+  steers inflation toward 2.5% by its trend (`cwp_bw_inflation_growth_excess`); a rule on the level of inflation
+  alone overshot both ways.
 - A pegged currency imports its anchor's inflation and interest rate (`fiscal_money_supply_calculation`): no one sets
   the interest rate of a pegged currency, and CWP 1.5 kept the rate it had when the peg began, so countries that
   pegged after a bout of inflation paid 40-60% more on their loans for decades (`interest_rates` adds 1% loan

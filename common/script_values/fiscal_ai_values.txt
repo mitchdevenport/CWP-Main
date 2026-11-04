@@ -142,6 +142,22 @@ ai_interest_rate_from_growth = {  # Base interest rate change to stabilize growt
 	max = 10
 }
 
+# While Bretton Woods holds, the AI's United States steers its inflation toward 2.5% (cwp_ai_defends_bretton_woods):
+# it wants inflation to cover 4% of the distance every month, and tightens when inflation grows faster than that and
+# loosens when it grows slower (positive: faster). The agreement fails for every signatory once US inflation leaves
+# -0.5 to 5%, and under the gold standard the money supply moves inflation only once it is 10% off target, a year or
+# more after the policy changes: acting on the level of inflation alone overshot both ways. Left to the rules below, a
+# gold-rich AI kept contracting until inflation fell below zero, and test games lost the agreement in the 1950s both
+# below -0.5 and above 5%.
+cwp_bw_inflation_growth_excess = {
+	value = inflation_growth
+	subtract = {
+		value = 2.5
+		subtract = inflation_value
+		multiply = 0.04
+	}
+}
+
 
 ai_wants_contractionary = {
 	if = {
@@ -192,6 +208,21 @@ ai_wants_contractionary = {
 			ai_interest_from_inflation <= 0
 		}
 		multiply = 0
+	}
+	# see cwp_bw_inflation_growth_excess
+	if = {
+		limit = {
+			cwp_ai_defends_bretton_woods = yes
+		}
+		if = {
+			limit = {
+				cwp_bw_inflation_growth_excess > 0
+			}
+			add = 1000
+		}
+		else = {
+			multiply = 0
+		}
 	}
 }
 
@@ -246,6 +277,13 @@ ai_wants_stable = {
 		limit = {
 			money_supply_percentage <= -10
 			ai_interest_from_inflation <= 0
+		}
+		multiply = 0
+	}
+	# see cwp_bw_inflation_growth_excess
+	if = {
+		limit = {
+			cwp_ai_defends_bretton_woods = yes
 		}
 		multiply = 0
 	}
@@ -326,6 +364,21 @@ ai_wants_expansionary = {
 			ai_interest_from_inflation <= 0 # inflation not above target: a country fighting inflation keeps its tight money
 		}
 		add = 1000
+	}
+	# see cwp_bw_inflation_growth_excess
+	if = {
+		limit = {
+			cwp_ai_defends_bretton_woods = yes
+		}
+		if = {
+			limit = {
+				cwp_bw_inflation_growth_excess < 0
+			}
+			add = 1000
+		}
+		else = {
+			multiply = 0
+		}
 	}
 }
 
