@@ -175,6 +175,7 @@ ai_wants_contractionary = {
 	if = {
 		limit = {
 			cwp_has_healthy_economy = no
+			inflation_value < 10 # see ai_wants_expansionary
 		}
 		multiply = 0
 	}
@@ -231,6 +232,7 @@ ai_wants_stable = {
 	if = {
 		limit = {
 			cwp_has_healthy_economy = no
+			inflation_value < 10 # see ai_wants_expansionary
 		}
 		multiply = 0
 	}
@@ -260,33 +262,41 @@ ai_wants_expansionary = {
 			multiply = -1000
 		}
 	}
+	# An AI in fiscal trouble prefers loose money, but not once inflation reaches double digits: on the gold standard,
+	# whose fixed interest rate leaves the money supply as the only tool, indebted countries kept printing money for
+	# decades at 45-285% inflation (Indonesia, Poland and Turkey by 1992)
 	if = {
 		limit = {
 			cwp_has_healthy_economy = no
+			inflation_value < 10
 		}
 		add = 100
 	}
 	if = {
 		limit = {
 			scaled_debt >= 0.1
+			inflation_value < 10
 		}
 		add = 50
 	}
 	if = {
 		limit = {
 			scaled_debt >= 0.25
+			inflation_value < 10
 		}
 		add = 50
 	}
 	if = {
 		limit = {
 			scaled_debt >= 0.5
+			inflation_value < 10
 		}
 		add = 50
 	}
 	if = {
 		limit = {
 			scaled_debt >= 0.75
+			inflation_value < 10
 		}
 		add = 50
 	}

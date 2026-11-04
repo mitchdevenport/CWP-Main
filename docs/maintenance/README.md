@@ -105,6 +105,9 @@ Economy rules:
   The 1.14 game can report negative credit, so use `cwp_credit_capacity` (credit, at least 0) wherever credit stands
   for capacity: with the raw value the limits turned negative and every money supply percentage changed sign. The
   monthly update always applies the policy's change and then clamps the money supply to its limits.
+- Under the gold standard the interest rate is fixed and inflation moves a tenth as fast, so the money supply is
+  the AI's only tool against inflation there. The AI's preference for loose money when it is in debt or its
+  economy is unhealthy therefore yields to inflation of 10% or more (`common/script_values/fiscal_ai_values.txt`).
 - Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.
