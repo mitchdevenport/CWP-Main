@@ -293,9 +293,10 @@ def fixes(text, c):
     # vanilla bug: the neighbour's state can change hands (occupation zones merge) before the event is answered
     if c == "neighbor_events":
         text = re.sub(r"scope:(neighbor_state|neighbor_neighbor_state|neighbor_country) = \{", r"scope:\1 ?= {", text)
-    # vanilla bug: the agitator law events save the government IG and its leader only when one supports the law
+    # vanilla bug: the agitator law events save the government IG and its leader, and the IGs in government for and
+    # against the law, only when there is one
     if c == "agitators_events/agitator_law_events_2":
-        text = re.sub(r"scope:(govnas|da_boss) = \{", r"scope:\1 ?= {", text)
+        text = re.sub(r"scope:(govnas|da_boss|governing_ig|opposing_ig|supporting_ig) = \{", r"scope:\1 ?= {", text)
     if c == "agitators_events/agitators_law_events":
         text = re.sub(r"scope:supporting_ig = \{", r"scope:supporting_ig ?= {", text)
     # vanilla bug: revolution_pulse_events.13 fires at medium progress but saves its scopes from a low progress revolution
@@ -314,10 +315,17 @@ def fixes(text, c):
         text = re.sub(r"(?m)^[ \t]*NOT = \{ has_variable = krakatoa_crop_failure \}[ \t]*\r?\n", "", text)
     # vanilla bug: the mega disaster counters test a country variable, so they never count past 1
     text = re.sub(r"exists = var:(number_of_mega_[a-z]+)", r"has_global_variable = \1", text)
-    # vanilla bugs: `ruler` evaluated in interest group scope; a trigger's temporary scope used in immediate
+    # CWP's war pace: war support changes at 7/21 of the base game's rate, so thresholds on its change scale with it
+    if c == "election_events/election_contextual_events":
+        text = re.sub(r"(has_war_support_change = \{\s*target = ROOT\s*value < )-5\n",
+                      r"\1-1.67 # vanilla -5 at CWP's war pace (cwp_war_support_pace in common/script_values/cwp_war_values.txt)\n",
+                      text)
+    # vanilla bugs: `ruler` evaluated in interest group scope; the ruling party compared with the party of interest
+    # groups that have none; a trigger's temporary scope used in immediate
     if c == "law_events/single_party_state_laws":
         text = text.replace("this = ruler.interest_group", "this = ROOT.ruler.interest_group")
-        text = text.replace("this.party = ruler.interest_group.party", "this.party = ROOT.ruler.interest_group.party")
+        text = text.replace("this.party = ruler.interest_group.party",
+                            "AND = { has_party = yes this.party = ROOT.ruler.interest_group.party }")
     if c == "law_events/distribution_of_power_laws":
         k = text.find("save_scope_as = universal_voting_ig")
         if k >= 0:

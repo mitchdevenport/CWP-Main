@@ -37,7 +37,7 @@ single_party_state.1 = {
 			}
 			NOT = {
 				this = ROOT.ruler.interest_group
-				this.party = ROOT.ruler.interest_group.party
+				AND = { has_party = yes this.party = ROOT.ruler.interest_group.party }
 				OR = {
 					AND = {
 						owner.ruler = {
@@ -81,7 +81,7 @@ single_party_state.1 = {
 				}
 				NOT = {
 					this = ROOT.ruler.interest_group
-					this.party = ROOT.ruler.interest_group.party
+					AND = { has_party = yes this.party = ROOT.ruler.interest_group.party }
 					OR = {
 						AND = {
 							owner.ruler = {

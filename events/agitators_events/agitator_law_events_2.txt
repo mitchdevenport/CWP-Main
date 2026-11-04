@@ -168,7 +168,7 @@ agitator_legal_events.2 = {
 		default_option = yes
 		random_list = {
 			70 = {
-				scope:opposing_ig = {
+				scope:opposing_ig ?= {
 					add_modifier = {
 						name = gagging_the_opposition
 						days = normal_modifier_time
@@ -176,7 +176,7 @@ agitator_legal_events.2 = {
 				}
 			}
 			30 = {
-				scope:governing_ig = {
+				scope:governing_ig ?= {
 					add_modifier = {
 						name = reasonable_exercise_of_authority
 						days = normal_modifier_time
@@ -202,7 +202,7 @@ agitator_legal_events.2 = {
 
 			}
 			50 = {
-				scope:governing_ig = {
+				scope:governing_ig ?= {
 					add_modifier = {
 						name = tasteless_kink_shaming
 						days = normal_modifier_time
@@ -355,7 +355,7 @@ agitator_legal_events.4 = {
 		name = agitator_legal_events.4.a
 		default_option = yes
 		add_treasury = -3000
-		scope:supporting_ig = {
+		scope:supporting_ig ?= {
 			add_modifier = {
 				name = expert_finder
 				days = normal_modifier_time
@@ -366,7 +366,7 @@ agitator_legal_events.4 = {
 		name = agitator_legal_events.4.b
 		random_list = {
 			70 = {
-				scope:supporting_ig = {
+				scope:supporting_ig ?= {
 					add_modifier = {
 						name = found_real_expert
 						days = normal_modifier_time
@@ -1093,7 +1093,7 @@ agitator_legal_events.10 = {
 				days = normal_modifier_time
 			}
 		}
-		scope:opposing_ig = {
+		scope:opposing_ig ?= {
 			add_modifier = {
 				name = foul_play_success
 				days = normal_modifier_time
@@ -1902,7 +1902,7 @@ agitator_legal_events.17 = {
 		default_option = yes
 		random_list = {
 			50 = {
-				scope:opposing_ig = {
+				scope:opposing_ig ?= {
 					add_modifier = {
 						name = semantics_ruling
 						days = normal_modifier_time
@@ -1923,7 +1923,7 @@ agitator_legal_events.17 = {
 						days = normal_modifier_time
 					}
 				}
-				scope:opposing_ig = {
+				scope:opposing_ig ?= {
 					add_modifier = {
 						name = semantics_ruling
 						days = normal_modifier_time
@@ -2027,7 +2027,7 @@ agitator_legal_events.18 = {
 						days = normal_modifier_time
 					}
 				}
-				scope:opposing_ig = {
+				scope:opposing_ig ?= {
 					add_modifier = {
 						name = bicker_loss
 						days = normal_modifier_time
@@ -2041,7 +2041,7 @@ agitator_legal_events.18 = {
 						days = normal_modifier_time
 					}
 				}
-				scope:opposing_ig = {
+				scope:opposing_ig ?= {
 					add_modifier = {
 						name = bicker_win
 						days = normal_modifier_time
@@ -2089,7 +2089,7 @@ agitator_legal_events.18 = {
 				days = normal_modifier_time
 			}
 		}
-		scope:opposing_ig = {
+		scope:opposing_ig ?= {
 			add_modifier = {
 				name = opposition_law_collapse
 				days = normal_modifier_time
@@ -2113,7 +2113,7 @@ agitator_legal_events.18 = {
 				days = normal_modifier_time
 			}
 		}
-		scope:opposing_ig = {
+		scope:opposing_ig ?= {
 			add_modifier = {
 				name = opposition_law_breakthrough
 				days = normal_modifier_time
@@ -2203,7 +2203,7 @@ agitator_legal_events.19 = {
 	option = {
 		name = agitator_legal_events.19.a
 		default_option = yes
-		scope:opposing_ig = {
+		scope:opposing_ig ?= {
 			add_modifier = {
 				name = opposition_law_breakthrough
 				days = normal_modifier_time
@@ -2339,7 +2339,7 @@ agitator_legal_events.20 = {
 	option = {
 		name = agitator_legal_events.20.a
 		default_option = yes
-		scope:opposing_ig = {
+		scope:opposing_ig ?= {
 			add_modifier = {
 				name = ignored_provisions
 				days = normal_modifier_time
@@ -2375,7 +2375,7 @@ agitator_legal_events.20 = {
 	}
 	option = {
 		name = agitator_legal_events.20.c
-		scope:opposing_ig = {
+		scope:opposing_ig ?= {
 			add_modifier = {
 				name = partisan_favoritism
 				days = normal_modifier_time
@@ -3243,7 +3243,7 @@ agitator_legal_events.28 = {
 		name = agitator_legal_events.28.b
 		random_list = {
 			50 = {
-				scope:opposing_ig = {
+				scope:opposing_ig ?= {
 					add_modifier = {
 						name = legal_placation
 						days = normal_modifier_time
