@@ -121,6 +121,7 @@ china_frontline_saving_events.2 = {
 			variable = china_states
 			if = {
 				limit = {
+					exists = owner # a listed state can have split or lost its owner since 1946
 					NOT = {
 						owner = controller
 					}
@@ -172,6 +173,7 @@ china_frontline_saving_events.3 = {
 			variable = china_states
 			if = {
 				limit = {
+					exists = owner # a listed state can have split or lost its owner since 1946
 					NOT = {
 						owner = controller
 					}
