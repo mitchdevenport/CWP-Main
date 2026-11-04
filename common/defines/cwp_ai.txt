@@ -19,26 +19,14 @@
 	CONSUMPTION_TAX_MAX_NUM_TAXED_GOODS_PER_MISSING_TAX_TYPE = 2 # Added to max number of goods AI wants to tax for each other type of tax it does not collect
 }
 
-# Restored from the CWP 1.5 release (defines that still exist in 1.14 and are not set above)
+# Restored from the CWP 1.5 release (defines that still exist in 1.14 and are not set above). The 1.5 release's
+# money spending (MONEY_SPENDING_*) and production building (PRODUCTION_BUILDING_*) tuning is left out: its ARoAI
+# integration turned those AI systems off (GOVERNMENT_MONEY_SPENDING_ENABLED, PRODUCTION_BUILDING_CONSTRUCTION_ENABLED = no)
+# and budgeted in script, so they never applied; the 1.14 AI that runs them now keeps vanilla's tuning.
 NAI = {
 	DIPLO_PROPOSAL_BREAK_THRESHOLD = -100				# At this or less acceptance, AI breaks off an existing pact
-	MONEY_SPENDING_INNOVATION_DESIRED_THRESHOLD = 1.00 # If innovation production compared to cap is worse than this, AI considers it important to improve
-	MONEY_SPENDING_BUREAUCRACY_CRITICAL_THRESHOLD = 0.75 # If bureaucracy income to expenses is worse than this, AI considers it critical to improve it
-	MONEY_SPENDING_BUREAUCRACY_DESIRED_THRESHOLD = 1.00 # If bureaucracy income to expenses is worse than this, AI wants to improve it
-	MONEY_SPENDING_BUREAUCRACY_EXCESSIVE_THRESHOLD = 1.25 # If bureaucracy income to expenses is better than this, AI will not improve it
-	MONEY_SPENDING_INFRASTRUCTURE_CRITICAL_THRESHOLD = 0.90 # If infra production to usage is worse than this, AI considers it critical to improve it
-	MONEY_SPENDING_INFRASTRUCTURE_DESIRED_THRESHOLD = 1.00 # If infra production to usage is worse than this, AI wants to improve it
 	PROMOTION_BASE_VALUE = 0
 	SUPPRESSION_BASE_VALUE = 0
-	PRODUCTION_BUILDING_OUTPUT_WANTED_INDUSTRIAL_GOODS_FACTOR = 0.5 # Add this value to a building for each unit of money worth of industrial goods that aren't overproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_OUTPUT_WANTED_MILITARY_GOODS_FACTOR = 0.5 # Add this value to a building for each unit of money worth of military goods that aren't overproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_OUTPUT_NEEDED_INDUSTRIAL_GOODS_FACTOR = 0.75 # Add this value to a building for each unit of money worth of industrial goods that are underproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_OUTPUT_NEEDED_MILITARY_GOODS_FACTOR = 0.75 # Add this value to a building for each unit of money worth of military goods that are underproduced in the country and are used by buildings
-	PRODUCTION_BUILDING_MISSING_QUALIFICATIONS_MULT = 0.05 # Multiply score by this if there's not enough qualifications to staff the building (disabled for now)
-	PRODUCTION_BUILDING_DESIRED_INFRASTRUCTURE_SURPLUS = 10 # If infrastructure 'surplus' in state is less than this, AI wants to improve it
-	PRODUCTION_BUILDING_EXCESSIVE_INFRASTRUCTURE_SURPLUS = 10.01
-	PRODUCTION_BUILDING_LONG_CONSTRUCTION_TIME_THRESHOLD = 80
-	PRODUCTION_BUILDING_VERY_LONG_CONSTRUCTION_TIME_THRESHOLD = 120
 	CHANGE_LAW_POTENTIAL_CIVIL_WAR_ENACT_CHANCE = 1 # Chance that the AI will proceed with a law change that could cause a civil war (1 = 1%)
 	PRODUCTION_METHOD_EMPLOYMENT_CHANGE_FACTOR = 0 # Per extra employee the employment method would require (reduced employment = higher score)
 	PRODUCTION_METHOD_FAVORED_MILITARY_GOODS_FACTOR = 1.0 # Per base cost * units of goods produced that the AI favors (for military goods). CWP: twice vanilla, as in the 1.5 release
