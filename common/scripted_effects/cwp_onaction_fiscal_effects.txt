@@ -8,15 +8,12 @@
 }
 
 fiscal_money_supply_calculation = {
-    if = {
-        limit = {
-            money_supply_percentage > -100
-            money_supply_percentage < 100
-        }
-        change_variable = {
-            name = money_supply
-            add = money_supply_growth
-        }
+    # The clamp below keeps the money supply within its bounds. CWP 1.5 also skipped the change once the money supply
+    # reached a bound, so it could never come back: a money supply at its maximum added about 4% inflation a year
+    # for good under the gold standard, whatever the policy (the United States reached 55% by 1992)
+    change_variable = {
+        name = money_supply
+        add = money_supply_growth
     }
     if = {
         limit = {
