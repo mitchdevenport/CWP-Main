@@ -249,6 +249,9 @@ onaction_ai_sell_foreign_reserves_calculation = {
                     not = {
                         has_variable = pegged_currency # Pegged Currencies do not get their value increased
                     }
+                    # Only the central bank leading the currency moves its value, as with devaluing: every other
+                    # country using it (most of the world uses the dollar) would push the shared value up
+                    is_leading_central_bank = yes
                 }
                 on_action_change_domestic_currency_value = {
                     mathAction = add

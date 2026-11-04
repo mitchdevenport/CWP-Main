@@ -89,6 +89,8 @@ sell_foreign_reserves = {
 				not = {
 					has_variable = pegged_currency # Pegged Currencies do not get their value increased
 				}
+				# Only the central bank leading the currency moves its value, as with devaluing (can_alter_currency)
+				is_leading_central_bank = yes
 			}
 			on_action_change_domestic_currency_value = {
 				mathAction = add

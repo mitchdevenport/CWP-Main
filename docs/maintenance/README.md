@@ -133,6 +133,12 @@ Economy rules:
   pegged after a bout of inflation paid 40-60% more on their loans for decades (`interest_rates` adds 1% loan
   interest per point). Independent central banks still settle at high rates where debt is being monetized
   (`money_supply_growth_from_gold`): by 1980 most AI banks with independent policy sit above 20%.
+- Only a currency's leading central bank (`central_bank_list`) moves its value: the monthly change, devaluing,
+  revaluing and selling foreign reserves (`onaction_ai_sell_foreign_reserves_calculation`, `sell_foreign_reserves`);
+  buying a currency moves its leader's. Reserve sales by every other user of a shared currency (most of the world
+  uses the dollar) each raised it 1%, so by 1970 the dollar was worth 44 times the median currency instead of about
+  twice, and IMF debt, counted in a reserve asset averaged over the members' currencies, cost India 55 times its
+  weekly income in repayments.
 - Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.
