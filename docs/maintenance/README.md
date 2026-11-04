@@ -157,6 +157,14 @@ Military rules:
   out) removed war exhaustion from casualties, which lost battles only amplified in 1.5, so it now also removes the
   war support lost to lost battles.
 
+Subject and decolonization rules:
+- `je_decolonization` (A Fragile Empire) runs its twenty years and the empire's fate is decided by imperial unity at
+  the timeout or when unity runs out. CWP 1.5 also completed it when the empire reached superpower rank, which the
+  1.14 United Kingdom does in 1947-48, ending the entry (and its India factors, which last until 1956) almost at once.
+- A journal entry's progress bar starts from the value of `current_value` when the entry is activated, after its
+  `immediate`; an entry that should count from 0 must report 0 until its first update
+  (`cwp_decolonization_tracking`).
+
 The AI may downsize any government building it considers unprofitable; buildings it must keep (the WMD
 infrastructure, conscription centers) are `downsizeable = no`.
 

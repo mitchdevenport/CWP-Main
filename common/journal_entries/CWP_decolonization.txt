@@ -34,6 +34,10 @@
 			remove_variable = cwp_decolonization_pending
 		}
 		if = {
+			limit = { has_variable = cwp_decolonization_tracking }
+			remove_variable = cwp_decolonization_tracking
+		}
+		if = {
 			limit = {
 				NOT = {
 					has_variable = imperial_unity
@@ -85,7 +89,9 @@
 	complete = {
 		custom_tooltip = {
 			text = je_decolonization_complete_condition_tooltip
-			country_rank = rank_value:superpower
+			# CWP 1.5 also completed it on reaching superpower rank, which the 1.14 United Kingdom does by 1948, ending its
+			# twenty years (and its India factors to 1956) almost at once; the empire's fate is decided when time runs out
+			always = no
 		}
 	}
 
@@ -191,6 +197,7 @@
 
 	on_monthly_pulse = {
 		effect = {
+			set_variable = cwp_decolonization_tracking
 			change_variable = {
 				name = imperial_unity
 				add = imperial_unity_growth
@@ -223,10 +230,13 @@
 
 	current_value = {
 		value = 0
+		# CWP 1.5 started the entry from history with a goal baseline of 0, so the bar shows unity out of 100. 1.14 records
+		# the baseline after immediate (unity 100), so unity only counts from the entry's first monthly update
 		if = {
 			limit = {
 				has_variable = imperial_unity
 				has_journal_entry = je_decolonization
+				has_variable = cwp_decolonization_tracking
 			}
 			value = var:imperial_unity
 		}
