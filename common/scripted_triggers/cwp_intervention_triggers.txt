@@ -1,6 +1,7 @@
 ﻿# CWP 1.5 (Intervention diplomatic action), scope: diplomatic play; root = intervening great power.
 # True for a war led by scope:target_country in which its side has more great power allies or, without great power
 # allies, in which the intervening power borders it and its war support is ahead of its enemy's.
+# The war support bands are CWP 1.5's on the -100..100 scale of the time, mapped onto 1.14's 0..100 ((x + 100) / 2).
 intervene_war_check = {
 	is_war = yes
 	trigger_if = {
@@ -39,12 +40,38 @@ intervene_war_check = {
 						attacker_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
+							value > 95
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 95
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
 							value > 90
 						}
 					}
 					has_war_support = {
 						target = defender_warleader
 						value < 90
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 85
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 85
 					}
 				}
 				trigger_else_if = {
@@ -65,12 +92,324 @@ intervene_war_check = {
 						attacker_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
+							value > 75
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 75
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
 							value > 70
 						}
 					}
 					has_war_support = {
 						target = defender_warleader
 						value < 70
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 65
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 65
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 60
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 60
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 55
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 55
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 50
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 50
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 45
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 45
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 40
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 40
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 35
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 35
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 30
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 30
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 25
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 25
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 20
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 20
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 15
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 15
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 10
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 10
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 5
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 5
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 95
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 95
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 90
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 90
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 85
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 85
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 80
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 80
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 75
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 75
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 70
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 70
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 65
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 65
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 60
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 60
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						defender_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 55
+						}
+					}
+					has_war_support = {
+						target = attacker_warleader
+						value < 55
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 55
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 55
 					}
 				}
 				trigger_else_if = {
@@ -104,12 +443,38 @@ intervene_war_check = {
 						attacker_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
+							value > 45
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 45
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
 							value > 40
 						}
 					}
 					has_war_support = {
 						target = defender_warleader
 						value < 40
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						attacker_warleader = scope:target_country
+						has_war_support = {
+							target = scope:target_country
+							value > 35
+						}
+					}
+					has_war_support = {
+						target = defender_warleader
+						value < 35
 					}
 				}
 				trigger_else_if = {
@@ -130,285 +495,12 @@ intervene_war_check = {
 						attacker_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
-							value > 20
+							value > 25
 						}
 					}
 					has_war_support = {
 						target = defender_warleader
-						value < 20
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 10
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < 10
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 0
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < 0
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -10
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -10
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -20
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -20
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -30
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -30
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -40
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -40
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -50
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -50
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -60
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -60
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -70
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -70
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -80
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -80
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -90
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -90
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 90
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 90
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 80
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 80
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 70
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 70
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 60
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 60
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 50
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 50
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 40
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 40
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 30
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 30
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 20
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 20
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						defender_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 10
-						}
-					}
-					has_war_support = {
-						target = attacker_warleader
-						value < 10
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > 10
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < 10
+						value < 25
 					}
 				}
 				trigger_else_if = {
@@ -429,12 +521,12 @@ intervene_war_check = {
 						attacker_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
-							value > 0
+							value > 15
 						}
 					}
 					has_war_support = {
 						target = defender_warleader
-						value < 0
+						value < 15
 					}
 				}
 				trigger_else_if = {
@@ -442,103 +534,12 @@ intervene_war_check = {
 						attacker_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
-							value > -10
+							value > 10
 						}
 					}
 					has_war_support = {
 						target = defender_warleader
-						value < -10
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -20
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -20
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -30
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -30
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -40
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -40
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -50
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -50
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -60
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -60
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -70
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -70
-					}
-				}
-				trigger_else_if = {
-					limit = {
-						attacker_warleader = scope:target_country
-						has_war_support = {
-							target = scope:target_country
-							value > -80
-						}
-					}
-					has_war_support = {
-						target = defender_warleader
-						value < -80
+						value < 10
 					}
 				}
 				trigger_else_if = {
@@ -546,12 +547,12 @@ intervene_war_check = {
 						defender_warleader = scope:target_country
 						has_war_support = {
 							target = scope:target_country
-							value > -90
+							value > 5
 						}
 					}
 					has_war_support = {
 						target = attacker_warleader
-						value < -90
+						value < 5
 					}
 				}
 			}

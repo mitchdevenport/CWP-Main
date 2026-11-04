@@ -140,13 +140,36 @@ un_dynamic_resolution_events.2 = {
 			}
 		}
 		ai_chance = {
+			# +10 per band: CWP 1.5's war support bands (90 down to 0 on the -100..100 scale of the time) mapped onto 1.14's 0..100
 			base = 0
 			modifier = {
 				trigger = {
 					any_scope_war = {
 						has_war_support = {
 							target = root
+							value < 95
+						}
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				trigger = {
+					any_scope_war = {
+						has_war_support = {
+							target = root
 							value < 90
+						}
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				trigger = {
+					any_scope_war = {
+						has_war_support = {
+							target = root
+							value < 85
 						}
 					}
 				}
@@ -168,7 +191,29 @@ un_dynamic_resolution_events.2 = {
 					any_scope_war = {
 						has_war_support = {
 							target = root
+							value < 75
+						}
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				trigger = {
+					any_scope_war = {
+						has_war_support = {
+							target = root
 							value < 70
+						}
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				trigger = {
+					any_scope_war = {
+						has_war_support = {
+							target = root
+							value < 65
 						}
 					}
 				}
@@ -190,62 +235,18 @@ un_dynamic_resolution_events.2 = {
 					any_scope_war = {
 						has_war_support = {
 							target = root
+							value < 55
+						}
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				trigger = {
+					any_scope_war = {
+						has_war_support = {
+							target = root
 							value < 50
-						}
-					}
-				}
-				add = 10
-			}
-			modifier = {
-				trigger = {
-					any_scope_war = {
-						has_war_support = {
-							target = root
-							value < 40
-						}
-					}
-				}
-				add = 10
-			}
-			modifier = {
-				trigger = {
-					any_scope_war = {
-						has_war_support = {
-							target = root
-							value < 30
-						}
-					}
-				}
-				add = 10
-			}
-			modifier = {
-				trigger = {
-					any_scope_war = {
-						has_war_support = {
-							target = root
-							value < 20
-						}
-					}
-				}
-				add = 10
-			}
-			modifier = {
-				trigger = {
-					any_scope_war = {
-						has_war_support = {
-							target = root
-							value < 10
-						}
-					}
-				}
-				add = 10
-			}
-			modifier = {
-				trigger = {
-					any_scope_war = {
-						has_war_support = {
-							target = root
-							value < 0
 						}
 					}
 				}

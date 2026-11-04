@@ -81,7 +81,7 @@
 				any_scope_war = {
 					has_war_support = {
 						target = root
-						value < 15
+						value < 57.5 # CWP 1.5: 15 on the -100..100 war support scale of the time ((x + 100) / 2 on 1.14's 0..100)
 					}
 				}
 			}

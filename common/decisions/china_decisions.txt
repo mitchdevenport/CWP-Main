@@ -142,7 +142,7 @@ roc_great_retreat = {
 				any_scope_war = {
 					has_war_support = {
 						target = ROOT
-						value < 20
+						value < 60 # CWP 1.5: 20 on the -100..100 war support scale of the time ((x + 100) / 2 on 1.14's 0..100)
 					}
 				}
 			}

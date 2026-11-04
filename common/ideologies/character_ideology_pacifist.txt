@@ -62,7 +62,7 @@ ideology_pacifist = {
 						attacker_warleader = { this = ROOT.owner }
 						has_war_support = {
 							target = root.owner
-							value < 0
+							value < 50 # 0 on the -100..100 scale before 1.14, as vanilla
 						}
 					}
 				}
