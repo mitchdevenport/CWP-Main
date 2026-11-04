@@ -523,7 +523,7 @@ law_wealth_voting = {
 	}
 
 	modifier = {
-		country_legitimacy_govt_total_votes_add = 55
+		country_legitimacy_govt_total_votes_add = 65 # with the Electoral Administration's 1 x 10 at full investment (the engine ignores the institution's)
 		country_legitimacy_govt_total_clout_add = 75
 		country_legitimacy_govt_size_add = 1
 		country_legitimacy_ideological_incoherence_mult = 0.2
@@ -531,6 +531,8 @@ law_wealth_voting = {
 		country_authority_add = 100
 		country_electoral_confidence_impact_mult = -0.2
 		country_institution_voting_max_investment_add = 1
+		# The Electoral Administration's widening at its full investment of 1 (the engine ignores the institution's): cutoff 25 - 5
+		country_voting_power_wealth_threshold_add = -5
 	}
 
 	can_enact = {}
@@ -619,15 +621,18 @@ law_census_voting = {
 	}
 
 	modifier = {
-		country_legitimacy_govt_total_votes_add = 55
+		country_legitimacy_govt_total_votes_add = 85 # with the Electoral Administration's 3 x 10 at full investment (the engine ignores the institution's)
 		country_legitimacy_govt_total_clout_add = 55
 		country_legitimacy_govt_size_add = 1
 		country_legitimacy_ideological_incoherence_mult = 0.1
 		country_authority_add = 50
 		country_electoral_confidence_impact_mult = -0.1
 		country_institution_voting_max_investment_add = 3
-		# Engine needs voting power on the law itself to hold elections; the voting institution supplies the rest
-		country_voting_power_from_literacy_add = 1
+		# The 1.14 engine takes the franchise only from the law (and the base values), not from the voting institution, so
+		# the law carries what the Electoral Administration gives census suffrage at its full investment of 3:
+		# a wealth cutoff of 25 - 15 = 10 and 3 x 15 voting power from literate pops
+		country_voting_power_wealth_threshold_add = -15
+		country_voting_power_from_literacy_add = 45
 	}
 
 	can_enact = {}
@@ -677,7 +682,6 @@ law_census_voting = {
 
 	institution = institution_voting
 	institution_modifier = {
-		country_voting_power_from_literacy_add = 15
 	}
 
 	ai_enact_weight_modifier = { #Petitions
@@ -723,12 +727,15 @@ law_universal_suffrage = {
 	}
 
 	modifier = {
-		country_legitimacy_govt_total_votes_add = 60
+		country_legitimacy_govt_total_votes_add = 110 # with the Electoral Administration's 5 x 10 at full investment (the engine ignores the institution's)
 		country_legitimacy_govt_total_clout_add = 25
 		country_legitimacy_govt_size_add = 1
 		country_institution_voting_max_investment_add = 5
-		# Engine needs voting power on the law itself to hold elections; the voting institution supplies the rest
-		country_voting_power_base_add = 1
+		# The 1.14 engine takes the franchise only from the law (and the base values), not from the voting institution, so
+		# the law carries what the Electoral Administration gives universal suffrage at its full investment of 5:
+		# no wealth cutoff (25 - 25) and 5 x 10 voting power
+		country_voting_power_wealth_threshold_add = -25
+		country_voting_power_base_add = 50
 	}
 
 	can_enact = {}
@@ -778,7 +785,6 @@ law_universal_suffrage = {
 
 	institution = institution_voting
 	institution_modifier = {
-		country_voting_power_base_add = 10
 	}
 
 	ai_enact_weight_modifier = { #Petitions
@@ -911,13 +917,16 @@ law_single_party_state = {
 	}
 
 	modifier = {
-		country_legitimacy_govt_total_votes_add = 50
+		country_legitimacy_govt_total_votes_add = 100 # with the Electoral Administration's 5 x 10 at full investment (the engine ignores the institution's)
 		country_legitimacy_ideological_incoherence_mult = -0.25
 		interest_group_in_government_attraction_mult = 0.20
 		country_electoral_confidence_impact_mult = -1.0
 		country_institution_voting_max_investment_add = 5
-		# Engine needs voting power on the law itself to hold elections; the voting institution supplies the rest
-		country_voting_power_base_add = 1
+		# The 1.14 engine takes the franchise only from the law (and the base values), not from the voting institution, so
+		# the law carries what the Electoral Administration gives the single party at its full investment of 5:
+		# no wealth cutoff (25 - 25) and 5 x 10 voting power
+		country_voting_power_wealth_threshold_add = -25
+		country_voting_power_base_add = 50
 	}
 
 	on_activate = {
@@ -1003,7 +1012,6 @@ law_single_party_state = {
 	institution = institution_voting
 	institution_modifier = {
 		country_authority_add = 50
-		country_voting_power_base_add = 10
 	}
 
 	ai_enact_weight_modifier = { #Petitions

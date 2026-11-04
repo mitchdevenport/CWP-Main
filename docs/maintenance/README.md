@@ -49,8 +49,14 @@ type to clean up the company buildings left behind when a civil war or secession
 
 Politics rules the 1.14 engine enforces:
 - A distribution-of-power law only holds elections (and gets parties) if the law's own `modifier` grants voting
-  power; voting power from the voting institution's `institution_modifier` does not count. The franchise laws
-  therefore carry a token 1 point of voting power and the institution supplies the rest.
+  power. The engine also ignores the voting power, the voting wealth cutoff and the legitimacy from votes that come
+  from institutions, so the voting institution (Electoral Administration) could not widen the franchise level by
+  level as designed: with only a token point of voting power, census suffrage gave most pops no votes at all and
+  40 of the 54 countries with elections in 1946 held them without a single voter. The franchise laws therefore carry
+  what the institution gives at its full investment (census suffrage: wealth cutoff 10, 45 voting power from
+  literate pops, 85 legitimacy from votes; universal suffrage: no cutoff, 50 voting power, 110), which are the base
+  game's values; the institution itself only adds authority. Check a franchise in game with the Political
+  Strength tooltip of a pop, which lists the voting cutoff and the number of votes.
 - Scripted rulers (`ruler = yes` in `common/history/characters`) must fit the transfer of power: under
   dictatorial or hereditary rule they may not lead their interest group, under presidential rule they must,
   and under parliamentary rule they must lead the strongest interest group in the government. Violations are
@@ -68,10 +74,10 @@ Politics rules the 1.14 engine enforces:
 - Electoral confidence starts at the freedom index (urbanization and literacy, `eagle_burger_freedom_index`), which
   is low for most of the 1946 world, and CWP has no events that raise it. Countries that hold elections at the start
   therefore get the base game's decaying grace for newly introduced elections (`initialize_electoral_confidence`).
-- A government's share of the votes, worth up to 65 legitimacy, belongs to the parties in it: interest groups that
-  govern without their party bring none, and a party can start with none until its first election (Britain's
-  Labour did, while the American Democrats start with 24%). Britain therefore holds its first election in February
-  1946, as in CWP 1.5 (and as the base game does in 1836).
+- A government's share of the votes, worth up to 85 legitimacy under census suffrage, belongs to the parties in it:
+  interest groups that govern without their party bring none. The votes of the start come from an election the game
+  holds on 1 January 1946 (Britain's Labour government starts with about a third of them); Britain then holds its first real
+  election in February 1946, as in CWP 1.5 (and as the base game does in 1836).
 - At the start the game removes the interest groups that cost legitimacy from each government
   (`STARTUP_MIN_LEGITIMACY_IG_BARRIER`), whether they were set in country history or in `common/history/governments`.
   Check a starting government in game (the Government tab, or `is_in_government` on day one). CWP 1.5's Soviet
