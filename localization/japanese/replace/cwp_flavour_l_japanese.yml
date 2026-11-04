@@ -1,0 +1,10 @@
+﻿l_japanese:
+ # CWP 1.5's interface themes, ideology descriptions and goods names for base game keys
+ gui_skin_base: "Cold War Project（デフォルト）"
+ gui_skin_base_desc: "冷戦時代の美学を取り入れたユーザーインターフェース。"
+ papermap_base: "Cold War Project"
+ papermap_base_desc: "冷戦時代の美学を取り入れた現代的な美しさ。"
+ ideology_socialist_desc: "#lore このグループは社会主義思想に傾倒しており、生産手段の共有と資本主義の解体を主張しています。#!"
+ ideology_humanitarian_desc: "#lore このグループは、すべての人間が自らの健康と幸福に対する権利を持っていると信じています。#!"
+ ideology_authoritarian_desc: "#lore この人物は、偉大な国家には強力な指導者が必要であり、その地位にふさわしいのは自分だけだと信じています。#!"
+ ammunition: "軍需品"

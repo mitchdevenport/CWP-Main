@@ -42,3 +42,9 @@
   bg_foreign_service: "Foreign Service Sectors"
   bg_space: "Space Infrastructure"
   bg_basic_infrastructure: "Basic Infrastructure"
+  # CWP 1.5's names for base game groups
+  bg_army: "Army Bases"
+  bg_navy: "Navy Bases"
+  bg_technology: "Technological Institutions"
+  bg_skyscraper: "Highrises"
+  bg_banana_plantations: "Fruit Plantations"

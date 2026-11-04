@@ -37,3 +37,9 @@
  bg_foreign_service: "国外派兵部門"
  bg_space: "宇宙インフラ"
  bg_basic_infrastructure: "基礎インフラ"
+ # CWP 1.5's names for base game groups
+ bg_army: "陸軍基地"
+ bg_navy: "海軍基地"
+ bg_technology: "科学技術機関"
+ bg_skyscraper: "高層建築物"
+ bg_banana_plantations: "果物農園"

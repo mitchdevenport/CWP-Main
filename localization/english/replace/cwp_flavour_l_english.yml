@@ -1,0 +1,10 @@
+﻿l_english:
+ # CWP 1.5's interface themes, ideology descriptions and goods names for base game keys
+ gui_skin_base: "Cold War Project - Default"
+ gui_skin_base_desc: "A User Interface with a Cold War Aesthetic"
+ papermap_base: "Cold War Project"
+ papermap_base_desc: "Modernized aesthetics with Cold War Aesthetics"
+ ideology_socialist_desc: "#lore This group has committed itself to socialist ideology, advocating for ownership of the means of production and the dismantling of capitalism#!"
+ ideology_humanitarian_desc: "#lore This group believes that all humans have a right to their own health and wellbeing#!"
+ ideology_authoritarian_desc: "#lore This character believes that great nations need strong leaders, and that they are uniquely qualified for the position#!"
+ ammunition: "Munitions"
