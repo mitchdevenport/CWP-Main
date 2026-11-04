@@ -9,6 +9,18 @@ cwp_military_monthly_pulse_country = {
 	}
 }
 
+# Fired off on_monthly_pulse (no root): rolls the nuclear tests ordered with conduct_nuclear_test_button.
+# Rolled in the program's journal entry (its weekly pulse), the outcomes of a reloaded campaign could still repeat
+# (15 failures in 15 monthly Soviet tests in 1992-93); rolled here they vary.
+cwp_military_monthly_pulse = {
+	effect = {
+		every_country = {
+			limit = { has_variable = nuclear_test_pending }
+			nuclear_test_resolve_pending_effect = yes
+		}
+	}
+}
+
 # Fired from on_building_built
 # Root = Building
 cwp_military_on_building_built = {

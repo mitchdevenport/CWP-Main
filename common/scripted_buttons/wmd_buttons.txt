@@ -189,7 +189,7 @@ conduct_nuclear_test_button = {
 			}
 			add_treasury = -100000
 		}
-		# The outcome is rolled by the program's journal entry within a week (nuclear_test_resolve_pending_effect).
+		# The outcome is rolled at the start of the next month (nuclear_test_resolve_pending_effect, cwp_military_monthly_pulse).
 		# Rolled while the AI pressed the button (in the button, or in an event it fired even a day later), every AI test
 		# in a campaign repeated the first one's outcome: 25 plain failures in a row for the USSR from 1950 to 1959 in one run
 		show_as_tooltip = {

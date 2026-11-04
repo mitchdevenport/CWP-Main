@@ -126,11 +126,12 @@ Military rules:
   each month. A country that completes the atomic bomb journal entry gets one warhead and no facility, so with no
   storage the overflow decay is skipped (CWP 1.5 divided by zero there; with the divisor clamped to 1 the warhead
   was destroyed at the first monthly tick). The AI does not build facilities or silos on its own.
-- Do not roll random outcomes while the AI presses a scripted button. A `random_list` in a button's effect, or in an
-  event the button fires (even a day later), came out the same at every AI press in a campaign: 25 plain failures in a
-  row for the Soviet atomic tests in one run (rolls in scripted GUIs clicked by a player vary).
-  `conduct_nuclear_test_button` only sets `nuclear_test_pending`, and the program's journal entry rolls the test in
-  its weekly pulse (`nuclear_test_resolve_pending_effect` in `common/scripted_effects/cwp_nuclear_effects.txt`).
+- Do not roll random outcomes while the AI presses a scripted button, or in a journal entry's pulse. A `random_list`
+  in a button's effect, or in an event the button fires (even a day later), came out the same at every AI press in a
+  campaign: 25 plain failures in a row for the Soviet atomic tests in one run (rolls in scripted GUIs clicked by a
+  player vary). Rolled in the program journal entry's weekly pulse, a reloaded campaign's tests still repeated (15
+  failures in 15). `conduct_nuclear_test_button` only sets `nuclear_test_pending`, and the global monthly pulse rolls
+  the test (`cwp_military_monthly_pulse` in `common/on_actions/cwp_military_on_actions.txt`).
 
 The AI may downsize any government building it considers unprofitable; buildings it must keep (the WMD
 infrastructure, conscription centers) are `downsizeable = no`.

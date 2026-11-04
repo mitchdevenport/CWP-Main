@@ -185,7 +185,7 @@ cwp_nuclear_strike_kill_population_effect = {
 	}
 }
 
-# Rolls a test ordered with conduct_nuclear_test_button, from the weekly pulse of the program's journal entry
+# Rolls a test ordered with conduct_nuclear_test_button (from cwp_military_monthly_pulse)
 nuclear_test_resolve_pending_effect = {
 	if = {
 		limit = {

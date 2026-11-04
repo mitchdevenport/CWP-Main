@@ -68,6 +68,7 @@ on_monthly_pulse = {
 		exile_pool_culling_on_action
 		cwp_economy_global_monthly_pulse	# Global currency and IMF bookkeeping
 		cwp_society_monthly_pulse	# Global pollution and temperature
+		cwp_military_monthly_pulse	# Nuclear tests
 	}
 	
 	effect = {
