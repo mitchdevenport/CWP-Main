@@ -122,6 +122,11 @@ Economy rules:
 - Under the gold standard the interest rate is fixed and inflation moves a tenth as fast, so the money supply is
   the AI's only tool against inflation there. The AI's preference for loose money when it is in debt or its
   economy is unhealthy therefore yields to inflation of 10% or more (`common/script_values/fiscal_ai_values.txt`).
+- A pegged currency imports its anchor's inflation and interest rate (`fiscal_money_supply_calculation`): no one sets
+  the interest rate of a pegged currency, and CWP 1.5 kept the rate it had when the peg began, so countries that
+  pegged after a bout of inflation paid 40-60% more on their loans for decades (`interest_rates` adds 1% loan
+  interest per point). Independent central banks still settle at high rates where debt is being monetized
+  (`money_supply_growth_from_gold`): by 1980 most AI banks with independent policy sit above 20%.
 - Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.

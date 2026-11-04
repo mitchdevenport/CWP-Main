@@ -36,6 +36,44 @@ fiscal_money_supply_calculation = {
             name = inflation_rate
             value = var:pegged_currency.inflation_value
         }
+        # A peg imports the anchor's monetary policy: nobody can set the interest rate of a pegged currency (the AI skips
+        # it and can_set_interest_rates locks the player's), so it follows the anchor's instead of keeping the rate it had
+        # when the peg began. Rates frozen at 40-60% left pegged countries paying that much more on their loans for decades.
+        if = {
+            limit = {
+                has_variable = interest_rate
+                var:pegged_currency = {
+                    has_variable = interest_rate
+                }
+                NOT = {
+                    var:interest_rate = var:pegged_currency.var:interest_rate
+                }
+            }
+            set_variable = {
+                name = interest_rate
+                value = var:pegged_currency.var:interest_rate
+            }
+            set_variable = {
+                name = interest_rate_gui
+                value = var:interest_rate
+            }
+            remove_modifier = interest_rates
+            if = {
+                limit = {
+                    interest_rate >= 1
+                }
+                add_modifier = {
+                    name = interest_rates
+                    multiplier = interest_rate
+                }
+            }
+            else = {
+                add_modifier = {
+                    name = interest_rates
+                    multiplier = 1
+                }
+            }
+        }
     }
     clamp_variable = {
         name = money_supply
