@@ -1,5 +1,7 @@
 ﻿leave_treaty_of_five_eyes = {
 	is_shown = {
+		# Members leave when relations with Britain sour; Britain itself has no relations with itself to sour
+		NOT = { c:GBR ?= this }
 		any_scope_treaty = {
 			any_scope_article = {
 				has_type = treaty_five_eyes
@@ -29,6 +31,7 @@
 	when_taken = {
 		every_country = {
 			limit = {
+				NOT = { this = root }
 				any_scope_treaty = {
 					binds = ROOT
 					any_scope_article = {

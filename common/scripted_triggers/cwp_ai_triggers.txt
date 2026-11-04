@@ -113,7 +113,7 @@ ai_has_reasons_to_not_oppose_law = {
 		}
 		AND = {
 			has_journal_entry = je_law_imposition
-			imposed_law ?= scope:law.type
+			imposed_law ?= scope:law # the base game compares it with scope:law.type, a law type, which never matches and logs an error
 		}
 	}
 }
