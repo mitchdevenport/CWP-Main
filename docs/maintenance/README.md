@@ -96,6 +96,11 @@ Economy rules:
 - CWP has its own pop types (`common/pop_types`); keep their flags in step with vanilla's. Without the 1.14
   `pays_land_tax` on peasants and farmers, land tax (all of Land-Based Taxation's tax on pops and part of the other
   taxation laws) collected nothing, and agrarian countries such as Communist China had almost no tax income.
+- The 1.5 release ran the AI's budget and production construction through ARoAI (it switched off the game's own
+  government money spending and production building AI), which the port does not have. Its MONEY_SPENDING_* and
+  PRODUCTION_BUILDING_* defines therefore never applied and are left at vanilla's (`common/defines/cwp_ai.txt`).
+  Government administrations give tax capacity in 1.14 (one point per 10,000 taxed pops): the AI lets them shrink,
+  and countries whose administrations no longer cover their population collect a fraction of their taxes.
 - Inflation (`inflation_growth` in `common/script_values/fiscal_values.txt`) accumulates the price levels of a
   basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
   expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long
