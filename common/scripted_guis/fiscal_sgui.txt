@@ -27,7 +27,7 @@ buy_foreign_currency = {
 				add = {
 					value = {
 						value = scope:currency_exchange_country.gold_reserves_limit
-						add = scope:currency_exchange_country.credit
+						add = scope:currency_exchange_country.cwp_credit_capacity
 					}
 					multiply = 0.05
 				}
@@ -512,7 +512,7 @@ can_buy_currency = {
 				value = {
 					value = {
 						value = scope:currency_exchange_country.gold_reserves_limit
-						add = scope:currency_exchange_country.credit
+						add = scope:currency_exchange_country.cwp_credit_capacity
 					}
 					multiply = 0.05
 					max = ROOT.foreign_reserves_capacity_left
@@ -600,7 +600,7 @@ can_buy_currency_afford = {
 				value = {
 					value = {
 						value = scope:currency_exchange_country.gold_reserves_limit
-						add = scope:currency_exchange_country.credit
+						add = scope:currency_exchange_country.cwp_credit_capacity
 					}
 					multiply = 0.05
 					max = ROOT.foreign_reserves_capacity_left

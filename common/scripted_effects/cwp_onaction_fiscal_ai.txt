@@ -135,7 +135,7 @@ onaction_ai_buy_foreign_currency_calculation = {
                         value = {
                             value = {
                                 value = THIS.gold_reserves_limit
-                                add = THIS.credit
+                                add = THIS.cwp_credit_capacity
                             }
                             multiply = 0.05
                             max = ROOT.foreign_reserves_capacity_left
@@ -184,7 +184,7 @@ onaction_ai_buy_foreign_currency_calculation = {
                         add = {
                             value = {
                                 value = var:ai_currency_buy_country.gold_reserves_limit
-                                add = var:ai_currency_buy_country.credit
+                                add = var:ai_currency_buy_country.cwp_credit_capacity
                             }
                             multiply = 0.05
                         }

@@ -101,6 +101,10 @@ Economy rules:
   shrinking money supply with an expansionary policy or fall into a deflation spiral (below -10% the deflation
   modifier cuts production). The AI sets the monetary policy of every country it runs; the Dynamic Control game
   rule leaves it to the player only for players' countries (`onaction_ai_monetary_policy_calculation`).
+- The money supply's limits are the gold reserves limit plus the credit a country can draw on (`money_supply_max`).
+  The 1.14 game can report negative credit, so use `cwp_credit_capacity` (credit, at least 0) wherever credit stands
+  for capacity: with the raw value the limits turned negative and every money supply percentage changed sign. The
+  monthly update always applies the policy's change and then clamps the money supply to its limits.
 - Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.

@@ -3,6 +3,14 @@
 	multiply = scaled_debt
 }
 
+# The credit a country can still draw on, as the money supply and reserve limits use it. The 1.14 game can report
+# negative credit (the United States had -1.7 billion by 1992 with no debt), which made those limits negative and
+# turned every money supply percentage upside down: a contractionary policy then read as an expanding money supply
+cwp_credit_capacity = {
+	value = credit
+	min = 0
+}
+
 scaled_debt_val = {
 	value = scaled_debt
 }
@@ -356,14 +364,14 @@ country_payment_ability = {
 		limit = {
 			gold_reserve_value <= 0
 		}
-		add = credit
+		add = cwp_credit_capacity
 		subtract = country_debt
 	}
 	if = {
 		limit = {
 			gold_reserve_value >= 1
 		}
-		add = credit
+		add = cwp_credit_capacity
 	}	
 }
 
@@ -400,7 +408,7 @@ foreign_reserves_capacity_left = {
 }
 foreign_reserves_max = {
 	value = gold_reserves_limit
-	add = credit
+	add = cwp_credit_capacity
 }
 buying_foreign_currency_rate = {
 	value = money_supply_5
@@ -479,7 +487,7 @@ money_supply = {
 
 money_supply_max = {
 	value = gold_reserves_limit
-	add = credit
+	add = cwp_credit_capacity
 }
 
 money_supply_min = {
@@ -529,7 +537,7 @@ money_supply_growth_from_gold = {
 			gold_reserves <= 0
 		}
 		add = {
-			value = credit
+			value = cwp_credit_capacity
 			multiply = scaled_debt
 			divide = 10			
 		}
