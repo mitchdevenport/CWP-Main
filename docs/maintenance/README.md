@@ -93,6 +93,9 @@ Economy rules:
 - Starting universities cost at most a tenth of their country's income on 1 February 1946 (the great powers spend
   1-5%). The generator had given small countries dozens of levels (Uruguay 117, Ecuador 69) that cost several times
   their income.
+- CWP has its own pop types (`common/pop_types`); keep their flags in step with vanilla's. Without the 1.14
+  `pays_land_tax` on peasants and farmers, land tax (all of Land-Based Taxation's tax on pops and part of the other
+  taxation laws) collected nothing, and agrarian countries such as Communist China had almost no tax income.
 - Inflation (`inflation_growth` in `common/script_values/fiscal_values.txt`) accumulates the price levels of a
   basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
   expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long
