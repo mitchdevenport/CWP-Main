@@ -9,9 +9,13 @@ construction_cost_construction_sector = 25
 construction_cost_sagrada_familia = 6000
 
 state_urbanization_rate = {
-	value = total_urbanization
-	divide = state_population
-	multiply = 1000
+	value = 0.001
+	if = { # a state can be briefly empty (Div/0)
+		limit = { state_population > 0 }
+		value = total_urbanization
+		divide = state_population
+		multiply = 1000
+	}
 	min = 0.001
 	max = 1
 }
