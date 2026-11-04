@@ -94,8 +94,9 @@ Economy rules:
   history, run `python docs/maintenance/restore_starting_economies.py`: it rebuilds the economy of every state whose
   owner has no economic building from CWP 1.5's building history (see the script for the conversion rules).
 - Starting government administrations use filing systems and are sized to the bureaucracy each country used on
-  1 February 1946 (about 25% spare), without leaving any state short of tax capacity. Administrations several
-  times larger than needed cost more than the country earns and push it into default within months.
+  1 February 1946 (about 25% spare), without trimming any administration below what its own state's tax capacity
+  needs. Administrations several times larger than needed cost more than the country earns and push it into
+  default within months.
 - Starting universities cost at most a tenth of their country's income on 1 February 1946 (the great powers spend
   1-5%). The generator had given small countries dozens of levels (Uruguay 117, Ecuador 69) that cost several times
   their income.
@@ -105,8 +106,13 @@ Economy rules:
 - The 1.5 release ran the AI's budget and production construction through ARoAI (it switched off the game's own
   government money spending and production building AI), which the port does not have. Its MONEY_SPENDING_* and
   PRODUCTION_BUILDING_* defines therefore never applied and are left at vanilla's (`common/defines/cwp_ai.txt`).
-  Government administrations give tax capacity in 1.14 (one point per 10,000 taxed pops): the AI lets them shrink,
-  and countries whose administrations no longer cover their population collect a fraction of their taxes.
+  Government administrations give tax capacity in 1.14 (one point per 10,000 taxed pops) on top of every state's
+  own 100 (`state_tax_capacity_add` in the base values: CWP 1.5's and the base game's value), and taxation in a
+  state is cut by the share of its pops above its capacity. The game's AI sizes administrations by bureaucracy alone
+  (ARoAI spent a fifth of income on them and weighed the taxes lost), so it lets them shrink and the most populous
+  states (China, India, the larger American states) collect a fraction of their taxes. With no capacity of their own
+  (the dev branch had 0) states without an administration taxed nothing: in a 1946-1955 test, restoring it cut the
+  world's untaxed share from 51% to 43%, raised tax revenue 18% and halved the countries in default (9 to 4).
 - Inflation (`inflation_growth` in `common/script_values/fiscal_values.txt`) accumulates the price levels of a
   basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
   expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long

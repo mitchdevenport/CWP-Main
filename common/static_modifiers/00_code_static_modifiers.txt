@@ -24,7 +24,9 @@ base_values = {
 	country_minting_add = 500
 	country_government_dividends_efficiency_add = 0.0
 
-	state_tax_capacity_add = 0
+	# Every state's own tax capacity, as in CWP 1.5 and the base game: starting administrations sit in a few states
+	# per country, and states without one taxed nothing (taxation is cut by the share of pops above capacity)
+	state_tax_capacity_add = 100
 	state_infrastructure_add = 3
 	state_infrastructure_from_automobiles_consumption_add = 0.25
 
