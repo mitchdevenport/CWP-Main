@@ -118,6 +118,10 @@ Economy rules:
   states (China, India, the larger American states) collect a fraction of their taxes. With no capacity of their own
   (the dev branch had 0) states without an administration taxed nothing: in a 1946-1955 test, restoring it cut the
   world's untaxed share from 51% to 43%, raised tax revenue 18% and halved the countries in default (9 to 4).
+  Scripting ARoAI's placement back in for the AI (new levels every month in the states losing the most taxes) did not
+  help: in a 1946-1960 test India ended up with a third to twice as many administration levels but a quarter to a
+  third less tax capacity and collected 19-36% less tax, while the world's untaxed share moved within the runs' own
+  spread.
 - Inflation (`inflation_growth` in `common/script_values/fiscal_values.txt`) accumulates the price levels of a
   basket of consumer goods every month and never reverts on its own, so a good that is persistently cheap or
   expensive in every market drives every country into deflation or inflation. Check the basket's prices in a long
