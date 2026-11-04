@@ -13,20 +13,19 @@
 		NOT = {
 			has_global_variable = china_armistice_proposed
 		}
+		# The armistice settles the front of the PRC-ROC war; without that war it would do nothing
+		c:PRC ?= {
+			has_war_with = c:ROC
+		}
 	}
 	possible = {
-		or = {
-			and = {
-				exists = c:PRC
-				c:PRC ?= this
+		# is_shown limits the decision to the two Chinas; repeating that here printed "Your country is Republic Of
+		# China" twice for the ROC (c:PRC ?= this names the country in scope, not the PRC)
+		custom_tooltip = {
+			text = china_armistice_not_proposed_tt
+			not = {
+				has_global_variable = china_armistice_proposed
 			}
-			and = {
-				exists = c:ROC
-				c:ROC ?= this
-			}
-		}
-		not = {
-			has_global_variable = china_armistice_proposed
 		}
 	}
 	when_taken = {
@@ -87,8 +86,11 @@ roc_great_retreat = {
 		}
 	}
 	possible = {
-		not = {
-			has_variable = great_retreat
+		custom_tooltip = {
+			text = roc_great_retreat_not_ordered_tt
+			not = {
+				has_variable = great_retreat
+			}
 		}
 	}
 	when_taken = {
