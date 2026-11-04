@@ -64,4 +64,9 @@ NTechnology = {
 }
 NWar = {
 	DEVASTATION_FROM_BATTLES = 2.5 # For each battle
+
+	# CWP 1.5 ran war exhaustion every 21 days instead of vanilla's 7 (see cwp_war_support_pace in
+	# common/script_values/cwp_war_values.txt); occupation enforces war goals at the same third of vanilla's pace
+	DEFAULT_WAR_GOAL_ENFORCEMENT_FILL_PER_WEEK = 1.67	# vanilla 5
+	DEFAULT_WAR_GOAL_ENFORCEMENT_DEPLETE_PER_WEEK = 1.67	# vanilla 5
 }

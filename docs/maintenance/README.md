@@ -139,6 +139,15 @@ Military rules:
   player vary). Rolled in the program journal entry's weekly pulse, a reloaded campaign's tests still repeated (15
   failures in 15). `conduct_nuclear_test_button` only sets `nuclear_test_pending`, and the global monthly pulse rolls
   the test (`cwp_military_monthly_pulse` in `common/on_actions/cwp_military_on_actions.txt`).
+- War support is computed in script (`war_support_change` in `common/script_values/cwp_war_values.txt`, a copy of
+  vanilla's war_support_values.txt; keep it in step with vanilla). CWP 1.5 ran the war exhaustion formula every 21
+  days instead of vanilla's 7, so `war_support_change` is multiplied by `cwp_war_support_pace` (7/21), and occupation
+  enforces war goals at the same pace (`DEFAULT_WAR_GOAL_ENFORCEMENT_FILL_PER_WEEK`/`DEPLETE` in
+  `common/defines/cwp_defines.txt`, and the war goal types that set their own `fill_per_week`). Before 1.14 war
+  support ran from -100 to 100; thresholds carried over from CWP 1.5 are mapped onto 0..100 as (x + 100) / 2 and
+  one-off additions halved. `last_stand` (both Chinas and Indonesia at the start, the Koreas when their war breaks
+  out) removed war exhaustion from casualties, which lost battles only amplified in 1.5, so it now also removes the
+  war support lost to lost battles.
 
 The AI may downsize any government building it considers unprofitable; buildings it must keep (the WMD
 infrastructure, conscription centers) are `downsizeable = no`.

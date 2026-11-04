@@ -5,6 +5,11 @@
 # scope:war = the war we're evaluating war support change for
 # No randomness is allowed in this script value
 
+# CWP 1.5 ran the war exhaustion formula every 21 days instead of vanilla's 7 (NWar DAYS_BETWEEN_WAR_EXHAUSTION,
+# "war tweaks"), so wars wore countries down three times more slowly. 1.14 changes war support every week from
+# script, so war_support_change is scaled by 7/21 instead.
+cwp_war_support_pace = 0.333
+
 military_size = {
 	add = army_size_including_conscripts
 	add = navy_size
@@ -569,5 +574,10 @@ war_support_change = {
 
 	# Special, needs to support different loc keys so doesn't use the temp method
 	add = war_support_from_journal_entries
+
+	multiply = {
+		value = cwp_war_support_pace
+		desc = "WAR_SUPPORT_CHANGE_CWP_PACE"
+	}
 }
 

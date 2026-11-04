@@ -30,8 +30,8 @@
 		root.overlord = scope:target_country
 	}
 
-	fill_per_week = 2
-	deplete_per_week = 2
+	fill_per_week = 0.67 # vanilla 2, at CWP's war pace (DEFAULT_WAR_GOAL_ENFORCEMENT_FILL_PER_WEEK)
+	deplete_per_week = 0.67 # vanilla 2
 
 	maneuvers = {
 		value = 0

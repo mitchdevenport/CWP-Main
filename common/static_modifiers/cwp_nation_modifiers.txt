@@ -34,9 +34,12 @@ emerging_superpower = {
 	country_prestige_add = 1
 }
 
+# CWP 1.5: war exhaustion from casualties x0, so these wars are decided by territory. 1.14 splits military
+# losses into casualties and battle results, so lost battles are covered too.
 last_stand = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_war_support_casualties_mult = -1
+	country_war_support_battles_decrease_mult = -1
 }
 
 racial_tension = {

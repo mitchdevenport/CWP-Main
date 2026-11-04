@@ -239,7 +239,7 @@ election_contextual_events.3 = {
 			attacker_warleader = ROOT
 		    has_war_support_change = {
 		        target = ROOT
-		        value < -5
+		        value < -1.67 # vanilla -5 at CWP's war pace (cwp_war_support_pace in common/script_values/cwp_war_values.txt)
 		    }
 		}
 	}
@@ -280,7 +280,7 @@ election_contextual_events.3 = {
 				attacker_warleader = ROOT
 			    has_war_support_change = {
 			        target = ROOT
-			        value < -5
+			        value < -1.67 # vanilla -5 at CWP's war pace (cwp_war_support_pace in common/script_values/cwp_war_values.txt)
 			    }
 			}
 			save_scope_as = pacifist_war
