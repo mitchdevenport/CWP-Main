@@ -1,0 +1,8 @@
+﻿l_japanese:
+ # Untranslated: English text kept until a Japanese translation is available
+ da_decrease_autonomy_proposal_notification_name: "$da_decrease_autonomy_action_name$ Proposed"
+ da_decrease_autonomy_proposal_notification_desc: "[INITIATOR_COUNTRY.GetName] has proposed to decrease our [concept_autonomy]."
+ da_decrease_autonomy_proposal_accepted_name: "$da_decrease_autonomy_action_name$ Accepted"
+ da_decrease_autonomy_proposal_accepted_desc: "[TARGET_COUNTRY.GetName] accepted our proposal to decrease their [concept_autonomy]."
+ da_decrease_autonomy_proposal_declined_name: "$da_decrease_autonomy_action_name$ Refused"
+ da_decrease_autonomy_proposal_declined_desc: "[TARGET_COUNTRY.GetName] declined our proposal to decrease their [concept_autonomy]."

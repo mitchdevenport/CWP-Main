@@ -158,6 +158,9 @@ Military rules:
   war support lost to lost battles.
 
 Subject and decolonization rules:
+- Decreasing a subject's autonomy needs the subject's consent, as in CWP 1.5 (`requires_approval` and CWP 1.5's
+  acceptance in `common/diplomatic_actions/cwp_subject_interaction_decrease_autonomy.txt`). With the base game's
+  instant action the AI turned dominions such as India, Pakistan and New Zealand into puppets within a decade.
 - `je_decolonization` (A Fragile Empire) runs its twenty years and the empire's fate is decided by imperial unity at
   the timeout or when unity runs out. CWP 1.5 also completed it when the empire reached superpower rank, which the
   1.14 United Kingdom does in 1947-48, ending the entry (and its India factors, which last until 1956) almost at once.
