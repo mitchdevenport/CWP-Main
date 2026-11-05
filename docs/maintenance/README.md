@@ -166,6 +166,25 @@ Economy rules:
   1 February 1946 (about 25% spare), without trimming any administration below what its own state's tax capacity
   needs. Administrations several times larger than needed cost more than the country earns and push it into
   default within months.
+- The 1946 law packages (`common/scripted_effects/cwp_starting_law_packages.txt`) start most countries with a dozen
+  institutions at levels 2-5, where CWP 1.5 started almost every country without any.
+  `common/history/global/cwp_starting_institutions.txt` lowers them where the country's budget or bureaucracy
+  cannot run them, and `common/history/buildings/cwp_starting_administrations.txt` and a few raised
+  administrations give bureaucracy to countries that cannot run even level 1 of their institutions. Each level of
+  social security tops every worker's wage up to another fifth of the normal wage: at the package levels welfare
+  took 23% of the world's government income in February 1946 (CWP 1.5: about 1%; Britain paid a million a week,
+  Yugoslavia and Bulgaria more than their whole income), so social security keeps the highest level whose payments
+  stay within a tenth of income (the United States keep 4, Britain, France and the Soviet Union 1), and countries
+  that cannot pay even level 1, the lowest an institution runs at while its law stands, start without social
+  security, as almost every country did in CWP 1.5 (Italy, Japan, Poland, Spain and fifteen others). A bureaucracy
+  deficit wastes taxes
+  (all of them at twice the generation), and 42 countries started in one. Administrations costing more than 30% of
+  their country's income while their bureaucracy is spare are trimmed to what that pays for, keeping every state's
+  tax capacity and the institutions' needs at level 1 (Poland 212 levels to 46, Hungary 61 to 16, South Korea 228 to
+  63; CWP 1.5 had 60, 7 and 30, and the AI cut them to about that by 1955 anyway, going bankrupt on the way).
+  Generate all of it with `python docs/maintenance/fit_starting_institutions.py <debug.log> <save.v3> --write` from
+  an observer run of the mod without the two files and with the building history as generated (the script describes
+  the probe), and rerun it after changing the law packages, the building history or the institutions.
 - Starting universities cost at most a tenth of their country's income on 1 February 1946 (the great powers spend
   1-5%). The generator had given small countries dozens of levels (Uruguay 117, Ecuador 69) that cost several times
   their income.

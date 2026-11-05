@@ -18,6 +18,11 @@ pm_organic_administration = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	# As vanilla's pm_simple_organization, which this replaces: the AI should get off this PM as fast as possible.
+	# The later PMs' values climb far above it so that the AI's preference for a PM that avoids an input shortage
+	# (ten times, or 10,000 times without world market access) cannot pull an administration back here when paper
+	# is short: in 1946 it switched a fifth of the world's administration levels to a fifth of their bureaucracy
+	ai_value = 10
 }
 
 pm_filing_systems = {
@@ -45,6 +50,7 @@ pm_filing_systems = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	ai_value = 500000
 }
 
 pm_early_computerization = {
@@ -73,6 +79,7 @@ pm_early_computerization = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	ai_value = 1000000
 }
 
 pm_word_processors = {
@@ -100,6 +107,7 @@ pm_word_processors = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	ai_value = 2000000
 }
 
 pm_digital_servers = {
@@ -127,6 +135,7 @@ pm_digital_servers = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	ai_value = 4000000
 }
 
 ## Government Telecom

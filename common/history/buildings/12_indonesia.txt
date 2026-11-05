@@ -3847,7 +3847,7 @@
 				add_ownership={
 					country={
 						country="c:WPP"
-						levels=36
+						levels=16
 					}
 				}
 				reserves=1
@@ -4572,7 +4572,7 @@
 				add_ownership={
 					country={
 						country="c:PPN"
-						levels=5
+						levels=4
 					}
 				}
 				reserves=1
@@ -4944,7 +4944,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=4
+						levels=2
 					}
 				}
 				reserves=1
@@ -5479,7 +5479,7 @@
 				add_ownership={
 					country={
 						country="c:PHI"
-						levels=21
+						levels=12
 					}
 				}
 				reserves=1
@@ -5594,7 +5594,7 @@
 				add_ownership={
 					country={
 						country="c:PHI"
-						levels=28
+						levels=22
 					}
 				}
 				reserves=1
@@ -5786,7 +5786,7 @@
 				add_ownership={
 					country={
 						country="c:PHI"
-						levels=20
+						levels=12
 					}
 				}
 				reserves=1

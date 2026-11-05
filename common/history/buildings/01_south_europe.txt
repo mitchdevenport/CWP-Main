@@ -7168,7 +7168,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=13
+						levels=11
 					}
 				}
 				reserves=1
@@ -7303,7 +7303,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=17
+						levels=5
 					}
 				}
 				reserves=1
@@ -7548,7 +7548,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=18
+						levels=4
 					}
 				}
 				reserves=1
@@ -7912,7 +7912,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=7
+						levels=5
 					}
 				}
 				reserves=1
@@ -7997,7 +7997,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=20
+						levels=6
 					}
 				}
 				reserves=1
@@ -8265,7 +8265,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=20
+						levels=5
 					}
 				}
 				reserves=1
@@ -8462,7 +8462,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=29
+						levels=12
 					}
 				}
 				reserves=1
@@ -8918,7 +8918,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=11
+						levels=3
 					}
 				}
 				reserves=1
@@ -9216,7 +9216,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=20
+						levels=7
 					}
 				}
 				reserves=1
@@ -9539,7 +9539,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=10
+						levels=7
 					}
 				}
 				reserves=1
@@ -9805,7 +9805,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=11
+						levels=8
 					}
 				}
 				reserves=1
@@ -10185,7 +10185,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=25
+						levels=14
 					}
 				}
 				reserves=1
@@ -10618,7 +10618,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=5
+						levels=3
 					}
 				}
 				reserves=1
@@ -11010,7 +11010,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -11207,7 +11207,7 @@
 				add_ownership={
 					country={
 						country="c:SPA"
-						levels=22
+						levels=5
 					}
 				}
 				reserves=1
@@ -11331,7 +11331,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -11534,7 +11534,7 @@
 				add_ownership={
 					country={
 						country="c:POR"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -12201,7 +12201,7 @@
 				add_ownership={
 					country={
 						country="c:ROM"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -12306,7 +12306,7 @@
 				add_ownership={
 					country={
 						country="c:ALB"
-						levels=8
+						levels=3
 					}
 				}
 				reserves=1
@@ -12466,7 +12466,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=49
+						levels=15
 					}
 				}
 				reserves=1
@@ -12626,7 +12626,7 @@
 				add_ownership={
 					country={
 						country="c:BUL"
-						levels=23
+						levels=8
 					}
 				}
 				reserves=1
@@ -12764,7 +12764,7 @@
 				add_ownership={
 					country={
 						country="c:BUL"
-						levels=18
+						levels=7
 					}
 				}
 				reserves=1
@@ -12935,7 +12935,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=8
+						levels=3
 					}
 				}
 				reserves=1
@@ -13007,7 +13007,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=4
+						levels=2
 					}
 				}
 				reserves=1
@@ -13090,7 +13090,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=9
+						levels=3
 					}
 				}
 				reserves=1
@@ -13184,7 +13184,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=6
+						levels=2
 					}
 				}
 				reserves=1
@@ -13657,7 +13657,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=3
+						levels=1
 					}
 				}
 				reserves=1
@@ -13762,7 +13762,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=18
+						levels=7
 					}
 				}
 				reserves=1
@@ -13922,7 +13922,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=11
+						levels=6
 					}
 				}
 				reserves=1
@@ -15389,7 +15389,7 @@
 				add_ownership={
 					country={
 						country="c:YUG"
-						levels=9
+						levels=3
 					}
 				}
 				reserves=1

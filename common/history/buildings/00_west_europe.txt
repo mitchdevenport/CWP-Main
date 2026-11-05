@@ -28081,7 +28081,7 @@
 				add_ownership={
 					country={
 						country="c:LUX"
-						levels=6
+						levels=3
 					}
 				}
 				reserves=1
@@ -30592,7 +30592,7 @@
 				add_ownership={
 					country={
 						country="c:CZH"
-						levels=33
+						levels=15
 					}
 				}
 				reserves=1
@@ -30807,7 +30807,7 @@
 				add_ownership={
 					country={
 						country="c:CZH"
-						levels=24
+						levels=11
 					}
 				}
 				reserves=1
@@ -30934,7 +30934,7 @@
 				add_ownership={
 					country={
 						country="c:BOZ"
-						levels=9
+						levels=3
 					}
 				}
 				reserves=1
@@ -32044,7 +32044,7 @@
 				add_ownership={
 					country={
 						country="c:POL"
-						levels=10
+						levels=4
 					}
 				}
 				reserves=1
@@ -32138,7 +32138,7 @@
 				add_ownership={
 					country={
 						country="c:DDR"
-						levels=16
+						levels=2
 					}
 				}
 				reserves=1
@@ -32939,7 +32939,7 @@
 				add_ownership={
 					country={
 						country="c:SWI"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -33747,7 +33747,7 @@
 				add_ownership={
 					country={
 						country="c:DDR"
-						levels=13
+						levels=7
 					}
 				}
 				reserves=1
@@ -33984,7 +33984,7 @@
 				add_ownership={
 					country={
 						country="c:FOZ"
-						levels=24
+						levels=16
 					}
 				}
 				reserves=1
@@ -34500,7 +34500,7 @@
 				add_ownership={
 					country={
 						country="c:DDR"
-						levels=11
+						levels=4
 					}
 				}
 				reserves=1
@@ -35730,7 +35730,7 @@
 				add_ownership={
 					country={
 						country="c:BOZ"
-						levels=36
+						levels=9
 					}
 				}
 				reserves=1
@@ -36701,7 +36701,7 @@
 				add_ownership={
 					country={
 						country="c:FOZ"
-						levels=21
+						levels=12
 					}
 				}
 				reserves=1
@@ -37059,7 +37059,7 @@
 				add_ownership={
 					country={
 						country="c:BOZ"
-						levels=42
+						levels=14
 					}
 				}
 				reserves=1
@@ -39068,7 +39068,7 @@
 				add_ownership={
 					country={
 						country="c:DDR"
-						levels=13
+						levels=7
 					}
 				}
 				reserves=1
@@ -41366,7 +41366,7 @@
 				add_ownership={
 					country={
 						country="c:BOZ"
-						levels=44
+						levels=11
 					}
 				}
 				reserves=1
@@ -41613,7 +41613,7 @@
 				add_ownership={
 					country={
 						country="c:DDR"
-						levels=51
+						levels=8
 					}
 				}
 				reserves=1
