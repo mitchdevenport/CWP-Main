@@ -118,6 +118,44 @@ Law rules:
 - Environmental regulations set the lowest green technology (`pmg_green_tech_industry`) a polluting industry may
   use, as in CWP 1.5. Give the group to every new industry whose production methods generate pollution.
 
+Party rules:
+- The parties are CWP 1.5's seventeen (`common/parties/cwp_*_party.txt`, restored from CWP 1.5's; design notes in CWP
+  1.5's `common/parties/_designDoc.md`); the base game's party files are placeholders. An interest group's join weight
+  (its affiliation in 1.14) is CWP 1.5's: -5; +6 for the party's headliner (CWP 1.5's groups mapped onto the current
+  ones as in the developers' interest group mapping; a fascist, feminist, green or pacifist leader for those parties,
+  the ideology pack's second-wave feminists and greens included; Intelligentsia for the social democrats, democratic
+  socialists and socialists only with CWP 1.5's stances on the executive system and nationalization); the party's
+  morale (-10 to 10: +1 a year and at each government reshuffle for every governing member, -1 for every member out of
+  government); its cohesion (about 7 a member: CWP 1.5 meant to count members sharing their mood, but its check
+  counted every member, and its balance rests on that); a tenth of the summed popularity of its members' leaders; its
+  clout (+5 for every powerful member, -1 for every other); all scaled by the number of groups joining before it (none
+  from the sixth). The green party also grows with the world's temperature. The ideology pack's party families add +3
+  when the group's leader belongs to the family (communists; social democrats and democratic socialists; liberals and
+  libertarians).
+- Victoria 3 1.5 formed parties as election campaigns began and read these weights once; 1.14 re-weighs affiliation
+  all the time, so a party's standing would snowball as each group joined. The standing (cohesion, popularity, clout)
+  is therefore stored half-yearly and when a campaign begins (`onaction_calc_party_cohesion` in
+  `common/scripted_effects/cwp_party_effects.txt`), and between campaigns a member keeps its party (+100). Every
+  country gets the variables in 1946 (`setup_parties`), released and decolonized countries when they appear.
+- Which groups may join follows CWP 1.5's law stances, mapped to the current laws (representative democracy: census
+  suffrage; consensus and direct democracy: universal suffrage; anocracy: single-party state; free market:
+  laissez-faire; socialization: command economy or cooperative ownership; hereditary: monarchy; ...). A group passes a
+  condition unless it opposes the law, but the ideology pack gives groups opinions on few laws: where a group has none
+  and its CWP 1.5 counterpart started out failing the condition (Laborists the libertarians' consumption taxes,
+  Moralists and Securocrats their decentralized police, ...), only the group's own support passes it. These come from
+  CWP 1.5's starting ideologies (laws with a one-to-one counterpart; not the franchise laws); each such condition
+  names the CWP 1.5 groups. The monarchist party needs a monarchy or `recently_abolished_monarchy` (ten years from the
+  enactment of a republic). CWP 1.5's single-legal-party check (`only_valid_party`) is left out: nothing in CWP 1.5
+  set it.
+- The base game's free trade, military, radical, religious and revolutionary parties do not exist. Base game events
+  and effects that name them use the party CWP 1.5 put in their place when it adapted those events (liberals for free
+  trade, conservatives for the hawks, social democrats for the radicals, Christian democrats for the religious party):
+  `restore_flavour_events.py` maps the restored events (`PARTIES`), and new references elsewhere must be mapped the
+  same way. Party names for particular countries (CWP 1.5's for France, Bavaria, Germany and its zones and East
+  Germany, then the developers') go in each party's `name` block before the generic name.
+- With the developers' nine interest groups instead of CWP 1.5's eleven, democracies settle on two or three parties
+  rather than CWP 1.5's three to six; groups that no party suits stay independent, as in CWP 1.5.
+
 Economy rules:
 - The building history (`common/history/buildings`) is generated. The generator left Czechoslovakia, Yugoslavia,
   Romania, Bulgaria, Albania, North Korea and French West Africa with nothing but government buildings, so those

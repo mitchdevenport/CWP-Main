@@ -1473,7 +1473,7 @@ conservative_agitator_election_scope_effect = {
 radical_agitator_election_scope_effect = {
 	random_active_party = {
 		limit = {
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 		save_scope_as = agitator_party_scope
 	}
@@ -1482,7 +1482,7 @@ radical_agitator_election_scope_effect = {
 			OR = {
 				has_ideology = ideology:ideology_radical
 				this.interest_group ?= {
-					is_member_of_party = owner.py:radical_party
+					is_member_of_party = owner.py:social_democrat_party
 				}
 			}
 			has_role_of_type = agitator
@@ -1503,7 +1503,7 @@ radical_agitator_election_scope_effect = {
 free_trade_agitator_election_scope_effect = {
 	random_active_party = {
 		limit = {
-			is_party_type = free_trade_party
+			is_party_type = liberal_party
 		}
 		save_scope_as = agitator_party_scope
 	}
@@ -1512,7 +1512,7 @@ free_trade_agitator_election_scope_effect = {
 			OR = {
 				has_ideology = ideology:ideology_market_liberal
 				this.interest_group ?= {
-					is_member_of_party = owner.py:free_trade_party
+					is_member_of_party = owner.py:liberal_party
 				}
 			}
 			has_role_of_type = agitator

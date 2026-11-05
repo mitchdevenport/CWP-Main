@@ -96,6 +96,7 @@ cwp_society_law_checkpoint_stall = {
 cwp_society_law_enactment_pass = {
 	effect = {
 		onaction_racial_tension_modifier = yes
+		onaction_monarchy_abolished_modifier = yes # monarchist parties (CWP 1.5)
 		### DYNAMIC IDEOLOGIES ###
 		### NOTE: pregame setup is done by setup_starting_ideologies (common/history/global/cwp_society_global.txt)
 		### Laborists (Trade Unions) ###
@@ -243,6 +244,7 @@ cwp_society_country_released = {
 	effect = {
 		onaction_corruption_calculation_2 = yes
 		scope:target = {
+			setup_parties = yes
 			setup_starting_ideologies = yes
 		}
 	}

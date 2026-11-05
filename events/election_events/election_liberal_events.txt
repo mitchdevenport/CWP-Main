@@ -311,10 +311,7 @@ election_liberal_events.4 = {
 		NOT = { has_law_or_variant = law_type:law_free_trade }
 		any_active_party = {
 			party_has_members = yes
-			OR = {
-				is_party_type = liberal_party
-				is_party_type = free_trade_party
-			}
+			is_party_type = liberal_party
 		}
 		any_interest_group = {
 			is_in_government = yes
@@ -325,7 +322,6 @@ election_liberal_events.4 = {
 			has_party = yes
 			party = {
 				NOT = { is_party_type = liberal_party }
-				NOT = { is_party_type = free_trade_party }
 			}
 		}
 		market_capital.market = {
@@ -345,13 +341,7 @@ election_liberal_events.4 = {
 			name = election_event_cooldown
 			months = election_event_cooldown_months
 		}
-		if = {
-			limit = { exists = py:free_trade_party }
-			py:free_trade_party = { save_scope_as = free_trade_campaign_party }
-		}
-		else = {
-			py:liberal_party = { save_scope_as = free_trade_campaign_party }
-		}
+		py:liberal_party = { save_scope_as = free_trade_campaign_party }
 		if = {
 			limit = {
 				market_capital.market = {
@@ -428,7 +418,6 @@ election_liberal_events.4 = {
 				has_party = yes
 				party = {
 					NOT = { is_party_type = liberal_party }
-					NOT = { is_party_type = free_trade_party }
 				}
 			}
 			party = {

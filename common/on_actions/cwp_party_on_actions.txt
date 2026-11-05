@@ -1,0 +1,16 @@
+﻿# CWP 1.5's party system (common/scripted_effects/cwp_party_effects.txt). Hooked into 00_code_on_actions.txt, which also
+# recalculates cohesion when an election campaign starts and updates morale when the government is reformed.
+
+# Root = country
+cwp_party_half_yearly_pulse_country = {
+	effect = {
+		onaction_calc_party_cohesion = yes
+	}
+}
+
+# Root = country
+cwp_party_yearly_pulse_country = {
+	effect = {
+		onaction_update_party_morale = yes
+	}
+}

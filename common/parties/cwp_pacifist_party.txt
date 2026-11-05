@@ -1,0 +1,135 @@
+﻿# pacifist_party, restored from CWP 1.5 (master's common/parties/cwp_pacifist_party.txt).
+pacifist_party = {
+	color = { 208 217 219 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cwp_pacifist_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_pacifist_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = {
+				desc = party_cwp_pacifist_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_pacifist
+				trigger = { always = yes }
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/liberal.dds"
+	}
+	unlocking_technologies = {
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+		}
+		law_stance = { law = law_type:law_peasant_levies value >= neutral }
+		OR = { law_stance = { law = law_type:law_no_wmds value >= neutral } law_stance = { law = law_type:law_civilian_applications value >= neutral } }
+		# CWP 1.5's securocrats, elites, capitalists opposed this: silence is not support
+		OR = {
+			NOT = { OR = { is_interest_group_type = ig_armed_forces is_interest_group_type = ig_landowners is_interest_group_type = ig_industrialists } }
+			law_stance = { law = law_type:law_peasant_levies value > neutral }
+		}
+	}
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = { leader ?= { has_ideology = ideology:ideology_pacifist } }
+			add = {
+				value = 6
+				desc = "REASON_HEADLINER_IG"
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_variable = pacifist_party_morale
+					has_variable = pacifist_party_cohesion
+				}
+				add = {
+					value = var:pacifist_party_morale
+					desc = "REASON_PARTY_MORALE"
+				}
+				add = {
+					value = var:pacifist_party_cohesion
+					desc = "REASON_PARTY_COHESION"
+				}
+			}
+			if = {
+				limit = {
+					has_variable = pacifist_party_popularity
+					has_variable = pacifist_party_clout
+				}
+				add = {
+					value = var:pacifist_party_popularity
+					desc = "REASON_PARTY_POPULARITY"
+				}
+				add = {
+					value = var:pacifist_party_clout
+					desc = "REASON_PARTY_CLOUT"
+				}
+			}
+		}
+		if = {
+			limit = { scope:number = 1 }
+			multiply = {
+				value = 2
+				desc = "from_one_other_member"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = {
+				value = 1.3
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 3 }
+			multiply = {
+				value = 0.8
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 4 }
+			multiply = {
+				value = 0.5
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number >= 5 }
+			multiply = {
+				value = 0
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		# Victoria 3 1.5, which CWP 1.5 was made for, formed parties as election campaigns began
+		if = {
+			limit = {
+				party ?= { is_party_type = pacifist_party }
+				owner = { in_election_campaign = no }
+			}
+			add = {
+				value = 100
+				desc = "REASON_PARTY_BETWEEN_CAMPAIGNS"
+			}
+		}
+	}
+}

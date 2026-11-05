@@ -306,7 +306,7 @@ agitators_election_events_liberal.3 = {
 		liberal_agitator_election_scope_effect = yes
 		random_active_party = {
 			limit = {
-				is_party_type = radical_party
+				is_party_type = social_democrat_party
 			}
 			save_scope_as = radical_party_scope
 		}
@@ -341,7 +341,7 @@ agitators_election_events_liberal.3 = {
 		name = agitators_election_events_liberal.3.c
 		trigger = {
 			any_active_party = {
-				is_party_type = radical_party
+				is_party_type = social_democrat_party
 			}
 		}
 		scope:radical_party_scope ?= {

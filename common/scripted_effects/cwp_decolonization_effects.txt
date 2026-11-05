@@ -14723,6 +14723,7 @@ effect_post_decolonization = {
 		is_decaying = yes
 	}
 	onaction_monetary_variables_creation = yes
+	setup_parties = yes
 	setup_starting_ideologies = yes
 }
 

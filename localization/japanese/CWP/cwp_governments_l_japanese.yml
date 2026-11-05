@@ -4,8 +4,6 @@
  gov_military_governorate: "軍政"
  gov_military_governorate_desc: "軍部が[concept_country]を治める[concept_government_type]です。\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_MILITARY_GOVERNOR: "軍政長官"
- from_three_prior_members: "政党が利益集団3個で構成されることから"
- from_more_than_three_prior_members: "政党が利益集団4個以上で構成されることから"
 
  # Untranslated: English text kept until a Japanese translation is available
  gov_parliamentary_monarchy_provincial: "$gov_parliamentary_monarchy$"

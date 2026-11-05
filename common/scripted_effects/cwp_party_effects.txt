@@ -1,0 +1,528 @@
+﻿# CWP 1.5's party system (master's cwp_politics_effects.txt and cwp_onaction_effects.txt)
+
+# Country scope. Morale and cohesion variables for every party (1946 setup, released and decolonized countries)
+setup_parties = {
+	if = {
+		limit = { NOT = { has_variable = agrarian_party_morale } }
+		set_variable = { name = agrarian_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = agrarian_party_cohesion } }
+		set_variable = { name = agrarian_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = agrarian_party_popularity } }
+		set_variable = { name = agrarian_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = agrarian_party_clout } }
+		set_variable = { name = agrarian_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = anarchist_party_morale } }
+		set_variable = { name = anarchist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = anarchist_party_cohesion } }
+		set_variable = { name = anarchist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = anarchist_party_popularity } }
+		set_variable = { name = anarchist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = anarchist_party_clout } }
+		set_variable = { name = anarchist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = centrist_party_morale } }
+		set_variable = { name = centrist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = centrist_party_cohesion } }
+		set_variable = { name = centrist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = centrist_party_popularity } }
+		set_variable = { name = centrist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = centrist_party_clout } }
+		set_variable = { name = centrist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = christian_democrat_party_morale } }
+		set_variable = { name = christian_democrat_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = christian_democrat_party_cohesion } }
+		set_variable = { name = christian_democrat_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = christian_democrat_party_popularity } }
+		set_variable = { name = christian_democrat_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = christian_democrat_party_clout } }
+		set_variable = { name = christian_democrat_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = communist_party_morale } }
+		set_variable = { name = communist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = communist_party_cohesion } }
+		set_variable = { name = communist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = communist_party_popularity } }
+		set_variable = { name = communist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = communist_party_clout } }
+		set_variable = { name = communist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = conservative_party_morale } }
+		set_variable = { name = conservative_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = conservative_party_cohesion } }
+		set_variable = { name = conservative_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = conservative_party_popularity } }
+		set_variable = { name = conservative_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = conservative_party_clout } }
+		set_variable = { name = conservative_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = democratic_socialist_party_morale } }
+		set_variable = { name = democratic_socialist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = democratic_socialist_party_cohesion } }
+		set_variable = { name = democratic_socialist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = democratic_socialist_party_popularity } }
+		set_variable = { name = democratic_socialist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = democratic_socialist_party_clout } }
+		set_variable = { name = democratic_socialist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = fascist_party_morale } }
+		set_variable = { name = fascist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = fascist_party_cohesion } }
+		set_variable = { name = fascist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = fascist_party_popularity } }
+		set_variable = { name = fascist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = fascist_party_clout } }
+		set_variable = { name = fascist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = feminist_party_morale } }
+		set_variable = { name = feminist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = feminist_party_cohesion } }
+		set_variable = { name = feminist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = feminist_party_popularity } }
+		set_variable = { name = feminist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = feminist_party_clout } }
+		set_variable = { name = feminist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = green_party_morale } }
+		set_variable = { name = green_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = green_party_cohesion } }
+		set_variable = { name = green_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = green_party_popularity } }
+		set_variable = { name = green_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = green_party_clout } }
+		set_variable = { name = green_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = islamist_party_morale } }
+		set_variable = { name = islamist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = islamist_party_cohesion } }
+		set_variable = { name = islamist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = islamist_party_popularity } }
+		set_variable = { name = islamist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = islamist_party_clout } }
+		set_variable = { name = islamist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = liberal_party_morale } }
+		set_variable = { name = liberal_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = liberal_party_cohesion } }
+		set_variable = { name = liberal_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = liberal_party_popularity } }
+		set_variable = { name = liberal_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = liberal_party_clout } }
+		set_variable = { name = liberal_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = libertarian_party_morale } }
+		set_variable = { name = libertarian_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = libertarian_party_cohesion } }
+		set_variable = { name = libertarian_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = libertarian_party_popularity } }
+		set_variable = { name = libertarian_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = libertarian_party_clout } }
+		set_variable = { name = libertarian_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = monarchist_party_morale } }
+		set_variable = { name = monarchist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = monarchist_party_cohesion } }
+		set_variable = { name = monarchist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = monarchist_party_popularity } }
+		set_variable = { name = monarchist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = monarchist_party_clout } }
+		set_variable = { name = monarchist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = pacifist_party_morale } }
+		set_variable = { name = pacifist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = pacifist_party_cohesion } }
+		set_variable = { name = pacifist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = pacifist_party_popularity } }
+		set_variable = { name = pacifist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = pacifist_party_clout } }
+		set_variable = { name = pacifist_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = social_democrat_party_morale } }
+		set_variable = { name = social_democrat_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = social_democrat_party_cohesion } }
+		set_variable = { name = social_democrat_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = social_democrat_party_popularity } }
+		set_variable = { name = social_democrat_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = social_democrat_party_clout } }
+		set_variable = { name = social_democrat_party_clout value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = socialist_party_morale } }
+		set_variable = { name = socialist_party_morale value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = socialist_party_cohesion } }
+		set_variable = { name = socialist_party_cohesion value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = socialist_party_popularity } }
+		set_variable = { name = socialist_party_popularity value = 0 }
+	}
+	if = {
+		limit = { NOT = { has_variable = socialist_party_clout } }
+		set_variable = { name = socialist_party_clout value = 0 }
+	}
+}
+
+# Country scope. Cohesion of a party, as CWP 1.5 shipped it: every member adds 1, 2 and 4 for an approval below 0, 5
+# and 10 and 1, 2 and 4 for one above 0, 5 and 10, about 7 a member. (CWP 1.5 meant to count only members sharing
+# their mood with another member, but its check compared each member with the party, which every member passes; the
+# party balance of CWP 1.5 rests on the shipped behaviour, which anchors interest groups in their own parties.)
+# PARTY = party type
+calculate_party_cohesion = {
+	set_variable = { name = $PARTY$_cohesion value = 0 }
+	every_potential_party = {
+		limit = { is_party_type = $PARTY$ }
+		every_member = {
+			if = {
+				limit = { ig_approval < 0 }
+				owner = { change_variable = { name = $PARTY$_cohesion add = 1 } }
+			}
+			if = {
+				limit = { ig_approval < 5 }
+				owner = { change_variable = { name = $PARTY$_cohesion add = 2 } }
+			}
+			if = {
+				limit = { ig_approval < 10 }
+				owner = { change_variable = { name = $PARTY$_cohesion add = 4 } }
+			}
+			if = {
+				limit = { ig_approval > 0 }
+				owner = { change_variable = { name = $PARTY$_cohesion add = 1 } }
+			}
+			if = {
+				limit = { ig_approval > 5 }
+				owner = { change_variable = { name = $PARTY$_cohesion add = 2 } }
+			}
+			if = {
+				limit = { ig_approval > 10 }
+				owner = { change_variable = { name = $PARTY$_cohesion add = 4 } }
+			}
+		}
+	}
+	# the party's standing as the join weights read it (common/script_values/cwp_party_values.txt)
+	set_variable = { name = $PARTY$_popularity value = $PARTY$_popularity }
+	set_variable = { name = $PARTY$_clout value = $PARTY$_clout }
+}
+
+# Country scope. Half-yearly and at the start of election campaigns: the standing of every party (Victoria 3 1.5,
+# for which CWP 1.5 was made, read it once as parties formed; 1.14 would re-read it as each group joins)
+onaction_calc_party_cohesion = {
+	if = {
+		limit = { country_has_voting_franchise = yes }
+		calculate_party_cohesion = { PARTY = agrarian_party }
+		calculate_party_cohesion = { PARTY = anarchist_party }
+		calculate_party_cohesion = { PARTY = centrist_party }
+		calculate_party_cohesion = { PARTY = christian_democrat_party }
+		calculate_party_cohesion = { PARTY = communist_party }
+		calculate_party_cohesion = { PARTY = conservative_party }
+		calculate_party_cohesion = { PARTY = democratic_socialist_party }
+		calculate_party_cohesion = { PARTY = fascist_party }
+		calculate_party_cohesion = { PARTY = feminist_party }
+		calculate_party_cohesion = { PARTY = green_party }
+		calculate_party_cohesion = { PARTY = islamist_party }
+		calculate_party_cohesion = { PARTY = liberal_party }
+		calculate_party_cohesion = { PARTY = libertarian_party }
+		calculate_party_cohesion = { PARTY = monarchist_party }
+		calculate_party_cohesion = { PARTY = pacifist_party }
+		calculate_party_cohesion = { PARTY = social_democrat_party }
+		calculate_party_cohesion = { PARTY = socialist_party }
+	}
+}
+
+# Country scope. Morale of the party of an interest group: +1 when it governs, -1 when it does not (yearly and when the
+# government is reformed). PARTY = party type, CHANGE = 1 or -1
+cwp_change_party_morale = {
+	if = {
+		limit = { exists = py:$PARTY$ }
+		if = {
+			limit = { has_variable = $PARTY$_morale }
+			change_variable = { name = $PARTY$_morale add = $CHANGE$ }
+			clamp_variable = { name = $PARTY$_morale max = max_party_morale min = min_party_morale }
+		}
+		else = {
+			set_variable = { name = $PARTY$_morale value = 0 }
+		}
+	}
+}
+
+onaction_update_party_morale = {
+	every_interest_group = {
+		limit = {
+			is_in_government = yes
+			has_party = yes
+		}
+		if = {
+			limit = { party ?= { is_party_type = agrarian_party } }
+			owner = { cwp_change_party_morale = { PARTY = agrarian_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = anarchist_party } }
+			owner = { cwp_change_party_morale = { PARTY = anarchist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = centrist_party } }
+			owner = { cwp_change_party_morale = { PARTY = centrist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = christian_democrat_party } }
+			owner = { cwp_change_party_morale = { PARTY = christian_democrat_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = communist_party } }
+			owner = { cwp_change_party_morale = { PARTY = communist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = conservative_party } }
+			owner = { cwp_change_party_morale = { PARTY = conservative_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = democratic_socialist_party } }
+			owner = { cwp_change_party_morale = { PARTY = democratic_socialist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = fascist_party } }
+			owner = { cwp_change_party_morale = { PARTY = fascist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = feminist_party } }
+			owner = { cwp_change_party_morale = { PARTY = feminist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = green_party } }
+			owner = { cwp_change_party_morale = { PARTY = green_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = islamist_party } }
+			owner = { cwp_change_party_morale = { PARTY = islamist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = liberal_party } }
+			owner = { cwp_change_party_morale = { PARTY = liberal_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = libertarian_party } }
+			owner = { cwp_change_party_morale = { PARTY = libertarian_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = monarchist_party } }
+			owner = { cwp_change_party_morale = { PARTY = monarchist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = pacifist_party } }
+			owner = { cwp_change_party_morale = { PARTY = pacifist_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = social_democrat_party } }
+			owner = { cwp_change_party_morale = { PARTY = social_democrat_party CHANGE = 1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = socialist_party } }
+			owner = { cwp_change_party_morale = { PARTY = socialist_party CHANGE = 1 } }
+		}
+	}
+	every_interest_group = {
+		limit = {
+			is_in_government = no
+			has_party = yes
+		}
+		if = {
+			limit = { party ?= { is_party_type = agrarian_party } }
+			owner = { cwp_change_party_morale = { PARTY = agrarian_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = anarchist_party } }
+			owner = { cwp_change_party_morale = { PARTY = anarchist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = centrist_party } }
+			owner = { cwp_change_party_morale = { PARTY = centrist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = christian_democrat_party } }
+			owner = { cwp_change_party_morale = { PARTY = christian_democrat_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = communist_party } }
+			owner = { cwp_change_party_morale = { PARTY = communist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = conservative_party } }
+			owner = { cwp_change_party_morale = { PARTY = conservative_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = democratic_socialist_party } }
+			owner = { cwp_change_party_morale = { PARTY = democratic_socialist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = fascist_party } }
+			owner = { cwp_change_party_morale = { PARTY = fascist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = feminist_party } }
+			owner = { cwp_change_party_morale = { PARTY = feminist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = green_party } }
+			owner = { cwp_change_party_morale = { PARTY = green_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = islamist_party } }
+			owner = { cwp_change_party_morale = { PARTY = islamist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = liberal_party } }
+			owner = { cwp_change_party_morale = { PARTY = liberal_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = libertarian_party } }
+			owner = { cwp_change_party_morale = { PARTY = libertarian_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = monarchist_party } }
+			owner = { cwp_change_party_morale = { PARTY = monarchist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = pacifist_party } }
+			owner = { cwp_change_party_morale = { PARTY = pacifist_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = social_democrat_party } }
+			owner = { cwp_change_party_morale = { PARTY = social_democrat_party CHANGE = -1 } }
+		}
+		if = {
+			limit = { party ?= { is_party_type = socialist_party } }
+			owner = { cwp_change_party_morale = { PARTY = socialist_party CHANGE = -1 } }
+		}
+	}
+}
+
+# Country scope (on_law_enactment_pass). A former monarchy keeps a monarchist party for ten years (CWP 1.5)
+onaction_monarchy_abolished_modifier = {
+	if = {
+		limit = {
+			has_law = law_type:law_monarchy
+			OR = {
+				is_enacting_law = law_type:law_presidential_republic
+				is_enacting_law = law_type:law_parliamentary_republic
+				is_enacting_law = law_type:law_council_republic
+			}
+		}
+		add_modifier = {
+			name = recently_abolished_monarchy
+			years = 10
+		}
+	}
+}

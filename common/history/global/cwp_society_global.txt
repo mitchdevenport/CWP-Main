@@ -42,8 +42,9 @@ GLOBAL = {
 		}
 		set_variable = has_climate_research
 	}
-	## Dynamic Ideologies Setup
+	## Party Setup (CWP 1.5's party system) and Dynamic Ideologies Setup
 	every_country = {
+		setup_parties = yes
 		setup_starting_ideologies = yes
 	}
 }

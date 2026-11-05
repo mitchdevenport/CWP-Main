@@ -38,13 +38,13 @@ agitators_election_events_industrialist.1 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = free_trade_party
+						is_party_type = liberal_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = free_trade_party
+			is_party_type = liberal_party
 		}
 	}
 
@@ -150,13 +150,13 @@ agitators_election_events_industrialist.2 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = free_trade_party
+						is_party_type = liberal_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = free_trade_party
+			is_party_type = liberal_party
 		}
 		any_country = {
 			relations:root >= relations_threshold:cordial
@@ -288,13 +288,13 @@ agitators_election_events_industrialist.3 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = free_trade_party
+						is_party_type = liberal_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = free_trade_party
+			is_party_type = liberal_party
 		}
 		ig:ig_armed_forces ?= {
 			is_marginal = no
@@ -304,7 +304,7 @@ agitators_election_events_industrialist.3 = {
 					has_party = yes
 				}
 				this.party = {
-					is_party_type = free_trade_party
+					is_party_type = liberal_party
 				}
 			}
 		}
@@ -430,13 +430,13 @@ agitators_election_events_industrialist.4 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = free_trade_party
+						is_party_type = liberal_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = free_trade_party
+			is_party_type = liberal_party
 		}
 		ig:ig_trade_unions ?= {
 			is_marginal = no
@@ -532,13 +532,13 @@ agitators_election_events_industrialist.5 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = free_trade_party
+						is_party_type = liberal_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = free_trade_party
+			is_party_type = liberal_party
 		}
 	}
 

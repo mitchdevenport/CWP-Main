@@ -22,9 +22,9 @@
 		}
 		if = {
 			limit = {
-				exists = py:religious_party
+				exists = py:christian_democrat_party
 			}
-			py:religious_party = {
+			py:christian_democrat_party = {
 				add_momentum = momentum_medium
 			}
 		}

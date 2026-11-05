@@ -1,0 +1,5 @@
+﻿# CWP 1.5's party system (master's common/modifiers/cwp_country_modifiers.txt)
+# Set for ten years when a monarchy becomes a republic; keeps a monarchist party possible (common/parties/cwp_monarchist_party.txt)
+recently_abolished_monarchy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+}

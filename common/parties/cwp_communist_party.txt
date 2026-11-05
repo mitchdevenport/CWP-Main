@@ -1,0 +1,163 @@
+﻿# communist_party, restored from CWP 1.5 (master's common/parties/cwp_communist_party.txt).
+communist_party = {
+	color = { 161 38 29 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cwp_communist_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_communist_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = {
+				desc = party_cwp_communist_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { desc = party_bolsheviks trigger = { country_has_primary_culture = cu:russian any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_nkp trigger = { exists = c:NOR c:NOR ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_dkp trigger = { exists = c:DEN c:DEN ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_skp trigger = { exists = c:SWE c:SWE ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_skp trigger = { exists = c:FIN c:FIN ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_kpl trigger = { exists = c:LUX c:LUX ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_bkp trigger = { exists = c:BUL c:BUL ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_mkp trigger = { exists = c:HUN c:HUN ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_kpo trigger = { exists = c:AUS c:AUS ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_jcp trigger = { exists = c:JAP c:JAP ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_kke trigger = { exists = c:GRE c:GRE ?= THIS any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_kpd trigger = { AND = { OR = { country_has_primary_culture = cu:north_german country_has_primary_culture = cu:south_german } any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } } }
+			triggered_desc = { desc = party_pcb trigger = { country_has_primary_culture = cu:brazilian any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } }
+			triggered_desc = { desc = party_cpc trigger = { AND = { any_primary_culture = { has_discrimination_trait = heritage_han } any_interest_group = { is_powerful = yes leader ?= { cwp_vanguardist_party_character = yes } } } } }
+			triggered_desc = {
+				desc = party_cwp_communist
+				trigger = { always = yes }
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/communists.dds"
+	}
+	unlocking_technologies = {
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+		}
+		law_stance = { law = law_type:law_total_nationalization value >= neutral }
+		OR = { law_stance = { law = law_type:law_command_economy value >= neutral } law_stance = { law = law_type:law_cooperative_ownership value >= neutral } }
+		law_stance = { law = law_type:law_single_party_state value >= neutral }
+		# CWP 1.5's elites, capitalists, ruralists opposed this: silence is not support
+		OR = {
+			NOT = { OR = { is_interest_group_type = ig_landowners is_interest_group_type = ig_industrialists is_interest_group_type = ig_rural_folk } }
+			law_stance = { law = law_type:law_total_nationalization value > neutral }
+		}
+		# CWP 1.5's capitalists, entrepreneurs opposed this: silence is not support
+		OR = {
+			NOT = { OR = { is_interest_group_type = ig_industrialists is_interest_group_type = ig_petty_bourgeoisie } }
+			OR = { law_stance = { law = law_type:law_command_economy value > neutral } law_stance = { law = law_type:law_cooperative_ownership value > neutral } }
+		}
+	}
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = { is_interest_group_type = ig_trade_unions }
+			add = {
+				value = 6
+				desc = "REASON_HEADLINER_IG"
+			}
+		}
+		# Ideology pack party families (docs/ideologies): the leader's political current
+		if = {
+			limit = { leader ?= { OR = { cwp_vanguardist_party_character = yes cwp_communist_party_character = yes } } }
+			add = {
+				value = 3
+				desc = "REASON_PARTY_FAMILY_LEADER"
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_variable = communist_party_morale
+					has_variable = communist_party_cohesion
+				}
+				add = {
+					value = var:communist_party_morale
+					desc = "REASON_PARTY_MORALE"
+				}
+				add = {
+					value = var:communist_party_cohesion
+					desc = "REASON_PARTY_COHESION"
+				}
+			}
+			if = {
+				limit = {
+					has_variable = communist_party_popularity
+					has_variable = communist_party_clout
+				}
+				add = {
+					value = var:communist_party_popularity
+					desc = "REASON_PARTY_POPULARITY"
+				}
+				add = {
+					value = var:communist_party_clout
+					desc = "REASON_PARTY_CLOUT"
+				}
+			}
+		}
+		if = {
+			limit = { scope:number = 1 }
+			multiply = {
+				value = 2
+				desc = "from_one_other_member"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = {
+				value = 1.3
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 3 }
+			multiply = {
+				value = 0.8
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 4 }
+			multiply = {
+				value = 0.5
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number >= 5 }
+			multiply = {
+				value = 0
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		# Victoria 3 1.5, which CWP 1.5 was made for, formed parties as election campaigns began
+		if = {
+			limit = {
+				party ?= { is_party_type = communist_party }
+				owner = { in_election_campaign = no }
+			}
+			add = {
+				value = 100
+				desc = "REASON_PARTY_BETWEEN_CAMPAIGNS"
+			}
+		}
+	}
+}

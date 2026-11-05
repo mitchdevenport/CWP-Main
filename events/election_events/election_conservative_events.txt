@@ -317,10 +317,7 @@ election_conservative_events.4 = {
 		NOT = { has_variable = mute_election_events }
 		any_active_party = {
 			party_has_members = yes
-			OR = {
-				is_party_type = conservative_party
-				is_party_type = military_party
-			}
+			is_party_type = conservative_party
 		}
 		any_neighbouring_state = {
 			owner = {
@@ -335,13 +332,7 @@ election_conservative_events.4 = {
 			name = election_event_cooldown
 			months = election_event_cooldown_months
 		}
-		if = {
-			limit = { exists = py:military_party }
-			py:military_party = { save_scope_as = hawk_campaign_party }
-		}
-		else = {
-			py:conservative_party = { save_scope_as = hawk_campaign_party }
-		}
+		py:conservative_party = { save_scope_as = hawk_campaign_party }
 		random_neighbouring_state = {
 			limit = {
 				owner = {

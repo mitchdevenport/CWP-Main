@@ -230,6 +230,7 @@ on_yearly_pulse_country = {
 	on_actions = { # delay ensures events won't fire simultaneously
 		on_yearly_events_politics
 		cwp_society_yearly_pulse_country
+		cwp_party_yearly_pulse_country	# Party morale (CWP 1.5's party system)
 		cwp_flavour_yearly_events	# Yearly flavour events (government conflicts, neighbours, decrees, disasters, ...)
 		delay = { days = 5 }
 		cwp_flavour_exiles_yearly_events	# Yearly exile events
@@ -240,6 +241,7 @@ on_half_yearly_pulse_country = {
 	on_actions = {
 		cwp_coup_half_yearly_events
 		cwp_economy_half_yearly_events
+		cwp_party_half_yearly_pulse_country	# Party cohesion (CWP 1.5's party system)
 	}
 
 	effect = {
@@ -2048,6 +2050,7 @@ on_party_disbanded = {
 on_election_campaign_start = {
 	effect = {
 		debug_log = "Election Campaign Started"
+		onaction_calc_party_cohesion = yes # CWP 1.5's party system
 
 		if = {
 			limit = { active_law:lawgroup_distribution_of_power ?= { has_amendment = amendment_type:amendment_tradition_of_free_elections } }
@@ -2082,6 +2085,7 @@ on_government_reformed = {
 	effect = {
 		# Government Petition
 		set_variable = gov_petition_coin_toss
+		onaction_update_party_morale = yes # CWP 1.5's party system
 	}
 }
 

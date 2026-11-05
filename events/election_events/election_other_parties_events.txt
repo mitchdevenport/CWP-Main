@@ -330,7 +330,7 @@ election_other_parties_events.4 = {
 			}
 			any_active_party = {
 				party_has_members = yes
-				is_party_type = radical_party
+				is_party_type = social_democrat_party
 			}
 		}
 	}
@@ -381,13 +381,13 @@ election_other_parties_events.4 = {
 			limit = {
 				any_active_party = {
 					party_has_members = yes
-					is_party_type = radical_party
+					is_party_type = social_democrat_party
 				}
 			}
 			random_active_party = {
 				limit = {
 					party_has_members = yes
-					is_party_type = radical_party
+					is_party_type = social_democrat_party
 				}
 				save_scope_as = leftist_party
 			}
@@ -442,7 +442,7 @@ election_other_parties_events.5 = {
 		NOT = { has_variable = mute_election_events }
 		any_active_party = {
 			party_has_members = yes
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 	}
 
@@ -454,7 +454,7 @@ election_other_parties_events.5 = {
 		random_active_party = {
 			limit = {
 				party_has_members = yes
-				is_party_type = radical_party
+				is_party_type = social_democrat_party
 			}
 			save_scope_as = radical_party
 		}
@@ -472,7 +472,7 @@ election_other_parties_events.5 = {
 
 	option = { #keep up with the good work
 		name = election_other_parties_events.5.a
-		py:radical_party = { #you give them momentum
+		py:social_democrat_party = { #you give them momentum
 			add_momentum = momentum_medium
 		}
 		scope:radicals_state = {
@@ -485,7 +485,7 @@ election_other_parties_events.5 = {
 	option = { #pls stop
 		name = election_other_parties_events.5.b
 		default_option = yes
-		py:radical_party = {
+		py:social_democrat_party = {
 			add_momentum = momentum_medium_decrease
 		}
 		if = {
@@ -521,7 +521,7 @@ election_other_parties_events.5 = {
 				has_law_or_variant = law_type:law_outlawed_dissent
 			}
 		}
-		py:radical_party = {
+		py:social_democrat_party = {
 			add_momentum = momentum_large_decrease
 		}
 		scope:radicals_state = {

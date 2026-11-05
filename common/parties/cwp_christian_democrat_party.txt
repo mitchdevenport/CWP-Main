@@ -1,0 +1,147 @@
+﻿# christian_democrat_party, restored from CWP 1.5 (master's common/parties/cwp_christian_democrat_party.txt).
+christian_democrat_party = {
+	color = { 161 117 29 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cwp_christian_democrat_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_christian_democrat_BAV
+				trigger = { c:BAV ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_christian_democrat_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = {
+				desc = party_cwp_christian_democrat_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { desc = party_anti_revolutionary_party trigger = { exists = c:NET c:NET ?= this } }
+			triggered_desc = { desc = party_traditionalist_communion trigger = { exists = c:SPA c:SPA ?= this } }
+			triggered_desc = { desc = party_christian_peoples_party trigger = { exists = c:BEL c:BEL ?= this } }
+			triggered_desc = { desc = party_zentrum trigger = { AND = { OR = { country_has_primary_culture = cu:north_german country_has_primary_culture = cu:south_german } country_has_state_religion = rel:catholic } } }
+			triggered_desc = { desc = party_shinto trigger = { country_has_state_religion = rel:shinto } }
+			triggered_desc = { desc = party_buddhist trigger = { root.religion = { has_discrimination_trait = cwp_heritage_dharmic } } }
+			triggered_desc = { desc = party_sikh trigger = { country_has_state_religion = rel:sikh } }
+			triggered_desc = { desc = party_hindu trigger = { country_has_state_religion = rel:hindu } }
+			triggered_desc = { desc = party_jewish trigger = { country_has_state_religion = rel:jewish } }
+			triggered_desc = { desc = party_muslim trigger = { root.religion = { has_discrimination_trait = cwp_heritage_islamic } } }
+			triggered_desc = { desc = party_catholic trigger = { country_has_state_religion = rel:catholic } }
+			triggered_desc = { desc = party_christian trigger = { root.religion = { has_discrimination_trait = cwp_heritage_christian } } }
+			triggered_desc = {
+				desc = party_cwp_christian_democrat
+				trigger = { always = yes }
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/religious.dds"
+	}
+	unlocking_technologies = {
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			OR = { country_has_state_religion = rel:catholic country_has_state_religion = rel:protestant country_has_state_religion = rel:orthodox country_has_state_religion = rel:oriental_orthodox }
+		}
+		law_stance = { law = law_type:law_freedom_of_conscience value >= neutral }
+		OR = { law_stance = { law = law_type:law_universal_suffrage value >= neutral } law_stance = { law = law_type:law_census_voting value >= neutral } }
+	}
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = { is_interest_group_type = ig_devout }
+			add = {
+				value = 6
+				desc = "REASON_HEADLINER_IG"
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_variable = christian_democrat_party_morale
+					has_variable = christian_democrat_party_cohesion
+				}
+				add = {
+					value = var:christian_democrat_party_morale
+					desc = "REASON_PARTY_MORALE"
+				}
+				add = {
+					value = var:christian_democrat_party_cohesion
+					desc = "REASON_PARTY_COHESION"
+				}
+			}
+			if = {
+				limit = {
+					has_variable = christian_democrat_party_popularity
+					has_variable = christian_democrat_party_clout
+				}
+				add = {
+					value = var:christian_democrat_party_popularity
+					desc = "REASON_PARTY_POPULARITY"
+				}
+				add = {
+					value = var:christian_democrat_party_clout
+					desc = "REASON_PARTY_CLOUT"
+				}
+			}
+		}
+		if = {
+			limit = { scope:number = 1 }
+			multiply = {
+				value = 2
+				desc = "from_one_other_member"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = {
+				value = 1.3
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 3 }
+			multiply = {
+				value = 0.8
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 4 }
+			multiply = {
+				value = 0.5
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number >= 5 }
+			multiply = {
+				value = 0
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		# Victoria 3 1.5, which CWP 1.5 was made for, formed parties as election campaigns began
+		if = {
+			limit = {
+				party ?= { is_party_type = christian_democrat_party }
+				owner = { in_election_campaign = no }
+			}
+			add = {
+				value = 100
+				desc = "REASON_PARTY_BETWEEN_CAMPAIGNS"
+			}
+		}
+	}
+}

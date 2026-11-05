@@ -403,7 +403,7 @@ agitators_election_events_conservative.2 = {
 		trigger = {
 			any_active_party = {
 				OR = {
-					is_party_type = radical_party
+					is_party_type = social_democrat_party
 					is_party_type = communist_party
 					is_party_type = anarchist_party
 				}
@@ -412,7 +412,7 @@ agitators_election_events_conservative.2 = {
 		random_active_party = {
 			limit = {
 				OR = {
-					is_party_type = radical_party
+					is_party_type = social_democrat_party
 					is_party_type = communist_party
 					is_party_type = anarchist_party
 				}

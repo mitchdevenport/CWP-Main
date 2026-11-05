@@ -1,0 +1,162 @@
+﻿# social_democrat_party, restored from CWP 1.5 (master's common/parties/cwp_social_democrat_party.txt).
+social_democrat_party = {
+	color = { 207 62 93 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cwp_social_democrat_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_social_democrat_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = {
+				desc = party_cwp_social_democrat_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { desc = party_labour_party trigger = { exists = c:GBR c:GBR ?= this } }
+			triggered_desc = { desc = party_psoe trigger = { exists = c:SPA c:SPA ?= this } }
+			triggered_desc = { desc = party_labour_party trigger = { exists = c:IRE c:IRE ?= this } }
+			triggered_desc = { desc = party_portuguese_socialist_party trigger = { exists = c:POR c:POR ?= this } }
+			triggered_desc = { desc = party_sdapo trigger = { exists = c:AUS c:AUS ?= this } }
+			triggered_desc = { desc = party_brsdp trigger = { exists = c:BUL c:BUL ?= this } }
+			triggered_desc = { desc = party_mszdp trigger = { exists = c:HUN c:HUN ?= this } }
+			triggered_desc = { desc = party_labor_party trigger = { exists = c:NOR c:NOR ?= this } }
+			triggered_desc = { desc = party_social_democratic_workers_party trigger = { exists = c:ROM c:ROM ?= this } }
+			triggered_desc = { desc = party_spd trigger = { OR = { country_has_primary_culture = cu:north_german country_has_primary_culture = cu:south_german } } }
+			triggered_desc = { desc = party_psi trigger = { exists = c:ITA c:ITA ?= this } }
+			triggered_desc = { desc = party_socialist_party_of_america trigger = { exists = c:USA c:USA ?= this } }
+			triggered_desc = { desc = party_inc trigger = { exists = c:HND c:HND ?= this } }
+			triggered_desc = {
+				desc = party_cwp_social_democrat
+				trigger = { always = yes }
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/radical.dds"
+	}
+	unlocking_technologies = {
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+		}
+		OR = { law_stance = { law = law_type:law_command_economy value >= neutral } law_stance = { law = law_type:law_cooperative_ownership value >= neutral } }
+		law_stance = { law = law_type:law_no_nationalization value >= neutral }
+		law_stance = { law = law_type:law_universal_suffrage value >= neutral }
+		# CWP 1.5's capitalists, entrepreneurs opposed this: silence is not support
+		OR = {
+			NOT = { OR = { is_interest_group_type = ig_industrialists is_interest_group_type = ig_petty_bourgeoisie } }
+			OR = { law_stance = { law = law_type:law_command_economy value > neutral } law_stance = { law = law_type:law_cooperative_ownership value > neutral } }
+		}
+		# CWP 1.5's bureaucrats opposed this: silence is not support
+		OR = {
+			NOT = { is_interest_group_type = ig_bureaucrats }
+			law_stance = { law = law_type:law_no_nationalization value > neutral }
+		}
+	}
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = { is_interest_group_type = ig_intelligentsia OR = { law_stance = { law = law_type:law_presidential_republic value > neutral } law_stance = { law = law_type:law_parliamentary_republic value > neutral } } law_stance = { law = law_type:law_heavy_industry_nationalization value > neutral } }
+			add = {
+				value = 6
+				desc = "REASON_HEADLINER_IG"
+			}
+		}
+		# Ideology pack party families (docs/ideologies): the leader's political current
+		if = {
+			limit = { leader ?= { cwp_social_democrat_party_character = yes } }
+			add = {
+				value = 3
+				desc = "REASON_PARTY_FAMILY_LEADER"
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_variable = social_democrat_party_morale
+					has_variable = social_democrat_party_cohesion
+				}
+				add = {
+					value = var:social_democrat_party_morale
+					desc = "REASON_PARTY_MORALE"
+				}
+				add = {
+					value = var:social_democrat_party_cohesion
+					desc = "REASON_PARTY_COHESION"
+				}
+			}
+			if = {
+				limit = {
+					has_variable = social_democrat_party_popularity
+					has_variable = social_democrat_party_clout
+				}
+				add = {
+					value = var:social_democrat_party_popularity
+					desc = "REASON_PARTY_POPULARITY"
+				}
+				add = {
+					value = var:social_democrat_party_clout
+					desc = "REASON_PARTY_CLOUT"
+				}
+			}
+		}
+		if = {
+			limit = { scope:number = 1 }
+			multiply = {
+				value = 2
+				desc = "from_one_other_member"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = {
+				value = 1.3
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 3 }
+			multiply = {
+				value = 0.8
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 4 }
+			multiply = {
+				value = 0.5
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number >= 5 }
+			multiply = {
+				value = 0
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		# Victoria 3 1.5, which CWP 1.5 was made for, formed parties as election campaigns began
+		if = {
+			limit = {
+				party ?= { is_party_type = social_democrat_party }
+				owner = { in_election_campaign = no }
+			}
+			add = {
+				value = 100
+				desc = "REASON_PARTY_BETWEEN_CAMPAIGNS"
+			}
+		}
+	}
+}

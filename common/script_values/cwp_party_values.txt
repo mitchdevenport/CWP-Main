@@ -1,0 +1,531 @@
+﻿# CWP 1.5's party values (master's common/script_values/politics_values.txt)
+
+max_party_morale = 10
+min_party_morale = -10
+
+# Country scope: the popularity of the leaders of the party's interest groups
+agrarian_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = agrarian_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+agrarian_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = agrarian_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+anarchist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = anarchist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+anarchist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = anarchist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+centrist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = centrist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+centrist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = centrist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+christian_democrat_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = christian_democrat_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+christian_democrat_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = christian_democrat_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+communist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = communist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+communist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = communist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+conservative_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = conservative_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+conservative_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = conservative_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+democratic_socialist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = democratic_socialist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+democratic_socialist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = democratic_socialist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+fascist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = fascist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+fascist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = fascist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+feminist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = feminist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+feminist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = feminist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+green_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = green_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+green_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = green_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+islamist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = islamist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+islamist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = islamist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+liberal_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = liberal_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+liberal_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = liberal_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+libertarian_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = libertarian_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+libertarian_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = libertarian_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+monarchist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = monarchist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+monarchist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = monarchist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+pacifist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = pacifist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+pacifist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = pacifist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+social_democrat_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = social_democrat_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+social_democrat_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = social_democrat_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}
+
+# Country scope: the popularity of the leaders of the party's interest groups
+socialist_party_popularity = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = socialist_party }
+		every_member = {
+			leader ?= {
+				add = popularity
+			}
+		}
+	}
+	multiply = 0.1
+}
+
+# Country scope: +5 for every powerful interest group in the party, -1 for every other
+socialist_party_clout = {
+	value = 0
+	every_potential_party = {
+		limit = { is_party_type = socialist_party }
+		every_member = {
+			if = {
+				limit = { is_powerful = yes }
+				add = 5
+			}
+			else = {
+				add = -1
+			}
+		}
+	}
+}

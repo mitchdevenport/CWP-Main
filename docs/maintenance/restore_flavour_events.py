@@ -266,7 +266,23 @@ def outer_block(text, pos, key):
 
 
 
+# The base game's parties CWP 1.5 does not have, and the CWP 1.5 party (common/parties/cwp_*_party.txt) taking their place
+# in these events, as CWP 1.5 adapted them: the free trade campaign is the liberals', the hawks' the conservatives', the
+# radicals' the social democrats'
+PARTIES = {"free_trade_party": "liberal_party", "military_party": "conservative_party", "radical_party": "social_democrat_party",
+           "religious_party": "christian_democrat_party", "revolutionary_party": "socialist_party"}
+
+
 def fixes(text, c):
+    # the fringe parties gaining from the moderates' troubles: CWP 1.5 has the democratic socialists in the radicals' place
+    if c == "election_events/election_moderate_events":
+        text = text.replace("py:radical_party", "py:democratic_socialist_party")
+    text = re.sub(r"\b(is_party_type = |py:)(%s)\b" % "|".join(PARTIES), lambda m: m.group(1) + PARTIES[m.group(2)], text)
+    # the base game's fallbacks between those parties and the ones CWP 1.5 folds them into
+    text = re.sub(r"OR = \{\s*(is_party_type = [a-z_]+)\s*\1\s*\}", r"\1", text)
+    text = re.sub(r"(NOT = \{ is_party_type = [a-z_]+ \})\s*\1", r"\1", text)
+    text = re.sub(r"if = \{\s*limit = \{ exists = (py:[a-z_]+) \}\s*\1 = \{ save_scope_as = ([a-z_]+) \}\s*\}\s*"
+                  r"else = \{\s*\1 = \{ save_scope_as = \2 \}\s*\}", r"\1 = { save_scope_as = \2 }", text)
     text = re.sub(r"(?m)^[ \t]*has_trait = opium_addiction[ \t]*\n", "", text)
     text = re.sub(r"(?m)^[ \t]*has_ideology = ideology:ideology_egalitarian_modern[ \t]*\n", "", text)
     text = re.sub(r"\n[ \t]*if = \{\s*limit = \{\s*owner = \{\s*c:FRA \?= this\s*has_journal_entry = je_divided_monarchists\s*\}\s*\}\s*"

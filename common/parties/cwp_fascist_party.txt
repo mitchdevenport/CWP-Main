@@ -1,0 +1,136 @@
+﻿# fascist_party, restored from CWP 1.5 (master's common/parties/cwp_fascist_party.txt).
+fascist_party = {
+	color = { 87 47 28 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cwp_fascist_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_fascist_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = {
+				desc = party_cwp_fascist_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { desc = falangist_party trigger = { exists = c:SPA c:SPA ?= THIS } }
+			triggered_desc = {
+				desc = party_cwp_fascist
+				trigger = { always = yes }
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/fascists.dds"
+	}
+	unlocking_technologies = {
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			NOT = { has_law = law_type:law_multicultural }
+		}
+		OR = { law_stance = { law = law_type:law_multicultural value <= neutral } law_stance = { law = law_type:law_ethnostate value >= approve } }
+		# CWP 1.5's intelligentsia/urbanists opposed this: silence is not support
+		OR = {
+			NOT = { is_interest_group_type = ig_intelligentsia }
+			OR = { law_stance = { law = law_type:law_multicultural value < neutral } law_stance = { law = law_type:law_ethnostate value >= approve } }
+		}
+	}
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = { leader ?= { has_fascist_ideology = yes } }
+			add = {
+				value = 6
+				desc = "REASON_HEADLINER_IG"
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_variable = fascist_party_morale
+					has_variable = fascist_party_cohesion
+				}
+				add = {
+					value = var:fascist_party_morale
+					desc = "REASON_PARTY_MORALE"
+				}
+				add = {
+					value = var:fascist_party_cohesion
+					desc = "REASON_PARTY_COHESION"
+				}
+			}
+			if = {
+				limit = {
+					has_variable = fascist_party_popularity
+					has_variable = fascist_party_clout
+				}
+				add = {
+					value = var:fascist_party_popularity
+					desc = "REASON_PARTY_POPULARITY"
+				}
+				add = {
+					value = var:fascist_party_clout
+					desc = "REASON_PARTY_CLOUT"
+				}
+			}
+		}
+		if = {
+			limit = { scope:number = 1 }
+			multiply = {
+				value = 2
+				desc = "from_one_other_member"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = {
+				value = 1.3
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 3 }
+			multiply = {
+				value = 0.8
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 4 }
+			multiply = {
+				value = 0.5
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number >= 5 }
+			multiply = {
+				value = 0
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		# Victoria 3 1.5, which CWP 1.5 was made for, formed parties as election campaigns began
+		if = {
+			limit = {
+				party ?= { is_party_type = fascist_party }
+				owner = { in_election_campaign = no }
+			}
+			add = {
+				value = 100
+				desc = "REASON_PARTY_BETWEEN_CAMPAIGNS"
+			}
+		}
+	}
+}

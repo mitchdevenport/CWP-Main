@@ -7,7 +7,7 @@
 			ruler = yes
 			ig_leader = yes
 			birth_date = 1902.10.2
-			interest_group = ig_devout # leads the strongest party in government (OeVP), as parliamentary rule requires
+			interest_group = ig_landowners # CWP 1.5's Elites (OeVP), the governing group in common/history/governments
 			ideology = ideology_moderate
 			traits = {
 			}

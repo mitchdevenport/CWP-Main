@@ -1,0 +1,145 @@
+﻿# conservative_party, restored from CWP 1.5 (master's common/parties/cwp_conservative_party.txt).
+conservative_party = {
+	color = { 29 101 161 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = party_cwp_conservative_FRA
+				trigger = { c:FRA ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_conservative_BAV
+				trigger = { c:BAV ?= THIS }
+			}
+			triggered_desc = {
+				desc = party_cwp_conservative_GER
+				trigger = { OR = { c:GER ?= THIS c:AOZ ?= THIS c:BOZ ?= THIS c:FOZ ?= THIS } }
+			}
+			triggered_desc = {
+				desc = party_cwp_conservative_DDR
+				trigger = { c:DDR ?= THIS }
+			}
+			triggered_desc = { desc = party_republicans trigger = { exists = c:USA c:USA ?= THIS } }
+			triggered_desc = { desc = party_blanco_party trigger = { exists = c:URU c:URU ?= THIS } }
+			triggered_desc = { desc = party_colorado_party trigger = { exists = c:PRG c:PRG ?= THIS } }
+			triggered_desc = { desc = party_hoyre trigger = { exists = c:NOR c:NOR ?= THIS } }
+			triggered_desc = { desc = party_republicans trigger = { exists = c:USA c:USA ?= THIS } }
+			triggered_desc = { desc = party_congress_nationalist_party trigger = { exists = c:HND c:HND ?= THIS } }
+			triggered_desc = {
+				desc = party_cwp_conservative
+				trigger = { always = yes }
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/conservatism.dds"
+	}
+	unlocking_technologies = {
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+		}
+		law_stance = { law = law_type:law_no_nationalization value >= neutral }
+		law_stance = { law = law_type:law_census_voting value >= neutral }
+		# CWP 1.5's bureaucrats opposed this: silence is not support
+		OR = {
+			NOT = { is_interest_group_type = ig_bureaucrats }
+			law_stance = { law = law_type:law_no_nationalization value > neutral }
+		}
+	}
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = { is_interest_group_type = ig_landowners }
+			add = {
+				value = 6
+				desc = "REASON_HEADLINER_IG"
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_variable = conservative_party_morale
+					has_variable = conservative_party_cohesion
+				}
+				add = {
+					value = var:conservative_party_morale
+					desc = "REASON_PARTY_MORALE"
+				}
+				add = {
+					value = var:conservative_party_cohesion
+					desc = "REASON_PARTY_COHESION"
+				}
+			}
+			if = {
+				limit = {
+					has_variable = conservative_party_popularity
+					has_variable = conservative_party_clout
+				}
+				add = {
+					value = var:conservative_party_popularity
+					desc = "REASON_PARTY_POPULARITY"
+				}
+				add = {
+					value = var:conservative_party_clout
+					desc = "REASON_PARTY_CLOUT"
+				}
+			}
+		}
+		if = {
+			limit = { scope:number = 1 }
+			multiply = {
+				value = 2
+				desc = "from_one_other_member"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 2 }
+			multiply = {
+				value = 1.3
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 3 }
+			multiply = {
+				value = 0.8
+				desc = "from_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number = 4 }
+			multiply = {
+				value = 0.5
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		else_if = {
+			limit = { scope:number >= 5 }
+			multiply = {
+				value = 0
+				desc = "from_more_than_three_prior_members"
+			}
+		}
+		# Victoria 3 1.5, which CWP 1.5 was made for, formed parties as election campaigns began
+		if = {
+			limit = {
+				party ?= { is_party_type = conservative_party }
+				owner = { in_election_campaign = no }
+			}
+			add = {
+				value = 100
+				desc = "REASON_PARTY_BETWEEN_CAMPAIGNS"
+			}
+		}
+	}
+}

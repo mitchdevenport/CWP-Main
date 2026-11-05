@@ -38,13 +38,13 @@ agitators_election_events_radical.1 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = radical_party
+						is_party_type = social_democrat_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 	}
 
@@ -170,13 +170,13 @@ agitators_election_events_radical.2 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = radical_party
+						is_party_type = social_democrat_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 		ruler.popularity <= 0
 		has_law_or_variant = law_type:law_monarchy
@@ -291,7 +291,7 @@ agitators_election_events_radical.3 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = radical_party
+						is_party_type = social_democrat_party
 					}
 				}
 			}
@@ -322,7 +322,7 @@ agitators_election_events_radical.3 = {
 			}
 		}
 		any_active_party = {
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 		NOT = {
 			has_law_or_variant = law_type:law_multicultural
@@ -427,7 +427,7 @@ agitators_election_events_radical.4 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = radical_party
+						is_party_type = social_democrat_party
 					}
 				}
 			}
@@ -437,7 +437,7 @@ agitators_election_events_radical.4 = {
 				has_party = yes
 				NOT = {
 					this.party = {
-						is_party_type = radical_party
+						is_party_type = social_democrat_party
 					}
 				}
 			}
@@ -470,7 +470,7 @@ agitators_election_events_radical.4 = {
 			}
 		}
 		any_active_party = {
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 		NOT = {
 			has_law_or_variant = law_type:law_universal_suffrage
@@ -498,7 +498,7 @@ agitators_election_events_radical.4 = {
 					has_party = yes
 					NOT = {
 						this.party = {
-							is_party_type = radical_party
+							is_party_type = social_democrat_party
 						}
 					}
 				}
@@ -609,13 +609,13 @@ agitators_election_events_radical.5 = {
 						}
 					}
 					this.interest_group.party = {
-						is_party_type = radical_party
+						is_party_type = social_democrat_party
 					}
 				}
 			}
 		}
 		any_active_party = {
-			is_party_type = radical_party
+			is_party_type = social_democrat_party
 		}
 		has_law_or_variant = law_type:law_monarchy
 	}
