@@ -1034,14 +1034,6 @@ ideology_cwp_developmental_conservative = {
 		law_secret_police = approve
 	}
 
-	lawgroup_monetary_policy = {
-		law_gold_standard = neutral
-		law_government_controlled = strongly_approve
-		law_government_interference = approve
-		law_independent_monetary_policy = disapprove
-		law_pegged_currency = neutral
-	}
-
 	country_trigger = {
 		game_date >= 1965.8.9
 		any_primary_culture = { OR = { has_discrimination_trait_group = heritage_group_southeast_asian has_discrimination_trait_group = heritage_group_east_asian } }

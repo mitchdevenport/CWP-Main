@@ -374,14 +374,6 @@ ideology_cwp_market_socialist = {
 		law_collectivized_agriculture = disapprove
 	}
 
-	lawgroup_monetary_policy = {
-		law_gold_standard = disapprove
-		law_government_controlled = neutral
-		law_government_interference = strongly_approve
-		law_independent_monetary_policy = approve
-		law_pegged_currency = neutral
-	}
-
 	country_trigger = {
 		game_date >= 1978.12.18
 		OR = {
@@ -834,14 +826,6 @@ ideology_cwp_juche = {
 		law_national_militia = approve
 		law_mass_conscription = strongly_approve
 		law_disarmed_nation = strongly_disapprove
-	}
-
-	lawgroup_monetary_policy = {
-		law_gold_standard = strongly_approve
-		law_government_controlled = approve
-		law_government_interference = neutral
-		law_independent_monetary_policy = disapprove
-		law_pegged_currency = strongly_disapprove
 	}
 
 	country_trigger = {

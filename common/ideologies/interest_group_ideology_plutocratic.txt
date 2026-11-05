@@ -29,4 +29,12 @@ ideology_plutocratic = {
 		law_proportional_taxation = neutral
 		law_graduated_taxation = disapprove
 	}
+
+	# CWP 1.5's capitalist 'executive' ideology, which the current Industrialists do not have
+	lawgroup_wmds = {
+		law_first_strike = approve
+		law_deterrence = approve
+		law_civilian_applications = approve
+		law_no_wmds = neutral
+	}
 }

@@ -137,9 +137,11 @@ def main() -> None:
     laws = definitions(ROOT / "common/laws")
     law_groups = definitions(ROOT / "common/law_groups")
     law_group = {key: scalar(entries[-1][1], "group") for key, entries in laws.items()}
+    # Victoria 3 1.14: a law with a parent is a variant; it inherits the parent's stances and is not rated itself.
+    variants = {key for key, entries in laws.items() if scalar(entries[-1][1], "parent")}
     known_by_group = {}
     for law, group in law_group.items():
-        if group:
+        if group and law not in variants:
             known_by_group.setdefault(group, set()).add(law)
 
     packs = {}
@@ -200,6 +202,7 @@ def main() -> None:
             for law in entries:
                 stance_count += 1
                 require(law_group.get(law.key) == group.key, f"Unknown/misgrouped law: {key}/{group.key}/{law.key}")
+                require(law.key not in variants, f"Stance on law variant (inherits its parent's): {key}/{law.key}")
                 require(law.value in STANCES if isinstance(law.value, str) else False, f"Invalid stance: {key}/{law.key}")
         character = key in packs.get("character", {})
         require((scalar(body, "character_ideology") == "yes") == character, f"Wrong ideology category: {key}")

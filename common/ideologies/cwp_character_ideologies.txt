@@ -669,14 +669,6 @@ ideology_cwp_national_developmentalist = {
 		law_collectivized_agriculture = neutral
 	}
 
-	lawgroup_monetary_policy = {
-		law_gold_standard = neutral
-		law_government_controlled = strongly_approve
-		law_government_interference = approve
-		law_independent_monetary_policy = disapprove
-		law_pegged_currency = neutral
-	}
-
 	country_trigger = {
 		game_date >= 1946.1.1
 	}
@@ -1100,14 +1092,6 @@ ideology_cwp_military_developmentalist = {
 		law_factory_councils = strongly_disapprove
 	}
 
-	lawgroup_monetary_policy = {
-		law_gold_standard = neutral
-		law_government_controlled = strongly_approve
-		law_government_interference = approve
-		law_independent_monetary_policy = disapprove
-		law_pegged_currency = neutral
-	}
-
 	country_trigger = {
 		game_date >= 1961.1.1
 	}
@@ -1203,14 +1187,6 @@ ideology_cwp_market_conservative = {
 		law_per_capita_based_taxation = neutral
 		law_proportional_taxation = strongly_approve
 		law_graduated_taxation = disapprove
-	}
-
-	lawgroup_monetary_policy = {
-		law_gold_standard = neutral
-		law_government_controlled = strongly_disapprove
-		law_government_interference = disapprove
-		law_independent_monetary_policy = strongly_approve
-		law_pegged_currency = neutral
 	}
 
 	country_trigger = {
