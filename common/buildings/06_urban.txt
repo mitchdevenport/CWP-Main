@@ -38,6 +38,7 @@ building_combustion_plant = {
 		owner = {
 			NOR = {
 				has_law_or_variant = law_type:law_industry_banned
+				has_law = law_type:law_pollution_ban # CWP 1.5 environmental regulations
 			}
 		}
 	}

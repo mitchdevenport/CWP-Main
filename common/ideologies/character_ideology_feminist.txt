@@ -79,4 +79,14 @@ ideology_feminist = {
 	non_interest_group_leader_weight = {
 		value = 100
 	}
+
+	# CWP 1.5's 'feminist' leader ideology
+	lawgroup_family_planning = {
+		law_no_family_planning = neutral
+		law_criminalized_birth_control = strongly_disapprove
+		law_family_planning_programs = approve
+		law_enshrined_reproductive_rights = strongly_approve
+		law_family_size_controls = disapprove
+		law_one_child_policy = disapprove
+	}
 }

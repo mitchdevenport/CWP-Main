@@ -32,4 +32,12 @@ ideology_reactionary = {
 		law_migration_controls = strongly_approve
 		law_no_migration_controls = disapprove
 	}
+
+	# CWP 1.5's entrepreneurs' 'bigoted' and 'assimilative' ideologies
+	lawgroup_recreational_drugs = {
+		law_total_prohibition = disapprove
+		law_tobacco_allowed = approve
+		law_alcohol_allowed = approve
+		law_all_drugs_allowed = disapprove
+	}
 }

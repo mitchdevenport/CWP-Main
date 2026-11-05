@@ -23,4 +23,14 @@ ideology_statist = {
 		law_dedicated_police = approve
 		law_militarized_police = approve
 	}
+
+	# CWP 1.5's bureaucrats' 'litigious' ideology
+	lawgroup_nationalization = {
+		law_total_nationalization = strongly_approve
+		law_heavy_industry_nationalization = approve
+		law_military_industry_nationalization = neutral
+		law_resource_extraction_nationalization = neutral
+		law_public_utility_companies = disapprove
+		law_no_nationalization = strongly_disapprove
+	}
 }

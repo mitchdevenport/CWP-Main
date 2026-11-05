@@ -1,0 +1,23 @@
+﻿# Law groups restored from CWP 1.5
+
+# Country scope. True for a new country that has no law in the group yet. The one-step ladders of these groups
+# (can_enact) would otherwise forbid every law to it, and the game would leave the group empty.
+cwp_has_no_centralization_law = {
+	NOR = {
+		has_law = law_type:law_confederated
+		has_law = law_type:law_federalized
+		has_law = law_type:law_devolved
+		has_law = law_type:law_unitary
+	}
+}
+
+cwp_has_no_nationalization_law = {
+	NOR = {
+		has_law = law_type:law_no_nationalization
+		has_law = law_type:law_public_utility_companies
+		has_law = law_type:law_resource_extraction_nationalization
+		has_law = law_type:law_military_industry_nationalization
+		has_law = law_type:law_heavy_industry_nationalization
+		has_law = law_type:law_total_nationalization
+	}
+}

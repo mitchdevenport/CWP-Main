@@ -38,4 +38,39 @@ ideology_liberal = {
 		law_women_in_the_workplace = neutral
 		law_womens_suffrage = neutral
 	}
+
+	# CWP 1.5's urbanists' 'reformist' ideology
+	lawgroup_centralization = {
+		law_confederated = disapprove
+		law_federalized = neutral
+		law_devolved = approve
+		law_unitary = neutral
+	}
+
+	# CWP 1.5's intelligentsia's 'humanitarian' ideology
+	lawgroup_environmental_regulations = {
+		law_no_environment_regulations = strongly_disapprove
+		law_environmental_protection_agency = disapprove
+		law_emission_regulation = neutral
+		law_net_zero = approve
+		law_pollution_ban = strongly_approve
+	}
+
+	# CWP 1.5's intelligentsia's 'conscientious' ideology
+	lawgroup_family_planning = {
+		law_no_family_planning = disapprove
+		law_criminalized_birth_control = strongly_disapprove
+		law_family_planning_programs = approve
+		law_enshrined_reproductive_rights = strongly_approve
+		law_family_size_controls = neutral
+		law_one_child_policy = neutral
+	}
+
+	# CWP 1.5's urbanists' 'bohemian' ideology
+	lawgroup_recreational_drugs = {
+		law_total_prohibition = strongly_disapprove
+		law_tobacco_allowed = disapprove
+		law_alcohol_allowed = approve
+		law_all_drugs_allowed = strongly_approve
+	}
 }

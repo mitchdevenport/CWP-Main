@@ -1,0 +1,11 @@
+﻿# Green technology for polluting industries, restored from CWP 1.5 (master's pmg_green_tech_industry).
+# Environmental regulation laws set the lowest technology an industry may use (common/laws/cwp_16_environmental_regulations.txt).
+pmg_green_tech_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_environmental_tech
+		pm_basic_green_tech
+		pm_more_green_tech
+		pm_advanced_green_tech
+	}
+}

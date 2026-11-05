@@ -42,4 +42,13 @@ ideology_agrarian = {
 		law_civilian_applications = neutral
 		law_no_wmds = approve
 	}
+
+	# CWP 1.5's ruralists' 'agrarian' ideology
+	lawgroup_environmental_regulations = {
+		law_no_environment_regulations = strongly_disapprove
+		law_environmental_protection_agency = approve
+		law_emission_regulation = strongly_approve
+		law_net_zero = neutral
+		law_pollution_ban = disapprove
+	}
 }

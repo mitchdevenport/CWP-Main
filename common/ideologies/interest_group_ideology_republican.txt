@@ -21,4 +21,13 @@ ideology_republican = {
 		law_autocracy = disapprove
 		law_anarchy = strongly_disapprove
 	}
+
+	# CWP 1.5's intelligentsia's 'academic' ideology
+	lawgroup_biotech = {
+		law_unrestricted_human_testing = strongly_approve
+		law_regulated_human_trials = approve
+		law_animal_testing_only = neutral
+		law_no_live_testing = disapprove
+		law_theoretical_research_only = strongly_disapprove
+	}
 }

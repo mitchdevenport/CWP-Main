@@ -1,0 +1,277 @@
+﻿# Starting laws of the law groups restored from CWP 1.5 (centralization, nationalization, environmental regulations,
+# family planning, biotech, recreational drugs), from the law packages and law lines of master's country histories.
+# Every country first gets CWP 1.5's most common choice in each group (effect_cwp_restored_law_start_defaults).
+# CWP 1.5's own fallback was the first law of each group, which gave total prohibition to the 19 countries whose
+# histories set other laws of these groups but not this one (Italy, Ireland, Argentina...); they get the default here.
+GLOBAL = {
+	set_global_variable = cwp_restored_laws_setup
+	every_country = {
+		effect_cwp_restored_law_start_defaults = yes
+	}
+	c:ADE ?= {
+		activate_law = law_type:law_federalized
+	}
+	c:ALB ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_total_nationalization
+	}
+	c:AOZ ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:ARG ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:AST ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_resource_extraction_nationalization
+	}
+	c:AUS ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_total_nationalization
+	}
+	c:AZR ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_total_nationalization
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:BEL ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:BHN ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:BHU ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:BOL ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:BOZ ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:BRU ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:BRZ ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:BUL ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_total_nationalization
+	}
+	c:CAN ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:COS ?= {
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:CYP ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:CZH ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_total_nationalization
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:DDR ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_heavy_industry_nationalization
+	}
+	c:DEN ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:DJI ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:EOT ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:ESW ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:FIN ?= {
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:FOZ ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_heavy_industry_nationalization
+	}
+	c:FRA ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_heavy_industry_nationalization
+	}
+	c:GBR ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:GNB ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:GRE ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:GRN ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:HKN ?= {
+		activate_law = law_type:law_federalized
+	}
+	c:HND ?= {
+		activate_law = law_type:law_resource_extraction_nationalization
+	}
+	c:HUN ?= {
+		activate_law = law_type:law_total_nationalization
+	}
+	c:ICL ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:IRE ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:ITA ?= {
+		activate_law = law_type:law_devolved
+	}
+	c:JAP ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:KUR ?= {
+		activate_law = law_type:law_total_nationalization
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:KUW ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:LEB ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:LIB ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:LUX ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:MAO ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_all_drugs_allowed
+	}
+	c:MEX ?= {
+		activate_law = law_type:law_federalized
+	}
+	c:MGL ?= {
+		activate_law = law_type:law_total_nationalization
+	}
+	c:MGS ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:MLD ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:NET ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:NEW ?= {
+		activate_law = law_type:law_unitary
+	}
+	c:NOR ?= {
+		activate_law = law_type:law_devolved
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:NRK ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_total_nationalization
+	}
+	c:NZL ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:OMA ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:PER ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:POL ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_total_nationalization
+	}
+	c:POR ?= {
+		activate_law = law_type:law_devolved
+	}
+	c:PPN ?= {
+		activate_law = law_type:law_resource_extraction_nationalization
+	}
+	c:PRC ?= {
+		activate_law = law_type:law_total_nationalization
+	}
+	c:ROC ?= {
+		activate_law = law_type:law_military_industry_nationalization
+	}
+	c:ROM ?= {
+		activate_law = law_type:law_devolved
+	}
+	c:RUS ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_total_nationalization
+	}
+	c:RWD ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:SAF ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:SGP ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:SPA ?= {
+		activate_law = law_type:law_devolved
+	}
+	c:STK ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_heavy_industry_nationalization
+	}
+	c:SWE ?= {
+		activate_law = law_type:law_devolved
+	}
+	c:SWI ?= {
+		activate_law = law_type:law_public_utility_companies
+		activate_law = law_type:law_all_drugs_allowed
+	}
+	c:SYR ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:THA ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:TUR ?= {
+		activate_law = law_type:law_unitary
+		activate_law = law_type:law_heavy_industry_nationalization
+	}
+	c:USA ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_public_utility_companies
+	}
+	c:YEM ?= {
+		activate_law = law_type:law_tobacco_allowed
+	}
+	c:YUG ?= {
+		activate_law = law_type:law_federalized
+		activate_law = law_type:law_total_nationalization
+	}
+}

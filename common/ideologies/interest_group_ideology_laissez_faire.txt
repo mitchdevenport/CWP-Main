@@ -39,4 +39,13 @@ ideology_laissez_faire = {
 		law_peasant_proprietorship = neutral
 		law_commercialized_agriculture = approve
 	}
+
+	# CWP 1.5's capitalist 'laissez-faire' ideology
+	lawgroup_environmental_regulations = {
+		law_no_environment_regulations = strongly_approve
+		law_environmental_protection_agency = approve
+		law_emission_regulation = neutral
+		law_net_zero = disapprove
+		law_pollution_ban = strongly_disapprove
+	}
 }

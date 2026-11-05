@@ -1,0 +1,123 @@
+﻿# Law groups restored from CWP 1.5: centralization, nationalization, environmental regulations, family planning,
+# biotech and recreational drugs.
+
+# Country scope. The 1946 laws of a country CWP 1.5's histories set none for in a group: CWP 1.5's most common choice.
+# The game gives every new country the first law of each group before history runs, so these are activated outright
+# (common/history/global/cwp_restored_laws_global.txt) before the laws set for particular countries.
+effect_cwp_restored_law_start_defaults = {
+	activate_law = law_type:law_confederated
+	activate_law = law_type:law_no_nationalization
+	activate_law = law_type:law_no_environment_regulations
+	activate_law = law_type:law_no_family_planning
+	activate_law = law_type:law_unrestricted_human_testing
+	activate_law = law_type:law_alcohol_allowed
+}
+
+# Country scope. Recreational drug laws: bans a good and ends the cultural obsessions with it, as in CWP 1.5.
+# Bans and closures wait for the 1946 setup (cwp_restored_laws_setup): the first law the game gives every new
+# country, total prohibition, would otherwise ban tobacco, liquor and wine everywhere.
+# GOODS = goods key
+effect_cwp_ban_recreational_good = {
+	if = {
+		limit = {
+			has_global_variable = cwp_restored_laws_setup
+			NOT = { is_banning_goods = g:$GOODS$ }
+		}
+		add_banned_goods = g:$GOODS$
+		every_primary_culture = {
+			limit = {
+				has_cultural_obsession = $GOODS$
+			}
+			remove_cultural_obsession = $GOODS$
+			root = {
+				effect_remove_obsessions = yes
+			}
+		}
+	}
+}
+
+# Country scope. GOODS = goods key
+effect_cwp_allow_recreational_good = {
+	if = {
+		limit = {
+			is_banning_goods = g:$GOODS$
+		}
+		remove_banned_goods = g:$GOODS$
+	}
+}
+
+# Country scope. Closes a building type that only makes a banned good. BUILDING = building key
+effect_cwp_close_recreational_industry = {
+	every_scope_state = {
+		limit = {
+			has_global_variable = cwp_restored_laws_setup
+			has_building = $BUILDING$
+		}
+		remove_building = $BUILDING$
+	}
+}
+
+# Country scope. Pollution ban (CWP 1.5): every combustion power plant level becomes a solar farm level (CWP 1.5's
+# renewable energy facility) and the oil and gas industry is shut down.
+# Both power buildings are removed first because create_building keeps the larger of the scripted and existing levels.
+effect_ban_pollution_industries = {
+	every_scope_state = {
+		limit = {
+			has_building = building_combustion_plant
+		}
+		set_local_variable = {
+			name = combustion_and_renewable_building_accumulator
+			value = 0
+		}
+		every_scope_building = {
+			limit = {
+				OR = {
+					is_building_type = building_combustion_plant
+					is_building_type = building_solar_farm
+				}
+			}
+			change_local_variable = {
+				name = combustion_and_renewable_building_accumulator
+				add = level
+			}
+		}
+		remove_building = building_combustion_plant
+		if = {
+			limit = {
+				has_building = building_solar_farm
+			}
+			remove_building = building_solar_farm
+		}
+		create_building = {
+			building = building_solar_farm
+			level = local_var:combustion_and_renewable_building_accumulator
+			reserves = 1
+		}
+	}
+	every_scope_state = {
+		limit = {
+			OR = {
+				has_building = building_oil_refineries
+				has_building = building_natural_gas_well
+				has_building = building_oil_rig
+				has_building = building_oil_platform
+			}
+		}
+		if = {
+			limit = { has_building = building_oil_refineries }
+			remove_building = building_oil_refineries
+		}
+		if = {
+			limit = { has_building = building_natural_gas_well }
+			remove_building = building_natural_gas_well
+		}
+		if = {
+			limit = { has_building = building_oil_rig }
+			remove_building = building_oil_rig
+		}
+		if = {
+			limit = { has_building = building_oil_platform }
+			remove_building = building_oil_platform
+		}
+	}
+}

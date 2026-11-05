@@ -1361,6 +1361,27 @@ ai_strategy_default = {
 			limit = { has_law_or_variant = law_type:law_command_economy }
 			add = 100
 		}
+
+		# CWP 1.5's nationalization laws: the state runs everything, keeps what it owns in partly nationalized
+		# economies, or sells off what it owns (public utilities stay at the default, which privatizes)
+		if = {
+			limit = { has_law = law_type:law_total_nationalization }
+			add = 100
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_law = law_type:law_heavy_industry_nationalization
+					has_law = law_type:law_military_industry_nationalization
+					has_law = law_type:law_resource_extraction_nationalization
+				}
+			}
+			add = 0.5
+		}
+		else_if = {
+			limit = { has_law = law_type:law_no_nationalization }
+			add = -1
+		}
 	}
 
 	# Add a multiplier to the score AI assigns to particular building groups (default 1)

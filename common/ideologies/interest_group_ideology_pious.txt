@@ -15,4 +15,21 @@ ideology_pious = {
 		law_public_schools = disapprove
 		law_private_schools = disapprove
 	}
+
+	# CWP 1.5's moralists' 'conservative' ideology
+	lawgroup_biotech = {
+		law_unrestricted_human_testing = neutral
+		law_regulated_human_trials = approve
+		law_animal_testing_only = strongly_approve
+		law_no_live_testing = approve
+		law_theoretical_research_only = disapprove
+	}
+
+	# CWP 1.5's moralists' 'conservative' ideology
+	lawgroup_recreational_drugs = {
+		law_total_prohibition = neutral
+		law_tobacco_allowed = approve
+		law_alcohol_allowed = disapprove
+		law_all_drugs_allowed = strongly_disapprove
+	}
 }

@@ -16,12 +16,13 @@ scripted_effect_german_reunification = {
 	}
 
 	#Government System | May be redesigned to be more interesting
-	#(the centralization and bureaucratic system law groups were merged into the bureaucracy law group)
+	#(CWP 1.5's bureaucratic systems law group is now the bureaucracy law group)
 	if = {
 		limit = {
 			german_reunification_total_vote_government_system_mix >= german_reunification_total_vote_government_system_like_unifier
 		}
 		scope:german_unifier = {
+			activate_law = scope:not_german_unifier.active_law:lawgroup_centralization.type
 			activate_law = scope:not_german_unifier.active_law:lawgroup_bureaucracy.type
 		}
 	}

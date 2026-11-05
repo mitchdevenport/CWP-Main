@@ -1,0 +1,7 @@
+﻿l_japanese:
+ # Green technology production methods restored from CWP 1.5
+ pmg_green_tech_industry: "グリーンテック"
+ pm_no_environmental_tech: "環境技術なし"
+ pm_basic_green_tech: "基本的グリーンテック"
+ pm_more_green_tech: "改良型グリーンテック"
+ pm_advanced_green_tech: "発展型グリーンテック"

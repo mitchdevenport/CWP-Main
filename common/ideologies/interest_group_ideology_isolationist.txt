@@ -23,4 +23,22 @@ ideology_isolationist = {
 		law_cultural_exclusion = neutral
 		law_multicultural = strongly_disapprove
 	}
+
+	# CWP 1.5's ruralists' 'particularist' ideology
+	lawgroup_centralization = {
+		law_confederated = strongly_approve
+		law_federalized = approve
+		law_devolved = neutral
+		law_unitary = strongly_disapprove
+	}
+
+	# CWP 1.5's ruralists' 'particularist' ideology
+	lawgroup_nationalization = {
+		law_total_nationalization = strongly_disapprove
+		law_heavy_industry_nationalization = disapprove
+		law_military_industry_nationalization = neutral
+		law_resource_extraction_nationalization = approve
+		law_public_utility_companies = strongly_approve
+		law_no_nationalization = strongly_approve
+	}
 }

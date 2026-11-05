@@ -14712,6 +14712,7 @@ effect_free_all_subjects = {
 }
 
 effect_post_decolonization = {
+	effect_post_colonial_laws = yes
 	effect_currency_usd = yes
 	set_variable = {
 		name = decolonized_nation
@@ -14723,6 +14724,11 @@ effect_post_decolonization = {
 	}
 	onaction_monetary_variables_creation = yes
 	setup_starting_ideologies = yes
+}
+
+# A newly independent country starts confederated (CWP 1.5); its other laws come from the country it left
+effect_post_colonial_laws = {
+	activate_law = law_type:law_confederated
 }
 
 effect_remove_imperial_conference_modifiers = {

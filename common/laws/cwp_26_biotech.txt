@@ -1,0 +1,124 @@
+﻿# Biotech, restored from CWP 1.5 (master's common/laws/cwp_26_biotech.txt).
+# Victoria 3 1.14 adaptation: CWP 1.5's radicals from standard of living changes -> radicalism increases for pops of
+# every acceptance status (1.14's only radicals-from-SoL modifier also raises loyalists). CWP 1.5's small public
+# support for anything short of unrestricted testing now comes from interest group ideologies.
+
+law_unrestricted_human_testing = {
+	group = lawgroup_biotech
+	icon = "gfx/interface/icons/law_icons/state_atheism.dds"
+	progressiveness = -20
+
+	modifier = {
+		state_radicalism_increases_full_acceptance_mult = 0.1
+		state_radicalism_increases_second_rate_citizen_mult = 0.1
+		state_radicalism_increases_open_prejudice_mult = 0.1
+		state_radicalism_increases_violent_hostility_mult = 0.1
+		state_radicalism_increases_cultural_erasure_mult = 0.1
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}
+
+law_regulated_human_trials = {
+	group = lawgroup_biotech
+	icon = "gfx/interface/icons/law_icons/charitable_health_system.dds"
+	progressiveness = -10
+
+	modifier = {
+		state_mortality_mult = 0.01
+		state_radicalism_increases_full_acceptance_mult = 0.075
+		state_radicalism_increases_second_rate_citizen_mult = 0.075
+		state_radicalism_increases_open_prejudice_mult = 0.075
+		state_radicalism_increases_violent_hostility_mult = 0.075
+		state_radicalism_increases_cultural_erasure_mult = 0.075
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}
+
+law_animal_testing_only = {
+	group = lawgroup_biotech
+	icon = "gfx/interface/icons/law_icons/agrarianism.dds"
+	progressiveness = 0
+
+	modifier = {
+		state_mortality_mult = 0.02
+		state_radicalism_increases_full_acceptance_mult = 0.05
+		state_radicalism_increases_second_rate_citizen_mult = 0.05
+		state_radicalism_increases_open_prejudice_mult = 0.05
+		state_radicalism_increases_violent_hostility_mult = 0.05
+		state_radicalism_increases_cultural_erasure_mult = 0.05
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}
+
+law_no_live_testing = {
+	group = lawgroup_biotech
+	icon = "gfx/interface/icons/law_icons/no_health_system.dds"
+	progressiveness = 10
+
+	modifier = {
+		state_mortality_mult = 0.05
+		state_radicalism_increases_full_acceptance_mult = 0.025
+		state_radicalism_increases_second_rate_citizen_mult = 0.025
+		state_radicalism_increases_open_prejudice_mult = 0.025
+		state_radicalism_increases_violent_hostility_mult = 0.025
+		state_radicalism_increases_cultural_erasure_mult = 0.025
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}
+
+law_theoretical_research_only = {
+	group = lawgroup_biotech
+	icon = "gfx/interface/icons/law_icons/technocracy.dds"
+	progressiveness = 30
+
+	modifier = {
+		state_mortality_mult = 0.1
+		country_academics_pol_str_mult = -0.2
+	}
+
+	ai_will_do = {
+		exists = ruler
+		ruler = {
+			law_stance = {
+				law = law_type:law_theoretical_research_only
+				value > neutral
+			}
+		}
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+}

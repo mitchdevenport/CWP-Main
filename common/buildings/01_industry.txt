@@ -15,6 +15,7 @@ building_aircraft_manufactories = {
 		pmg_base_aircraft_manufactories
 		pmg_military_aircraft
 		pmg_automation_heavy_industry_aircraft_manufactories
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -45,6 +46,7 @@ building_aluminum_refinery = {
 		pmg_base_aluminum_refining
 		pmg_aluminum_recycling
 		pmg_automation_metallurgy_aluminum_refinery
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -77,6 +79,7 @@ building_automobile_manufactories = {
 		pmg_base_automobiles
 		pmg_propulsion_automobiles
 		pmg_automation_heavy_industry_automobile_manufactories
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -184,6 +187,7 @@ building_chemical_plants = {
 	production_method_groups = {
 		pmg_base_fertilizer
 		pmg_automation_light_industry_chemical_plants
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -213,6 +217,7 @@ building_cement_plants = {
 	production_method_groups = {
 		pmg_base_cement
 		pmg_automation_heavy_industry_cement_plants
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -362,6 +367,7 @@ building_explosives_industry = {
 	production_method_groups = {
 		pmg_base_explosives
 		pmg_automation_heavy_industry_explosives_industry
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -456,6 +462,7 @@ building_glassworks = {
 	production_method_groups = {
 		pmg_base_glassworks
 		pmg_automation_light_industry_glassworks
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -518,6 +525,7 @@ building_munitions_plants = {
 		pmg_base_munitions
 		pmg_missiles_production
 		pmg_automation_light_industry_munitions_plants
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -551,6 +559,7 @@ building_oil_refineries = {
 		pmg_refinery_process_controls
 		pmg_refinery_hydrogen_processing
 		pmg_automation_heavy_industry_oil_refineries
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -583,6 +592,7 @@ building_plastic_refineries = {
 		pmg_base_plastic_refineries
 		pmg_polymer_process_controls
 		pmg_polymer_additives
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -644,6 +654,7 @@ building_pharmaceutical_industry = {
 		pmg_base_pharmaceuticals
 		pmg_pharmaceutical_delivery
 		pmg_automation_heavy_industry_pharmaceutical_industry
+		pmg_green_tech_industry
 	}
 	
 	required_construction = construction_cost_very_high
@@ -675,6 +686,7 @@ building_shipyard = {
 		pmg_base_shipyard
 		pmg_propulsion_shipyard
 		pmg_automation_shipyard
+		pmg_green_tech_industry
 	}
 	required_construction = construction_cost_very_high
 	ownership_type = self
@@ -707,6 +719,7 @@ building_small_arms_manufactories = {
 		pmg_base_small_arms
 		pmg_base_artillery
 		pmg_automation_light_industry_small_arms_manufactories
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -739,6 +752,7 @@ building_steelworks = {
 		pmg_base_steelworks
 		pmg_steelworks_electric_arc
 		pmg_automation_metallurgy
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_very_high
@@ -797,6 +811,7 @@ building_tank_factory = {
 	production_method_groups = {
 		pmg_base_tanks
 		pmg_automation_heavy_industry_tank_factory
+		pmg_green_tech_industry
 	}
 
 	required_construction = construction_cost_high

@@ -2364,6 +2364,24 @@ decolonization.666 = {
 						}
 						add = -10
 					}
+					if = {
+						limit = {
+							has_law = law_type:law_confederated
+						}
+						add = 50
+					}
+					if = {
+						limit = {
+							has_law = law_type:law_federalized
+						}
+						add = 20
+					}
+					if = {
+						limit = {
+							has_law = law_type:law_devolved
+						}
+						add = 10
+					}
 					# Distribution of power (master: autocracy / oligarchy / anocracy)
 					if = {
 						limit = {

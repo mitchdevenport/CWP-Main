@@ -32,10 +32,9 @@ effect_nuclear_capable_nation = {
 	set_variable = air_burst_focus
 }
 
-# The original also activated law_unrestricted_human_testing (biotech law group), which does not exist in the current law design
-#effect_biochem_researching_nation = {
-#	activate_law = law_type:law_unrestricted_human_testing
-#}
+effect_biochem_researching_nation = {
+	activate_law = law_type:law_unrestricted_human_testing
+}
 
 effect_biochem_allowing_nation = {
 	add_technology_researched = industrial_chemistry

@@ -1,7 +1,7 @@
 ﻿# From modding tool, do not modify by hand!
 # Regenerated for the current law design: each value keeps its master name (used by the localization and events)
-# but evaluates the interest group stance on the equivalent current law. Weights as in CWP 1.5 (only the executive
-# value counts disapproval double).
+# but evaluates the interest group stance on the equivalent current law; centralization and nationalization use the
+# restored CWP 1.5 laws again. Weights as in CWP 1.5 (only the executive value counts disapproval double).
 
 france_constitution_ig_stance_law_executive_value = {
 	value = 0
@@ -248,7 +248,7 @@ france_constitution_ig_stance_law_unitary_value = {
 	if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_appointed_bureaucrats
+				law = law_type:law_unitary
 				value = strongly_approve
 			}
 		}
@@ -257,7 +257,7 @@ france_constitution_ig_stance_law_unitary_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_appointed_bureaucrats
+				law = law_type:law_unitary
 				value = approve
 			}
 		}
@@ -266,7 +266,7 @@ france_constitution_ig_stance_law_unitary_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_appointed_bureaucrats
+				law = law_type:law_unitary
 				value = disapprove
 			}
 		}
@@ -275,7 +275,7 @@ france_constitution_ig_stance_law_unitary_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_appointed_bureaucrats
+				law = law_type:law_unitary
 				value = strongly_disapprove
 			}
 		}
@@ -288,7 +288,7 @@ france_constitution_ig_stance_law_devolved_value = {
 	if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_devolved
 				value = strongly_approve
 			}
 		}
@@ -297,7 +297,7 @@ france_constitution_ig_stance_law_devolved_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_devolved
 				value = approve
 			}
 		}
@@ -306,7 +306,7 @@ france_constitution_ig_stance_law_devolved_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_devolved
 				value = disapprove
 			}
 		}
@@ -315,7 +315,7 @@ france_constitution_ig_stance_law_devolved_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_devolved
 				value = strongly_disapprove
 			}
 		}
@@ -328,7 +328,7 @@ france_constitution_ig_stance_law_federalized_value = {
 	if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_federalized
 				value = strongly_approve
 			}
 		}
@@ -337,7 +337,7 @@ france_constitution_ig_stance_law_federalized_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_federalized
 				value = approve
 			}
 		}
@@ -346,7 +346,7 @@ france_constitution_ig_stance_law_federalized_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_federalized
 				value = disapprove
 			}
 		}
@@ -355,7 +355,7 @@ france_constitution_ig_stance_law_federalized_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_elected_bureaucrats
+				law = law_type:law_federalized
 				value = strongly_disapprove
 			}
 		}
@@ -888,7 +888,7 @@ france_constitution_ig_stance_law_total_nationalization_value = {
 	if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_command_economy
+				law = law_type:law_total_nationalization
 				value = strongly_approve
 			}
 		}
@@ -897,7 +897,7 @@ france_constitution_ig_stance_law_total_nationalization_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_command_economy
+				law = law_type:law_total_nationalization
 				value = approve
 			}
 		}
@@ -906,7 +906,7 @@ france_constitution_ig_stance_law_total_nationalization_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_command_economy
+				law = law_type:law_total_nationalization
 				value = disapprove
 			}
 		}
@@ -915,7 +915,7 @@ france_constitution_ig_stance_law_total_nationalization_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_command_economy
+				law = law_type:law_total_nationalization
 				value = strongly_disapprove
 			}
 		}
@@ -928,7 +928,7 @@ france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
 	if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_national_champions
+				law = law_type:law_heavy_industry_nationalization
 				value = strongly_approve
 			}
 		}
@@ -937,7 +937,7 @@ france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_national_champions
+				law = law_type:law_heavy_industry_nationalization
 				value = approve
 			}
 		}
@@ -946,7 +946,7 @@ france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_national_champions
+				law = law_type:law_heavy_industry_nationalization
 				value = disapprove
 			}
 		}
@@ -955,7 +955,7 @@ france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
 	else_if = {
 		limit = {
 			law_stance = {
-				law = law_type:law_national_champions
+				law = law_type:law_heavy_industry_nationalization
 				value = strongly_disapprove
 			}
 		}

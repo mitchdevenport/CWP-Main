@@ -1,0 +1,7 @@
+﻿l_english:
+ # Green technology production methods restored from CWP 1.5
+ pmg_green_tech_industry: "Green Tech"
+ pm_no_environmental_tech: "No Environmental Tech"
+ pm_basic_green_tech: "Basic Green Tech"
+ pm_more_green_tech: "More Green Tech"
+ pm_advanced_green_tech: "Advanced Green Tech"

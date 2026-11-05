@@ -34,4 +34,23 @@ ideology_republican_paternalistic = {
 		law_militarized_police = neutral
 		law_no_police = disapprove
 	}
+
+	# CWP 1.5's elites' 'hierarchical' ideology
+	lawgroup_nationalization = {
+		law_total_nationalization = strongly_disapprove
+		law_heavy_industry_nationalization = strongly_disapprove
+		law_military_industry_nationalization = disapprove
+		law_resource_extraction_nationalization = neutral
+		law_public_utility_companies = approve
+		law_no_nationalization = strongly_approve
+	}
+
+	# CWP 1.5's elites' 'traditionalist' and 'materialistic' ideologies
+	lawgroup_environmental_regulations = {
+		law_no_environment_regulations = strongly_approve
+		law_environmental_protection_agency = approve
+		law_emission_regulation = neutral
+		law_net_zero = disapprove
+		law_pollution_ban = strongly_disapprove
+	}
 }

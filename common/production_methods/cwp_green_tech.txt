@@ -1,0 +1,97 @@
+﻿# Green technology for polluting industries, restored from CWP 1.5 (master's common/production_methods/01_industry.txt).
+# Adaptations to the current economy:
+#  - pollution cut and inputs scaled by two thirds, as the current industries pollute about two thirds as much as
+#    CWP 1.5's (median 10 against 15 per production method)
+#  - CWP 1.5's batteries (no longer a good) -> electronics, which cost the same
+#  - technologies: geological sciences -> clean air measures, environmentalism -> catalytic convertors,
+#    environmental systems engineering -> urban ecology
+# AI values as in CWP 1.5: the AI adopts the best green technology it has.
+
+pm_no_environmental_tech = {
+	texture = "gfx/interface/icons/production_method_icons/industry/no_green_tech.dds"
+	ai_value = 0
+
+	disallowing_laws = {
+		law_pollution_ban
+		law_net_zero
+		law_emission_regulation
+		law_environmental_protection_agency
+	}
+}
+
+pm_basic_green_tech = {
+	texture = "gfx/interface/icons/production_method_icons/industry/basic_green_tech.dds"
+	ai_value = 5000
+
+	unlocking_technologies = {
+		clean_air_measures
+	}
+
+	disallowing_laws = {
+		law_pollution_ban
+		law_net_zero
+		law_emission_regulation
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = -8
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electronics_add = 1
+			goods_input_electricity_add = 7
+		}
+	}
+}
+
+pm_more_green_tech = {
+	texture = "gfx/interface/icons/production_method_icons/industry/green_tech_2.dds"
+	ai_value = 10000
+
+	unlocking_technologies = {
+		catalytic_convertors
+	}
+
+	disallowing_laws = {
+		law_pollution_ban
+		law_net_zero
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = -17
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electronics_add = 1.5
+			goods_input_electricity_add = 13
+		}
+	}
+}
+
+pm_advanced_green_tech = {
+	texture = "gfx/interface/icons/production_method_icons/industry/advanced_green_tech.dds"
+	ai_value = 20000
+
+	unlocking_technologies = {
+		urban_ecology
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = -33
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electronics_add = 2
+			goods_input_electricity_add = 20
+		}
+	}
+}

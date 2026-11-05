@@ -9,6 +9,12 @@
 		}
 	}
 	has_law = law_type:law_laissez_faire
+	# CWP 1.5: no more than resource extraction may be nationalized
+	NOR = {
+		has_law = law_type:law_total_nationalization
+		has_law = law_type:law_heavy_industry_nationalization
+		has_law = law_type:law_military_industry_nationalization
+	}
 	trigger_if = {
 		limit = {
 			has_law = law_type:law_government_controlled

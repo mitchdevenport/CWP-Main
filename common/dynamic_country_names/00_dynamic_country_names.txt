@@ -340,6 +340,22 @@ GBR = {
 #Ireland
 IRE = {
 	dynamic_country_name = {
+		name = dyn_c_eire_nua
+		adjective = IRE_ADJ
+		is_main_tag_only = no
+		priority = 1
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				owns_entire_state_region = STATE_ULSTER
+				OR = {
+					has_law = law_type:law_federalized
+					has_law = law_type:law_confederated
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
 		name = dyn_c_irish_free_state
 		adjective = IRE_ADJ
 		is_main_tag_only = no
@@ -1802,6 +1818,22 @@ PRC = {
 		}
 	}
 	dynamic_country_name = {
+		name = dync_federal_republic_of_china
+		adjective = PRC_ADJ
+		is_main_tag_only = no
+		priority = 5
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					has_law = law_type:law_federalized
+					has_law = law_type:law_confederated
+				}
+			}
+			cwp_coat_of_arms_law_council_republic_trigger = no
+		}
+	}
+	dynamic_country_name = {
 		name = dync_peoples_liberation_army
 		adjective = PRC_ADJ
 		is_main_tag_only = no
@@ -2411,7 +2443,7 @@ UCA = {
 				any_state = {
 					has_building = building_banana_plantation
 				}
-				has_law_or_variant = law_type:law_command_economy
+				has_law = law_type:law_total_nationalization
 			}
 			cwp_coat_of_arms_law_council_republic_trigger = yes
 		}

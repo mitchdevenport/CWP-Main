@@ -92,6 +92,32 @@ Politics rules the 1.14 engine enforces:
   `common/static_modifiers/00_code_static_modifiers.txt`): 23 countries start with the high or very high taxes of
   their CWP 1.5 history.
 
+Law rules:
+- A law with a `parent` is a variant: in 1.14 it inherits its parent's ideological stances and cannot be rated itself,
+  so ideologies rate only parent laws (`docs/ideologies/validate.py` skips variants).
+- The game gives a new country the first law of each group it can have, and it also applies `can_enact` to the law a
+  country holds ("not permitted to retain law ..."). `unlocking_laws` naming laws of the same group (CWP 1.5's
+  one-step ladders) therefore left countries created during the game without any law in the group ("has no active law
+  for some reason" in error.log). These ladders are `can_enact` conditions that also accept the law itself and a
+  country with no law in the group yet (`cwp_has_no_<group>_law`), and each group's default law comes first in its file.
+- The law groups the 2025 rebuild dropped from CWP 1.5 (centralization, nationalization, environmental regulations,
+  family planning, biotech and recreational drugs) are restored in `common/laws/cwp_04/11/16/23/26/27_*.txt`. Their
+  interest group stances sit on the base-game-derived ideologies, following the developers' mapping of CWP 1.5's
+  interest groups onto the current ones; the ideology pack's own ideologies are capped at four (characters) and three
+  (interest groups) law groups and stay as designed. The game gives every new country the first law of each group
+  before history runs (CWP 1.5 relied on this, which left 19 countries under total prohibition), so
+  `common/history/global/cwp_restored_laws_global.txt` first gives every country CWP 1.5's most common law in each
+  group (`effect_cwp_restored_law_start_defaults`) and then the laws of CWP 1.5's country histories. Countries created
+  later inherit their origin's laws; decolonized ones start confederated, as in CWP 1.5. Effects run on enactment
+  wait for the 1946 setup (`cwp_restored_laws_setup`): the first drug law, total prohibition, banned tobacco, liquor and
+  wine in every country when the game assigned it.
+- CWP 1.5 enforced nationalization through ownership production methods, one more sector per step. 1.14 has building
+  ownership instead, so the laws work through its nationalization and privatization modifiers and the AI's
+  `nationalization_desire` (`common/ai_strategies/00_default_strategy.txt`), whose middle steps add to each building's
+  own `ai_nationalization_desire` (military industries and railways are nationalized, the rest kept).
+- Environmental regulations set the lowest green technology (`pmg_green_tech_industry`) a polluting industry may
+  use, as in CWP 1.5. Give the group to every new industry whose production methods generate pollution.
+
 Economy rules:
 - The building history (`common/history/buildings`) is generated. The generator left Czechoslovakia, Yugoslavia,
   Romania, Bulgaria, Albania, North Korea and French West Africa with nothing but government buildings, so those
