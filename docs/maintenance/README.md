@@ -225,6 +225,11 @@ Economy rules:
   uses the dollar) each raised it 1%, so by 1970 the dollar was worth 44 times the median currency instead of about
   twice, and IMF debt, counted in a reserve asset averaged over the members' currencies, cost India 55 times its
   weekly income in repayments.
+- The AI buys foreign currency only with its own money (`onaction_ai_buy_foreign_currency_calculation`). CWP 1.5 let
+  it spend its treasury plus its credit, but a purchase is a twentieth of the issuer's money supply, which counts the
+  issuer's credit, and the 1.14 credit limit is four to nine times 1.5's: the AI borrowed about 650 million for
+  reserves by 1948 (CWP 1.5's AI held its reserves almost free of debt, with world debt falling from 84 to 54
+  million), and Japan went bankrupt paying twice its income in interest.
 - Investment pools are soft-capped at the gold reserves limit (`onaction_investment_pool_softcap`): above it the
   `full_investment_pool` modifier lowers the contribution of every pop type that pays into the pool. Keep its list in
   step with the contributions in the base values of `common/static_modifiers/00_code_static_modifiers.txt`.

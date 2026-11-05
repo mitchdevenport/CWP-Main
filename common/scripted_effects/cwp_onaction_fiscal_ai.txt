@@ -131,7 +131,12 @@ onaction_ai_buy_foreign_currency_calculation = {
                             ROOT.var:pegged_currency = THIS
                         }
                     }
-                    ROOT.country_payment_ability >= {
+                    # Paid from the treasury only: the AI does not borrow for reserves. CWP 1.5 checked
+                    # country_payment_ability (treasury plus credit), but the 1.14 credit limit is four to nine times
+                    # 1.5's, and the purchases (a twentieth of the issuer's money supply, which counts its credit)
+                    # grew with it: the AI borrowed some 650 million for reserves by 1948 (Japan 120 million, at an
+                    # interest that took twice its income) where CWP 1.5's AI held its reserves almost free of debt
+                    ROOT.gold_reserve_value >= {
                         value = {
                             value = {
                                 value = THIS.gold_reserves_limit
