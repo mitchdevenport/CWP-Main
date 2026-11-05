@@ -180,7 +180,11 @@ Economy rules:
   counterpart, and CWP 1.5's creatives, professionals and slum dwellers have no pop type of their own.
 - The 1.5 release ran the AI's budget and production construction through ARoAI (it switched off the game's own
   government money spending and production building AI), which the port does not have. Its MONEY_SPENDING_* and
-  PRODUCTION_BUILDING_* defines therefore never applied and are left at vanilla's (`common/defines/cwp_ai.txt`).
+  PRODUCTION_BUILDING_* defines therefore never applied and are left at vanilla's (`common/defines/cwp_ai.txt`),
+  except that construction is no longer a must-have once the investment pool holds 52 weeks of investment
+  (`MONEY_SPENDING_CONSTRUCTION_MAX_INVESTMENT_POOL_WEEKS`): must-haves skip every budget check, and in 1947 the AI
+  had queued 2,315 construction sectors while Bahrain, Iceland, Yemen and Saudi Arabia spent five to seventeen times
+  their income building them. ARoAI only built what the budget allowed.
   Government administrations give tax capacity in 1.14 (one point per 10,000 taxed pops) on top of every state's
   own 100 (`state_tax_capacity_add` in the base values: CWP 1.5's and the base game's value), and taxation in a
   state is cut by the share of its pops above its capacity. The game's AI sizes administrations by bureaucracy alone

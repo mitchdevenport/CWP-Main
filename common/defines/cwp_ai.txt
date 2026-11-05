@@ -58,6 +58,14 @@ NAI = {
 	DIPLO_PLAY_SWAY_UNWANTED_OFFER = -1000 # For being offered unwanted wargoal or obligation
 }
 
+# ARoAI only built construction the budget allowed. The 1.14 AI treats construction as a must-have, spent whatever its
+# budget, once the investment pool holds this many weeks of investment (vanilla 52): in 1947 construction sectors
+# were 2,315 of the 2,667 buildings the AI had queued, and Bahrain, Iceland, the Maldives, Yemen and Saudi Arabia
+# spent five to seventeen times their income on them, falling into default and bankruptcy within a few years.
+NAI = {
+	MONEY_SPENDING_CONSTRUCTION_MAX_INVESTMENT_POOL_WEEKS = 520
+}
+
 # Power blocs stand in for CWP 1.5's diplomatic alignment, which only the aligned country could break. The AI bloc leader
 # still expels members, but only from a bloc with very low cohesion that also gains from losing them or is on bad
 # terms with them (base game: 100). Members leave on their own under the rules in can_leave
