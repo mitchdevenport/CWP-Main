@@ -1,4 +1,5 @@
-﻿wealth_1 = {
+﻿# Housing and healthcare: CWP 1.5's amounts (master's 00_buy_packages.txt), added to the developers' packages
+wealth_1 = {
 	political_strength = 0.1
 	goods = {
 		popneed_basic_food = 67
@@ -7,6 +8,8 @@
 		popneed_standard_clothing = 2
 		popneed_transportation = 9
 		popneed_luxury_intoxicants = 12
+		popneed_housing = 32
+		popneed_healthcare = 6
 	}
 }
 
@@ -19,6 +22,8 @@ wealth_2 = {
 		popneed_standard_clothing = 3
 		popneed_transportation = 9
 		popneed_luxury_intoxicants = 13
+		popneed_housing = 35
+		popneed_healthcare = 7
 	}
 }
 
@@ -31,6 +36,8 @@ wealth_3 = {
 		popneed_standard_clothing = 5
 		popneed_transportation = 9
 		popneed_luxury_intoxicants = 14
+		popneed_housing = 39
+		popneed_healthcare = 8
 	}
 }
 
@@ -44,6 +51,8 @@ wealth_4 = {
 		popneed_standard_clothing = 7
 		popneed_transportation = 10
 		popneed_luxury_intoxicants = 14
+		popneed_housing = 42
+		popneed_healthcare = 10
 	}
 }
 
@@ -57,6 +66,8 @@ wealth_5 = {
 		popneed_standard_clothing = 9
 		popneed_transportation = 14
 		popneed_luxury_intoxicants = 15
+		popneed_housing = 45
+		popneed_healthcare = 11
 	}
 }
 
@@ -70,6 +81,8 @@ wealth_6 = {
 		popneed_standard_clothing = 11
 		popneed_transportation = 14
 		popneed_luxury_intoxicants = 16
+		popneed_housing = 48
+		popneed_healthcare = 12
 	}
 }
 
@@ -84,6 +97,8 @@ wealth_7 = {
 		popneed_standard_clothing = 13
 		popneed_transportation = 18
 		popneed_luxury_intoxicants = 17
+		popneed_housing = 52
+		popneed_healthcare = 14
 	}
 }
 
@@ -98,6 +113,8 @@ wealth_8 = {
 		popneed_standard_clothing = 16
 		popneed_transportation = 19
 		popneed_luxury_intoxicants = 17
+		popneed_housing = 57
+		popneed_healthcare = 16
 	}
 }
 
@@ -112,6 +129,8 @@ wealth_9 = {
 		popneed_standard_clothing = 19
 		popneed_transportation = 23
 		popneed_luxury_intoxicants = 18
+		popneed_housing = 62
+		popneed_healthcare = 19
 	}
 }
 
@@ -134,6 +153,8 @@ wealth_10 = {
 		popneed_media = 2
 		popneed_tourism = 1
 		popneed_services = 5
+		popneed_housing = 68
+		popneed_healthcare = 22
 	}
 }
 
@@ -157,6 +178,8 @@ wealth_11 = {
 		popneed_media = 3
 		popneed_tourism = 2
 		popneed_services = 5
+		popneed_housing = 74
+		popneed_healthcare = 25
 	}
 }
 
@@ -180,6 +203,8 @@ wealth_12 = {
 		popneed_media = 4
 		popneed_tourism = 2
 		popneed_services = 6
+		popneed_housing = 82
+		popneed_healthcare = 28
 	}
 }
 
@@ -203,6 +228,8 @@ wealth_13 = {
 		popneed_media = 4
 		popneed_tourism = 2
 		popneed_services = 6
+		popneed_housing = 92
+		popneed_healthcare = 33
 	}
 }
 
@@ -226,6 +253,8 @@ wealth_14 = {
 		popneed_media = 6
 		popneed_tourism = 3
 		popneed_services = 7
+		popneed_housing = 103
+		popneed_healthcare = 38
 	}
 }
 
@@ -249,6 +278,8 @@ wealth_15 = {
 		popneed_media = 6
 		popneed_tourism = 3
 		popneed_services = 7
+		popneed_housing = 113
+		popneed_healthcare = 43
 	}
 }
 
@@ -272,6 +303,8 @@ wealth_16 = {
 		popneed_media = 9
 		popneed_tourism = 4
 		popneed_services = 9
+		popneed_housing = 120
+		popneed_healthcare = 47
 	}
 }
 
@@ -295,6 +328,8 @@ wealth_17 = {
 		popneed_media = 11
 		popneed_tourism = 6
 		popneed_services = 10
+		popneed_housing = 128
+		popneed_healthcare = 52
 	}
 }
 
@@ -318,6 +353,8 @@ wealth_18 = {
 		popneed_media = 14
 		popneed_tourism = 7
 		popneed_services = 12
+		popneed_housing = 137
+		popneed_healthcare = 57
 	}
 }
 
@@ -341,6 +378,8 @@ wealth_19 = {
 		popneed_media = 16
 		popneed_tourism = 8
 		popneed_services = 14
+		popneed_housing = 147
+		popneed_healthcare = 62
 	}
 }
 
@@ -364,6 +403,8 @@ wealth_20 = {
 		popneed_media = 19
 		popneed_tourism = 10
 		popneed_services = 16
+		popneed_housing = 158
+		popneed_healthcare = 68
 	}
 }
 
@@ -387,6 +428,8 @@ wealth_21 = {
 		popneed_media = 24
 		popneed_tourism = 12
 		popneed_services = 18
+		popneed_housing = 169
+		popneed_healthcare = 75
 	}
 }
 
@@ -410,6 +453,8 @@ wealth_22 = {
 		popneed_media = 24
 		popneed_tourism = 12
 		popneed_services = 22
+		popneed_housing = 181
+		popneed_healthcare = 82
 	}
 }
 
@@ -433,6 +478,8 @@ wealth_23 = {
 		popneed_media = 32
 		popneed_tourism = 16
 		popneed_services = 23
+		popneed_housing = 194
+		popneed_healthcare = 89
 	}
 }
 
@@ -456,6 +503,8 @@ wealth_24 = {
 		popneed_media = 37
 		popneed_tourism = 18
 		popneed_services = 25
+		popneed_housing = 207
+		popneed_healthcare = 98
 	}
 }
 
@@ -478,6 +527,8 @@ wealth_25 = {
 		popneed_media = 43
 		popneed_tourism = 22
 		popneed_services = 28
+		popneed_housing = 223
+		popneed_healthcare = 107
 	}
 }
 
@@ -500,6 +551,8 @@ wealth_26 = {
 		popneed_media = 50
 		popneed_tourism = 25
 		popneed_services = 31
+		popneed_housing = 240
+		popneed_healthcare = 117
 	}
 }
 
@@ -522,6 +575,8 @@ wealth_27 = {
 		popneed_media = 57
 		popneed_tourism = 28
 		popneed_services = 35
+		popneed_housing = 258
+		popneed_healthcare = 128
 	}
 }
 
@@ -544,6 +599,8 @@ wealth_28 = {
 		popneed_media = 65
 		popneed_tourism = 32
 		popneed_services = 38
+		popneed_housing = 279
+		popneed_healthcare = 140
 	}
 }
 
@@ -566,6 +623,8 @@ wealth_29 = {
 		popneed_media = 75
 		popneed_tourism = 38
 		popneed_services = 42
+		popneed_housing = 302
+		popneed_healthcare = 154
 	}
 }
 
@@ -585,6 +644,8 @@ wealth_30 = {
 		popneed_media = 81
 		popneed_tourism = 40
 		popneed_services = 98
+		popneed_housing = 327
+		popneed_healthcare = 169
 	}
 }
 
@@ -604,6 +665,8 @@ wealth_31 = {
 		popneed_media = 90
 		popneed_tourism = 45
 		popneed_services = 105
+		popneed_housing = 355
+		popneed_healthcare = 186
 	}
 }
 
@@ -623,6 +686,8 @@ wealth_32 = {
 		popneed_media = 101
 		popneed_tourism = 50
 		popneed_services = 113
+		popneed_housing = 386
+		popneed_healthcare = 204
 	}
 }
 
@@ -642,6 +707,8 @@ wealth_33 = {
 		popneed_media = 112
 		popneed_tourism = 56
 		popneed_services = 122
+		popneed_housing = 417
+		popneed_healthcare = 223
 	}
 }
 
@@ -661,6 +728,8 @@ wealth_34 = {
 		popneed_media = 126
 		popneed_tourism = 63
 		popneed_services = 132
+		popneed_housing = 450
+		popneed_healthcare = 243
 	}
 }
 
@@ -680,6 +749,8 @@ wealth_35 = {
 		popneed_media = 140
 		popneed_tourism = 70
 		popneed_services = 143
+		popneed_housing = 486
+		popneed_healthcare = 266
 	}
 }
 
@@ -699,6 +770,8 @@ wealth_36 = {
 		popneed_media = 156
 		popneed_tourism = 78
 		popneed_services = 154
+		popneed_housing = 527
+		popneed_healthcare = 290
 	}
 }
 
@@ -718,6 +791,8 @@ wealth_37 = {
 		popneed_media = 175
 		popneed_tourism = 88
 		popneed_services = 167
+		popneed_housing = 572
+		popneed_healthcare = 317
 	}
 }
 
@@ -737,6 +812,8 @@ wealth_38 = {
 		popneed_media = 195
 		popneed_tourism = 98
 		popneed_services = 182
+		popneed_housing = 621
+		popneed_healthcare = 348
 	}
 }
 
@@ -756,6 +833,8 @@ wealth_39 = {
 		popneed_media = 217
 		popneed_tourism = 108
 		popneed_services = 196
+		popneed_housing = 675
+		popneed_healthcare = 380
 	}
 }
 
@@ -775,6 +854,8 @@ wealth_40 = {
 		popneed_media = 241
 		popneed_tourism = 120
 		popneed_services = 212
+		popneed_housing = 731
+		popneed_healthcare = 414
 	}
 }
 
@@ -794,6 +875,8 @@ wealth_41 = {
 		popneed_media = 268
 		popneed_tourism = 134
 		popneed_services = 229
+		popneed_housing = 792
+		popneed_healthcare = 451
 	}
 }
 
@@ -813,6 +896,8 @@ wealth_42 = {
 		popneed_media = 298
 		popneed_tourism = 149
 		popneed_services = 247
+		popneed_housing = 856
+		popneed_healthcare = 490
 	}
 }
 
@@ -832,6 +917,8 @@ wealth_43 = {
 		popneed_media = 331
 		popneed_tourism = 166
 		popneed_services = 268
+		popneed_housing = 926
+		popneed_healthcare = 533
 	}
 }
 
@@ -851,6 +938,8 @@ wealth_44 = {
 		popneed_media = 369
 		popneed_tourism = 184
 		popneed_services = 290
+		popneed_housing = 1002
+		popneed_healthcare = 579
 	}
 }
 
@@ -870,6 +959,8 @@ wealth_45 = {
 		popneed_media = 410
 		popneed_tourism = 205
 		popneed_services = 314
+		popneed_housing = 1086
+		popneed_healthcare = 629
 	}
 }
 
@@ -889,6 +980,8 @@ wealth_46 = {
 		popneed_media = 457
 		popneed_tourism = 228
 		popneed_services = 340
+		popneed_housing = 1177
+		popneed_healthcare = 683
 	}
 }
 
@@ -908,6 +1001,8 @@ wealth_47 = {
 		popneed_media = 508
 		popneed_tourism = 254
 		popneed_services = 369
+		popneed_housing = 1277
+		popneed_healthcare = 743
 	}
 }
 
@@ -927,6 +1022,8 @@ wealth_48 = {
 		popneed_media = 566
 		popneed_tourism = 283
 		popneed_services = 400
+		popneed_housing = 1386
+		popneed_healthcare = 808
 	}
 }
 
@@ -946,6 +1043,8 @@ wealth_49 = {
 		popneed_media = 630
 		popneed_tourism = 315
 		popneed_services = 435
+		popneed_housing = 1506
+		popneed_healthcare = 878
 	}
 }
 
@@ -965,6 +1064,8 @@ wealth_50 = {
 		popneed_media = 701
 		popneed_tourism = 350
 		popneed_services = 473
+		popneed_housing = 1636
+		popneed_healthcare = 955
 	}
 }
 
@@ -984,6 +1085,8 @@ wealth_51 = {
 		popneed_media = 779
 		popneed_tourism = 390
 		popneed_services = 512
+		popneed_housing = 1779
+		popneed_healthcare = 1038
 	}
 }
 
@@ -1003,6 +1106,8 @@ wealth_52 = {
 		popneed_media = 865
 		popneed_tourism = 432
 		popneed_services = 555
+		popneed_housing = 1936
+		popneed_healthcare = 1128
 	}
 }
 
@@ -1022,6 +1127,8 @@ wealth_53 = {
 		popneed_media = 960
 		popneed_tourism = 480
 		popneed_services = 603
+		popneed_housing = 2107
+		popneed_healthcare = 1226
 	}
 }
 
@@ -1041,6 +1148,8 @@ wealth_54 = {
 		popneed_media = 1066
 		popneed_tourism = 533
 		popneed_services = 654
+		popneed_housing = 2294
+		popneed_healthcare = 1332
 	}
 }
 
@@ -1060,6 +1169,8 @@ wealth_55 = {
 		popneed_media = 1183
 		popneed_tourism = 592
 		popneed_services = 711
+		popneed_housing = 2498
+		popneed_healthcare = 1447
 	}
 }
 
@@ -1079,6 +1190,8 @@ wealth_56 = {
 		popneed_media = 1313
 		popneed_tourism = 656
 		popneed_services = 772
+		popneed_housing = 2721
+		popneed_healthcare = 1571
 	}
 }
 
@@ -1098,6 +1211,8 @@ wealth_57 = {
 		popneed_media = 1458
 		popneed_tourism = 729
 		popneed_services = 839
+		popneed_housing = 2965
+		popneed_healthcare = 1706
 	}
 }
 
@@ -1117,6 +1232,8 @@ wealth_58 = {
 		popneed_media = 1617
 		popneed_tourism = 808
 		popneed_services = 913
+		popneed_housing = 3232
+		popneed_healthcare = 1851
 	}
 }
 
@@ -1136,6 +1253,8 @@ wealth_59 = {
 		popneed_media = 1794
 		popneed_tourism = 897
 		popneed_services = 993
+		popneed_housing = 3523
+		popneed_healthcare = 2007
 	}
 }
 
@@ -1155,6 +1274,8 @@ wealth_60 = {
 		popneed_media = 1989
 		popneed_tourism = 994
 		popneed_services = 1080
+		popneed_housing = 3840
+		popneed_healthcare = 2176
 	}
 }
 
@@ -1174,6 +1295,8 @@ wealth_61 = {
 		popneed_media = 2206
 		popneed_tourism = 1103
 		popneed_services = 1176
+		popneed_housing = 4187
+		popneed_healthcare = 2358
 	}
 }
 
@@ -1193,6 +1316,8 @@ wealth_62 = {
 		popneed_media = 2445
 		popneed_tourism = 1222
 		popneed_services = 1281
+		popneed_housing = 4566
+		popneed_healthcare = 2554
 	}
 }
 
@@ -1212,6 +1337,8 @@ wealth_63 = {
 		popneed_media = 2708
 		popneed_tourism = 1354
 		popneed_services = 1396
+		popneed_housing = 4979
+		popneed_healthcare = 2764
 	}
 }
 
@@ -1231,6 +1358,8 @@ wealth_64 = {
 		popneed_media = 2999
 		popneed_tourism = 1500
 		popneed_services = 1520
+		popneed_housing = 5429
+		popneed_healthcare = 2990
 	}
 }
 
@@ -1250,6 +1379,8 @@ wealth_65 = {
 		popneed_media = 3318
 		popneed_tourism = 1659
 		popneed_services = 1656
+		popneed_housing = 5920
+		popneed_healthcare = 3231
 	}
 }
 
@@ -1269,6 +1400,8 @@ wealth_66 = {
 		popneed_media = 3668
 		popneed_tourism = 1834
 		popneed_services = 1804
+		popneed_housing = 6456
+		popneed_healthcare = 3491
 	}
 }
 
@@ -1288,6 +1421,8 @@ wealth_67 = {
 		popneed_media = 4052
 		popneed_tourism = 2026
 		popneed_services = 1966
+		popneed_housing = 7039
+		popneed_healthcare = 3767
 	}
 }
 
@@ -1307,6 +1442,8 @@ wealth_68 = {
 		popneed_media = 4473
 		popneed_tourism = 2236
 		popneed_services = 2142
+		popneed_housing = 7675
+		popneed_healthcare = 4063
 	}
 }
 
@@ -1326,6 +1463,8 @@ wealth_69 = {
 		popneed_media = 4934
 		popneed_tourism = 2467
 		popneed_services = 2334
+		popneed_housing = 8368
+		popneed_healthcare = 4378
 	}
 }
 
@@ -1345,6 +1484,8 @@ wealth_70 = {
 		popneed_media = 5437
 		popneed_tourism = 2718
 		popneed_services = 2542
+		popneed_housing = 9123
+		popneed_healthcare = 4713
 	}
 }
 
@@ -1364,6 +1505,8 @@ wealth_71 = {
 		popneed_media = 6005
 		popneed_tourism = 3002
 		popneed_services = 2777
+		popneed_housing = 9945
+		popneed_healthcare = 5070
 	}
 }
 
@@ -1383,6 +1526,8 @@ wealth_72 = {
 		popneed_media = 6626
 		popneed_tourism = 3313
 		popneed_services = 3034
+		popneed_housing = 10841
+		popneed_healthcare = 5449
 	}
 }
 
@@ -1402,6 +1547,8 @@ wealth_73 = {
 		popneed_media = 7304
 		popneed_tourism = 3652
 		popneed_services = 3312
+		popneed_housing = 11818
+		popneed_healthcare = 5852
 	}
 }
 
@@ -1421,6 +1568,8 @@ wealth_74 = {
 		popneed_media = 8044
 		popneed_tourism = 4022
 		popneed_services = 3617
+		popneed_housing = 12885
+		popneed_healthcare = 6279
 	}
 }
 
@@ -1440,6 +1589,8 @@ wealth_75 = {
 		popneed_media = 8850
 		popneed_tourism = 4425
 		popneed_services = 3949
+		popneed_housing = 14050
+		popneed_healthcare = 6732
 	}
 }
 
@@ -1459,6 +1610,8 @@ wealth_76 = {
 		popneed_media = 9729
 		popneed_tourism = 4864
 		popneed_services = 4310
+		popneed_housing = 15323
+		popneed_healthcare = 7212
 	}
 }
 
@@ -1478,6 +1631,8 @@ wealth_77 = {
 		popneed_media = 10684
 		popneed_tourism = 5342
 		popneed_services = 4704
+		popneed_housing = 16721
+		popneed_healthcare = 7722
 	}
 }
 
@@ -1497,6 +1652,8 @@ wealth_78 = {
 		popneed_media = 11724
 		popneed_tourism = 5862
 		popneed_services = 5132
+		popneed_housing = 18257
+		popneed_healthcare = 8264
 	}
 }
 
@@ -1516,6 +1673,8 @@ wealth_79 = {
 		popneed_media = 12853
 		popneed_tourism = 6426
 		popneed_services = 5599
+		popneed_housing = 19952
+		popneed_healthcare = 8842
 	}
 }
 
@@ -1535,6 +1694,8 @@ wealth_80 = {
 		popneed_media = 14080
 		popneed_tourism = 7040
 		popneed_services = 6108
+		popneed_housing = 21833
+		popneed_healthcare = 9461
 	}
 }
 
@@ -1554,6 +1715,8 @@ wealth_81 = {
 		popneed_media = 15952
 		popneed_tourism = 7976
 		popneed_services = 6895
+		popneed_housing = 23933
+		popneed_healthcare = 10127
 	}
 }
 
@@ -1573,6 +1736,8 @@ wealth_82 = {
 		popneed_media = 18058
 		popneed_tourism = 9029
 		popneed_services = 7785
+		popneed_housing = 26302
+		popneed_healthcare = 10854
 	}
 }
 
@@ -1592,6 +1757,8 @@ wealth_83 = {
 		popneed_media = 20431
 		popneed_tourism = 10216
 		popneed_services = 8788
+		popneed_housing = 29002
+		popneed_healthcare = 11655
 	}
 }
 
@@ -1611,6 +1778,8 @@ wealth_84 = {
 		popneed_media = 23103
 		popneed_tourism = 11552
 		popneed_services = 9922
+		popneed_housing = 32128
+		popneed_healthcare = 12551
 	}
 }
 
@@ -1630,6 +1799,8 @@ wealth_85 = {
 		popneed_media = 26115
 		popneed_tourism = 13058
 		popneed_services = 11206
+		popneed_housing = 35805
+		popneed_healthcare = 13577
 	}
 }
 
@@ -1649,6 +1820,8 @@ wealth_86 = {
 		popneed_media = 29509
 		popneed_tourism = 14754
 		popneed_services = 12658
+		popneed_housing = 40218
+		popneed_healthcare = 14773
 	}
 }
 
@@ -1668,6 +1841,8 @@ wealth_87 = {
 		popneed_media = 33338
 		popneed_tourism = 16669
 		popneed_services = 14306
+		popneed_housing = 45633
+		popneed_healthcare = 16209
 	}
 }
 
@@ -1687,6 +1862,8 @@ wealth_88 = {
 		popneed_media = 37662
 		popneed_tourism = 18831
 		popneed_services = 16176
+		popneed_housing = 52435
+		popneed_healthcare = 17967
 	}
 }
 
@@ -1706,6 +1883,8 @@ wealth_89 = {
 		popneed_media = 42550
 		popneed_tourism = 21275
 		popneed_services = 18301
+		popneed_housing = 61185
+		popneed_healthcare = 20180
 	}
 }
 
@@ -1725,6 +1904,8 @@ wealth_90 = {
 		popneed_media = 48084
 		popneed_tourism = 24042
 		popneed_services = 20720
+		popneed_housing = 72715
+		popneed_healthcare = 23028
 	}
 }
 
@@ -1744,6 +1925,8 @@ wealth_91 = {
 		popneed_media = 63699
 		popneed_tourism = 31850
 		popneed_services = 27516
+		popneed_housing = 88253
+		popneed_healthcare = 26754
 	}
 }
 
@@ -1763,6 +1946,8 @@ wealth_92 = {
 		popneed_media = 84425
 		popneed_tourism = 42212
 		popneed_services = 36580
+		popneed_housing = 109605
+		popneed_healthcare = 31710
 	}
 }
 
@@ -1782,6 +1967,8 @@ wealth_93 = {
 		popneed_media = 111977
 		popneed_tourism = 55988
 		popneed_services = 48676
+		popneed_housing = 139469
+		popneed_healthcare = 38375
 	}
 }
 
@@ -1801,6 +1988,8 @@ wealth_94 = {
 		popneed_media = 148651
 		popneed_tourism = 74326
 		popneed_services = 64865
+		popneed_housing = 181850
+		popneed_healthcare = 47403
 	}
 }
 
@@ -1820,6 +2009,8 @@ wealth_95 = {
 		popneed_media = 197568
 		popneed_tourism = 98784
 		popneed_services = 86585
+		popneed_housing = 242751
+		popneed_healthcare = 59669
 	}
 }
 
@@ -1839,6 +2030,8 @@ wealth_96 = {
 		popneed_media = 262959
 		popneed_tourism = 131480
 		popneed_services = 115766
+		popneed_housing = 331052
+		popneed_healthcare = 76372
 	}
 }
 
@@ -1858,6 +2051,8 @@ wealth_97 = {
 		popneed_media = 350562
 		popneed_tourism = 175281
 		popneed_services = 155114
+		popneed_housing = 460168
+		popneed_healthcare = 99001
 	}
 }
 
@@ -1877,6 +2072,8 @@ wealth_98 = {
 		popneed_media = 468323
 		popneed_tourism = 234162
 		popneed_services = 208315
+		popneed_housing = 650249
+		popneed_healthcare = 129619
 	}
 }
 
@@ -1896,5 +2093,7 @@ wealth_99 = {
 		popneed_media = 627110
 		popneed_tourism = 313555
 		popneed_services = 280567
+		popneed_housing = 931655
+		popneed_healthcare = 170667
 	}
 }

@@ -17,7 +17,7 @@ cwp_generic_economy_events.1 = {
 		every_scope_state = {
 			limit = {
 				any_scope_building = {
-					is_building_type = building_urban_center
+					is_building_type = building_housing
 					level >= 10
 				}
 			}
@@ -31,7 +31,7 @@ cwp_generic_economy_events.1 = {
 		trigger = {
 			has_variable = market_goods_more_expensive
 			market_capital.market ?= {
-				mg:services = {
+				mg:housing = {
 					market_goods_cheaper > 0
 				}
 			}
@@ -58,7 +58,7 @@ cwp_generic_economy_events.1 = {
 		trigger = {
 			has_variable = market_goods_cheaper
 			market_capital.market ?= {
-				mg:services = {
+				mg:housing = {
 					market_goods_cheaper > 0
 				}
 			}
@@ -81,7 +81,7 @@ cwp_generic_economy_events.1 = {
 		trigger = {
 			has_variable = market_goods_cheaper
 			market_capital.market ?= {
-				mg:services = {
+				mg:housing = {
 					market_goods_cheaper < 0
 				}
 			}
@@ -104,7 +104,7 @@ cwp_generic_economy_events.1 = {
 		trigger = {
 			has_variable = market_goods_more_expensive
 			market_capital.market ?= {
-				mg:services = {
+				mg:housing = {
 					market_goods_cheaper < 0
 				}
 			}

@@ -1,9 +1,8 @@
 ﻿# Static modifiers restored from master's general modifier files (society systems)
 
-# Slums (master: common/modifiers/cwp_state_modifiers.txt). Master's version raised the max level of building_slums,
-# whose levels applied these state effects per level; it now applies them directly, once per slum level.
+# Slums (master: common/modifiers/cwp_state_modifiers.txt): one more level of building_slums, whose production method
+# carries the slums' turmoil and mortality (common/production_methods/cwp_housing_healthcare.txt)
 state_slum_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_corruption.dds
-	state_turmoil_effects_mult = 0.01
-	state_mortality_mult = 0.002
+	state_building_slums_max_level_add = 1
 }

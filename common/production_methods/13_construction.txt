@@ -21,6 +21,9 @@ pm_brick_wood_construction = {
 		workforce_scaled = {
 			state_construction_mult = 0.001
 		}
+		level_scaled = {
+			state_building_housing_max_level_add = 1 # CWP 1.5: housing grows with the construction industry
+		}
 	}
 }
 
@@ -48,6 +51,9 @@ pm_steel_framed_construction = {
 		workforce_scaled = {
 			state_construction_mult = 0.0025
 		}
+		level_scaled = {
+			state_building_housing_max_level_add = 1 # CWP 1.5: housing grows with the construction industry
+		}
 	}
 }
 
@@ -56,6 +62,9 @@ pm_prefabricated_construction = {
 	state_modifiers = {
 		workforce_scaled = {
 			state_construction_mult = 0.005
+		}
+		level_scaled = {
+			state_building_housing_max_level_add = 2 # CWP 1.5: housing grows with the construction industry
 		}
 	}
 	unlocking_technologies = {

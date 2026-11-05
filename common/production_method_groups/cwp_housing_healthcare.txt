@@ -1,0 +1,56 @@
+﻿# CWP 1.5's housing, slums and hospital production method groups (master's production_method_groups). CWP 1.5's
+# ownership groups (landlords, investors, government, cooperatives by law) are left out: 1.14 sets ownership by building
+# ownership, not production methods.
+pmg_housing = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_base_housing
+	}
+}
+
+pmg_slums = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_slums_base
+	}
+}
+
+pmg_base_hospitals = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_hospitals
+		pm_trauma_centers
+		pm_surgical_hospitals
+		pm_gene_therapy_centers
+		pm_gene_editing_centers
+	}
+}
+
+pmg_treatments = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_traditional_treatments
+		pm_antibiotic_treatments
+		pm_chemotherapy
+		pm_portable_defibrillators
+		pm_mri_imaging
+		pm_hiv_treatment
+		pm_immunotherapy
+	}
+}
+
+# CWP 1.5's residential zoning (common/production_methods/cwp_residential_zoning.txt)
+pmg_residential_areas = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_residential_zoning_no
+		pm_limited_zoning
+		pm_residential_zoning
+		pm_extensive_zoning
+		pm_arcologies
+	}
+}

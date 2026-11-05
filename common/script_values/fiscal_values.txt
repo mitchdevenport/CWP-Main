@@ -749,8 +749,18 @@ inflation_growth = {
 		desc = INF_MEDIA_PRICE
 		format = "INFLATION_GROWTH_TOOLTIP_FORMAT"
 	}
-	# 1.5's basket also had healthcare, which is no longer a good (health care is an institution). Pharmaceuticals
-	# are not a stand-in: they are oversupplied in nearly every market and pushed every country into deflation.
+	# Housing (CWP 1.5)
+	add = {
+		value = inflation_housing_price
+		desc = INF_HOUSING_PRICE
+		format = "INFLATION_GROWTH_TOOLTIP_FORMAT"
+	}
+	# Healthcare (CWP 1.5)
+	add = {
+		value = inflation_healthcare_price
+		desc = INF_HEALTHCARE_PRICE
+		format = "INFLATION_GROWTH_TOOLTIP_FORMAT"
+	}
 	# From Deficit Money Supply
 	if = {
 		limit = {
@@ -1908,6 +1918,328 @@ inflation_media_price = {
 			owner = {
 				market ?= {
 					mg:media = {
+						market_goods_pricier >= 0.7
+						market_goods_pricier < 0.8
+					}
+				}
+			}
+		}
+		add = 0.7
+	}
+}
+
+# CWP 1.5's housing price in the inflation basket
+inflation_housing_price = {
+	# Housing
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier <= -0.7
+						market_goods_pricier > -0.8
+					}
+				}
+			}
+		}
+		subtract = 0.6
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier <= -0.6
+						market_goods_pricier > -0.7
+					}
+				}
+			}
+		}
+		subtract = 0.5
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier <= -0.5
+						market_goods_pricier > -0.6
+					}
+				}
+			}
+		}
+		subtract = 0.4
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier <= -0.4
+						market_goods_pricier > -0.5
+					}
+				}
+			}
+		}
+		subtract = 0.3
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier <= -0.3
+						market_goods_pricier > -0.4
+					}
+				}
+			}
+		}
+		subtract = 0.1
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier <= -0.2
+						market_goods_pricier > -0.3
+					}
+				}
+			}
+		}
+		subtract = 0.05
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier >= 0.2
+						market_goods_pricier < 0.3
+					}
+				}
+			}
+		}
+		add = 0.2
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier >= 0.3
+						market_goods_pricier < 0.4
+					}
+				}
+			}
+		}
+		add = 0.3
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier >= 0.4
+						market_goods_pricier < 0.5
+					}
+				}
+			}
+		}
+		add = 0.4
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier >= 0.5
+						market_goods_pricier < 0.6
+					}
+				}
+			}
+		}
+		add = 0.5
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier >= 0.6
+						market_goods_pricier < 0.7
+					}
+				}
+			}
+		}
+		add = 0.6
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:housing = {
+						market_goods_pricier >= 0.7
+						market_goods_pricier < 0.8
+					}
+				}
+			}
+		}
+		add = 0.7
+	}
+}
+
+# CWP 1.5's healthcare price in the inflation basket
+inflation_healthcare_price = {
+	# healthcare
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier <= -0.7
+						market_goods_pricier > -0.8
+					}
+				}
+			}
+		}
+		subtract = 0.6
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier <= -0.6
+						market_goods_pricier > -0.7
+					}
+				}
+			}
+		}
+		subtract = 0.5
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier <= -0.5
+						market_goods_pricier > -0.6
+					}
+				}
+			}
+		}
+		subtract = 0.4
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier <= -0.4
+						market_goods_pricier > -0.5
+					}
+				}
+			}
+		}
+		subtract = 0.3
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier <= -0.3
+						market_goods_pricier > -0.4
+					}
+				}
+			}
+		}
+		subtract = 0.1
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier <= -0.2
+						market_goods_pricier > -0.3
+					}
+				}
+			}
+		}
+		subtract = 0.05
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier >= 0.2
+						market_goods_pricier < 0.3
+					}
+				}
+			}
+		}
+		add = 0.2
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier >= 0.3
+						market_goods_pricier < 0.4
+					}
+				}
+			}
+		}
+		add = 0.3
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier >= 0.4
+						market_goods_pricier < 0.5
+					}
+				}
+			}
+		}
+		add = 0.4
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier >= 0.5
+						market_goods_pricier < 0.6
+					}
+				}
+			}
+		}
+		add = 0.5
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
+						market_goods_pricier >= 0.6
+						market_goods_pricier < 0.7
+					}
+				}
+			}
+		}
+		add = 0.6
+	}
+	if = {
+		limit = {
+			owner = {
+				market ?= {
+					mg:healthcare = {
 						market_goods_pricier >= 0.7
 						market_goods_pricier < 0.8
 					}

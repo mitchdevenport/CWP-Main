@@ -1,0 +1,65 @@
+﻿# CWP 1.5's residential zoning (master's pmg_residential_areas, common/production_methods/06_urban_center.txt): most of
+# CWP 1.5's housing was built in its cities. CWP 1.5's urban centers turned services into housing one for one; their
+# services were in surplus (around 60% below base price from 1946 to 1952), so they zoned as far as their urban form
+# allowed. The current urban centers make deposits and the service sectors make services, so zoning adds housing as far
+# as the urban center's amenities allow (CWP 1.5's industrial, modernist, then neo-traditional or sustainable cities),
+# arcologies also needing their technology. An urban center level has 6,000 workers, CWP 1.5's 9,500, so a level houses
+# two thirds of CWP 1.5's 15, 30, 45 or 60: the same housing per city worker.
+pm_residential_zoning_no = {
+	texture = "gfx/interface/icons/production_method_icons/urban/no_residential_zoning.dds"
+}
+
+pm_limited_zoning = {
+	texture = "gfx/interface/icons/production_method_icons/urban/limited_zoning.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_housing_add = 10
+			# balance: outputs 300 (housing 10x30)
+		}
+	}
+}
+
+pm_residential_zoning = {
+	texture = "gfx/interface/icons/production_method_icons/urban/extensive_zoning.dds"
+	unlocking_production_methods = {
+		pm_enclosed_arcades
+		pm_enclosed_shopping_malls
+		pm_vertical_shopping_malls
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_housing_add = 20
+			# balance: outputs 600 (housing 20x30)
+		}
+	}
+}
+
+pm_extensive_zoning = {
+	texture = "gfx/interface/icons/production_method_icons/urban/residential_zoning.dds"
+	unlocking_production_methods = {
+		pm_enclosed_shopping_malls
+		pm_vertical_shopping_malls
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_housing_add = 30
+			# balance: outputs 900 (housing 30x30)
+		}
+	}
+}
+
+pm_arcologies = {
+	texture = "gfx/interface/icons/production_method_icons/urban/arcologies.dds"
+	unlocking_production_methods = {
+		pm_vertical_shopping_malls
+	}
+	unlocking_technologies = {
+		hyperdense_urbanism
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_housing_add = 40
+			# balance: outputs 1200 (housing 40x30)
+		}
+	}
+}

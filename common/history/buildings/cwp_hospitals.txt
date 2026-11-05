@@ -1,0 +1,1849 @@
+﻿# CWP 1.5's hospitals of 1946 (master's common/history/buildings). Owned by the state; production methods the
+# country has the technology for (paracetamol, which trauma centers need here, comes later).
+BUILDINGS = {
+	s:STATE_ABRUZZO = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ALABAMA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ALASKA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ALENTEJO = {
+		region_state:POR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:POR"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ALGIERS = {
+		region_state:FRA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:FRA"
+						levels = 10
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ANDALUSIA = {
+		region_state:SPA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SPA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_APULIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 4
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ARAGON = {
+		region_state:SPA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SPA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ARIZONA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ARMAGNAC = {
+		region_state:FRA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:FRA"
+						levels = 11
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BAJIO = {
+		region_state:MEX = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:MEX"
+						levels = 12
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_BAVARIA = {
+		region_state:AOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:AOZ"
+						levels = 6
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_BEIRA = {
+		region_state:POR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:POR"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BOHEMIA = {
+		region_state:CZH = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CZH"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BRANDENBURG = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BREMEN = {
+		region_state:BOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:BOZ"
+						levels = 4
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BRITISH_COLUMBIA = {
+		region_state:CAN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CAN"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BRITTANY = {
+		region_state:FRA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:FRA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_BUENOS_AIRES = {
+		region_state:ARG = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ARG"
+						levels = 6
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CALABRIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CALIFORNIA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CAMPANIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CANYON_STATES = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CAPE_COLONY = {
+		region_state:SAF = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SAF"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_CAROLINAS = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CATALONIA = {
+		region_state:SPA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SPA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CHESAPEAKE = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 10
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CHUBU = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CHUGOKU = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_CUBA = {
+		region_state:CUB = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CUB"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_CUMBERLAND_PLATEAU = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_DAKOTAS = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_EASTERN_CAPE = {
+		region_state:SAF = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SAF"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_EASTERN_NORWAY = {
+		region_state:NOR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:NOR"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_EAST_ANGLIA = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_EAST_SLOVAKIA = {
+		region_state:CZH = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CZH"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_EMILIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ESTREMADURA = {
+		region_state:POR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:POR"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_FLANDERS = {
+		region_state:BEL = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:BEL"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_FLORIDA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_FRANCONIA = {
+		region_state:AOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:AOZ"
+						levels = 12
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_FRIESLAND = {
+		region_state:NET = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:NET"
+						levels = 4
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_GEORGIA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_GREAT_PLAINS = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_HANNOVER = {
+		region_state:BOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:BOZ"
+						levels = 4
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_HESSE = {
+		region_state:AOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:AOZ"
+						levels = 9
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_HIGHLANDS = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_HOKKAIDO = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_HOLLAND = {
+		region_state:NET = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:NET"
+						levels = 6
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_HOME_COUNTIES = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 9
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ILE_DE_FRANCE = {
+		region_state:FRA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:FRA"
+						levels = 10
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ILLINOIS = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_INDIANA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_JUTLAND = {
+		region_state:DEN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:DEN"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_KANSAI = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_KANTO = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_KEYSTONE = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_KIEV = {
+		region_state:RUS = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:RUS"
+						levels = 10
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_KYUSHU = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_LANCASHIRE = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 14
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_LAZIO = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 4
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_LEINSTER = {
+		region_state:IRE = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:IRE"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_LOMBARDY = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_LOUISIANA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_LOWLANDS = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_LUZON = {
+		region_state:PHI = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:PHI"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_MANITOBA = {
+		region_state:CAN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CAN"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_MEXICO = {
+		region_state:MEX = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:MEX"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_MICHIGAN = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_MIDLANDS = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 7
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_MISSISSIPPI = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_MISSISSIPPI_VALLEY = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_MORAVIA = {
+		region_state:CZH = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CZH"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_MOSCOW = {
+		region_state:RUS = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:RUS"
+						levels = 15
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_NEVADA = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_NEW_ENGLAND = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_NEW_MEXICO = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_NEW_YORK = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_NORTH_ISLAND = {
+		region_state:NZL = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:NZL"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_OAXACA = {
+		region_state:MEX = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:MEX"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_OHIO = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ONTARIO = {
+		region_state:CAN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CAN"
+						levels = 7
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_OREGON = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ORLEANS = {
+		region_state:FRA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:FRA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_OZARK_PLATEAU = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_PIEDMONT = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_QUEBEC = {
+		region_state:CAN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CAN"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_RIO_GRANDE = {
+		region_state:MEX = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:MEX"
+						levels = 18
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_ROMAGNA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SANTA_FE = {
+		region_state:ARG = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ARG"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SAN_SALVADOR = {
+		region_state:ELS = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ELS"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_SARDINIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SCHLESWIG_HOLSTEIN = {
+		region_state:BOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:BOZ"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SHIKOKU = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SICILY = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 4
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SOUTHERN_FINLAND = {
+		region_state:FIN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:FIN"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_SOUTH_ISLAND = {
+		region_state:NZL = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:NZL"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_SOUTH_JUTLAND = {
+		region_state:DEN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:DEN"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_SVEALAND = {
+		region_state:SWE = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SWE"
+						levels = 6
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_TEXAS = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 7
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_THURINGIA = {
+		region_state:DDR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:DDR"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_TOHOKU = {
+		region_state:JAP = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:JAP"
+						levels = 9
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_TRANSVAAL = {
+		region_state:SAF = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SAF"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_TUSCANY = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ULSTER = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_UMBRIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_VALENCIA = {
+		region_state:SPA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SPA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_VENETIA = {
+		region_state:ITA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:ITA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_VIRGINIAS = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_VISAYAS = {
+		region_state:PHI = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:PHI"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_WALES = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WALLONIA = {
+		region_state:BEL = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:BEL"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WASHINGTON = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WESTPHALIA = {
+		region_state:BOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:BOZ"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WEST_COUNTRY = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 7
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WEST_MIDLANDS = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WEST_SLOVAKIA = {
+		region_state:CZH = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:CZH"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WEST_SWITZERLAND = {
+		region_state:SWI = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:SWI"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WISCONSIN = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_WURTTEMBERG = {
+		region_state:AOZ = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:AOZ"
+						levels = 5
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+	s:STATE_YELLOWSTONE_TERRITORY = {
+		region_state:USA = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:USA"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_YORKSHIRE = {
+		region_state:GBR = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:GBR"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_antibiotic_treatments" }
+			}
+		}
+	}
+	s:STATE_ZEALAND = {
+		region_state:DEN = {
+			create_building = {
+				building = "building_hospitals"
+				add_ownership = {
+					country = {
+						country = "c:DEN"
+						levels = 3
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_hospitals" "pm_traditional_treatments" }
+			}
+		}
+	}
+}

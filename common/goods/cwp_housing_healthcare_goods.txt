@@ -1,0 +1,18 @@
+﻿# CWP 1.5's housing and healthcare (master's common/goods/00_goods.txt): priced in each market, not traded between markets
+housing = {
+	texture = "gfx/interface/icons/goods_icons/housing.dds"
+	cost = 30
+	category = staple
+	tradeable = no
+	prestige_factor = 5
+	consumption_tax_cost = 500
+}
+
+healthcare = {
+	texture = "gfx/interface/icons/goods_icons/healthcare.dds"
+	cost = 80
+	category = staple
+	tradeable = no
+	prestige_factor = 5
+	consumption_tax_cost = 500
+}

@@ -1,5 +1,5 @@
 ﻿# Housing For The People
-# Housing is provided by the urban centers in the current economy (the housing building and good were removed)
+# CWP 1.5: well-housed states, few slums and cheap housing
 je_housing = {
 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	
@@ -23,7 +23,7 @@ je_housing = {
 		if = {
 			limit = {
 				market_capital.market ?= {
-					mg:services = {
+					mg:housing = {
 						market_goods_cheaper < 0
 					}
 				}
@@ -33,7 +33,7 @@ je_housing = {
 		else_if = {
 			limit = {
 				market_capital.market ?= {
-					mg:services = {
+					mg:housing = {
 						market_goods_cheaper > 0
 					}
 				}
@@ -43,21 +43,31 @@ je_housing = {
 	}
 	possible = {
 		any_scope_building = {
-			is_building_type = building_urban_center
+			is_building_type = building_housing
 		}
 	}
 	complete = {
 		any_scope_state = {
 			percent >= 0.95
-			has_building = building_urban_center
+			has_building = building_housing
 			any_scope_building = {
-				is_building_type = building_urban_center
+				is_building_type = building_housing
 				occupancy < 0.95
 				level >= 10
 			}
 		}
+		any_scope_state = {
+			percent >= 0.9
+			OR = {
+				NOT = { has_building = building_slums }
+				any_scope_building = {
+					is_building_type = building_slums
+					occupancy <= 0.1
+				}
+			}
+		}
 		market_capital.market ?= {
-			mg:services = {
+			mg:housing = {
 				market_goods_cheaper > 0
 			}
 		}

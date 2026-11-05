@@ -884,6 +884,38 @@ types market_panel
 						goods_entry_button = {}
 					}
 				}
+
+				# CWP 1.5's housing and healthcare are not traded between markets, which keeps them out of the market's goods
+				# list since 1.14 (it lists traded and local goods): listed here with this market's prices
+				flowcontainer = {
+					direction = vertical
+					parentanchor = hcenter
+
+					default_header_2texts = {
+						parentanchor = hcenter
+						blockoverride "text1" {
+							text = "CWP_MARKET_NOT_TRADED_GOODS"
+						}
+					}
+
+					widget = { size = { 5 5 } }
+
+					flowcontainer = {
+						direction = vertical
+						spacing = 2
+						parentanchor = hcenter
+
+						container = {
+							datacontext = "[GetGoods('housing').WithMarketContext(Market.Self)]"
+							goods_entry_button = {}
+						}
+
+						container = {
+							datacontext = "[GetGoods('healthcare').WithMarketContext(Market.Self)]"
+							goods_entry_button = {}
+						}
+					}
+				}
 				
 				flowcontainer = {
 					direction = vertical

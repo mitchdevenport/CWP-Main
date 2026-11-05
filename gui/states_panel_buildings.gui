@@ -270,6 +270,42 @@ types state_panel_types {
 					}					
 				}
 
+				# CWP 1.5's housing and slums: placed by the game, which keeps them out of the state's urban building list
+				# (as it does the financial district)
+				divider_clean = {
+					visible = "[GreaterThan_int32(StatesPanel.AccessBuilding('building_housing').GetExpansionLevel, '(int32)0')]"
+				}
+
+				header_building_item = {
+					visible = "[GreaterThan_int32(Building.GetExpansionLevel, '(int32)0')]"
+					datacontext = "[StatesPanel.AccessBuilding('building_housing')]"
+
+					tooltipwidget = {
+						FancyTooltip_Building = {}
+					}
+
+					blockoverride "text" {
+						text = "CWP_TOTAL_HOUSING"
+					}
+				}
+
+				divider_clean = {
+					visible = "[GreaterThan_int32(StatesPanel.AccessBuilding('building_slums').GetExpansionLevel, '(int32)0')]"
+				}
+
+				header_building_item = {
+					visible = "[GreaterThan_int32(Building.GetExpansionLevel, '(int32)0')]"
+					datacontext = "[StatesPanel.AccessBuilding('building_slums')]"
+
+					tooltipwidget = {
+						FancyTooltip_Building = {}
+					}
+
+					blockoverride "text" {
+						text = "CWP_TOTAL_SLUMS"
+					}
+				}
+
 				divider_clean = {}
 			}
 
@@ -346,6 +382,17 @@ types state_panel_types {
 			buildings_list_item = {
 				visible = "[GreaterThan_int32(Building.GetExpansionLevel, '(int32)0')]"
 				datacontext = "[StatesPanel.AccessBuilding('building_financial_district')]"
+			}
+
+			# CWP 1.5's housing and slums (placed by the game, outside the state's urban building list)
+			buildings_list_item = {
+				visible = "[GreaterThan_int32(Building.GetExpansionLevel, '(int32)0')]"
+				datacontext = "[StatesPanel.AccessBuilding('building_housing')]"
+			}
+
+			buildings_list_item = {
+				visible = "[GreaterThan_int32(Building.GetExpansionLevel, '(int32)0')]"
+				datacontext = "[StatesPanel.AccessBuilding('building_slums')]"
 			}
 
 			buildings_list = {

@@ -228,6 +228,55 @@ Economy rules:
   keeps at level 0 or 1, 67 of 164 countries researched under 5 points a week in 1970 and India, Republican China,
   Egypt and Ethiopia researched nothing from 1950 to 1970.
 
+Housing and healthcare rules:
+- CWP 1.5's housing and healthcare are goods again (`common/goods/cwp_housing_healthcare_goods.txt`), priced in each
+  market and not traded between markets as in CWP 1.5, with CWP 1.5's needs and amounts for every wealth level added
+  to the developers' buy packages (`popneed_housing`, `popneed_healthcare`: healthcare also takes pharmaceuticals and
+  a little services).
+- Most housing comes, as in CWP 1.5, from the cities and the countryside. CWP 1.5's residential zoning returns to the
+  urban centers (`pmg_residential_areas`, `common/production_methods/cwp_residential_zoning.txt`). CWP 1.5's urban
+  centers turned services into housing one for one, and their services were in surplus (around 60% below base price
+  from 1946 to 1952), so they zoned as far as their urban form allowed. The current urban centers make deposits and the
+  service sectors make the services (scarcer, and priced in each state), so zoning adds housing without a trade, as far
+  as the urban center's amenities allow in place of CWP 1.5's urban forms (residential zoning with arcades, extensive
+  zoning with shopping malls, arcologies with vertical malls and hyperdense urbanism). A level houses 10, 20, 30 or 40,
+  two thirds of CWP 1.5's 15 to 60, because a level has 6,000 workers to CWP 1.5's 9,500. Measured against CWP 1.5's
+  1950 (176,000 housing a week: 53% zoning, 30% housing buildings, 16% subsistence): CWP 1.5's 30 a level for every
+  urban center doubled that and left housing at its floor price; buying the services pinned housing at its ceiling.
+  The subsistence buildings house their peasants again (1, 0.75 or 2 a level, the values the developers had left
+  commented out as services).
+- Housing (`building_housing`) is placed by the game up to the state's housing capacity, which each construction
+  sector level raises by 1 (brick and wood, steel frames) or 2 (prefabricated), CWP 1.5's values for the matching
+  construction methods: housing grows with the local construction industry. CWP 1.5's default landlord-owned housing
+  employed 400 landlords a level, which it still does (aristocrats here, 1.14 having no ownership production methods);
+  its owners are the state's investors, as for other private buildings.
+- Slums (`building_slums`) are placed by the game up to `state_max_slums` levels
+  (`common/script_values/slums_values.txt`): a level per 100,000 people at 60% unemployment or a housing price 70%
+  above base in the state's market, fewer below. They hire only the unemployed (peasants, the developers' mapping of
+  CWP 1.5's informal workers), supply a little housing and add turmoil and mortality. Neither housing nor slums use
+  the state's urbanization (1.14's urban land usage, which kept the game from placing slums at all).
+- Hospitals (`building_hospitals`) produce healthcare and lower mortality, with CWP 1.5's five hospital and seven
+  treatment methods; CWP 1.5's technologies map onto the developers' tree by era and subject (pre-war healthcare:
+  medical science, penicillin: antibiotics, trauma centers: paracetamol, blood typing: immunosuppressants,
+  defibrillators: transistors, MRI: third-generation computers, gene therapy and immunotherapy: stem cell therapy, HIV
+  treatment: antiviral drugs, cellular reconstruction: genetically modified crops) and CWP 1.5's pop types onto the
+  current ones (service workers: clerks, professionals: academics). CWP 1.5's hospitals of 1946 (123 states,
+  `common/history/buildings/cwp_hospitals.txt`) start state-owned. The production methods are generated from CWP
+  1.5's; their antibiotics method is `pm_antibiotic_treatments` because `pm_antibiotics` is the developers'
+  pharmaceutical method.
+- Housing and healthcare prices are back in the inflation basket (`inflation_housing_price`,
+  `inflation_healthcare_price` in `common/script_values/fiscal_values.txt`), and Housing For The People asks again for
+  housing, few slums and cheap housing.
+- 1.14's market panel lists only traded and local goods, so housing and healthcare get their own rows under the
+  market's goods ("Not Traded Between Markets", `gui/market_panel.gui`: the goods bound to the market with
+  `WithMarketContext`, so the rows, tooltips and goods panel show that market's prices). The state panel lists housing
+  and slums beside the urban center and financial district (`gui/states_panel_buildings.gui`), since the game leaves
+  buildings it places out of the state's building list.
+- Measured against CWP 1.5 in observer runs to 1952-1955: the average housing price of 16 major markets stays within
+  0.1 of CWP 1.5's (near base; scarcer in Argentina or Egypt, cheaper in the United States), healthcare sits around
+  15% above its base price where CWP 1.5's sat around 20% below because pops are wealthier, and the standard of living
+  is about 1.5 lower than without housing and healthcare, still above CWP 1.5's.
+
 Power bloc rules:
 - The Western and Eastern Blocs stand in for CWP 1.5's diplomatic alignment with a superpower. Members run by the AI
   only leave (or switch blocs through invitations, join requests or treaties) when the superpower falls below great

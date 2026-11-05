@@ -1,0 +1,33 @@
+﻿# CWP 1.5's housing, slums and healthcare groups (master's common/building_groups/00_building_groups.txt). Neither housing
+# nor slums use the state's urbanization (1.14's land_usage = urban), which CWP 1.5 did not have; slums hire only the
+# unemployed (1.14's hires_unemployed_only); hospitals are urban facilities.
+bg_housing = {
+	parent_group = bg_private_infrastructure
+	category = urban
+	lens = development
+	always_possible = yes
+	auto_place_buildings = yes
+	economy_of_scale = yes
+	default_building = building_housing
+	cash_reserves_max = 25000
+	urbanization = 5
+	economy_of_scale_ai_factor = 2
+}
+
+bg_slums = {
+	category = urban
+	lens = development
+	always_possible = yes
+	auto_place_buildings = yes
+	hires_unemployed_only = yes
+	cash_reserves_max = 0
+	default_building = building_slums
+	fired_pops_become_radical = no
+	economy_of_scale = no
+	urbanization = 0
+	infrastructure_usage_per_level = 0.01
+}
+
+bg_healthcare = {
+	parent_group = bg_urban_facilities
+}

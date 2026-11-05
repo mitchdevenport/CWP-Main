@@ -276,6 +276,7 @@ building_urban_center = {
 	}
 	
 	production_method_groups = {
+		pmg_residential_areas	# CWP 1.5's residential zoning: housing
 		pmg_amenities
 		pmg_public_transport_urban_center
 		pmg_urban_churches

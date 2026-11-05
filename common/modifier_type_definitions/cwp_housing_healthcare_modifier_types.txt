@@ -1,0 +1,111 @@
+﻿# Modifier types for CWP 1.5's housing, healthcare, hospitals and slums
+goods_input_housing_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_housing_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_housing_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_housing_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_healthcare_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_healthcare_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_healthcare_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_healthcare_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_building_housing_max_level_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+state_building_slums_max_level_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_housing_throughput_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_slums_throughput_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_healthcare_throughput_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

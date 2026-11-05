@@ -1,6 +1,7 @@
-﻿# Slums (informal settlements) - state scope
-# Master's slums were auto-placed building_slums levels housing slum dwellers; with no slum building,
-# slum-dweller pop type or housing good in this version, the same state-level size drives state_slum_modifier directly.
+﻿# Slums (informal settlements) - state scope. As in CWP 1.5, the game places building_slums levels up to this many
+# (one state_slum_modifier a level, common/static_modifiers/cwp_restored_society_helpers.txt): more as the state's
+# unemployment or the price of housing in its market rises. CWP 1.5 added every bracket that matched and divided the
+# running total; one bracket applies here, the highest that matches.
 state_slum_determiner = {
 	value = state_population
 	divide = 100000
@@ -9,37 +10,51 @@ state_slum_determiner = {
 
 state_max_slums = {
 	value = 0
-	#### Unemployment
 	if = {
 		limit = {
-			state_unemployment_rate >= 0.6
+			OR = {
+				state_unemployment_rate >= 0.6
+				owner.market ?= { mg:housing = { market_goods_pricier >= 0.7 } }
+			}
 		}
 		add = state_slum_determiner
 	}
 	else_if = {
 		limit = {
-			state_unemployment_rate >= 0.4
+			OR = {
+				state_unemployment_rate >= 0.4
+				owner.market ?= { mg:housing = { market_goods_pricier >= 0.5 } }
+			}
 		}
 		add = state_slum_determiner
 		divide = 1.5
 	}
 	else_if = {
 		limit = {
-			state_unemployment_rate >= 0.3
+			OR = {
+				state_unemployment_rate >= 0.3
+				owner.market ?= { mg:housing = { market_goods_pricier >= 0.4 } }
+			}
 		}
 		add = state_slum_determiner
 		divide = 2
 	}
 	else_if = {
 		limit = {
-			state_unemployment_rate >= 0.2
+			OR = {
+				state_unemployment_rate >= 0.2
+				owner.market ?= { mg:housing = { market_goods_pricier >= 0.3 } }
+			}
 		}
 		add = state_slum_determiner
 		divide = 2.5
 	}
 	else_if = {
 		limit = {
-			state_unemployment_rate >= 0.1
+			OR = {
+				state_unemployment_rate >= 0.1
+				owner.market ?= { mg:housing = { market_goods_pricier >= 0.2 } }
+			}
 		}
 		add = state_slum_determiner
 		divide = 3

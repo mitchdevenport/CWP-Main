@@ -1,0 +1,244 @@
+﻿# CWP 1.5's housing, slums and hospital production methods (master's common/production_methods/13_construction.txt
+# and 06_urban_center.txt): CWP 1.5's pop types and technologies mapped onto the current ones (docs/maintenance/
+# README.md, Housing and healthcare rules), ownership shares dropped.
+
+# CWP 1.5's landlord-owned housing (its default ownership) employed 400 landlords a level, here in the housing itself
+pm_base_housing = {
+	texture = "gfx/interface/icons/production_method_icons/urban/wooden_buildings.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_housing_add = 15
+			# balance: inputs 0; outputs 450 (housing 15x30); weekly productivity 0.900
+		}
+		level_scaled = {
+			building_employment_clerks_add = 100
+			building_employment_aristocrats_add = 400
+		}
+	}
+}
+
+pm_slums_base = {
+	texture = "gfx/interface/icons/production_method_icons/urban/wooden_buildings.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_housing_add = 2.5
+			# balance: inputs 0; outputs 75 (housing 2.5x30); weekly productivity 0.007
+		}
+		level_scaled = {
+			building_employment_peasants_add = 10000
+		}
+		unscaled = {
+			building_subsistence_output_add = 2
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_turmoil_effects_mult = 0.01
+			state_mortality_mult = 0.002
+		}
+	}
+}
+
+pm_hospitals = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_healthcare_add = 15
+			# balance: inputs 0; outputs 1200 (healthcare 15x80); weekly productivity 0.120
+		}
+		level_scaled = {
+			building_employment_clerks_add = 9000
+			building_employment_academics_add = 1000
+		}
+	}
+	state_modifiers = {
+		unscaled = {
+			state_mortality_mult = -0.025
+		}
+	}
+}
+
+pm_trauma_centers = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		paracetamol
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 5
+			goods_output_healthcare_add = 25
+			# balance: inputs 150 (electricity 5x30); outputs 2000 (healthcare 25x80); weekly productivity 0.168
+		}
+		level_scaled = {
+			building_employment_clerks_add = 7500
+			building_employment_academics_add = 3500
+		}
+	}
+	state_modifiers = {
+		unscaled = {
+			state_mortality_mult = -0.05
+		}
+	}
+}
+
+pm_surgical_hospitals = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		immunosuppressants
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 10
+			goods_output_healthcare_add = 40
+			# balance: inputs 300 (electricity 10x30); outputs 3200 (healthcare 40x80); weekly productivity 0.264
+		}
+		level_scaled = {
+			building_employment_clerks_add = 5000
+			building_employment_academics_add = 6000
+		}
+	}
+	state_modifiers = {
+		unscaled = {
+			state_mortality_mult = -0.075
+		}
+	}
+}
+
+pm_gene_therapy_centers = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		stem_cell_therapy
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 15
+			goods_input_computers_add = 5
+			goods_output_healthcare_add = 60
+			# balance: inputs 900 (electricity 15x30 + computers 5x90); outputs 4800 (healthcare 60x80); weekly productivity 0.355
+		}
+		level_scaled = {
+			building_employment_clerks_add = 2500
+			building_employment_academics_add = 8500
+		}
+	}
+	state_modifiers = {
+		unscaled = {
+			state_mortality_mult = -0.1
+		}
+	}
+}
+
+pm_gene_editing_centers = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		genetically_modified_crops
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 20
+			goods_input_computers_add = 10
+			goods_output_healthcare_add = 80
+			# balance: inputs 1500 (electricity 20x30 + computers 10x90); outputs 6400 (healthcare 80x80); weekly productivity 0.445
+		}
+		level_scaled = {
+			building_employment_academics_add = 11000
+		}
+	}
+	state_modifiers = {
+		unscaled = {
+			state_mortality_mult = -0.15
+		}
+	}
+}
+
+pm_traditional_treatments = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+}
+
+pm_antibiotic_treatments = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		antibiotics
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_pharmaceuticals_add = 15
+			goods_output_healthcare_add = 20
+			# balance: inputs 900 (pharmaceuticals 15x60); outputs 1600 (healthcare 20x80)
+		}
+	}
+}
+
+pm_chemotherapy = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		chemotherapy
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_pharmaceuticals_add = 35
+			goods_output_healthcare_add = 40
+			# balance: inputs 2100 (pharmaceuticals 35x60); outputs 3200 (healthcare 40x80)
+		}
+	}
+}
+
+pm_portable_defibrillators = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		transistors
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_pharmaceuticals_add = 35
+			goods_input_electronics_add = 5
+			goods_output_healthcare_add = 50
+			# balance: inputs 2400 (pharmaceuticals 35x60 + electronics 5x60); outputs 4000 (healthcare 50x80)
+		}
+	}
+}
+
+pm_mri_imaging = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		third_generation_computers
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_pharmaceuticals_add = 45
+			goods_input_electronics_add = 10
+			goods_output_healthcare_add = 65
+			# balance: inputs 3300 (pharmaceuticals 45x60 + electronics 10x60); outputs 5200 (healthcare 65x80)
+		}
+	}
+}
+
+pm_hiv_treatment = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		antiviral_drugs
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_pharmaceuticals_add = 55
+			goods_input_electronics_add = 15
+			goods_output_healthcare_add = 80
+			# balance: inputs 4200 (pharmaceuticals 55x60 + electronics 15x60); outputs 6400 (healthcare 80x80)
+		}
+	}
+}
+
+pm_immunotherapy = {
+	texture = "gfx/interface/icons/production_method_icons/urban/electric_streetlights.dds"
+	unlocking_technologies = {
+		stem_cell_therapy
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_pharmaceuticals_add = 65
+			goods_input_electronics_add = 25
+			goods_output_healthcare_add = 100
+			# balance: inputs 5400 (pharmaceuticals 65x60 + electronics 25x60); outputs 8000 (healthcare 100x80)
+		}
+	}
+}
