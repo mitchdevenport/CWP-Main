@@ -172,6 +172,12 @@ Economy rules:
 - CWP has its own pop types (`common/pop_types`); keep their flags in step with vanilla's. Without the 1.14
   `pays_land_tax` on peasants and farmers, land tax (all of Land-Based Taxation's tax on pops and part of the other
   taxation laws) collected nothing, and agrarian countries such as Communist China had almost no tax income.
+- The base game's pop types stand in for CWP 1.5's and carry CWP 1.5's names where one is the other
+  (`localization/<language>/replace/cwp_pop_types_l_<language>.yml`): clerks are Service Workers, bureaucrats
+  Administrators, machinists Technicians, peasants Informal Workers, clergymen Clergy, soldiers Service Members,
+  capitalists Investors and aristocrats Landlords. CWP 1.5 drew those pop types with the same base game icons
+  (`gfx/interface/icons/pops_icons` holds its copies under its own names); shopkeepers and slaves had no CWP 1.5
+  counterpart, and CWP 1.5's creatives, professionals and slum dwellers have no pop type of their own.
 - The 1.5 release ran the AI's budget and production construction through ARoAI (it switched off the game's own
   government money spending and production building AI), which the port does not have. Its MONEY_SPENDING_* and
   PRODUCTION_BUILDING_* defines therefore never applied and are left at vanilla's (`common/defines/cwp_ai.txt`).

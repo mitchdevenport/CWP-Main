@@ -1,0 +1,11 @@
+﻿l_japanese:
+ # CWP 1.5's names for the base game's pop types that stand in for its own (docs/maintenance/README.md,
+ # Economy rules); the descriptions stay the base game's, which describe what these pops do now
+ clerks_no_icon: "サービス労働者"
+ bureaucrats_no_icon: "行政官"
+ machinists_no_icon: "技術者"
+ peasants_no_icon: "非正規労働者"
+ clergymen_no_icon: "聖職者"
+ soldiers_no_icon: "軍人"
+ capitalists_no_icon: "投資家"
+ aristocrats_no_icon: "地主"

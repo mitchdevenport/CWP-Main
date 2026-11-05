@@ -1,0 +1,11 @@
+﻿l_english:
+ # CWP 1.5's names for the base game's pop types that stand in for its own (docs/maintenance/README.md,
+ # Economy rules); the descriptions stay the base game's, which describe what these pops do now
+ clerks_no_icon: "Service Workers"
+ bureaucrats_no_icon: "Administrators"
+ machinists_no_icon: "Technicians"
+ peasants_no_icon: "Informal Workers"
+ clergymen_no_icon: "Clergy"
+ soldiers_no_icon: "Service Members"
+ capitalists_no_icon: "Investors"
+ aristocrats_no_icon: "Landlords"
