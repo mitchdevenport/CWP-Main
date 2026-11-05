@@ -404,6 +404,11 @@ election_neutral.4 = {
 			has_party = yes
 			is_in_government = yes
 		}
+		# option a moves the opposition's party too (the base game's event lacks this and errors when every party governs)
+		any_interest_group = {
+			has_party = yes
+			is_in_government = no
+		}
 		any_scope_ally = {
 			infamy >= infamy_threshold:infamous
 		}

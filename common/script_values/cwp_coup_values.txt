@@ -93,6 +93,7 @@ cwp_commander_coup_strength = {
 			exists = owner
 			has_role_of_type = general
 			owner.army_size_including_raised_conscripts > 0
+			owner.cwp_country_collected_army_commander_ranks > 0	# 0 while no general has a rank yet (one just created)
 		}
 		add = {
 			desc = "cwp_coup_commander_rank_tt"
@@ -106,6 +107,7 @@ cwp_commander_coup_strength = {
 			exists = owner
 			has_role_of_type = admiral
 			owner.navy_size > 0
+			owner.cwp_country_collected_navy_commander_ranks > 0
 		}
 		add = {
 			desc = "cwp_coup_commander_rank_tt"
