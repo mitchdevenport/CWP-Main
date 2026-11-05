@@ -92,12 +92,14 @@ Politics rules the 1.14 engine enforces:
   `common/static_modifiers/00_code_static_modifiers.txt`): 23 countries start with the high or very high taxes of
   their CWP 1.5 history.
 - Communist and Nationalist China and Indonesia start with CWP 1.5's `effect_last_stand` (five years in which
-  casualties and lost battles cost no war support). Without it Nationalist China, richer in 1.14 than in CWP 1.5,
-  won its battles and the Communists capitulated within two years; with it the war is decided by exhaustion and
-  occupation as in CWP 1.5: in a 1946-1950 test the People's Republic held 31 states by 1950 and the Nationalists
-  had made their Great Retreat to Formosa (CWP 1.5's own run: the People's Republic held 31 states by 1950).
-  CWP 1.5's starting corruption effects (`effect_corruption_*`) fired events it did not have, so they are not
-  restored.
+  casualties and lost battles cost no war support). Without it the Communists capitulated within two years in every
+  1946-1955 test. With it the civil war is a toss-up decided by exhaustion and occupation: of two 1946-1950 tests
+  one went to the People's Republic (31 states by 1950, the Nationalists in Formosa after their Great Retreat) and
+  one to the Nationalists, where CWP 1.5's own run went to the People's Republic. 1.14's Nationalists are richer
+  (the 1946 package's land-based taxation on 400 million peasants) and fund mechanized brigades on 1.14's large
+  credit, but CWP 1.5's consumption-based (Nationalist) and per-capita (Communist) taxation did not help the
+  Communists: the Nationalists won both tests with it. CWP 1.5's starting corruption effects (`effect_corruption_*`)
+  fired events it did not have, so they are not restored.
 
 Law rules:
 - A law with a `parent` is a variant: in 1.14 it inherits its parent's ideological stances and cannot be rated itself,
