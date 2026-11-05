@@ -15,5 +15,7 @@
 		set_government_wage_level = high
 		set_state_religion = rel:atheist
 		set_market_capital = STATE_BEIJING
+		# The civil war: casualties and lost battles do not cost war support (5 years)
+		effect_last_stand = yes
 	}
 }
