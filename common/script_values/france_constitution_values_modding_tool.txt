@@ -1,6 +1,7 @@
 ﻿# From modding tool, do not modify by hand!
 # Regenerated for the current law design: each value keeps its master name (used by the localization and events)
-# but evaluates the interest group stance on the equivalent current law.
+# but evaluates the interest group stance on the equivalent current law. Weights as in CWP 1.5 (only the executive
+# value counts disapproval double).
 
 france_constitution_ig_stance_law_executive_value = {
 	value = 0
@@ -69,7 +70,7 @@ france_constitution_ig_stance_law_parliamentary_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -78,7 +79,7 @@ france_constitution_ig_stance_law_parliamentary_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -109,7 +110,7 @@ france_constitution_ig_stance_law_council_republic_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -118,7 +119,7 @@ france_constitution_ig_stance_law_council_republic_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -149,7 +150,7 @@ france_constitution_ig_stance_law_representative_democracy_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -158,7 +159,7 @@ france_constitution_ig_stance_law_representative_democracy_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -189,7 +190,7 @@ france_constitution_ig_stance_law_consensus_democracy_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -198,7 +199,7 @@ france_constitution_ig_stance_law_consensus_democracy_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -229,7 +230,7 @@ france_constitution_ig_stance_law_direct_democracy_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -238,7 +239,7 @@ france_constitution_ig_stance_law_direct_democracy_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -269,7 +270,7 @@ france_constitution_ig_stance_law_unitary_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -278,7 +279,7 @@ france_constitution_ig_stance_law_unitary_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -309,7 +310,7 @@ france_constitution_ig_stance_law_devolved_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -318,7 +319,7 @@ france_constitution_ig_stance_law_devolved_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -349,7 +350,7 @@ france_constitution_ig_stance_law_federalized_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -358,7 +359,7 @@ france_constitution_ig_stance_law_federalized_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -389,7 +390,7 @@ france_constitution_ig_stance_law_free_market_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -398,7 +399,7 @@ france_constitution_ig_stance_law_free_market_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -429,7 +430,7 @@ france_constitution_ig_stance_law_interventionism_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -438,7 +439,7 @@ france_constitution_ig_stance_law_interventionism_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -469,7 +470,7 @@ france_constitution_ig_stance_law_cooperative_ownership_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -478,7 +479,7 @@ france_constitution_ig_stance_law_cooperative_ownership_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -509,7 +510,7 @@ france_constitution_ig_stance_law_appointed_bureaucrats_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -518,7 +519,7 @@ france_constitution_ig_stance_law_appointed_bureaucrats_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -549,7 +550,7 @@ france_constitution_ig_stance_law_independent_bureaucrats_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -558,7 +559,7 @@ france_constitution_ig_stance_law_independent_bureaucrats_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -589,7 +590,7 @@ france_constitution_ig_stance_law_income_taxation_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -598,7 +599,7 @@ france_constitution_ig_stance_law_income_taxation_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -629,7 +630,7 @@ france_constitution_ig_stance_law_capital_gains_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -638,7 +639,7 @@ france_constitution_ig_stance_law_capital_gains_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -669,7 +670,7 @@ france_constitution_ig_stance_law_church_disestablishment_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -678,7 +679,7 @@ france_constitution_ig_stance_law_church_disestablishment_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -709,7 +710,7 @@ france_constitution_ig_stance_law_freedom_of_conscience_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -718,7 +719,7 @@ france_constitution_ig_stance_law_freedom_of_conscience_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -749,7 +750,7 @@ france_constitution_ig_stance_law_state_funded_schools_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -758,7 +759,7 @@ france_constitution_ig_stance_law_state_funded_schools_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -789,7 +790,7 @@ france_constitution_ig_stance_law_mixed_funded_schools_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -798,7 +799,7 @@ france_constitution_ig_stance_law_mixed_funded_schools_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -829,7 +830,7 @@ france_constitution_ig_stance_law_right_of_assembly_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -838,7 +839,7 @@ france_constitution_ig_stance_law_right_of_assembly_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -869,7 +870,7 @@ france_constitution_ig_stance_law_protected_speech_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -878,7 +879,7 @@ france_constitution_ig_stance_law_protected_speech_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -909,7 +910,7 @@ france_constitution_ig_stance_law_total_nationalization_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -918,7 +919,7 @@ france_constitution_ig_stance_law_total_nationalization_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -949,7 +950,7 @@ france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -958,7 +959,7 @@ france_constitution_ig_stance_law_heavy_industry_nationalization_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -989,7 +990,7 @@ france_constitution_ig_stance_law_compulsory_education_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -998,7 +999,7 @@ france_constitution_ig_stance_law_compulsory_education_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
@@ -1029,7 +1030,7 @@ france_constitution_ig_stance_law_compulsory_higher_education_value = {
 				value = disapprove
 			}
 		}
-		add = -2
+		add = -1
 	}
 	else_if = {
 		limit = {
@@ -1038,7 +1039,7 @@ france_constitution_ig_stance_law_compulsory_higher_education_value = {
 				value = strongly_disapprove
 			}
 		}
-		add = -4
+		add = -2
 	}
 }
 
