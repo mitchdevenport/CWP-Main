@@ -3,7 +3,10 @@
 # these buildings; when the rebels win (or a secession succeeds) the old government's companies die but their buildings
 # stay, and the state's new owner can never establish that company type there (error.log: "Tried to create building
 # of Type building_company_... but such a building already exists"). Annexations do not need this: the game removes
-# the buildings itself. Never remove a living company's building - the game then disbands the company.
+# the buildings itself. Companies that end in other ways (released colonies, disbanded companies) can leave their
+# building too, so every country is also swept once a year (on_yearly_pulse_country); a company always keeps its
+# building in its own country's states, so a building whose state owner has no company of its type is orphaned.
+# Never remove a living company's building - the game then disbands the company.
 # Add new company types to the list in cwp_remove_orphaned_company_buildings.
 
 # Root = state, TYPE = company type

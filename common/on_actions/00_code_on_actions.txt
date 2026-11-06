@@ -225,6 +225,10 @@ on_yearly_pulse_country = {
 				run_colonial_governor_cycle = yes
 			}
 		}
+
+		# Company buildings of dead companies, however the company ended (common/scripted_effects/cwp_company_effects.txt).
+		# 1.15 retries establishing a company in a state holding one every day ("such a building already exists")
+		cwp_remove_orphaned_company_buildings_in_country = yes
 	}
 
 	on_actions = { # delay ensures events won't fire simultaneously
