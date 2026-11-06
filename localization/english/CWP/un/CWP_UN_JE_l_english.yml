@@ -19,7 +19,10 @@
  un_interventionvoteunderway: "The [concept_united_nations] is not currently voting on another [concept_un_intervention] resolution."
  ask_for_un_intervention: "Ask for UN Intervention"
  ask_for_un_intervention_desc: "Our current war has developed not necessarily to our favor, perhaps we should ask the [concept_united_nations] for assistance?"
- je_un_intervention: "[concept_un_intervention] request from [SCOPE.sCountry('asking_un_intervention_country').GetNameNoFlag]"
+ # Concluded journal entries keep no saved scopes, so the title names the requesting country only while its vote runs
+ je_un_intervention: "[SelectLocalization(GetGlobalVariable('asking_un_intervention_country').IsSet, 'je_un_intervention_from', 'je_un_intervention_concluded')]"
+ je_un_intervention_from: "[concept_un_intervention] request from [GetGlobalVariable('asking_un_intervention_country').GetCountry.GetNameNoFlag]"
+ je_un_intervention_concluded: "[concept_un_intervention] request"
  un_intervention_requesting_country: "[SCOPE.sCountry('asking_un_intervention_country').GetNameNoFlag]"
  je_un_intervention_reason: "The [SCOPE.sCountry('asking_un_intervention_country').GetAdjectiveNoFlag] Government has formally requested a [concept_un_intervention] in their ongoing war against [SCOPE.sCountry('un_intervention_enemy_country').GetNameNoFlag]."
  je_un_intervention_goal: "UN Voting has Concluded"
