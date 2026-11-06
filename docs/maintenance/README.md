@@ -80,6 +80,12 @@ Rules from the Victoria 3 1.15 update:
 - Base-game content merged into CWP that looks at the base game's coup variables (`golpista_ig_var`,
   `coup_cooldown_var`) must use CWP's coup system instead (`cwp_coup_*` variables, `cwp_country_coup_resistance`).
 - Devastation comes only from battles (casualties) since 1.15; CWP keeps its 2.5 `DEVASTATION_FROM_BATTLES`.
+- A war goal on a country brings it into the war at once. Scripted plays must not add war goals against countries that
+  should only join later (the Korean War adds the superpowers' humiliation goals when they join through
+  `common/decisions/korea_decisions.txt`). Countries no longer capitulate automatically when their war support runs
+  out: the AI capitulates when exhausted, and every war goal held against it is then enforced.
+- The diplomatic AI trades war goals and obligations for support readily; `diplomatic_play_support` in
+  `common/ai_strategies/00_default_strategy.txt` keeps Cold War blocs on their own side.
 
 Company types need no extra buildings, but `common/scripted_effects/cwp_company_effects.txt` lists every company
 type to clean up the company buildings left behind when a civil war or secession ends (and once a year for every
