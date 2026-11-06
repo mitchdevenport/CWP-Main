@@ -2,7 +2,7 @@
   "name": "Cold War Project",
   "id": "",
   "version": "0.2.9",
-  "supported_game_version": "1.14.*",
+  "supported_game_version": "1.15.*",
   "short_description": "",
   "tags": [],
   "relationships": [],
@@ -132,6 +132,7 @@
       "events/india_events",
       "events/japan_events",
       "events/law_events",
+      "events/russia_events",
       "events/soi_events",
       "events/tech_events",
       

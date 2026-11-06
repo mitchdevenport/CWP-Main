@@ -94,10 +94,11 @@ def main():
                 if name in vanilla_files or not os.path.isfile(path):
                     continue
                 with open(path, encoding="utf-8-sig", errors="replace") as f:
-                    if f.read(len(MARKER)) == MARKER:
-                        stale.append(f"{rel_dir}/{name}")
-                        if args.prune and not args.check:
-                            os.remove(path)
+                    is_placeholder = f.read(len(MARKER)) == MARKER
+                if is_placeholder:
+                    stale.append(f"{rel_dir}/{name}")
+                    if args.prune and not args.check:
+                        os.remove(path)  # after closing it: Windows cannot delete an open file
 
     if renamed:
         print(f"{'Would rename' if args.check else 'Renamed'} {len(renamed)} file(s) to the vanilla letter case "
