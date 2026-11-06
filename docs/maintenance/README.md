@@ -4,11 +4,12 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
 
 ## After every game update
 
-1. `python docs/maintenance/vanilla_placeholders.py` - Victoria 3 1.14 does not honour
+1. `python docs/maintenance/vanilla_placeholders.py` - Victoria 3 (1.14 and 1.15) does not honour
    `replace_paths` in `.metadata/metadata.json` reliably, so every vanilla file inside a folder the mod
    replaces is overridden by a blank "CWP placeholder" file with the same name. The script adds
    placeholders for new vanilla files and reports placeholders whose vanilla file is gone (`--prune`
-   removes them). Never delete a placeholder by hand; when the mod needs a vanilla file's content, put
+   removes them). A folder the base game adds inside one CWP replaces (1.15's `events/russia_events`) is
+   only covered once it is added to `replace_paths`. Never delete a placeholder by hand; when the mod needs a vanilla file's content, put
    CWP's version at that path instead (see `common/customizable_localization/cwp_vanilla_custom_loc.txt`
    for vanilla definitions that CWP text still uses). Files that match a vanilla file name except for letter
    case are renamed to the vanilla spelling: the game would otherwise load both spellings, so on Windows the
@@ -22,6 +23,10 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
    laws and 1946 technology level, plus the base game modifiers, triggers and hooks they need
    (`cwp_vanilla_event_*.txt`, `common/on_actions/cwp_flavour_events_on_actions.txt`). Review the diff; when
    the base game renames something the events use, extend the script's mappings rather than editing the output.
+   Checks for base-game content CWP does not have (State and Revolution, the 1836 French houses, and laws,
+   ideologies, traits, journal entries and characters missing from CWP) become `always = no`. When the base game
+   rebuilds an event CWP 1.5 had around such content, CWP keeps its own copy and the script's `PINNED` list leaves
+   the base game's version out (`events/cwp_red_army_event.txt`).
 4. `python docs/maintenance/cwp_terminology.py` - regenerates CWP 1.5's terminology (divisions for battalions,
    the Education Index for literacy) in `localization/<language>/replace/cwp_terminology_l_<language>.yml` from the
    base game's current English and Japanese text, substituting only the displayed words, so the overrides keep the
@@ -30,10 +35,17 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
 5. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
    main menu and after starting a game.
 
-Known load-time messages that are not caused by script errors: six "Naval node from spline anchor ..."
-messages (anchors in CWP's spline network that only the map editor can fix), the terrain manipulator
+Known load-time messages that are not caused by script errors: six naval node messages ("Naval node from spline
+anchor ..." and "Invalid or non-sea province for a naval node ...": anchors in CWP's spline network that only the
+map editor can fix), "port hub province ... does not contain the port spline anchor" for STATE_EAST_AEGEAN_ISLANDS
+(its anchor lies in Crete), twelve "Failed to find a travel position for HQ ..." for countries whose only coastal
+state shares an island with another owner's port (Netherlands in STATE_ZULIA, Australia and South Africa in
+STATE_INDIAN_OCEAN_TERRITORY, Chile in STATE_POLYNESIA; fixing them needs the map re-split), the terrain manipulator
 checksum warning (fixed by saving in the map editor), and the `CInterestGroupTypeDatabase::ExpectedNumItems`
-assertion (CWP has more interest groups than vanilla). "submarine_base_entity has no attach point named
+assertion (CWP has more interest groups than vanilla). The `absolutist_or_tsarist_movement` and
+`royalist_or_tsarist_movement` data errors come from the base game's own 1.15 texts and appear without the mod too.
+About thirty "Variable/Flag ... is set but is never used / used but is never set" warnings come from content only
+some countries reach. "submarine_base_entity has no attach point named
 loc_figurehead" appears when a submarine leads a fleet; the base game's submarine has no such locator either. During a campaign the engine may also log single
 assertions about shipping lanes from a `NULL_OBJ` state (probably the ports behind those spline anchors), dead
 or invalid formations travelling, `War.GetWarParticipant` and interest group leaders that cannot be generated.
@@ -49,8 +61,29 @@ Journal entries added with `add_journal_entry` must not use `can_deactivate = ye
 `is_shown_when_inactive`: once deactivated they never reactivate, and the leftover inactive entry makes later
 `add_journal_entry` calls fail ("... already has a journal entry of type ..."). End them with `invalid` instead.
 
+Rules from the Victoria 3 1.15 update:
+- Journal entries end through `outcome` blocks (header, effect header, colour, conclusion text, trigger, effect,
+  flags such as `invalid_outcome`, `timeout`, `hidden`), which replaced complete/fail/invalid/timeout and their
+  `on_` effects. An outcome with an empty or missing trigger is true at once, so an entry that cannot end a certain
+  way has no outcome for it. A `timeout` needs a timeout outcome. Every entry needs `activation_description`
+  (`always = yes` as in the base game), an entry with a goal value a `<entry>_goal` text (shown with its progress
+  bar), every journal entry group and objective an `illustration`, and every mobilization option group a
+  `background`. `on_journal_entry_concluded` replaced the completed/failed on_actions, and `on_power_bloc_formed`
+  must exist.
+- The engine names a Cossack Host building in its defines, so `building_cossack_host`, `bg_cossack_host` and the
+  `country_can_found_cossack_host_bool` modifier type exist; nothing in CWP can found a host.
+- `pop_type_percent_country` takes `target = pop_type:...` and `value`. In localization, `$key|q$` is only allowed
+  inside `[...]` data statements.
+- CWP's AI keeps CWP's reach (`can_reach_target_country`/`can_reach_target_state` in
+  `common/scripted_triggers/cwp_diplomacy_triggers.txt`: strategic adjacency, or ports on both sides) instead of the
+  base game's military reach triggers (`can_reach_target_*_to_*`); base-game content merged into CWP uses CWP's.
+- Base-game content merged into CWP that looks at the base game's coup variables (`golpista_ig_var`,
+  `coup_cooldown_var`) must use CWP's coup system instead (`cwp_coup_*` variables, `cwp_country_coup_resistance`).
+- Devastation comes only from battles (casualties) since 1.15; CWP keeps its 2.5 `DEVASTATION_FROM_BATTLES`.
+
 Company types need no extra buildings, but `common/scripted_effects/cwp_company_effects.txt` lists every company
-type to clean up the company buildings left behind when a civil war or secession ends; add new company types there.
+type to clean up the company buildings left behind when a civil war or secession ends (and once a year for every
+country); add new company types there.
 
 Politics rules the 1.14 engine enforces:
 - A distribution-of-power law only holds elections (and gets parties) if the law's own `modifier` grants voting
@@ -340,7 +373,10 @@ Military rules:
   weapons facility level plus the silos' capacity; warheads beyond it decay at the stockpile divided by the storage
   each month. A country that completes the atomic bomb journal entry gets one warhead and no facility, so with no
   storage the overflow decay is skipped (CWP 1.5 divided by zero there; with the divisor clamped to 1 the warhead
-  was destroyed at the first monthly tick). The AI does not build facilities or silos on its own.
+  was destroyed at the first monthly tick). The AI does not build facilities or silos on its own. CWP 1.5's stockpile
+  maintenance produced nuclear weapon goods, so the AI kept it; without that output the AI preferred the free
+  no-production method and decommissioned its warheads (and uranium can run short in its market early on), so the methods
+  carry `ai_value`s and only players' warheads are decommissioned or degrade.
 - Do not roll random outcomes while the AI presses a scripted button, or in a journal entry's pulse. A `random_list`
   in a button's effect, or in an event the button fires (even a day later), came out the same at every AI press in a
   campaign: 25 plain failures in a row for the Soviet atomic tests in one run (rolls in scripted GUIs clicked by a
