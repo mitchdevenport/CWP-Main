@@ -77,7 +77,7 @@ types vfx_types {
 
 			shaderfile = "gfx/FX/pdxgui_default.shader"
 			effectname = "PdxGuiDefault"
-			
+
 			block "parent_anchor" {}
 			block "position" {}
 			block "size" {
@@ -85,7 +85,9 @@ types vfx_types {
 			}
 
 			block "camera_fov_y_degrees" {}
-			block "camera_position" {}		
+			block "camera_position" {}
+			block "camera_look_at" {}
+			block "camera_near_far" {}
 			block "entity_instance" {}
 			block "alpha" {}
 			block "visible" {}
@@ -117,7 +119,7 @@ types windows {
 					spriteborder = { 0 0 }
 					blend_mode = overlay
 				}
-				
+
 				modify_texture = {
 					using = texture_velvet
 				}
@@ -359,7 +361,7 @@ types windows {
 					spriteType = Corneredtiled
 					spriteborder = { 10 0 }
 					margin = { 3 0 }
-					margin_top = -84
+					margin_top = -100
 					shaderfile = "gfx/FX/pdxgui_default.shader"
 					texture = "gfx/interface/backgrounds/side_frame.dds"
 					texture_density = 2
@@ -479,16 +481,16 @@ types windows {
 								}
 							}
 						}
-						
+
 						widget = {
 							block "edit_visibility" {
 								visible = no
 							}
-							
+
 							block "edit_tooltip" {
 								tooltip = "EDIT"
 							}
-							
+
 							size = { 30 30 }
 							position = { 48 59 }
 
@@ -502,9 +504,9 @@ types windows {
 							block "top_left_button_visibility" {
 								visible = no
 							}
-							
+
 							block "top_left_button_tooltip" {}
-							
+
 							size = { 30 30 }
 							position = { 48 16 }
 
@@ -712,7 +714,7 @@ types windows {
 				}
 
 				align = hcenter|nobaseline
-				size = { 395 40 }
+				size = { 375 40 }
 				multiline = yes
 				fontsize_min = 17
 				elide = right
@@ -866,7 +868,7 @@ types windows {
 			margin_left = 50
 			layoutpolicy_vertical = expanding
 			layoutpolicy_horizontal = preferred
-			
+
 			block "content_margin_right" {
 				margin_right = 45
 			}
@@ -988,7 +990,7 @@ template = map_modes_button_position {
 	position = { 607 102 }
 }
 
-### The below visible state templates are used to hide certain UI HUD elements when in fullscreen panels. The only difference between them is if the Treaty Draft panel should be considered or not. 
+### The below visible state templates are used to hide certain UI HUD elements when in fullscreen panels. The only difference between them is if the Treaty Draft panel should be considered or not.
 
 ### If the widget should NOT be visible in fullscreens, not taking the Treaty Draft panel into account.
 template fullscreen_hide {

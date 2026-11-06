@@ -69,11 +69,14 @@ types pop_details_panel
 							scissor = yes
 
 							icon = {
-								size = { @panel_width_plus_14 200 }
-								scale = 2
+								size = { @panel_width_plus_14 400 }
+								gfxtype = propstretchedicongfx
 								texture = "[Pop.GetState.GetBestTexture]"
 								alpha = 0.6
-								using = fade_top_illus
+								mipmaplodbias = 1.5
+								shaderfile = "gfx/FX/gui_blur.shader"
+								effectname = "GuiBlur"
+								using = illus_top_shadow_bottom_fade
 								parentanchor = hcenter
 							}
 						}
@@ -115,7 +118,7 @@ types pop_details_panel
 								}
 							}
 						}
-						
+
 						# Starvation icon
 						icon = {
 							visible = "[Or(Pop.IsInStarvation, Pop.IsInSevereStarvation)]"
@@ -131,7 +134,7 @@ types pop_details_panel
 								parentanchor = center
 								texture = "gfx/interface/icons/famine_icons/mild_starvation.dds"
 							}
-							
+
 							icon = {
 								visible = "[Pop.IsInSevereStarvation]"
 								size = { 60 60 }
@@ -1101,7 +1104,7 @@ types pop_details_panel
 	}
 
 	type consumption_goods_fancy = button {
-		
+
 		datacontext = "[PopConsumptionGoods.GetGoods]"
 
 		size = { 60 80 }
@@ -1135,7 +1138,7 @@ types pop_details_panel
 			block "goods_consumption_info" {
 				raw_text = "#v [PopConsumptionGoods.GetConsumptionRatio|1%v]#!"
 			}
-			
+
 			background = {
 				using = dark_area
 				margin = { -5 0 }
@@ -1162,11 +1165,11 @@ types pop_details_panel
 
 	type consumption_goods_list_item = widget {
 
-		
+
 		datacontext = "[PopConsumptionGoods.GetGoods]"
 
 		size = { @panel_width 50 }
-		
+
 		background = {
 			using = entry_bg_simple
 		}
@@ -1211,11 +1214,11 @@ types pop_details_panel
 			}
 
 			vertical_divider = {}
-			
+
 			widget = {
 				tooltip = "[Goods.GetStatePriceDesc]"
 				size = { 130 55 }
-				
+
 				textbox = {
 					align = left|nobaseline
 					text = "[Goods.GetCompareIconAgainstBasePrice( Goods.GetStatePrice )]"
@@ -1270,7 +1273,7 @@ types pop_details_panel
 							min = 0
 							max = 0.75
 						}
-						
+
 						blockoverride "value_left" {
 							value = "[FixedPointToFloat(Goods.GetPercentageDeltaAgainstBasePrice(Goods.GetStatePrice))]"
 						}

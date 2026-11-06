@@ -183,7 +183,7 @@ types production_methods
 				parentanchor = bottom|right
 				position = { -10 -5 }
 				spacing = 5
-				
+
 				### nationalize
 				building_type_nationalize_button = {
 					size = { 40 40 }
@@ -199,14 +199,14 @@ types production_methods
 
 				### subsidize
 				building_type_subsidize_toggle = {
-					size = { 40 40 } 
+					size = { 40 40 }
 				}
 
 				### auto expand
 				building_type_auto_expand_toggle = {
-					size = { 40 40 } 
+					size = { 40 40 }
 				}
-				
+
 				### expand
 				button_icon_round_map_interaction = {
 					size = { 40 40 }
@@ -264,6 +264,8 @@ types production_methods
 					blockoverride "extra_items_in_production_methods_list" {
 						military_building_combat_unit_summary = {
 							parentanchor = right|vcenter
+
+							blockoverride "combat_stats" {}
 
 							blockoverride "icon_size" {
 								size = { 50 50 }
@@ -535,7 +537,7 @@ types production_methods
 		expanded_list = {
 			visible = no
 			using = expanded_list_bg
-			
+
 			blockoverride "dark_area_alpha" {
 				alpha = 0.5
 			}
@@ -617,7 +619,7 @@ types production_methods
 			section_header_button = {
 				position = { 50 0 }
 				size = { 440 38 }
-				
+
 				blockoverride "left_text" {
 					raw_text = "#v [BuildingType.GetNameNoFormatting]#!"
 				}
@@ -628,11 +630,11 @@ types production_methods
 						tooltip = "PRODUCTIVITY_SPAN_TOOLTIP"
 					}
 				}
-				
+
 				blockoverride "onclick" {
 					onclick = "[BuildingProductionMethodsEntry.ToggleExpand]"
 				}
-				
+
 				blockoverride "onclick_showmore" {
 					visible = "[Not(BuildingProductionMethodsEntry.IsExpanded)]"
 				}
@@ -653,7 +655,7 @@ types production_methods
 					margin = { 0 0 }
 
 					### production methods grouped
-					container = {						
+					container = {
 						fixedgridbox = {
 							datamodel = "[BuildingProductionMethodsEntry.GetBuildingType.AccessProductionMethodGroups]"
 							flipdirection = yes
@@ -674,7 +676,7 @@ types production_methods
 										size = { 100% 100% }
 										onclick = "[RightClickMenuManager.ToggleSwitchProductionMethodMenuForType(BuildingProductionMethodsEntry.GetBuildingType, ProductionMethodGroup.AccessSelf, PdxGuiWidget.AccessSelf)]"
 									}
-									
+
 									### pm icon
 									icon = {
 										visible = "[BuildingProductionMethodsEntry.HasAllSameProductionMethod( ProductionMethodGroup.Self )]"
@@ -682,7 +684,7 @@ types production_methods
 										parentanchor = center
 										texture = "[BuildingProductionMethodsEntry.GetAllSameProductionMethodTexture( ProductionMethodGroup.Self )]"
 									}
-									
+
 									### mixed pm icon
 									icon = {
 										visible = "[Not( BuildingProductionMethodsEntry.HasAllSameProductionMethod( ProductionMethodGroup.Self ) )]"
@@ -690,7 +692,7 @@ types production_methods
 										parentanchor = center
 										texture = "[ProductionMethodGroup.GetMixedIcon]"
 									}
-									
+
 									### new pm
 									has_new_pm_icon = {
 										position = { -2 2 }
@@ -699,7 +701,7 @@ types production_methods
 											visible = "[GetPlayer.HasNewProductionMethodInGroup( ProductionMethodGroup.Self )]"
 										}
 									}
-																		
+
 
 									### nr available
 									textbox = {
@@ -709,7 +711,7 @@ types production_methods
 										autoresize = yes
 										align = right|nobaseline
 										visible = "[GreaterThan_int32( ProductionMethodGroup.GetNumAvailableOptionsForBuildingType(BuildingProductionMethodsEntry.GetBuildingType), '(int32)1')]"
-										tooltip = "PRODUCTION_METHOD_OPTIONS_BULK"
+										tooltip = "PRODUCTION_METHOD_OPTIONS_BULK_ENTRY"
 										using = tooltip_above
 										using = fontsize_small
 
@@ -732,7 +734,7 @@ types production_methods
 				}
 			}
 
-			
+
 
 			### PRODUCTIVITY SPAN ###
 			textbox = {
@@ -1015,14 +1017,14 @@ types production_methods
 				blockoverride "icon" {
 					texture = "gfx/interface/buttons/button_icons/plus.dds"
 				}
-				
+
 				onclick = "[BuildingType.ActivateExpansionLens]"
 				using = select_button_sound
 				visible = "[And(Or( BuildingType.IsBuildable, BuildingType.IsExpandable ), Not(BuildingType.GeneratesCombatUnits))]"
 				tooltip = "EXPAND_TOOLTIP_BUILDING_TYPE"
 			}
-		}	
-	}	
+		}
+	}
 
 	type ship_construction_sector_actions = hbox {
 		hbox = {
@@ -1094,7 +1096,7 @@ types production_methods
 
 						alpha = "[TransparentIfZero(Country.GetShipConstructionGoodsExpenses)]"
 						raw_text = "[GetPlayer.MakeScope.Var('cwp_currency').GetFlagName] [Negate(Country.GetShipConstructionGoodsExpenses)|D+]"
-						
+
 						tooltip = "SHIP_CONSTRUCTION_GOODS_EXPENSES_BREAKDOWN"
 					}
 
@@ -1168,7 +1170,7 @@ types production_methods
 				blockoverride "icon" {
 					texture = "gfx/interface/buttons/button_icons/plus.dds"
 				}
-				
+
 				onclick = "[BuildingType.ActivateExpansionLens]"
 				using = select_button_sound
 				visible = "[And(Or(BuildingType.IsBuildable, BuildingType.IsExpandable), Not(BuildingType.GeneratesCombatUnits))]"

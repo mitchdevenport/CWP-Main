@@ -84,7 +84,7 @@ types timekeeper
 			texture = "gfx/interface/icons/generic_icons/timekeeper_night.dds"
 		}
 		icon = {
-			size = { 13 13 } 
+			size = { 13 13 }
 			visible = "[EqualTo_int32(TimeKeeper.GetTickOfDay,'(int32)1')]"
 			tooltip = "HOUR_MORNING"
 			texture = "gfx/interface/icons/generic_icons/timekeeper_morning.dds"
@@ -93,7 +93,7 @@ types timekeeper
 			size = { 13 13 }
 			visible = "[EqualTo_int32(TimeKeeper.GetTickOfDay,'(int32)2')]"
 			tooltip = "HOUR_AFTERNOON"
-			texture = "gfx/interface/icons/generic_icons/timekeeper_afternoon.dds" 
+			texture = "gfx/interface/icons/generic_icons/timekeeper_afternoon.dds"
 		}
 		icon = {
 			size = { 13 13 }
@@ -366,7 +366,7 @@ types timekeeper
 			}
 
 			flowcontainer = {
-				position = { 50 -2 }
+				position = { 50 -4 }
 				parentanchor = vcenter
 				datacontext = "[AccessMetaPlayer.AccessPlayedOrObservedCountry]"
 				spacing = 10
@@ -413,7 +413,7 @@ types timekeeper
 						flowcontainer = {
 							widget = {
 								size = { 29 29 }
-							
+
 								icon = {
 									visible = "[Not(Country.IsConstructionPaused)]"
 									size = { 29 29 }
@@ -494,7 +494,7 @@ types timekeeper
 							}
 						}
 					}
-				}		
+				}
 
 				flowcontainer = {
 					direction = vertical
@@ -760,7 +760,7 @@ types timekeeper
 							using = fontsize_small
 							default_format = "#variable"
 						}
-						
+
 						tick_of_day_icon = {}
 					}
 				}
@@ -1260,6 +1260,25 @@ types timekeeper
 						size = { 24 24 }
 						onclick = "[ToggleMusicPlayer]"
 						tooltip = "MUSIC_PLAYER_HEADER"
+
+						button = {
+							size = { 0 0 }
+							onclick = "[MusicPlayer.OnPreviousTrack]"
+							enabled = "[MusicPlayer.HasPreviousTrack]"
+							input_action = "music_previous_track"
+						}
+
+						button = {
+							size = { 0 0 }
+							onclick = "[MusicPlayer.OnTogglePlayPause]"
+							input_action = "music_play_pause"
+						}
+
+						button = {
+							size = { 0 0 }
+							onclick = "[MusicPlayer.OnNextTrack]"
+							input_action = "music_next_track"
+						}
 					}
 				}
 			}
