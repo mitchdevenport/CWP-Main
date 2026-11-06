@@ -131,6 +131,7 @@ effect_remove_wargoals = {
 	effect_un_remove_wargoal_of_type = { TYPE = revoke_all_claims }
 	effect_un_remove_wargoal_of_type = { TYPE = contain_threat }
 	effect_un_remove_wargoal_of_type = { TYPE = annex_country }
+	effect_un_remove_wargoal_of_type = { TYPE = korean_unification }
 	effect_un_remove_wargoal_of_type = { TYPE = unification }
 	effect_un_remove_wargoal_of_type = { TYPE = unification_leadership }
 	effect_un_remove_wargoal_of_type = { TYPE = liberate_subject }

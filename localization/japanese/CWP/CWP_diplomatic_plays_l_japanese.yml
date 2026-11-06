@@ -75,5 +75,10 @@
  # Untranslated: English text kept until a Japanese translation is available
  dp_korean_unification_desc: "Sets the initiating [concept_war_goal] to reunite the Korean peninsula under a single government."
  dp_korean_unification_tooltip: "#header Start a $dp_korean_unification$ [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$dp_korean_unification_desc$"
+ war_goal_korean_unification_type_name: "$war_goal_annex_country_type_name$"
+ war_goal_korean_unification_type_desc: "$war_goal_annex_country_type_desc$ この戦争目標は戦争が終結したときにのみ強制され、戦争中に目標を支配しても強制されません。"
+ war_goal_korean_unification: "$war_goal_annex_country$"
+ war_goal_korean_unification_desc: "$war_goal_annex_country_desc$"
+ war_goal_korean_unification_sway_desc: "$war_goal_annex_country_sway_desc$"
  dp_reassert_dominion_desc: "Sets the initiating [concept_war_goal] to bring the targeted [concept_country] back under our rule as a [concept_dominion]."
  dp_reassert_dominion_tooltip: "#header Start a $dp_reassert_dominion$ [concept_diplomatic_play]#!\n$TOOLTIP_DELIMITER$\n$dp_reassert_dominion_desc$"
