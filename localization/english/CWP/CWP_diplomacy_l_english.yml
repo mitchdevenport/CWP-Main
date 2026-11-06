@@ -4,6 +4,7 @@
   military_occupation_desc: "[concept_military_occupation]"
   military_occupation_action_ask_to_break_name: "Ask for de-occupation"
   subject_type_military_occupation: "[concept_military_occupation]"
+  subject_type_military_occupation_no_icon: "$concept_military_occupation$"
   military_occupation_pact_desc: "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is a [concept_military_occupation] of [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
   military_occupation_proposal_notification_break_name: "[INITIATOR_COUNTRY.GetName] is requesting ending [concept_military_occupation]."
   military_occupation_proposal_notification_break_desc: "[INITIATOR_COUNTRY.GetName] is requesting ending our [concept_military_occupation] of them."

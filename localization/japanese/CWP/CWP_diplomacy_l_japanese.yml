@@ -50,6 +50,7 @@
  # Untranslated: English text kept until a Japanese translation is available
  military_occupation_desc: "[concept_military_occupation]"
  subject_type_military_occupation: "[concept_military_occupation]"
+ subject_type_military_occupation_no_icon: "$concept_military_occupation$"
  military_occupation_action_name: "[concept_military_occupation]"
  military_occupation_action_notification_break_name: "Occupation Ended"
  military_occupation_action_notification_break_desc: "[INITIATOR_COUNTRY.GetName] have ended their [concept_military_occupation] of our country. We are independent once again."
