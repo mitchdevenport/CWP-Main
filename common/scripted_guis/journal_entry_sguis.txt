@@ -91,3 +91,11 @@ je_meiji_restoration_get_faction_sgui = {
 
     is_valid = { always = no }
 }
+
+# The base game's character panel (gui/character_panel.gui) shows Captain Nemo's Nautilus background while this is
+# valid (1.15, State and Revolution); CWP has no Captain Nemo
+character_is_captain_nemo_sgui = {
+	scope = character
+
+	is_valid = { always = no }
+}
