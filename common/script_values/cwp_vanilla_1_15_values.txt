@@ -1,18 +1,6 @@
 ﻿# Base game 1.15 definitions that CWP's merged content uses (copied from the base game's files, which
 # CWP's placeholders blank). Generated with the 1.15 port's dependency check.
 
-# from ai_script_values.txt
-ai_military_reach_conquer = 0.35
-
-# from ai_script_values.txt
-ai_military_reach_conquer_min_shippable_strength = 0.5
-
-# from ai_script_values.txt
-ai_military_reach_protect = 0.2
-
-# from ai_script_values.txt
-ai_military_reach_protect_min_shippable_strength = 0.1
-
 # from negotiation_values.txt
 negotiation_min_enactment_chance = 0
 
@@ -26,12 +14,6 @@ war_support_from_blockade = {
 retired_commander_politician_cooldown_years = {
 	value = define:NCharacters|RETIRED_COMMANDER_POLITICIAN_COOLDOWN_YEARS
 }
-
-# from ai_script_values.txt
-ai_military_reach_coerce = 0.25
-
-# from ai_script_values.txt
-ai_military_reach_coerce_min_shippable_strength = 0.2
 
 # from 00_diplomacy_values.txt
 treaty_binding_period_commitment_acceptance = {

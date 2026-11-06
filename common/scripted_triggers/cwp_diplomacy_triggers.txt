@@ -193,6 +193,8 @@ is_in_civil_war = {
 	}
 }
 
+# CWP's reach for the AI: strategic adjacency, or ports on both sides, without the base game's carrying capacity
+# requirement. CWP keeps it under 1.15 in place of the base game's can_reach_target_*_to_* military reach triggers.
 # 1.14 signature: can_reach_target_country = { TARGET_COUNTRY = <country> }
 can_reach_target_country = {
 	has_diplomatic_relevance = $TARGET_COUNTRY$

@@ -1,40 +1,6 @@
 ﻿# Base game 1.15 definitions that CWP's merged content uses (copied from the base game's files, which
 # CWP's placeholders blank). Generated with the 1.15 port's dependency check.
 
-# from 00_scripted_triggers.txt
-can_reach_target_country_to_conquer = {
-	$TARGET_COUNTRY$ = { save_temporary_scope_as = military_reach_target }
-	custom_tooltip = {
-		text = can_reach_to_conquer_tt
-		has_diplomatic_relevance = $TARGET_COUNTRY$
-		has_military_reach = {
-			target = $TARGET_COUNTRY$
-			min_reach = ai_military_reach_conquer
-			min_shippable_strength = ai_military_reach_conquer_min_shippable_strength
-		}
-	}
-}
-
-# from 00_scripted_triggers.txt
-can_reach_target_country_to_protect = {
-	$TARGET_COUNTRY$ = { save_temporary_scope_as = military_reach_target }
-	custom_tooltip = {
-		text = can_reach_to_protect_tt
-		has_diplomatic_relevance = $TARGET_COUNTRY$
-		OR = {
-			AND = {
-				is_power_bloc_leader = yes
-				is_in_same_power_bloc = $TARGET_COUNTRY$
-			}
-			has_military_reach = {
-				target = $TARGET_COUNTRY$
-				min_reach = ai_military_reach_protect
-				min_shippable_strength = ai_military_reach_protect_min_shippable_strength
-			}
-		}
-	}
-}
-
 # from 00_ep2_victoria_scripted_triggers.txt
 character_has_valid_reason_for_coup = {
     save_temporary_scope_as = coupist_to_be
@@ -102,20 +68,6 @@ ig_could_coup_government = {
     }
 }
 
-# from 00_scripted_triggers.txt
-can_reach_target_country_to_coerce = {
-	$TARGET_COUNTRY$ = { save_temporary_scope_as = military_reach_target }
-	custom_tooltip = {
-		text = can_reach_to_coerce_tt
-		has_diplomatic_relevance = $TARGET_COUNTRY$
-		has_military_reach = {
-			target = $TARGET_COUNTRY$
-			min_reach = ai_military_reach_coerce
-			min_shippable_strength = ai_military_reach_coerce_min_shippable_strength
-		}
-	}
-}
-
 # from 00_ai_triggers.txt
 ai_ceding_state_would_isolate_states = {
 	$STATE$ = { has_port_state = yes }
@@ -160,7 +112,7 @@ aro_is_acquire_states_candidate = {
 			any_scope_state = { owner = root }
 		}
 	}
-	root = { can_reach_target_state_to_conquer = { TARGET_STATE = prev } }
+	root = { can_reach_target_state = { TARGET_STATE = prev } } # CWP's reach (cwp_diplomacy_triggers.txt)
 }
 
 # from 00_ai_triggers.txt
@@ -179,19 +131,5 @@ aro_is_befriend_countries_target = {
 	is_local_country = $REGION$
 	country_rank < root.country_rank
 	relations:root <= relations_threshold:cordial
-	root = { can_reach_target_country_to_protect = { TARGET_COUNTRY = prev } }
-}
-
-# from 00_scripted_triggers.txt
-can_reach_target_state_to_conquer = {
-	$TARGET_STATE$ = { save_temporary_scope_as = military_reach_target }
-	custom_tooltip = {
-		text = can_reach_state_to_conquer_tt
-		has_diplomatic_relevance = $TARGET_STATE$.owner
-		has_military_reach = {
-			target = $TARGET_STATE$
-			min_reach = ai_military_reach_conquer
-			min_shippable_strength = ai_military_reach_conquer_min_shippable_strength
-		}
-	}
+	root = { can_reach_target_country = { TARGET_COUNTRY = prev } } # CWP's reach (cwp_diplomacy_triggers.txt)
 }

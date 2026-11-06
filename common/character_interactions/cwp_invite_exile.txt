@@ -17,9 +17,11 @@ invite_exile = {
 	# required for AI to evaluate if interaction is possible on characters in exile pool
 	ai_considers_exiles = yes
 
+	actor_capacity = {
+		empty_agitator_slots >= 1
+	}
+
 	possible = {
-		scope:actor ?= { empty_agitator_slots >= 1 }
-		
 		# Devout exiles must have country religion
 		trigger_if = {
 			limit = { is_interest_group_type = ig_devout }

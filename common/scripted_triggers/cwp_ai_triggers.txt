@@ -172,8 +172,8 @@ has_powerful_protectors = {
 			}
 		}
 		OR = {
-			can_reach_target_country_to_protect = { TARGET_COUNTRY = root }
-			can_reach_target_country_to_conquer = { TARGET_COUNTRY = $ACTOR_SCOPE$ }
+			can_reach_target_country = { TARGET_COUNTRY = root }
+			can_reach_target_country = { TARGET_COUNTRY = $ACTOR_SCOPE$ }
 		}
 	}
 }

@@ -44,6 +44,7 @@ retire_commander = {
 					remove_character_role = admiral
 				}
 			}
+			retired_commander_becomes_politician_roll_effect = { CHANCE_MULT = define:NCharacters|RETIRED_COMMANDER_POLITICIAN_FORCED_CHANCE_MULT }
 
 			interest_group ?= {
 				add_modifier = {
