@@ -1,6 +1,6 @@
 ﻿# Electoral - Confidence
 country_electoral_confidence_impact_mult = {
-	decimals = 0
+	decimals = 1
 	color = neutral
 	percent = yes
 	game_data={

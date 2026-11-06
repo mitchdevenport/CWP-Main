@@ -236,11 +236,11 @@ dp_increase_autonomy = {
 
 dp_reduce_autonomy = {
 	war_goal = reduce_autonomy
-	
+
 	requires_interest_marker = no
-	
+
 	texture = "gfx/interface/icons/war_goals/reduce_autonomy.dds"
-	
+
 	possible = {
 		NOT = {
 			scope:target_country = { is_subject_type = subject_type_personal_union }
@@ -248,12 +248,35 @@ dp_reduce_autonomy = {
 	}
 
 	ai_acceptance_max = 90
-	
+
 	on_weekly_pulse = {}
-	
+
 	on_war_begins = {}
 
 	on_war_end = {}
+
+	on_demand_accepted = {
+		scope:target_country = {
+			add_liberty_desire = 50
+		}
+		custom_tooltip = {
+			text = "ADD_LIBERTY_DESIRE_TO_ALL_SUBJECTS"
+			every_direct_subject = {
+				limit = {
+					NOT = { this = scope:target_country }
+				}
+				add_liberty_desire = decrease_autonomy_liberty_desire_to_add
+			}
+		}
+		hidden_effect = {
+			scope:target_country = {
+				create_diplomatic_catalyst = {
+					type = catalyst_autonomy_change_imposed
+					target = root
+				}
+			}
+		}
+	}
 }
 
 dp_take_treaty_port = {
@@ -490,23 +513,26 @@ dp_secession = {
 	target_can_add_war_goals = no
 	backing_down_always_ends_play = no
 	add_infamy_for_starting_initiator_wargoals = no
-	
+
 	war_goal = secession
-	
+
 	texture = "gfx/interface/icons/war_goals/secession.dds"
-	
+
 	selectable_in_lens = {
 		always = no
-	}		
-	
+	}
+
 	possible = {
 		scope:initiator = { is_secessionist = yes }
 	}
 
 	additional_involvement_trigger = {
 		NOT = { is_country_type = decentralized }
-		aggressive_diplomatic_plays_permitted = yes
-	
+		OR = {
+			aggressive_diplomatic_plays_permitted = yes
+			is_subject = yes
+		}
+
 		scope:initiator = {
 			capital = {
 				region = {
@@ -514,7 +540,7 @@ dp_secession = {
 				}
 			}
 		}
-		
+
 		OR = {
 			has_interest_marker_in_region = scope:secession_capital_region
 			is_home_country_for = scope:initiator
@@ -522,7 +548,7 @@ dp_secession = {
 	}
 
 	ai_acceptance_max = 75
-	
+
 	on_weekly_pulse = {}
 
 	on_war_begins = {}
@@ -578,22 +604,26 @@ dp_force_nationalization = {
 
 	war_goal = force_nationalization
 	texture = "gfx/interface/icons/war_goals/force_nationalization.dds"
-	
+
 	possible = {
 		NOT = { is_country_type = decentralized }
 		NOT = { has_modifier = forced_neutrality }
 		aggressive_diplomatic_plays_permitted = yes
+		NOT = { is_subject_of = scope:target_country }
+		scope:target_country = {
+			NOT = { is_subject_of = root }
+		}
 		diplomatic_play_has_no_relations_blockers = yes
 	}
-	
+
 	selectable_in_lens = {
 		has_dlc_feature = foreign_investment
 	}
-	
+
 	ai_acceptance_max = 100
-	
+
 	on_weekly_pulse = {}
-	
+
 	on_war_begins = {}
 
 	on_war_end = {}
@@ -601,26 +631,30 @@ dp_force_nationalization = {
 
 dp_give_foreign_investment_rights = {
 	war_goal = foreign_investment_rights
-	
+
 	requires_interest_marker = yes
-	
+
 	texture = "gfx/interface/icons/war_goals/foreign_investment_rights.dds"
-	
+
 	possible = {
 		NOT = { is_country_type = decentralized }
 		NOT = { has_modifier = forced_neutrality }
 		aggressive_diplomatic_plays_permitted = yes
+		NOT = { is_subject_of = scope:target_country }
+		scope:target_country = {
+			NOT = { is_subject_of = root }
+		}
 		diplomatic_play_has_no_relations_blockers = yes
 	}
-	
+
 	selectable_in_lens = {
 		has_dlc_feature = foreign_investment
 	}
-	
+
 	ai_acceptance_max = 100
-	
+
 	on_weekly_pulse = {}
-	
+
 	on_war_begins = {}
 
 	on_war_end = {}
@@ -648,6 +682,10 @@ dp_humiliation = {
 	possible = {
 		NOT = { has_modifier = forced_neutrality }
 		aggressive_diplomatic_plays_permitted = yes
+		NOT = { is_subject_of = scope:target_country }
+		scope:target_country = {
+			NOT = { is_subject_of = root }
+		}
 	}
 	ai_acceptance_max = 90
 
@@ -1529,7 +1567,7 @@ dp_demand_strait_access = {
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
 			NOT = { is_subject_of = root }
-			has_any_strait_province = yes
+			has_any_strait_province_in_hierarchy = yes
 			has_any_strait_control = yes
 		}
 		custom_tooltip = {
@@ -1623,7 +1661,7 @@ dp_demand_no_strait_closure = {
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
 			NOT = { is_subject_of = root }
-			has_any_strait_province = yes
+			has_any_strait_province_in_hierarchy = yes
 			has_any_strait_control = yes
 			custom_tooltip = {
 				text = dp_demand_no_strait_closure_already_bound_tt
@@ -1650,6 +1688,40 @@ dp_release_as_subject = {
 		NOT = { is_country_type = decentralized }
 		aggressive_diplomatic_plays_permitted = yes
 		NOT = { is_subject_of = scope:target_country }
+		diplomatic_play_has_no_relations_blockers = yes
+	}
+
+	ai_acceptance_max = 90
+
+	on_weekly_pulse = {}
+
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+# Victoria 3 1.15 (Return State to Subject; the engine requires this play)
+dp_return_state_to_subject = {
+	requires_interest_marker = no
+
+	war_goal = return_state
+
+	texture = "gfx/interface/icons/war_goals/return_state.dds"
+
+	selectable_in_lens = {
+		is_ai = no
+		any_direct_subject = {
+			number_of_claims > 0
+		}
+	}
+
+	possible = {
+		NOT = { is_country_type = decentralized }
+		aggressive_diplomatic_plays_permitted = yes
+		NOT = { is_subject_of = scope:target_country }
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+		}
 		diplomatic_play_has_no_relations_blockers = yes
 	}
 

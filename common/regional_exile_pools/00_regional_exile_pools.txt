@@ -1,0 +1,12 @@
+﻿# CWP version of the base game's Siberian exile pool (Victoria 3 1.15), expressed with CWP's laws and regions.
+# Characters only reach it through the base game's exile_to_siberia interaction, which CWP does not include.
+siberian_exile_pool = {
+	has_access = { # update the loc for concept_siberian_exile_desc if there are any changes to has_access for siberian_exile_pool
+		has_dlc_feature = regional_exile_pools
+		country_has_primary_culture = cu:russian
+		NOT = { has_law_or_variant = law_type:law_protected_speech }
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_siberia
+		}
+	}
+}

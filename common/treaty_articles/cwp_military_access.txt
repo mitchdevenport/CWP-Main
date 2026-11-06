@@ -8,6 +8,7 @@
 	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/military_access_treaties.dds"
 
 	flags = {
+		show_in_lens
 		is_military_access
 		can_be_enforced
 		can_be_renegotiated
@@ -106,16 +107,9 @@
 				}
 
 				if = {
-					limit = { "num_alliances_and_defensive_pacts_with_allies(scope:target_country)" > 0 }
-					add = {
-						desc = "DIPLOMATIC_ACCEPTANCE_ALLIED_TO_ALLIES"
-						value = "num_alliances_and_defensive_pacts_with_allies(scope:target_country)"
-						multiply = 10
+					limit = {
+						"num_shared_rivals(scope:target_country)" > 0
 					}
-				}
-
-				if = {
-					limit = { "num_shared_rivals(scope:target_country)" > 0 }
 					add = {
 						desc = "DIPLOMATIC_ACCEPTANCE_SHARED_RIVALS"
 						value = "num_shared_rivals(scope:target_country)"
@@ -126,6 +120,15 @@
 
 				if = {
 					limit = {
+						"num_alliances_and_defensive_pacts_with_allies(scope:target_country)" > 0
+					}
+					add = {
+						desc = "DIPLOMATIC_ACCEPTANCE_ALLIED_TO_ALLIES"
+						value = 10
+					}
+				}
+				else_if = {
+					limit = {
 						exists = power_bloc
 						exists = scope:target_country.power_bloc
 					}
@@ -133,13 +136,13 @@
 						limit = { power_bloc = scope:target_country.power_bloc }
 						add = {
 							desc = "DIPLOMATIC_ACCEPTANCE_SAME_POWER_BLOC"
-							value = 25
+							value = 10
 						}
 					}
 					else = {
 						add = {
 							desc = "DIPLOMATIC_ACCEPTANCE_DIFFERENT_POWER_BLOC"
-							value = -25
+							value = -10
 						}
 					}
 				}

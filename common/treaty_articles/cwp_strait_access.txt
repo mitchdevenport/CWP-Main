@@ -1,9 +1,9 @@
 ﻿strait_access = {
-    kind = directed
-    cost = 10
+	kind = directed
+	cost = 10
 
-    relations_progress_per_day = 0.5
-    relations_improvement_max = 20
+	relations_progress_per_day = 0.5
+	relations_improvement_max = 20
 
 	max_target_involvement = 250
 	target_involvement_applies_to = source_country
@@ -11,6 +11,7 @@
 	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/strait_access_treaties.dds"
 
 	flags = {
+		show_in_lens
 		is_strait_access
 		can_be_enforced
 		ai_consider_threaten_naval_hostilities
@@ -23,22 +24,22 @@
 	usage_limit = once_per_side
 
 	visible = {
-		has_any_strait_province = yes
+		has_any_strait_province_in_hierarchy = yes
 	}
 
 	possible = {
-		has_any_strait_province = yes
+		has_any_strait_province_in_hierarchy = yes
 		has_any_strait_control = yes
 	}
 
-    can_ratify = {
-        custom_tooltip = {
-            text = DUPLICATE_ARTICLE_SAME_INPUTS_TREATY
-            NOT = {
-                scope:source_country = {
-                    any_scope_treaty = {
+	can_ratify = {
+		custom_tooltip = {
+			text = DUPLICATE_ARTICLE_SAME_INPUTS_TREATY
+			NOT = {
+				scope:source_country = {
+					any_scope_treaty = {
 						binds = scope:target_country
-                        hidden_trigger = {
+						hidden_trigger = {
 							OR = {
 								scope:treaty = {
 									is_renegotiation = no
@@ -50,24 +51,24 @@
 							has_type = strait_access
 							source_country = scope:source_country
 						}
-                    }
-                }
-            }
-        }
-        custom_tooltip = {
-            text = DUPLICATE_ARTICLE_SAME_INPUTS_TREATY
-            NOT = {
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			text = DUPLICATE_ARTICLE_SAME_INPUTS_TREATY
+			NOT = {
 				scope:treaty = {
 					any_scope_article_option = {
 						has_type = no_strait_closure
 						source_country = scope:source_country
 					}
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 
-    on_entry_into_force = {}
+	on_entry_into_force = {}
 
 	on_withdrawal = {}
 	on_break = {
@@ -96,9 +97,12 @@
 			}
 
 			# Any country a strait controller is hurting looks for relief, whatever its rank
-			add = {
-				value = worst_strait_access_grievance
-				multiply = 0.005
+			if = {
+				limit = { NOT = { has_law_or_variant = law_type:law_free_trade } }
+				add = {
+					value = worst_strait_access_grievance
+					multiply = 0.005
+				}
 			}
 		}
 
@@ -109,6 +113,19 @@
 
 		proposal_weight = {
 			value = 1
+
+			if = { # Russia wants passage through the Bosporus
+				limit = {
+					c:RUS ?= this
+					root = scope:target_country
+					scope:source_country = {
+						any_scope_state = {
+							state_region = s:STATE_EASTERN_THRACE
+						}
+					}
+				}
+				add = 3
+			}
 
 			# Pursued harder the more the strait controller is hurting us
 			add = {
@@ -321,7 +338,7 @@
 					value = total_population
 					divide = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_FACTOR
 					multiply = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_MULTIPLIER
-                    max = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_MULTIPLIER_MAX_TOTAL
+					max = define:NDiplomacy|SWAY_OFFER_WARGOAL_MANEUVERS_COST_POPULATION_SCALING_MULTIPLIER_MAX_TOTAL
 				}
 			}
 		}

@@ -248,7 +248,7 @@ state_clerks_investment_pool_efficiency_mult={
 
 # State - Colony
 state_colony_growth_creation_factor={
-	decimals=2
+	decimals=3
 	color=good
 	game_data={
 		ai_value=0
@@ -843,31 +843,31 @@ state_lower_strata_standard_of_living_add={
 # State - Loyalism
 state_loyalism_increases_cultural_erasure_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = good
 }
 
 state_loyalism_increases_full_acceptance_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = good
 }
 
 state_loyalism_increases_open_prejudice_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = good
 }
 
 state_loyalism_increases_second_rate_citizen_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = good
 }
 
 state_loyalism_increases_violent_hostility_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = good
 }
 
@@ -1186,31 +1186,31 @@ state_pop_qualifications_mult={
 # State - Radicalism
 state_radicalism_increases_cultural_erasure_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = bad
 }
 
 state_radicalism_increases_full_acceptance_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = bad
 }
 
 state_radicalism_increases_open_prejudice_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = bad
 }
 
 state_radicalism_increases_second_rate_citizen_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = bad
 }
 
 state_radicalism_increases_violent_hostility_mult = {
 	percent = yes
-	decimals = 0
+	decimals = 1
 	color = bad
 }
 
@@ -1428,7 +1428,7 @@ state_tax_capacity_mult={
 
 state_tax_collection_mult={
 	decimals=1
-	color=neutral
+	color=good
 	percent=yes
 	game_data={
 		ai_value=0
@@ -1502,7 +1502,7 @@ state_trade_quantity_mult={
 
 # State - Turmoil
 state_turmoil_effects_mult={
-	decimals=0
+	decimals=1
 	color=bad
 	percent=yes
 	game_data={

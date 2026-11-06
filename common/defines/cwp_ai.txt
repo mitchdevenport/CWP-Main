@@ -51,7 +51,6 @@ NAI = {
 	NAVAL_INVASION_MIN_RELATIVE_LOCAL_NAVY_STRENGTH = 0.4 			# AI wants at least this fraction of defending naval strength to risk a naval invasion
 	NAVAL_INVASION_MIN_RELATIVE_GLOBAL_NAVY_STRENGTH_ATTACKER = 0.05 # AI wants at least this fraction of naval strength in the overall war to risk a naval invasion as the attacking war side
 	NAVAL_INVASION_MIN_RELATIVE_GLOBAL_NAVY_STRENGTH_DEFENDER = 0.1 # AI wants at least this fraction of naval strength in the overall war to risk a naval invasion as the defending war side
-	NAVAL_INVASION_COOLDOWN_DAYS = 30 								# After launching a naval invasion, the AI will wait at least this long before launching another
 	NAVAL_INVASION_MIN_SCORE = 10									# AI won't bother launching naval invasions against theaters with a lower total state score than this
 	NAVAL_INVASION_CANCEL_SCORE_THRESHOLD = 5							# Cancel invasion if its score is less than this (must be below NAVAL_INVASION_MIN_SCORE; vanilla ratio 50/100)
 	UNITS_PERCENTAGE_TO_BE_CONSIDERED_IN_DISADVANTAGE = 0.9

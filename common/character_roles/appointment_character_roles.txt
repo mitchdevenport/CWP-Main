@@ -5,12 +5,16 @@ character_role_ig_leader = {
 
 	type = politician
 	priority = 25
-	
+
 	on_career_end = {
 		remove_as_interest_group_leader = yes
 	}
-	
+
 	character_modifier = {
 		character_prominence_add = 25
+	}
+
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
 	}
 }

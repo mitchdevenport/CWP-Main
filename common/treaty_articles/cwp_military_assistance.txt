@@ -8,6 +8,7 @@
 	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/military_assistance_treaties.dds"
 
 	flags = {
+		show_in_lens
 		can_be_renegotiated
 		giftable
 		friendly
@@ -59,14 +60,14 @@
 			scope:target_country = {
 				any_scope_treaty = {
 					count < 2
-					
+
 					hidden_trigger = {
 						OR = {
 							scope:treaty = { is_renegotiation = no }
 							scope:treaty.amended_treaty != this
 						}
 					}
-					
+
 					any_scope_article = {
 						has_type = military_assistance
 						target_country = scope:target_country
@@ -80,14 +81,14 @@
 				scope:source_country = {
 					any_scope_treaty = {
 						binds = scope:target_country
-						
+
 						hidden_trigger = {
 							OR = {
 								scope:treaty = { is_renegotiation = no }
 								scope:treaty.amended_treaty != this
 							}
 						}
-						
+
 						any_scope_article = {
 							has_type = military_assistance
 							source_country = scope:source_country
@@ -110,7 +111,7 @@
 	}
 
 	on_withdrawal = {}
-	
+
 	on_break = {
 		scope:withdrawing_country = { change_relations = { country = scope:non_withdrawing_country value = -10 } }
 	}
@@ -127,6 +128,12 @@
 				value = country_rank
 				multiply = 0.05
 			}
+
+		}
+
+		proposal_weight = {
+			value = 1
+
 		}
 
 		article_ai_usage = {
@@ -433,28 +440,15 @@
 					}
 				}
 			}
-
-			if = {
-				limit = {
-					NOT = { exists = scope:is_treaty_active }
-					exists = scope:treaty
-					scope:treaty.binding_period >= 1825
-				}
-				multiply = {
-					desc = "DIPLOMATIC_ACCEPTANCE_BINDING_PERIOD"
-					value = 1
-					add = {
-						value = scope:treaty.binding_period
-						min = 365
-						divide = 3650
-					}
-					max = 2
-				}
-			}
 		}
 
 		contextual_accept_score = {
 			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BINDING_PERIOD"
+				value = treaty_binding_period_commitment_acceptance
+			}
 
 			if = {
 				limit = {

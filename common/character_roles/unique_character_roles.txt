@@ -3,10 +3,16 @@
 
 	priority = 50
 
+	can_be_interest_group_leader = no
+
 	title_format = from_name
 	title_preposition = PREP_OF
 
 	character_modifier = {
 		character_prominence_add = 50
+	}
+
+	character_background = { # CWP starts long after the Meiji Restoration
+		texture = "gfx/interface/character_panel/backgrounds/char_role_ruler_japan_post_meiji.dds"
 	}
 }

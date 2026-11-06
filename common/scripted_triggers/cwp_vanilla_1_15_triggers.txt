@@ -1,0 +1,197 @@
+﻿# Base game 1.15 definitions that CWP's merged content uses (copied from the base game's files, which
+# CWP's placeholders blank). Generated with the 1.15 port's dependency check.
+
+# from 00_scripted_triggers.txt
+can_reach_target_country_to_conquer = {
+	$TARGET_COUNTRY$ = { save_temporary_scope_as = military_reach_target }
+	custom_tooltip = {
+		text = can_reach_to_conquer_tt
+		has_diplomatic_relevance = $TARGET_COUNTRY$
+		has_military_reach = {
+			target = $TARGET_COUNTRY$
+			min_reach = ai_military_reach_conquer
+			min_shippable_strength = ai_military_reach_conquer_min_shippable_strength
+		}
+	}
+}
+
+# from 00_scripted_triggers.txt
+can_reach_target_country_to_protect = {
+	$TARGET_COUNTRY$ = { save_temporary_scope_as = military_reach_target }
+	custom_tooltip = {
+		text = can_reach_to_protect_tt
+		has_diplomatic_relevance = $TARGET_COUNTRY$
+		OR = {
+			AND = {
+				is_power_bloc_leader = yes
+				is_in_same_power_bloc = $TARGET_COUNTRY$
+			}
+			has_military_reach = {
+				target = $TARGET_COUNTRY$
+				min_reach = ai_military_reach_protect
+				min_shippable_strength = ai_military_reach_protect_min_shippable_strength
+			}
+		}
+	}
+}
+
+# from 00_ep2_victoria_scripted_triggers.txt
+character_has_valid_reason_for_coup = {
+    save_temporary_scope_as = coupist_to_be
+    OR = {
+        owner ?= { # Case 1 - owner is enacting a law the character does not approve of
+            save_temporary_scope_as = couped_to_be
+            exists = currently_enacting_law
+            OR = {
+                scope:coupist_to_be ?= {
+                    law_enactment_stance = { # Refers to any_scope_character
+                        law = scope:couped_to_be.currently_enacting_law.type # Refers to owner
+                        value < neutral # Disapproves of the law
+                    }
+                }
+                AND = {
+                    scope:coupist_to_be ?= {
+                        law_enactment_stance = { # Refers to any_scope_character
+                            law = scope:couped_to_be.currently_enacting_law.type # Refers to owner
+                            value < approve # Character does not approve of the law
+                        }
+                        interest_group ?= {
+                            law_enactment_stance = { # Refers to any_scope_character's interest group
+                                law = scope:couped_to_be.currently_enacting_law.type # Refers to owner
+                                value < neutral # Interest group opposes the law
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        this.interest_group = {
+            OR = {
+                has_modifier = modifier_failed_to_meet_petition # Case 2 - owner has failed a petition for this.interest_group
+                has_modifier = negotiation_failed_quest # Case 3 - owner has failed a negotiation for this.interest_group
+            }
+        }
+        OR = {
+            has_trait = special_character_napoleonic_return # Case 4 - this just has a coupiful personality
+            has_trait = special_character_blanqui_is_free
+        }
+        # Not in this trigger, but exposed elsewhere:
+        # Case 5 - Foreign-Backed Coup
+        # Case 6 - Foreign-Backed Coup
+    }
+}
+
+# from ip4_negotiation_triggers.txt
+ig_could_coup_government = {
+    owner = {
+        NOT = { has_variable = coup_cooldown_var }
+        NOT = { has_variable = coup_immunity }
+    }
+    any_scope_character = {
+        OR = {
+            has_role_of_type = general
+            has_role_of_type = admiral
+        }
+        loyalty < define:NCharacters|LOYALTY_UNCERTAIN_THRESHOLD
+        has_variable = monthly_cached_commander_coup_strength
+        var:monthly_cached_commander_coup_strength >= {
+            value = owner.country_coup_resistance
+            multiply = 0.9
+        }
+        character_has_valid_reason_for_coup = yes
+    }
+}
+
+# from 00_scripted_triggers.txt
+can_reach_target_country_to_coerce = {
+	$TARGET_COUNTRY$ = { save_temporary_scope_as = military_reach_target }
+	custom_tooltip = {
+		text = can_reach_to_coerce_tt
+		has_diplomatic_relevance = $TARGET_COUNTRY$
+		has_military_reach = {
+			target = $TARGET_COUNTRY$
+			min_reach = ai_military_reach_coerce
+			min_shippable_strength = ai_military_reach_coerce_min_shippable_strength
+		}
+	}
+}
+
+# from 00_ai_triggers.txt
+ai_ceding_state_would_isolate_states = {
+	$STATE$ = { has_port_state = yes }
+	$RECEIVER$ = {
+		NOT = { market = $CEDER$.market }
+	}
+	NOT = {
+		$CEDER$.market = {
+			any_scope_country = {
+				any_scope_state = {
+					NOT = { this = $STATE$ }
+					has_port_state = yes
+					is_in_same_market_area = $STATE$
+				}
+			}
+		}
+	}
+	OR = {
+		AND = {
+			$STATE$ = {
+				NOT = { is_in_same_market_area = $CEDER$.capital }
+				any_neighbouring_state = {
+					is_in_same_market_area = $STATE$
+				}
+			}
+		}
+		AND = {
+			$STATE$ = { is_in_same_market_area = $CEDER$.capital }
+			$CEDER$ = {
+				any_scope_state = {
+					NOT = { is_in_same_market_area = $CEDER$.capital }
+				}
+			}
+		}
+	}
+}
+
+# from 00_ai_triggers.txt
+aro_is_acquire_states_candidate = {
+	state_region = {
+		NOT = {
+			any_scope_state = { owner = root }
+		}
+	}
+	root = { can_reach_target_state_to_conquer = { TARGET_STATE = prev } }
+}
+
+# from 00_ai_triggers.txt
+aro_is_acquire_states_target = {
+	root = {
+		has_variable_map = aro_acquire_states_targets
+		is_key_in_variable_map = {
+			name = aro_acquire_states_targets
+			target = prev.state_region
+		}
+	}
+}
+
+# from 00_ai_triggers.txt
+aro_is_befriend_countries_target = {
+	is_local_country = $REGION$
+	country_rank < root.country_rank
+	relations:root <= relations_threshold:cordial
+	root = { can_reach_target_country_to_protect = { TARGET_COUNTRY = prev } }
+}
+
+# from 00_scripted_triggers.txt
+can_reach_target_state_to_conquer = {
+	$TARGET_STATE$ = { save_temporary_scope_as = military_reach_target }
+	custom_tooltip = {
+		text = can_reach_state_to_conquer_tt
+		has_diplomatic_relevance = $TARGET_STATE$.owner
+		has_military_reach = {
+			target = $TARGET_STATE$
+			min_reach = ai_military_reach_conquer
+			min_shippable_strength = ai_military_reach_conquer_min_shippable_strength
+		}
+	}
+}

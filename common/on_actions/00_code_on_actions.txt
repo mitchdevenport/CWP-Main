@@ -736,6 +736,13 @@ on_character_spawned_in_pool = {
 }
 
 # Root = Character
+on_character_returned_from_exile = {
+	effect = {
+		post_notification = character_returned_from_exile
+	}
+}
+
+# Root = Character
 # scope:previous = Character - previous ruler
 on_ruler_selected = {
 	effect = { }
@@ -961,20 +968,34 @@ on_treaty_enforced = {
 # Root = Treaty
 # scope:withdrawing_country = Withdrawing Country
 # scope:non_withdrawing_country = Non-Withdrawing Country
+# scope:partial_withdrawal = Bool, yes if some articles could not be withdrawn from and the treaty remains
 # Fires when the binding period is not active
 on_country_withdrawn_from_treaty = {
 	effect = {
-		post_notification = country_withdrawn_from_treaty
+		if = {
+			limit = { scope:partial_withdrawal = yes }
+			post_notification = country_partially_withdrawn_from_treaty
+		}
+		else = {
+			post_notification = country_withdrawn_from_treaty
+		}
 	}
 }
 
 # Root = Treaty
 # scope:withdrawing_country = Withdrawing Country
 # scope:non_withdrawing_country = Non-Withdrawing Country
+# scope:partial_withdrawal = Bool, yes if some articles could not be withdrawn from and the treaty remains
 # Fires instead of on_country_withdrawn_from_treaty when the binding period is still active
 on_country_broke_treaty = {
 	effect = {
-		post_notification = country_broke_treaty
+		if = {
+			limit = { scope:partial_withdrawal = yes }
+			post_notification = country_partially_broke_treaty
+		}
+		else = {
+			post_notification = country_broke_treaty
+		}
 
 		scope:withdrawing_country = {
 			create_diplomatic_catalyst = {
@@ -1891,14 +1912,12 @@ on_journal_entry_deactivated = {
 }
 
 # Root = journal entry
-on_journal_entry_completed = {
+# Victoria 3 1.15 fires this one on_action for every journal entry outcome (it replaced on_journal_entry_completed and
+# on_journal_entry_failed, and the journal_entry_completed message with journal_entry_concluded)
+on_journal_entry_concluded = {
 	effect = {
-		post_notification = journal_entry_completed
+		post_notification = journal_entry_concluded
 	}
-}
-
-# Root = journal entry
-on_journal_entry_failed = {
 }
 
 # Root = country
@@ -2510,3 +2529,8 @@ on_lost_war = {}
 
 # Root = Country, scopes as on_won_war
 on_inconclusive_war = {}
+
+# The engine requires this on_action since 1.15 (fired when a Power Bloc forms after the game has started)
+# Root = Country that formed the Power Bloc (its leader)
+# scope:power_bloc = The newly formed Power Bloc
+on_power_bloc_formed = {}

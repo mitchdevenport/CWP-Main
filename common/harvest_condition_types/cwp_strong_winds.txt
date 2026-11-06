@@ -1,4 +1,4 @@
-﻿strong_winds = { # Negative
+﻿strong_winds = {
 	area_type = sea
 	has_animation = no
 
@@ -41,4 +41,5 @@
 	color = { 120 140 100 }
 	icon = "gfx/interface/icons/sea_condition_icons/strong_winds.dds"
 	map_texture = "gfx/map/map_painting/sea_conditions_map_patterns/sea_conditions_bad.dds"
+	naval_battle_condition = naval_condition_strong_winds
 }

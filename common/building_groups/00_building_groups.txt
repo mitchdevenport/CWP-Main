@@ -155,6 +155,21 @@ bg_ranching = {
 	construction_efficiency_modifier = yes
 }
 
+# Victoria 3 1.15: the Cossack Host's group (the engine requires the building; it is never founded in CWP)
+bg_cossack_host = {
+	parent_group = bg_ranching
+
+	min_productivity_to_hire = 2.0
+
+	always_possible = yes
+
+	reserves_arable_land = yes
+
+	urbanization = 0
+	infrastructure_usage_per_level = 0
+}
+
+
 bg_livestock_ranches = {
 	parent_group = bg_ranching
 	default_building = building_livestock_ranch

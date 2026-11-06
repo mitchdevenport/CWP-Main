@@ -1,4 +1,4 @@
-﻿calm_waters = { # Positive
+﻿calm_waters = {
 	area_type = sea
 	has_animation = no
 
@@ -43,4 +43,5 @@
 	color = { 100 180 220 }
 	icon = "gfx/interface/icons/sea_condition_icons/calm_waters.dds"
 	map_texture = "gfx/map/map_painting/sea_conditions_map_patterns/sea_conditions_good.dds"
+	naval_battle_condition = naval_condition_calm_waters
 }

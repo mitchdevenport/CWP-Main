@@ -29,18 +29,18 @@
 
 	possible = {
 		is_diplomatic_play_committed_participant = no
-		
+
 		scope:target_country = { is_diplomatic_play_committed_participant = no }
-		
+
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS_NOT
 			scope:target_country.relations:root > relations_threshold:poor
 		}
-		
+
 		has_diplomatic_relevance = scope:target_country
-		
+
 		is_revolutionary = no
-		
+
 		in_default = no
 
 		# Must have a connection to the state received even after the trade happens
@@ -198,6 +198,20 @@
 						value = scope:second_state.ai_state_value:root
 						desc = "DIPLOMATIC_ACCEPTANCE_TRADE_STATE_SECOND_STATE"
 						min = 10
+					}
+
+					if = {
+						limit = {
+							ai_ceding_state_would_isolate_states = {
+								STATE = scope:second_state
+								CEDER = scope:target_country
+								RECEIVER = scope:actor
+							}
+						}
+						subtract = {
+							value = 1000
+							desc = "DIPLOMATIC_ACCEPTANCE_WOULD_ISOLATE_STATES"
+						}
 					}
 				}
 				else_if = {

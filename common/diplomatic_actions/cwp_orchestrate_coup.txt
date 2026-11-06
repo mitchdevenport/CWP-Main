@@ -25,7 +25,7 @@
 			}
 
 			country_rank < ROOT.country_rank # One step or more below
-			
+
 			# The engine cannot describe any_political_lobby here ("missing perspective"), so the whole check gets one line
 			custom_tooltip = {
 				text = lobby_is_friendly_tt
@@ -43,9 +43,9 @@
 					has_role_of_type = general
 					has_role_of_type = admiral
 				}
-				
+
 				hidden_trigger = { has_variable = monthly_cached_commander_coup_strength }
-				
+
 				custom_tooltip = {
 					text = ig_in_pro_country_lobby_tt
 					interest_group ?= {
@@ -53,9 +53,9 @@
 						any_political_lobby = { scope:relevant_lobby ?= this }
 					}
 				}
-
+				is_busy = no
 				loyalty < define:NCharacters|LOYALTY_UNCERTAIN_THRESHOLD
-				
+
 				trigger_if = {
 					limit = { has_variable = monthly_cached_commander_coup_strength }
 					custom_tooltip = {
@@ -67,9 +67,9 @@
 		}
 
 		NOT = { has_war_with = scope:target_country }
-		
+
 		is_revolutionary = no
-		
+
 		has_diplomatic_relevance = scope:target_country
 	}
 
@@ -83,20 +83,20 @@
 		}
 
 		ROOT = { save_scope_as = cwp_coupist_lobby_country }
-		
+
 		scope:target_country ?= {
 			set_variable = {
 				name = cwp_coup_sponsor
 				value = ROOT
 			}
-			
+
 			random_political_lobby = {
 				limit = {
 					OR = {
 						is_political_lobby_type = lobby_pro_country
 						is_political_lobby_type = lobby_pro_overlord
 					}
-					
+
 					custom_tooltip = {
 						text = lobby_is_friendly_tt
 						target = ROOT
@@ -113,7 +113,7 @@
 					}
 
 					hidden_trigger = { has_variable = monthly_cached_commander_coup_strength }
-					
+
 					custom_tooltip = {
 						text = ig_in_pro_country_lobby_tt
 						interest_group ?= {
@@ -121,9 +121,9 @@
 							any_political_lobby = { scope:relevant_lobby ?= this }
 						}
 					}
-
+					is_busy = no
 					loyalty < define:NCharacters|LOYALTY_UNCERTAIN_THRESHOLD
-					
+
 					trigger_if = {
 						limit = { has_variable = monthly_cached_commander_coup_strength }
 						custom_tooltip = {
@@ -133,9 +133,9 @@
 					}
 				}
 				order_by = popularity
-				
+
 				position = 0
-				
+
 				save_scope_as = orchestrated_coupist
 			}
 
@@ -196,6 +196,7 @@
 		cost = 100
 
 		is_two_sided_pact = no
+		show_in_outliner = yes
 
 		max_target_involvement = 1000
 		target_involvement_applies_to = source_country
@@ -207,7 +208,7 @@
 
 		income_transfer_to_pops = {
 			allow_non_fully_accepted = no
-			
+
 			upper_strata_pops = {
 				value = 0.5
 				if = {
@@ -236,7 +237,7 @@
 				max = 1
 				min = 0
 			}
-			
+
 			middle_strata_pops = {
 				value = 0.25
 
@@ -253,7 +254,7 @@
 				max = 1
 				min = 0
 			}
-			
+
 			lower_strata_pops = {
 				value = 0.0
 
@@ -371,7 +372,7 @@
 				ANTI_AMOUNT = -4
 				FACTOR = appeasement_orchestrate_coup_ended
 			}
-			
+
 			scope:target_country ?= {
 				set_variable = cwp_orchestrate_coup_aborted
 			}
@@ -390,7 +391,7 @@
 
 		propose_score = {
 			value = 10
-			
+
 			if = {
 				limit = {
 					scope:target_country ?= {
@@ -437,16 +438,16 @@
 
 		will_propose = {
 			scope:target_country.relations:root < relations_threshold:cordial
-			
+
 			infamy <= infamy_threshold:notorious
-			
+
 			NOT = { # Is not conciliatory towards the target country
 				has_attitude = {
 					who = scope:target_country
 					attitude = conciliatory
 				}
 			}
-			
+
 			# The target country does not already owe us an obligation
 			NOT = { scope:target_country = { owes_obligation_to = root } }
 
@@ -458,7 +459,7 @@
 					multiply = 5
 				}
 			}
-			
+
 			OR = {
 				"ai_ideological_opinion(scope:target_country)" <= -50 # Cannot get along politically
 				AND = { # Has a communist government

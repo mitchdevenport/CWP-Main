@@ -1,0 +1,112 @@
+﻿# Base game 1.15 definitions that CWP's merged content uses (copied from the base game's files, which
+# CWP's placeholders blank). Generated with the 1.15 port's dependency check.
+
+# from 00_scripted_effects.txt
+retired_commander_becomes_politician_roll_effect = {
+	if = {
+		limit = {
+			NOR = {
+				has_role_of_type = ruler
+				has_role_of_type = heir
+				has_role_of_type = politician
+				has_role_of_type = agitator
+				has_role_of_type = executive
+				has_role_of_type = magnate
+				is_interest_group_pool_full = character_role_politician
+			}
+			popularity >= define:NCharacters|RETIRED_COMMANDER_POLITICIAN_MIN_POPULARITY
+		}
+		random = {
+			chance = {
+				value = popularity
+				multiply = define:NCharacters|RETIRED_COMMANDER_POLITICIAN_POPULARITY_CHANCE_FACTOR
+				multiply = $CHANCE_MULT$
+			}
+			add_character_role = politician
+			owner ?= {
+				set_variable = {
+					name = retired_commander_politician_cooldown
+					years = retired_commander_politician_cooldown_years
+				}
+			}
+		}
+	}
+}
+
+# from 00_scripted_effects.txt
+retired_commander_career_end_becomes_politician_roll_effect = {
+	if = {
+		limit = {
+			owner ?= {
+				NOT = { has_variable = retired_commander_politician_cooldown }
+			}
+		}
+		retired_commander_becomes_politician_roll_effect = { CHANCE_MULT = 1 }
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_anti_lobby_demand_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_anti_lobby_opportunity_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_government_petition_negotiation_version_b_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_government_petition_negotiation_version_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_law_imposition_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_negotiate_army_quest_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_negotiate_building_group_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_negotiate_buildings_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_negotiate_sol_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_negotiate_taxes_cleanup = {
+	hidden_effect = {
+	}
+}
+
+# from 00_victoria_cleanup_scripted_effects.txt
+je_pro_lobby_demand_cleanup = {
+	hidden_effect = {
+	}
+}

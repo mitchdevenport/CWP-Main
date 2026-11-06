@@ -2,6 +2,11 @@
 	kind = directed
 	cost = 0
 
+	flags = {
+		show_in_lens
+		is_one_time
+	}
+
 	maintenance_paid_by = source_country
 	usage_limit = once_per_treaty
 
@@ -275,7 +280,7 @@
 					value = "power_bloc.predicted_cohesion_percentage_with(scope:source_country)"
 					subtract = "power_bloc.current_cohesion_number"
 					multiply = 2 # -2 acceptance for each lost point of cohesion
-					
+
 					if = {
 						limit = {
 							exists = power_bloc

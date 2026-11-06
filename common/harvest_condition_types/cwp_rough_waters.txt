@@ -1,4 +1,4 @@
-﻿rough_waters = { # Negative
+﻿rough_waters = {
 	area_type = sea
 	has_animation = no
 
@@ -41,4 +41,5 @@
 	color = { 50 90 140 }
 	icon = "gfx/interface/icons/sea_condition_icons/rough_waters.dds"
 	map_texture = "gfx/map/map_painting/sea_conditions_map_patterns/sea_conditions_bad.dds"
+	naval_battle_condition = naval_condition_rough_waters
 }

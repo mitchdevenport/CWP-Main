@@ -55,6 +55,7 @@
 		is_hostile = yes
 		is_rivalry = yes
 		is_two_sided_pact = no
+		show_in_outliner = yes
 		forced_duration = 12
 
 		relations_progress_per_day = -1 # At -100, -1 relations
@@ -64,13 +65,13 @@
 			country_pact_leverage_generation_mult = -0.9
 		}
 
-	 	requirement_to_maintain = {
+		requirement_to_maintain = {
 			trigger = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
 
-	 	requirement_to_maintain = {
+		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
 					text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER_NOT
@@ -116,7 +117,7 @@
 			}
 		}
 
-	 	requirement_to_maintain = {
+		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
 					text = "DIPLOMATIC_PACT_REQUIREMENT_VALID_RIVALS"

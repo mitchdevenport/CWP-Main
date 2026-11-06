@@ -122,8 +122,8 @@
 				}
 				if = {
 					limit = {
-						scope:treaty_options.binding_period >= 5
-						scope:treaty_options.binding_period < 10
+						scope:treaty_options.binding_period >= 1825
+						scope:treaty_options.binding_period < 3650
 					}
 					add_modifier = {
 						name = modifier_opposes_committed_law_ig
@@ -133,8 +133,8 @@
 				}
 				else_if = {
 					limit = {
-						scope:treaty_options.binding_period >= 10
-						scope:treaty_options.binding_period < 20
+						scope:treaty_options.binding_period >= 3650
+						scope:treaty_options.binding_period < 7300
 					}
 					add_modifier = {
 						name = modifier_opposes_committed_law_ig
@@ -143,7 +143,9 @@
 					}
 				}
 				else_if = {
-					limit = { scope:treaty_options.binding_period >= 20 }
+					limit = {
+						scope:treaty_options.binding_period >= 7300
+					}
 					add_modifier = {
 						name = modifier_opposes_committed_law_ig
 						days = very_long_modifier_time
@@ -171,8 +173,8 @@
 
 				if = {
 					limit = {
-						scope:treaty_options.binding_period >= 5
-						scope:treaty_options.binding_period < 10
+						scope:treaty_options.binding_period >= 1825
+						scope:treaty_options.binding_period < 3650
 					}
 					add_modifier = {
 						name = modifier_opposes_enforced_law_ig
@@ -182,8 +184,8 @@
 				}
 				else_if = {
 					limit = {
-						scope:treaty_options.binding_period >= 10
-						scope:treaty_options.binding_period < 20
+						scope:treaty_options.binding_period >= 3650
+						scope:treaty_options.binding_period < 7300
 					}
 					add_modifier = {
 						name = modifier_opposes_enforced_law_ig
@@ -192,7 +194,9 @@
 					}
 				}
 				else_if = {
-					limit = { scope:treaty_options.binding_period >= 20 }
+					limit = {
+						scope:treaty_options.binding_period >= 7300
+					}
 					add_modifier = {
 						name = modifier_opposes_enforced_law_ig
 						days = very_long_modifier_time
@@ -501,23 +505,14 @@
 					value = -300
 				}
 			}
+		}
 
-			if = {
-				limit = {
-					NOT = { exists = scope:is_treaty_active }
-					exists = scope:treaty
-					scope:treaty.binding_period >= 1825
-				}
-				multiply = {
-					desc = "DIPLOMATIC_ACCEPTANCE_BINDING_PERIOD"
-					value = 1
-					add = {
-						value = scope:treaty.binding_period
-						min = 365
-						divide = 3650
-					}
-					max = 2
-				}
+		contextual_accept_score = {
+			value = 0
+
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BINDING_PERIOD"
+				value = treaty_binding_period_commitment_acceptance
 			}
 		}
 

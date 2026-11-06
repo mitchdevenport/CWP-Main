@@ -177,7 +177,9 @@ amenability = { #runs in IG scope. owner is the county.
 		}
 
 		if = { #ruler popularity
-			limit = { exists = owner.ruler }
+			limit = {
+				exists = owner.ruler
+			}
 			add = {
 				desc = "amenability_ruler_popularity"
 				add = owner.ruler.popularity
@@ -200,7 +202,9 @@ amenability = { #runs in IG scope. owner is the county.
 				owner = {
 					any_political_movement = {
 						supports_law = yes
-						any_influenced_interest_group = { this = scope:ig_for_calc }
+						any_influenced_interest_group = {
+							this = scope:ig_for_calc
+						}
 					}
 				}
 			}
@@ -210,7 +214,9 @@ amenability = { #runs in IG scope. owner is the county.
 					every_political_movement = {
 						limit = {
 							supports_law = yes
-							any_influenced_interest_group = { this = scope:ig_for_calc }
+							any_influenced_interest_group = {
+								this = scope:ig_for_calc
+							}
 						}
 						add = {
 							value = "movement_pressure(scope:ig_for_calc)"
@@ -227,7 +233,9 @@ amenability = { #runs in IG scope. owner is the county.
 				owner = {
 					any_political_movement = {
 						opposes_law = yes
-						any_influenced_interest_group = { this = scope:ig_for_calc }
+						any_influenced_interest_group = {
+							this = scope:ig_for_calc
+						}
 					}
 				}
 			}
@@ -237,7 +245,9 @@ amenability = { #runs in IG scope. owner is the county.
 					every_political_movement = {
 						limit = {
 							opposes_law = yes
-							any_influenced_interest_group = { this = scope:ig_for_calc }
+							any_influenced_interest_group = {
+								this = scope:ig_for_calc
+							}
 						}
 						add = {
 							value = "movement_pressure(scope:ig_for_calc)"
@@ -289,9 +299,9 @@ amenability = { #runs in IG scope. owner is the county.
 		if = { #drain if strongly oppose, as opposed to just oppose
 			limit = {
 				law_enactment_stance = {
-					law = owner.currently_enacting_law.type
-					value < disapprove
-				}
+                    law = owner.currently_enacting_law.type
+                    value < disapprove
+                }
 			}
 			add = {
 				desc = "amenability_strongly_oppose"
@@ -400,8 +410,38 @@ amenability = { #runs in IG scope. owner is the county.
 				}
 			}
 			add = {
-				add = -5
+				value = -5
+				if = {
+					limit = {
+						law_enactment_stance = {
+							law = owner.currently_enacting_law.type
+							value < disapprove
+						}
+					}
+					multiply = 2
+				}
 				desc = "amenability_law_worried_to_be_tie_breaker"
+			}
+		}
+
+		if = {
+			limit = {
+				opposes_law = yes
+				ig_could_coup_government = yes
+			}
+			add = {
+				value = -100
+				desc = "amenability_could_coup_instead"
+			}
+		}
+		else_if = {
+			limit = {
+				ig_could_coup_government = yes
+				has_variable = golpista_ig_var
+			}
+			add = {
+				value = -100
+				desc = "amenability_is_staging_coup"
 			}
 		}
 
@@ -444,6 +484,33 @@ amenability = { #runs in IG scope. owner is the county.
 			add = {
 				value = -500
 				desc = "amenability_too_large_gap"
+			}
+		}
+
+		if = {
+			limit = {
+				opposes_law = yes
+				owner.enactment_chance <= {
+					value = owner.stall_chance
+					multiply = 2
+				}
+			}
+			add = {
+				value = -500
+				desc = "amenability_law_needs_their_support"
+			}
+		}
+
+		if = {
+			limit = {
+				opposes_law = yes
+				owner.enactment_chance <= {
+					value = negotiation_min_enactment_chance
+				}
+			}
+			add = {
+				value = -500
+				desc = "amenability_law_enactment_chance_too_low"
 			}
 		}
 

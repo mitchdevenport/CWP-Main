@@ -22,7 +22,7 @@ democratic_socialist_party = {
 		}
 	}
 	icon = {
-		default = "/gfx/interface/icons/political_parties/social_democrats.dds"
+		default = "/gfx/interface/icons/political_parties/socialist.dds"
 	}
 	unlocking_technologies = {
 	}

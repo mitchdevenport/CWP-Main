@@ -185,7 +185,7 @@ has_no_war_goal_alert = {
 	texture = "gfx/interface/icons/alert_icons/has_no_war_goal.dds"
 
 	valid = {
-		scope:actor = { 
+		scope:actor = {
 			should_set_wargoal = {
 				target = root
 			}
@@ -381,6 +381,19 @@ active_peace_deal_alert = {
 	}
 
 	open_panel = war_panel|peace
+	type = alert
+	color = red
+}
+
+war_stalemate_alert = {
+	script_context = player_war
+	texture = "gfx/interface/icons/alert_icons/war_stalemate.dds"
+
+	valid = {
+		war_is_in_stalemate = yes
+	}
+
+	open_panel = war_panel
 	type = alert
 	color = red
 }
@@ -660,6 +673,20 @@ treaty_article_in_danger = {
 	type = angry_important_action
 	color = yellow
 	alert_group = treaty_article_in_danger
+}
+
+treaty_withdrawal_planned = {
+	texture = "gfx/interface/icons/lens_toolbar_icons/diplomatic_actions_break.dds"
+	script_context = player_treaty
+
+	valid = {
+		has_planned_withdrawal = yes
+	}
+
+	open_panel = treaty_panel
+	type = alert
+	color = yellow
+	alert_group = treaty_withdrawal_planned
 }
 
 # Hidden by default
@@ -1096,15 +1123,3 @@ low_war_support_effects_alert = {
 	color = red
 }
 
-war_goal_at_risk_of_being_dropped_alert = {
-	script_context = player_war
-	texture = "gfx/interface/icons/alert_icons/has_no_war_goal.dds"
-
-	valid = {
-		has_war_goal_at_risk_of_being_dropped = scope:actor
-	}
-
-	open_panel = war_panel
-	type = alert
-	color = red
-}

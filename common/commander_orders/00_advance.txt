@@ -61,38 +61,37 @@ advance_reckless = {
 }
 
 advance_pillager = {
-	texture = "gfx/interface/icons/commander_order_icons/advance.dds"
+    texture = "gfx/interface/icons/commander_order_icons/advance.dds"
 
-	military_type = army
+    military_type = army
 	behavior = advance
 
 	visible = {
 		has_role_of_type = general
 	}
 
-	possible = {
+    possible = {
 		has_role_of_type = general
 		OR = {
 			has_trait = cruel
 			has_trait = wrathful
-			has_trait = pillager
+            has_trait = pillager
 		}
-	}
+    }
 
-	modifier = {
-		character_advancement_speed_add = 4
-		unit_kill_rate_add = 0.20
-		unit_devastation_mult = 1
-		unit_kill_rate_add = 0.1
-		unit_morale_damage_mult = 0.2
-		unit_occupation_mult = -0.2
-	}
+    modifier = {
+        character_advancement_speed_add = 4
+        unit_kill_rate_add = 0.20
+        unit_devastation_mult = 1
+        unit_morale_damage_mult = 0.2
+        unit_occupation_mult = -0.2
+    }
 
 	entity_animation = "advance"
-	clicksound = "event:/SFX/UI/Military/order_general_front_advance"
-	experience = 0.1 # This much extra experience per week while executing Order
+    clicksound = "event:/SFX/UI/Military/order_general_front_advance"
+    experience = 0.1 # This much extra experience per week while executing Order
 
-	ai_weight = {
+    ai_weight = {
 		value = 2
 	}
 
@@ -187,7 +186,7 @@ advance_heavy_barrage = {
 		character_advancement_speed_add = 2
 		unit_occupation_mult = -0.1
 		unit_devastation_mult = 0.75
-		unit_kill_rate_add = 0.25
+		unit_kill_rate_add = 0.15
 		unit_morale_damage_mult = 0.15
 	}
 

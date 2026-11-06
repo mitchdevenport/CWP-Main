@@ -8,6 +8,7 @@
 	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/power_bloc_embassy_treaties.dds"
 
 	flags = {
+		show_in_lens
 		can_be_renegotiated
 		friendly
 	}
@@ -90,6 +91,12 @@
 
 		evaluation_chance = {
 			value = 0.01
+
+		}
+
+		proposal_weight = {
+			value = 1
+
 		}
 
 		article_ai_usage = {

@@ -1,4 +1,4 @@
-﻿fog = { # Negative
+﻿fog = {
 	area_type = sea
 	has_animation = no
 
@@ -41,4 +41,5 @@
 	color = { 160 170 180 }
 	icon = "gfx/interface/icons/sea_condition_icons/fog.dds"
 	map_texture = "gfx/map/map_painting/sea_conditions_map_patterns/sea_conditions_bad.dds"
+	naval_battle_condition = naval_condition_fog
 }

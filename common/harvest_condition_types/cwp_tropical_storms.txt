@@ -142,4 +142,5 @@
 	color = { 60 50 90 }
 	icon = "gfx/interface/icons/sea_condition_icons/tropical_storm.dds"
 	map_texture = "gfx/map/map_painting/sea_conditions_map_patterns/sea_conditions_bad.dds"
+	naval_battle_condition = naval_condition_tropical_storm
 }

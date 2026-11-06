@@ -5,7 +5,9 @@
 	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/take_on_debt_treaties.dds"
 
 	flags = {
+		show_in_lens
 		giftable
+		is_one_time
 	}
 
 	maintenance_paid_by = source_country
@@ -24,7 +26,7 @@
 				value = scope:target_country.scaled_debt
 			}
 		}
-		
+
 		NOT = {
 			scope:treaty ?= {
 				any_scope_article_option = {

@@ -48,7 +48,8 @@ base_values = {
 	state_aristocrats_investment_pool_contribution_add = 0.20
 	state_capitalists_investment_pool_contribution_add = 0.30
 
-	state_literacy_growth_add = 0.001
+	# CWP doubles the base game's literacy growth (0.0005 until 1.14; the base game raised its own to 0.002 in 1.15)
+	state_literacy_growth_add = 0.004
 
 	# To balance for unincorporated states not paying taxes
 	state_unincorporated_starting_wages_mult = -0.20
@@ -729,7 +730,7 @@ infamy_pariah = {
 # Scales with devastation level
 state_region_devastation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	state_infrastructure_mult = -1.0
+	state_infrastructure_mult = -0.75
 	state_mortality_mult = 1.0
 	state_migration_pull_mult = -2.0
 	goods_output_tourism_mult = -2.0
@@ -1042,10 +1043,21 @@ movement_suppressed_after_civil_war = {
 	political_movement_radicalism_add = -1
 }
 
-# ---- Added in 1.14 ----
-war_support_battle_effects = {
+# ---- Added in 1.14 (split into army and navy in 1.15) ----
+war_support_battle_effects_army = {
 	unit_offense_mult = -0.25
 	unit_defense_mult = -0.25
 	unit_morale_loss_mult = 0.5
 	unit_morale_damage_mult = -0.5
+}
+
+war_support_battle_effects_navy = {
+	ship_hull_damage_mult = -0.2
+	ship_crew_damage_mult = -0.2
+}
+
+# ---- Added in 1.15 ----
+revoked_favorite = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	character_loyalty_add = -50
 }

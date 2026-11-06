@@ -22,8 +22,17 @@
 			is_diplomatic_play_committed_participant = no
 		}
 
-		power_bloc = { current_cohesion_percentage >= 0.5 }
-		scope:target_country = { tenure_in_current_power_bloc_years >= 5 }
+		custom_tooltip = {
+			text = DIPLOMATIC_PACT_REQUIREMENT_CAN_BE_SUBJUGATED
+			scope:target_country = { modifier:country_cannot_be_subjugated_bool ?= no }
+		}
+
+		power_bloc = {
+			current_cohesion_percentage >= 0.5
+		}
+		scope:target_country = {
+			tenure_in_current_power_bloc_years >= 5
+		}
 		prestige >= {
 			value = scope:target_country.prestige
 			multiply = 5

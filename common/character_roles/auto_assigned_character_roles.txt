@@ -12,7 +12,24 @@
 		character_loyalty_add = 25
 	}
 	
+	law_enactment_ideology_effect = 0.05
 	auto_assigned = yes
+
+	character_background = {
+		trigger = {
+			has_role = character_role_emperor_of_japan
+		}
+		texture = "gfx/interface/character_panel/backgrounds/char_role_ruler_japan_post_meiji.dds"
+	}
+	character_background = {
+		trigger = {
+			has_role_of_type = general
+		}
+		texture = "gfx/interface/character_panel/backgrounds/char_role_rulergeneral.dds"
+	}
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_ruler.dds"
+	}
 }
 
 character_role_heir = {
@@ -28,8 +45,16 @@ character_role_heir = {
 		character_prominence_add = 50
 		character_loyalty_add = 25
 	}
-	
+
 	auto_assigned = yes
+
+	character_background = {
+		trigger = {
+			NOT = { has_role_of_type = general }
+			NOT = { has_role_of_type = admiral }
+		}
+		texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
+	}
 }
 
 character_role_general = {
@@ -43,6 +68,20 @@ character_role_general = {
 
 	auto_assigned = yes
 	career_length = { 15 30 }
+
+	on_career_end = {
+		retired_commander_career_end_becomes_politician_roll_effect = yes
+	}
+
+	character_background = {
+		trigger = {
+			NOR = {
+				has_role_of_type = agitator
+				has_role_of_type = executive
+			}
+		}
+		texture = "gfx/interface/character_panel/backgrounds/char_role_general.dds"
+	}
 }
 
 character_role_admiral = {
@@ -56,6 +95,20 @@ character_role_admiral = {
 
 	auto_assigned = yes
 	career_length = { 15 30 }
+
+	on_career_end = {
+		retired_commander_career_end_becomes_politician_roll_effect = yes
+	}
+
+	character_background = {
+		trigger = {
+			NOR = {
+				has_role_of_type = agitator
+				has_role_of_type = executive
+			}
+		}
+		texture = "gfx/interface/character_panel/backgrounds/char_role_admiral.dds"
+	}
 }
 
 character_role_executive = {
@@ -66,6 +119,10 @@ character_role_executive = {
 
 	auto_assigned = yes
 	career_length = { 10 20 }
+
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_executive.dds"
+	}
 }
 
 character_role_magnate = {
@@ -75,10 +132,18 @@ character_role_magnate = {
 	priority = 10
 
 	auto_assigned = yes
-	
+
 	title_format = custom
 	title_preposition = PREP_IN
-	
+
+	character_background = {
+		trigger = {
+			NOT = { has_role_of_type = politician }
+			NOT = { has_role_of_type = agitator }
+		}
+		texture = "gfx/interface/character_panel/backgrounds/char_role_magnate.dds"
+	}
+
 	spawn_characters_to_pool = yes
 	
 	pool_spawn_target_country_wide = {
@@ -181,6 +246,10 @@ character_role_agitator = {
 	character_modifier = {
 		character_prominence_add = -10
 	}
+
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_agitator.dds"
+	}
 }
 
 character_role_politician = {
@@ -200,5 +269,9 @@ character_role_politician = {
 	
 	character_modifier = {
 		character_prominence_add = 10
+	}
+
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
 	}
 }

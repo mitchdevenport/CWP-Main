@@ -141,4 +141,5 @@
 	color = { 80 30 30 }
 	icon = "gfx/interface/icons/sea_condition_icons/cyclone.dds"
 	map_texture = "gfx/map/map_painting/sea_conditions_map_patterns/sea_conditions_bad.dds"
+	naval_battle_condition = naval_condition_cyclone
 }

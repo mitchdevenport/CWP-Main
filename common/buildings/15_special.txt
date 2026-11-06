@@ -1,0 +1,25 @@
+﻿# Victoria 3 1.15's engine names this building in its defines (COSSACK_HOST_BUILDING), so it has to exist. Cossack
+# Hosts are a nineteenth-century Russian institution of the base game's State and Revolution content, which CWP does
+# not use: nothing in CWP grants country_can_found_cossack_host_bool, so a host can never be founded. CWP's version
+# keeps only the building and its base production method (no culture filter, no recruitment law).
+building_cossack_host = {
+	building_group = bg_cossack_host
+
+	icon = "gfx/interface/icons/building_icons/cossack_host.dds"
+
+	production_method_groups = {
+		pmg_base_building_cossack_host
+	}
+
+	potential = {
+		always = no # Cannot be constructed manually so we filter it out from the GUI
+	}
+
+	buildable = no
+	expandable = no
+	downsizeable = no
+	can_switch_owner = no
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}

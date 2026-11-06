@@ -1,0 +1,23 @@
+﻿# CWP version of the base game's AI ship categories. Victoria 3 1.15 gates some categories behind the base game's
+# naval technologies (can_build); every CWP ship type unlocks with naval_warfare, so CWP's categories are ungated.
+# CWP's submarines use ai_ship_category_torpedo_craft (weighted in CWP's default AI strategy).
+ai_ship_category_battle_line = {
+}
+
+ai_ship_category_coastal_defense = {
+}
+
+ai_ship_category_screens = {
+}
+
+ai_ship_category_torpedo_craft = {
+}
+
+ai_ship_category_submarines = {
+}
+
+ai_ship_category_carriers = {
+}
+
+ai_ship_category_transports = {
+}

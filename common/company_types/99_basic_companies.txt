@@ -434,6 +434,7 @@ company_basic_metal_mining = {
 				OR = {
 					is_building_type = building_iron_mine
 					is_building_type = building_lead_mine
+					is_building_type = building_copper_mine
 				}
 				level >= 10
 			}
@@ -450,6 +451,7 @@ company_basic_metal_mining = {
 				OR = {
 					is_building_type = building_iron_mine
 					is_building_type = building_lead_mine
+					is_building_type = building_copper_mine
 				}
 				level >= 5
 			}

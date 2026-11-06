@@ -89,37 +89,7 @@ has_treaty_trade_privilege_with = {
 }
 
 violate_sovereignty_war_check = {
-	save_temporary_scope_as = relevant_war
-
-	scope:target_country = {
-		any_scope_theater = {
-			is_land_theater = yes
-
-			save_temporary_scope_as = target_theater
-
-			scope:relevant_war.attacker_warleader = {
-				any_scope_theater = {
-					is_land_theater = yes
-
-					check_area = {
-						mode = adjacent
-						target = scope:target_theater
-					}
-				}
-			}
-
-			scope:relevant_war.defender_warleader = {
-				any_scope_theater = {
-					is_land_theater = yes
-
-					check_area = {
-						mode = adjacent
-						target = scope:target_theater
-					}
-				}
-			}
-		}
-	}
+	connects_important_war_theaters = scope:target_country
 }
 
 countries_are_valid_rivals = {
@@ -339,6 +309,16 @@ has_treaty_guarantee_independence_with = {
 					source_country = $TARGET$
 				}
 			}
+		}
+	}
+}
+
+# Base game 1.15 (strait war goals): the country or any of its subjects holds a strait province
+has_any_strait_province_in_hierarchy = {
+	OR = {
+		has_any_strait_province = yes
+		any_subject_or_below = {
+			has_any_strait_province = yes
 		}
 	}
 }
