@@ -3676,6 +3676,11 @@ modifier_public_smears = {
 	character_popularity_add = -15
 }
 
+modifier_scandalous = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	character_popularity_add = -50
+}
+
 modifier_sick_leave = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
 	country_law_enactment_success_add = -0.075
@@ -3755,11 +3760,6 @@ resisted_oppositional_tomfoolery = {
 rumours_going_around = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
 	character_popularity_add = -25
-}
-
-scandalous = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
-	character_popularity_add = -50
 }
 
 semantics_for_the_people = {

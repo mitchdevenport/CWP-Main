@@ -367,6 +367,58 @@ def fixes(text, c):
     return text
 
 
+# The base game's State and Revolution content (Victoria 3 1.15: tsarpoints, Russian and Polish AI, the Russian civil
+# war, ...) is not part of CWP. Its journal entries, variables and AI triggers never exist in a CWP game, so a check
+# for them is always false: the statements are replaced with `always = no` (`always = yes` for `= no`), which keeps
+# every block's structure and meaning
+SR_HOOK = r"(?:je_tp_\w+|\w*tsarpoints\w*|ai_russia_\w+|je_russia_\w+|\w*congress_poland\w*|ai_poland_\w+|rcw_\w+|rlit_\w+|nemo_\w+|je_state_and_revolution)"
+
+
+def drop_state_and_revolution(text):
+    text = re.sub(r"(?m)^([ \t]*)(?:has_journal_entry|has_variable|has_global_variable)\s*=\s*%s[ \t]*(#[^\n]*)?$" % SR_HOOK,
+                  r"\1always = no", text)
+    text = re.sub(r"(?m)^([ \t]*)%s\s*=\s*yes[ \t]*(#[^\n]*)?$" % SR_HOOK, r"\1always = no", text)
+    text = re.sub(r"(?m)^([ \t]*)%s\s*=\s*no[ \t]*(#[^\n]*)?$" % SR_HOOK, r"\1always = yes", text)
+    return text
+
+
+# The base game's 1.15 ideologies that replaced ones CWP keeps (CWP's ideologies are 1.14's): its communist and state
+# socialist leader ideologies are CWP's communist and social democrat ones, the Patriotic ideology it split is CWP's
+# patriotic, and the Red Army's new militant, disciplinarian and internationalist ideologies stand for the proletarian
+# ideology the Red Army took in 1.14
+IDEOLOGY_RENAMES = {"ideology_communist_leader": "ideology_communist", "ideology_state_socialist": "ideology_social_democrat",
+                    "ideology_militarist": "ideology_patriotic", "ideology_militant": "ideology_proletarian",
+                    "ideology_disciplinarian": "ideology_proletarian", "ideology_internationalist": "ideology_proletarian"}
+_KNOWN = {}
+
+
+def known(folder):
+    """Keys CWP defines in common/<folder> (placeholders excluded)."""
+    if folder not in _KNOWN:
+        ks = set()
+        for p in glob.glob(os.path.join(TARGET, "common", folder, "**", "*.txt"), recursive=True):
+            t = open(p, encoding="utf-8-sig", errors="replace").read()
+            if not t.startswith("# CWP placeholder"):
+                ks.update(k for k, s, e in blocks(t) if k)
+        _KNOWN[folder] = ks
+    return _KNOWN[folder]
+
+
+def neutralize_unknown(text):
+    """Base-game ideologies, traits, laws, journal entries and character templates CWP does not have never exist in a CWP
+    game: a check for one is false (`always = no`), and an effect adding or removing one is dropped."""
+    for old, new in IDEOLOGY_RENAMES.items():
+        text = re.sub(r"\b%s\b" % old, new, text)
+    checks = (("ideologies", r"has_ideology\s*=\s*ideology:(\w+)"), ("character_traits", r"has_trait\s*=\s*(\w+)"),
+              ("laws", r"(?:has_law(?:_or_variant)?|is_enacting_law)\s*=\s*law_type:(\w+)"), ("journal_entries", r"has_journal_entry\s*=\s*(\w+)"),
+              ("character_templates", r"has_template\s*=\s*(\w+)"))
+    for folder, rx in checks:
+        ks = known(folder)
+        text = re.sub(rx, lambda m: m.group(0) if m.group(1) in ks else "always = no", text)
+    for folder, rx in (("ideologies", r"(?:add|remove)_ideology\s*=\s*(\w+)"), ("character_traits", r"(?:add|remove)_trait\s*=\s*(\w+)")):
+        ks = known(folder)
+        text = re.sub(r"(?m)^[ \t]*%s[ \t]*(#[^\n]*)?\n" % rx, lambda m: m.group(0) if m.group(1) in ks else "", text)
+    return text
 
 
 def vanilla_defs(folder):
@@ -407,7 +459,12 @@ def support_fix(folder, body):
     if folder == "scripted_triggers":
         # Japan's sakoku and hierarchic ideologies and the corporate state are not in CWP
         body = re.sub(r"(?m)^[ \t]*[^\n]*(law_type:law_sakoku|law_type:law_corporate_state|ideology:ideology_japan_hierarchic[_0-9]*|character_role_emperor_of_japan)\b[^\n]*\n", "", body)
+        # nor are the State and Revolution decree variants (1.15)
+        body = re.sub(r"(?m)^[ \t]*has_decree = \$DECREE\$_tsarpoints[ \t]*\n", "", body)
         body = re.sub(r"OR = \{\s*\n([ \t]*)([^\n{}]+)\n\s*\}", lambda m: m.group(2).strip(), body)
+    body = drop_state_and_revolution(body)
+    if folder in ("scripted_triggers", "scripted_effects"):
+        body = neutralize_unknown(body)
     return body
 
 
@@ -589,6 +646,8 @@ def main():
             trimmed[c] = sorted(extra)
         text, notes = adapt(text, rel)
         text = fixes(text, c)
+        text = drop_state_and_revolution(text)
+        text = neutralize_unknown(text)
         header = "# CWP: the base game's %s flavour events, restored because CWP 1.5 had them" % ("/".join(c.split("/")[:-1]) or "general")
         if extra:
             header += "\n# (only the events CWP 1.5 used)"

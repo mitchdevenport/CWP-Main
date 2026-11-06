@@ -24,6 +24,8 @@ communism.7 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
 	trigger = {
+		# triggered by journal entry - je_communism_1 [on_monthly_pulse]
+		# triggered by on_action - on_yearly_events
 		NOT = { has_law_or_variant = law_type:law_council_republic }
 		any_interest_group = {
 			ig_counts_as_marginal = no
@@ -74,12 +76,26 @@ communism.7 = {
 					}
 				}
 				save_scope_as = popular_socialist_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 	}
 
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:popular_socialist_leader }
+	}
+
 	option = {
 		name = communism.7.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		trigger = {
 			scope:popular_socialist_ig = {
 				is_in_government = yes
@@ -96,6 +112,15 @@ communism.7 = {
 
 	option = {
 		name = communism.7.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		trigger = {
 			scope:popular_socialist_ig = {
 				is_in_government = no
@@ -138,27 +163,54 @@ communism.8 = {
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
+	fire_only_once = yes
+
 	trigger = {
+		# triggered by on_action - on_monthly_pulse_country
 		has_law_or_variant = law_type:law_council_republic
-		NOT = {	has_variable = red_army_var }
-		ig:ig_armed_forces ?= {
-			leader = {
-				OR = {
-					has_ideology = ideology:ideology_communist
-					has_ideology = ideology:ideology_vanguardist
+		always = no
+		any_scope_character = {
+			OR = {
+				has_variable = red_army_candidate
+				AND = {
+					OR = {
+						is_interest_group_type = ig_trade_unions
+						has_socialist_ideology = yes
+					}
+					OR = {
+						has_role_of_type = general
+						has_role_of_type = admiral
+					}
 				}
 			}
 		}
 	}
 
 	immediate = {
-		ig:ig_armed_forces ?= {
-			save_scope_as = red_army_ig
-			leader = {
-				save_scope_as = red_army_general
+		ordered_scope_character = {
+			limit = {
+				OR = {
+					has_variable = red_army_candidate
+					AND = {
+						OR = {
+							is_interest_group_type = ig_trade_unions
+							has_socialist_ideology = yes
+						}
+						OR = {
+							has_role_of_type = general
+							has_role_of_type = admiral
+						}
+					}
+				}
 			}
+			order_by = prominence
+			position = 0
+			save_scope_as = red_army_general
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
-		set_variable = red_army_var
+		ig:ig_armed_forces ?= {
+			save_scope_as = armed_forces_ig
+		}
 	}
 
 	option = {
@@ -167,10 +219,106 @@ communism.8 = {
 			custom_tooltip = red_army_tt
 			hidden_effect = {
 				set_interest_group_name = ig_red_army
+				if = {
+					limit = {
+						always = no
+					}
+				}
+				if = {
+					limit = {
+						has_ideology = ideology:ideology_jingoist
+					}
+					remove_ideology = ideology_jingoist
+				}
+				if = {
+					limit = {
+						has_ideology = ideology:ideology_patriotic
+					}
+					remove_ideology = ideology_patriotic
+					add_ideology = ideology_proletarian
+				}
+				if = {
+					limit = {
+						has_ideology = ideology:ideology_republican
+					}
+					remove_ideology = ideology_republican
+					add_ideology = ideology_proletarian
+				}
+				custom_tooltip = {
+					text = loyalist_change_stances_tt
+					if = {
+						limit = {
+							has_ideology = ideology:ideology_loyalist
+						}
+						remove_ideology = ideology_loyalist
+						add_ideology = ideology_proletarian
+					}
+				}
+				add_ideology = ideology_proletarian
+				owner = {
+					set_variable = ig_red_army_active
+				}
 			}
-			remove_ideology= ideology_loyalist
-			add_ideology = ideology_proletarian
 		}
+		if = {
+			limit = {
+				NOT = {
+					scope:red_army_general ?= {
+						is_interest_group_type = ig_armed_forces
+					}
+				}
+			}
+			scope:red_army_general ?= {
+				set_interest_group = scope:armed_forces_ig
+				custom_tooltip = {
+					text = leader_of_red_army_tt
+					set_as_interest_group_leader = yes
+				}
+			}
+		}
+		every_scope_character = {
+			limit = {
+				OR = {
+					has_variable = red_army_candidate
+					AND = {
+						OR = {
+							is_interest_group_type = ig_trade_unions
+							has_socialist_ideology = yes
+						}
+						OR = {
+							has_role_of_type = general
+							has_role_of_type = admiral
+						}
+					}
+				}
+				NOT = {
+					scope:red_army_general ?= this
+				}
+			}
+			if = {
+				limit = {
+					has_variable = red_army_candidate
+				}
+				set_interest_group = scope:armed_forces_ig
+			}
+			else = {
+				random = {
+					chance = {
+						value = 50
+					}
+					set_interest_group = scope:armed_forces_ig
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			scope:red_army_general ?= {
+				set_as_interest_group_leader = yes
+			}
+		}
+		revoke_temporary_event_immortality = { CHARACTER = scope:red_army_general }
 	}
 }
 

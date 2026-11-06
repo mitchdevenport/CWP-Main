@@ -25,6 +25,8 @@ autocracy.2 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by journal entry - je_autocracy [on_yearly_pulse]
+		# triggered by on_action - on_yearly_events
 		NOT = {
 			has_variable = secret_societies_timer
 		}
@@ -89,6 +91,21 @@ autocracy.2 = {
 	option = { # tolerate them
 		name = autocracy.2.a
 		default_option = yes
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					always = no
+				}
+				add = 100
+			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:secret_society_ig = {
 			add_modifier = {
 				name = tolerated_secret_societies
@@ -99,6 +116,15 @@ autocracy.2 = {
 
 	option = { # crack down on secret societies
 		name = autocracy.2.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:secret_society_ig = {
 			add_modifier = {
 				name = suppressed_secret_societies
@@ -136,6 +162,8 @@ autocracy.3 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by journal entry - je_autocracy [on_yearly_pulse]
+		# triggered by on_action - on_yearly_events
 		NOT = { has_variable = religious_serfs_timer }
 		ig:ig_devout ?= {
 			is_powerful = yes

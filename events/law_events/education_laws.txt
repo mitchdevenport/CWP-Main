@@ -25,6 +25,7 @@ education_laws.1 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		OR = {
 			is_enacting_law = law_type:law_religious_schools
 			is_enacting_law = law_type:law_private_schools
@@ -95,6 +96,7 @@ education_laws.2 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		OR = {
 			is_enacting_law = law_type:law_religious_schools
 			is_enacting_law = law_type:law_private_schools
@@ -177,6 +179,7 @@ education_laws.3 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		OR = {
 			is_enacting_law = law_type:law_religious_schools
 			is_enacting_law = law_type:law_private_schools
@@ -255,6 +258,7 @@ education_laws.4 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		is_enacting_law = law_type:law_public_schools
 		NOT = { has_modifier = local_teachers }
 	}
@@ -461,6 +465,7 @@ education_laws.5 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		is_enacting_law = law_type:law_public_schools
 		NOT = { has_modifier = coeducational_schools }
 		NOT = { has_modifier = single_sex_education }
@@ -650,6 +655,7 @@ education_laws.6 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		is_enacting_law = law_type:law_public_schools
 		NOT = { has_modifier = church_school_organization }
 		NOT = { has_modifier = building_secular_school_organization }

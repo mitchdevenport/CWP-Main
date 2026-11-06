@@ -127,6 +127,7 @@ fascism_events.8 = { #national anthem
 	}
 
 	trigger = {
+		# triggered by on_action - on_yearly_events
 		has_technology_researched = nationalism
 		NOT = { has_variable = national_anthem_var }
 		any_scope_state = {
@@ -255,7 +256,7 @@ fascism_events.8 = { #national anthem
 		}
 		set_variable = national_anthem_var
 	}
-	
+
 	cancellation_trigger = {
 		NOT = {
 			exists = scope:rival_country

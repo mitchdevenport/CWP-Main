@@ -26,6 +26,7 @@ revolution_pulse_events.1 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_progress_medium = yes
@@ -231,6 +232,7 @@ revolution_pulse_events.2 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -279,6 +281,7 @@ revolution_pulse_events.2 = {
 				}
 			}
 			save_scope_as = fedposting_agitator
+			set_temporary_event_immortality = { DURATION = 3 }
 			this.interest_group ?= {
 				save_scope_as = blatant_fedposting_ig
 			}
@@ -363,6 +366,10 @@ revolution_pulse_events.2 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:fedposting_agitator }
+	}
 }
 
 revolution_pulse_events.3 = {
@@ -419,6 +426,7 @@ revolution_pulse_events.3 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_progress_medium = yes
@@ -481,6 +489,7 @@ revolution_pulse_events.3 = {
 						has_role_of_type = agitator
 					}
 					save_scope_as = dual_power_agitator
+					set_temporary_event_immortality = { DURATION = 3 }
 				}
 			}
 		}
@@ -534,6 +543,12 @@ revolution_pulse_events.3 = {
 		name = revolution_pulse_events.3.b
 		ai_chance = {
 			base = 10
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_medium
@@ -554,6 +569,12 @@ revolution_pulse_events.3 = {
 		name = revolution_pulse_events.3.c
 		ai_chance = {
 			base = 10
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_medium
@@ -582,6 +603,10 @@ revolution_pulse_events.3 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:dual_power_agitator }
+	}
 }
 
 revolution_pulse_events.4 = {
@@ -607,6 +632,7 @@ revolution_pulse_events.4 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_revolution_ongoing = yes
 		ig:ig_armed_forces ?= {
@@ -660,6 +686,15 @@ revolution_pulse_events.4 = {
 
 	option = {
 		name = revolution_pulse_events.4.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
@@ -680,6 +715,15 @@ revolution_pulse_events.4 = {
 
 	option = {
 		name = revolution_pulse_events.4.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
 		}
@@ -722,6 +766,7 @@ revolution_pulse_events.5 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_is_socialist_revolution = yes
@@ -841,6 +886,7 @@ revolution_pulse_events.7 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		has_ruling_interest_group_count >= 2
 		any_interest_group = {
@@ -879,6 +925,7 @@ revolution_pulse_events.7 = {
 			save_scope_as = petition_march_ig
 			leader = {
 				save_scope_as = petition_march_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		capital = {
@@ -886,6 +933,7 @@ revolution_pulse_events.7 = {
 		}
 		ruler = {
 			save_scope_as = petition_march_ruler
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
@@ -895,6 +943,12 @@ revolution_pulse_events.7 = {
 		default_option = yes
 		ai_chance = {
 			base = 50
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
@@ -926,6 +980,12 @@ revolution_pulse_events.7 = {
 					}
 				}
 				add = -25
+			}
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 15
 			}
 		}
 		scope:ongoing_revolution = {
@@ -988,6 +1048,12 @@ revolution_pulse_events.7 = {
 		}
 		ai_chance = {
 			base = 25
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_medium
@@ -1009,6 +1075,11 @@ revolution_pulse_events.7 = {
 				days = normal_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:petition_march_leader }
+		revoke_temporary_event_immortality = { CHARACTER = scope:petition_march_ruler }
 	}
 }
 
@@ -1035,6 +1106,7 @@ revolution_pulse_events.8 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -1181,6 +1253,8 @@ revolution_pulse_events.9 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
+		# triggered by on_action - on_secession_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_progress_low = yes
@@ -1251,6 +1325,7 @@ revolution_pulse_events.9 = {
 						has_role_of_type = agitator
 					}
 					save_scope_as = agitation_af_agitator
+					set_temporary_event_immortality = { DURATION = 3 }
 				}
 			}
 		}
@@ -1259,6 +1334,15 @@ revolution_pulse_events.9 = {
 
 	option = {
 		name = revolution_pulse_events.9.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
@@ -1273,6 +1357,15 @@ revolution_pulse_events.9 = {
 
 	option = {
 		name = revolution_pulse_events.9.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
 		}
@@ -1288,6 +1381,10 @@ revolution_pulse_events.9 = {
 				}
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:agitation_af_agitator }
 	}
 }
 
@@ -1314,30 +1411,17 @@ revolution_pulse_events.10 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
-			OR = {
-				civil_war_is_liberal_revolution = yes
-				civil_war_is_socialist_revolution = yes
-			}
-			civil_war_progress_high = yes
-			political_movement = {
-				exists = most_desired_law
-			}
+			civil_war_is_valid_for_reforms_at_gunpoint = yes
 		}
 	}
 
 	cancellation_trigger = {
 		NOT = {
 			any_civil_war = {
-				OR = {
-					civil_war_is_liberal_revolution = yes
-					civil_war_is_socialist_revolution = yes
-				}
-				civil_war_progress_high = yes
-				political_movement = {
-					exists = most_desired_law
-				}
+				civil_war_is_valid_for_reforms_at_gunpoint = yes
 			}
 		}
 	}
@@ -1345,14 +1429,7 @@ revolution_pulse_events.10 = {
 	immediate = {
 		random_civil_war = {
 			limit = {
-				OR = {
-					civil_war_is_liberal_revolution = yes
-					civil_war_is_socialist_revolution = yes
-				}
-				civil_war_progress_high = yes
-				political_movement = {
-					exists = most_desired_law
-				}
+				civil_war_is_valid_for_reforms_at_gunpoint = yes
 			}
 			civil_war_save_scopes = yes
 			political_movement.most_desired_law ?= {
@@ -1361,6 +1438,7 @@ revolution_pulse_events.10 = {
 		}
 		ruler = {
 			save_scope_as = reforms_at_gunpoint_ruler
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		random_interest_group = {
 			limit = {
@@ -1375,6 +1453,17 @@ revolution_pulse_events.10 = {
 		name = revolution_pulse_events.10.a
 		ai_chance = {
 			base = 10
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+					NOR = {
+						scope:revolutionaries_law ?= law_type:law_parliamentary_republic
+						scope:revolutionaries_law ?= law_type:law_presidential_republic
+						scope:revolutionaries_law ?= law_type:law_council_republic
+					}
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_very_large
@@ -1426,6 +1515,23 @@ revolution_pulse_events.10 = {
 				}
 				add = -3
 			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+					OR = {
+						scope:revolutionaries_law ?= law_type:law_parliamentary_republic
+						scope:revolutionaries_law ?= law_type:law_presidential_republic
+						scope:revolutionaries_law ?= law_type:law_council_republic
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_large
@@ -1442,6 +1548,10 @@ revolution_pulse_events.10 = {
 				days = normal_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:reforms_at_gunpoint_ruler }
 	}
 }
 
@@ -1468,6 +1578,7 @@ revolution_pulse_events.11 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -1536,6 +1647,12 @@ revolution_pulse_events.11 = {
 				}
 				add = -3
 			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:most_recent_opponent_scope = {
 			change_relations = {
@@ -1565,6 +1682,12 @@ revolution_pulse_events.11 = {
 		name = revolution_pulse_events.11.b
 		ai_chance = {
 			base = 10
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution_movement = {
 			add_modifier = {
@@ -1598,6 +1721,7 @@ revolution_pulse_events.12 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_is_socialist_revolution = yes
@@ -1646,6 +1770,7 @@ revolution_pulse_events.12 = {
 				has_socialist_ideology = yes
 			}
 			save_scope_as = communist_agitator_scope
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		ig:ig_trade_unions ?= {
 			save_scope_as = trade_union_ig
@@ -1661,6 +1786,7 @@ revolution_pulse_events.12 = {
 				order_by = prominence
 				position = 0
 				save_scope_as = trade_union_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		set_variable = { name = revolution_event_cooldown days = 30 }
@@ -1726,6 +1852,11 @@ revolution_pulse_events.12 = {
 			add_civil_war_progress = revolution_advance_small
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:communist_agitator_scope }
+		revoke_temporary_event_immortality = { CHARACTER = scope:trade_union_leader }
+	}
 }
 
 revolution_pulse_events.13 = {
@@ -1751,6 +1882,7 @@ revolution_pulse_events.13 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_is_socialist_revolution = yes
@@ -1812,6 +1944,7 @@ revolution_pulse_events.13 = {
 				has_socialist_ideology = yes
 			}
 			save_scope_as = communist_revolutionary_scope
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
@@ -1885,6 +2018,12 @@ revolution_pulse_events.13 = {
 				}
 				add = -3
 			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		trigger = {
 			any_scope_character = {
@@ -1942,6 +2081,10 @@ revolution_pulse_events.13 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:communist_revolutionary_scope }
+	}
 }
 
 ### Fascism Chain [1]
@@ -1969,6 +2112,7 @@ revolution_pulse_events.14 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -2024,6 +2168,7 @@ revolution_pulse_events.14 = {
 		}
 		ruler = {
 			save_scope_as = nation_ruler
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
@@ -2090,6 +2235,10 @@ revolution_pulse_events.14 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:nation_ruler }
+	}
 }
 
 revolution_pulse_events.15 = {
@@ -2115,6 +2264,7 @@ revolution_pulse_events.15 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -2163,6 +2313,7 @@ revolution_pulse_events.15 = {
 				has_variable = reactionary_agitator_var
 			}
 			save_scope_as = reactionary_agitator
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		random_interest_group = {
 			limit = {
@@ -2195,6 +2346,12 @@ revolution_pulse_events.15 = {
 					}
 				}
 				add = -3
+			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
 			}
 		}
 		scope:ongoing_revolution = {
@@ -2241,6 +2398,12 @@ revolution_pulse_events.15 = {
 		name = revolution_pulse_events.15.b
 		ai_chance = {
 			base = 10
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution_movement = {
 			add_modifier = {
@@ -2267,6 +2430,10 @@ revolution_pulse_events.15 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:reactionary_agitator }
+	}
 }
 
 revolution_pulse_events.16 = {
@@ -2292,6 +2459,7 @@ revolution_pulse_events.16 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			civil_war_is_socialist_revolution = yes
@@ -2381,6 +2549,7 @@ revolution_pulse_events.17 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_scope_state = {
 			is_incorporated = yes
@@ -2457,6 +2626,7 @@ revolution_pulse_events.17 = {
 				has_variable = reactionary_agitator_var
 			}
 			save_scope_as = reactionary_agitator
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		set_variable = { name = revolution_event_cooldown days = 30 }
 	}
@@ -2466,6 +2636,12 @@ revolution_pulse_events.17 = {
 		default_option = yes
 		ai_chance = {
 			base = 75
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution_movement = {
 			add_modifier = {
@@ -2521,6 +2697,12 @@ revolution_pulse_events.17 = {
 				}
 				add = -25
 			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:pogrom_state = {
 			add_culture_standard_of_living_modifier = {
@@ -2575,6 +2757,10 @@ revolution_pulse_events.17 = {
 			remove_variable = pogrom_culture_var
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:reactionary_agitator }
+	}
 }
 
 revolution_pulse_events.18 = {
@@ -2600,6 +2786,7 @@ revolution_pulse_events.18 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		 any_civil_war = {
 			civil_war_is_socialist_revolution = yes
@@ -2643,6 +2830,7 @@ revolution_pulse_events.18 = {
 					has_variable = reactionary_agitator_var
 				}
 				save_scope_as = fascist_agitator
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 			if = {
 				limit = {
@@ -2687,6 +2875,15 @@ revolution_pulse_events.18 = {
 
 	option = { #Unlocks revolution_pulse_events.19.
 		name = revolution_pulse_events.18.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 15
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
 		}
@@ -2711,6 +2908,15 @@ revolution_pulse_events.18 = {
 
 	option = { #Unlocks revolution_pulse_events.19.
 		name = revolution_pulse_events.18.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		trigger = {
 			exists = scope:fascist_politician
 		}
@@ -2739,6 +2945,10 @@ revolution_pulse_events.18 = {
 				strata = middle
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:fascist_agitator }
 	}
 }
 
@@ -2790,6 +3000,7 @@ revolution_pulse_events.19 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		 any_civil_war = {
 			civil_war_is_socialist_revolution = yes
@@ -2826,9 +3037,11 @@ revolution_pulse_events.19 = {
 					has_variable = reactionary_agitator_var
 				}
 				save_scope_as = fascist_regime_agitator
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 			leader = {
 				save_scope_as = fascist_regime_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		capital = {
@@ -2972,6 +3185,11 @@ revolution_pulse_events.19 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:fascist_regime_agitator }
+		revoke_temporary_event_immortality = { CHARACTER = scope:fascist_regime_leader }
+	}
 }
 
 revolution_pulse_events.20 = {
@@ -2997,6 +3215,7 @@ revolution_pulse_events.20 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		 any_civil_war = {
 			OR = {
@@ -3039,6 +3258,7 @@ revolution_pulse_events.20 = {
 			save_scope_as = reactionary_regime_ig
 			leader = {
 				save_scope_as = reactionary_regime_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		capital = {
@@ -3109,6 +3329,10 @@ revolution_pulse_events.20 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:reactionary_regime_ig_leader }
+	}
 }
 
 revolution_pulse_events.21 = {
@@ -3134,6 +3358,7 @@ revolution_pulse_events.21 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -3143,14 +3368,6 @@ revolution_pulse_events.21 = {
 			OR = {
 				civil_war_progress_medium = yes
 				civil_war_progress_high = yes
-			}
-		}
-		any_interest_group = {
-			ig_counts_as_marginal = no
-			is_insurrectionary = yes
-			law_stance = {
-				law = law_type:law_monarchy
-				value < neutral
 			}
 		}
 		has_law = law_type:law_monarchy
@@ -3215,6 +3432,18 @@ revolution_pulse_events.21 = {
 				}
 				add = -25
 			}
+			modifier = {
+				trigger = {
+					always = no
+				}
+				add = 100
+			}
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_medium
@@ -3235,6 +3464,12 @@ revolution_pulse_events.21 = {
 		name = revolution_pulse_events.21.b
 		ai_chance = {
 			base = 75
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
@@ -3275,6 +3510,7 @@ revolution_pulse_events.22 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -3284,14 +3520,6 @@ revolution_pulse_events.22 = {
 			OR = {
 				civil_war_progress_medium = yes
 				civil_war_progress_high = yes
-			}
-		}
-		any_interest_group = {
-			ig_counts_as_marginal = no
-			is_insurrectionary = yes
-			law_stance = {
-				law = law_type:law_monarchy
-				value < neutral
 			}
 		}
 		any_interest_group = {
@@ -3344,6 +3572,7 @@ revolution_pulse_events.22 = {
 			save_scope_as = hostage_ig
 			leader = {
 				save_scope_as = hostage_char
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		set_variable = { name = revolution_event_cooldown days = 30 }
@@ -3364,18 +3593,38 @@ revolution_pulse_events.22 = {
 				days = normal_modifier_time
 			}
 		}
-		random_interest_group = {
+		if = {
 			limit = {
-				ig_counts_as_marginal = no
-				is_insurrectionary = yes
-				law_stance = {
-					law = law_type:law_monarchy
-					value < neutral
+				any_scope_character = {
+					has_role_of_type = agitator
+					political_movement ?= scope:ongoing_revolution_movement
+					exists = interest_group
 				}
 			}
-			add_modifier = {
-				name = modifier_kings_ransom
-				days = short_modifier_time
+			random_scope_character = {
+				limit = {
+					has_role_of_type = agitator
+					political_movement ?= scope:ongoing_revolution_movement
+					exists = interest_group
+				}
+				interest_group = {
+					add_modifier = {
+						name = modifier_kings_ransom
+						days = short_modifier_time
+					}
+				}
+			}
+		}
+		else = {
+			random_interest_group = {
+				limit = {
+					ig_counts_as_marginal = no
+					is_insurrectionary = yes
+				}
+				add_modifier = {
+					name = modifier_kings_ransom
+					days = short_modifier_time
+				}
 			}
 		}
 		scope:ongoing_revolution = {
@@ -3396,6 +3645,7 @@ revolution_pulse_events.22 = {
 				add = -25
 			}
 		}
+		revoke_temporary_event_immortality = { CHARACTER = scope:hostage_char }
 		scope:hostage_char = {
 			kill_character = yes
 		}
@@ -3434,11 +3684,16 @@ revolution_pulse_events.22 = {
 				}
 			}
 			50 = {
+				revoke_temporary_event_immortality = { CHARACTER = scope:hostage_char }
 				scope:hostage_char = {
 					kill_character = yes
 				}
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:hostage_char }
 	}
 }
 
@@ -3465,6 +3720,7 @@ revolution_pulse_events.23 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -3474,14 +3730,6 @@ revolution_pulse_events.23 = {
 			OR = {
 				civil_war_progress_low = yes
 				civil_war_progress_medium = yes
-			}
-		}
-		any_interest_group = {
-			ig_counts_as_marginal = no
-			is_insurrectionary = yes
-			law_stance = {
-				law = law_type:law_monarchy
-				value < neutral
 			}
 		}
 		has_law = law_type:law_monarchy
@@ -3591,6 +3839,7 @@ revolution_pulse_events.24 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -3598,14 +3847,6 @@ revolution_pulse_events.24 = {
 				civil_war_is_socialist_revolution = yes
 			}
 			civil_war_progress_high = yes
-		}
-		any_interest_group = {
-			ig_counts_as_marginal = no
-			is_insurrectionary = yes
-			law_stance = {
-				law = law_type:law_monarchy
-				value < neutral
-			}
 		}
 		has_law = law_type:law_monarchy
 	}
@@ -3740,22 +3981,47 @@ revolution_pulse_events.24 = {
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_large
 		}
-		random_interest_group = {
+		if = {
 			limit = {
-				ig_counts_as_marginal = no
-				is_insurrectionary = yes
-				law_stance = {
-					law = law_type:law_monarchy
-					value < neutral
+				any_scope_character = {
+					has_role_of_type = agitator
+					political_movement ?= scope:ongoing_revolution_movement
+					is_immortal = no
 				}
 			}
-			leader = {
+			random_scope_character = {
+				limit = {
+					has_role_of_type = agitator
+					political_movement ?= scope:ongoing_revolution_movement
+					is_immortal = no
+				}
+				interest_group ?= {
+					add_modifier = {
+						name = modifier_surgical_reprisal
+						days = normal_modifier_time
+						is_decaying = yes
+					}
+				}
 				kill_character = yes
 			}
-			add_modifier = {
-				name = modifier_surgical_reprisal
-				days = normal_modifier_time
-				is_decaying = yes
+		}
+		else = {
+			random_interest_group = {
+				limit = {
+					ig_counts_as_marginal = no
+					is_insurrectionary = yes
+					leader = {
+						is_immortal = no
+					}
+				}
+				leader = {
+					kill_character = yes
+				}
+				add_modifier = {
+					name = modifier_surgical_reprisal
+					days = normal_modifier_time
+					is_decaying = yes
+				}
 			}
 		}
 	}
@@ -3784,6 +4050,7 @@ revolution_pulse_events.25 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -3791,14 +4058,6 @@ revolution_pulse_events.25 = {
 				civil_war_is_socialist_revolution = yes
 			}
 			civil_war_progress_high = yes
-		}
-		any_interest_group = {
-			ig_counts_as_marginal = no
-			is_insurrectionary = yes
-			law_stance = {
-				law = law_type:law_monarchy
-				value < neutral
-			}
 		}
 		has_law = law_type:law_monarchy
 		ruler = {
@@ -3837,6 +4096,7 @@ revolution_pulse_events.25 = {
 				is_heir_of_own_country = yes
 			}
 			save_scope_as = heir_scope
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		if = {
 			limit = {
@@ -4095,6 +4355,10 @@ revolution_pulse_events.25 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:heir_scope }
+	}
 }
 
 revolution_pulse_events.26 = {
@@ -4191,6 +4455,7 @@ revolution_pulse_events.26 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_interest_group = {
 			ig_counts_as_marginal = no
@@ -4231,6 +4496,15 @@ revolution_pulse_events.26 = {
 
 	option = {
 		name = revolution_pulse_events.26.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:devout_ig = {
 			add_modifier = {
@@ -4284,6 +4558,7 @@ revolution_pulse_events.27 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_interest_group = {
 			ig_counts_as_marginal = no
@@ -4403,6 +4678,7 @@ revolution_pulse_events.28 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		 any_civil_war = {
 			civil_war_is_reactionary_revolution = yes
@@ -4561,6 +4837,7 @@ revolution_pulse_events.29 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_interest_group = {
 			ig_counts_as_marginal = no
@@ -4627,6 +4904,15 @@ revolution_pulse_events.29 = {
 
 	option = {
 		name = revolution_pulse_events.29.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
 		}
@@ -4675,6 +4961,8 @@ revolution_pulse_events.30 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
+		# triggered by on_action - on_secession_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			OR = {
@@ -4801,6 +5089,15 @@ revolution_pulse_events.30 = {
 
 	option = {
 		name = revolution_pulse_events.30.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
@@ -4825,6 +5122,15 @@ revolution_pulse_events.30 = {
 
 	option = {
 		name = revolution_pulse_events.30.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_medium
 		}
@@ -4866,6 +5172,7 @@ revolution_pulse_events.31 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -4915,6 +5222,7 @@ revolution_pulse_events.31 = {
 			save_scope_as = armed_forces_ig
 			leader = {
 				save_scope_as = armed_forces_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -4950,6 +5258,15 @@ revolution_pulse_events.31 = {
 
 	option = {
 		name = revolution_pulse_events.31.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		trigger = {
 			OR = {
 				has_law_or_variant = law_type:law_professional_army
@@ -4969,6 +5286,15 @@ revolution_pulse_events.31 = {
 
 	option = {
 		name = revolution_pulse_events.31.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_medium
 		}
@@ -4982,6 +5308,10 @@ revolution_pulse_events.31 = {
 				pop_type = soldiers
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:armed_forces_ig_leader }
 	}
 }
 
@@ -5008,6 +5338,7 @@ revolution_pulse_events.32 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		NOT = {
 			has_law_or_variant = law_type:law_state_atheism
@@ -5065,6 +5396,7 @@ revolution_pulse_events.32 = {
 			save_scope_as = devout_ig
 			leader = {
 				save_scope_as = devout_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -5103,6 +5435,15 @@ revolution_pulse_events.32 = {
 
 	option = {
 		name = revolution_pulse_events.32.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
@@ -5121,6 +5462,15 @@ revolution_pulse_events.32 = {
 
 	option = {
 		name = revolution_pulse_events.32.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
 		}
@@ -5150,6 +5500,10 @@ revolution_pulse_events.32 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:devout_ig_leader }
+	}
 }
 
 revolution_pulse_events.33 = {
@@ -5175,6 +5529,7 @@ revolution_pulse_events.33 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -5229,6 +5584,7 @@ revolution_pulse_events.33 = {
 			save_scope_as = industrialists_ig
 			leader = {
 				save_scope_as = industrialists_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -5276,6 +5632,15 @@ revolution_pulse_events.33 = {
 
 	option = {
 		name = revolution_pulse_events.33.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
 		}
@@ -5317,6 +5682,10 @@ revolution_pulse_events.33 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:industrialists_ig_leader }
+	}
 }
 
 revolution_pulse_events.34 = {
@@ -5342,6 +5711,7 @@ revolution_pulse_events.34 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -5391,6 +5761,7 @@ revolution_pulse_events.34 = {
 			save_scope_as = intelligentsia_ig
 			leader = {
 				save_scope_as = intelligentsia_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -5411,6 +5782,15 @@ revolution_pulse_events.34 = {
 
 	option = {
 		name = revolution_pulse_events.34.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
@@ -5428,6 +5808,15 @@ revolution_pulse_events.34 = {
 
 	option = {
 		name = revolution_pulse_events.34.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
 		}
@@ -5461,6 +5850,10 @@ revolution_pulse_events.34 = {
 			days = short_modifier_time
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:intelligentsia_ig_leader }
+	}
 }
 
 revolution_pulse_events.35 = {
@@ -5486,6 +5879,7 @@ revolution_pulse_events.35 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -5534,6 +5928,7 @@ revolution_pulse_events.35 = {
 			save_scope_as = landowners_ig
 			leader = {
 				save_scope_as = landowners_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -5566,10 +5961,35 @@ revolution_pulse_events.35 = {
 				days = normal_modifier_time
 			}
 		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					always = no
+				}
+				add = 100
+			}
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 	}
 
 	option = {
 		name = revolution_pulse_events.35.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
 		}
@@ -5594,6 +6014,10 @@ revolution_pulse_events.35 = {
 				days = normal_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:landowners_ig_leader }
 	}
 }
 
@@ -5620,6 +6044,7 @@ revolution_pulse_events.36 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -5668,6 +6093,7 @@ revolution_pulse_events.36 = {
 			save_scope_as = petty_bourgeoisie_ig
 			leader = {
 				save_scope_as = petty_bourgeoisie_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -5685,6 +6111,15 @@ revolution_pulse_events.36 = {
 
 	option = {
 		name = revolution_pulse_events.36.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		default_option = yes
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_medium
@@ -5697,6 +6132,15 @@ revolution_pulse_events.36 = {
 
 	option = {
 		name = revolution_pulse_events.36.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
 		}
@@ -5711,6 +6155,15 @@ revolution_pulse_events.36 = {
 
 	option = {
 		name = revolution_pulse_events.36.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_medium
 		}
@@ -5718,6 +6171,10 @@ revolution_pulse_events.36 = {
 			name = modifier_restart_false_reports
 			days = short_modifier_time
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:petty_bourgeoisie_ig_leader }
 	}
 }
 
@@ -5744,6 +6201,7 @@ revolution_pulse_events.37 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -5797,6 +6255,7 @@ revolution_pulse_events.37 = {
 			save_scope_as = rural_folk_ig
 			leader = {
 				save_scope_as = rural_folk_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		random_scope_state = {
@@ -5842,6 +6301,15 @@ revolution_pulse_events.37 = {
 
 	option = {
 		name = revolution_pulse_events.37.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_retreat_small
 		}
@@ -5859,6 +6327,15 @@ revolution_pulse_events.37 = {
 
 	option = {
 		name = revolution_pulse_events.37.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
 		}
@@ -5868,6 +6345,10 @@ revolution_pulse_events.37 = {
 				days = short_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:rural_folk_ig_leader }
 	}
 }
 
@@ -5894,6 +6375,7 @@ revolution_pulse_events.38 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -5943,6 +6425,7 @@ revolution_pulse_events.38 = {
 			save_scope_as = trade_unions_ig
 			leader = {
 				save_scope_as = trade_unions_ig_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 		ordered_scope_state = {
@@ -6026,6 +6509,15 @@ revolution_pulse_events.38 = {
 
 	option = {
 		name = revolution_pulse_events.38.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		scope:ongoing_revolution = {
 			add_civil_war_progress = revolution_advance_small
 		}
@@ -6039,6 +6531,10 @@ revolution_pulse_events.38 = {
 				strata = lower
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:trade_unions_ig_leader }
 	}
 }
 
@@ -6065,6 +6561,7 @@ revolution_pulse_events.39 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_civil_war = {
 			is_civil_war_type = revolution
@@ -6170,6 +6667,7 @@ revolution_pulse_events.40 = {
 	cooldown = { days = very_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_revolution_checkpoint_reached
 		NOT = { has_variable = revolution_event_cooldown }
 		any_revolution_ongoing = yes
 		any_interest_group = {
@@ -6203,6 +6701,7 @@ revolution_pulse_events.40 = {
 		}
 		ruler = {
 			save_scope_as = governor_person
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		random_interest_group = {
 			limit = {
@@ -6264,5 +6763,9 @@ revolution_pulse_events.40 = {
 				days = short_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:governor_person }
 	}
 }

@@ -25,6 +25,7 @@ conscription_laws.1 = { #Rural folk worried about lack of workers
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		has_law = law_type:law_professional_army
 		OR = {
 			is_enacting_law = law_type:law_peasant_levies
@@ -92,6 +93,7 @@ conscription_laws.2 = { #regular vs irregular troops
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		has_law = law_type:law_professional_army
 		OR = {
 			is_enacting_law = law_type:law_peasant_levies
@@ -142,6 +144,15 @@ conscription_laws.2 = { #regular vs irregular troops
 
 	option = { #upset armed forces but get loyalist soldiers
 		name = conscription_laws.2.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		add_modifier = {
 			name = listen_to_the_troops
 			days = normal_modifier_time
@@ -194,6 +205,7 @@ conscription_laws.3 = { #Government is unprepared for conscription
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		has_law = law_type:law_professional_army
 		OR = {
 			is_enacting_law = law_type:law_peasant_levies
@@ -237,12 +249,17 @@ conscription_laws.3 = { #Government is unprepared for conscription
 			save_scope_as = anti_conscription_ig
 			leader = {
 				save_scope_as = anti_conscription_advocate
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 	}
 
 	cancellation_trigger = {
 		NOT = { currently_enacting_law = scope:current_law_scope }
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:anti_conscription_advocate }
 	}
 
 	option = { #invest to get low of no chance of failure

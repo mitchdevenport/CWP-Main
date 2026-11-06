@@ -24,6 +24,7 @@ election_conservative_events.1 = {
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
+		# triggered by on_action - elections_monthly_events
 		NOT = { has_law_or_variant = law_type:law_single_party_state }
 		in_election_campaign = yes
 		NOT = { has_variable = election_event_cooldown }
@@ -73,7 +74,10 @@ election_conservative_events.1 = {
 					is_party_type = liberal_party
 				}
 			}
-			leader = { save_scope_as = atheist_leader }
+			leader = {
+				save_scope_as = atheist_leader
+				set_temporary_event_immortality = { DURATION = 3 }
+			}
 			party = { save_scope_as = liberal_party }
 		}
 	}
@@ -110,6 +114,10 @@ election_conservative_events.1 = {
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:atheist_leader }
+	}
 }
 
 # Unity in Tradition
@@ -134,6 +142,7 @@ election_conservative_events.2 = {
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
+		# triggered by on_action - elections_monthly_events
 		NOT = { has_law_or_variant = law_type:law_single_party_state }
 		in_election_campaign = yes
 		NOT = { has_variable = election_event_cooldown }
@@ -172,6 +181,15 @@ election_conservative_events.2 = {
 	# Accept the argument, giving momentum to the conservative party.
 	option = {
 		name = election_conservative_events.2.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		py:conservative_party = {
 			add_momentum = momentum_large
 		}
@@ -181,6 +199,15 @@ election_conservative_events.2 = {
 	option = {
 		name = election_conservative_events.2.b
 		default_option = yes
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		every_scope_state = {
 			limit = { devastation > 0.05 }
 			add_radicals_in_state = {
@@ -212,6 +239,7 @@ election_conservative_events.3 = {
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
+		# triggered by on_action - elections_monthly_events
 		NOT = { has_law_or_variant = law_type:law_single_party_state }
 		in_election_campaign = yes
 		NOT = { has_variable = election_event_cooldown }
@@ -311,6 +339,7 @@ election_conservative_events.4 = {
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
+		# triggered by on_action - elections_monthly_events
 		NOT = { has_law_or_variant = law_type:law_single_party_state }
 		in_election_campaign = yes
 		NOT = { has_variable = election_event_cooldown }

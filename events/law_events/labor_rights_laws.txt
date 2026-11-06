@@ -27,6 +27,7 @@ labor_rights.1 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		has_law = law_type:law_serfdom
 		OR = {
 			is_enacting_law = law_type:law_tenant_farmers
@@ -116,6 +117,7 @@ labor_rights.4 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		OR = {
 			AND = {
 				is_enacting_law = law_type:law_regulatory_bodies
@@ -185,6 +187,7 @@ labor_rights.5 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		OR = {
 			AND = {
 				is_enacting_law = law_type:law_regulatory_bodies
@@ -220,6 +223,22 @@ labor_rights.5 = {
 	option = { # support the unions
 		name = labor_rights.5.a
 		default_option = yes
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					always = no
+					NOT = { has_variable = je_tp_tsar_heir_of_alexander_button_4_complete }
+				}
+				add = 100
+			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		# increase enactment speed and gain some loyalists but lose success chance
 		add_enactment_modifier = {
 			name = worker_protection_negotiations
@@ -268,6 +287,7 @@ labor_rights.6 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		OR = {
 			AND = {
 				is_enacting_law = law_type:law_regulatory_bodies

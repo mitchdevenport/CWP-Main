@@ -25,6 +25,7 @@ distribution_of_power_laws.1 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		OR = {
 			is_enacting_law = law_type:law_autocracy
 			AND = {
@@ -109,6 +110,7 @@ distribution_of_power_laws.2 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		OR = {
 			is_enacting_law = law_type:law_autocracy
 			AND = {
@@ -135,6 +137,15 @@ distribution_of_power_laws.2 = {
 
 	option = {
 		name = distribution_of_power_laws.2.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		add_enactment_modifier = {
 			name = promised_bureaucratic_purge
 		}
@@ -176,6 +187,7 @@ distribution_of_power_laws.3 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		OR = {
 			is_enacting_law = law_type:law_autocracy
 			AND = {
@@ -199,6 +211,15 @@ distribution_of_power_laws.3 = {
 
 	option = {
 		name = distribution_of_power_laws.3.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		trigger = {
 			enactment_setback_count < max_setbacks_minus_one
 		}
@@ -296,6 +317,7 @@ distribution_of_power_laws.4 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		OR = {
 			is_enacting_law = law_type:law_autocracy
 			is_enacting_law = law_type:law_oligarchy
@@ -353,6 +375,7 @@ distribution_of_power_laws.4 = {
 				}
 			}
 			save_scope_as = supportive_commander
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 	}
 
@@ -370,6 +393,15 @@ distribution_of_power_laws.4 = {
 	option = {
 		name = distribution_of_power_laws.4.b
 		default_option = yes
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		add_enactment_modifier = {
 			name = senior_military_support
 		}
@@ -377,6 +409,10 @@ distribution_of_power_laws.4 = {
 			pop_type = officers
 			value = 0.3
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:supportive_commander }
 	}
 }
 
@@ -403,6 +439,7 @@ distribution_of_power_laws.5 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		OR = {
 			is_enacting_law = law_type:law_autocracy
 			is_enacting_law = law_type:law_oligarchy
@@ -551,6 +588,7 @@ distribution_of_power_laws.6 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		OR = {
 			is_enacting_law = law_type:law_autocracy
 			is_enacting_law = law_type:law_oligarchy
@@ -596,6 +634,7 @@ distribution_of_power_laws.6 = {
 				is_immortal = no
 			}
 			save_scope_as = opposing_politician
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 	}
 
@@ -616,6 +655,7 @@ distribution_of_power_laws.6 = {
 			}
 		}
 		hidden_effect = {
+			revoke_temporary_event_immortality = { CHARACTER = scope:opposing_politician }
 			scope:opposing_politician = {
 				retire_character = yes
 			}
@@ -644,6 +684,10 @@ distribution_of_power_laws.6 = {
 		}
 		add_enactment_setback = 1
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:opposing_politician }
+	}
 }
 
 
@@ -670,6 +714,7 @@ distribution_of_power_laws.7 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		OR = {
 			is_enacting_law = law_type:law_census_voting
 			is_enacting_law = law_type:law_universal_suffrage
@@ -744,6 +789,7 @@ distribution_of_power_laws.8 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		OR = {
 			is_enacting_law = law_type:law_census_voting
 			is_enacting_law = law_type:law_universal_suffrage
@@ -836,6 +882,12 @@ distribution_of_power_laws.8 = {
 		name = distribution_of_power_laws.8.a
 		ai_chance = {
 			base = 10
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
 		}
 		add_enactment_modifier = {
 			name = voting_age_25
@@ -895,6 +947,12 @@ distribution_of_power_laws.8 = {
 				}
 				add = -3
 			}
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
 		}
 		add_enactment_modifier = {
 			name = voting_age_18
@@ -938,6 +996,7 @@ distribution_of_power_laws.9 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		OR = {
 			is_enacting_law = law_type:law_census_voting
 			is_enacting_law = law_type:law_universal_suffrage
@@ -963,6 +1022,15 @@ distribution_of_power_laws.9 = {
 
 	option = {
 		name = distribution_of_power_laws.9.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		trigger = {
 			enactment_setback_count < max_setbacks_minus_one
 		}
@@ -1048,6 +1116,7 @@ distribution_of_power_laws.10 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		OR = {
 			is_enacting_law = law_type:law_landed_voting
 			is_enacting_law = law_type:law_wealth_voting
@@ -1124,6 +1193,7 @@ distribution_of_power_laws.11 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		OR = {
 			is_enacting_law = law_type:law_landed_voting
 			is_enacting_law = law_type:law_wealth_voting
@@ -1256,6 +1326,7 @@ distribution_of_power_laws.12 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		OR = {
 			is_enacting_law = law_type:law_landed_voting
 			is_enacting_law = law_type:law_wealth_voting

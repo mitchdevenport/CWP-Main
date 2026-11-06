@@ -25,6 +25,7 @@ commander_events.2 = { #Commanders habit is getting out of control
 	cooldown = { days = stupidly_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_yearly_events
 		any_scope_character = {
 			has_role_of_type = general
 			is_busy = no
@@ -52,6 +53,7 @@ commander_events.2 = { #Commanders habit is getting out of control
 				}
 			}
 			save_scope_as = commander_with_addiction
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 	}
 
@@ -66,6 +68,7 @@ commander_events.2 = { #Commanders habit is getting out of control
 		custom_tooltip = commander_events.2.a.tt
 		hidden_effect = {
 			scope:commander_with_addiction = {
+				revoke_temporary_event_immortality = { CHARACTER = scope:commander_with_addiction }
 				retire_character = yes
 			}
 		}
@@ -80,6 +83,10 @@ commander_events.2 = { #Commanders habit is getting out of control
 				days = normal_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:commander_with_addiction }
 	}
 }
 
@@ -106,6 +113,7 @@ commander_events.4 = {
     cooldown = { days = stupidly_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_yearly_events
 		any_scope_character = {
 			or = {
 				has_role_of_type = general
@@ -157,6 +165,7 @@ commander_events.4 = {
 				}
 			}
 			save_scope_as = arguing_commander_one
+			set_temporary_event_immortality = { DURATION = 3 }
 			interest_group ?= {
 				save_scope_as = arguing_commander_one_IG
 			}
@@ -186,6 +195,7 @@ commander_events.4 = {
 				NOT = { this = scope:arguing_commander_one }
 			}
 			save_scope_as = arguing_commander_two
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 	}
 
@@ -212,6 +222,7 @@ commander_events.4 = {
 		custom_tooltip = commander_events.4.b.tt
 		hidden_effect = {
 			scope:arguing_commander_two = {
+				revoke_temporary_event_immortality = { CHARACTER = scope:arguing_commander_two }
 				retire_character = yes
 			}
 		}
@@ -221,6 +232,11 @@ commander_events.4 = {
 				days = short_modifier_time
 			}
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:arguing_commander_one }
+		revoke_temporary_event_immortality = { CHARACTER = scope:arguing_commander_two }
 	}
 }
 
@@ -248,6 +264,7 @@ commander_events.6 = {
     cooldown = { days = stupidly_long_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_yearly_events
 		NOT = { has_variable = psychological_warfare_var }
 		any_scope_character = {
 			is_ruler_of_own_country = no
@@ -265,6 +282,7 @@ commander_events.6 = {
 				has_trait = charismatic
 				has_trait = hedonist
 				has_trait = persistent
+				has_trait = scandalous
 			}
 			NOR = {
 				has_trait = meticulous
@@ -300,6 +318,7 @@ commander_events.6 = {
 					has_trait = charismatic
 					has_trait = hedonist
 					has_trait = persistent
+					has_trait = scandalous
 				}
 				NOR = {
 					has_trait = meticulous
@@ -309,6 +328,7 @@ commander_events.6 = {
 			}
 			set_variable = seducer_commander_var
 			save_scope_as = seducer_commander
+			set_temporary_event_immortality = { DURATION = 3 }
 		}
 		random_interest_group = {
 			limit = {
@@ -324,6 +344,7 @@ commander_events.6 = {
 			save_scope_as = cheated_ig
 			leader = {
 				save_scope_as = cheated_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 	}
@@ -357,6 +378,10 @@ commander_events.6 = {
 				limit = { NOT = { has_trait = syphilis } }
 				add_trait = syphilis
 			}
+			if = {
+				limit = { NOT = { has_trait = scandalous } }
+				add_trait = scandalous
+			}
 			remove_variable = seducer_commander_var
 		}
 		scope:cheated_ig = {
@@ -372,6 +397,11 @@ commander_events.6 = {
 		custom_tooltip = commander_events.6.b.tt
 		hidden_effect = {
 			scope:seducer_commander = {
+				if = {
+					limit = { NOT = { has_trait = scandalous } }
+					add_trait = scandalous
+				}
+				revoke_temporary_event_immortality = { CHARACTER = scope:seducer_commander }
 				retire_character = yes
 				remove_variable = seducer_commander_var
 			}
@@ -396,6 +426,10 @@ commander_events.6 = {
 		}
 		scope:cheated_leader = {
 			add_trait = syphilis
+			if = {
+				limit = { NOT = { has_trait = scandalous } }
+				add_trait = scandalous
+			}
 			add_modifier = {
 				name = punching_leader_modifier #popularity
 				days = normal_modifier_time
@@ -408,9 +442,19 @@ commander_events.6 = {
 			}
 			remove_variable = seducer_commander_var
 			if = {
+				limit = { NOT = { has_trait = scandalous } }
+				add_trait = scandalous
+			}
+			if = {
 				limit = { NOT = { has_trait = syphilis } }
 				add_trait = syphilis
 			}
 		}
 	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:seducer_commander }
+		revoke_temporary_event_immortality = { CHARACTER = scope:cheated_leader }
+	}
 }
+

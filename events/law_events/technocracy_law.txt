@@ -27,6 +27,7 @@ technocracy.1 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_stall
 		is_enacting_law = law_type:law_technocracy
 		any_interest_group = {
 			ig_counts_as_marginal = no
@@ -72,6 +73,7 @@ technocracy.1 = {
 			save_scope_as = technocrat_ig
 			leader = {
 				save_scope_as = technocrat_leader
+				set_temporary_event_immortality = { DURATION = 3 }
 			}
 		}
 	}
@@ -132,8 +134,13 @@ technocracy.1 = {
 			name = foolish_technocrat
 		}
 		scope:technocrat_leader = {
+			revoke_temporary_event_immortality = { CHARACTER = scope:technocrat_leader }
 			retire_character = yes
 		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:technocrat_leader }
 	}
 }
 
@@ -161,6 +168,7 @@ technocracy.2 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_advance
 		is_enacting_law = law_type:law_technocracy
 		any_scope_state = {
 			is_incorporated = yes
@@ -264,6 +272,7 @@ technocracy.3 = {
 	cooldown = { days = normal_modifier_time }
 
 	trigger = {
+		# triggered by on_action - on_law_checkpoint_debate
 		is_enacting_law = law_type:law_technocracy
 		any_scope_state = {
 			is_incorporated = yes
@@ -297,6 +306,15 @@ technocracy.3 = {
 	option = {
 		name = technocracy.3.a
 		default_option = yes
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_wants_radicals = yes
+				}
+				add = 10
+			}
+		}
 		add_enactment_modifier = {
 			name = technocracy_debate_enactment
 			multiplier = 2
@@ -311,6 +329,15 @@ technocracy.3 = {
 
 	option = {
 		name = technocracy.3.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					ai_avoids_radicals = yes
+				}
+				add = 10
+			}
+		}
 		add_enactment_modifier = { # 5%
 			name = technocracy_debate_enactment
 		}

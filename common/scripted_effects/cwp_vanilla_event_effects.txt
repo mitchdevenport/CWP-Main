@@ -8,3 +8,41 @@ civil_war_save_scopes = {
 		save_scope_as = ongoing_revolution_movement
 	}
 }
+
+# from 00_victoria_ep2_scripted_effects.txt
+revoke_temporary_event_immortality = { # Otherwise revoked in on_monthly_pulse_character
+	hidden_effect = {
+		$CHARACTER$ ?= {
+			if = {
+				limit = {
+					is_immortal = yes
+					has_variable = temporary_immortality_var
+					NOT = { has_variable = immortal_at_start_of_event_var }
+				}
+				set_character_immortal = no # sets character back to not immortal
+				remove_variable = temporary_immortality_var
+			}
+			else_if = {
+				limit = {
+					has_variable = immortal_at_start_of_event_var
+				}
+				remove_variable = immortal_at_start_of_event_var
+			}
+		}
+	}
+}
+
+set_temporary_event_immortality = {
+	hidden_effect = {
+		if = { # this is to ensure a character won't die during the event but an already immortal character doesn't lose immortality at the end of the event
+			limit = {
+				is_immortal = no # checks if the character isn't already immortal
+			}
+			set_character_immortal = yes
+			set_variable = { name = temporary_immortality_var value = $DURATION$ }
+		}
+		else = {
+			set_variable = { name = immortal_at_start_of_event_var months = $DURATION$ }
+		}
+	}
+}
