@@ -30,6 +30,8 @@
         building_hydroelectric_power_plant = 60
     }
     naval_exit_id = 3122
+    min_cold_effect = 0.00
+    max_cold_effect = 0.07
 }
 
 STATE_VICTORIA = {
@@ -71,6 +73,8 @@ STATE_VICTORIA = {
         discovered_amount = 1
     }
     naval_exit_id = 3122
+    min_cold_effect = 0.00
+    max_cold_effect = 0.12
 }
 
 STATE_TASMANIA = {
@@ -99,6 +103,8 @@ STATE_TASMANIA = {
         building_hydroelectric_power_plant = 40
     }
     naval_exit_id = 3122
+    min_cold_effect = 0.00
+    max_cold_effect = 0.12
 }
 
 STATE_QUEENSLAND = {
@@ -141,6 +147,8 @@ STATE_QUEENSLAND = {
         undiscovered_amount = 42
     }
     naval_exit_id = 3124
+    min_cold_effect = 0.00
+    max_cold_effect = 0.01
 }
 
 STATE_SOUTH_AUSTRALIA = {
@@ -217,6 +225,8 @@ STATE_WESTERN_AUSTRALIA = {
         discovered_amount = 13
     }
     naval_exit_id = 3123
+    min_cold_effect = 0.00
+    max_cold_effect = 0.02
 }
 
 STATE_NORTHERN_TERRITORY = {
@@ -308,4 +318,6 @@ STATE_SOUTH_ISLAND = {
         building_hydroelectric_power_plant = 40
     }
     naval_exit_id = 3122
+    min_cold_effect = 0.02
+    max_cold_effect = 0.22
 }

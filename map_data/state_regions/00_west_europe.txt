@@ -25,6 +25,8 @@
         discovered_amount = 6
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.04
+    max_cold_effect = 0.71
 }
 
 STATE_GOTALAND = {
@@ -44,6 +46,8 @@ STATE_GOTALAND = {
         building_fishing_wharf = 15
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.02
+    max_cold_effect = 0.66
 }
 
 STATE_SCANIA = {
@@ -65,6 +69,8 @@ STATE_SCANIA = {
         building_hydroelectric_power_plant = 30
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.01
+    max_cold_effect = 0.63
 }
 
 STATE_NORRLAND = {
@@ -91,6 +97,8 @@ STATE_NORRLAND = {
         building_hydroelectric_power_plant = 45
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.11
+    max_cold_effect = 0.88
 }
 
 STATE_JUTLAND = {
@@ -110,6 +118,8 @@ STATE_JUTLAND = {
         building_wind_farm = 35
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.01
+    max_cold_effect = 0.63
 }
 
 STATE_SOUTH_JUTLAND = {
@@ -133,6 +143,8 @@ STATE_SOUTH_JUTLAND = {
         undiscovered_amount = 2
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.01
+    max_cold_effect = 0.61
 }
 
 STATE_ZEALAND = {
@@ -153,6 +165,8 @@ STATE_ZEALAND = {
         building_wind_farm = 30
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.00
+    max_cold_effect = 0.61
 }
 
 STATE_WESTERN_NORWAY = {
@@ -186,6 +200,8 @@ STATE_WESTERN_NORWAY = {
         building_hydroelectric_power_plant = 50
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.55
 }
 
 STATE_NORTHERN_NORWAY = {
@@ -217,6 +233,8 @@ STATE_NORTHERN_NORWAY = {
         undiscovered_amount = 56
     }
     naval_exit_id = 3020
+    min_cold_effect = 0.13
+    max_cold_effect = 0.88
 }
 
 STATE_FAROYAR = {
@@ -239,6 +257,8 @@ STATE_FAROYAR = {
         undiscovered_amount = 17
     }
     naval_exit_id = 3016
+    min_cold_effect = 0.05
+    max_cold_effect = 0.65
 }
 
 STATE_EASTERN_NORWAY = {
@@ -258,6 +278,8 @@ STATE_EASTERN_NORWAY = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.07
+    max_cold_effect = 0.80
 }
 
 STATE_ICELAND = {
@@ -278,6 +300,8 @@ STATE_ICELAND = {
         building_hydroelectric_power_plant = 65
     }
     naval_exit_id = 3022
+    min_cold_effect = 0.05
+    max_cold_effect = 0.65
 }
 
 STATE_GREENLAND = {
@@ -304,6 +328,8 @@ STATE_GREENLAND = {
         building_lead_mine = 3
     }
     naval_exit_id = 3023
+    min_cold_effect = 0.55
+    max_cold_effect = 0.98
 }
 
 STATE_SOUTHERN_FINLAND = {
@@ -325,6 +351,8 @@ STATE_SOUTHERN_FINLAND = {
         building_fishing_wharf = 8
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.07
+    max_cold_effect = 0.78
 }
 
 STATE_WEST_KARELIA = {
@@ -348,6 +376,8 @@ STATE_WEST_KARELIA = {
         building_fishing_wharf = 2
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.07
+    max_cold_effect = 0.81
 }
 
 STATE_ALAND = {
@@ -366,6 +396,8 @@ STATE_ALAND = {
         building_fishing_wharf = 2
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.04
+    max_cold_effect = 0.72
 }
 
 STATE_OSTROBOTHNIA = {
@@ -393,6 +425,8 @@ STATE_OSTROBOTHNIA = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.13
+    max_cold_effect = 0.91
 }
 
 STATE_HOME_COUNTIES = {
@@ -423,6 +457,8 @@ STATE_HOME_COUNTIES = {
         undiscovered_amount = 2
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.37
 }
 
 STATE_LANCASHIRE = {
@@ -454,6 +490,8 @@ STATE_LANCASHIRE = {
         undiscovered_amount = 5
     }
     naval_exit_id = 3030
+    min_cold_effect = 0.00
+    max_cold_effect = 0.42
 }
 
 STATE_WALES = {
@@ -476,6 +514,8 @@ STATE_WALES = {
         building_hydroelectric_power_plant = 30
     }
     naval_exit_id = 3030
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_YORKSHIRE = {
@@ -498,6 +538,8 @@ STATE_YORKSHIRE = {
         building_wind_farm = 35
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.43
 }
 
 STATE_HIGHLANDS = {
@@ -525,6 +567,8 @@ STATE_HIGHLANDS = {
         undiscovered_amount = 3
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.50
 }
 
 STATE_MIDLANDS = {
@@ -557,6 +601,8 @@ STATE_MIDLANDS = {
         undiscovered_amount = 23
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_EAST_ANGLIA = {
@@ -579,6 +625,8 @@ STATE_EAST_ANGLIA = {
         building_wind_farm = 35
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_WEST_COUNTRY = {
@@ -610,6 +658,8 @@ STATE_WEST_COUNTRY = {
         discovered_amount = 1
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 
@@ -642,6 +692,8 @@ STATE_LOWLANDS = {
         type = "building_natural_gas_well"
         undiscovered_amount = 12
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.46
 }
 
 STATE_ULSTER = {
@@ -662,6 +714,8 @@ STATE_ULSTER = {
         building_wind_farm = 35
     }
     naval_exit_id = 3030
+    min_cold_effect = 0.00
+    max_cold_effect = 0.44
 }
 
 STATE_MUNSTER = {
@@ -682,6 +736,8 @@ STATE_MUNSTER = {
         building_wind_farm = 35
     }
     naval_exit_id = 3030
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_LEINSTER = {
@@ -703,6 +759,8 @@ STATE_LEINSTER = {
         building_wind_farm = 35
     }
     naval_exit_id = 3030
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 
 STATE_CONNAUGHT = {
@@ -723,6 +781,8 @@ STATE_CONNAUGHT = {
         building_wind_farm = 35
     }
     naval_exit_id = 3030
+    min_cold_effect = 0.00
+    max_cold_effect = 0.42
 }
 
 STATE_ILE_DE_FRANCE = {
@@ -740,6 +800,8 @@ STATE_ILE_DE_FRANCE = {
         type = "building_oil_rig"
         undiscovered_amount = 6
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.46
 }
 
 STATE_PROVENCE = {
@@ -760,6 +822,8 @@ STATE_PROVENCE = {
         building_solar_farm = 50
     }
     naval_exit_id = 3032
+    min_cold_effect = 0.00
+    max_cold_effect = 0.37
 }
 
 STATE_NORMANDY = {
@@ -783,6 +847,8 @@ STATE_NORMANDY = {
         undiscovered_amount = 4
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.33
 }
 
 STATE_RHONE = {
@@ -817,6 +883,8 @@ STATE_RHONE = {
         undiscovered_amount = 4
         discovered_amount = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_LOIRE = {
@@ -836,6 +904,8 @@ STATE_LOIRE = {
         building_fishing_wharf = 2
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.43
 }
 
 STATE_PICARDY = {
@@ -856,6 +926,8 @@ STATE_PICARDY = {
         building_wind_farm = 35
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_ALSACE_LORRAINE = {
@@ -882,6 +954,8 @@ STATE_ALSACE_LORRAINE = {
         type = "building_oil_rig"
         undiscovered_amount = 3
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.47
 }
 
 STATE_POITOU = {
@@ -900,6 +974,8 @@ STATE_POITOU = {
         building_fishing_wharf = 4
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 #Occitania
 STATE_ARMAGNAC = {
@@ -929,6 +1005,8 @@ STATE_ARMAGNAC = {
         building_bauxite_mine = 15
     }
     naval_exit_id = 3032
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_LIMOUSIN = {
@@ -946,6 +1024,8 @@ STATE_LIMOUSIN = {
         building_coal_mine = 56
         building_iron_mine = 15
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 
 STATE_BRITTANY = {
@@ -968,6 +1048,8 @@ STATE_BRITTANY = {
         building_fishing_wharf = 15
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.31
 }
 
 STATE_BURGUNDY = {
@@ -989,6 +1071,8 @@ STATE_BURGUNDY = {
         type = "building_oil_rig"
         undiscovered_amount = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.43
 }
 
 STATE_CHAMPAGNE = {
@@ -1011,6 +1095,8 @@ STATE_CHAMPAGNE = {
         type = "building_oil_rig"
         undiscovered_amount = 9
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.48
 }
 
 STATE_FRANCHE_COMTE = {
@@ -1031,6 +1117,8 @@ STATE_FRANCHE_COMTE = {
         type = "building_oil_rig"
         undiscovered_amount = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.46
 }
 
 STATE_AQUITAINE = {
@@ -1060,6 +1148,8 @@ STATE_AQUITAINE = {
         discovered_amount = 3
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.37
 }
 
 STATE_ORLEANS = {
@@ -1077,6 +1167,8 @@ STATE_ORLEANS = {
         building_solar_farm = 50
         building_wind_farm = 35
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.44
 }
 
 STATE_HOLLAND = {
@@ -1105,6 +1197,8 @@ STATE_HOLLAND = {
         undiscovered_amount = 32
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_FRIESLAND = {
@@ -1133,6 +1227,8 @@ STATE_FRIESLAND = {
         undiscovered_amount = 43
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_GELRE = {
@@ -1149,6 +1245,8 @@ STATE_GELRE = {
     capped_resources = {
         building_coal_mine = 40
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.52
 }
 
 STATE_WALLONIA = {
@@ -1168,6 +1266,8 @@ STATE_WALLONIA = {
         building_lead_mine = 30
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.46
 }
 
 STATE_FLANDERS = {
@@ -1187,6 +1287,8 @@ STATE_FLANDERS = {
         building_wind_farm = 35
     }
     naval_exit_id = 3028
+    min_cold_effect = 0.00
+    max_cold_effect = 0.37
 }
 
 STATE_AUSTRIA = {
@@ -1214,6 +1316,8 @@ STATE_AUSTRIA = {
         undiscovered_amount = 3
         discovered_amount = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.46
 }
 
 STATE_BOHEMIA = {
@@ -1238,6 +1342,8 @@ STATE_BOHEMIA = {
         building_solar_farm = 50
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_MORAVIA = {
@@ -1264,6 +1370,8 @@ STATE_MORAVIA = {
         building_solar_farm = 50
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_STYRIA = {
@@ -1283,6 +1391,8 @@ STATE_STYRIA = {
         building_lead_mine = 24
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.48
 }
 
 STATE_TYROL = {
@@ -1305,6 +1415,8 @@ STATE_TYROL = {
         building_iron_mine = 36
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.11
+    max_cold_effect = 0.61
 }
 
 STATE_SOUTH_TYROL = {
@@ -1321,6 +1433,8 @@ STATE_SOUTH_TYROL = {
     capped_resources = {
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.08
+    max_cold_effect = 0.53
 }
 
 STATE_WEST_POMERANIA = {
@@ -1349,6 +1463,8 @@ STATE_WEST_POMERANIA = {
         undiscovered_amount = 3
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.00
+    max_cold_effect = 0.59
 }
 
 STATE_VORPOMMERN = {
@@ -1377,6 +1493,8 @@ STATE_VORPOMMERN = {
         building_solar_farm = 50
         building_wind_farm = 35
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.57
 }
 
 STATE_EAST_SWITZERLAND = {
@@ -1395,6 +1513,8 @@ STATE_EAST_SWITZERLAND = {
         building_lead_mine = 30
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.10
+    max_cold_effect = 0.58
 }
 
 STATE_WEST_SWITZERLAND = {
@@ -1418,6 +1538,8 @@ STATE_WEST_SWITZERLAND = {
         building_lead_mine = 24
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.08
+    max_cold_effect = 0.52
 }
 
 STATE_WESTPHALIA = {
@@ -1443,6 +1565,8 @@ STATE_WESTPHALIA = {
         type = "building_natural_gas_well"
         undiscovered_amount = 4
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.53
 }
 
 STATE_ANHALT = {
@@ -1470,6 +1594,8 @@ STATE_ANHALT = {
         building_solar_farm = 50
         building_wind_farm = 35
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.54
 }
 
 STATE_RHINELAND = {
@@ -1488,6 +1614,8 @@ STATE_RHINELAND = {
         building_lead_mine = 30
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.39
 }
 
 STATE_NORTH_RHINE = {
@@ -1507,6 +1635,8 @@ STATE_NORTH_RHINE = {
         building_bauxite_mine = 5
         building_solar_farm = 35
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.27
 }
 
 STATE_BRANDENBURG = {
@@ -1534,6 +1664,8 @@ STATE_BRANDENBURG = {
         type = "building_natural_gas_well"
         undiscovered_amount = 6
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.55
 }
 
 STATE_SCHLESWIG_HOLSTEIN = {
@@ -1559,6 +1691,8 @@ STATE_SCHLESWIG_HOLSTEIN = {
         discovered_amount = 8
     }
     naval_exit_id = 3019
+    min_cold_effect = 0.00
+    max_cold_effect = 0.59
 }
 
 STATE_WURTTEMBERG = {
@@ -1573,6 +1707,8 @@ STATE_WURTTEMBERG = {
     wood = xC541D2
     arable_land = 64
     arable_resources = { bg_wheat_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.47
 }
 #68 Hamburg - Deleted
 
@@ -1605,6 +1741,8 @@ STATE_HANNOVER = {
         undiscovered_amount = 25
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.55
 }
 
 STATE_BAVARIA = {
@@ -1633,6 +1771,8 @@ STATE_BAVARIA = {
         undiscovered_amount = 17
         discovered_amount = 16
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.47
 }
 
 STATE_FRANCONIA = {
@@ -1650,6 +1790,8 @@ STATE_FRANCONIA = {
         building_iron_mine = 30
         building_solar_farm = 50
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_SAXONY = {
@@ -1671,6 +1813,8 @@ STATE_SAXONY = {
         building_solar_farm = 50
         building_wind_farm = 35
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.52
 }
 
 STATE_HESSE = {
@@ -1700,6 +1844,8 @@ STATE_HESSE = {
         type = "building_natural_gas_well"
         undiscovered_amount = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.51
 }
 
 STATE_WEST_MIDLANDS = {
@@ -1723,6 +1869,8 @@ STATE_WEST_MIDLANDS = {
         type = "building_oil_rig"
         undiscovered_amount = 6
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_BREMEN = {
@@ -1750,6 +1898,8 @@ STATE_BREMEN = {
         discovered_amount = 10
     }
     naval_exit_id = 3027
+    min_cold_effect = 0.00
+    max_cold_effect = 0.56
 }
 
 STATE_THURINGIA = {
@@ -1779,4 +1929,6 @@ STATE_THURINGIA = {
         type = "building_natural_gas_well"
         undiscovered_amount = 25
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.52
 }

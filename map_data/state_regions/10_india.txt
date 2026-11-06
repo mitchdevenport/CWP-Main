@@ -27,6 +27,8 @@
         building_copper_mine = 20
         building_bauxite_mine = 28
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.04
 }
 
 STATE_NORTH_BENGAL = {
@@ -51,6 +53,8 @@ STATE_NORTH_BENGAL = {
     capped_resources = {
         building_iron_mine = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.03
 }
 
 STATE_ASSAM = {
@@ -76,6 +80,8 @@ STATE_ASSAM = {
     capped_resources = {
         building_coal_mine = 48
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.05
 }
 
 STATE_HARYANA = {
@@ -92,6 +98,8 @@ STATE_HARYANA = {
     capped_resources = {
         building_iron_mine = 20
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.07
 }
 
 STATE_UTTAR_PRADESH = {
@@ -105,6 +113,8 @@ STATE_UTTAR_PRADESH = {
     wood = x7D9692
     arable_land = 370
     arable_resources = { bg_wheat_farms bg_livestock_ranches bg_coffee_plantations bg_cotton_plantations bg_tea_plantations bg_tobacco_plantations bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.06
 }
 
 STATE_GUJARAT = {
@@ -134,6 +144,8 @@ STATE_GUJARAT = {
         building_bauxite_mine = 18
     }
     naval_exit_id = 3048
+    min_cold_effect = 0.00
+    max_cold_effect = 0.02
 }
 
 STATE_MADHYA_PRADESH = {
@@ -154,6 +166,8 @@ STATE_MADHYA_PRADESH = {
     capped_resources = {
         building_copper_mine = 18
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.03
 }
 
 STATE_KASHMIR = {
@@ -170,6 +184,8 @@ STATE_KASHMIR = {
     capped_resources = {
         building_coal_mine = 12
     }
+    min_cold_effect = 0.19
+    max_cold_effect = 0.66
 }
 
 STATE_WEST_PUNJAB = {
@@ -196,6 +212,8 @@ STATE_WEST_PUNJAB = {
         type = "building_natural_gas_well"
         undiscovered_amount = 4
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.10
 }
 
 STATE_CHHATTISGARH = {
@@ -215,6 +233,8 @@ STATE_CHHATTISGARH = {
         type = "building_uranium_mine"
         undiscovered_amount = 10
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.02
 }
 
 STATE_SOUTH_BENGAL = {
@@ -245,6 +265,8 @@ STATE_SOUTH_BENGAL = {
         undiscovered_amount = 6
     }
     naval_exit_id = 3050
+    min_cold_effect = 0.00
+    max_cold_effect = 0.03
 }
 
 STATE_SINDH = {
@@ -273,6 +295,8 @@ STATE_SINDH = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3048
+    min_cold_effect = 0.00
+    max_cold_effect = 0.05
 }
 
 STATE_RAJASTHAN = {
@@ -298,6 +322,8 @@ STATE_RAJASTHAN = {
         building_sulfur_mine = 40
         building_copper_mine = 28
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.06
 }
 
 STATE_CEYLON = {
@@ -337,6 +363,8 @@ STATE_INDIAN_OCEAN_TERRITORY = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3111
+    min_cold_effect = 0.23
+    max_cold_effect = 0.46
 }
 
 STATE_ODISHA = {
@@ -357,6 +385,8 @@ STATE_ODISHA = {
         building_fishing_wharf = 7
     }
     naval_exit_id = 3050
+    min_cold_effect = 0.00
+    max_cold_effect = 0.01
 }
 #Andhra
 STATE_ANDHRA_PRADESH = {
@@ -539,6 +569,8 @@ STATE_WEST_BENGAL = {
         building_bauxite_mine = 12
     }
     naval_exit_id = 3050
+    min_cold_effect = 0.00
+    max_cold_effect = 0.04
 }
 
 STATE_ARUNACHAL_PRADESH = {
@@ -555,6 +587,8 @@ STATE_ARUNACHAL_PRADESH = {
     capped_resources = {
         building_coal_mine = 15
     }
+    min_cold_effect = 0.24
+    max_cold_effect = 0.68
 }
 
 STATE_PURVACHAL_PRADESH = {
@@ -571,6 +605,8 @@ STATE_PURVACHAL_PRADESH = {
     capped_resources = {
         building_coal_mine = 15
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.05
 }
 
 STATE_HIMACHAL_PRADESH = {
@@ -587,6 +623,8 @@ STATE_HIMACHAL_PRADESH = {
     capped_resources = {
         building_iron_mine = 20
     }
+    min_cold_effect = 0.06
+    max_cold_effect = 0.29
 }
 
 STATE_PUNJAB_E = {
@@ -608,4 +646,6 @@ STATE_PUNJAB_E = {
         undiscovered_amount = 2
         discovered_amount = 2
     }
+    min_cold_effect = 0.06
+    max_cold_effect = 0.30
 }

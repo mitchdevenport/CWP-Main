@@ -32,7 +32,11 @@ Scripts and checks for keeping the mod working across Victoria 3 updates. Run th
    base game's current English and Japanese text, substituting only the displayed words, so the overrides keep the
    base game's latest wording, data functions and icons. Text that needs more than the substitution belongs in the
    mod's own localization files: the script skips keys the mod defines elsewhere.
-5. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
+5. `python docs/maintenance/cold_effects.py` - gives CWP's state regions the base game's seasonal cold
+   (`min_cold_effect`/`max_cold_effect`, 1.15): each CWP region takes the area-weighted average of the base-game
+   regions it covers on the province map. Re-run it when CWP's state regions or the base game's values change
+   (`--check` reports without writing). Requires numpy and Pillow.
+6. Start the game with the mod and check `error.log` in the Victoria 3 user folder after reaching the
    main menu and after starting a game.
 
 Known load-time messages that are not caused by script errors: six naval node messages ("Naval node from spline
@@ -86,6 +90,15 @@ Rules from the Victoria 3 1.15 update:
   out: the AI capitulates when exhausted, and every war goal held against it is then enforced.
 - The diplomatic AI trades war goals and obligations for support readily; `diplomatic_play_support` in
   `common/ai_strategies/00_default_strategy.txt` keeps Cold War blocs on their own side.
+
+How CWP takes the 1.15 base-game features: the war support rework, war goals enforced during a war, several world
+market hubs per market, subjects choosing sides, the fleet changes, the travel network and the infamy game rule
+work without CWP content; the Return State to Subject play is in `common/diplomatic_plays/00_diplomatic_plays.txt`
+and the cold system needs `cold_effects.py`. Not taken: the State and Revolution content for 1836 Russia (tsar
+points, the Russian Civil War, Congress Poland, Cossack Hosts, the Okhrana and other new laws, the Nomenklatura,
+the agenda AI strategies), the diplomatic catalysts for adopting socialist laws and the anti-communist movement
+(CWP's bloc system and political movements already cover them) and the royal marriage action (CWP 1.5 had none).
+The base game's glossary loads unchanged.
 
 Company types need no extra buildings, but `common/scripted_effects/cwp_company_effects.txt` lists every company
 type to clean up the company buildings left behind when a civil war or secession ends (and once a year for every

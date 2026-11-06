@@ -26,6 +26,8 @@
         building_bauxite_mine = 20
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.40
 }
 
 STATE_KUBAN = {
@@ -58,6 +60,8 @@ STATE_KUBAN = {
         discovered_amount = 17
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.01
+    max_cold_effect = 0.41
 }
 
 STATE_ARMENIA = {
@@ -81,6 +85,8 @@ STATE_ARMENIA = {
         building_solar_farm = 35
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.08
+    max_cold_effect = 0.55
 }
 
 STATE_AZERBAIJAN = {
@@ -108,6 +114,8 @@ STATE_AZERBAIJAN = {
         undiscovered_amount = 28
         discovered_amount = 19
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.29
 }
 
 STATE_GREATER_CAUCASUS = {
@@ -139,6 +147,8 @@ STATE_GREATER_CAUCASUS = {
         building_hydroelectric_power_plant = 30
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.11
+    max_cold_effect = 0.60
 }
 
 STATE_SAMARA = {
@@ -165,6 +175,8 @@ STATE_SAMARA = {
         undiscovered_amount = 3
         discovered_amount = 2
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.63
 }
 
 STATE_KAZAN = {
@@ -191,6 +203,8 @@ STATE_KAZAN = {
     capped_resources = {
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.04
+    max_cold_effect = 0.71
 }
 # saratov
 STATE_TARTARIA = {
@@ -208,6 +222,8 @@ STATE_TARTARIA = {
         building_iron_mine = 45
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.61
 }
 
 STATE_ASTRAKHAN = {
@@ -232,6 +248,8 @@ STATE_ASTRAKHAN = {
     capped_resources = {
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.45
 }
 
 STATE_URALSK = {
@@ -257,6 +275,8 @@ STATE_URALSK = {
         type = "building_natural_gas_well"
         undiscovered_amount = 13
     }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.59
 }
 
 STATE_KHIVA = {
@@ -282,6 +302,8 @@ STATE_KHIVA = {
         type = "building_natural_gas_well"
         undiscovered_amount = 3
     }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.56
 }
 
 STATE_WEST_UZBEKIA = {
@@ -308,6 +330,8 @@ STATE_WEST_UZBEKIA = {
         type = "building_natural_gas_well"
         undiscovered_amount = 3
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 STATE_EAST_UZBEKIA = {
@@ -338,6 +362,8 @@ STATE_EAST_UZBEKIA = {
         type = "building_natural_gas_well"
         undiscovered_amount = 20
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.31
 }
 
 STATE_TAJIKISTAN = {
@@ -368,6 +394,8 @@ STATE_TAJIKISTAN = {
         building_copper_mine = 18
         building_hydroelectric_power_plant = 40
     }
+    min_cold_effect = 0.17
+    max_cold_effect = 0.68
 }
 
 STATE_KIRGHIZIA = {
@@ -402,6 +430,8 @@ STATE_KIRGHIZIA = {
         building_copper_mine = 22
         building_hydroelectric_power_plant = 45
     }
+    min_cold_effect = 0.14
+    max_cold_effect = 0.67
 }
 
 STATE_TURKMENIA = {
@@ -432,6 +462,8 @@ STATE_TURKMENIA = {
         type = "building_natural_gas_well"
         undiscovered_amount = 22
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.25
 }
 
 STATE_SEMIRECHE = {
@@ -455,6 +487,8 @@ STATE_SEMIRECHE = {
         building_solar_farm = 100
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.51
 }
 
 STATE_JETISY = {
@@ -470,6 +504,8 @@ STATE_JETISY = {
     capped_resources = {
         building_coal_mine = 12
     }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.54
 }
 
 STATE_AKMOLINSK = {
@@ -500,6 +536,8 @@ STATE_AKMOLINSK = {
         building_copper_mine = 22
         building_solar_farm = 95
     }
+    min_cold_effect = 0.03
+    max_cold_effect = 0.57
 }
 
 STATE_PASHTUNISTAN = {
@@ -520,6 +558,8 @@ STATE_PASHTUNISTAN = {
     capped_resources = {
         building_bauxite_mine = 10
     }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.17
 }
 
 STATE_WESTERN_AFGHANISTAN = {
@@ -549,6 +589,8 @@ STATE_WESTERN_AFGHANISTAN = {
     capped_resources = {
         building_coal_mine = 32
     }
+    min_cold_effect = 0.03
+    max_cold_effect = 0.26
 }
 
 STATE_EASTERN_AFGHANISTAN = {
@@ -567,6 +609,8 @@ STATE_EASTERN_AFGHANISTAN = {
         building_iron_mine = 24
         building_copper_mine = 18
     }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.37
 }
 
 STATE_BALUCHISTAN = {
@@ -588,6 +632,8 @@ STATE_BALUCHISTAN = {
         building_bauxite_mine = 18
     }
     naval_exit_id = 3048
+    min_cold_effect = 0.00
+    max_cold_effect = 0.07
 }
 
 STATE_LHASA = {
@@ -604,6 +650,8 @@ STATE_LHASA = {
     capped_resources = {
         building_copper_mine = 28
     }
+    min_cold_effect = 0.32
+    max_cold_effect = 0.85
 }
 
 STATE_NGARI = {
@@ -617,6 +665,8 @@ STATE_NGARI = {
     wood = x3242A4
     arable_land = 115
     arable_resources = { bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.40
+    max_cold_effect = 0.90
 }
 
 STATE_HIMALAYAS = {
@@ -630,6 +680,8 @@ STATE_HIMALAYAS = {
     wood = xE0B0E0
     arable_land = 75
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_cotton_plantations bg_tea_plantations bg_tobacco_plantations bg_logging }
+    min_cold_effect = 0.44
+    max_cold_effect = 0.93
 }
 
 STATE_BHUTAN = {
@@ -643,4 +695,6 @@ STATE_BHUTAN = {
     wood = x84F73C
     arable_land = 40
     arable_resources = { bg_rice_farms bg_livestock_ranches bg_cotton_plantations bg_tea_plantations bg_tobacco_plantations bg_logging }
+    min_cold_effect = 0.28
+    max_cold_effect = 0.79
 }

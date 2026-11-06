@@ -18,6 +18,8 @@
         building_fishing_wharf = 5
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.02
+    max_cold_effect = 0.68
 }
 
 STATE_MOSCOW = {
@@ -36,6 +38,8 @@ STATE_MOSCOW = {
         building_iron_mine = 30
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.03
+    max_cold_effect = 0.68
 }
 
 STATE_BREST = {
@@ -49,6 +53,8 @@ STATE_BREST = {
     wood = x8ABE62
     arable_land = 208
     arable_resources = { bg_rye_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.57
 }
 
 STATE_VOLHYNIA = {
@@ -69,6 +75,8 @@ STATE_VOLHYNIA = {
     capped_resources = {
         building_coal_mine = 68
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.52
 }
 
 STATE_KIEV = {
@@ -99,6 +107,8 @@ STATE_KIEV = {
         building_coal_mine = 10
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_BRYANSK = {
@@ -115,6 +125,8 @@ STATE_BRYANSK = {
     capped_resources = {
         building_sulfur_mine = 20
     }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.61
 }
 
 STATE_SMOLENSK = {
@@ -128,6 +140,8 @@ STATE_SMOLENSK = {
     wood = x6859CA
     arable_land = 166
     arable_resources = { bg_rye_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.65
 }
 
 STATE_ORSHA = {
@@ -141,6 +155,8 @@ STATE_ORSHA = {
     wood = x361946
     arable_land = 252
     arable_resources = { bg_rye_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.59
 }
 
 STATE_EAST_KARELIA = {
@@ -168,6 +184,8 @@ STATE_EAST_KARELIA = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3039
+    min_cold_effect = 0.12
+    max_cold_effect = 0.90
 }
 
 STATE_ARKHANGELSK = {
@@ -186,6 +204,8 @@ STATE_ARKHANGELSK = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3039
+    min_cold_effect = 0.12
+    max_cold_effect = 0.90
 }
 
 STATE_TVER = {
@@ -202,6 +222,8 @@ STATE_TVER = {
     capped_resources = {
         building_coal_mine = 48
     }
+    min_cold_effect = 0.06
+    max_cold_effect = 0.77
 }
 
 STATE_CRIMEA = {
@@ -228,6 +250,8 @@ STATE_CRIMEA = {
         undiscovered_amount = 4
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_LUHANSK = {
@@ -266,6 +290,8 @@ STATE_LUHANSK = {
 
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.47
 }
 
 STATE_KURSK = {
@@ -279,6 +305,8 @@ STATE_KURSK = {
     wood = x05E237
     arable_land = 357
     arable_resources = { bg_rye_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.54
 }
 
 STATE_NOVGOROD = {
@@ -295,6 +323,8 @@ STATE_NOVGOROD = {
     capped_resources = {
         building_bauxite_mine = 18
     }
+    min_cold_effect = 0.04
+    max_cold_effect = 0.74
 }
 
 STATE_CHERSON = {
@@ -318,6 +348,8 @@ STATE_CHERSON = {
         building_fishing_wharf = 12
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.45
 }
 
 STATE_GALICH = {
@@ -331,6 +363,8 @@ STATE_GALICH = {
     wood = x0BBA97
     arable_land = 166
     arable_resources = { bg_rye_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.10
+    max_cold_effect = 0.85
 }
 
 STATE_MINSK = {
@@ -354,6 +388,8 @@ STATE_MINSK = {
         discovered_amount = 1
 
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.56
 }
 
 STATE_ROSTOV = {
@@ -383,6 +419,8 @@ STATE_ROSTOV = {
         building_copper_mine = 42
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.47
 }
 
 STATE_PERM = {
@@ -406,6 +444,8 @@ STATE_PERM = {
         discovered_amount = 2
 
     }
+    min_cold_effect = 0.10
+    max_cold_effect = 0.85
 }
 
 STATE_ESTONIA = {
@@ -429,6 +469,8 @@ STATE_ESTONIA = {
         building_wind_farm = 35
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.03
+    max_cold_effect = 0.69
 }
 
 STATE_LATVIA = {
@@ -454,6 +496,8 @@ STATE_LATVIA = {
         building_hydroelectric_power_plant = 30
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.01
+    max_cold_effect = 0.65
 }
 
 STATE_EAST_LITHUANIA = {
@@ -470,6 +514,8 @@ STATE_EAST_LITHUANIA = {
     capped_resources = {
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.60
 }
 
 STATE_WEST_LITHUANIA = {
@@ -489,6 +535,8 @@ STATE_WEST_LITHUANIA = {
         building_hydroelectric_power_plant = 30
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.00
+    max_cold_effect = 0.61
 }
 #kaliningrad
 STATE_KRALOVEC = {
@@ -517,6 +565,8 @@ STATE_KRALOVEC = {
 
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.02
+    max_cold_effect = 0.64
 }
 
 STATE_MAZOVIA = {
@@ -532,6 +582,8 @@ STATE_MAZOVIA = {
     capped_resources = {
         building_coal_mine = 84
     }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.57
 }
 
 STATE_SILESIA = {
@@ -553,6 +605,8 @@ STATE_SILESIA = {
         building_sulfur_mine = 40
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.51
 }
 
 STATE_CENTRAL_POLAND = {
@@ -570,6 +624,8 @@ STATE_CENTRAL_POLAND = {
         building_coal_mine = 36
         building_iron_mine = 36
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.58
 }
 
 STATE_LESSER_POLAND = {
@@ -589,6 +645,8 @@ STATE_LESSER_POLAND = {
         building_copper_mine = 25
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.55
 }
 
 STATE_POMEMASURIA = {
@@ -618,6 +676,8 @@ STATE_POMEMASURIA = {
         building_hydroelectric_power_plant = 30
     }
     naval_exit_id = 3000
+    min_cold_effect = 0.02
+    max_cold_effect = 0.65
 }
 
 STATE_GREATER_POLAND = {
@@ -645,6 +705,8 @@ STATE_GREATER_POLAND = {
         discovered_amount = 3
 
     }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.59
 }
 
 STATE_KRAKOW = {
@@ -674,6 +736,8 @@ STATE_KRAKOW = {
         building_iron_mine = 33
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_EAST_GALICIA = {
@@ -699,6 +763,8 @@ STATE_EAST_GALICIA = {
         discovered_amount = 14
 
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.48
 }
 
 STATE_MUKACHEVO = {
@@ -724,6 +790,8 @@ STATE_MUKACHEVO = {
         discovered_amount = 12
 
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.52
 }
 
 STATE_CENTRAL_HUNGARY = {
@@ -747,6 +815,8 @@ STATE_CENTRAL_HUNGARY = {
         building_copper_mine = 18
         building_bauxite_mine = 25
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.44
 }
 
 STATE_BEKES = {
@@ -770,6 +840,8 @@ STATE_BEKES = {
         discovered_amount = 9
 
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.44
 }
 
 STATE_TRANSDANUBIA = {
@@ -787,6 +859,8 @@ STATE_TRANSDANUBIA = {
         building_coal_mine = 84
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.44
 }
 
 STATE_NORTHERN_SERBIA = {
@@ -800,6 +874,8 @@ STATE_NORTHERN_SERBIA = {
     wood = x9E1AD1
     arable_land = 103
     arable_resources = { bg_wheat_farms bg_livestock_ranches bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 
 STATE_BANAT = {
@@ -816,6 +892,8 @@ STATE_BANAT = {
     capped_resources = {
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 
 STATE_WEST_SLOVAKIA = {
@@ -842,6 +920,8 @@ STATE_WEST_SLOVAKIA = {
         building_iron_mine = 63
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.53
 }
 
 STATE_EAST_SLOVAKIA = {
@@ -871,6 +951,8 @@ STATE_EAST_SLOVAKIA = {
         building_coal_mine = 92
         building_lead_mine = 33
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.53
 }
 
 STATE_SOUTHERN_TRANSYLVANIA = {
@@ -898,6 +980,8 @@ STATE_SOUTHERN_TRANSYLVANIA = {
         building_copper_mine = 45
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.42
 }
 
 STATE_NORTHERN_TRANSYLVANIA = {
@@ -930,6 +1014,8 @@ STATE_NORTHERN_TRANSYLVANIA = {
         building_iron_mine = 63
         building_bauxite_mine = 30
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.49
 }
 
 STATE_MOLDAVIA = {
@@ -958,6 +1044,8 @@ STATE_MOLDAVIA = {
         building_copper_mine = 15
         building_hydroelectric_power_plant = 30
     }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.49
 }
 
 STATE_WALLACHIA = {
@@ -989,6 +1077,8 @@ STATE_WALLACHIA = {
         building_coal_mine = 68
         building_iron_mine = 21
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.39
 }
 
 STATE_BESSARABIA = {
@@ -1010,6 +1100,8 @@ STATE_BESSARABIA = {
         type = "building_oil_rig"
         undiscovered_amount = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.43
 }
 
 STATE_CHERNIHIV = {
@@ -1027,6 +1119,8 @@ STATE_CHERNIHIV = {
         type = "building_oil_rig"
         undiscovered_amount = 6
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.53
 }
 
 STATE_KHARKIV = {
@@ -1047,6 +1141,8 @@ STATE_KHARKIV = {
         type = "building_oil_rig"
         undiscovered_amount = 6
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.49
 }
 
 STATE_DNIPRO = {
@@ -1072,6 +1168,8 @@ STATE_DNIPRO = {
         undiscovered_amount = 6
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.45
 }
 
 STATE_PODOLIA = {
@@ -1085,6 +1183,8 @@ STATE_PODOLIA = {
     wood = x33471E
     arable_land = 75
     arable_resources = { bg_wheat_farms bg_livestock_ranches bg_sugar_plantations bg_logging }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.48
 }
 
 

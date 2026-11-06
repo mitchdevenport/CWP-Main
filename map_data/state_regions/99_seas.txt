@@ -1,6 +1,8 @@
 ﻿STATE_BALTIC_SEA = {
     id = 3000
     provinces = { x08FAFA }
+    min_cold_effect = 0.07
+    max_cold_effect = 0.66
 }
 
 STATE_HAWAIIAN_SEAMOUNT_CHAIN = {
@@ -16,11 +18,15 @@ STATE_MICRONESIAN_SEA = {
 STATE_SOUTH_PACIFIC_LANE_1 = {
     id = 3003
     provinces = { xA729A6 }
+    min_cold_effect = 0.34
+    max_cold_effect = 0.68
 }
 
 STATE_SOUTH_PACIFIC_LANE_2 = {
     id = 3004
     provinces = { xE10DAD }
+    min_cold_effect = 0.35
+    max_cold_effect = 0.70
 }
 
 STATE_EASTER_ISLAND_LANE_1 = {
@@ -71,16 +77,22 @@ STATE_PACIFIC_LANE_06 = {
 STATE_SOUTHERN_OCEAN_01 = {
     id = 3014
     provinces = { x6FB3DE }
+    min_cold_effect = 0.34
+    max_cold_effect = 0.67
 }
 
 STATE_SOUTHERN_OCEAN_02 = {
     id = 3015
     provinces = { x316868 }
+    min_cold_effect = 0.35
+    max_cold_effect = 0.70
 }
 
 STATE_FAROE_BANK = {
     id = 3016
     provinces = { x709ACF }
+    min_cold_effect = 0.11
+    max_cold_effect = 0.38
 }
 
 STATE_GULF_OF_MAINE = {
@@ -96,26 +108,36 @@ STATE_HORN_OF_AFRICA = {
 STATE_DANISH_STRAITS = {
     id = 3019
     provinces = { x0AC8FA }
+    min_cold_effect = 0.03
+    max_cold_effect = 0.36
 }
 
 STATE_NORWEGIAN_SEA = {
     id = 3020
     provinces = { x0FDCFA }
+    min_cold_effect = 0.09
+    max_cold_effect = 0.42
 }
 
 STATE_LABRADOR_SEA = {
     id = 3021
     provinces = { x69C9C9 }
+    min_cold_effect = 0.20
+    max_cold_effect = 0.70
 }
 
 STATE_IRMINGER_SEA = {
     id = 3022
     provinces = { x16FAFA }
+    min_cold_effect = 0.11
+    max_cold_effect = 0.26
 }
 
 STATE_DAVIS_STRAIT = {
     id = 3023
     provinces = { x6DFBFB }
+    min_cold_effect = 0.27
+    max_cold_effect = 0.75
 }
 
 STATE_GALAPAGOS_RISE = {
@@ -186,48 +208,66 @@ STATE_BLACK_SEA = {
 STATE_ARCTIC_OCEAN_01 = {
     id = 3037
     provinces = { x39CACA }
+    min_cold_effect = 0.55
+    max_cold_effect = 0.96
 }
 
 STATE_ARCTIC_OCEAN_02 = {
     id = 3038
     provinces = { x70FBFB }
+    min_cold_effect = 0.49
+    max_cold_effect = 0.94
 }
 
 STATE_BARENTS_SEA = {
     id = 3039
     provinces = { x0EC8FA }
+    min_cold_effect = 0.33
+    max_cold_effect = 0.88
 }
 
 STATE_ARCTIC_OCEAN_04 = {
     id = 3040
     provinces = { x0D61A4 }
     impassable = { x0D61A4 }
+    min_cold_effect = 0.15
+    max_cold_effect = 0.56
 }
 
 STATE_ARCTIC_OCEAN_05 = {
     id = 3041
     provinces = { x20CCE0 }
+    min_cold_effect = 0.60
+    max_cold_effect = 0.98
 }
 
 STATE_ARCTIC_OCEAN_06 = {
     id = 3042
     provinces = { x43DDFB }
+    min_cold_effect = 0.60
+    max_cold_effect = 0.98
 }
 
 STATE_ARCTIC_OCEAN_07 = {
     id = 3043
     provinces = { x13CCFE }
     impassable = { x13CCFE }
+    min_cold_effect = 0.50
+    max_cold_effect = 0.95
 }
 
 STATE_HUDSON_BAY = {
     id = 3044
     provinces = { x6FDDFB }
+    min_cold_effect = 0.34
+    max_cold_effect = 0.87
 }
 
 STATE_GULF_OF_SAINT_LAWRENCE = {
     id = 3045
     provinces = { x74FBFB }
+    min_cold_effect = 0.08
+    max_cold_effect = 0.52
 }
 
 STATE_PERSIAN_GULF = {
@@ -288,6 +328,8 @@ STATE_SOUTH_CHINA_SEA = {
 STATE_YELLOW_SEA = {
     id = 3057
     provinces = { x7EC8FA }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.19
 }
 
 STATE_EAST_CHINA_SEA = {
@@ -298,6 +340,8 @@ STATE_EAST_CHINA_SEA = {
 STATE_SEA_OF_JAPAN = {
     id = 3059
     provinces = { x00FBFB }
+    min_cold_effect = 0.04
+    max_cold_effect = 0.27
 }
 
 STATE_GULF_OF_MEXICO = {
@@ -333,6 +377,8 @@ STATE_ARGENTINE_SEA = {
 STATE_SCOTIA_SEA = {
     id = 3066
     provinces = { x858CBF }
+    min_cold_effect = 0.17
+    max_cold_effect = 0.38
 }
 
 STATE_ATLANTIC_SEABOARD = {
@@ -355,12 +401,16 @@ STATE_NORTH_ATLANTIC_OCEAN_01 = {
     id = 3070
     provinces = { x2DAEF1 }
     impassable = { x2DAEF1 }
+    min_cold_effect = 0.03
+    max_cold_effect = 0.10
 }
 
 STATE_NORTH_ATLANTIC_OCEAN_02 = {
     id = 3071
     provinces = { x837BBA }
     impassable = { x837BBA }
+    min_cold_effect = 0.02
+    max_cold_effect = 0.16
 }
 
 STATE_NORTH_ATLANTIC_OCEAN_03 = {
@@ -373,6 +423,8 @@ STATE_NORTH_ATLANTIC_OCEAN_04 = {
     id = 3073
     provinces = { x807D98 }
     impassable = { x807D98 }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.02
 }
 
 STATE_NORTH_ATLANTIC_OCEAN_05 = {
@@ -390,6 +442,8 @@ STATE_NORTH_ATLANTIC_OCEAN_06 = {
 STATE_NORTH_ATLANTIC_01 = {
     id = 3076
     provinces = { xC64499 }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.12
 }
 
 STATE_NORTH_ATLANTIC_02 = {
@@ -496,6 +550,8 @@ STATE_SOUTH_ATLANTIC_OCEAN_05 = {
     id = 3096
     provinces = { x72CBFD }
     impassable = { x72CBFD }
+    min_cold_effect = 0.16
+    max_cold_effect = 0.32
 }
 
 STATE_SOUTH_ATLANTIC_OCEAN_06 = {
@@ -532,11 +588,15 @@ STATE_ANGOLAN_SEA = {
 STATE_CAPE_OF_GOOD_HOPE = {
     id = 3105
     provinces = { x56C9FB }
+    min_cold_effect = 0.04
+    max_cold_effect = 0.07
 }
 
 STATE_NATAL_COAST = {
     id = 3106
     provinces = { x78FCFC }
+    min_cold_effect = 0.04
+    max_cold_effect = 0.07
 }
 
 STATE_MOZAMBIQUE_CHANNEL = {
@@ -560,6 +620,8 @@ STATE_INDIAN_OCEAN_03 = {
     id = 3110
     provinces = { x49C9C9 }
     impassable = { x49C9C9 }
+    min_cold_effect = 0.35
+    max_cold_effect = 0.70
 }
 
 STATE_MASCARENES = {
@@ -580,21 +642,29 @@ STATE_INDIAN_OCEAN_LANE_02 = {
 STATE_INDIAN_OCEAN_LANE_05 = {
     id = 3116
     provinces = { xDB38A3 }
+    min_cold_effect = 0.29
+    max_cold_effect = 0.59
 }
 
 STATE_INDIAN_OCEAN_LANE_06 = {
     id = 3117
     provinces = { x6640E1 }
+    min_cold_effect = 0.16
+    max_cold_effect = 0.31
 }
 
 STATE_SEA_OF_OKHOTSK = {
     id = 3118
     provinces = { x03DDFB }
+    min_cold_effect = 0.15
+    max_cold_effect = 0.79
 }
 
 STATE_GULF_OF_ALASKA = {
     id = 3119
     provinces = { x36CAFC }
+    min_cold_effect = 0.13
+    max_cold_effect = 0.57
 }
 
 STATE_SUMATRA_SEA = {
@@ -605,11 +675,15 @@ STATE_SUMATRA_SEA = {
 STATE_GREAT_AUSTRALIAN_BIGHT = {
     id = 3121
     provinces = { x28FBFB }
+    min_cold_effect = 0.09
+    max_cold_effect = 0.17
 }
 
 STATE_TASMAN_SEA = {
     id = 3122
     provinces = { x32C9FB }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.01
 }
 
 STATE_TIMOR_SEA = {
@@ -640,6 +714,8 @@ STATE_PHILIPPINES_SEA = {
 STATE_BERING_SEA = {
     id = 3128
     provinces = { x22CBFD }
+    min_cold_effect = 0.13
+    max_cold_effect = 0.51
 }
 
 STATE_SOLOMON_SEA = {
@@ -651,6 +727,8 @@ STATE_NORTH_PACIFIC_OCEAN_01 = {
     id = 3130
     provinces = { x405D92 }
     impassable = { x405D92 }
+    min_cold_effect = 0.01
+    max_cold_effect = 0.04
 }
 
 STATE_NORTH_PACIFIC_OCEAN_02 = {
@@ -710,12 +788,16 @@ STATE_SOUTH_PACIFIC_OCEAN_01 = {
     id = 3141
     provinces = { x445572 }
     impassable = { x445572 }
+    min_cold_effect = 0.35
+    max_cold_effect = 0.70
 }
 
 STATE_SOUTH_PACIFIC_OCEAN_02 = {
     id = 3142
     provinces = { x3B70B1 }
     impassable = { x3B70B1 }
+    min_cold_effect = 0.26
+    max_cold_effect = 0.51
 }
 
 STATE_SOUTH_PACIFIC_OCEAN_03 = {
@@ -767,6 +849,8 @@ STATE_EASTERN_POLYNESIA = {
 STATE_CHILEAN_SEA = {
     id = 3151
     provinces = { x26CAFC }
+    min_cold_effect = 0.20
+    max_cold_effect = 0.51
 }
 
 STATE_PERUVIAN_SEA = {

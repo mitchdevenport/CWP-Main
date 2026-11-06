@@ -551,6 +551,8 @@ STATE_OROMIA = {
         building_solar_farm = 120
         building_wind_farm = 45
     }
+    min_cold_effect = 0.03
+    max_cold_effect = 0.10
 }
 
 STATE_AMHARA = {
@@ -569,6 +571,8 @@ STATE_AMHARA = {
         building_gold_mine = 15
         building_solar_farm = 75
     }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.14
 }
 
 STATE_GONDER = {
@@ -585,6 +589,8 @@ STATE_GONDER = {
     capped_resources = {
         building_solar_farm = 70
     }
+    min_cold_effect = 0.04
+    max_cold_effect = 0.12
 }
 
 STATE_KAZEMBE = {
@@ -664,6 +670,8 @@ STATE_SOUTH_MADAGASCAR = {
         building_fishing_wharf = 8
     }
     naval_exit_id = 3107
+    min_cold_effect = 0.00
+    max_cold_effect = 0.01
 }
 
 STATE_NORTH_MADAGASCAR = {
@@ -1201,6 +1209,8 @@ STATE_NAMAQUALAND = {
         building_solar_farm = 80
     }
     naval_exit_id = 3105
+    min_cold_effect = 0.00
+    max_cold_effect = 0.03
 }
 
 STATE_HEREROLAND = {
@@ -1251,6 +1261,8 @@ STATE_ZULULAND = {
         building_hydroelectric_power_plant = 45
     }
     naval_exit_id = 3106
+    min_cold_effect = 0.00
+    max_cold_effect = 0.04
 }
 
 STATE_VRYSTAAT = {
@@ -1270,6 +1282,8 @@ STATE_VRYSTAAT = {
         building_gold_mine = 36
         building_solar_farm = 60
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.04
 }
 
 STATE_TRANSVAAL = {
@@ -1298,6 +1312,8 @@ STATE_TRANSVAAL = {
         type = "building_rare_earth_elements_mine"
         undiscovered_amount = 10
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.02
 }
 
 STATE_EASTERN_CAPE = {
@@ -1319,6 +1335,8 @@ STATE_EASTERN_CAPE = {
         building_wind_farm = 40
     }
     naval_exit_id = 3106
+    min_cold_effect = 0.00
+    max_cold_effect = 0.07
 }
 
 STATE_CAPE_COLONY = {
@@ -1347,6 +1365,8 @@ STATE_CAPE_COLONY = {
         building_wind_farm = 40
     }
     naval_exit_id = 3105
+    min_cold_effect = 0.00
+    max_cold_effect = 0.07
 }
 
 STATE_NORTHERN_CAPE = {
@@ -1371,6 +1391,8 @@ STATE_NORTHERN_CAPE = {
         type = "building_uranium_mine"
         undiscovered_amount = 40
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.04
 }
 
 STATE_BOTSWANA = {
@@ -1388,6 +1410,8 @@ STATE_BOTSWANA = {
         building_coal_mine = 48
         building_solar_farm = 145
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.01
 }
 
 STATE_LOURENCO_MARQUES = {
@@ -1412,6 +1436,8 @@ STATE_LOURENCO_MARQUES = {
         building_solar_farm = 65
     }
     naval_exit_id = 3107
+    min_cold_effect = 0.00
+    max_cold_effect = 0.01
 }
 
 STATE_SAINT_HELENA = {
@@ -1430,4 +1456,6 @@ STATE_SAINT_HELENA = {
         building_sulfur_mine = 2
     }
     naval_exit_id = 3099
+    min_cold_effect = 0.07
+    max_cold_effect = 0.25
 }
