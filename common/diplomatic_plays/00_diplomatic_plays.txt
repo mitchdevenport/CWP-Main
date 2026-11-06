@@ -40,7 +40,9 @@ dp_regime_change = {
 		NOT = { is_subject_of = scope:target_country }	
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
-			NOT = { is_subject_of = root }
+			# CWP 1.5: no regime change against anyone's subject (the base game only forbids one's own). Its overlord fights
+			# for it, so the United States' regime change on Soviet-occupied North Korea was a war with the USSR in 1947
+			is_subject = no
 		}	
 	}
 	
@@ -245,6 +247,8 @@ dp_reduce_autonomy = {
 		NOT = {
 			scope:target_country = { is_subject_type = subject_type_personal_union }
 		}
+		# CWP 1.5: countries under forced neutrality start no plays against their subjects' autonomy
+		NOT = { has_modifier = forced_neutrality }
 	}
 
 	ai_acceptance_max = 90
@@ -312,7 +316,9 @@ dp_make_tributary = {
 	texture = "gfx/interface/icons/war_goals/make_tributary.dds"
 	
 	possible = {
-		aggressive_diplomatic_plays_permitted = yes	
+		aggressive_diplomatic_plays_permitted = yes
+		# CWP 1.5: countries under forced neutrality make no subjects
+		NOT = { has_modifier = forced_neutrality }
 	}
 	
 	ai_acceptance_max = 90
@@ -347,8 +353,10 @@ dp_make_protectorate = {
 	
 	texture = "gfx/interface/icons/war_goals/make_protectorate.dds"
 	
-	possible = {	
-		aggressive_diplomatic_plays_permitted = yes				
+	possible = {
+		aggressive_diplomatic_plays_permitted = yes
+		# CWP 1.5: countries under forced neutrality make no subjects
+		NOT = { has_modifier = forced_neutrality }
 	}
 	
 	ai_acceptance_max = 90

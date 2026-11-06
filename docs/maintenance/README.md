@@ -192,6 +192,9 @@ Law rules:
   own `ai_nationalization_desire` (military industries and railways are nationalized, the rest kept).
 - Environmental regulations set the lowest green technology (`pmg_green_tech_industry`) a polluting industry may
   use, as in CWP 1.5. Give the group to every new industry whose production methods generate pollution.
+- Forced deindustrialization (the occupation zones' outcome of German unification) holds the economic system law
+  while it lasts, through CWP 1.5's `change_allowed_trigger` on `lawgroup_economic_system`; the modifier itself
+  does nothing else.
 
 Party rules:
 - The parties are CWP 1.5's seventeen (`common/parties/cwp_*_party.txt`, restored from CWP 1.5's; design notes in CWP
@@ -427,6 +430,10 @@ Military rules:
   war support lost to lost battles.
 
 Subject and decolonization rules:
+- Regime change cannot target anyone's subject, as in CWP 1.5 (the base game only forbids one's own): the overlord
+  defends its subject, and the United States' regime change on Soviet-occupied North Korea became a war with the
+  USSR and its satellites from 1947 to 1951. Countries under forced neutrality start no Make Protectorate, Make
+  Tributary or Reduce Autonomy plays (CWP 1.5's conditions in `common/diplomatic_plays/00_diplomatic_plays.txt`).
 - Decreasing a subject's autonomy needs the subject's consent, as in CWP 1.5 (`requires_approval` and CWP 1.5's
   acceptance in `common/diplomatic_actions/cwp_subject_interaction_decrease_autonomy.txt`). With the base game's
   instant action the AI turned dominions such as India, Pakistan and New Zealand into puppets within a decade.

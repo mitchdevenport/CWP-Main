@@ -81,6 +81,13 @@ lawgroup_economic_system = {
 	base_enactment_days = 150
 
 	ideological_opinion_impact = 2.0
+
+	# CWP 1.5: the occupation zones' forced deindustrialization (German unification) holds their economic system
+	change_allowed_trigger = {
+		NOT = {
+			has_modifier = forced_deindustrialization
+		}
+	}
 }
 
 lawgroup_trade_policy = {
