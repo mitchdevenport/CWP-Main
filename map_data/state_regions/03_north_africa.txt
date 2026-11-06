@@ -106,7 +106,7 @@ STATE_MATRUH = {
         undiscovered_amount = 45
     }
     city = x87D6C4
-    port = x25523D
+    port = xA05020
     farm = x25523D
     mine = xFA85DD
     wood = x0C6712
@@ -308,7 +308,7 @@ STATE_AL_RIF = {
     provinces = { x20B0C0 x75DC50 x8FBBB6 x9BC3AC xA0B0C0 xCA9F75 xDFB040 xE6D43C xE95985 xF05E87 xFA1C92 }
     traits = {}
     city = x20B0C0
-    port = xCA9F75
+    port = xDFB040
     farm = xDFB040
     mine = x9BC3AC
     wood = x20B0C0

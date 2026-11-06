@@ -165,7 +165,7 @@ STATE_EAST_JAVA = {
     }
     # state_trait_geothermal_reservoirs }
     city = x1D38B7
-    port = x1D38B7
+    port = x2060EF
     farm = xD91A27
     mine = xEF70EC
     wood = xC226AF

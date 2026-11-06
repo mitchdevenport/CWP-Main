@@ -97,12 +97,13 @@ mm_ongoing_diplo_play = {
 	map_painting_mode = countries
 	map_painting_mode_alternate = colonizable_provinces
 	map_names = countries
-	map_markers = { naval_battle_marker strait_marker colony_marker strategic_objective_marker battle_marker hq_marker diplomatic_play_marker construction_marker construction_summary_marker event_marker front_marker input_shortage_marker input_goods_shortage_summary_marker land_formation_marker fleet_formation_marker state_effect_marker sea_node_marker revolutionary_movement_marker invasion_marker harvest_condition_region_marker naval_mission_marker enemy_naval_mission_marker coastal_building_marker military_world_market_hub_marker }
+	map_markers = { naval_battle_marker strait_marker colony_marker strategic_objective_marker battle_marker hq_marker diplomatic_play_marker construction_marker construction_summary_marker event_marker front_marker input_shortage_marker input_goods_shortage_summary_marker land_formation_marker fleet_formation_marker state_effect_marker sea_node_marker revolutionary_movement_marker invasion_marker harvest_condition_region_marker naval_mission_marker enemy_naval_mission_marker coastal_building_marker military_world_market_hub_marker supply_origin_marker }
 	map_tooltip_offset = state
 
 	is_visible = no 					# special behaviour, overriden in code
 	map_texture_mode = occupation
 	show_formation_movement_arrows = yes
+	show_supply_route_arrows = yes
 
 	gradient_border_settings = default
 
@@ -199,13 +200,14 @@ mm_military = {
 	map_painting_mode = player_alliances
 	map_painting_mode_secondary = player_alliances
 	map_painting_mode_alternate = player_alliances
-	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker past_naval_battle_marker front_marker land_formation_marker fleet_formation_marker hq_marker sea_node_marker invasion_marker interest_marker naval_mission_marker enemy_naval_mission_marker state_effect_marker coastal_building_marker military_world_market_hub_marker }
+	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker past_naval_battle_marker front_marker land_formation_marker fleet_formation_marker hq_marker sea_node_marker invasion_marker interest_marker naval_mission_marker enemy_naval_mission_marker state_effect_marker coastal_building_marker military_world_market_hub_marker supply_origin_marker }
 	map_mode_lists = { military }
 
 	gradient_border_settings = mapmode_extra
 	is_visible = yes
 	map_texture_mode = occupation
 	show_formation_movement_arrows = yes
+	show_supply_route_arrows = yes
 
 	# Texture usage
 	use_mapmode_textures = yes
@@ -230,13 +232,14 @@ mm_military_formation = {
 	map_painting_mode = player_alliances
 	map_painting_mode_secondary = player_alliances
 	map_painting_mode_alternate = player_alliances
-	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker land_formation_marker fleet_formation_marker sea_node_movement_marker front_movement_marker hq_movement_marker invasion_marker interest_marker naval_mission_marker enemy_naval_mission_marker state_effect_marker coastal_building_marker military_world_market_hub_marker }
+	map_markers = { strait_marker naval_battle_marker strategic_objective_marker battle_marker land_formation_marker fleet_formation_marker sea_node_movement_marker front_movement_marker hq_movement_marker invasion_marker interest_marker naval_mission_marker enemy_naval_mission_marker state_effect_marker coastal_building_marker military_world_market_hub_marker supply_origin_marker }
 	map_mode_lists = { military }
 
 	gradient_border_settings = mapmode_extra
 	is_visible = yes
 	map_texture_mode = occupation
 	show_formation_movement_arrows = yes
+	show_supply_route_arrows = yes
 
 	# Texture usage
 	use_mapmode_textures = yes
@@ -289,12 +292,13 @@ mm_military_with_past_battles = {
 	map_painting_mode = player_alliances
 	map_painting_mode_secondary = player_alliances
 	map_painting_mode_alternate = player_alliances
-	map_markers = { strait_marker naval_battle_marker event_marker battle_marker past_battle_marker past_naval_battle_marker hq_marker sea_node_marker invasion_marker land_formation_marker fleet_formation_marker naval_mission_marker enemy_naval_mission_marker coastal_building_marker military_world_market_hub_marker }
+	map_markers = { strait_marker naval_battle_marker event_marker battle_marker past_battle_marker past_naval_battle_marker hq_marker sea_node_marker invasion_marker land_formation_marker fleet_formation_marker naval_mission_marker enemy_naval_mission_marker coastal_building_marker military_world_market_hub_marker supply_origin_marker }
 
 	gradient_border_settings = mapmode_extra
 	is_visible = no
 	map_texture_mode = occupation
 	show_formation_movement_arrows = yes
+	show_supply_route_arrows = yes
 
 	# Texture usage
 	use_mapmode_textures = yes
@@ -611,6 +615,7 @@ mm_country_relations = {
 
 mm_state_value = {
 	map_painting_mode = state_value
+	map_painting_mode_secondary = state_value
 	map_markers = { }
 	map_mode_lists = { country diplomacy }
 	map_names = states
@@ -682,7 +687,7 @@ mm_trade = {
 mm_market_areas = {
 	map_painting_mode = market_areas
 	map_names = market_areas
-	map_markers = { strait_marker world_market_hub_marker market_marker sea_infra_marker sea_node_marker harvest_condition_region_marker }
+	map_markers = { strait_marker world_market_hub_marker market_marker sea_infra_marker sea_node_marker harvest_condition_region_marker city_marker }
 	map_mode_lists = { market }
 
 	is_visible = yes
@@ -811,11 +816,12 @@ mm_strategic_region_interaction = {
 
 mm_naval_mission_sea_regions_interaction = {
 	map_painting_mode = none
-	map_markers = { sea_node_marker fleet_formation_marker interest_marker military_world_market_hub_marker }
+	map_markers = { sea_node_marker fleet_formation_marker interest_marker military_world_market_hub_marker supply_origin_marker }
 
 	gradient_border_settings = interactive
 	has_fog_of_war = no
 	show_formation_movement_arrows = yes
+	show_supply_route_arrows = yes
 
 	# Texture usage
 	use_mapmode_textures = yes
@@ -941,6 +947,7 @@ mm_designate_strategic_objective = {
 	# Texture slots
 
 	secondary_color_red = @color_green					# Can activate
+	secondary_color_green = @color_green				# Can activate, another formation already has this objective
 	secondary_color_alpha = @color_red					# Cannot Activate, but is valid
 	secondary_color_blue = @color_blue					# Activated, can deactivate
 
@@ -987,6 +994,27 @@ mm_diplomatic_action_interaction = {
 	# Texture slots
 	secondary_color_red = @color_green					# Can Activate
 	secondary_color_blue = @diplomatic_action_active	# Can Deactivate
+	secondary_color_alpha = @color_red					# Cannot Activate
+	alternate_color_red = @diplomatic_action_orange		# Active - Cannot Deactivate
+	alternate_color_green = @this_is_you				# This is you (player)
+
+	icon = "gfx/interface/icons/map_mode_icons/diplomatic.dds"
+	soundeffect = "snapshot:/Dynamic/low_pass_world"
+}
+
+mm_treaty_article_interaction = {
+	map_painting_mode = none
+	map_markers = { }
+
+	gradient_border_settings = interactive
+	has_fog_of_war = no
+
+	# Texture usage
+	use_mapmode_textures = yes
+	primary_red_as_gradient_border = yes
+
+	# Texture slots
+	secondary_color_red = @color_green					# Can Activate
 	secondary_color_alpha = @color_red					# Cannot Activate
 	alternate_color_red = @diplomatic_action_orange		# Active - Cannot Deactivate
 	alternate_color_green = @this_is_you				# This is you (player)
@@ -1051,6 +1079,28 @@ mm_establish_colony_interaction = {
 	secondary_color_red = @color_green				# Can Activate
 	secondary_color_blue = @establish_colony_active	# Can Deactivate
 	secondary_color_alpha = @color_red				# Cannot Activate, but is valid
+
+	icon = "gfx/interface/icons/map_mode_icons/migration.dds"
+	soundeffect = "snapshot:/Dynamic/low_pass_world"
+}
+
+mm_establish_cossack_host_interaction = {
+	map_painting_mode = none
+	map_names = states
+	map_markers = { construction_marker construction_summary_marker construction_queue_marker building_potential_marker sea_node_marker sea_infra_marker state_infra_marker colony_marker }
+
+	gradient_border_settings = interactive
+	has_fog_of_war = no
+
+	# Texture usage
+	use_mapmode_textures = yes
+	primary_red_as_gradient_border = yes
+
+	# Texture slots
+	secondary_color_red = @color_green				# Can Activate
+	secondary_color_blue = @color_orange			# Can Deactivate
+	secondary_color_alpha = @color_red				# Cannot Activate, but is valid
+	alternate_color_red = @color_orange				# Active - Cannot Deactivate (host on removal cooldown)
 
 	icon = "gfx/interface/icons/map_mode_icons/migration.dds"
 	soundeffect = "snapshot:/Dynamic/low_pass_world"
@@ -1173,7 +1223,7 @@ mm_harvest_conditions = {
 	has_fog_of_war = no
 
 	icon = "gfx/interface/icons/map_mode_icons/harvest_conditions.dds"
-	soundeffect = "snapshot:/Dynamic/low_pass_world"
+	soundeffect = "snapshot:/Dynamic/low_pass_world_harvest"
 }
 
 mm_global_starvation = {
@@ -1187,7 +1237,7 @@ mm_global_starvation = {
 	has_fog_of_war = no
 
 	icon = "gfx/interface/icons/map_mode_icons/starvation.dds"
-	soundeffect = "snapshot:/Dynamic/low_pass_world"
+	soundeffect = "snapshot:/Dynamic/low_pass_world_harvest"
 }
 
 mm_hq_interaction = {
@@ -1493,4 +1543,55 @@ mm_players = {
 	gradient_border_settings = default
 
 	icon = "gfx/interface/icons/map_mode_icons/players.dds"
+}
+
+mm_journal_entry_map_data = {
+	map_painting_mode = journal_entry_map_data
+	map_painting_mode_secondary = journal_entry_map_data_second
+	map_names = none
+	map_markers = {}
+	map_tooltip_offset = state
+
+	is_visible = no 					# special behaviour, overriden in code
+	has_fog_of_war = no
+	show_formation_movement_arrows = no
+
+	gradient_border_settings = mapmode_extra
+
+	icon = "gfx/interface/icons/map_mode_icons/journal_entry.dds"
+}
+
+mm_cold_effect = {
+	map_painting_mode = cold_effect
+	map_names = states
+
+	is_visible = yes
+
+	gradient_border_settings = heatmap
+	has_fog_of_war = no
+
+	icon = "gfx/interface/icons/map_mode_icons/cold_value.dds"
+	soundeffect = "snapshot:/Dynamic/low_pass_world"
+}
+
+mm_min_cold_effect = {
+	map_painting_mode = min_cold_effect
+	map_names = states
+	debug = yes
+
+	gradient_border_settings = heatmap
+	has_fog_of_war = no
+
+	icon = "gfx/interface/icons/map_mode_icons/cold_value.dds"
+}
+
+mm_max_cold_effect = {
+	map_painting_mode = max_cold_effect
+	map_names = states
+	debug = yes
+
+	gradient_border_settings = heatmap
+	has_fog_of_war = no
+
+	icon = "gfx/interface/icons/map_mode_icons/cold_value.dds"
 }
