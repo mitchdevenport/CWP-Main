@@ -90,6 +90,20 @@ Rules from the Victoria 3 1.15 update:
   out: the AI capitulates when exhausted, and every war goal held against it is then enforced.
 - The diplomatic AI trades war goals and obligations for support readily; `diplomatic_play_support` in
   `common/ai_strategies/00_default_strategy.txt` keeps Cold War blocs on their own side.
+- A war goal is also enforced during a war once its holder has controlled the objective long enough (`fill_per_week`,
+  five points a week by default). Scripted wars that CWP 1.5 resolved only at their end use a copy of the war goal with
+  `fill_per_week = 0` (`korean_unification` in `common/war_goal_types/cwp_korean_unification.txt`); outsiders are kept
+  out of the Korean War's play in `diplomatic_play_support`, as in CWP 1.5, which had no power blocs.
+- Military occupations keep CWP 1.5's `join_overlord_wars = no`; the engine warns about
+  `forced_into_overlord_revolution` on a subject type that does not join its overlord's wars.
+- A cultural secession joins an existing country of its culture, so CWP's cultural minority movement cannot secede
+  when such a country exists (`common/political_movements/cwp_political_movements_cultural.txt`).
+- The base game's interface calls scripted GUIs that CWP must define because it replaces `common/scripted_guis`
+  (`character_is_captain_nemo_sgui` in `journal_entry_sguis.txt`). After an update, check that every
+  `GetScriptedGui('...')` in the interface files the game loads (CWP's and the base game's) is defined; the error log
+  only shows a missing one when its panel is opened.
+- Money in base-game interface additions merged into CWP's panels shows the country's currency
+  (`[GetPlayer.MakeScope.Var('cwp_currency').GetFlagName]`, as in the rest of `gui/budget_panel.gui`), not `@money!`.
 
 How CWP takes the 1.15 base-game features: the war support rework, war goals enforced during a war, several world
 market hubs per market, subjects choosing sides, the fleet changes, the travel network and the infamy game rule
