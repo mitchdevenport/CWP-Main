@@ -11271,7 +11271,7 @@ province=xC531AE x=6741 y=1648 type=harbor_from_spline	} {
 province=x4DD36E x=6601 y=1478 type=harbor_from_spline	} {
 province=x4D4D9B x=6764 y=1486 type=harbor_from_spline	} {
 province=xD70117 x=6571 y=1361 type=harbor_from_spline	} {
-province=x1D38B7 x=6668 y=1341 type=harbor_from_spline	} {
+province=x2060EF x=6668 y=1341 type=harbor_from_spline	} {
 province=x8A3E15 x=6380 y=1491 type=harbor_from_spline	} {
 province=x1C8420 x=6267 y=1638 type=harbor_from_spline	} {
 province=x39DD3B x=7086 y=1488 type=harbor_from_spline	} {
