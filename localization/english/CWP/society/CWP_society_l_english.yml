@@ -4,4 +4,4 @@
  POLLUTION_TOOLTIP_TITLE: "#T [concept_pollution]#!"
 
  # Slums
- state_slum_modifier_desc: "Unemployed and destitute [Concept('concept_pop', '$concept_pops$')] crowd into informal settlements on the edges of this state's cities, worsening health and unrest."
+ state_slum_modifier_desc: "Unemployed and destitute [Concept('concept_pop', '$concept_pops|q$')] crowd into informal settlements on the edges of this state's cities, worsening health and unrest."

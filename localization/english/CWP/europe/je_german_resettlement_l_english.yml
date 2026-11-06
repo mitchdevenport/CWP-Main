@@ -34,10 +34,10 @@
 
   mass_migration_button_germany_tt: "Creates a [concept_migration_target], with Germany as its' destination"
 
-  remove_homeland_tt_pomerania: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands$')] in Pomerania"
-  remove_homeland_tt_gr_poland: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands$')] in Greater Poland"
-  remove_homeland_tt_silesia: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands$')] in Silesia"
-  remove_homeland_tt_pomemasuria: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands$')] in Pomerania-Masuria"
+  remove_homeland_tt_pomerania: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands|q$')] in Pomerania"
+  remove_homeland_tt_gr_poland: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands|q$')] in Greater Poland"
+  remove_homeland_tt_silesia: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands|q$')] in Silesia"
+  remove_homeland_tt_pomemasuria: "Will remove the [GetCulture('north_german').GetName] [Concept('concept_homeland','$concept_homelands|q$')] in Pomerania-Masuria"
 
   exile_germans_tt: "We will exile 75% of the leftover [GetCulture('north_german').GetName] people from the state"
   german_migration_button_cooldown_tt: "Has not used this action in the last 2 months"

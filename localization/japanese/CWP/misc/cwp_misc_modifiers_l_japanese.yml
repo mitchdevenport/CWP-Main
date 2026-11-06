@@ -40,8 +40,6 @@
  country_enactment_speed_law_single_party_state_mult: "Enactment Speed for [GetLawType('law_single_party_state').GetName]"
  country_enactment_speed_law_single_party_state_mult_desc: "An increase or decrease to the speed of legislative enactments for the specific law"
  country_bg_manufacturing_require_subsidies_bool_desc: "All $bg_manufacturing$ buildings must be subsidized by the government"
- political_movement_character_attraction_mult: "$concept_political_movement$ Character Attraction"
- political_movement_character_attraction_mult_desc: "An increase or decrease to the attraction for characters towards joining a [concept_political_movement]."
  state_pop_support_movement_land_reform_add_desc: "$political_movement_pop_attraction_mult_desc$"
  state_pop_support_movement_land_reform_mult_desc: "$political_movement_pop_attraction_mult_desc$"
  state_harvest_condition_hailstorm_duration_mult: "[GetHarvestConditionType('hailstorm').GetName] [concept_harvest_condition] Duration"

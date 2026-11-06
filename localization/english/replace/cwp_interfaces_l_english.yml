@@ -4,4 +4,4 @@
  IMPOSE_LAW_NO_OPTIONS: "[SelectLocalization(StringIsEmpty(Law.GetCountry.GetCustom('impose_law_error')),'IMPOSE_LAW_NO_OPTIONS_NO_COOLDOWN',Law.GetCountry.GetCustom('impose_law_error'))]"
  IMPOSE_LAW_NO_OPTIONS_COOLDOWN: "@red_cross! You cannot impose a [concept_law] on this Country for another [Country.GetTimedModifierDurationRemaining('impose_law_cooldown')]"
  IMPOSE_LAW_NO_OPTIONS_JOURNAL_ENTRY: "@red_cross! Still dealing with a previous [concept_law] imposed on them"
- IMPOSE_LAW_NO_OPTIONS_NO_COOLDOWN: "@red_cross! No [Law.GetGroup.GetName] [Concept('concept_law','$concept_laws$')] available to impose on this Country"
+ IMPOSE_LAW_NO_OPTIONS_NO_COOLDOWN: "@red_cross! No [Law.GetGroup.GetName] [Concept('concept_law','$concept_laws|q$')] available to impose on this Country"

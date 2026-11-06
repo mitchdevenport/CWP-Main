@@ -16,7 +16,7 @@
  treaty_five_eyes_possible_decision: "[GetPlayer.GetName] is part of the #v Five Eyes#!"
  leave_treaty_of_five_eyes: "Leave the Five Eyes"
  leave_treaty_of_five_eyes_desc: "The Five Eyes no longer align with our goals, it would be best to leave them."
- leave_treaty_of_five_eyes_tt: "Our [Concept('concept_treaty','$concept_treaties$')] with the other members of the #v Five Eyes#! will end"
+ leave_treaty_of_five_eyes_tt: "Our [Concept('concept_treaty','$concept_treaties|q$')] with the other members of the #v Five Eyes#! will end"
 
  # NATO Mutual Assistance Treaty
  form_nato: "Start the creation of [concept_nato]"

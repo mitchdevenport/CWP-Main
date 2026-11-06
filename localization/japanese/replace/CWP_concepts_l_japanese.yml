@@ -8,7 +8,7 @@
  concept_superpower_desc: "強大な力を誇示する広範な能力と、大国の意思さえも屈服させるまぎれもない能力を持つ、世界情勢において主要な指導的立場にある[concept_country]。\n\nこのような国は$concept_superpowers$とみなされます。$concept_superpowers$は他の$concept_superpowers$と頻繁に殴り合いをし、$concept_great_powers$のような小さい国の問題に干渉します。[AddLocalizationIf(GetPlayer.IsValid,'concept_superpower_desc_added')]"
  concept_superpower_desc_added: "\n\n$concept_superpowers$には以下の利益があります:\n[GetRankModifier('superpower').GetDesc]"
  concept_global_pollution: "地球汚染"
- concept_global_pollution_desc: "地球汚染は、世界のすべての[Concept('concept_state_region', '$concept_state_regions$')]が排出する汚染の総量です。放っておくと地球温暖化と気候変動を引き起こします。"
+ concept_global_pollution_desc: "地球汚染は、世界のすべての[Concept('concept_state_region', '$concept_state_regions|q$')]が排出する汚染の総量です。放っておくと地球温暖化と気候変動を引き起こします。"
  concept_administer: "統治支援"
  concept_administer_desc: "宗主国から従属国への行政力の移転です。"
  concept_develop: "開発支援"

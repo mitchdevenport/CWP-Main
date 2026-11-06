@@ -1,3 +1,3 @@
 ﻿l_japanese:
  # Untranslated: English text kept until a Japanese translation is available
- cwp_foster_national_agitation_target_tt: "A [concept_state] abroad is part of the [SCOPE.sCulture('agitator_culture').GetName] homeland, its owner has a [concept_rivalry] with us and does not have [SCOPE.sCulture('agitator_culture').GetName] as a [Concept('concept_primary_cultures','$concept_primary_culture$')]"
+ cwp_foster_national_agitation_target_tt: "A [concept_state] abroad is part of the [SCOPE.sCulture('agitator_culture').GetName] homeland, its owner has a [concept_rivalry] with us and does not have [SCOPE.sCulture('agitator_culture').GetName] as a [Concept('concept_primary_cultures','$concept_primary_culture|q$')]"

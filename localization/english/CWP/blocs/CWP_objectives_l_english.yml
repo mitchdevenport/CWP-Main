@@ -50,3 +50,4 @@
  objective_eastern_bloc_idle_hint: "More challenges will appear eventually"
  objective_non_aligned_bloc_idle_header: "Continue on your path"
  objective_non_aligned_bloc_idle_hint: "More challenges will appear eventually"
+ # Shown by the 1.15 journal's objective section when no objective entry is active

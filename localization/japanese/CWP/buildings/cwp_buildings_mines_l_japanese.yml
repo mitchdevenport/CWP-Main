@@ -1,8 +1,6 @@
 ﻿l_japanese:
  building_bauxite_mine: "ボーキサイト鉱山"
  building_bauxite_mine_lens_option: "$building_bauxite_mine$を拡張"
- building_copper_mine: "銅鉱山"
- building_copper_mine_lens_option: "$building_copper_mine$を拡張"
  building_rare_earth_elements_mine: "レアアース鉱山"
  building_rare_earth_elements_mine_lens_option: "$building_rare_earth_elements_mine$を拡張"
  building_rare_earth_elements_mine_discovered_resource: "レアアース"

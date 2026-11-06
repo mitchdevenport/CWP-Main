@@ -29,7 +29,7 @@
  treaty_five_eyes_article_short_desc: "[FIRST_COUNTRY.GetNameNoFormatting] and [SECOND_COUNTRY.GetNameNoFormatting] are part of the #v Five Eyes#!"
  treaty_five_eyes_requirement_tt: "Both countries are part of the #v Five Eyes#!"
  treaty_five_eyes_can_withdraw_tt: "Members can only end this [concept_treaty] by leaving the #v Five Eyes#!"
- leave_treaty_of_five_eyes_tt: "Our [Concept('concept_treaty','$concept_treaties$')] with the other members of the #v Five Eyes#! will end"
+ leave_treaty_of_five_eyes_tt: "Our [Concept('concept_treaty','$concept_treaties|q$')] with the other members of the #v Five Eyes#! will end"
  treaty_name_north_atlantic_treaty: "North Atlantic Treaty"
  treaty_nato_mutual_assistance: "[concept_nato]"
  treaty_nato_mutual_assistance_desc: "Members of [concept_nato], which is currently led by [GetGlobalVariable('nato_leader').GetCountry.GetName], agree to defend each other against third party aggression."

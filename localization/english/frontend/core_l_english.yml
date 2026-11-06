@@ -72,3 +72,5 @@
  SAVE_TO_CLOUD_LABEL:0 "Save to Cloud"
  FILE_NAME_INVALID:0 "@warning!#X Invalid Save Name#! "
  CLOUDSAVE_QUOTA_EXCEEDED_TOOLTIP:0 "Cloud save storage quota exceeded. Try to free some space by removing older cloud save files."
+ # Added by Victoria 3 1.15
+ MISSING_DLCS:0 "@warning! #X Missing DLCs#!"
