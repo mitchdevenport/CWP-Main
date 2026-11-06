@@ -1161,7 +1161,7 @@ types budget
 												alpha = "[TransparentIfZero(State.GetTaxWasteAmount)]"
 												using = tooltip_se
 												tooltip = "[State.GetTaxWasteDesc]"
-												raw_text = "@money![State.GetTaxWasteAmount|D-]"
+												raw_text = "[GetPlayer.MakeScope.Var('cwp_currency').GetFlagName] [State.GetTaxWasteAmount|D-]"
 											}
 										}
 
@@ -1176,7 +1176,7 @@ types budget
 												alpha = "[TransparentIfZero(State.GetUncollectedTaxAmount)]"
 												using = tooltip_se
 												tooltip = "[State.GetTaxCollectionMultDesc]"
-												raw_text = "@money![State.GetUncollectedTaxAmount|D-] ([State.GetTaxCollectionMult|+%1])"
+												raw_text = "[GetPlayer.MakeScope.Var('cwp_currency').GetFlagName] [State.GetUncollectedTaxAmount|D-] ([State.GetTaxCollectionMult|+%1])"
 											}
 										}
 									}
