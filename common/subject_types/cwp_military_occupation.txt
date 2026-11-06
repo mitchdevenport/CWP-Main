@@ -6,9 +6,10 @@ subject_type_military_occupation = {
 	annex_on_country_formation = no
 	can_start_own_diplomatic_plays = no
 	breaks_if_subject_not_protected = yes
-	join_overlord_wars = yes
+	# As in CWP 1.5, occupied countries are not drawn into their occupier's wars (occupied Japan and Austria followed
+	# the United States into the Korean War); forced_into_overlord_revolution would have no effect without it
+	join_overlord_wars = no
 	can_have_subjects = yes
-	forced_into_overlord_revolution = yes
 	re_establish_war_goal = make_protectorate
 	overlord_must_be_higher_rank = yes
 	overlord_must_be_same_country_type = no
