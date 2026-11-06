@@ -16,3 +16,5 @@
  ideology_proletarian_movement_desc: "#lore この運動は階級闘争というレンズを通して政治を見ており、労働者の条件改善と政治的影響力の増大を支持しています。#!"
  ideology_vanguardist_movement: "前衛主義者"
  ideology_vanguardist_movement_desc: "#lore 急進的な前衛政党が主導する革命を通じ社会主義社会の実現を目指す運動です。#!"
+ # The Red Army event as CWP 1.5 had it (events/cwp_red_army_event.txt): the base game's 1.15 tooltip names its new ideologies
+ cwp_red_army_tt: "軍部が赤軍と名付けられます"

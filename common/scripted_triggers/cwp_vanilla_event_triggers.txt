@@ -6,7 +6,7 @@ ai_avoids_radicals = {
 	OR = {
 		AND = {
 			always = no
-			divided_monarchists_ai_monarchist = yes
+			always = no
 		}
 	}
 }
@@ -15,97 +15,9 @@ ai_wants_radicals = {
 	OR = {
 		AND = {
 			always = no
-			divided_monarchists_ai_republican = yes
-		}
-	}
-}
-
-character_is_french_house = {
-	OR = {
-		always = no
-		always = no
-		always = no
-	}
-}
-
-character_is_rival_french_house = {
-	owner ?= { divided_monarchists_ai_backs_monarchist = yes }
-	character_is_french_house = yes
-	NOT = { character_matches_divided_monarchists_ai_path = yes }
-}
-
-character_matches_divided_monarchists_ai_path = {
-	OR = {
-		AND = {
-			owner ?= { divided_monarchists_ai_backs_orleanist = yes }
 			always = no
 		}
-		AND = {
-			owner ?= { divided_monarchists_ai_backs_legitimist = yes }
-			always = no
-		}
-		AND = {
-			owner ?= { divided_monarchists_ai_backs_bonapartist = yes }
-			always = no
-		}
-		AND = {
-			owner ?= { divided_monarchists_ai_republican = yes }
-			OR = {
-				has_ideology = ideology:ideology_republican_leader
-				has_ideology = ideology:ideology_radical
-				has_ideology = ideology:ideology_positivist
-			}
-		}
 	}
-}
-
-divided_monarchists_ai_backs_bonapartist = {
-	divided_monarchists_ai_bonapartist = yes
-	divided_monarchists_ai_house_hooks_active = yes
-}
-
-divided_monarchists_ai_backs_legitimist = {
-	divided_monarchists_ai_legitimist = yes
-	divided_monarchists_ai_house_hooks_active = yes
-}
-
-divided_monarchists_ai_backs_monarchist = {
-	divided_monarchists_ai_monarchist = yes
-	divided_monarchists_ai_house_hooks_active = yes
-}
-
-divided_monarchists_ai_backs_orleanist = {
-	divided_monarchists_ai_orleanist = yes
-	divided_monarchists_ai_house_hooks_active = yes
-}
-
-divided_monarchists_ai_bonapartist = {
-	var:divided_monarchists_ai_var ?= flag:bonapartist
-}
-
-divided_monarchists_ai_house_hooks_active = {
-	always = no
-	NOT = { always = no }
-}
-
-divided_monarchists_ai_legitimist = {
-	var:divided_monarchists_ai_var ?= flag:legitimist
-}
-
-divided_monarchists_ai_monarchist = { # Is the AI playing this content and not Republican?
-	OR = {
-		divided_monarchists_ai_orleanist = yes
-		divided_monarchists_ai_legitimist = yes
-		divided_monarchists_ai_bonapartist = yes
-	}
-}
-
-divided_monarchists_ai_orleanist = {
-	var:divided_monarchists_ai_var ?= flag:orleanist
-}
-
-divided_monarchists_ai_republican = {
-	var:divided_monarchists_ai_var ?= flag:republican
 }
 
 # from 00_coa_triggers.txt

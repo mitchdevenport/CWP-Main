@@ -17,3 +17,5 @@
  ideology_proletarian_movement_desc: "#lore This movement views politics through the lens of class struggle, supporting better conditions and increased political influence for workers.#!"
  ideology_vanguardist_movement: "Vanguardist"
  ideology_vanguardist_movement_desc: "#lore This movement seeks to achieve a socialist society through a revolution headed by a vanguard party of dedicated radicals.#!"
+ # The Red Army event as CWP 1.5 had it (events/cwp_red_army_event.txt): the base game's 1.15 tooltip names its new ideologies
+ cwp_red_army_tt: "Armed Forces will be named Red Army"

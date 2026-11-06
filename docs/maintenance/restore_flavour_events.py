@@ -98,7 +98,7 @@ KEEP = {
     "agitators_events/revolution_events_02": ["revolution_pulse_events.%d" % i for i in range(1, 41) if i != 6],
     "autocracy_events": ['autocracy.2', 'autocracy.3'],
     "commander_events": ['commander_events.2', 'commander_events.4', 'commander_events.6'],
-    "communism": ['communism.7', 'communism.8'],
+    "communism": ['communism.7'],
     "crime_events": ['crime_events.1', 'crime_events.2'],
     "decree_events_02": ['decree_events.100', 'decree_events.101', 'decree_events.102', 'decree_events.103', 'decree_events.104', 'decree_events.105', 'decree_events.106', 'decree_events.108', 'decree_events.109'],
     "diplomatic_friction_events": ['diplomatic_friction.1', 'diplomatic_friction.2', 'diplomatic_friction.3'],
@@ -110,6 +110,10 @@ KEEP = {
     "law_events/labor_rights_laws": ['labor_rights.1', 'labor_rights.4', 'labor_rights.5', 'labor_rights.6'],
     "law_events/technocracy_law": ['technocracy.1', 'technocracy.2', 'technocracy.3'],
 }
+# Events CWP keeps in its own files, in the form CWP 1.5 had, because the base game rebuilt them around content CWP
+# does not have; they stay in the restored hooks. The Red Army (communism.8) needs the Revolutionary Guard law and the
+# militant, disciplinarian and internationalist ideologies since 1.15.
+PINNED = {"communism.8": "events/cwp_red_army_event.txt"}
 
 # Vanilla buildings CWP replaced (dev's own mapping in the disabled .info copies); None = no CWP equivalent
 BUILDINGS = {
@@ -368,15 +372,18 @@ def fixes(text, c):
 
 
 # The base game's State and Revolution content (Victoria 3 1.15: tsarpoints, Russian and Polish AI, the Russian civil
-# war, ...) is not part of CWP. Its journal entries, variables and AI triggers never exist in a CWP game, so a check
-# for them is always false: the statements are replaced with `always = no` (`always = yes` for `= no`), which keeps
-# every block's structure and meaning
-SR_HOOK = r"(?:je_tp_\w+|\w*tsarpoints\w*|ai_russia_\w+|je_russia_\w+|\w*congress_poland\w*|ai_poland_\w+|rcw_\w+|rlit_\w+|nemo_\w+|je_state_and_revolution)"
+# war, ...) and its 1836 France (the divided monarchists' AI and the French royal houses) are not part of CWP. Their
+# journal entries, variables and AI triggers never exist in a CWP game, so a check for them is always false: the
+# statements are replaced with `always = no` (`always = yes` for `= no`), which keeps every block's structure and meaning
+SR_HOOK = (r"(?:je_tp_\w+|\w*tsarpoints\w*|ai_russia_\w+|je_russia_\w+|\w*congress_poland\w*|ai_poland_\w+|rcw_\w+|rlit_\w+"
+           r"|nemo_\w+|je_state_and_revolution|divided_monarchists_\w+|character_is_french_house|character_is_rival_french_house"
+           r"|character_matches_divided_monarchists_ai_path)")
 
 
 def drop_state_and_revolution(text):
     text = re.sub(r"(?m)^([ \t]*)(?:has_journal_entry|has_variable|has_global_variable)\s*=\s*%s[ \t]*(#[^\n]*)?$" % SR_HOOK,
                   r"\1always = no", text)
+    text = re.sub(r"(?<=\{ )(?:has_journal_entry|has_variable|has_global_variable)\s*=\s*%s(?= \})" % SR_HOOK, "always = no", text)
     text = re.sub(r"(?m)^([ \t]*)%s\s*=\s*yes[ \t]*(#[^\n]*)?$" % SR_HOOK, r"\1always = no", text)
     text = re.sub(r"(?m)^([ \t]*)%s\s*=\s*no[ \t]*(#[^\n]*)?$" % SR_HOOK, r"\1always = yes", text)
     return text
@@ -674,7 +681,7 @@ def main():
             break
         texts = new_texts
     print("support: modifiers", n1, "triggers", n2, "effects", n3, "values", n4)
-    restored = set()
+    restored = set(PINNED)
     for x in written:
         restored.update(event_ids(x))
     print("hooks:", write_hooks(restored))

@@ -58,7 +58,7 @@ government_conflicts.1 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -69,7 +69,7 @@ government_conflicts.1 = {
 					ai_wants_radicals = yes
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -79,7 +79,7 @@ government_conflicts.1 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -102,7 +102,7 @@ government_conflicts.1 = {
 				trigger = {
 					ig:ig_landowners ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -113,7 +113,7 @@ government_conflicts.1 = {
 					ai_wants_radicals = yes
 					ig:ig_landowners ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -123,7 +123,7 @@ government_conflicts.1 = {
 				trigger = {
 					ig:ig_landowners ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -206,7 +206,7 @@ government_conflicts.2 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -217,7 +217,7 @@ government_conflicts.2 = {
 					ai_wants_radicals = yes
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -227,7 +227,7 @@ government_conflicts.2 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -250,7 +250,7 @@ government_conflicts.2 = {
 				trigger = {
 					ig:ig_landowners ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -261,7 +261,7 @@ government_conflicts.2 = {
 					ai_wants_radicals = yes
 					ig:ig_landowners ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -271,7 +271,7 @@ government_conflicts.2 = {
 				trigger = {
 					ig:ig_landowners ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -355,7 +355,7 @@ government_conflicts.3 = {
 				trigger = {
 					ig:ig_devout ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -366,7 +366,7 @@ government_conflicts.3 = {
 					ai_wants_radicals = yes
 					ig:ig_devout ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -376,7 +376,7 @@ government_conflicts.3 = {
 				trigger = {
 					ig:ig_devout ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -399,7 +399,7 @@ government_conflicts.3 = {
 				trigger = {
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -410,7 +410,7 @@ government_conflicts.3 = {
 					ai_wants_radicals = yes
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -420,7 +420,7 @@ government_conflicts.3 = {
 				trigger = {
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -503,7 +503,7 @@ government_conflicts.4 = {
 				trigger = {
 					ig:ig_devout ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -514,7 +514,7 @@ government_conflicts.4 = {
 					ai_wants_radicals = yes
 					ig:ig_devout ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -524,7 +524,7 @@ government_conflicts.4 = {
 				trigger = {
 					ig:ig_devout ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -547,7 +547,7 @@ government_conflicts.4 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -558,7 +558,7 @@ government_conflicts.4 = {
 					ai_wants_radicals = yes
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -568,7 +568,7 @@ government_conflicts.4 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -651,7 +651,7 @@ government_conflicts.5 = {
 				trigger = {
 					ig:ig_devout ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -662,7 +662,7 @@ government_conflicts.5 = {
 					ai_wants_radicals = yes
 					ig:ig_devout ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -672,7 +672,7 @@ government_conflicts.5 = {
 				trigger = {
 					ig:ig_devout ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -695,7 +695,7 @@ government_conflicts.5 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -706,7 +706,7 @@ government_conflicts.5 = {
 					ai_wants_radicals = yes
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -716,7 +716,7 @@ government_conflicts.5 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -799,7 +799,7 @@ government_conflicts.6 = {
 				trigger = {
 					ig:ig_petty_bourgeoisie ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -810,7 +810,7 @@ government_conflicts.6 = {
 					ai_wants_radicals = yes
 					ig:ig_petty_bourgeoisie ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -820,7 +820,7 @@ government_conflicts.6 = {
 				trigger = {
 					ig:ig_petty_bourgeoisie ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -843,7 +843,7 @@ government_conflicts.6 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -854,7 +854,7 @@ government_conflicts.6 = {
 					ai_wants_radicals = yes
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -864,7 +864,7 @@ government_conflicts.6 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -947,7 +947,7 @@ government_conflicts.7 = {
 				trigger = {
 					ig:ig_petty_bourgeoisie ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -958,7 +958,7 @@ government_conflicts.7 = {
 					ai_wants_radicals = yes
 					ig:ig_petty_bourgeoisie ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -968,7 +968,7 @@ government_conflicts.7 = {
 				trigger = {
 					ig:ig_petty_bourgeoisie ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -991,7 +991,7 @@ government_conflicts.7 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1002,7 +1002,7 @@ government_conflicts.7 = {
 					ai_wants_radicals = yes
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1012,7 +1012,7 @@ government_conflicts.7 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1095,7 +1095,7 @@ government_conflicts.8 = {
 				trigger = {
 					ig:ig_rural_folk ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1106,7 +1106,7 @@ government_conflicts.8 = {
 					ai_wants_radicals = yes
 					ig:ig_rural_folk ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1116,7 +1116,7 @@ government_conflicts.8 = {
 				trigger = {
 					ig:ig_rural_folk ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1139,7 +1139,7 @@ government_conflicts.8 = {
 				trigger = {
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1150,7 +1150,7 @@ government_conflicts.8 = {
 					ai_wants_radicals = yes
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1160,7 +1160,7 @@ government_conflicts.8 = {
 				trigger = {
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1243,7 +1243,7 @@ government_conflicts.9 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1254,7 +1254,7 @@ government_conflicts.9 = {
 					ai_wants_radicals = yes
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1264,7 +1264,7 @@ government_conflicts.9 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1287,7 +1287,7 @@ government_conflicts.9 = {
 				trigger = {
 					ig:ig_armed_forces ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1298,7 +1298,7 @@ government_conflicts.9 = {
 					ai_wants_radicals = yes
 					ig:ig_armed_forces ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1308,7 +1308,7 @@ government_conflicts.9 = {
 				trigger = {
 					ig:ig_armed_forces ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1391,7 +1391,7 @@ government_conflicts.10 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1402,7 +1402,7 @@ government_conflicts.10 = {
 					ai_wants_radicals = yes
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1412,7 +1412,7 @@ government_conflicts.10 = {
 				trigger = {
 					ig:ig_intelligentsia ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1435,7 +1435,7 @@ government_conflicts.10 = {
 				trigger = {
 					ig:ig_armed_forces ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1446,7 +1446,7 @@ government_conflicts.10 = {
 					ai_wants_radicals = yes
 					ig:ig_armed_forces ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1456,7 +1456,7 @@ government_conflicts.10 = {
 				trigger = {
 					ig:ig_armed_forces ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1539,7 +1539,7 @@ government_conflicts.11 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1550,7 +1550,7 @@ government_conflicts.11 = {
 					ai_wants_radicals = yes
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1560,7 +1560,7 @@ government_conflicts.11 = {
 				trigger = {
 					ig:ig_trade_unions ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
@@ -1583,7 +1583,7 @@ government_conflicts.11 = {
 				trigger = {
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_is_rival_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1594,7 +1594,7 @@ government_conflicts.11 = {
 					ai_wants_radicals = yes
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_is_french_house = yes
+							always = no
 						}
 					}
 				}
@@ -1604,7 +1604,7 @@ government_conflicts.11 = {
 				trigger = {
 					ig:ig_industrialists ?= {
 						leader ?= {
-							character_matches_divided_monarchists_ai_path = yes
+							always = no
 						}
 					}
 				}
