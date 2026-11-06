@@ -171,7 +171,7 @@ basic_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -187,7 +187,7 @@ basic_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -203,7 +203,7 @@ basic_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -219,7 +219,7 @@ basic_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -235,7 +235,7 @@ basic_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -282,7 +282,7 @@ experienced_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -298,7 +298,7 @@ experienced_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -314,7 +314,7 @@ experienced_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -330,7 +330,7 @@ experienced_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -377,7 +377,7 @@ expert_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -393,7 +393,7 @@ expert_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }
@@ -409,7 +409,7 @@ expert_artillery_commander = {
 
 		if = {
 			limit = {
-				owner = {
+				owner ?= {
 					any_military_formation = {
 						is_army = yes
 						any_scope_general = { this = root }

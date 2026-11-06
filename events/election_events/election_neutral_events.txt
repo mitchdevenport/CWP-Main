@@ -500,7 +500,7 @@ election_neutral.4 = {
 		scope:government_party = {
 			add_momentum = momentum_small_decrease
 		}
-		scope:opposition_party = {
+		scope:opposition_party ?= {
 			add_momentum = momentum_small
 		}
 	}

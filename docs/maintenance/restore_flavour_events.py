@@ -319,6 +319,10 @@ def fixes(text, c):
         text = re.sub(r"scope:(govnas|da_boss|governing_ig|opposing_ig|supporting_ig) = \{", r"scope:\1 ?= {", text)
     if c == "agitators_events/agitators_law_events":
         text = re.sub(r"scope:supporting_ig = \{", r"scope:supporting_ig ?= {", text)
+    # vanilla bug: election_neutral.4 saves an opposition party only when a party is out of government, which CWP's
+    # coalitions often leave none
+    if c == "election_events/election_neutral_events":
+        text = re.sub(r"scope:opposition_party = \{", r"scope:opposition_party ?= {", text)
     # vanilla bug: revolution_pulse_events.13 fires at medium progress but saves its scopes from a low progress revolution
     if c == "agitators_events/revolution_events_02":
         k = text.find("revolution_pulse_events.13 = {")

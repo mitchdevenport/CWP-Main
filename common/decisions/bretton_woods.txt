@@ -4,6 +4,8 @@
 		exists = c:USA
 		nor = {
 			has_journal_entry = je_bretton_woods_agreement
+			# a revolution can hold the entry inactive, and adding it again fails
+			has_inactive_journal_entry = je_bretton_woods_agreement
 			c:USA ?= this
 		}
 	}
