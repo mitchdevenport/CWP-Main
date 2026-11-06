@@ -719,6 +719,15 @@ movement_cultural_minority = {
 					}
 				}
 			}
+			# Since 1.15 the states of a culture that has a country of its own secede to that country, which turns the
+			# movement into a war between two countries (Japan fought the United States for Okinawa from 1960). Such
+			# disputes are left to CWP's diplomacy (claims and Return State plays)
+			NOT = {
+				any_country = {
+					NOT = { this = root.owner }
+					country_has_primary_culture = root.culture
+				}
+			}
 		}
 
 		weight = {
