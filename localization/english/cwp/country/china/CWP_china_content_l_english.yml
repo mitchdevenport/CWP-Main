@@ -54,6 +54,8 @@
   roc_great_retreat_not_ordered_tt: "The Great Retreat has not been ordered yet"
   WILL_RELOCATE_BUILDINGS_ROC: "Will relocate some critical industries & military to Formosa"
   kuomintang_relocation: "Kuomintang Relocation"
+  nra_demoralization: "Demoralized National Revolutionary Army"
+  nra_demoralization_desc: "Corruption reaches into every unit of the Nationalist army: conscripts are press-ganged and starved, officers sell their supplies, and whole armies desert or go over to the communists."
   kuomintang_political_dominance: "Kuomintang Political Dominance"
 
   je_great_retreat: "The Great Retreat"

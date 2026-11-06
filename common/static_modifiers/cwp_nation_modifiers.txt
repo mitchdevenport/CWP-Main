@@ -42,6 +42,19 @@ last_stand = {
 	country_war_support_battles_decrease_mult = -1
 }
 
+# The Nationalist army in the civil war (Nationalist China at the start, five years): corruption, press-ganged
+# conscripts, desertion and whole armies going over to the communists. CWP 1.5's history gave the communists about
+# twice the Nationalists' forces and neither China raised conscripts; since 1.14 the Nationalists raise a large,
+# mostly mechanized conscript army at once, so this restores the balance CWP 1.5 had.
+nra_demoralization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_conscription_rate_mult = -0.5
+	unit_morale_loss_mult = 0.5
+	unit_morale_recovery_mult = -0.25
+	unit_army_offense_mult = -0.2
+	unit_army_defense_mult = -0.2
+}
+
 racial_tension = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	state_radicals_from_political_movements_mult = 0.25

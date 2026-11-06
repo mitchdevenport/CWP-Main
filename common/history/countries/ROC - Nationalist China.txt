@@ -16,5 +16,7 @@
 		set_government_wage_level = high
 		# The civil war: casualties and lost battles do not cost war support (5 years)
 		effect_last_stand = yes
+		# The Nationalist army's weakness that CWP 1.5's history gave through the communists' greater numbers
+		effect_nra_demoralization = yes
 	}
 }

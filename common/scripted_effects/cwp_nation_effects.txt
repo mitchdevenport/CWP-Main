@@ -13,6 +13,13 @@ effect_last_stand = {
 	}
 }
 
+effect_nra_demoralization = {
+	add_modifier = {
+		name = nra_demoralization
+		days = normal_modifier_time
+	}
+}
+
 effect_remove_obsessions = {
 	every_scope_state = {
 		limit = {
