@@ -269,6 +269,15 @@ Economy rules:
 - CWP has its own pop types (`common/pop_types`); keep their flags in step with vanilla's. Without the 1.14
   `pays_land_tax` on peasants and farmers, land tax (all of Land-Based Taxation's tax on pops and part of the other
   taxation laws) collected nothing, and agrarian countries such as Communist China had almost no tax income.
+- Every state gets infrastructure from its population in `base_values` (0.2 per 100,000 people, up to 40), as CWP
+  1.5's urbanization technology gave every country from the start; the current technology tree starts it only with
+  suburbanization (society tiers 1-2). Without it the interior of China, India and most of the 1946 developing world
+  had a third of CWP 1.5's infrastructure and market access (Sichuan 23 against 63, Henan 18 against 58), paper did
+  not reach their administrations, and the PRC's tax capacity collapsed when it took the ROC's states: it earned about
+  half a million a week against CWP 1.5's 1.15 million and went bankrupt by 1955.
+- Communist China starts under the command economy, CWP 1.5's socialization, like the other socialist states. The
+  1946 law packages had given it traditionalism, under which nationalization costs twice the compensation and cannot
+  be done without it, so the ROC's economy stayed with its landlords and investors.
 - The base game's pop types stand in for CWP 1.5's and carry CWP 1.5's names where one is the other
   (`localization/<language>/replace/cwp_pop_types_l_<language>.yml`): clerks are Service Workers, bureaucrats
   Administrators, machinists Technicians, peasants Informal Workers, clergymen Clergy, soldiers Service Members,

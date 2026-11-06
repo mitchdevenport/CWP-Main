@@ -584,7 +584,9 @@ effect_starting_laws_1946_chinese_communist_base_area = {
 	activate_law = law_type:law_no_police
 	activate_law = law_type:law_no_home_affairs
 	activate_law = law_type:law_national_militia
-	activate_law = law_type:law_traditionalism
+	# CWP 1.5's socialization, as for the other socialist states: under traditionalism the PRC could not nationalize
+	# what it took from the ROC without paying for it twice over, so its economy stayed in landlords' and investors' hands
+	activate_law = law_type:law_command_economy
 	activate_law = law_type:law_no_corporate_regulation
 	activate_law = law_type:law_peasant_proprietorship
 	activate_law = law_type:law_protectionism

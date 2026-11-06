@@ -31,6 +31,12 @@ base_values = {
 	state_tax_capacity_add = 100
 	state_infrastructure_add = 3
 	state_infrastructure_from_automobiles_consumption_add = 0.25
+	# Every state's infrastructure from its population, as CWP 1.5's urbanization technology gave every country from
+	# the start (0.2 per 100,000 people, up to 40). The current technology tree starts it only with suburbanization
+	# (society tiers 1-2), so China, India and most of the 1946 developing world had none: Sichuan 23 against CWP 1.5's
+	# 63, Henan 18 against 58, at a third of their market access
+	state_infrastructure_from_population_add = 0.2
+	state_infrastructure_from_population_max_add = 40
 
 	state_lower_strata_expected_sol_add = 5
 	state_middle_strata_expected_sol_add = 10
