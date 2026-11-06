@@ -1,6 +1,7 @@
 ﻿objective_western_bloc = {
 	enabled_background = "gfx/interface/icons/objectives/western_bloc_illu.dds"
 	icon = "gfx/interface/icons/objectives/economic_dominance.dds"
+	illustration = "gfx/interface/illustrations/journal/game_obj_illu_economic_dominance.dds"
 	recommended_tags = {
 		USA
 		GBR
@@ -17,6 +18,7 @@
 objective_eastern_bloc = {
 	enabled_background = "gfx/interface/icons/objectives/eastern_bloc_illu.dds"
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
+	illustration = "gfx/interface/illustrations/journal/game_obj_illu_hegemony.dds"
 	recommended_tags = {
 		RUS
 		DDR
@@ -33,6 +35,7 @@ objective_eastern_bloc = {
 objective_non_aligned_bloc = {
 	enabled_background = "gfx/interface/icons/objectives/non_aligned_bloc_illu.dds"
 	icon = "gfx/interface/icons/objectives/egalitarian_society.dds"
+	illustration = "gfx/interface/illustrations/journal/game_obj_illu_egalitarian_society.dds"
 	recommended_tags = {
 		YUG
 		PER

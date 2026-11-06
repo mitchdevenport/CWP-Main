@@ -1,6 +1,10 @@
 ﻿sovietization_eastern_europe = {
 	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
 		and = {
@@ -244,99 +248,114 @@
 			}
 		}
 	}
-	complete = {
-		or = {
-			scope:journal_entry = {
-				is_goal_complete = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			or = {
+				scope:journal_entry = {
+					is_goal_complete = yes
+				}
+				and = {
+					custom_tooltip = {
+						text = "POL_sovietized"
+						exists = c:POL
+						c:RUS = {
+							has_diplomatic_pact = {
+								who = c:POL
+								type = puppet
+							}
+						}
+					}
+					custom_tooltip = {
+						text = "ROM_sovietized"
+						exists = c:ROM
+						c:RUS = {
+							has_diplomatic_pact = {
+								who = c:ROM
+								type = puppet
+							}
+						}
+					}
+					custom_tooltip = {
+						text = "HUN_sovietized"
+						exists = c:HUN
+						c:RUS = {
+							has_diplomatic_pact = {
+								who = c:HUN
+								type = puppet
+							}
+						}
+					}
+					custom_tooltip = {
+						text = "CZH_sovietized"
+						exists = c:CZH
+						c:RUS = {
+							has_diplomatic_pact = {
+								who = c:CZH
+								type = puppet
+							}
+						}
+					}
+					custom_tooltip = {
+						text = "BUL_sovietized"
+						exists = c:BUL
+						c:RUS = {
+							has_diplomatic_pact = {
+								who = c:BUL
+								type = puppet
+							}
+						}
+					}
+					#custom_tooltip = {
+					#	text = "DDR_sovietized"
+					#	c:RUS = {
+					#		has_diplomatic_pact = {
+					#			who = c:DDR
+					#			type = puppet
+					#		}
+					#	}
+					#}
+					custom_tooltip = {
+						text = "ALB_sovietized"
+						exists = c:ALB
+						c:RUS = {
+							has_diplomatic_pact = {
+								who = c:ALB
+								type = puppet
+							}
+						}
+					}
+				}
 			}
-			and = {
-				custom_tooltip = {
-					text = "POL_sovietized"
-					exists = c:POL
-					c:RUS = {
-						has_diplomatic_pact = {
-							who = c:POL
-							type = puppet
-						}
-					}
-				}
-				custom_tooltip = {
-					text = "ROM_sovietized"
-					exists = c:ROM
-					c:RUS = {
-						has_diplomatic_pact = {
-							who = c:ROM
-							type = puppet
-						}
-					}
-				}
-				custom_tooltip = {
-					text = "HUN_sovietized"
-					exists = c:HUN
-					c:RUS = {
-						has_diplomatic_pact = {
-							who = c:HUN
-							type = puppet
-						}
-					}
-				}
-				custom_tooltip = {
-					text = "CZH_sovietized"
-					exists = c:CZH
-					c:RUS = {
-						has_diplomatic_pact = {
-							who = c:CZH
-							type = puppet
-						}
-					}
-				}
-				custom_tooltip = {
-					text = "BUL_sovietized"
-					exists = c:BUL
-					c:RUS = {
-						has_diplomatic_pact = {
-							who = c:BUL
-							type = puppet
-						}
-					}
-				}
-				#custom_tooltip = {
-				#	text = "DDR_sovietized"
-				#	c:RUS = {
-				#		has_diplomatic_pact = {
-				#			who = c:DDR
-				#			type = puppet
-				#		}
-				#	}
-				#}
-				custom_tooltip = {
-					text = "ALB_sovietized"
-					exists = c:ALB
-					c:RUS = {
-						has_diplomatic_pact = {
-							who = c:ALB
-							type = puppet
-						}
-					}
-				}
+		}
+		effect = {
+			remove_variable = sovietization_level
+		}
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			NOT = {
+				exists = c:RUS
 			}
+		}
+	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			remove_variable = sovietization_level
 		}
 	}
 	timeout = 1825
-	on_timeout = {
-		remove_variable = sovietization_level
-	}
-	on_complete = {
-		remove_variable = sovietization_level
-	}
-	on_fail = {
-		remove_variable = sovietization_level
-	}
-	invalid = {
-		NOT = {
-			exists = c:RUS
-		}
-	}
 	progressbar = yes
 	weight = 100
 }

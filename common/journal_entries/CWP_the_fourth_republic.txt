@@ -2,6 +2,10 @@
 	#todo Icon needs to be changed
 	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
 		c:WAU ?= this

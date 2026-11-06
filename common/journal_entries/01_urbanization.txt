@@ -3,10 +3,14 @@
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		pop_type_percent_country = {
-			pop_type = peasants
-			percent > 0.6
+			target = pop_type:peasants
+			value > 0.6
 		}
 	}
 
@@ -17,29 +21,35 @@
 			has_law_or_variant = law_type:law_traditionalism
 		}
 		pop_type_percent_country = { #added again so the tooltip is nicer
-			pop_type = peasants
-			percent > 0.6
+			target = pop_type:peasants
+			value > 0.6
 		}
 	}
 
-	complete = {
-		pop_type_percent_country = {
-			pop_type = peasants
-			percent < 0.35
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			pop_type_percent_country = {
+				target = pop_type:peasants
+				value < 0.35
+			}
+			NOR = {
+				has_law_or_variant = law_type:law_serfdom
+				has_law_or_variant = law_type:law_land_based_taxation
+				has_law_or_variant = law_type:law_traditionalism
+			}
+			ig:ig_industrialists ?= {
+				ig_counts_as_marginal = no
+			}
 		}
-		NOR = {
-			has_law_or_variant = law_type:law_serfdom
-			has_law_or_variant = law_type:law_land_based_taxation
-			has_law_or_variant = law_type:law_traditionalism
-		}
-		ig:ig_industrialists ?= {
-			ig_counts_as_marginal = no
+		effect = {
+			trigger_event = { id = urbanization_events.1 }
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = urbanization_events.1 }
-	}
 
 	weight = 10
 	transferable = no
@@ -50,6 +60,10 @@ je_urbanization_events_2 = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		any_scope_state = {
@@ -72,16 +86,25 @@ je_urbanization_events_2 = {
 		}
 	}
 
-	complete = {
-		any_scope_state = {
-			filter = {
-				is_incorporated = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				filter = {
+					is_incorporated = yes
+				}
+				percent >= 0.75
+				any_scope_building = {
+					is_building_type = building_urban_center
+					level > 25
+				}
 			}
-			percent >= 0.75
-			any_scope_building = {
-				is_building_type = building_urban_center
-				level > 25
-			}
+		}
+		effect = {
+			trigger_event = { id = urbanization_events.5 }
 		}
 	}
 
@@ -94,9 +117,6 @@ je_urbanization_events_2 = {
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = urbanization_events.5 }
-	}
 
 	weight = 10
 	transferable = no

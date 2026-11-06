@@ -5,7 +5,11 @@
 	# optional image that shows in the journal entry widget near the description, default = NDefines::GUI::JOURNAL_ENTRY_ICON_DEFAULT (set in /defines/00_interfaces.txt)
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 	
-	group = je_group_internal_affairs	
+	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}	
 	# optional trigger which determines if a journal entry can be shown, default = no
 	# is ignored when JE is added through `add_journal_entry` effect
 	#is_shown_when_inactive = {}
@@ -29,76 +33,132 @@
 		}
 	}
 	# completion trigger, use is_goal_complete = yes in here if you're testing a tracked goal metric; if left blank, cannot be completed
-	complete = {
-		custom_tooltip = {
-			global_var:indian_national_unity >= 100
-			text = indian_partition_complete_tooltip
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				global_var:indian_national_unity >= 100
+				text = indian_partition_complete_tooltip
+			}
 		}
-	}
-	# effect which is executed when 'complete' trigger becomes true
-	on_complete = {
-		trigger_event = {
-			id = indian_partition.1
-			days = 0
-		}
-		hidden_effect = {
-			if = {
-				limit = {
-					c:HND ?= this
-				}
-				set_global_variable = {
-					name = indian_resolution_score
-					value = {
-						value = 0
-						add = top_overlord.relations:root
-						max = 50
-						min = -50
+		effect = {
+			trigger_event = {
+				id = indian_partition.1
+				days = 0
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						c:HND ?= this
+					}
+					set_global_variable = {
+						name = indian_resolution_score
+						value = {
+							value = 0
+							add = top_overlord.relations:root
+							max = 50
+							min = -50
+						}
 					}
 				}
 			}
 		}
 	}
-	# failure trigger, should spawn event explaining what happens when triggered, framed as a failure; if left blank, cannot fail
-	fail = {
-		c:HND = {
-			is_subject = no
+
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			c:HND = {
+				is_subject = no
+			}
 		}
-	}
-	# effect which is executed when 'fail' trigger becomes true
-	on_fail = {
-		hidden_effect = {
-			set_global_variable = {
-				name = indian_national_unity
-				value = {
-					value = global_var:indian_national_unity
-					min = 75
+		effect = {
+			hidden_effect = {
+				set_global_variable = {
+					name = indian_national_unity
+					value = {
+						value = global_var:indian_national_unity
+						min = 75
+					}
+				}
+				set_global_variable = {
+					name = indian_resolution_score
+					value = -50
 				}
 			}
-			set_global_variable = {
-				name = indian_resolution_score
-				value = -50
+			trigger_event = {
+				id = indian_partition.1
+				days = 0
 			}
 		}
-		trigger_event = {
-			id = indian_partition.1
-			days = 0
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			OR = {
+				NAND = {
+					exists = c:GBR
+					exists = c:HND
+				}
+				c:GBR = {
+					has_war_with = c:HND
+				}
+			}
+		}
+		effect = {
 		}
 	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						c:HND ?= this
+					}
+					set_global_variable = {
+						name = indian_resolution_score
+						value = {
+							value = 0
+							add = top_overlord.relations:root
+							max = 50
+							min = -50
+						}
+					}
+					change_global_variable = {
+						name = indian_national_unity
+						add = {
+							value = top_overlord.relations:root
+							multiply = -0.25
+							max = 25
+							min = 0
+						}
+					}
+				}
+			}
+			trigger_event = {
+				id = indian_partition.1
+				days = 0
+			}
+		}
+	}
+	# effect which is executed when 'complete' trigger becomes true
+	# failure trigger, should spawn event explaining what happens when triggered, framed as a failure; if left blank, cannot fail
+	# effect which is executed when 'fail' trigger becomes true
 	# optional invalidation trigger, should not notify player when it triggers, just clean up and silently disappear due to journal entry no longer being valid; if left blank, cannot be invalidated
-	invalid = {
-		OR = {
-			NAND = {
-				exists = c:GBR
-				exists = c:HND
-			}
-			c:GBR = {
-				has_war_with = c:HND
-			}
-		}
-	}
 	# effect which is executed when 'invalid' trigger becomes true
-	on_invalid = {
-	}
 	# dynamically updated text, which describes the current status of the Journal Entry
 	# To use in loc or UI: [JournalEntry.GetStatusDesc]
 	# If this is not specified, GetStatusDesc will instead return loc from key <journal_entry_key>_status
@@ -121,37 +181,6 @@
 	# the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event, framed either as success, failure, or neutral; if left blank or set to zero, will not time out
 	timeout = 540
 	# effect which is executed when journal entry is timed out
-	on_timeout = {
-		hidden_effect = {
-			if = {
-				limit = {
-					c:HND ?= this
-				}
-				set_global_variable = {
-					name = indian_resolution_score
-					value = {
-						value = 0
-						add = top_overlord.relations:root
-						max = 50
-						min = -50
-					}
-				}
-				change_global_variable = {
-					name = indian_national_unity
-					add = {
-						value = top_overlord.relations:root
-						multiply = -0.25
-						max = 25
-						min = 0
-					}
-				}
-			}
-		}
-		trigger_event = {
-			id = indian_partition.1
-			days = 0
-		}
-	}
 	# on_action which is triggered every first day of the week
 	on_weekly_pulse = {
 		random_events = {

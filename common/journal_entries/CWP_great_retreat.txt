@@ -4,6 +4,10 @@
 	
 	group = je_group_internal_affairs
 
+	activation_description = {
+		always = yes
+	}
+
 	possible = {
 		and = {
 			exists = c:ROC
@@ -42,51 +46,64 @@
 			}
 		}
 	}
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
 		}
-	}
-	fail = {
-		custom_tooltip = { # the controller trigger has no tooltip text in 1.14
-			text = je_great_retreat_formosa_lost_tt
-			not = {
-				or = {
-					s:STATE_FORMOSA.region_state:ROC ?= {
-						controller = c:ROC
+		effect = {
+			remove_variable = retreat_level
+			custom_tooltip = {
+				text = "WILL_GIVE_UP_MAIN_LAND_ROC"
+				effect_great_retreat_roc = yes
+				effect_free_all_subjects = yes
+			}
+			s:STATE_FORMOSA.region_state:ROC ?= {
+				remove_modifier = kuomintang_relocation
+			}
+			custom_tooltip = { # the generated end_play tooltip has no perspective here
+				text = je_great_retreat_war_ends_tt
+				every_diplomatic_play = {
+					limit = {
+						initiator_is = c:PRC
+						target_is = c:ROC
 					}
-					c:ROC ?= {
-						owns_entire_state_region = STATE_FORMOSA
-					}
+					end_play = yes
 				}
 			}
 		}
 	}
-	on_complete = {
-		remove_variable = retreat_level
-		custom_tooltip = {
-			text = "WILL_GIVE_UP_MAIN_LAND_ROC"
-			effect_great_retreat_roc = yes
-			effect_free_all_subjects = yes
-		}
-		s:STATE_FORMOSA.region_state:ROC ?= {
-			remove_modifier = kuomintang_relocation
-		}
-		custom_tooltip = { # the generated end_play tooltip has no perspective here
-			text = je_great_retreat_war_ends_tt
-			every_diplomatic_play = {
-				limit = {
-					initiator_is = c:PRC
-					target_is = c:ROC
+
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			custom_tooltip = { # the controller trigger has no tooltip text in 1.14
+				text = je_great_retreat_formosa_lost_tt
+				not = {
+					or = {
+						s:STATE_FORMOSA.region_state:ROC ?= {
+							controller = c:ROC
+						}
+						c:ROC ?= {
+							owns_entire_state_region = STATE_FORMOSA
+						}
+					}
 				}
-				end_play = yes
 			}
 		}
-	}
-	on_fail = {
-		remove_variable = retreat_level
-		s:STATE_FORMOSA.region_state:ROC ?= {
-			remove_modifier = kuomintang_relocation
+		effect = {
+			remove_variable = retreat_level
+			s:STATE_FORMOSA.region_state:ROC ?= {
+				remove_modifier = kuomintang_relocation
+			}
 		}
 	}
 	can_deactivate = yes

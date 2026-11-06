@@ -12,6 +12,10 @@ je_post_war_infantry = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		NOT = { has_variable = post_war_infantry_je_done }
 	}
@@ -20,32 +24,49 @@ je_post_war_infantry = {
 		has_technology_researched = divisional_organization
 	}
 
-	complete = {
-		OR = {
-			cwp_gw_barracks_training_adopted = { PM = pm_codified_instruction_barracks }
-			AND = {
-				NOT = { has_variable = post_war_infantry_je_done }
-				has_technology_researched = mobile_warfare
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				cwp_gw_barracks_training_adopted = { PM = pm_codified_instruction_barracks }
+				AND = {
+					NOT = { has_variable = post_war_infantry_je_done }
+					has_technology_researched = mobile_warfare
+				}
 			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.1 }
+			set_variable = post_war_infantry_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.1 }
-		set_variable = post_war_infantry_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = post_war_infantry_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = post_war_infantry_je_done
-	}
 }
 
 je_2nd_generation_infantry = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = divisional_organization
@@ -57,32 +78,49 @@ je_2nd_generation_infantry = {
 		has_variable = post_war_infantry_je_done
 	}
 
-	complete = {
-		OR = {
-			cwp_gw_barracks_training_adopted = { PM = pm_basic_training_barracks }
-			AND = {
-				NOT = { has_variable = 2nd_generation_infantry_je_done }
-				has_technology_researched = squad_specialist_weapons
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				cwp_gw_barracks_training_adopted = { PM = pm_basic_training_barracks }
+				AND = {
+					NOT = { has_variable = 2nd_generation_infantry_je_done }
+					has_technology_researched = squad_specialist_weapons
+				}
 			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.1 }
+			set_variable = 2nd_generation_infantry_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.1 }
-		set_variable = 2nd_generation_infantry_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 2nd_generation_infantry_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 2nd_generation_infantry_je_done
-	}
 }
 
 je_3rd_generation_infantry = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = mobile_warfare
@@ -94,32 +132,49 @@ je_3rd_generation_infantry = {
 		has_variable = 2nd_generation_infantry_je_done
 	}
 
-	complete = {
-		OR = {
-			cwp_gw_barracks_training_adopted = { PM = pm_nco_instruction_barracks }
-			AND = {
-				NOT = { has_variable = 3rd_generation_infantry_je_done }
-				has_technology_researched = fourth_generation_warfare
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				cwp_gw_barracks_training_adopted = { PM = pm_nco_instruction_barracks }
+				AND = {
+					NOT = { has_variable = 3rd_generation_infantry_je_done }
+					has_technology_researched = fourth_generation_warfare
+				}
 			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.1 }
+			set_variable = 3rd_generation_infantry_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.1 }
-		set_variable = 3rd_generation_infantry_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 3rd_generation_infantry_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 3rd_generation_infantry_je_done
-	}
 }
 
 je_4th_generation_infantry = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = squad_specialist_weapons
@@ -131,20 +186,33 @@ je_4th_generation_infantry = {
 		has_variable = 3rd_generation_infantry_je_done
 	}
 
-	complete = {
-		cwp_gw_barracks_training_adopted = { PM = pm_combat_schooling_barracks }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_barracks_training_adopted = { PM = pm_combat_schooling_barracks }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.1 }
+			set_variable = 4th_generation_infantry_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.1 }
-		set_variable = 4th_generation_infantry_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 4th_generation_infantry_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 4th_generation_infantry_je_done
-	}
 }
 
 
@@ -155,6 +223,10 @@ je_main_battle_tanks = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		NOT = { has_variable = mbt_je_done }
 	}
@@ -163,32 +235,49 @@ je_main_battle_tanks = {
 		has_technology_researched = main_battle_tanks
 	}
 
-	complete = {
-		OR = {
-			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
-			AND = {
-				NOT = { has_variable = mbt_je_done }
-				has_technology_researched = composite_armor
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+				AND = {
+					NOT = { has_variable = mbt_je_done }
+					has_technology_researched = composite_armor
+				}
 			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.2 }
+			set_variable = mbt_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.2 }
-		set_variable = mbt_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = mbt_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = mbt_je_done
-	}
 }
 
 je_2nd_generation_main_battle_tanks = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = main_battle_tanks
@@ -200,32 +289,49 @@ je_2nd_generation_main_battle_tanks = {
 		has_variable = mbt_je_done
 	}
 
-	complete = {
-		OR = {
-			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
-			AND = {
-				NOT = { has_variable = 2nd_mbt_je_done }
-				has_technology_researched = depleted_uranium_rounds
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+				AND = {
+					NOT = { has_variable = 2nd_mbt_je_done }
+					has_technology_researched = depleted_uranium_rounds
+				}
 			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.2 }
+			set_variable = 2nd_mbt_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.2 }
-		set_variable = 2nd_mbt_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 2nd_mbt_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 2nd_mbt_je_done
-	}
 }
 
 je_3rd_generation_main_battle_tanks = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = composite_armor
@@ -237,21 +343,34 @@ je_3rd_generation_main_battle_tanks = {
 		has_variable = 2nd_mbt_je_done
 	}
 
-	complete = {
-		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_depleted_uranium_munitions }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_depleted_uranium_munitions }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.2 }
+			set_variable = 3rd_mbt_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.2 }
-		set_variable = 3rd_mbt_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 3rd_mbt_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 3rd_mbt_je_done
-	}
 }
 
 
@@ -262,6 +381,10 @@ je_self_propelled_artillery = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		has_technology_researched = armored_warfare
 		NOT = { has_variable = self_propelled_artillery_je_done }
@@ -271,26 +394,43 @@ je_self_propelled_artillery = {
 		has_technology_researched = mobile_warfare
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_self_propelled_guns }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_self_propelled_guns }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.3 }
+			set_variable = self_propelled_artillery_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.3 }
-		set_variable = self_propelled_artillery_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = self_propelled_artillery_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = self_propelled_artillery_je_done
-	}
 }
 
 je_mlrs_artillery = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = mobile_warfare
@@ -302,26 +442,43 @@ je_mlrs_artillery = {
 		has_variable = self_propelled_artillery_je_done
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_rocket_artillery }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_rocket_artillery }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.3 }
+			set_variable = mlrs_artillery_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.3 }
-		set_variable = mlrs_artillery_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = mlrs_artillery_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = mlrs_artillery_je_done
-	}
 }
 
 je_guided_missile_artillery = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = rocketry
@@ -333,20 +490,33 @@ je_guided_missile_artillery = {
 		has_variable = mlrs_artillery_je_done
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tbm_launchers }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tbm_launchers }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.3 }
+			set_variable = guided_missile_artillery_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.3 }
-		set_variable = guided_missile_artillery_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = guided_missile_artillery_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = guided_missile_artillery_je_done
-	}
 }
 
 
@@ -357,6 +527,10 @@ je_motorized = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		NOT = { has_variable = motorized_je_done }
 	}
@@ -365,26 +539,43 @@ je_motorized = {
 		has_technology_researched = mobile_warfare
 	}
 
-	complete = {
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_motorization }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_motorization }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.4 }
+			set_variable = motorized_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.4 }
-		set_variable = motorized_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = motorized_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = motorized_je_done
-	}
 }
 
 je_armoured_personal_carriers = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = mobile_warfare
@@ -396,26 +587,43 @@ je_armoured_personal_carriers = {
 		has_variable = motorized_je_done
 	}
 
-	complete = {
-		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.4 }
+			set_variable = armoured_personal_carriers_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.4 }
-		set_variable = armoured_personal_carriers_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = armoured_personal_carriers_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = armoured_personal_carriers_je_done
-	}
 }
 
 je_infantry_fighting_vehicle_carriers = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = armored_personnel_carriers
@@ -427,27 +635,44 @@ je_infantry_fighting_vehicle_carriers = {
 		has_variable = armoured_personal_carriers_je_done
 	}
 
-	complete = {
-		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_atgm_deployment }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_atgm_deployment }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.4 }
+			set_variable = infantry_fighting_vehicles_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.4 }
-		set_variable = infantry_fighting_vehicles_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = infantry_fighting_vehicles_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = infantry_fighting_vehicles_je_done
-	}
 }
 
 je_multi_role_armored_fighting_vehicles = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = composite_armor
@@ -459,20 +684,33 @@ je_multi_role_armored_fighting_vehicles = {
 		has_variable = infantry_fighting_vehicles_je_done
 	}
 
-	complete = {
-		cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_tactical_brigade }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_tactical_brigade }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.4 }
+			set_variable = multi_role_armored_fighting_vehicles_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.4 }
-		set_variable = multi_role_armored_fighting_vehicles_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = multi_role_armored_fighting_vehicles_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = multi_role_armored_fighting_vehicles_je_done
-	}
 }
 
 
@@ -483,6 +721,10 @@ je_motorized_reconnaissance = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		NOT = { has_variable = motorized_reconnaissance_je_done }
 	}
@@ -491,26 +733,43 @@ je_motorized_reconnaissance = {
 		has_technology_researched = mobile_warfare
 	}
 
-	complete = {
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_mobile_recon }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_mobile_recon }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.5 }
+			set_variable = motorized_reconnaissance_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.5 }
-		set_variable = motorized_reconnaissance_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = motorized_reconnaissance_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = motorized_reconnaissance_je_done
-	}
 }
 
 je_helicopter_reconnaissance = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = mobile_warfare
@@ -522,26 +781,43 @@ je_helicopter_reconnaissance = {
 		has_variable = motorized_reconnaissance_je_done
 	}
 
-	complete = {
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_helicopter_recon }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_helicopter_recon }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.5 }
+			set_variable = helicopter_reconnaissance_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.5 }
-		set_variable = helicopter_reconnaissance_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = helicopter_reconnaissance_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = helicopter_reconnaissance_je_done
-	}
 }
 
 je_drone_reconnaissance = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = utility_helicopters
@@ -553,20 +829,33 @@ je_drone_reconnaissance = {
 		has_variable = helicopter_reconnaissance_je_done
 	}
 
-	complete = {
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_recon_drones }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_recon_drones }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.5 }
+			set_variable = drone_reconnaissance_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.5 }
-		set_variable = drone_reconnaissance_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = drone_reconnaissance_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = drone_reconnaissance_je_done
-	}
 }
 
 
@@ -577,6 +866,10 @@ je_combat_medics = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		NOT = { has_variable = combat_medics_je_done }
 	}
@@ -585,26 +878,43 @@ je_combat_medics = {
 		has_technology_researched = divisional_organization
 	}
 
-	complete = {
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_first_aid }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_first_aid }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.7 }
+			set_variable = combat_medics_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.7 }
-		set_variable = combat_medics_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = combat_medics_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = combat_medics_je_done
-	}
 }
 
 je_army_field_hospitals = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = divisional_organization
@@ -616,20 +926,33 @@ je_army_field_hospitals = {
 		has_variable = combat_medics_je_done
 	}
 
-	complete = {
-		cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_field_hospitals }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_field_hospitals }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.7 }
+			set_variable = army_field_hospitals_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.7 }
-		set_variable = army_field_hospitals_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = army_field_hospitals_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = army_field_hospitals_je_done
-	}
 }
 
 
@@ -640,6 +963,10 @@ je_jet_fighters = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		has_technology_researched = military_aviation
 		NOT = { has_variable = jet_fighters_je_done }
@@ -649,26 +976,43 @@ je_jet_fighters = {
 		has_technology_researched = jet_engine
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_air_superiority_fighters }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_air_superiority_fighters }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.8 }
+			set_variable = jet_fighters_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.8 }
-		set_variable = jet_fighters_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = jet_fighters_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = jet_fighters_je_done
-	}
 }
 
 je_supersonic_jet_fighters = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = jet_engine
@@ -680,26 +1024,43 @@ je_supersonic_jet_fighters = {
 		has_variable = jet_fighters_je_done
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tactical_bombers }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tactical_bombers }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.8 }
+			set_variable = supersonic_jet_fighters_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.8 }
-		set_variable = supersonic_jet_fighters_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = supersonic_jet_fighters_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = supersonic_jet_fighters_je_done
-	}
 }
 
 je_4th_generation_jet_fighters = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = heavy_jet_engines
@@ -711,26 +1072,43 @@ je_4th_generation_jet_fighters = {
 		has_variable = supersonic_jet_fighters_je_done
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.8 }
+			set_variable = 4th_generation_jet_fighters_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.8 }
-		set_variable = 4th_generation_jet_fighters_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 4th_generation_jet_fighters_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 4th_generation_jet_fighters_je_done
-	}
 }
 
 je_5th_generation_jet_fighters = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = multi_role_jets
@@ -742,20 +1120,33 @@ je_5th_generation_jet_fighters = {
 		has_variable = 4th_generation_jet_fighters_je_done
 	}
 
-	complete = {
-		cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_stealth_aircraft }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_stealth_aircraft }
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.8 }
+			set_variable = 5th_generation_jet_fighters_je_done
+		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.8 }
-		set_variable = 5th_generation_jet_fighters_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = 5th_generation_jet_fighters_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = 5th_generation_jet_fighters_je_done
-	}
 }
 
 
@@ -766,6 +1157,10 @@ je_deep_battle = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		has_technology_researched = armored_warfare
 		NOT = { has_variable = deep_battle_je_done }
@@ -775,35 +1170,52 @@ je_deep_battle = {
 		can_research = mobile_warfare
 	}
 
-	complete = {
-		OR = {
-			AND = {
-				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_rail_logistics }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_rail_logistics }
+				}
+				AND = {
+					NOT = { has_variable = deep_battle_je_done }
+					has_technology_researched = squad_specialist_weapons
+				}
 			}
-			AND = {
-				NOT = { has_variable = deep_battle_je_done }
-				has_technology_researched = squad_specialist_weapons
-			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.9 }
+			set_variable = deep_battle_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.9 }
-		set_variable = deep_battle_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = deep_battle_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = deep_battle_je_done
-	}
 }
 
 je_combined_arms_warfare = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = divisional_organization
@@ -815,37 +1227,54 @@ je_combined_arms_warfare = {
 		has_variable = deep_battle_je_done
 	}
 
-	complete = {
-		OR = {
-			AND = {
-				cwp_gw_barracks_training_adopted = { PM = pm_basic_training_barracks }
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_motorization }
-				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_wartime_artillery }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					cwp_gw_barracks_training_adopted = { PM = pm_basic_training_barracks }
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_motorization }
+					cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_wartime_artillery }
+				}
+				AND = {
+					NOT = { has_variable = combined_arms_warfare_je_done }
+					has_technology_researched = armored_personnel_carriers
+				}
 			}
-			AND = {
-				NOT = { has_variable = combined_arms_warfare_je_done }
-				has_technology_researched = armored_personnel_carriers
-			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.10 }
+			set_variable = combined_arms_warfare_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.10 }
-		set_variable = combined_arms_warfare_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = combined_arms_warfare_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = combined_arms_warfare_je_done
-	}
 }
 
 je_mechanized_warfare = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = main_battle_tanks
@@ -857,37 +1286,54 @@ je_mechanized_warfare = {
 		has_variable = combined_arms_warfare_je_done
 	}
 
-	complete = {
-		OR = {
-			AND = {
-				cwp_gw_barracks_training_adopted = { PM = pm_nco_instruction_barracks }
-				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
-				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_self_propelled_guns }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					cwp_gw_barracks_training_adopted = { PM = pm_nco_instruction_barracks }
+					cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_armored_brigade }
+					cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_self_propelled_guns }
+				}
+				AND = {
+					NOT = { has_variable = mechanized_warfare_je_done }
+					has_technology_researched = airmobile_warfare
+				}
 			}
-			AND = {
-				NOT = { has_variable = mechanized_warfare_je_done }
-				has_technology_researched = airmobile_warfare
-			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.11 }
+			set_variable = mechanized_warfare_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.11 }
-		set_variable = mechanized_warfare_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = mechanized_warfare_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = mechanized_warfare_je_done
-	}
 }
 
 je_advanced_combined_arms = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = armored_personnel_carriers
@@ -899,37 +1345,54 @@ je_advanced_combined_arms = {
 		has_variable = mechanized_warfare_je_done
 	}
 
-	complete = {
-		OR = {
-			AND = {
-				cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_atgm_deployment }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_rocket_artillery }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					cwp_gw_frontline_unit_adopted = { UNIT = combat_unit_type_mechanized_brigade }
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_atgm_deployment }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_rocket_artillery }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+				}
+				AND = {
+					NOT = { has_variable = advanced_combined_arms_je_done }
+					has_technology_researched = recon_drones
+				}
 			}
-			AND = {
-				NOT = { has_variable = advanced_combined_arms_je_done }
-				has_technology_researched = recon_drones
-			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.12 }
+			set_variable = advanced_combined_arms_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.12 }
-		set_variable = advanced_combined_arms_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = advanced_combined_arms_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = advanced_combined_arms_je_done
-	}
 }
 
 je_early_network_warfare = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = airmobile_warfare
@@ -941,37 +1404,54 @@ je_early_network_warfare = {
 		has_variable = advanced_combined_arms_je_done
 	}
 
-	complete = {
-		OR = {
-			AND = {
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_air_mobile_brigade }
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_helicopter_recon }
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_manpad_deployment }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_air_mobile_brigade }
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_helicopter_recon }
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_manpad_deployment }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_fighter_bombers }
+				}
+				AND = {
+					NOT = { has_variable = early_network_warfare_je_done }
+					has_technology_researched = fourth_generation_warfare
+				}
 			}
-			AND = {
-				NOT = { has_variable = early_network_warfare_je_done }
-				has_technology_researched = fourth_generation_warfare
-			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.13 }
+			set_variable = early_network_warfare_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.13 }
-		set_variable = early_network_warfare_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = early_network_warfare_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = early_network_warfare_je_done
-	}
 }
 
 je_total_network_warfare = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_technology_researched = recon_drones
@@ -983,29 +1463,42 @@ je_total_network_warfare = {
 		has_variable = early_network_warfare_je_done
 	}
 
-	complete = {
-		OR = {
-			AND = {
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_recon_drones }
-				cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_field_hospitals }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tbm_launchers }
-				cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_stealth_aircraft }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_recon_drones }
+					cwp_gw_mobilization_option_adopted = { OPTION = mobilization_option_field_hospitals }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_tbm_launchers }
+					cwp_gw_support_unit_adopted = { UNIT = combat_unit_type_stealth_aircraft }
+				}
+				AND = {
+					NOT = { has_variable = total_network_warfare_je_done }
+					has_technology_researched = fourth_generation_warfare
+				}
 			}
-			AND = {
-				NOT = { has_variable = total_network_warfare_je_done }
-				has_technology_researched = fourth_generation_warfare
-			}
+		}
+		effect = {
+			trigger_event = { id = generic_military_events.14 }
+			set_variable = total_network_warfare_je_done
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = generic_military_events.14 }
-		set_variable = total_network_warfare_je_done
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			set_variable = total_network_warfare_je_done
+		}
 	}
+
 
 	timeout = 3650		# 10 years
 
-	on_timeout = {
-		set_variable = total_network_warfare_je_done
-	}
 }

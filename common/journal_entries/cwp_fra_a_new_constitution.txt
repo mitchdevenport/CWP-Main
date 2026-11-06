@@ -8,6 +8,10 @@
 	
 	group = je_group_internal_affairs
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		c:FRA ?= root
 	}
@@ -96,39 +100,55 @@
 		# all events in these on_actions can refer to scope:fra_a_new_constitution
 	}
 	# completion trigger, use is_goal_complete = yes in here if you're testing a tracked goal metric; if left blank, cannot be completed
-	complete = {
-		c:FRA = {
-			custom_tooltip = {
-				text = fra_a_new_constitution_complete_tt
-				not = {
-					has_variable = drafting_a_new_constitution
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			c:FRA = {
+				custom_tooltip = {
+					text = fra_a_new_constitution_complete_tt
+					not = {
+						has_variable = drafting_a_new_constitution
+					}
+					has_variable = IVth_Republic
 				}
-				has_variable = IVth_Republic
+			}
+		}
+		effect = {
+		}
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			not = {
+				exists = c:FRA
+				c:FRA ?= root
+			}
+		}
+		effect = {
+			c:FRA ?= {
+				remove_modifier = drafting_a_new_constitution
 			}
 		}
 	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+		}
+	}
 	# effect which is executed when 'complete' trigger becomes true
-	on_complete = {
-	}
 	# failure trigger, should spawn event explaining what happens when triggered, framed as a failure; if left blank, cannot fail
-	fail = {
-	}
 	# effect which is executed when 'fail' trigger becomes true
-	on_fail = {
-	}
 	# optional invalidation trigger, should not notify player when it triggers, just clean up and silently disappear due to journal entry no longer being valid; if left blank, cannot be invalidated
-	invalid = {
-		not = {
-			exists = c:FRA
-			c:FRA ?= root
-		}
-	}
 	# effect which is executed when 'invalid' trigger becomes true
-	on_invalid = {
-		c:FRA ?= {
-			remove_modifier = drafting_a_new_constitution
-		}
-	}
 	# dynamically updated text, which describes the current status of the Journal Entry
 	# To use in loc or UI: [JournalEntry.GetStatusDesc]
 	# If this is not specified, GetStatusDesc will instead return loc from key <journal_entry_key>_status
@@ -174,8 +194,6 @@
 	# the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event, framed either as success, failure, or neutral; if left blank or set to zero, will not time out
 	timeout = 1826
 	# effect which is executed when journal entry is timed out
-	on_timeout = {
-	}
 	# on_action which is triggered every first day of the week
 	on_weekly_pulse = {
 		effect = {

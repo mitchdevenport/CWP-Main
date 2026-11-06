@@ -3,6 +3,10 @@
 
 	group = je_group_foreign_affairs
 
+	activation_description = {
+		always = yes
+	}
+
 	is_shown_when_inactive = {
 		NOR = {
 			country_rank = rank_value:superpower
@@ -86,114 +90,139 @@
 	scripted_button = decolonization_abandon_empire_button
 	scripted_button = decolonization_imperial_conference_button
 
-	complete = {
-		custom_tooltip = {
-			text = je_decolonization_complete_condition_tooltip
-			# CWP 1.5 also completed it on reaching superpower rank, which the 1.14 United Kingdom does by 1948, ending its
-			# twenty years (and its India factors to 1956) almost at once; the empire's fate is decided when time runs out
-			always = no
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = je_decolonization_complete_condition_tooltip
+				# CWP 1.5 also completed it on reaching superpower rank, which the 1.14 United Kingdom does by 1948, ending its
+				# twenty years (and its India factors to 1956) almost at once; the empire's fate is decided when time runs out
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = je_decolonization_complete_tooltip
+				if = {
+					limit = {
+						var:imperial_unity = 100
+					}
+					trigger_event = {
+						id = decolonization.1 # Keep the Empire Together
+						days = 0
+					}
+				}
+				else_if = {
+					limit = {
+						var:imperial_unity > 50
+					}
+					trigger_event = {
+						id = decolonization.2 # Amicable Separation
+						days = 0
+					}
+				}
+				else = {
+					trigger_event = {
+						id = decolonization.3 # Clean Break
+						days = 0
+					}
+				}
+				effect_remove_imperial_conference_modifiers = yes
+			}
 		}
 	}
 
-	on_complete = {
-		custom_tooltip = {
-			text = je_decolonization_complete_tooltip
-			if = {
-				limit = {
-					var:imperial_unity = 100
-				}
-				trigger_event = {
-					id = decolonization.1 # Keep the Empire Together
-					days = 0
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = je_decolonization_fail_tooltip
+				var:imperial_unity <= 0
+			}
+		}
+		effect = {
+			trigger_event = {
+				id = decolonization.101 # We have lost control
+				days = 0
+			}
+			hidden_effect = {
+				effect_remove_imperial_conference_modifiers = yes
+			}
+		}
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			NOT = {
+				any_country = {
+					has_subject_relation_with = root
+					NOR = {
+						has_variable = special_decolonization_scenario
+						is_subject_type = subject_type_military_occupation
+					}
 				}
 			}
-			else_if = {
-				limit = {
-					var:imperial_unity > 50
-				}
-				trigger_event = {
-					id = decolonization.2 # Amicable Separation
-					days = 0
-				}
-			}
-			else = {
-				trigger_event = {
-					id = decolonization.3 # Clean Break
-					days = 0
-				}
-			}
+		}
+		effect = {
+			effect_decolonize_all = yes
 			effect_remove_imperial_conference_modifiers = yes
 		}
 	}
 
-	fail = {
-		custom_tooltip = {
-			text = je_decolonization_fail_tooltip
-			var:imperial_unity <= 0
-		}
-	}
-
-	on_fail = {
-		trigger_event = {
-			id = decolonization.101 # We have lost control
-			days = 0
-		}
-		hidden_effect = {
-			effect_remove_imperial_conference_modifiers = yes
-		}
-	}
-
-	invalid = {
-		NOT = {
-			any_country = {
-				has_subject_relation_with = root
-				NOR = {
-					has_variable = special_decolonization_scenario
-					is_subject_type = subject_type_military_occupation
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			custom_tooltip = {
+				text = je_decolonization_timeout_tooltip
+				if = {
+					limit = {
+						var:imperial_unity = 100
+					}
+					trigger_event = {
+						id = decolonization.1 # Keep the Empire Together
+						days = 0
+					}
 				}
+				else_if = {
+					limit = {
+						var:imperial_unity > 50
+					}
+					trigger_event = {
+						id = decolonization.2 # Amicable Separation
+						days = 0
+					}
+				}
+				else = {
+					trigger_event = {
+						id = decolonization.3 # Clean Break
+						days = 0
+					}
+				}
+				effect_remove_imperial_conference_modifiers = yes
 			}
 		}
 	}
 
-	on_invalid = {
-		effect_decolonize_all = yes
-		effect_remove_imperial_conference_modifiers = yes
-	}
+
+
+
+
 
 	status_desc = DECOLONIZATION_PROGRESS_DESC
 
 	timeout = 7300
 
-	on_timeout = {
-		custom_tooltip = {
-			text = je_decolonization_timeout_tooltip
-			if = {
-				limit = {
-					var:imperial_unity = 100
-				}
-				trigger_event = {
-					id = decolonization.1 # Keep the Empire Together
-					days = 0
-				}
-			}
-			else_if = {
-				limit = {
-					var:imperial_unity > 50
-				}
-				trigger_event = {
-					id = decolonization.2 # Amicable Separation
-					days = 0
-				}
-			}
-			else = {
-				trigger_event = {
-					id = decolonization.3 # Clean Break
-					days = 0
-				}
-			}
-			effect_remove_imperial_conference_modifiers = yes
-		}
-	}
 
 	on_monthly_pulse = {
 		effect = {

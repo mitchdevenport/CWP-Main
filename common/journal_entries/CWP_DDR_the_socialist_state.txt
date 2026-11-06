@@ -4,6 +4,10 @@
 
 	group = je_group_historical_content
 
+	activation_description = {
+		always = yes
+	}
+
 	possible = {
 		AND = {
 			exists = c:DDR
@@ -16,34 +20,54 @@
 			}
 		}
 	}
-	fail = {
-		NOT = {
-			c:RUS ?= {
-				has_diplomatic_pact = {
-					who = c:DDR
-					type = military_occupation
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			#has_law = law_type:law_council_republic #Is enacted per event
+			has_law = law_type:law_single_party_state
+			has_law = law_type:law_state_atheism
+			OR = {
+				has_law = law_type:law_command_economy
+				has_law = law_type:law_cooperative_ownership
+			}
+			NOT = { has_law = law_type:law_disarmed_nation }
+		}
+		effect = {
+			change_subject_type = subject_type_puppet
+		}
+	}
+
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			NOT = {
+				c:RUS ?= {
+					has_diplomatic_pact = {
+						who = c:DDR
+						type = military_occupation
+					}
 				}
 			}
 		}
 	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			trigger_event = uprising_of_1953.1
+		}
+	}
 	immediate = {
 	}
-	complete = {
-		#has_law = law_type:law_council_republic #Is enacted per event
-		has_law = law_type:law_single_party_state
-		has_law = law_type:law_state_atheism
-		OR = {
-			has_law = law_type:law_command_economy
-			has_law = law_type:law_cooperative_ownership
-		}
-		NOT = { has_law = law_type:law_disarmed_nation }
-	}
 	timeout = 2727 # 17.June.1953
-	on_complete = {
-		change_subject_type = subject_type_puppet
-	}
-	on_timeout = {
-		trigger_event = uprising_of_1953.1
-	}
 	weight = 100
 }

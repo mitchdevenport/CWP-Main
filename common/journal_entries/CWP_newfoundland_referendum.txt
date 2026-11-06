@@ -29,153 +29,173 @@
 	}
 	# completion trigger, use is_goal_complete = yes if you're testing a tracked goal metric
 	# if left blank, cannot be completed
-	complete = {
-		hidden_trigger = {
-			has_global_variable = newfoundland_referendum_done
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			hidden_trigger = {
+				has_global_variable = newfoundland_referendum_done
+			}
 		}
-	}
-	group = je_group_historical_content
-	# effect which is executed when 'complete' trigger becomes true
-	on_complete = {
-		hidden_effect = {
-			# Every participant completes this JE at the same time: announce the outcome only once
-			if = {
-				limit = {
-					NOT = { has_global_variable = newfoundland_referendum_outcome_announced }
-				}
-				set_global_variable = newfoundland_referendum_outcome_announced
+		effect = {
+			hidden_effect = {
+				# Every participant completes this JE at the same time: announce the outcome only once
 				if = {
 					limit = {
-						has_global_variable = newfoundland_dominion
-						NOR = {
+						NOT = { has_global_variable = newfoundland_referendum_outcome_announced }
+					}
+					set_global_variable = newfoundland_referendum_outcome_announced
+					if = {
+						limit = {
+							has_global_variable = newfoundland_dominion
+							NOR = {
+								has_global_variable = newfoundland_confederate
+								has_global_variable = newfoundland_puppet
+								has_global_variable = newfoundland_independent
+							}
+						}
+						c:CAN = {
+							trigger_event = {
+								id = newfoundland_referendum.13
+								days = 1
+							}
+						}
+						c:GBR = {
+							trigger_event = {
+								id = newfoundland_referendum.14
+								days = 1
+							}
+						}
+					}
+					if = {
+						limit = {
 							has_global_variable = newfoundland_confederate
+						}
+						c:CAN = {
+							trigger_event = {
+								id = newfoundland_referendum.16
+								days = 1
+							}
+						}
+						c:GBR = {
+							trigger_event = {
+								id = newfoundland_referendum.15
+								days = 1
+							}
+						}
+					}
+					if = {
+						limit = {
 							has_global_variable = newfoundland_puppet
+						}
+						c:CAN = {
+							trigger_event = {
+								id = newfoundland_referendum.18
+								days = 1
+							}
+						}
+						c:GBR = {
+							trigger_event = {
+								id = newfoundland_referendum.17
+								days = 1
+							}
+						}
+					}
+					if = {
+						limit = {
 							has_global_variable = newfoundland_independent
 						}
-					}
-					c:CAN = {
-						trigger_event = {
-							id = newfoundland_referendum.13
-							days = 1
+						c:CAN = {
+							trigger_event = {
+								id = newfoundland_referendum.20
+								days = 1
+							}
+						}
+						c:GBR = {
+							trigger_event = {
+								id = newfoundland_referendum.19
+								days = 1
+							}
+						}
+						c:USA = {
+							trigger_event = {
+								id = newfoundland_referendum.21
+								days = 180
+							}
 						}
 					}
-					c:GBR = {
-						trigger_event = {
-							id = newfoundland_referendum.14
-							days = 1
+					if = {
+						limit = {
+							has_global_variable = newfoundland_referendum_done
 						}
-					}
-				}
-				if = {
-					limit = {
-						has_global_variable = newfoundland_confederate
-					}
-					c:CAN = {
 						trigger_event = {
-							id = newfoundland_referendum.16
-							days = 1
+							id = newfoundland_referendum.997
+							days = 75
 						}
-					}
-					c:GBR = {
-						trigger_event = {
-							id = newfoundland_referendum.15
-							days = 1
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_global_variable = newfoundland_puppet
-					}
-					c:CAN = {
-						trigger_event = {
-							id = newfoundland_referendum.18
-							days = 1
-						}
-					}
-					c:GBR = {
-						trigger_event = {
-							id = newfoundland_referendum.17
-							days = 1
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_global_variable = newfoundland_independent
-					}
-					c:CAN = {
-						trigger_event = {
-							id = newfoundland_referendum.20
-							days = 1
-						}
-					}
-					c:GBR = {
-						trigger_event = {
-							id = newfoundland_referendum.19
-							days = 1
-						}
-					}
-					c:USA = {
-						trigger_event = {
-							id = newfoundland_referendum.21
-							days = 180
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_global_variable = newfoundland_referendum_done
-					}
-					trigger_event = {
-						id = newfoundland_referendum.997
-						days = 75
 					}
 				}
 			}
 		}
 	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			# Once the referendum is over the JE completes (Newfoundland may already have been annexed or released by then)
+			NOT = { has_global_variable = newfoundland_referendum_done }
+			OR = {
+				NAND = {
+					exists = c:NEW
+					exists = c:CAN
+					exists = c:GBR
+				}
+				c:GBR = {
+					OR = {
+						has_war_with = c:NEW
+						has_war_with = c:CAN
+					}
+				}
+				c:CAN = {
+					OR = {
+						has_war_with = c:NEW
+						has_war_with = c:GBR
+					}
+				}
+				c:NEW = {
+					is_subject = no
+				}
+			}
+		}
+		effect = {
+		}
+	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+		}
+	}
+	group = je_group_historical_content
+
+	activation_description = {
+		always = yes
+	}
+	# effect which is executed when 'complete' trigger becomes true
 	# failure trigger
 	# should spawn event explaining what happens when triggered, framed as a failure;
 	# if left blank, cannot fail
-	fail = {
-	}
 	# effect which is executed when 'fail' trigger becomes true
-	on_fail = {
-	}
 	# optional invalidation trigger
 	# should not notify player when it triggers
 	# just clean up and silently disappear due to journal entry no longer being valid;
 	# if left blank, cannot be invalidated
-	invalid = {
-		# Once the referendum is over the JE completes (Newfoundland may already have been annexed or released by then)
-		NOT = { has_global_variable = newfoundland_referendum_done }
-		OR = {
-			NAND = {
-				exists = c:NEW
-				exists = c:CAN
-				exists = c:GBR
-			}
-			c:GBR = {
-				OR = {
-					has_war_with = c:NEW
-					has_war_with = c:CAN
-				}
-			}
-			c:CAN = {
-				OR = {
-					has_war_with = c:NEW
-					has_war_with = c:GBR
-				}
-			}
-			c:NEW = {
-				is_subject = no
-			}
-		}
-	}
 	# effect which is executed when 'invalid' trigger becomes true
-	on_invalid = {
-	}
 	# dynamically updated text, which describes the current status of the Journal Entry
 	# To use in loc or UI: [JournalEntry.GetStatusDesc]
 	# If this is not specified, GetStatusDesc will instead return loc from key <journal_entry_key>_status
@@ -555,8 +575,6 @@
 	# the number of days before this journal entry forcibly transitions, can be used to transition silently or into another event, framed either as success, failure, or neutral; if left blank or set to zero, will not time out
 	timeout = 1825
 	# effect which is executed when journal entry is timed out
-	on_timeout = {
-	}
 	# on_action which is triggered every first day of the week
 	on_weekly_pulse = {
 	}

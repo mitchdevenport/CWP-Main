@@ -2,6 +2,10 @@
 	icon = "gfx/interface/icons/cwp_icons/imf_seal.dds"
 	
 	group = je_group_foreign_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
@@ -54,37 +58,55 @@
 	goal_add_value = {
 		add = imf_application_payment_due_months
 	}
-	complete = {
-		custom_tooltip = {
-			text = IMF_LOAN_PAID
-			imf_debt_value <= 0 
-		}
-	}
-	fail = {
-		or = {
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
 			custom_tooltip = {
-				text = je_imf_concessionary_loan_time_up_tt
-				scope:journal_entry = {
-					is_goal_complete = yes
-				}
+				text = IMF_LOAN_PAID
+				imf_debt_value <= 0 
 			}
-			has_modifier = defaulted_on_international_loan
 		}
-	}
-	on_complete = {
-		custom_tooltip = {
-			text = IMF_LOAN_PAID_CONCLUSION
-			imf_loan_conclusion = yes
-		}
+		effect = {
+			custom_tooltip = {
+				text = IMF_LOAN_PAID_CONCLUSION
+				imf_loan_conclusion = yes
+			}
 
-	}
-	on_fail = {
-		trigger_event = {
-			id = imf_events.3
 		}
 	}
-	invalid = {
-		has_modifier = imf_austerity_measures
+
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			or = {
+				custom_tooltip = {
+					text = je_imf_concessionary_loan_time_up_tt
+					scope:journal_entry = {
+						is_goal_complete = yes
+					}
+				}
+				has_modifier = defaulted_on_international_loan
+			}
+		}
+		effect = {
+			trigger_event = {
+				id = imf_events.3
+			}
+		}
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			has_modifier = imf_austerity_measures
+		}
 	}
 	progressbar = yes
 	weight = 100
@@ -95,6 +117,10 @@ je_imf_nonconcessionary_loan = {
 	
 	group = je_group_foreign_affairs
 
+	activation_description = {
+		always = yes
+	}
+
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
 		custom_tooltip = {
@@ -146,37 +172,55 @@ je_imf_nonconcessionary_loan = {
 	goal_add_value = {
 		add = imf_application_payment_due_months
 	}
-	complete = {
-		custom_tooltip = {
-			text = IMF_LOAN_PAID
-			imf_debt_value <= 0 
-		}
-	}
-	fail = {
-		or = {
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
 			custom_tooltip = {
-				text = je_imf_nonconcessionary_loan_time_up_tt
-				scope:journal_entry = {
-					is_goal_complete = yes
-				}
+				text = IMF_LOAN_PAID
+				imf_debt_value <= 0 
 			}
-			has_modifier = defaulted_on_international_loan
 		}
-	}
-	on_complete = {
-		custom_tooltip = {
-			text = IMF_LOAN_PAID_CONCLUSION
-			imf_loan_conclusion = yes
-		}
+		effect = {
+			custom_tooltip = {
+				text = IMF_LOAN_PAID_CONCLUSION
+				imf_loan_conclusion = yes
+			}
 
-	}
-	on_fail = {
-		trigger_event = {
-			id = imf_events.3
 		}
 	}
-	invalid = {
-		has_modifier = imf_austerity_measures
+
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			or = {
+				custom_tooltip = {
+					text = je_imf_nonconcessionary_loan_time_up_tt
+					scope:journal_entry = {
+						is_goal_complete = yes
+					}
+				}
+				has_modifier = defaulted_on_international_loan
+			}
+		}
+		effect = {
+			trigger_event = {
+				id = imf_events.3
+			}
+		}
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			has_modifier = imf_austerity_measures
+		}
 	}
 	progressbar = yes
 	weight = 100
@@ -186,6 +230,10 @@ je_imf_bailout_loan = {
 	icon = "gfx/interface/icons/cwp_icons/imf_seal.dds"
 	
 	group = je_group_foreign_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
@@ -225,13 +273,19 @@ je_imf_bailout_loan = {
 			}
 		}
 	}
-	complete = {
-		has_met_imf_requirements = yes
-	}
-	on_complete = {
-		custom_tooltip = {
-			text = IMF_LOAN_PAID_CONCLUSION
-			imf_loan_conclusion = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			has_met_imf_requirements = yes
+		}
+		effect = {
+			custom_tooltip = {
+				text = IMF_LOAN_PAID_CONCLUSION
+				imf_loan_conclusion = yes
+			}
 		}
 	}
 	weight = 100
@@ -241,6 +295,10 @@ je_imf_austerity_measures = {
 	icon = "gfx/interface/icons/cwp_icons/imf_seal.dds"
 	
 	group = je_group_foreign_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
@@ -280,13 +338,19 @@ je_imf_austerity_measures = {
 			}
 		}
 	}
-	complete = {
-		has_met_imf_requirements = yes
-	}
-	on_complete = {
-		custom_tooltip = {
-			text = IMF_LOAN_PAID_CONCLUSION
-			imf_loan_conclusion = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			has_met_imf_requirements = yes
+		}
+		effect = {
+			custom_tooltip = {
+				text = IMF_LOAN_PAID_CONCLUSION
+				imf_loan_conclusion = yes
+			}
 		}
 	}
 	weight = 100

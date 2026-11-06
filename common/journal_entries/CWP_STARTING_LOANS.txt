@@ -1,6 +1,10 @@
 ﻿je_anglo_american_loan = {
 	icon = "gfx/interface/icons/cwp_icons/central_bank.dds"
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
 		and = {
@@ -194,52 +198,65 @@
 		}
 	}
 	timeout = 19440
-	on_timeout = {
-		if = {
-			limit = {
-				anglo_american_loan_total_USD >= 5000000
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
+		}
+		effect = {
+			remove_variable = anglo_american_loan_USA
+			remove_variable = anglo_american_loan_CAN
+			remove_variable = anglo_american_loan_payment_percent
+			remove_variable = anglo_american_loan_paid
+			c:USA ?= {
+				remove_modifier = anglo_american_loan_payment
+			}
+			c:CAN ?= {
+				remove_modifier = anglo_american_loan_payment
 			}
 			c:GBR = {
-				add_modifier = {
-					name = defaulted_on_international_loan
-					years = 10
+				remove_modifier = anglo_american_debt_payment
+			}
+
+		}
+	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			if = {
+				limit = {
+					anglo_american_loan_total_USD >= 5000000
+				}
+				c:GBR = {
+					add_modifier = {
+						name = defaulted_on_international_loan
+						years = 10
+					}
 				}
 			}
+			c:USA ?= {
+				remove_modifier = anglo_american_loan_payment
+			}
+			c:CAN ?= {
+				remove_modifier = anglo_american_loan_payment
+			}
+			c:GBR = {
+				remove_modifier = anglo_american_debt_payment
+			}
+			remove_variable = anglo_american_loan_USA
+			remove_variable = anglo_american_loan_CAN
+			remove_variable = anglo_american_loan_payment_percent
+			remove_variable = anglo_american_loan_paid
 		}
-		c:USA ?= {
-			remove_modifier = anglo_american_loan_payment
-		}
-		c:CAN ?= {
-			remove_modifier = anglo_american_loan_payment
-		}
-		c:GBR = {
-			remove_modifier = anglo_american_debt_payment
-		}
-		remove_variable = anglo_american_loan_USA
-		remove_variable = anglo_american_loan_CAN
-		remove_variable = anglo_american_loan_payment_percent
-		remove_variable = anglo_american_loan_paid
-	}
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-	on_complete = {
-		remove_variable = anglo_american_loan_USA
-		remove_variable = anglo_american_loan_CAN
-		remove_variable = anglo_american_loan_payment_percent
-		remove_variable = anglo_american_loan_paid
-		c:USA ?= {
-			remove_modifier = anglo_american_loan_payment
-		}
-		c:CAN ?= {
-			remove_modifier = anglo_american_loan_payment
-		}
-		c:GBR = {
-			remove_modifier = anglo_american_debt_payment
-		}
-
 	}
 	progressbar = yes
 	weight = 100

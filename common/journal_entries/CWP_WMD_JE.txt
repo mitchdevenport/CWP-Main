@@ -4,6 +4,10 @@ je_acquire_civilian_nuclear_capability = {
 
 	group = je_group_technology
 
+	activation_description = {
+		always = yes
+	}
+
 	should_be_pinned_by_default_uninvolved_or_context = yes
 
 	scripted_button = pause_nuclear_program_button
@@ -43,38 +47,51 @@ je_acquire_civilian_nuclear_capability = {
 		}
 	}
 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	fail = {
-		OR = {
-			NOR = {
-				has_law = law_type:law_civilian_applications
-				has_law = law_type:law_deterrence
-				has_law = law_type:law_first_strike
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
 			}
-			canceled_nuclear_program = yes
+		}
+		effect = {
+			add_modifier = {
+				name = civilian_nuclear_capable
+			}
+			remove_modifier = developing_civilian_nuclear_capability
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
 		}
 	}
 
-	on_complete = {
-		add_modifier = {
-			name = civilian_nuclear_capable
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			OR = {
+				NOR = {
+					has_law = law_type:law_civilian_applications
+					has_law = law_type:law_deterrence
+					has_law = law_type:law_first_strike
+				}
+				canceled_nuclear_program = yes
+			}
 		}
-		remove_modifier = developing_civilian_nuclear_capability
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
+		effect = {
+			remove_variable = nuclear_test_pending
+			remove_modifier = developing_civilian_nuclear_capability
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
+		}
 	}
 
-	on_fail = {
-		remove_variable = nuclear_test_pending
-		remove_modifier = developing_civilian_nuclear_capability
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
-	}
+
+
 
 	progressbar = yes
 
@@ -85,6 +102,10 @@ je_develop_atomic_bomb = {
 	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	should_be_pinned_by_default_uninvolved_or_context = yes
 
@@ -126,53 +147,66 @@ je_develop_atomic_bomb = {
 		}
 	}
 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	fail = {
-		OR = {
-			NOR = {
-				has_law = law_type:law_deterrence
-				has_law = law_type:law_first_strike
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
 			}
-			canceled_nuclear_program = yes
+		}
+		effect = {
+			add_modifier = {
+				name = atomic_capable
+			}
+			set_variable = {
+				name = nuclear_yield
+				value = 25
+			}
+			set_variable = {
+				name = nuclear_stockpile
+				value = 1
+			}
+			set_variable = {
+				name = nuclear_deployment_percentage
+				value = 25
+			}
+			set_variable = air_burst_focus
+			set_variable = show_targeted_states_map
+			remove_variable = nuclear_test_site
+			remove_modifier = developing_atomic_bomb
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
 		}
 	}
 
-	on_complete = {
-		add_modifier = {
-			name = atomic_capable
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			OR = {
+				NOR = {
+					has_law = law_type:law_deterrence
+					has_law = law_type:law_first_strike
+				}
+				canceled_nuclear_program = yes
+			}
 		}
-		set_variable = {
-			name = nuclear_yield
-			value = 25
+		effect = {
+			remove_variable = nuclear_test_pending
+			remove_variable = nuclear_test_site
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
+			remove_modifier = developing_atomic_bomb
 		}
-		set_variable = {
-			name = nuclear_stockpile
-			value = 1
-		}
-		set_variable = {
-			name = nuclear_deployment_percentage
-			value = 25
-		}
-		set_variable = air_burst_focus
-		set_variable = show_targeted_states_map
-		remove_variable = nuclear_test_site
-		remove_modifier = developing_atomic_bomb
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
 	}
 
-	on_fail = {
-		remove_variable = nuclear_test_pending
-		remove_variable = nuclear_test_site
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
-		remove_modifier = developing_atomic_bomb
-	}
+
+
 
 	progressbar = yes
 
@@ -183,6 +217,10 @@ je_develop_thermonuclear_bomb = {
 	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	should_be_pinned_by_default_uninvolved_or_context = yes
 
@@ -224,43 +262,56 @@ je_develop_thermonuclear_bomb = {
 		}
 	}
 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	fail = {
-		OR = {
-			NOR = {
-				has_law = law_type:law_deterrence
-				has_law = law_type:law_first_strike
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
 			}
-			canceled_nuclear_program = yes
+		}
+		effect = {
+			add_modifier = {
+				name = thermonuclear_capable
+			}
+			change_variable = {
+				name = nuclear_yield
+				add = 25
+			}
+			remove_variable = nuclear_test_site
+			remove_modifier = developing_thermonuclear_bomb
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
 		}
 	}
 
-	on_complete = {
-		add_modifier = {
-			name = thermonuclear_capable
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			OR = {
+				NOR = {
+					has_law = law_type:law_deterrence
+					has_law = law_type:law_first_strike
+				}
+				canceled_nuclear_program = yes
+			}
 		}
-		change_variable = {
-			name = nuclear_yield
-			add = 25
+		effect = {
+			remove_variable = nuclear_test_pending
+			remove_variable = nuclear_test_site
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
+			remove_modifier = developing_thermonuclear_bomb
 		}
-		remove_variable = nuclear_test_site
-		remove_modifier = developing_thermonuclear_bomb
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
 	}
 
-	on_fail = {
-		remove_variable = nuclear_test_pending
-		remove_variable = nuclear_test_site
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
-		remove_modifier = developing_thermonuclear_bomb
-	}
+
+
 
 	progressbar = yes
 
@@ -271,6 +322,10 @@ je_develop_icbms = {
 	icon = "gfx/interface/icons/lens_toolbar_icons/nuclear_weapons.dds"
 
 	group = je_group_technology
+
+	activation_description = {
+		always = yes
+	}
 
 	should_be_pinned_by_default_uninvolved_or_context = yes
 
@@ -313,43 +368,56 @@ je_develop_icbms = {
 		}
 	}
 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
-
-	fail = {
-		OR = {
-			NOR = {
-				has_law = law_type:law_deterrence
-				has_law = law_type:law_first_strike
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
 			}
-			canceled_nuclear_program = yes
+		}
+		effect = {
+			add_modifier = {
+				name = icbm_capable
+			}
+			change_variable = {
+				name = nuclear_yield
+				add = 25
+			}
+			remove_variable = nuclear_test_site
+			remove_modifier = developing_icbm
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
 		}
 	}
 
-	on_complete = {
-		add_modifier = {
-			name = icbm_capable
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			OR = {
+				NOR = {
+					has_law = law_type:law_deterrence
+					has_law = law_type:law_first_strike
+				}
+				canceled_nuclear_program = yes
+			}
 		}
-		change_variable = {
-			name = nuclear_yield
-			add = 25
+		effect = {
+			remove_variable = nuclear_test_pending
+			remove_variable = nuclear_test_site
+			remove_variable = nuclear_program_progress
+			remove_variable = nuclear_program_paused
+			remove_modifier = developing_icbm
 		}
-		remove_variable = nuclear_test_site
-		remove_modifier = developing_icbm
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
 	}
 
-	on_fail = {
-		remove_variable = nuclear_test_pending
-		remove_variable = nuclear_test_site
-		remove_variable = nuclear_program_progress
-		remove_variable = nuclear_program_paused
-		remove_modifier = developing_icbm
-	}
+
+
 
 	progressbar = yes
 

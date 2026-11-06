@@ -4,14 +4,18 @@ je_housing = {
 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
 		NOR = {
 			has_variable = housing_je_done
 			pop_type_percent_country = {
-				pop_type = peasants
-				percent > 0.6
+				target = pop_type:peasants
+				value > 0.6
 			}
 		}
 		any_scope_building = {
@@ -46,37 +50,43 @@ je_housing = {
 			is_building_type = building_housing
 		}
 	}
-	complete = {
-		any_scope_state = {
-			percent >= 0.95
-			has_building = building_housing
-			any_scope_building = {
-				is_building_type = building_housing
-				occupancy < 0.95
-				level >= 10
-			}
-		}
-		any_scope_state = {
-			percent >= 0.9
-			OR = {
-				NOT = { has_building = building_slums }
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				percent >= 0.95
+				has_building = building_housing
 				any_scope_building = {
-					is_building_type = building_slums
-					occupancy <= 0.1
+					is_building_type = building_housing
+					occupancy < 0.95
+					level >= 10
+				}
+			}
+			any_scope_state = {
+				percent >= 0.9
+				OR = {
+					NOT = { has_building = building_slums }
+					any_scope_building = {
+						is_building_type = building_slums
+						occupancy <= 0.1
+					}
+				}
+			}
+			market_capital.market ?= {
+				mg:housing = {
+					market_goods_cheaper > 0
 				}
 			}
 		}
-		market_capital.market ?= {
-			mg:housing = {
-				market_goods_cheaper > 0
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.1
 			}
+			set_variable = housing_je_done
 		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.1
-		}
-		set_variable = housing_je_done
 	}
 }
 
@@ -85,6 +95,10 @@ je_high_speed_rail = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		is_player = yes
@@ -99,76 +113,82 @@ je_high_speed_rail = {
 			has_active_production_method = pm_high_speed_rail
 		}
 	}
-	complete = {
-		any_scope_state = {
-			percent >= 0.75
-			any_scope_building = {
-				is_building_type = building_railway
-				has_active_production_method = pm_high_speed_rail
-				occupancy >= 0.75
-				level >= 5
-			}
-		}
-		trigger_if = {
-			limit = {
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				percent >= 0.75
 				any_scope_building = {
-					OR = {
-						is_building_type = building_coffee_plantation
-						is_building_type = building_cotton_plantation
-						is_building_type = building_tea_plantation
-						is_building_type = building_tobacco_plantation
-						is_building_type = building_sugar_plantation
-						is_building_type = building_banana_plantation
-						is_building_type = building_coal_mine
-						is_building_type = building_oil_rig
-						is_building_type = building_iron_mine
-						is_building_type = building_bauxite_mine
-						is_building_type = building_uranium_mine
-						is_building_type = building_lead_mine
-						is_building_type = building_sulfur_mine
-						is_building_type = building_gold_mine
-						is_building_type = building_logging_camp
-					}
+					is_building_type = building_railway
+					has_active_production_method = pm_high_speed_rail
+					occupancy >= 0.75
+					level >= 5
 				}
 			}
-			any_scope_building = {
-				filter = {
-					OR = {
-						is_building_type = building_coffee_plantation
-						is_building_type = building_cotton_plantation
-						is_building_type = building_tea_plantation
-						is_building_type = building_tobacco_plantation
-						is_building_type = building_sugar_plantation
-						is_building_type = building_banana_plantation
-						is_building_type = building_coal_mine
-						is_building_type = building_oil_rig
-						is_building_type = building_iron_mine
-						is_building_type = building_bauxite_mine
-						is_building_type = building_uranium_mine
-						is_building_type = building_lead_mine
-						is_building_type = building_sulfur_mine
-						is_building_type = building_gold_mine
-						is_building_type = building_logging_camp
+			trigger_if = {
+				limit = {
+					any_scope_building = {
+						OR = {
+							is_building_type = building_coffee_plantation
+							is_building_type = building_cotton_plantation
+							is_building_type = building_tea_plantation
+							is_building_type = building_tobacco_plantation
+							is_building_type = building_sugar_plantation
+							is_building_type = building_banana_plantation
+							is_building_type = building_coal_mine
+							is_building_type = building_oil_rig
+							is_building_type = building_iron_mine
+							is_building_type = building_bauxite_mine
+							is_building_type = building_uranium_mine
+							is_building_type = building_lead_mine
+							is_building_type = building_sulfur_mine
+							is_building_type = building_gold_mine
+							is_building_type = building_logging_camp
+						}
 					}
 				}
-				percent > 0.5
-				OR = {
-					has_active_production_method = pm_intermodal_containers_plantation
-					has_active_production_method = pm_cold_chain_logistics_plantation
-					has_active_production_method = pm_intermodal_containers_mines
-					has_active_production_method = pm_double_stack_containers_mines
-					has_active_production_method = pm_intermodal_containers_misc
+				any_scope_building = {
+					filter = {
+						OR = {
+							is_building_type = building_coffee_plantation
+							is_building_type = building_cotton_plantation
+							is_building_type = building_tea_plantation
+							is_building_type = building_tobacco_plantation
+							is_building_type = building_sugar_plantation
+							is_building_type = building_banana_plantation
+							is_building_type = building_coal_mine
+							is_building_type = building_oil_rig
+							is_building_type = building_iron_mine
+							is_building_type = building_bauxite_mine
+							is_building_type = building_uranium_mine
+							is_building_type = building_lead_mine
+							is_building_type = building_sulfur_mine
+							is_building_type = building_gold_mine
+							is_building_type = building_logging_camp
+						}
+					}
+					percent > 0.5
+					OR = {
+						has_active_production_method = pm_intermodal_containers_plantation
+						has_active_production_method = pm_cold_chain_logistics_plantation
+						has_active_production_method = pm_intermodal_containers_mines
+						has_active_production_method = pm_double_stack_containers_mines
+						has_active_production_method = pm_intermodal_containers_misc
+					}
+					occupancy >= 0.75
+					weekly_profit > 0
 				}
-				occupancy >= 0.75
-				weekly_profit > 0
 			}
 		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.2
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.2
+			}
+			set_variable = high_speed_rail_je_done
 		}
-		set_variable = high_speed_rail_je_done
 	}
 }
 
@@ -177,6 +197,10 @@ je_international_hubs = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
@@ -191,24 +215,30 @@ je_international_hubs = {
 			has_active_production_method = pm_international_airport
 		}
 	}
-	complete = {
-		any_scope_state = {
-			percent >= 0.2
-			has_building = building_airport
-			any_scope_building = {
-				is_building_type = building_airport
-				weekly_profit > 0
-				occupancy > 0.75
-				level >= 2
-				has_active_production_method = pm_international_airport
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				percent >= 0.2
+				has_building = building_airport
+				any_scope_building = {
+					is_building_type = building_airport
+					weekly_profit > 0
+					occupancy > 0.75
+					level >= 2
+					has_active_production_method = pm_international_airport
+				}
 			}
 		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.3
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.3
+			}
+			set_variable = international_airport_je_done
 		}
-		set_variable = international_airport_je_done
 	}
 }
 
@@ -217,6 +247,10 @@ je_economy_of_scale = {
 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
@@ -231,40 +265,46 @@ je_economy_of_scale = {
 			has_active_production_method = pm_early_container_terminal
 		}
 	}
-	complete = {
-		trigger_if = {
-			limit = {
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			trigger_if = {
+				limit = {
+					any_scope_state = {
+						is_coastal = yes
+					}
+				}
 				any_scope_state = {
-					is_coastal = yes
-				}
-			}
-			any_scope_state = {
-				filter = {
-					is_coastal = yes
-				}
-				percent >= 0.9
-				has_building = building_port
-				any_scope_building = {
-					is_building_type = building_port
-					occupancy > 0.75
-					level >= 5
-					OR = {
-						has_active_production_method = pm_early_container_terminal
-						has_active_production_method = pm_intermodal_container_hub
-						has_active_production_method = pm_automated_terminal
+					filter = {
+						is_coastal = yes
+					}
+					percent >= 0.9
+					has_building = building_port
+					any_scope_building = {
+						is_building_type = building_port
+						occupancy > 0.75
+						level >= 5
+						OR = {
+							has_active_production_method = pm_early_container_terminal
+							has_active_production_method = pm_intermodal_container_hub
+							has_active_production_method = pm_automated_terminal
+						}
 					}
 				}
 			}
+			custom_tooltip = {
+				text = container_je_paradox_moment
+			}
 		}
-		custom_tooltip = {
-			text = container_je_paradox_moment
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.4
+			}
+			set_variable = container_je_done
 		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.4
-		}
-		set_variable = container_je_done
 	}
 }
 
@@ -273,6 +313,10 @@ je_computers_admin = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
@@ -287,47 +331,53 @@ je_computers_admin = {
 			has_active_production_method = pm_early_computerization
 		}
 	}
-	complete = {
-		any_scope_state = {
-			filter = {
-				is_incorporated = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				filter = {
+					is_incorporated = yes
+				}
+				percent = 1
+				has_building = building_government_administration
+				any_scope_building = {
+					is_building_type = building_government_administration
+					occupancy > 0.9
+					level >= 10
+					OR = {
+						has_active_production_method = pm_early_computerization
+						has_active_production_method = pm_word_processors
+						has_active_production_method = pm_digital_servers
+					}
+				}
 			}
-			percent = 1
-			has_building = building_government_administration
-			any_scope_building = {
-				is_building_type = building_government_administration
-				occupancy > 0.9
-				level >= 10
-				OR = {
-					has_active_production_method = pm_early_computerization
-					has_active_production_method = pm_word_processors
-					has_active_production_method = pm_digital_servers
+			any_scope_state = {
+				filter = {
+					is_incorporated = no
+				}
+				percent >= 0.75
+				has_building = building_government_administration
+				any_scope_building = {
+					is_building_type = building_government_administration
+					occupancy > 0.5
+					level >= 5
+					OR = {
+						has_active_production_method = pm_early_computerization
+						has_active_production_method = pm_word_processors
+						has_active_production_method = pm_digital_servers
+					}
 				}
 			}
 		}
-		any_scope_state = {
-			filter = {
-				is_incorporated = no
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.5
 			}
-			percent >= 0.75
-			has_building = building_government_administration
-			any_scope_building = {
-				is_building_type = building_government_administration
-				occupancy > 0.5
-				level >= 5
-				OR = {
-					has_active_production_method = pm_early_computerization
-					has_active_production_method = pm_word_processors
-					has_active_production_method = pm_digital_servers
-				}
-			}
+			set_variable = computers_admin_je_done
 		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.5
-		}
-		set_variable = computers_admin_je_done
 	}
 }
 
@@ -336,6 +386,10 @@ je_sustainability = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
@@ -345,30 +399,36 @@ je_sustainability = {
 	}
 	possible = {
 	}
-	complete = {
-		trigger_if = {
-			limit = {
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			trigger_if = {
+				limit = {
+					any_scope_building = {
+						NOT = {
+							is_building_type = building_combustion_plant
+						}
+					}
+				}
 				any_scope_building = {
-					NOT = {
-						is_building_type = building_combustion_plant
+					filter = {
+						NOT = {
+							is_building_type = building_combustion_plant
+						}
 					}
+					percent = 1
+					occupancy >= 0.9
+					cash_reserves_ratio >= 0.25
+					level >= 5
 				}
-			}
-			any_scope_building = {
-				filter = {
-					NOT = {
-						is_building_type = building_combustion_plant
-					}
-				}
-				percent = 1
-				occupancy >= 0.9
-				cash_reserves_ratio >= 0.25
-				level >= 5
 			}
 		}
-	}
-	on_complete = {
-		set_variable = sustainability_je_done
+		effect = {
+			set_variable = sustainability_je_done
+		}
 	}
 }
 
@@ -377,6 +437,10 @@ je_nuclear_power = {
 	icon = "gfx/interface/icons/event_icons/event_fire.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
@@ -391,37 +455,43 @@ je_nuclear_power = {
 			has_variable = nuclear_facility_established
 		}
 	}
-	complete = {
-		any_scope_state = {
-			percent >= 0.5
-			has_building = building_nuclear_power_plant
-			any_scope_building = {
-				is_building_type = building_nuclear_power_plant
-				occupancy > 0.9
-				level >= 5
-				cash_reserves_ratio > 0.25
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				percent >= 0.5
+				has_building = building_nuclear_power_plant
+				any_scope_building = {
+					is_building_type = building_nuclear_power_plant
+					occupancy > 0.9
+					level >= 5
+					cash_reserves_ratio > 0.25
+				}
+			}
+			any_scope_state = {
+				percent <= 0.1
+				has_building = building_combustion_plant
+				any_scope_building = {
+					is_building_type = building_combustion_plant
+					occupancy < 0.9
+					level < 5
+				}
+			}
+			market_capital.market ?= {
+				mg:electricity = {
+					market_goods_cheaper > 0
+				}
 			}
 		}
-		any_scope_state = {
-			percent <= 0.1
-			has_building = building_combustion_plant
-			any_scope_building = {
-				is_building_type = building_combustion_plant
-				occupancy < 0.9
-				level < 5
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.7
 			}
+			set_variable = nuclear_power_je_done
 		}
-		market_capital.market ?= {
-			mg:electricity = {
-				market_goods_cheaper > 0
-			}
-		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.7
-		}
-		set_variable = nuclear_power_je_done
 	}
 }
 
@@ -430,6 +500,10 @@ je_american_logging = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 	
 	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
 	
 	is_shown_when_inactive = {
 		is_player = yes
@@ -446,28 +520,34 @@ je_american_logging = {
 			is_building_type = building_logging_camp
 		}
 	}
-	complete = {
-		any_scope_state = {
-			has_potential_resource = building_logging_camp
-			percent >= 0.8
-			has_building = building_logging_camp
-			any_scope_building = {
-				is_building_type = building_logging_camp
-				occupancy > 0.9
-				level >= 10
-				weekly_profit > 0
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			any_scope_state = {
+				has_potential_resource = building_logging_camp
+				percent >= 0.8
+				has_building = building_logging_camp
+				any_scope_building = {
+					is_building_type = building_logging_camp
+					occupancy > 0.9
+					level >= 10
+					weekly_profit > 0
+				}
+			}
+			market_capital.market ?= {
+				mg:wood = {
+					market_goods_cheaper > 0.5
+				}
 			}
 		}
-		market_capital.market ?= {
-			mg:wood = {
-				market_goods_cheaper > 0.5
+		effect = {
+			trigger_event = {
+				id = cwp_generic_economy_events.8
 			}
+			set_variable = american_logging_je_done
 		}
-	}
-	on_complete = {
-		trigger_event = {
-			id = cwp_generic_economy_events.8
-		}
-		set_variable = american_logging_je_done
 	}
 }

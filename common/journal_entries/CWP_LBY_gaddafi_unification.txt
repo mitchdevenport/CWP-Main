@@ -3,6 +3,10 @@
 	
 	group = je_group_foreign_affairs
 
+	activation_description = {
+		always = yes
+	}
+
 	should_be_pinned_by_default_uninvolved_or_context = yes
 
 	can_deactivate = yes
@@ -66,11 +70,17 @@
 		add = 200
 	}
 
-	complete = {
-		hidden_trigger = {
-			OR = {
-				has_variable = je_gaddafi_unification_finished
-				exists = c:JMH
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			hidden_trigger = {
+				OR = {
+					has_variable = je_gaddafi_unification_finished
+					exists = c:JMH
+				}
 			}
 		}
 	}
@@ -83,6 +93,10 @@ je_gaddafi_unification_target = {
 	should_be_pinned_by_default_uninvolved_or_context = yes
 
 	group = je_group_foreign_affairs
+
+	activation_description = {
+		always = yes
+	}
 
 	is_shown_when_inactive = {
 		has_variable = gaddafi_unification_target
@@ -213,13 +227,19 @@ je_gaddafi_unification_target = {
 
 	timeout = 160
 
-	on_timeout = {
-		hidden_effect = {
-			save_scope_as = gaddafi_unification_target_scope #Used in Events
-			if = {
-				limit = {
-					c:LBY.var:gaddafi_unification_points >= 200
-				}
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			hidden_trigger = {
+				c:LBY.var:gaddafi_unification_points >= 200
+			}
+		}
+		effect = {
+			hidden_effect = {
+				save_scope_as = gaddafi_unification_target_scope #Used in Events
 				c:LBY = {
 					create_diplomatic_pact = {
 						country = PREV
@@ -228,82 +248,96 @@ je_gaddafi_unification_target = {
 					trigger_event = libya.6
 				}
 				trigger_event = libya.4	
-			}
-			else_if = {
-				limit = {
-					c:LBY.var:gaddafi_unification_points >= 150
-				}
-				c:LBY = { trigger_event = libya.8 }
-			}
-			else = { c:LBY = { trigger_event = libya.7 } }
-			remove_global_variable = gaddafi_unification_ongoing
-			c:LBY = {
-				set_variable = {
-					name = gaddafi_unification_points
-					value = 0
-				}
-				set_variable = {
-					name = gaddafi_unification_weeks
-					value = 0
+				remove_global_variable = gaddafi_unification_ongoing
+				c:LBY = {
+					set_variable = {
+						name = gaddafi_unification_points
+						value = 0
+					}
+					set_variable = {
+						name = gaddafi_unification_weeks
+						value = 0
+					}
 				}
 			}
 		}
 	}
 
-	complete = {
-		hidden_trigger = {
-			c:LBY.var:gaddafi_unification_points >= 200
-		}
-	}
-
-	on_complete = {
-		hidden_effect = {
-			save_scope_as = gaddafi_unification_target_scope #Used in Events
-			c:LBY = {
-				create_diplomatic_pact = {
-					country = PREV
-					type = jamahiriya
-				}
-				trigger_event = libya.6
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			OR = {
+				NOT = { c:LBY = { has_journal_entry = je_gaddafi_unification } }
+				is_subject = yes 
 			}
-			trigger_event = libya.4	
-			remove_global_variable = gaddafi_unification_ongoing
-			c:LBY = {
-				set_variable = {
-					name = gaddafi_unification_points
-					value = 0
-				}
-				set_variable = {
-					name = gaddafi_unification_weeks
-					value = 0
+		}
+		effect = {
+			hidden_effect = {
+				save_scope_as = gaddafi_unification_target_scope #Used in Events
+				remove_global_variable = gaddafi_unification_ongoing
+				c:LBY = {
+					set_variable = {
+						name = gaddafi_unification_points
+						value = 0
+					}
+					set_variable = {
+						name = gaddafi_unification_weeks
+						value = 0
+					}
 				}
 			}
 		}
 	}
 
-	fail = {
-		OR = {
-			NOT = { c:LBY = { has_journal_entry = je_gaddafi_unification } }
-			is_subject = yes 
-		}
-	}
-
-	on_fail = {
-		hidden_effect = {
-			save_scope_as = gaddafi_unification_target_scope #Used in Events
-			remove_global_variable = gaddafi_unification_ongoing
-			c:LBY = {
-				set_variable = {
-					name = gaddafi_unification_points
-					value = 0
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		flags = { timeout }
+		effect = {
+			hidden_effect = {
+				save_scope_as = gaddafi_unification_target_scope #Used in Events
+				if = {
+					limit = {
+						c:LBY.var:gaddafi_unification_points >= 200
+					}
+					c:LBY = {
+						create_diplomatic_pact = {
+							country = PREV
+							type = jamahiriya
+						}
+						trigger_event = libya.6
+					}
+					trigger_event = libya.4	
 				}
-				set_variable = {
-					name = gaddafi_unification_weeks
-					value = 0
+				else_if = {
+					limit = {
+						c:LBY.var:gaddafi_unification_points >= 150
+					}
+					c:LBY = { trigger_event = libya.8 }
+				}
+				else = { c:LBY = { trigger_event = libya.7 } }
+				remove_global_variable = gaddafi_unification_ongoing
+				c:LBY = {
+					set_variable = {
+						name = gaddafi_unification_points
+						value = 0
+					}
+					set_variable = {
+						name = gaddafi_unification_weeks
+						value = 0
+					}
 				}
 			}
 		}
 	}
+
+
+
+
 
 	weight = 100
 }

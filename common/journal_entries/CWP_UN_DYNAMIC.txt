@@ -1,6 +1,10 @@
 ﻿je_un_intervention = {
 	icon = "gfx/interface/icons/cwp_icons/united_nations.dds"
 	group = je_group_foreign_affairs
+
+	activation_description = {
+		always = yes
+	}
 	should_be_pinned_by_default_uninvolved_or_context = yes
 	possible = {
 		OR = {
@@ -50,80 +54,98 @@
 			}
 		}
 	}
-	complete = {
-		OR = {
-			scope:asking_un_intervention_country ?= {
-				is_at_war = no
-			}
-			AND = {
-				scope:journal_entry = {
-					is_goal_complete = yes
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			OR = {
+				scope:asking_un_intervention_country ?= {
+					is_at_war = no
 				}
-				custom_tooltip = {
-					text = "WILL_COMPLETE_UN"
-					supporting_value_total > opposing_value_total
-				}
-			}
-		}
-	}
-	fail = {
-		OR = {
-			AND = {
-				scope:journal_entry = {
-					is_goal_complete = yes
-				}
-				custom_tooltip = {
-					text = "WILL_FAIL_UN"
-					opposing_value_total >= supporting_value_total
-				}
-			}
-			custom_tooltip = {
-				text = "IS_VETOED"
-				has_global_variable = vetoed
-			}
-		}
-	}
-	invalid = {
-		NOT = {
-			has_global_variable = un_intervention_vote
-		}
-	}
-	on_complete = {
-		hidden_effect = {
-			if = {
-				limit = {
-					scope:asking_un_intervention_country ?= {
-						is_at_war = yes
+				AND = {
+					scope:journal_entry = {
+						is_goal_complete = yes
+					}
+					custom_tooltip = {
+						text = "WILL_COMPLETE_UN"
+						supporting_value_total > opposing_value_total
 					}
 				}
-				every_country = {
+			}
+		}
+		effect = {
+			hidden_effect = {
+				if = {
 					limit = {
-						has_variable = un_member
+						scope:asking_un_intervention_country ?= {
+							is_at_war = yes
+						}
 					}
-					trigger_event = {
-						# Generic SUCCESS Event for all UN Members
-						id = un_dynamic_resolution_events.1
+					every_country = {
+						limit = {
+							has_variable = un_member
+						}
+						trigger_event = {
+							# Generic SUCCESS Event for all UN Members
+							id = un_dynamic_resolution_events.1
+						}
 					}
 				}
+				else = {
+					effect_clear_un_intervention = yes
+				}
+				remove_global_variable = un_intervention_vote
 			}
-			else = {
-				effect_clear_un_intervention = yes
-			}
-			remove_global_variable = un_intervention_vote
+			effect_reset_un_lists = yes
 		}
-		effect_reset_un_lists = yes
 	}
-	on_fail = {
-		hidden_effect = {
-			every_country = {
-				trigger_event = {
-					# Generic FAIL Event for all countries
-					id = un_dynamic_resolution_events.3
+
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			OR = {
+				AND = {
+					scope:journal_entry = {
+						is_goal_complete = yes
+					}
+					custom_tooltip = {
+						text = "WILL_FAIL_UN"
+						opposing_value_total >= supporting_value_total
+					}
+				}
+				custom_tooltip = {
+					text = "IS_VETOED"
+					has_global_variable = vetoed
 				}
 			}
-			remove_global_variable = un_intervention_vote
 		}
-		effect_reset_un_lists = yes
+		effect = {
+			hidden_effect = {
+				every_country = {
+					trigger_event = {
+						# Generic FAIL Event for all countries
+						id = un_dynamic_resolution_events.3
+					}
+				}
+				remove_global_variable = un_intervention_vote
+			}
+			effect_reset_un_lists = yes
+		}
+	}
+
+	outcome = {
+		conclusion_desc = je_standard_failure_conclusion_desc
+		flags = { hidden invalid_outcome }
+		trigger = {
+			NOT = {
+				has_global_variable = un_intervention_vote
+			}
+		}
 	}
 	progressbar = yes
 	# No can_deactivate: in 1.14 a deactivated journal entry added by effect never reactivates and blocks the next vote; 'invalid' removes it when the vote ends

@@ -1,221 +1,293 @@
 ﻿je_government_petition_negotiation_version = {
-	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+    icon = "gfx/interface/icons/event_icons/event_scales.dds"
 
-	### MUST ALSO DUPLICATE ANY CHANGES TO THE BELOW VERSION2
+###MUST ALSO DUPLICATE ANY CHANGES TO THE BELOW VERSION2
 
-	group = je_group_internal_affairs
+    group = je_group_internal_affairs
 
-	scripted_button = negotiation_go_away_button
-	scripted_button = negotiation_extension_button
+    activation_description = {
+        always = yes
+    }
 
-	immediate = {
-		je_government_petition_negotiation_immediate = yes
-		## sets government_petition_law
-	}
+    scripted_button = negotiation_go_away_button
+    scripted_button = negotiation_extension_button
 
-	status_desc = {
-		first_valid = {
-			triggered_desc = {
-				desc = je_government_petition_negotiation_months_passed
-				trigger = {
-					is_enacting_law = scope:government_petition_law.type
-				}
-			}
-			triggered_desc = {
-				desc = je_government_petition_negotiation_version_status
-				trigger = {
-					always = yes
-				}
-			}
-		}
-	}
+    immediate = {
+        je_government_petition_negotiation_immediate = yes
+        ##sets government_petition_law
+    }
 
-	on_monthly_pulse = { #powers division of fail effects
-		effect = {
-			je_government_petition_negotiation_monthly_pulse = yes
-		}
-	}
+    status_desc = {
+        first_valid = {
+            triggered_desc = {
+                desc = je_government_petition_negotiation_months_passed
+                trigger = {
+                    is_enacting_law = scope:government_petition_law.type
+                }
+            }
+            triggered_desc = {
+                desc = je_government_petition_negotiation_version_status
+                trigger = {
+                    always = yes
+                }
+            }
+        }
+    }
 
-	on_yearly_pulse = {
-		effect = {
-			je_government_petition_negotiation_yearly_pulse = yes
-		}
-	}
+    on_monthly_pulse = { #powers division of fail effects
+        effect = {
+            je_government_petition_negotiation_monthly_pulse = yes
+        }
+    }
 
-	complete = {
-		exists = scope:government_petition_law
-		has_law = scope:government_petition_law.type
-	}
+    on_yearly_pulse = {
+        effect = {
+            je_government_petition_negotiation_yearly_pulse = yes
+        }
+    }
 
-	on_complete = {
-		promise_quest_completed = yes
-	}
+    outcome = {
+        header = je_standard_completion_header
+        effect_header = je_standard_on_completion_header
+        color = "gold_positive"
+        conclusion_desc = je_standard_completion_conclusion_desc
+        trigger = {
+            exists = scope:government_petition_law
+            has_law = scope:government_petition_law.type
+        }
+        effect = {
+            promise_quest_completed = yes
+            je_government_petition_negotiation_version_cleanup = yes
+        }
+    }
 
-	fail = {
-		OR = {
-			is_promise_abandoned = yes
-			custom_tooltip = {
-				text = time_runs_out_tt
-				scope:journal_entry.journal_entry_age >= {
-					value = 2555 # 7 years
-					
-					if = {
-						limit = { scope:journal_entry = { has_variable = asked_for_extension_var } }
-						add = 1095
-					}
-				}
-			}
-		}
-	}
-
-	on_fail = {
-		promise_quest_failed = yes
-	}
-
-	invalid = {
-		OR = {
-			scope:ig ?= {
-				law_enactment_stance = {
-					law = scope:government_petition_law.type
-					value < approve
-				}
-			}
-			NOT = { exists = scope:government_petition_law }
-		}
-	}
-
-	on_timeout = {
-		hidden_effect = { #no need to repeat this on UI
+    outcome = {
+        header = je_standard_failure_header
+        effect_header = je_standard_on_failure_header
+        color = "blue_negative"
+        conclusion_desc = je_standard_failure_conclusion_desc
+        trigger = {
+            OR = {
+                is_promise_abandoned = yes
+                custom_tooltip = {
+                    text = time_runs_out_tt
+                    scope:journal_entry.journal_entry_age >= {
+                        value = 2555 # 7 years
+                        if = {
+                            limit = {
+                                scope:journal_entry = {
+                                    has_variable = asked_for_extension_var
+                                }
+                            }
+                            add = 1095
+                        }
+                    }
+                }
+            }
+        }
+        effect = {
 			promise_quest_failed = yes
-		}
-	}
+            je_government_petition_negotiation_version_cleanup = yes
+        }
+    }
 
-	on_invalid = {
-		quest_cleanup = yes
-	}
+    outcome = {
+        flags = { hidden invalid_outcome }
+        conclusion_desc = je_standard_failure_conclusion_desc
+        trigger = {
+            OR = {
+                scope:ig ?= {
+                    law_enactment_stance = {
+                        law = scope:government_petition_law.type
+                        value < approve
+                    }
+                }
+                NOT = {
+                    exists = scope:government_petition_law
+                }
+            }
+        }
+        effect = {
+            quest_cleanup = yes
+            je_government_petition_negotiation_version_cleanup = yes
+        }
+    }
 
-	timeout = {
-		value = 2555 # 7 years
+    outcome = {
+        header = JOURNAL_ENTRY_TIMEOUT
+        effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+        flags = { timeout }
+        conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+        effect = {
+            hidden_effect = { #no need to repeat this on UI
+                promise_quest_failed = yes
+            }
+            je_government_petition_negotiation_version_cleanup = yes
+        }
+    }
 
-		if = {
-			limit = { scope:journal_entry = { has_variable = asked_for_extension_var } }
-			add = 1095
-		}
-	}
+    timeout = {
+        value = 2555 # 7 years
+        if = {
+            limit = {
+                scope:journal_entry = {
+                    has_variable = asked_for_extension_var
+                }
+            }
+            add = 1095
+        }
+    }
 
-	weight = 1000
+    weight = 1000
 
+    	
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
 
 
 je_government_petition_negotiation_version_b = {
-	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
 
-	## A second version so player can have two promises at once, but no more!
-	### MUST ALSO DUPLICATE ANY CHANGES TO THE ABOVE ORIGINAL
+##A second version so player can have two promises at once, but no more!
+###MUST ALSO DUPLICATE ANY CHANGES TO THE ABOVE ORIGINAL
 
-	group = je_group_internal_affairs
+    group = je_group_internal_affairs
 
-	scripted_button = negotiation_go_away_button
-	scripted_button = negotiation_extension_button
+    activation_description = {
+        always = yes
+    }
 
-	immediate = {
-		je_government_petition_negotiation_immediate = yes
-		##sets government_petition_law
-	}
+    scripted_button = negotiation_go_away_button
+    scripted_button = negotiation_extension_button
 
-	on_monthly_pulse = { #powers division of fail effects
-		effect = {
-			je_government_petition_negotiation_monthly_pulse = yes
-		}
-	}
+    immediate = {
+        je_government_petition_negotiation_immediate = yes
+        ##sets government_petition_law
+    }
 
-	on_yearly_pulse = {
-		effect = {
-			je_government_petition_negotiation_yearly_pulse = yes
-		}
-	}
+    on_monthly_pulse = { #powers division of fail effects
+        effect = {
+            je_government_petition_negotiation_monthly_pulse = yes
+        }
+    }
 
-	status_desc = {
-		first_valid = {
-			triggered_desc = {
-				desc = je_government_petition_negotiation_months_passed
-				trigger = {
-					is_enacting_law = scope:government_petition_law.type
-				}
-			}
-			triggered_desc = {
-				desc = je_government_petition_negotiation_version_status
-				trigger = {
-					always = yes
-				}
-			}
-		}
-	}
+    on_yearly_pulse = {
+        effect = {
+            je_government_petition_negotiation_yearly_pulse = yes
+        }
+    }
 
-	complete = {
-		exists = scope:government_petition_law
-		has_law = scope:government_petition_law.type
-	}
+    status_desc = {
+        first_valid = {
+            triggered_desc = {
+                desc = je_government_petition_negotiation_months_passed
+                trigger = {
+                    is_enacting_law = scope:government_petition_law.type
+                }
+            }
+            triggered_desc = {
+                desc = je_government_petition_negotiation_version_status
+                trigger = {
+                    always = yes
+                }
+            }
+        }
+    }
 
-	on_complete = {
-		promise_quest_completed = yes
-	}
+    outcome = {
+        header = je_standard_completion_header
+        effect_header = je_standard_on_completion_header
+        color = "gold_positive"
+        conclusion_desc = je_standard_completion_conclusion_desc
+        trigger = {
+            exists = scope:government_petition_law
+            has_law = scope:government_petition_law.type
+        }
+        effect = {
+            promise_quest_completed = yes
+            je_government_petition_negotiation_version_b_cleanup = yes
+        }
+    }
 
-	fail = {
-		OR = {
-			is_promise_abandoned = yes
-			custom_tooltip = {
-				text = time_runs_out_tt
-				scope:journal_entry.journal_entry_age >= {
-					value = 4565 # 12.5 years
+    outcome = {
+        header = je_standard_failure_header
+        effect_header = je_standard_on_failure_header
+        color = "blue_negative"
+        conclusion_desc = je_standard_failure_conclusion_desc
+        trigger = {
+            OR = {
+                is_promise_abandoned = yes
+                custom_tooltip = {
+                    text = time_runs_out_tt
+                    scope:journal_entry.journal_entry_age >= {
+                        value = 4565 # 12.5 years
+                        if = {
+                            limit = {
+                                scope:journal_entry = {
+                                    has_variable = asked_for_extension_var
+                                }
+                            }
+                            add = 1095
+                        }
+                    }
+                }
+            }
+        }
+        effect = {
+		    promise_quest_failed = yes
+            je_government_petition_negotiation_version_b_cleanup = yes
+        }
+    }
 
-					if = {
-						limit = { scope:journal_entry = { has_variable = asked_for_extension_var } }
-						add = 1095
-					}
-				}
-			}
-		}
-	}
+    outcome = {
+        flags = { hidden invalid_outcome }
+        conclusion_desc = je_standard_failure_conclusion_desc
+        trigger = {
+            OR = {
+                scope:ig ?= {
+                    law_enactment_stance = {
+                        law = scope:government_petition_law.type
+                        value < approve
+                    }
+                }
+                NOT = {
+                    exists = scope:government_petition_law
+                }
+            }
+        }
+        effect = {
+            quest_cleanup = yes
+            je_government_petition_negotiation_version_b_cleanup = yes
+        }
+    }
 
-	on_fail = {
-		promise_quest_failed = yes
-	}
+    outcome = {
+        header = JOURNAL_ENTRY_TIMEOUT
+        effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+        flags = { timeout }
+        conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+        effect = {
+            hidden_effect = { #no need to repeat this on UI
+                promise_quest_failed = yes
+            }
+            je_government_petition_negotiation_version_b_cleanup = yes
+        }
+    }
 
-	invalid = {
-		OR = {
-			scope:ig ?= {
-				law_enactment_stance = {
-					law = scope:government_petition_law.type
-					value < approve
-				}
-			}
-			NOT = { exists = scope:government_petition_law }
-		}
-	}
+    timeout = {
+        value = 4565 # 12.5 years
+        if = {
+            limit = {
+                scope:journal_entry = {
+                    has_variable = asked_for_extension_var
+                }
+            }
+            add = 1095
+        }
+    }
 
-	on_timeout = {
-		hidden_effect = { #no need to repeat this on UI
-			promise_quest_failed = yes
-		}
-	}
+    weight = 1000
 
-	on_invalid = {
-		quest_cleanup = yes
-	}
-
-	timeout = {
-		value = 4565 # 12.5 years
-
-		if = {
-			limit = { scope:journal_entry = { has_variable = asked_for_extension_var } }
-			add = 1095
-		}
-	}
-
-	weight = 1000
-
+    	
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
