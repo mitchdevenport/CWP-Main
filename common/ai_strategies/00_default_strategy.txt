@@ -129,6 +129,24 @@ ai_strategy_default = {
 				desc = "cwp_play_support_no_bloc_leader"
 			}
 		}
+		# CWP: the Korean War is fought by the Koreas and their former occupiers, the Soviet Union and the United
+		# States; China and the NATO great powers join as the front moves (common/decisions/korea_decisions.txt).
+		# CWP 1.5 had no power blocs, and since 1.15 every member followed its bloc's leader into the war
+		if = {
+			limit = {
+				scope:diplomatic_play_type = play_type:dp_korean_unification
+				NOR = {
+					c:NRK ?= root
+					c:STK ?= root
+					c:RUS ?= root
+					c:USA ?= root
+				}
+			}
+			add = {
+				value = -1000
+				desc = "cwp_play_support_korean_war"
+			}
+		}
 	}
 
 	# Added to base neutrality in diplomatic plays
