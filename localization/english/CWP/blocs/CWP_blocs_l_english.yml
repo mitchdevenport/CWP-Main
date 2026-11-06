@@ -55,3 +55,5 @@
  treaty_name_anglo_french_alliance: "Anglo-French Alliance"
  treaty_name_ogdensburg_agreement: "Ogdensburg Agreement"
  treaty_name_azerbaijani_kurdish_alliance: "Azerbaijani-Kurdish Alliance"
+ cwp_play_support_opposing_bloc: "Would side with the opposing Cold War bloc"
+ cwp_play_support_no_bloc_leader: "Will not confront the opposing bloc's leader without our own bloc's leader"

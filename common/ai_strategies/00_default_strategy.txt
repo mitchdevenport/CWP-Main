@@ -65,6 +65,70 @@ ai_strategy_default = {
 	# NOTE: You need to include a description when adding values here so there are correct tooltips, this is different from most of ai strategy data!
 	diplomatic_play_support = {
 		value = 0
+
+		# CWP: Cold War alignment, as in obligation_value below. A bloc member never backs the opposing bloc's side
+		# (since 1.15 offers of war goals and obligations bought British support for a Soviet war on France)...
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_in_western_bloc = yes
+						scope:country = { is_in_eastern_bloc = yes }
+					}
+					AND = {
+						is_in_eastern_bloc = yes
+						scope:country = { is_in_western_bloc = yes }
+					}
+				}
+			}
+			add = {
+				value = -1000
+				desc = "cwp_play_support_opposing_bloc"
+			}
+		}
+		# ...and does not take on the other bloc's leader unless its own bloc's leader is on its side
+		if = {
+			limit = {
+				is_power_bloc_leader = no
+				scope:enemy_country = { is_power_bloc_leader = yes }
+				OR = {
+					AND = {
+						is_in_western_bloc = yes
+						scope:enemy_country = { is_in_eastern_bloc = yes }
+					}
+					AND = {
+						is_in_eastern_bloc = yes
+						scope:enemy_country = { is_in_western_bloc = yes }
+					}
+				}
+				NOT = {
+					OR = {
+						AND = {
+							is_in_western_bloc = yes
+							c:USA ?= {
+								OR = {
+									this = scope:country
+									is_diplomatic_play_ally_of = scope:country
+								}
+							}
+						}
+						AND = {
+							is_in_eastern_bloc = yes
+							c:RUS ?= {
+								OR = {
+									this = scope:country
+									is_diplomatic_play_ally_of = scope:country
+								}
+							}
+						}
+					}
+				}
+			}
+			add = {
+				value = -100
+				desc = "cwp_play_support_no_bloc_leader"
+			}
+		}
 	}
 
 	# Added to base neutrality in diplomatic plays
