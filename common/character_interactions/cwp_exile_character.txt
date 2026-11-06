@@ -52,31 +52,31 @@ exile_character = {
 			NOT = {
 				OR = {
 					AND = {
-						owner.ruler = {
+						owner.ruler ?= {
 							has_socialist_ideology = yes
 						}
 						has_socialist_ideology = yes
 					}
 					AND = {
-						owner.ruler = {
+						owner.ruler ?= {
 							has_progressive_ideology = yes
 						}
 						has_progressive_ideology = yes
 					}
 					AND = {
-						owner.ruler = {
+						owner.ruler ?= {
 							has_liberal_ideology = yes
 						}
 						has_liberal_ideology = yes
 					}
 					AND = {
-						owner.ruler = {
+						owner.ruler ?= {
 							has_reactionary_ideology = yes
 						}
 						has_reactionary_ideology = yes
 					}
 					AND = {
-						owner.ruler = {
+						owner.ruler ?= {
 							has_conservative_ideology = yes
 						}
 						has_conservative_ideology = yes
