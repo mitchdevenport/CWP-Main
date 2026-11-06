@@ -124,6 +124,10 @@ nuclear_stockpile_decay = {
 	every_scope_state = {
 		limit = {
 			has_building = building_nuclear_weapons_facility
+			# Only players' warheads are decommissioned or degrade. CWP 1.5's AI kept its facilities on stockpile maintenance
+			# (which produced its nuclear weapon goods) and kept its warheads; the AI may now drop to the no-production
+			# method to save money, and uranium can run short in its market early on
+			owner = { is_player = yes }
 		}
 		if = {
 			limit = {

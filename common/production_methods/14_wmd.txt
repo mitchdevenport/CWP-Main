@@ -34,8 +34,11 @@ pm_nuclear_warhead_testing = {
 
 ############### Nuclear Weapons Facility ###############
 # Base PMG
+# CWP 1.5's stockpile maintenance produced its nuclear weapon goods, so the AI kept it; it has no output since
+# goods were reworked, and the AI would pick the input-free no-production method and decommission its warheads
 pm_no_nuclear_production = {
 	texture = "gfx/interface/icons/production_method_icons/government/scholastic_education.dds"
+	ai_value = 10
 	country_modifiers = {
 		unscaled = {
 			country_nuclear_weapons_decay_add = 1
@@ -45,6 +48,7 @@ pm_no_nuclear_production = {
 
 pm_nuclear_stockpile_maintenance = {
 	texture = "gfx/interface/icons/production_method_icons/government/scholastic_education.dds"
+	ai_value = 1000000
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_uranium_add = 10
