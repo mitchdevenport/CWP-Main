@@ -48,8 +48,9 @@ base_values = {
 	state_aristocrats_investment_pool_contribution_add = 0.20
 	state_capitalists_investment_pool_contribution_add = 0.30
 
-	# CWP doubles the base game's literacy growth (0.0005 until 1.14; the base game raised its own to 0.002 in 1.15)
-	state_literacy_growth_add = 0.004
+	# CWP's own literacy growth (the 1.13 port's 0.001). The base game raised its rate from 0.0005 to 0.002 in 1.15; doubling
+	# that made developing countries' literacy grow about three times as fast as in CWP 1.5 (1946-1955)
+	state_literacy_growth_add = 0.001
 
 	# To balance for unincorporated states not paying taxes
 	state_unincorporated_starting_wages_mult = -0.20
