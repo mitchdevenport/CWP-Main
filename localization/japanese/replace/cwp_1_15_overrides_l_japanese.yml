@@ -9,3 +9,10 @@
  concept_default_unit_desc: "[Concept('concept_army','$concept_armies|q$')]の#b [GetCombatUnitGroup('combat_unit_group_frontline_brigades').GetName]#!の[Concept('concept_unit','$concept_units|q$')]のことです。"
  concept_special_unit_desc: "[Concept('concept_default_unit','$concept_default_units|q$')]とみなされる#b [GetCombatUnitGroup('combat_unit_group_frontline_brigades').GetName]#!ではない[Concept('concept_unit','$concept_units|q$')]のことです。\n\n[Concept('concept_army','$concept_armies|q$')]の$concept_special_units$:\n$TAB$#b [GetCombatUnitGroup('combat_unit_group_fire_support').GetName]#!\n$TAB$#b [GetCombatUnitGroup('combat_unit_group_aviation').GetName]#!"
  country_can_only_conscript_peasants_bool_desc: "[Concept('concept_conscript_battalion', '$concept_conscript_battalions|q$')]を[GetCombatUnitType('combat_unit_type_mechanized_brigade').GetName]を除く#b [GetCombatUnitGroup('combat_unit_group_frontline_brigades').GetName]#! [Concept('concept_unit', '$concept_combat_unit_types|q$')]のみで編成します"
+ # Base game 1.14 texts for ideologies CWP keeps (1.15 renamed the base game's versions)
+ ideology_social_democrat: "社会民主主義者"
+ ideology_social_democrat_desc: "#lore このリーダーは、議会改革によって社会主義社会を実現することを信じています。 #!"
+ ideology_proletarian_movement: "$ideology_proletarian$"
+ ideology_proletarian_movement_desc: "#lore この運動は階級闘争というレンズを通して政治を見ており、労働者の条件改善と政治的影響力の増大を支持しています。#!"
+ ideology_vanguardist_movement: "前衛主義者"
+ ideology_vanguardist_movement_desc: "#lore 急進的な前衛政党が主導する革命を通じ社会主義社会の実現を目指す運動です。#!"

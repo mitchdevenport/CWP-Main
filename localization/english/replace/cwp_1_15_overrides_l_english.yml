@@ -10,3 +10,10 @@
  concept_default_unit_desc: "These are #b [GetCombatUnitGroup('combat_unit_group_frontline_brigades').GetName]#! [Concept('concept_unit','$concept_units|q$')] in [Concept('concept_army','$concept_armies|q$')]."
  concept_special_unit_desc: "These are [Concept('concept_unit','$concept_units|q$')] that are not #b [GetCombatUnitGroup('combat_unit_group_frontline_brigades').GetName]#! which are considered [Concept('concept_default_unit','$concept_default_units|q$')].\n\n$concept_special_units$ for [Concept('concept_army','$concept_armies|q$')]:\n$TAB$#b [GetCombatUnitGroup('combat_unit_group_fire_support').GetName]#!\n$TAB$#b [GetCombatUnitGroup('combat_unit_group_aviation').GetName]#!"
  country_can_only_conscript_peasants_bool_desc: "[Concept('concept_conscript_battalion', '$concept_conscript_battalions|q$')] can only consist of #b [GetCombatUnitGroup('combat_unit_group_frontline_brigades').GetName]#! [Concept('concept_unit', '$concept_combat_unit_types|q$')], except [GetCombatUnitType('combat_unit_type_mechanized_brigade').GetName]"
+ # Base game 1.14 texts for ideologies CWP keeps (1.15 renamed the base game's versions)
+ ideology_social_democrat: "Social Democrat"
+ ideology_social_democrat_desc: "#lore This leader believes in achieving a socialist society through parliamentary reform. #!"
+ ideology_proletarian_movement: "$ideology_proletarian$"
+ ideology_proletarian_movement_desc: "#lore This movement views politics through the lens of class struggle, supporting better conditions and increased political influence for workers.#!"
+ ideology_vanguardist_movement: "Vanguardist"
+ ideology_vanguardist_movement_desc: "#lore This movement seeks to achieve a socialist society through a revolution headed by a vanguard party of dedicated radicals.#!"
