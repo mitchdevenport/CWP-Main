@@ -300,21 +300,14 @@
 					}
 				}
 				scope:korean_war_initiator = {
+					# CWP 1.5's humiliation war goals on the superpowers are added when each joins the war
+					# (korea_decisions.txt): since 1.15 a war goal on a country brings it into the war at once,
+					# which pitted the Soviet Union against the United States in Korea from the first day
 					create_diplomatic_play = {
 						name = korean_war_play
 						type = dp_korean_unification
 						target_country = scope:korean_war_target
 						escalation = 30
-						add_war_goal = {
-							holder = c:NRK
-							type = humiliation
-							target_country = c:USA
-						}
-						add_war_goal = {
-							holder = c:STK
-							type = humiliation
-							target_country = c:RUS
-						}
 					}
 				}
 			}

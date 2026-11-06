@@ -156,3 +156,25 @@
 		}
 	}
 }
+
+# Diplomatic play scope (the Korean War), root = the country joining it (korea_decisions.txt). CWP 1.5 created the war
+# with North Korea's humiliation goal on the United States and South Korea's on the Soviet Union; since 1.15 a war goal
+# on a country brings it into the war at once, so each is added when that superpower joins
+cwp_korean_war_humiliate_joining_superpower = {
+	if = {
+		limit = { c:USA ?= root }
+		add_war_goal = {
+			holder = c:NRK
+			type = humiliation
+			target_country = c:USA
+		}
+	}
+	else_if = {
+		limit = { c:RUS ?= root }
+		add_war_goal = {
+			holder = c:STK
+			type = humiliation
+			target_country = c:RUS
+		}
+	}
+}

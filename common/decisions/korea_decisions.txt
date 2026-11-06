@@ -49,6 +49,7 @@ join_korean_conflict_ai_north = {
 				add_initiator_backers = {
 					root
 				}
+				cwp_korean_war_humiliate_joining_superpower = yes
 			}
 		}
 		else = {
@@ -67,6 +68,7 @@ join_korean_conflict_ai_north = {
 				add_target_backers = {
 					root
 				}
+				cwp_korean_war_humiliate_joining_superpower = yes
 			}
 		}
 		every_diplomatic_play = {
@@ -168,6 +170,7 @@ join_korean_conflict_ai_south = {
 				add_target_backers = {
 					root
 				}
+				cwp_korean_war_humiliate_joining_superpower = yes
 			}
 		}
 		else = {
@@ -186,6 +189,7 @@ join_korean_conflict_ai_south = {
 				add_initiator_backers = {
 					root
 				}
+				cwp_korean_war_humiliate_joining_superpower = yes
 			}
 		}
 	}
